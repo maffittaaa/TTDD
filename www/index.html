@@ -8,35 +8,72 @@
     <script>var exports = {};</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 
 </head>
 
 <body>
-    <!-- <input type="text" id="player_id">
-    <input type="button" onclick="getPlayerID()" value="GetPlayer">
-    <div id="result"> </div>
+    <h2 class="player1"> Player
+        <input type="text" id="player1_id" class="player1">
+        </br>
+        </br>
+        <form>
+            <input type="button" onclick="setAttackerSlot(1)" value="Character 1" class="characters1">
+            </br>
+            <input type="button" onclick="setAttackerSlot(2)" value="Character 2" class="characters1">
+            </br>
+            <input type="button" onclick="setAttackerSlot(3)" value="Character 3" class="characters1">
+            </br>
+            <input type="button" onclick="setAttackerSlot(4)" value="Character 4" class="characters1">
+            </br>
+            <input type="button" onclick="setAttackerSlot(5)" value="Character 5" class="characters1">
+            </br>
+            <input type="button" onclick="resetHPFromCharacter1()" value="Reset HP" class="characters1">
+            <div id="result5"> </div>
+        </form>
+    </h2>
+
+    <h2 class="player2"> Opponent
+        <input type="text" id="player2_id">
+        </br>
+        </br>
+        <form>
+            <input type="button" onclick="setTargetSlot(6)" value="Character 1" class="characters2">
+            </br>
+            <input type="button" onclick="setTargetSlot(7)" value="Character 2" class="characters2">
+            </br>
+            <input type="button" onclick="setTargetSlot(8)" value="Character 3" class="characters2">
+            </br>
+            <input type="button" onclick="setTargetSlot(9)" value="Character 4" class="characters2">
+            </br>
+            <input type="button" onclick="setTargetSlot(10)" value="Character 5" class="characters2">
+            </br>
+            <input type="button" onclick="resetHPFromCharacter1()" value="Reset HP" class="characters2">
+            <div id="result5"> </div>
+        </form>
+    </h2>
+    <!-- </br>
+    </br>
+    <input type="button" onclick="setTargetSlot(6)" class="caracter1" value="Character 1">
     </br>
     </br>
-    <input type="text" id="match_id">
-    <input type="button" onclick="getMatchID()" value="GetMatch">
-    <div id="result2"> </div>
-    </br>
-    </br> -->
-    <!-- Player 1
-    <input type="text" id="player1_id">
-    Player 2
-    <input type="text" id="player2_id"> -->
-    Match
-    <input type="text" id="matche_id">
-    <input type="button" onclick="getPlayerIDInMatch()" value="GetPlayerInMatch">
-    <div id="result3"> </div>
+    <input type="button" onclick="setTargetSlot(7)" class="caracter2" value="Character 2">
     </br>
     </br>
-    <input type="text" id="character_id">
-    <input type="button" onclick="getCharacterID()" value="GetCharacter">
-    <div id="result4"> </div>
+    <input type="button" onclick="setTargetSlot(8)" class="caracter3" value="Character 3">
     </br>
     </br>
+    <input type="button" onclick="setTargetSlot(9)" class="caracter4" value="Character 4">
+    </br>
+    </br>
+    <input type="button" onclick="setTargetSlot(10)" class="caracter5" value="Character 5">
+    </br>
+    </br>
+    <input type="button" onclick="resetHPFromCharacter2()" class="reset" value="Reset HP">
+    <div id="result6"> </div> -->
+
+
 </body>
 
 </html>

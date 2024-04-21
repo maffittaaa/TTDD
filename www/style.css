@@ -1,0 +1,17 @@
+.player1 {
+    text-align: left;
+
+}
+
+.characters1 {
+    transform: translateX(100px);
+}
+
+.player2 {
+    text-align: right;
+    transform: translateY(-236px);
+}
+
+.characters2 {
+    transform: translateX(-100px);
+}

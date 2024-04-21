@@ -1,69 +1,35 @@
-// function getPlayerID() {
-//     var player_id = document.getElementById('player_id').value;
+const slot = ["slot1", "slot2", "slot3", "slot4", "slot5"];
+var attackerSlot = 0
+var targetSlot = 0
+function setAttackerSlot(slot) { //attacker has a slot now
 
-//     $.ajax({
-//         type: "GET",
-//         url: "/getPlayer",
-//         data: {
-//             "player_id": player_id // "" name of the property: value of the property
-//         },
-//         success: function (data) {
-//             console.log(data);
-//             document.getElementById("result").innerHTML = JSON.stringify(data)
-//             // if (data.player) {
-//             //     document.getElementById("message").innerHTML = "player found";
-//             //     window.location.replace("/");
-//             // } else {
-//             //     document.getElementById("message").innerHTML = "no player found";
-//             // };
-//         },
-//         error: function (err) {
-//             console.log(err);
-//         }
-//     })
-// }
+    attackerSlot = slot;
+}
 
-// function getMatchID() {
-//     var match_id = document.getElementById('match_id').value;
+function setTargetSlot(slot) { // if attacker has a slot, target has a slot now
+    if (attackerSlot != 0) {
+        targetSlot = slot;
+        doAttack();
+        attackerSlot = 0;
+        targetSlot = 0;
+    }
+}
 
-//     $.ajax({
-//         type: "GET",
-//         url: "/getMatch",
-//         data: {
-//             "match_id": match_id // "" name of the property: value of the property
-//         },
-//         success: function (data) {
-//             console.log(data);
-//             document.getElementById("result2").innerHTML = JSON.stringify(data)
-//             // if (data.player) {
-//             //     document.getElementById("message").innerHTML = "player found";
-//             //     window.location.replace("/");
-//             // } else {
-//             //     document.getElementById("message").innerHTML = "no player found";
-//             // };
-//         },
-//         error: function (err) {
-//             console.log(err);
-//         }
-//     })
-// }
-
-function getPlayerIDInMatch() {
-    // var player1_id = document.getElementById('player1_id').value;
-    // var player2_id = document.getElementById('player2_id').value;
-    var matche_id = document.getElementById('matche_id').value;
-
+function doAttack() { // passing the attackerslot and the target slot with the player1_id to the server
+    var player1_id = document.getElementById("player1_id").value;
+    var player2_id = document.getElementById("player2_id").value;
     $.ajax({
-        type: 'GET',
-        url: '/getPlayerIDInM',
+        type: 'POST',
+        url: '/attack',
         data: {
             "player1_id": player1_id,
-            // "player2_id": player2_id,
-            "matche_id": matche_id
+            "player2_id": player2_id,
+            "attackerSlot": attackerSlot,
+            "targetSlot": targetSlot
         },
         success: function (data) {
             console.log(data);
-            document.getElementById("result3").innerHTML = JSON.stringify(data);
+            // document.getElementById("result7").innerHTML = "You have selected: " + JSON.stringify(data);
         },
         error: function (err) {
             console.log(err);
@@ -71,18 +37,17 @@ function getPlayerIDInMatch() {
     })
 }
 
-function getCharacterID() {
-    var character_id = document.getElementById('character_id').value;
-
+function resetHPFromCharacter1() {
+    var player1_id = document.getElementById('player1_id').value;
     $.ajax({
         type: 'GET',
-        url: '/getCharacter',
+        url: '/resetHPCharacter1',
         data: {
-            "character_id": character_id
+            "player1_id": player1_id,
         },
         success: function (data) {
             console.log(data);
-            document.getElementById("result4").innerHTML = JSON.stringify(data);
+            document.getElementById("result5").innerHTML = JSON.stringify(data);
         },
         error: function (err) {
             console.log(err);
@@ -90,20 +55,166 @@ function getCharacterID() {
     })
 }
 
-function getCharactersFromPlayer() {
+function resetHPFromCharacter2() {
+    var player2_id = document.getElementById('player2_id').value;
     $.ajax({
         type: 'GET',
-        url: '/getCharacterFromPlayer',
+        url: '/resetHPCharacter2',
         data: {
-            "caracter_id": data.character_id,
-            "player_1_id": data.player1_id
+            "player2_id": player2_id,
         },
         success: function (data) {
             console.log(data);
-            document.getElementById("result4").innerHTML = JSON.stringify(data);
+            document.getElementById("result6").innerHTML = JSON.stringify(data);
         },
         error: function (err) {
             console.log(err);
         }
     })
 }
+
+// function getCharactersFromPlayer1() {
+//     var player1_id = document.getElementById('player1_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/getCharacterFromPlayer1',
+//         data: {
+//             "player1_id": player1_id,
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result5").innerHTML = "Your characters are: " + JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+// function getCharactersFromPlayer2() {
+//     var player2_id = document.getElementById('player2_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/getCharacterFromPlayer2',
+//         data: {
+//             "player2_id": player2_id
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result6").innerHTML = "Your characters are: " + JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+
+// function character2() {
+//     var player1_id = document.getElementById('player1_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/character2FromPlayer',
+//         data: {
+//             "player1_id": player1_id
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result7").innerHTML = "You have selected: " + JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+// function character3() {
+//     var player1_id = document.getElementById('player1_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/character3FromPlayer',
+//         data: {
+//             "player1_id": player1_id
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result7").innerHTML = "You have selected: " + JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+// function character4() {
+//     var player1_id = document.getElementById('player1_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/character4FromPlayer',
+//         data: {
+//             "player1_id": player1_id
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result7").innerHTML = "You have selected: " + JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+// function character5() {
+//     var player1_id = document.getElementById('player1_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/character5FromPlayer',
+//         data: {
+//             "player1_id": player1_id
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result7").innerHTML = "You have selected: " + JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+
+// function attackFromCharacter1() {
+//     var player1_id = document.getElementById('player1_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/attackWithCharacter1',
+//         data: {
+//             "player1_id": player1_id,
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result5").innerHTML = JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
+
+// function attackFromCharacter2() {
+//     var player2_id = document.getElementById('player2_id').value;
+//     $.ajax({
+//         type: 'GET',
+//         url: '/attackWithCharacter2',
+//         data: {
+//             "player2_id": player2_id,
+//         },
+//         success: function (data) {
+//             console.log(data);
+//             document.getElementById("result6").innerHTML = JSON.stringify(data);
+//         },
+//         error: function (err) {
+//             console.log(err);
+//         }
+//     })
+// }
