@@ -1,17 +1,19 @@
-.player1 {
-    text-align: left;
-
-}
-
 .characters1 {
     transform: translateX(100px);
 }
 
 .player2 {
-    text-align: right;
-    transform: translateY(-236px);
+    transform: translate(1240px, -180px);
 }
 
 .characters2 {
-    transform: translateX(-100px);
+    text-align: right;
+}
+
+.character1 {
+    transform: translate(1250px, -180px);
+}
+
+.match {
+    transform: translate(550px, -300px);
 }

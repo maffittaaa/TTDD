@@ -17,13 +17,13 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot now
 
 function doAttack() { // passing the attackerslot and the target slot with the player1_id to the server
     var player1_id = document.getElementById("player1_id").value;
-    var player2_id = document.getElementById("player2_id").value;
+    var match_id = document.getElementById("match_id").value;
     $.ajax({
         type: 'POST',
         url: '/attack',
         data: {
             "player1_id": player1_id,
-            "player2_id": player2_id,
+            "match_id": match_id,
             "attackerSlot": attackerSlot,
             "targetSlot": targetSlot
         },
@@ -37,35 +37,18 @@ function doAttack() { // passing the attackerslot and the target slot with the p
     })
 }
 
-function resetHPFromCharacter1() {
-    var player1_id = document.getElementById('player1_id').value;
-    $.ajax({
-        type: 'GET',
-        url: '/resetHPCharacter1',
-        data: {
-            "player1_id": player1_id,
-        },
-        success: function (data) {
-            console.log(data);
-            document.getElementById("result5").innerHTML = JSON.stringify(data);
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    })
-}
 
-function resetHPFromCharacter2() {
-    var player2_id = document.getElementById('player2_id').value;
+
+function resetHPFromCharacters() {
+    var match_id = document.getElementById('match_id').value;
     $.ajax({
         type: 'GET',
-        url: '/resetHPCharacter2',
+        url: '/resetHPCharacters',
         data: {
-            "player2_id": player2_id,
+            "match_id": match_id,
         },
         success: function (data) {
             console.log(data);
-            document.getElementById("result6").innerHTML = JSON.stringify(data);
         },
         error: function (err) {
             console.log(err);
