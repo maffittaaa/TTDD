@@ -24,12 +24,13 @@ app.post('/attack', (req, res) => { // character 1 from player attacking the cha
     console.log(targetSlot);
     connection.connect();
 
-    connection.query("SELECT caracter_id, player_match_character_tile_id, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + player1_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
+    connection.query("SELECT caracter_id, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id INNER JOIN matche ON player_match_character_match_id = matche_id WHERE player_match_character_player_id = matche_player1_id OR player_match_character_player_id = matche_player2_id player_match_character_player_id = AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
-                connection.query("UPDATE playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - caracter_attack WHERE player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked
+                var attackDamage = rows[0].caracter_attack;
+                connection.query("UPDATE playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked
                     function (error, rows, fields) {
                         if (error) {
 

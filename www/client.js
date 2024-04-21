@@ -29,7 +29,7 @@ function doAttack() { // passing the attackerslot and the target slot with the p
         },
         success: function (data) {
             console.log(data);
-            // document.getElementById("result7").innerHTML = "You have selected: " + JSON.stringify(data);
+            document.getElementById("result").innerHTML = JSON.stringify(data);
         },
         error: function (err) {
             console.log(err);
