@@ -24,7 +24,7 @@ app.post('/attack', (req, res) => { // character 1 from player attacking the cha
     console.log(targetSlot);
     connection.connect();
 
-    connection.query("SELECT caracter_id, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id INNER JOIN matche ON player_match_character_match_id = matche_id WHERE player_match_character_player_id = matche_player1_id OR player_match_character_player_id = matche_player2_id player_match_character_player_id = AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
+    connection.query("SELECT caracter_id, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + player1_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
@@ -44,6 +44,7 @@ app.post('/attack', (req, res) => { // character 1 from player attacking the cha
         });
 
 });
+
 
 app.get('/resetHPCharacters', (req, res) => { //reset HP of character from player 2
     var match_id = req.query.match_id;

@@ -1,4 +1,3 @@
-const slot = ["slot1", "slot2", "slot3", "slot4", "slot5"];
 var attackerSlot = 0
 var targetSlot = 0
 function setAttackerSlot(slot) { //attacker has a slot now
@@ -17,6 +16,7 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot now
 
 function doAttack() { // passing the attackerslot and the target slot with the player1_id to the server
     var player1_id = document.getElementById("player1_id").value;
+    var player2_id = document.getElementById("player2_id").value;
     var match_id = document.getElementById("match_id").value;
     $.ajax({
         type: 'POST',
