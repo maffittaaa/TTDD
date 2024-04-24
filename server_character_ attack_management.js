@@ -29,7 +29,7 @@ app.post('/attack1', (req, res) => { // attack from player 1 to opponent // atta
     // console.log(req.body);
     // console.log("attacker", req.body.attackerSlot);
     // console.log("target", req.body.targetSlot);
-    turns(match_id, playerID);
+    turns(req, res, match_id, playerID);
     console.log(turns(match_id, playerID));
 
     connection.execute("SELECT caracter_id, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
@@ -63,14 +63,21 @@ app.get('/resetHPCharacters', (req, res) => { //reset HP of characters from each
         });
 });
 
-function turns(matchID, playerID) {
+function turns(res, req, matchID, playerID) {
     if (!matchID || !playerID) {
         return;
-    } else {
-        turn = playerID;
-        return true;
     }
+
+    connection.execute("SELECT matche_turn_player_id FROM matche where match_id = " + matchID + " AND matche_player1_id = " + playerID,
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                res.send(true);
+            }
+        });
 }
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
