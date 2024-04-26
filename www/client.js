@@ -38,6 +38,23 @@ function doAttack1() { // passing the attackerslot and the target slot with the 
 
 function endOfTurn() {
     var player_id = document.getElementById("player_id").value;
+    var match_id  = document.getElementById("match_id").value;
+
+    $.ajax({
+        type: 'GET',
+        url:'/endTurn',
+        data: {
+            "player_id": player_id,
+            "match_id": match_id 
+        },
+        success: function (data) {
+            console.log(data);
+            document.getElementById("result").innerHTML = "Turn Switched";
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
 }
 
 function resetHPFromCharacters() {

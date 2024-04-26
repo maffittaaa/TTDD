@@ -26,7 +26,7 @@ app.post('/attack1', (req, res) => { // attack from player 1 to opponent // atta
     var targetSlot = req.body.targetSlot;
     var playerID = req.body.player_id;
     var match_id = req.body.match_id;
-    const isItPlayersTurn = isPlayerTurn(res, match_id, playerID); 
+    const isItPlayersTurn = isPlayerTurn(res, match_id, playerID);
     if (!isItPlayersTurn) {
         return;
     } else {
@@ -51,7 +51,19 @@ app.post('/attack1', (req, res) => { // attack from player 1 to opponent // atta
 
 
 app.get('/endTurn', (req, res) => {
+    var playerID = req.query.player_id;
+    var match_id = req.query.match_id;
 
+    connection.execute("",
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                console.log(rows[0].matche_turn_player_id);
+                console.log("Turn switched!");
+                res.send(rows);
+            }
+        });
 });
 
 
@@ -83,7 +95,7 @@ function isPlayerTurn(res, matchID, playerID) { //is it the player's turn?
             if (rows && turn > 0) {
                 res.send(rows);
                 console.log("It's your turn!");
-            }else {
+            } else {
                 console.log("It's not your turn yet...");
             }
         });
