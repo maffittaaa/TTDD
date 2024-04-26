@@ -36,7 +36,9 @@ function doAttack1() { // passing the attackerslot and the target slot with the 
     })
 }
 
-
+function endOfTurn() {
+    var player_id = document.getElementById("player_id").value;
+}
 
 function resetHPFromCharacters() {
     var match_id = document.getElementById('match_id').value;
