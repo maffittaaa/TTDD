@@ -51,18 +51,26 @@ app.post('/attack1', (req, res) => { // attack from player 1 to opponent // atta
 
 
 app.get('/endTurn', (req, res) => {
-    var playerID = req.query.player_id;
     var match_id = req.query.match_id;
+    var playerID = req.query.player_id;
 
-    connection.execute("",
+    connection.execute("SELECT matche_player2_id as player FROM matche WHERE matche_id = " + match_id,
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
-                console.log(rows[0].matche_turn_player_id);
+                console.log(rows[0].turn);
+                var playerTurn = rows[0].player;
+            connection.execute("UPDATE matche SET matche_turn_player_id = " + playerTurn + " WHERE matche_id = " + match_id,
+            function (error, rows, fields) {
+                if (error) {
+                    res.send(error);
+                } else {
                 console.log("Turn switched!");
                 res.send(rows);
-            }
+                };
+            })
+        }
         });
 });
 
@@ -91,7 +99,6 @@ function isPlayerTurn(res, matchID, playerID) { //is it the player's turn?
                 return res.send(error);
             }
             var turn = rows[0].count;
-            console.log(turn);
             if (rows && turn > 0) {
                 res.send(rows);
                 console.log("It's your turn!");

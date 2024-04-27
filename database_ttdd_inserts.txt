@@ -18,7 +18,7 @@ insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_tile_
 insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_tile_id) values('Txuki', 100, 4, 7);
 insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_tile_id) values('Panda', 200, 4, 8);
 insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_tile_id) values('João Pardal', 100, 3, 9);
-insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_tile_id) values('Sandrinho', 100, 4, 10);
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_tile_id) values('Sa*ndrinho', 100, 4, 10);
 ......................................................................................................
 insert into matchstate(match_state_name) values ("in queue");
 insert into matchstate(match_state_name) values ("on going");
