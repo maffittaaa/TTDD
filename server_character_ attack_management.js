@@ -21,7 +21,7 @@ connection.connect((err) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("www"));
 
-app.post('/attack1', (req, res) => { // attack from player 1 to opponent // attack from player 2 to opponent
+app.post('/attack', (req, res) => { // attack from player 1 to opponent // attack from player 2 to opponent
     var attackerSlot = req.body.attackerSlot;
     var targetSlot = req.body.targetSlot;
     var playerID = req.body.player_id;
@@ -50,27 +50,35 @@ app.post('/attack1', (req, res) => { // attack from player 1 to opponent // atta
 });
 
 
-app.get('/endTurn', (req, res) => {
+app.get('/endTurn', (req, res) => { //ends the turn and passes to the other player
     var match_id = req.query.match_id;
     var playerID = req.query.player_id;
 
-    connection.execute("SELECT matche_player2_id as player FROM matche WHERE matche_id = " + match_id,
+    connection.execute("SELECT matche_player1_id as player, matche_player2_id as opponent FROM matche WHERE matche_id = " + match_id,
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
-                console.log(rows[0].turn);
                 var playerTurn = rows[0].player;
-            connection.execute("UPDATE matche SET matche_turn_player_id = " + playerTurn + " WHERE matche_id = " + match_id,
-            function (error, rows, fields) {
-                if (error) {
-                    res.send(error);
-                } else {
-                console.log("Turn switched!");
-                res.send(rows);
-                };
-            })
-        }
+                var opponentTurn = rows[0].opponent;
+                var nextPlayer;
+                if (playerID == playerTurn) {
+                    nextPlayer = opponentTurn;
+                    console.log("Turn Switched!");
+                } else if (playerID == opponentTurn) {
+                    nextPlayer = playerTurn;
+                    console.log("Turn Switched!");
+                }
+                connection.execute("UPDATE matche SET matche_turn_player_id = " + nextPlayer + " WHERE matche_id = " + match_id,
+                    function (error, rows, fields) {
+                        if (error) {
+                            console.error("Error executing UPDATE query:", error);
+                            res.send(error);
+                        } else {
+                            res.send(rows);
+                        };
+                    })
+            }
         });
 });
 

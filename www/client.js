@@ -19,7 +19,7 @@ function doAttack1() { // passing the attackerslot and the target slot with the 
     var match_id = document.getElementById("match_id").value;
     $.ajax({
         type: 'POST',
-        url: '/attack1',
+        url: '/attack',
         data: {
             "player_id": player_id,
             "match_id": match_id,
