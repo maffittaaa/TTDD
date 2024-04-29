@@ -19,7 +19,7 @@ function doAttack1() { // passing the attackerslot and the target slot with the 
     var match_id = document.getElementById("match_id").value;
     $.ajax({
         type: 'POST',
-        url: '/attack',
+        url: '/attack/attack',
         data: {
             "player_id": player_id,
             "match_id": match_id,
@@ -38,14 +38,14 @@ function doAttack1() { // passing the attackerslot and the target slot with the 
 
 function endOfTurn() {
     var player_id = document.getElementById("player_id").value;
-    var match_id  = document.getElementById("match_id").value;
+    var match_id = document.getElementById("match_id").value;
 
     $.ajax({
         type: 'GET',
-        url:'/endTurn',
+        url: '/attack/endTurn',
         data: {
             "player_id": player_id,
-            "match_id": match_id 
+            "match_id": match_id
         },
         success: function (data) {
             console.log(data);
@@ -61,7 +61,7 @@ function resetHPFromCharacters() {
     var match_id = document.getElementById('match_id').value;
     $.ajax({
         type: 'GET',
-        url: '/resetHPCharacters',
+        url: '/attack/resetHPCharacters',
         data: {
             "match_id": match_id,
         },

@@ -1,32 +1,26 @@
 const express = require('express');
+const attack = require('./API/attack');
 const bodyParser = require('body-parser');
-const mysql = require('mysql2');
+
+const connection = require('./database');
+
 const app = express();
+const serverPort = 3000;
 
-const connectionOptions = {
-    host: 'localhost',
-    user: 'root',
-    password: 'Acoteias2015!',
-    database: 'ttdd_database'
-};
+connection.connect((err) => {
+    if (err) {
+        console.log(" There is an error connection to the database: " + err);
+        return;
+    }
+    console.log(" You are connected to database!");
+})
 
-app.use(bodyParser.urlencoded({ extended: true })); // use body-parser as a middleware of our app
+//Middlewares
 app.use(express.static("www")); //provide static files on the www folder
-app.get("/characters", (req, res) => {
-    var connection = mysql.createConnection(connectionOptions); //connect to mysql
-    connection.connect();
-    console.log("hello");
-    connection.query("SELECT caracter_name, caracter_HP FROM caracter WHERE caracter_id = 1",
-        function (error, rows, fields) {
-            if (error) {
-                res.send(error);
-            } else {
-                res.send(rows);
-            }
-        });
-    connection.end();
-});
+app.use(bodyParser.urlencoded({ extended: true })); // use body-parser as a middleware of our app
 
-app.listen(3000, () => {
+app.use('/attack', attack);
+
+app.listen(serverPort, () => {
     console.log('Server is running on port 3000');
 });
