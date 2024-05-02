@@ -1,0 +1,233 @@
+create table ttdd_database.player (
+
+		player_id int not null auto_increment,
+
+		player_username VARCHAR(30) not null, 			# player username
+
+		player_email VARCHAR(30), 						# player email
+
+		player_password VARCHAR(20), 					# player password
+
+		player_level int not null default 0, 						# player level
+
+		player_matches int not null default 0, 					# player matches played
+
+		player_victories int not null default 0, 					# player matches won
+	
+		primary key (player_id)
+
+);
+
+create table ttdd_database.playerCharacter (
+
+		player_character_id int not null auto_increment,
+
+		player_character_player_id int not null, 		# player id in this table
+
+		player_character_character_id int not null, 	# character id in this table
+
+		primary key (player_character_id)
+
+);
+
+
+create table ttdd_database.playerMatch (
+
+		player_match_id int not null auto_increment,
+
+		player_match_player_id int not null, 			# player id in this table
+
+		player_match_match_id int not null, 			# match id in this table
+
+		primary key (player_match_id)
+
+);
+
+
+create table ttdd_database.playerMatchCharacter (
+
+		player_match_character_id int not null auto_increment,
+
+		player_match_character_player_id int not null, 					# player id in this table
+
+		player_match_character_match_id int not null, 					# match id in this table
+
+		player_match_character_character_id int not null, 				# character id in this table
+
+		player_match_character_tile_id int not null, 					# tile id of the character
+
+		player_match_character_character_current_HP int not null, 		# current HP of the characters
+
+		primary key (player_match_character_id)
+
+);
+
+
+create table ttdd_database.tile (
+
+		tile_id int not null auto_increment,
+
+		tile_x int not null, 				# x coordinates of the tile
+
+		tile_y int not null, 				# y coordinates of the tile
+
+		primary key (tile_id)
+
+);
+
+
+create table ttdd_database.caracter (
+
+		caracter_id int not null auto_increment,
+
+		caracter_name VARCHAR(30) not null, 					# character name
+
+		caracter_HP int not null, 						# character HP
+
+		caracter_attack int not null, 						# character damage on attack
+
+		primary key (caracter_id)
+
+);
+
+
+create table ttdd_database.matche (
+
+		matche_id int not null auto_increment,
+
+		matche_player1_id int not null, 			# player1 id in the match
+
+		matche_player2_id int not null, 			# player2 id in this match
+
+		matche_state_id int not null, 				# match state
+
+		matche_winner_id int not null, 				# match winner id
+		
+		matche_turn_player_id int not null					#id of the player which is the turn
+
+		primary key (matche_id)
+
+);
+
+
+create table ttdd_database.matchState (
+
+		match_state_id int not null auto_increment,
+
+		match_state_name VARCHAR(20) not null, 			# name of the state that the match is in
+
+		primary key (match_state_id)
+
+);
+
+
+create table ttdd_database.card (
+
+		card_id int not null auto_increment,
+
+		card_name VARCHAR(30) not null, 			# card name
+
+		card_damage int null, 				# damage of the card
+
+		card_description VARCHAR(60) not null, 			# the attack that the card does
+
+		primary key (card_id)
+
+);
+
+
+create table ttdd_database.deck (
+
+		deck_id int not null auto_increment,
+
+		deck_card_id int not null, 				# card id
+
+		deck_card_state_id int not null, 			# state of the card on the deck id
+
+		deck_match_id int not null, 				# match id
+
+		deck_player_id int not null, 				# player_id
+
+		primary key (deck_id)
+
+);
+
+
+create table ttdd_database.deckCardState (
+
+		deck_card_state_id int not null auto_increment,
+
+		deck_card_state_name VARCHAR(30) not null, 			# name of the state that the card is in
+
+		primary key (deck_card_state_id)
+
+);
+
+# Foreign Keys
+
+	-- player_id
+alter table playerCharacter 
+add constraint playerCharacter_fk_player
+foreign key (player_character_player_id) references player(player_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table playerMatch 
+add constraint playerMatch_fk_player
+foreign key (player_match_player_id) references player(player_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table playerMatchCharacter 
+add constraint playerMatchCharacter_fk_player
+foreign key (player_match_character_player_id) references player(player_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table deck 
+add constraint deck_fk_player
+foreign key (deck_player_id) references player(player_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+	-- character_id
+alter table playerCharacter 
+add constraint playerCharacter_fk_character
+foreign key (player_character_character_id) references caracter(caracter_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table playerMatchCharacter
+add constraint playerMatchCharacter_fk_caracter
+foreign key (player_match_character_character_id) references caracter(caracter_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+	-- tile_id
+alter table playerMatchCharacter 
+add constraint playerMatchCharacter_fk_tile
+foreign key (player_match_character_tile_id) references tile(tile_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+	-- match_id
+alter table playerMatchCharacter 
+add constraint playerMatchCharacter_fk_matche
+foreign key (player_match_character_match_id) references matche(matche_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table playerMatch 
+add constraint playerMatch_fk_matche
+foreign key (player_match_match_id) references matche(matche_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+	-- card_id
+alter table deck 
+add constraint deck_fk_card
+foreign key (deck_card_id) references card(card_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+	-- deck_card_state_id
+alter table deck 
+add constraint deck_fk_deckCardState
+foreign key (deck_card_state_id) references deckState(deck_card_state_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+	-- match_state_id
+alter table matche 
+add constraint matche_fk_matchState
+foreign key (matche_state_id) references matchState(match_state_id) 
+ON DELETE NO ACTION ON UPDATE NO ACTION;
