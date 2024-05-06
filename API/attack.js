@@ -21,7 +21,7 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
             res.send("This character already attacked");
             return;
         } else {
-            connection.execute("SELECT caracter_id, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
+            connection.execute("SELECT caracter_id, caracter_HP, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
                 function (error, rows, fields) {
                     if (error) {
                         res.send(error);
@@ -33,7 +33,6 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                             }
                         }
                         var attackDamage = rows[0].caracter_attack;
-                        console.log("It's: ", alreadyAttacked);
                         connection.execute("UPDATE playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_player_id <> " + playerID + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked and give him damage
                             function (error, rows, fields) {
                                 if (error) {
@@ -42,7 +41,7 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                                     res.send(rows);
                                 }
                             })
-                        alreadyAttacked = true;
+                        alreadyAttacked = true; 
                     }
                 })
             console.log("Now: ", alreadyAttacked);
