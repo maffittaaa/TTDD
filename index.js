@@ -22,7 +22,7 @@ connection.connect((err) => {
 })
 
 app.use(session({
-    secret: "someAmazingSecret",
+    secret: "someAmazingSecret", //its so amazing that no one knows what it is
     resave: false,    
     saveUninitialized: false,
     cookie: {

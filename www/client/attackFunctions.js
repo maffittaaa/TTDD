@@ -1,7 +1,7 @@
 var attackerSlot = 0
 var targetSlot = 0
-function setAttackerSlot(slot) { //attacker has a slot 
 
+function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
 }
 

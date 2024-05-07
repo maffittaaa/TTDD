@@ -129,9 +129,9 @@ function setCharactersValues(match, player, p1, p2, ch1, ch2, ongoing = false) {
                 var typeOfAttack; //if its an attacker or a target
 
                 if(i == 1){
-                    typeOfAttack = setAttackerSlot()
+                    typeOfAttack = setAttackerSlot(); //neste momento requer id do slot
                 }else{
-                    typeOfAttack = setTargetSlot()
+                    typeOfAttack = setTargetSlot(); //
                 }
 
                 if (order[j] > 3) {

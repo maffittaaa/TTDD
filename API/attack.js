@@ -11,6 +11,7 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
     var targetSlot = req.body.targetSlot;
     var playerID = req.body.player_id;
     var match_id = req.body.match_id;
+    
     if (!isPlayerTurn) {
         res.send("Not your turn yet..");
         return;
@@ -47,7 +48,6 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                                         })
                                 }
                             });
-
                     }
                 }
             })
