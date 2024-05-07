@@ -2,8 +2,6 @@ const express = require('express');
 const connection = require('../database');
 const router = express.Router();
 
-var alreadyAttacked = false; //variable to check if a character has already attacked or not
-
 router.post('/attack', (req, res) => { // attack from player 1 to opponent // attack from player 2 to opponent
     checkPlayerTurn(req, res, doAttack);
 });
@@ -17,37 +15,46 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
         res.send("Not your turn yet..");
         return;
     } else {
-        if (alreadyAttacked == true) {
-            res.send("This character already attacked");
-            return;
-        } else {
-            connection.execute("SELECT caracter_id, caracter_HP, caracter_attack FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
-                function (error, rows, fields) {
-                    if (error) {
-                        res.send(error);
-                    } else {
-                        if (attackerSlot == 1 || attackerSlot == 2 || attackerSlot == 3) {
-                            if (targetSlot == 4 || targetSlot == 5) {
-                                console.log("Can't attack that target");
-                                return;
-                            }
+        connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
+            function (error, rows, fields) {
+                if (error) {
+                    res.send(error);
+                } else {
+                    if (attackerSlot == 1 || attackerSlot == 2 || attackerSlot == 3) {
+                        if (targetSlot == 4 || targetSlot == 5) {
+                            console.log("Can't attack that target");
+                            return;
                         }
-                        var attackDamage = rows[0].caracter_attack;
-                        connection.execute("UPDATE playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_player_id <> " + playerID + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked and give him damage
+                    }
+                    var attackStatus = rows[0].player_match_character_character_status_id;
+                    var attackDamage = rows[0].caracter_attack;
+                    if (attackStatus == 2) { // check if attack status is 2, meaning if the character already attacked: if it has it can't attack more
+                        res.send("This characte can't attack anymore!");
+                        return;
+                    } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
+                        connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 2 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [match_id, playerID, attackerSlot],
                             function (error, rows, fields) {
                                 if (error) {
                                     res.send(error);
                                 } else {
-                                    res.send(rows);
+                                    connection.execute("UPDATE playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_player_id <> " + playerID + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked and give him damage
+                                        function (error, rows, fields) {
+                                            if (error) {
+                                                res.send(error);
+                                            } else {
+                                                res.send(rows);
+                                            }
+                                        })
                                 }
-                            })
-                        alreadyAttacked = true; 
+                            });
+
                     }
-                })
-            console.log("Now: ", alreadyAttacked);
-        }
+                }
+            })
     }
 }
+
+
 
 router.get('/endTurn', (req, res) => { //ends the turn and passes to the other player
     var match_id = req.query.match_id;
@@ -72,12 +79,20 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                             console.error("Error executing UPDATE query:", error);
                             res.send(error);
                         } else {
-                            res.send(rows);
-                            alreadyAttacked = false;
-                        };
+                            connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
+                                function (error, rows, fields) {
+                                    if (error) {
+                                        console.error("Error executing UPDATE query:", error);
+                                        res.send(error);
+                                    } else {
+                                        res.send(rows);
+                                    }
+                                }
+                            )
+                        }
                     })
             }
-        });
+        })
 });
 
 
@@ -96,7 +111,7 @@ function checkPlayerTurn(req, res, callback) { //is it the player's turn?
 
 router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from each match
     var match_id = req.query.match_id;
-    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_current_HP = 10 WHERE player_match_character_match_id = ?", [match_id],
+    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_current_HP = 100 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
@@ -106,5 +121,20 @@ router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from e
         });
 });
 
-module.exports = router;
 
+router.get('/resetStatusCharacters', (req, res) => { //reset attack status of characters from each match
+    var match_id = req.query.match_id;
+    console.log(match_id);
+    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                console.log(rows);
+                res.send(rows);
+            }
+        });
+});
+
+
+module.exports = router;

@@ -74,3 +74,20 @@ function resetHPFromCharacters() {
     })
 }
 
+function resetStatusFromCharacters() {
+    var match_id = document.getElementById("match_id").value;
+    $.ajax({
+        type: 'GET',
+        url: '/attack/resetStatusCharacters',
+        data: {
+            "match_id": match_id,
+        },
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
+
