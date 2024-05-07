@@ -1,0 +1,39 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    color:black;
+    text-align: center;
+}
+
+.info {
+    text-align: center;
+    border-style:solid;
+    border-width: 2px;
+    border-color:darkgrey;
+    border-radius: 1em;
+    /* margin-left: 585px; */
+    /* width:350px;
+    height: 150px; */
+    position:fixed;
+    right: 40%;
+    left: 40%;
+}
+
+.login {
+    color:black;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.button {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pop-up {
+    text-align: center;
+    margin-bottom: 10px;
+}

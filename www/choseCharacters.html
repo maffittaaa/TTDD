@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styleChose.css">
+    <script src="client/registrationFunctions.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="pickCharacters(null, 1)" id="ch_1"> Madame Crisalda </button> </br>
+    <button onclick="pickCharacters(null, 2)" id="ch_2"> Velho Louco </button> </br>
+    <button onclick="pickCharacters(null, 3)" id="ch_3"> Mafia Zombie </button> </br>
+    <button onclick="pickCharacters(null, 4)" id="ch_4"> Big Billy </button> </br>
+    <button onclick="pickCharacters(null, 5)" id="ch_5"> Mister Frank </button> </br>
+    <button onclick="pickCharacters(null, 6)" id="ch_6"> Águosto </button> </br>
+    <button onclick="pickCharacters(null, 7)" id="ch_7"> Txuki </button> </br>
+    <button onclick="pickCharacters(null, 8)" id="ch_8"> Panda </button> </br>
+    <button onclick="pickCharacters(null, 9)" id="ch_9"> João Pardal </button> </br>
+    <button onclick="pickCharacters(null, 10)" id="ch_10"> Sandrinho </button> </br>
+
+    </br>
+
+    <div id="characters"> Characters chosen: </br> </div>
+    <div class="front">
+        <button onclick="pickCharacters(1, null)" id="slot_1"> chose slot </button> </br>
+    </div>
+    <div class="back">
+        <button onclick="pickCharacters(4, null)" id="slot_4"> chose slot </button> </br>
+    </div>
+    <div class="front">
+        <button onclick="pickCharacters(2, null)" id="slot_2"> chose slot </button> </br>
+    </div>
+    <div class="back">
+        <button onclick="pickCharacters(5, null)" id="slot_5"> chose slot </button> </br>
+    </div>
+    <div class="front">
+        <button onclick="pickCharacters(3, null)" id="slot_3"> chose slot </button> </br>
+    </div>
+    </br>
+    <input type="button" onclick="choseCharacters()" id="chosen" value="Go To Match"> </br>
+
+
+</body>
+<script src="client/chooseChFunctions.js"></script>
+
+</html>

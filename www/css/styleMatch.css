@@ -1,0 +1,22 @@
+.player2{
+    text-align: right;
+    /* transform: translateY(-265px); */
+}
+
+.characters2{
+    text-align: right;
+    /* transform: translateY(-265px); */
+}
+
+.match{
+    text-align: center;
+    /* transform: translateY(-265px); */
+}
+
+.front_p1{
+    transform: translateX(100px);
+}
+
+.front_p2{
+    transform: translateX(-100px);
+}
