@@ -9,13 +9,15 @@ router.post('/attack', (req, res) => { // attack from player 1 to opponent // at
 function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the player's turn
     var attackerSlot = req.body.attackerSlot;
     var targetSlot = req.body.targetSlot;
-    var playerID = req.body.player_id;
-    var match_id = req.body.match_id;
-    
+
+    var playerID = req.session.playerID;
+    var match_id = req.session.match;
+
     if (!isPlayerTurn) {
         res.send("Not your turn yet..");
         return;
     } else {
+        console.log("player: ", playerID, "match: ", match_id, "attacker: ", attackerSlot);
         connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
             function (error, rows, fields) {
                 if (error) {
@@ -27,10 +29,12 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                             return;
                         }
                     }
+
                     var attackStatus = rows[0].player_match_character_character_status_id;
                     var attackDamage = rows[0].caracter_attack;
+
                     if (attackStatus == 2) { // check if attack status is 2, meaning if the character already attacked: if it has it can't attack more
-                        res.send("This characte can't attack anymore!");
+                        res.send("This character can't attack anymore!");
                         return;
                     } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
                         connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 2 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [match_id, playerID, attackerSlot],
@@ -52,13 +56,11 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                 }
             })
     }
-}
-
-
+};
 
 router.get('/endTurn', (req, res) => { //ends the turn and passes to the other player
-    var match_id = req.query.match_id;
-    var playerID = req.query.player_id;
+    var match_id = req.session.match;
+    var playerID = req.session.playerID;
 
     connection.execute("SELECT matche_player1_id, matche_player2_id FROM matche WHERE matche_id = " + match_id,
         function (error, rows, fields) {
@@ -97,8 +99,8 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
 
 
 function checkPlayerTurn(req, res, callback) { //is it the player's turn?
-    var player_id = req.body.player_id;
-    var match_id = req.body.match_id;
+    var player_id = req.session.playerID;
+    var match_id = req.session.match;
     connection.execute("SELECT COUNT(*) as count FROM matche where matche_id = ? AND matche_turn_player_id = ? ", [match_id, player_id],
         function (error, rows, fields) {
             if (error || rows[0].count == 0) {
@@ -110,7 +112,7 @@ function checkPlayerTurn(req, res, callback) { //is it the player's turn?
 };
 
 router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from each match
-    var match_id = req.query.match_id;
+    var match_id = req.session.match;
     connection.execute("UPDATE playermatchcharacter SET player_match_character_character_current_HP = 100 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
@@ -121,16 +123,28 @@ router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from e
         });
 });
 
+router.get('/setTo1', (req, res) => { //sets HP of characters to 1 from each match
+    var match_id = req.session.match;
+    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_current_HP = 1 WHERE player_match_character_match_id = ?", [match_id],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                res.send(rows);
+            }
+        });
+});
+
+
 
 router.get('/resetStatusCharacters', (req, res) => { //reset attack status of characters from each match
-    var match_id = req.query.match_id;
+    var match_id = req.session.match;
     console.log(match_id);
     connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
-                console.log(rows);
                 res.send(rows);
             }
         });

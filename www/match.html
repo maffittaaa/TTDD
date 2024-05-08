@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/styleMatch.css">
     <script src="client/matchFunctions.js"></script>
+    <script src="client/attackFunctions.js"></script>
 </head>
+
 <body>
     <h2> Player 1 </h2>
 
@@ -20,10 +23,12 @@
     <div class="characters2" id="characters2">
     </div>
 
-    <h1 class="match"> MATCH <br/> 
-        <input type="button" onclick="endOfTurn()" value="End Turn"> <br/>
-        <input type="button" onclick="resetHPFromCharacters()" value="Reset HP"> <br/>
+    <h1 class="match"> MATCH <br />
+        <input type="button" onclick="endOfTurn()" value="End Turn"> <br />
+        <input type="button" onclick="resetHPFromCharacters()" value="Reset HP"> <br />
         <input type="button" onclick="resetStatusFromCharacters()" value="Reset Attack Status">
+        <input type="button" onclick="setsHPTo1FromCharacters()" value="Everyone Dies">
     </h1>
 </body>
+
 </html>

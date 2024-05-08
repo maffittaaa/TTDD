@@ -5,7 +5,7 @@ var lookingForMatch = false
 var chosing = false
 var slotChosen = 0
 
-function onAwake(){
+function onAwake() {
     $.ajax({
         type: "GET",
         url: "/login/CheckLogin",
@@ -14,7 +14,7 @@ function onAwake(){
             if (data.logged == false) {
                 window.location.replace("/login.html");
                 return false;
-            }else{
+            } else {
                 return true;
             }
         },
@@ -22,9 +22,9 @@ function onAwake(){
             console.log(err);
         }
     })
-    
+
     for (let i = 1; i < 11; i++) {
-        document.getElementById("ch_"+i+"").disabled = true;                
+        document.getElementById("ch_" + i + "").disabled = true;
     }
 
     slots = {
@@ -38,8 +38,23 @@ function onAwake(){
 }
 
 setInterval(checkMatchFound, 1000)
-function checkMatchFound(){
-    if (lookingForMatch){
+function checkMatchFound() {
+    $.ajax({
+        type: "GET",
+        url: "/login/CheckLogin",
+        success: function (data) {
+            console.log(data)
+            if (data.logged == false) {
+                window.location.replace("/login.html");
+                return false;
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+
+    if (lookingForMatch) {
         $.ajax({
             type: "GET",
             url: "/match/checkMatchFound",
@@ -48,7 +63,7 @@ function checkMatchFound(){
                     console.log(data);
                     window.location.replace("/match.html");
                 }
-                else{
+                else {
                     console.log(data);
                 }
             },
@@ -59,73 +74,73 @@ function checkMatchFound(){
     }
 }
 
-function pickCharacters(slot_Id, ch_Id){
-    if (ch_Id != null){
+function pickCharacters(slot_Id, ch_Id) {
+    if (ch_Id != null) {
         var alreadyChosen = false;
-        
+
         for (let i = 1; i < 6; i++) {
-            if(slots["slot_"+ i +""] == ch_Id){
+            if (slots["slot_" + i + ""] == ch_Id) {
                 alreadyChosen = true;
             }
-            console.log(slots["slot_"+ i +""], ch_Id);
+            console.log(slots["slot_" + i + ""], ch_Id);
         }
 
-        if(alreadyChosen == false){
-            document.getElementById("slot_"+slotChosen+"").innerHTML = document.getElementById("ch_"+ch_Id+"").innerHTML;
+        if (alreadyChosen == false) {
+            document.getElementById("slot_" + slotChosen + "").innerHTML = document.getElementById("ch_" + ch_Id + "").innerHTML;
 
-            slots["slot_"+slotChosen+""] = ch_Id;
-    
+            slots["slot_" + slotChosen + ""] = ch_Id;
+
             console.log(slots);
-    
+
             for (let i = 1; i < 6; i++) {
-                document.getElementById("slot_"+i+"").disabled = false;                
+                document.getElementById("slot_" + i + "").disabled = false;
             }
             for (let i = 1; i < 11; i++) {
-                document.getElementById("ch_"+i+"").disabled = true;                
+                document.getElementById("ch_" + i + "").disabled = true;
             }
-    
+
             chosing = false;
-        }else {
+        } else {
             document.getElementById("characters").innerHTML = "You can't pick the same character twice";
         }
-        
-    }else{
+
+    } else {
         if (chosing == true) {
             for (let i = 1; i < 6; i++) {
-                document.getElementById("slot_"+i+"").disabled = false;                
+                document.getElementById("slot_" + i + "").disabled = false;
             }
             for (let i = 1; i < 11; i++) {
-                document.getElementById("ch_"+i+"").disabled = true;                
+                document.getElementById("ch_" + i + "").disabled = true;
             }
 
             chosing = false
-        }else{
+        } else {
             for (let i = 1; i < 6; i++) {
-                document.getElementById("slot_"+i+"").disabled = true;                
+                document.getElementById("slot_" + i + "").disabled = true;
             }
             for (let i = 1; i < 11; i++) {
-                document.getElementById("ch_"+i+"").disabled = false;                
+                document.getElementById("ch_" + i + "").disabled = false;
             }
 
-            document.getElementById("slot_"+slot_Id+"").disabled = false;
+            document.getElementById("slot_" + slot_Id + "").disabled = false;
 
             slotChosen = slot_Id;
-           
+
             chosing = true;
         }
     }
 }
 
-function choseCharacters(){
+function choseCharacters() {
     var empty = true;
-    
+
     for (let i = 1; i < 6; i++) {
-        if (slots["slot_"+ i +""] != 0){
+        if (slots["slot_" + i + ""] != 0) {
             empty = false;
         }
     }
 
-    if(empty == false){
+    if (empty == false) {
         slots = JSON.stringify(slots)
         $.ajax({
             type: "POST",
@@ -135,28 +150,28 @@ function choseCharacters(){
             },
             success: function (data) {
                 console.log(data)
-                if(data.success){
+                if (data.success) {
                     document.getElementById("characters").innerHTML = data.charactersChosen + " chosen. Looking for a match now...";
                     document.getElementById("chosen").disabled = true;
                     lookingForMatch = true;
-                }else{ 
+                } else {
                     slots = JSON.parse(slots);
                     var char = JSON.parse(data.charactersFond);
 
                     document.getElementById("characters").innerHTML = "Chose another character";
-                    
+
                     for (let i = 1; i < 6; i++) {
                         var notIn = true;
 
                         for (let j = 0; j < char.length; j++) {
-                            if(slots["slot_"+ i +""] == char[j] && notIn == true) {
+                            if (slots["slot_" + i + ""] == char[j] && notIn == true) {
                                 notIn = false;
                             }
                         }
 
-                        if(notIn == true){
-                            document.getElementById("slot_"+i+"").innerHTML = "chose slot";
-                            slots["slot_"+ i +""] = 0;
+                        if (notIn == true) {
+                            document.getElementById("slot_" + i + "").innerHTML = "chose slot";
+                            slots["slot_" + i + ""] = 0;
                         }
                     }
                 }
@@ -167,3 +182,5 @@ function choseCharacters(){
         })
     }
 }
+
+

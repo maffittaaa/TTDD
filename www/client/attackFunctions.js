@@ -3,7 +3,8 @@ var targetSlot = 0
 
 function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
-}
+    console.log(slot);
+};
 
 function setTargetSlot(slot) { // if attacker has a slot, target has a slot 
     if (attackerSlot != 0) {
@@ -12,17 +13,13 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot
         attackerSlot = 0;
         targetSlot = 0;
     }
-}
+};
 
-function doAttack1() { // passing the attackerslot and the target slot with the player_id and the match_id to the server
-    var player_id = document.getElementById("player_id").value;
-    var match_id = document.getElementById("match_id").value;
+function doAttack1() { // passing the attackerslot and the targetslot to the server
     $.ajax({
         type: 'POST',
         url: '/attack/attack',
         data: {
-            "player_id": player_id,
-            "match_id": match_id,
             "attackerSlot": attackerSlot,
             "targetSlot": targetSlot
         },
@@ -34,19 +31,13 @@ function doAttack1() { // passing the attackerslot and the target slot with the 
             console.log(err);
         }
     })
-}
+};
 
 function endOfTurn() {
-    var player_id = document.getElementById("player_id").value;
-    var match_id = document.getElementById("match_id").value;
-
     $.ajax({
         type: 'GET',
         url: '/attack/endTurn',
-        data: {
-            "player_id": player_id,
-            "match_id": match_id
-        },
+
         success: function (data) {
             console.log(data);
             document.getElementById("result").innerHTML = "Turn Switched";
@@ -55,16 +46,13 @@ function endOfTurn() {
             console.log(err);
         }
     })
-}
+};
 
 function resetHPFromCharacters() {
-    var match_id = document.getElementById('match_id').value;
     $.ajax({
         type: 'GET',
         url: '/attack/resetHPCharacters',
-        data: {
-            "match_id": match_id,
-        },
+
         success: function (data) {
             console.log(data);
         },
@@ -72,16 +60,13 @@ function resetHPFromCharacters() {
             console.log(err);
         }
     })
-}
+};
 
 function resetStatusFromCharacters() {
-    var match_id = document.getElementById("match_id").value;
     $.ajax({
         type: 'GET',
         url: '/attack/resetStatusCharacters',
-        data: {
-            "match_id": match_id,
-        },
+
         success: function (data) {
             console.log(data);
         },
@@ -89,5 +74,21 @@ function resetStatusFromCharacters() {
             console.log(err);
         }
     })
-}
+};
+
+function setsHPTo1FromCharacters() {
+    $.ajax({
+        type: 'GET',
+        url: '/attack/setTo1',
+
+        success: function (data) {
+            console.log(data);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+};
+
+
 
