@@ -37,7 +37,7 @@ function deltaChanges() {
                 } else if (data.logged == false) {
                     window.location.replace("/login.html");
                 } else {
-                    setCharactersValues(null, data.player, data.player1, data.player2, JSON.parse(data.ch1), JSON.parse(data.ch2), ongoing = true);
+                    setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), ongoing = true);
                 }
             },
             error: function (err) {
