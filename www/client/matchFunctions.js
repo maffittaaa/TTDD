@@ -69,7 +69,7 @@ function matchFinished(player_name) {
 
     document.getElementById('turn').innerHTML = "Match finished, the winner is: " + player_name 
 
-    setInterval(bye, 4000)
+    setInterval(bye, 8000)
 };
 
 function bye(){
