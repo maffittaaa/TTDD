@@ -35,10 +35,21 @@ router.post("/register", (req, res) => {
                                     })
                                 }
                                 else {
-                                    res.send({
-                                        "registered": true,
-                                        "username": user[0],
-                                        "email": user[2]
+                                    connection.execute("INSERT INTO playerCharacter(player_character_player_id, player_character_character_id) VALUES ("+ rows.insertId +", 1);",
+                                    function (err, rows, fields) {
+                                        if (err) {
+                                            res.send({
+                                                "registered": false,
+                                                "message": "something went wrong: " + err
+                                            })
+                                        }
+                                        else {
+                                            res.send({
+                                                "registered": true,
+                                                "username": user[0],
+                                                "email": user[2]
+                                            })
+                                        }
                                     })
                                 }
                             })
