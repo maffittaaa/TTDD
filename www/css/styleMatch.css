@@ -1,16 +1,40 @@
-.player2{
-    text-align: right;
-    /* transform: translateY(-265px); */
+.player1{
+    text-align: left;
+    float: left;
+    color: white;
+    width: 20vw;
+    transform: translateY(5vh);   
+    transform: translateX(5vh);   
 }
 
+.player2{
+    text-align: right;
+    float: right;
+    color: white;
+    width: 20vw;
+    transform: translateY(5vh);   
+    transform: translateX(-5vh);   
+}
+
+.characters1{
+    text-align: left;
+    float: left;
+    color: white;
+    width: 20vw;
+    transform: translateY(15vh);     
+}
 .characters2{
     text-align: right;
-    /* transform: translateY(-265px); */
+    float: right;
+    color: white;
+    width: 20vw;
+    transform: translateY(15vh);      
 }
 
 .match{
     text-align: center;
-    /* transform: translateY(-265px); */
+    color: white;
+    transform: translateY(15vh);   
 }
 
 .front_p1{
@@ -19,4 +43,12 @@
 
 .front_p2{
     transform: translateX(-100px);
+}
+
+.background{
+    width: 100vw ;
+    object-position: 50% 50%;
+    object-fit: cover;
+    z-index: -1;
+    position: absolute;
 }
