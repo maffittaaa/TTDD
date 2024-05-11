@@ -1,3 +1,24 @@
+var started = onAwake()
+ 
+function onAwake() {
+    $.ajax({
+        type: "GET",
+        url: "/login/CheckLogin",
+        success: function (data) {
+            console.log(data)
+            if (data.logged == false) {
+                return false;
+            } else {
+                window.location.replace("/choseCharacters.html");
+                return true;
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
+
 function TryToLogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
