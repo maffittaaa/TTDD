@@ -44,10 +44,7 @@ function deltaChanges() {
                 console.log(err);
             }
         })
-
-
     }
-
 }
 
 function matchFinished() {
