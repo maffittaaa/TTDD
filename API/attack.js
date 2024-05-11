@@ -18,7 +18,7 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
         return;
     } else {
         console.log("player: ", playerID, "match: ", match_id, "attacker: ", attackerSlot);
-        connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
+        connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
             function (error, rows, fields) {
                 if (error) {
                     res.send(error);
@@ -37,12 +37,12 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                         res.send("This character can't attack anymore!");
                         return;
                     } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
-                        connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 2 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [match_id, playerID, attackerSlot],
+                        connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 2 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [match_id, playerID, attackerSlot],
                             function (error, rows, fields) {
                                 if (error) {
                                     res.send(error);
                                 } else {
-                                    connection.execute("UPDATE playermatchcharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_player_id <> " + playerID + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked and give him damage
+                                    connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_player_id <> " + playerID + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked and give him damage
                                         function (error, rows, fields) {
                                             if (error) {
                                                 res.send(error);
@@ -81,7 +81,7 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                             console.error("Error executing UPDATE query:", error);
                             res.send(error);
                         } else {
-                            connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
+                            connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
                                 function (error, rows, fields) {
                                     if (error) {
                                         console.error("Error executing UPDATE query:", error);
@@ -113,7 +113,7 @@ function checkPlayerTurn(req, res, callback) { //is it the player's turn?
 
 router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from each match
     var match_id = req.session.match;
-    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_current_HP = 100 WHERE player_match_character_match_id = ?", [match_id],
+    connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = 100 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
@@ -125,7 +125,7 @@ router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from e
 
 router.get('/setTo1', (req, res) => { //sets HP of characters to 1 from each match
     var match_id = req.session.match;
-    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_current_HP = 1 WHERE player_match_character_match_id = ?", [match_id],
+    connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = 1 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
@@ -140,7 +140,7 @@ router.get('/setTo1', (req, res) => { //sets HP of characters to 1 from each mat
 router.get('/resetStatusCharacters', (req, res) => { //reset attack status of characters from each match
     var match_id = req.session.match;
     console.log(match_id);
-    connection.execute("UPDATE playermatchcharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
+    connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);

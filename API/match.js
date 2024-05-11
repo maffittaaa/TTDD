@@ -129,7 +129,7 @@ router.get("/checkMatchFound", (req, res) => {
 });
 
 router.get("/getMatchData", (req, res) => {
-    connection.execute("SELECT matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM playermatchcharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
+    connection.execute("SELECT matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
                 console.log(err);
@@ -137,7 +137,7 @@ router.get("/getMatchData", (req, res) => {
             } else {
                 if (rows.length > 0) {
 
-                    connection.execute("SELECT matche_player1_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM playermatchcharacter, matche, caracter WHERE player_match_character_player_id = matche_player1_id and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
+                    connection.execute("SELECT matche_player1_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player1_id and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
                         function (err1, rows1, fields1) {
                             if (err1) {
                                 console.log(err1);
@@ -187,7 +187,7 @@ router.post("/choseCharacters", (req, res) => {
     var charactersChosen = req.body.slots;
     charactersChosen = JSON.parse(charactersChosen);
 
-    connection.execute("SELECT caracter_id, caracter_name, caracter_HP FROM player, playercharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
+    connection.execute("SELECT caracter_id, caracter_name, caracter_HP FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
                 res.send(err);
@@ -242,7 +242,7 @@ function addCharacter(req, res, characters, hp, tile) {
 
     //acabar de por os slots/tiles inseridos na base de dados quando os characters sao inseridos. fazer check a se o player é o player 1 ou o 2. falar com a mafaldo sobr os tiles pq se os dois jogadores vao ver-se a si mesmos do lado direit
 
-    connection.execute("INSERT INTO playermatch (player_match_player_id, player_match_match_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "')",
+    connection.execute("INSERT INTO playerMatch (player_match_player_id, player_match_match_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "')",
         function (err, rows, fields) {
             if (err) {
                 console.log("player match: " + err);
@@ -255,7 +255,7 @@ function addCharacter(req, res, characters, hp, tile) {
                     for (let j = 1; j < 6; j++) {
                         if (tile["slot_" + j] == characters[i]) {
 
-                            connection.execute("INSERT INTO playermatchcharacter (player_match_character_player_id, player_match_character_match_id, player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "', '" + characters[i] + "', '" + hp[i] + "', '" + j + "')",
+                            connection.execute("INSERT INTO playerMatchCharacter (player_match_character_player_id, player_match_character_match_id, player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "', '" + characters[i] + "', '" + hp[i] + "', '" + j + "')",
                                 function (err1, rows, fields) {
                                     if (err1) {
                                         console.log("player match character: " + err1);
@@ -287,7 +287,7 @@ router.get("/deltaChanges", (req, res) => {
                         var ch1 = [];
                         var ch2 = [];
 
-                        connection.execute("SELECT player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id, player_match_character_player_id FROM playermatchcharacter, matche WHERE (player_match_character_player_id = " + rows[0].matche_player1_id + " OR player_match_character_player_id = " + rows[0].matche_player2_id + ") AND matche_id = " + req.session.match + " AND player_match_character_match_id = matche_id ",
+                        connection.execute("SELECT player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id, player_match_character_player_id FROM playerMatchCharacter, matche WHERE (player_match_character_player_id = " + rows[0].matche_player1_id + " OR player_match_character_player_id = " + rows[0].matche_player2_id + ") AND matche_id = " + req.session.match + " AND player_match_character_match_id = matche_id ",
                             function (err1, rows1, fields1) {
                                 if (err1) {
                                     console.log(err1);
@@ -341,13 +341,13 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2) {
     var player_id = req.session.playerID;
     var match_id = req.session.match;
 
-    connection.execute("SELECT player_match_character_character_current_HP FROM playermatchcharacter WHERE player_match_character_match_id = ? AND player_match_character_player_id <> ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
+    connection.execute("SELECT player_match_character_character_current_HP FROM playerMatchCharacter WHERE player_match_character_match_id = ? AND player_match_character_player_id <> ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
                 if (rows.length > 0) {
-                    connection.execute("SELECT player_match_character_character_current_HP FROM playermatchcharacter WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
+                    connection.execute("SELECT player_match_character_character_current_HP FROM playerMatchCharacter WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
                         function (error, rows, fields) {
                             if (error) {
                                 res.send(error);
