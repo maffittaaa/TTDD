@@ -7,14 +7,39 @@ router.get("/CheckLogin", (req, res) => {
         res.send({logged: false});
         return
     }
-    res.send(
-        {
-            id: req.session.playerID,
-            name: req.session.playerName,
-            match: req.session.match,
-            logged: req.session.logged != undefined,
-        },
-    );
+
+    connection.execute("SELECT player_character_character_id FROM playerCharacter WHERE player_character_player_id = ?", [req.session.playerID], 
+        function(err, rows, fields){
+            if(err){
+                res.send(err);
+            }
+            else{
+                if(rows.length == 0){
+                    res.send(
+                        {
+                            id: req.session.playerID,
+                            name: req.session.playerName,
+                            characters: "No characters available.",
+                            match: req.session.match,
+                            logged: req.session.logged != undefined,
+                        },
+                    );
+                }else{
+                    res.send(
+                        {
+                            id: req.session.playerID,
+                            name: req.session.playerName,
+                            characters: JSON.stringify(rows),
+                            match: req.session.match,
+                            logged: req.session.logged != undefined,
+                        },
+                    );
+                }
+            }
+        }
+    )
+
+
 });
 
 router.post("/login", (req, res) => {

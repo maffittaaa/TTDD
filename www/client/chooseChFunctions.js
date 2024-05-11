@@ -4,6 +4,7 @@ var slots
 var lookingForMatch = false
 var chosing = false
 var slotChosen = 0
+var char
 
 function onAwake() {
     $.ajax({
@@ -15,6 +16,7 @@ function onAwake() {
                 window.location.replace("/login.html");
                 return false;
             } else {
+                char = JSON.parse(data.characters)
                 document.getElementById("account").innerHTML = data.name + " XP: ";
                 return true;
             }
@@ -25,7 +27,7 @@ function onAwake() {
     })
 
     for (let i = 1; i < 11; i++) {
-        document.getElementById("ch_" + i + "").disabled = true;
+        document.getElementById("ch_" + i).disabled = true;
     }
 
     slots = {
@@ -36,6 +38,16 @@ function onAwake() {
         "slot_5": 0
     }
     console.log("started");
+}
+
+function setCharacters(){
+    for (let i = 1; i < 11; i++) {
+        document.getElementById("ch_" + i).disabled = true;
+    }
+
+    for (let i = 0; i < char.length; i++) {
+        document.getElementById("ch_" + char[i].player_character_character_id).disabled = false;
+    }
 }
 
 setInterval(checkMatchFound, 1000)
@@ -119,9 +131,8 @@ function pickCharacters(slot_Id, ch_Id) {
             for (let i = 1; i < 6; i++) {
                 document.getElementById("slot_" + i + "").disabled = true;
             }
-            for (let i = 1; i < 11; i++) {
-                document.getElementById("ch_" + i + "").disabled = false;
-            }
+
+            setCharacters(char)
 
             document.getElementById("slot_" + slot_Id + "").disabled = false;
 
