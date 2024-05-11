@@ -120,7 +120,7 @@ router.get("/checkMatchFound", (req, res) => {
                         }
                     );
                 } else {
-                    console.log("No match found yet");
+                    // console.log("No match found yet");
                     res.send("No match found yet");
                 }
             }
@@ -129,7 +129,7 @@ router.get("/checkMatchFound", (req, res) => {
 });
 
 router.get("/getMatchData", (req, res) => {
-    connection.execute("SELECT matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
+    connection.execute("SELECT player_username, matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id = player_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
                 console.log(err);
@@ -137,7 +137,7 @@ router.get("/getMatchData", (req, res) => {
             } else {
                 if (rows.length > 0) {
 
-                    connection.execute("SELECT matche_player1_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player1_id and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
+                    connection.execute("SELECT player_username, matche_player1_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player1_id and matche_player1_id = player_id and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id ",
                         function (err1, rows1, fields1) {
                             if (err1) {
                                 console.log(err1);
@@ -151,7 +151,9 @@ router.get("/getMatchData", (req, res) => {
                                             match_id: req.session.match,
                                             player_id: req.session.playerID,
                                             player1_id: rows1[0].matche_player1_id,
+                                            player1_name: rows1[0].player_username,
                                             player2_id: rows[0].matche_player2_id,
+                                            player2_name: rows[0].player_username,
                                             characters_player1: JSON.stringify(rows1),
                                             characters_player2: JSON.stringify(rows)
                                         }

@@ -13,7 +13,7 @@ function onAwake() {
                 var player1_characters = JSON.parse(data.characters_player1);
                 var player2_characters = JSON.parse(data.characters_player2);
 
-                setCharactersValues(data.match_id, data.player_id, data.player1_id, data.player2_id, player1_characters, player2_characters);
+                setCharactersValues(data.match_id, data.player_id, data.player1_id, data.player2_id, data.player1_name, data.player2_name, player1_characters, player2_characters);
 
                 return started = true;
             } else {
@@ -62,7 +62,7 @@ function matchFinished() {
     window.location.replace("/choseCharacters.html");
 };
 
-function setCharactersValues(match, player, p1, p2, ch1, ch2, ongoing = false) {
+function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 
     // it's just because of html order of the slots, when we pass to phaser, this stops existing
     var order = [1, 4, 2, 5, 3];
@@ -114,13 +114,14 @@ function setCharactersValues(match, player, p1, p2, ch1, ch2, ongoing = false) {
             }
         }
     } else {
+
+        console.log("Match: ", match, "\ Players: ", p1_name + " " + p2_name)
+
         for (var i = 1; i < 3; i++) { //corre 2 vezes por serem dois players
             for (let j = 0; j < order.length; j++) { // 5 vezes por ser o tamanho da order e a quantidade de slots disponiveis
                 var placeCh = document.getElementById("characters" + i + "").innerHTML;
 
                 var classe;
-
-                var typeOfAttack; //if its an attacker or a target
 
                 if (order[j] > 3) {
                     classe = "back_p" + i + ""; //characters that are in the back that belongs either to player1 or player2
@@ -146,6 +147,10 @@ function setCharactersValues(match, player, p1, p2, ch1, ch2, ongoing = false) {
         if (p1 == player) {
             //player = ch1
 
+            document.getElementById("player1_id").innerHTML = p1_name
+            document.getElementById("player2_id").innerHTML = p2_name
+            
+
             for (let i = 0; i < ch1.length; i++) {
                 document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = false;
                 document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML = ch1[i].caracter_name + ": " + ch1[i].player_match_character_character_current_HP;
@@ -158,6 +163,9 @@ function setCharactersValues(match, player, p1, p2, ch1, ch2, ongoing = false) {
 
         } else {
             //player = ch2
+
+            document.getElementById("player1_id").innerHTML = p2_name
+            document.getElementById("player2_id").innerHTML = p1_name
 
             for (let i = 0; i < ch2.length; i++) {
                 document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = false;
