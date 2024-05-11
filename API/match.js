@@ -381,19 +381,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                                         if (error) {
                                                             res.send(error);
                                                         } else {
-                                                            req.session.match = null;
-
-                                                            res.send(
-                                                                {
-                                                                    matchFinished: true,
-                                                                    player: req.session.playerID,
-                                                                    winner: otherPlayer_name,
-                                                                    player1: player1,
-                                                                    player2: player2,
-                                                                    ch1: ch1,
-                                                                    ch2: ch2
-                                                                }
-                                                            );
+                                                            updatePlayerStats(otherPlayer_id, player_id, otherPlayer_name, res, req, player1, player2, ch1, ch2)
                                                         }
                                                     }
                                                 )
@@ -407,6 +395,10 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                     )
 
                 } else {
+                    
+                    if(player_id == player1) otherPlayer_id = player2
+                    else if(player_id == player2) otherPlayer_id = player1
+                
                     connection.execute("UPDATE matche SET matche_state_id = 2 WHERE matche_id = ?", [match_id],
                         function (error, rows, fields) {
                             if (error) {
@@ -418,13 +410,46 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                         if (error) {
                                             res.send(error);
                                         } else {
-                                            req.session.match = null;
+                                            updatePlayerStats(player_id, otherPlayer_id, req.session.playerName, res, req, player1, player2, ch1, ch2)
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    )
+                }
+            }
+        })
+};
 
+
+function updatePlayerStats(winner, loser, winner_name, res, req, player1, player2, ch1, ch2){
+    if(winner == req.session.playerID){
+        connection.execute("UPDATE player SET player_victories = player_victories + 1 WHERE player_id = ?", [winner],
+            function (error, rows, fields) {
+                if (error) {
+                    res.send(error);
+                } else {
+                    console.log("updated the winner victories")
+                    connection.execute("UPDATE player SET player_matches = player_matches + 1 WHERE player_id = ?", [winner],
+                        function (error, rows, fields) {
+                            if (error) {
+                                res.send(error);
+                            } else {
+                                console.log("updated the winner matches, loser: ", loser)
+                                connection.execute("UPDATE player SET player_matches = player_matches + 1 WHERE player_id = ?", [loser],
+                                    function (error, rows, fields) {
+                                        if (error) {
+                                            res.send(error);
+                                        } else {
+                                            console.log("updated the loser matches")
+                                            req.session.match = null;   
+        
                                             res.send(
                                                 {
                                                     matchFinished: true,
                                                     player: req.session.playerID,
-                                                    winner: req.session.playerName,
+                                                    winner: winner_name,
                                                     player1: player1,
                                                     player2: player2,
                                                     ch1: ch1,
@@ -439,7 +464,21 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                     )
                 }
             }
-        })
-};
+        )
+    }else{
+        req.session.match = null; 
+        res.send(
+            {
+                matchFinished: true,
+                player: req.session.playerID,
+                winner: winner_name,
+                player1: player1,
+                player2: player2,
+                ch1: ch1,
+                ch2: ch2
+            }
+        );
+    }
+}
 
 module.exports = router;

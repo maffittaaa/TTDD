@@ -15,6 +15,7 @@ function onAwake() {
                 window.location.replace("/login.html");
                 return false;
             } else {
+                document.getElementById("account").innerHTML = data.name + " XP: ";
                 return true;
             }
         },
