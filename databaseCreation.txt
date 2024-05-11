@@ -4,15 +4,15 @@ create table ttdd_database.player (
 
 		player_username VARCHAR(30) not null, 			# player username
 
-		player_email VARCHAR(30), 						# player email
+		player_email VARCHAR(30), 				# player email
 
-		player_password VARCHAR(20), 					# player password
+		player_password VARCHAR(20), 				# player password
 
-		player_level int not null default 0, 						# player level
+		player_level int not null default 0, 			# player level
 
-		player_matches int not null default 0, 					# player matches played
+		player_matches int not null default 0, 			# player matches played
 
-		player_victories int not null default 0, 					# player matches won
+		player_victories int not null default 0, 		# player matches won
 	
 		primary key (player_id)
 
@@ -24,7 +24,7 @@ create table ttdd_database.playerCharacter (
 
 		player_character_player_id int not null, 		# player id in this table
 
-		player_character_character_id int not null, 	# character id in this table
+		player_character_character_id int not null, 		# character id in this table
 
 		primary key (player_character_id)
 
@@ -56,9 +56,9 @@ create table ttdd_database.playerMatchCharacter (
 
 		player_match_character_tile_id int not null, 					# tile id of the character
 
-		player_match_character_character_current_HP int not null, 		# current HP of the characters
+		player_match_character_character_current_HP int not null, 			# current HP of the characters
 
-		player_match_character_character_status_id int not null, 		# status of the characters
+		player_match_character_character_status_id int not null default 1, 		# status of the characters
 
 		primary key (player_match_character_id)
 
@@ -69,9 +69,9 @@ create table ttdd_database.tile (
 
 		tile_id int not null auto_increment,
 
-		tile_x int not null, 				# x coordinates of the tile
+		tile_x int not null, 						# x coordinates of the tile
 
-		tile_y int not null, 				# y coordinates of the tile
+		tile_y int not null, 						# y coordinates of the tile
 
 		primary key (tile_id)
 
@@ -99,13 +99,13 @@ create table ttdd_database.matche (
 
 		matche_player1_id int not null, 			# player1 id in the match
 
-		matche_player2_id int not null, 			# player2 id in this match
+		matche_player2_id int null, 				# player2 id in this match
 
 		matche_state_id int not null, 				# match state
 
-		matche_winner_id int not null, 				# match winner id
+		matche_winner_id int null, 				# match winner id
 		
-		matche_turn_player_id int not null,					#id of the player which is the turn
+		matche_turn_player_id int not null,			# id of the player which is the turn
 
 		primary key (matche_id)
 
@@ -129,7 +129,7 @@ create table ttdd_database.card (
 
 		card_name VARCHAR(30) not null, 			# card name
 
-		card_damage int null, 				# damage of the card
+		card_damage int null, 					# damage of the card
 
 		card_description VARCHAR(60) not null, 			# the attack that the card does
 

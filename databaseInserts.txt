@@ -1,0 +1,50 @@
+insert into card(card_name, card_damage, card_description) values('Thunderstorm', 10, 'damage');
+insert into card(card_name, card_damage, card_description) values('Puke in the Bathroom', null, "2 turns not playing");
+insert into card(card_name, card_damage, card_description) values('Shhhhhhh', null, "1 turn not playing");
+insert into card(card_name, card_damage, card_description) values('Glass on the floor', 5, 'damage');
+insert into card(card_name, card_damage, card_description) values('Finish Him', 100, 'damage');
+insert into card(card_name, card_damage, card_description) values('Cops', null, "1 turn not playing");
+insert into card(card_name, card_damage, card_description) values('Holy Water', null, 'opposite of finish him card');
+insert into card(card_name, card_damage, card_description) values('Sleeping Beauty', 25, '1 turn not playing and damage');
+insert into card(card_name, card_damage, card_description) values('Fountain of Youth', null, 'revive character with 1/3 of HP');
+insert into card(card_name, card_damage, card_description) values('Drunken Power', null, '1 character can attack 2 enemies');
+-- ----------------------------------------------------------------------------------------------------------------------------------
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Madame Crisalda', 100, 3);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Velho Louco', 100, 8);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Mafia Zombie', 100, 4);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Big Billy', 200, 3);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Mister Frank', 100, 8);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Águosto', 100, 6);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Txuki', 100, 4);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Panda', 200, 4);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('João Pardal', 100, 3);
+insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Sandrinho', 100, 4);
+-- ----------------------------------------------------------------------------------------------
+insert into tile(tile_x, tile_y) values(0, 0);
+insert into tile(tile_x, tile_y) values(1, 0);
+insert into tile(tile_x, tile_y) values(2, 0);
+insert into tile(tile_x, tile_y) values(3, 0);
+insert into tile(tile_x, tile_y) values(4, 0);
+-- --------------------------------------------
+insert into matchstate(match_state_name) values ("in queue");
+insert into matchstate(match_state_name) values ("on going");
+insert into matchstate(match_state_name) values ("finished");
+-- --------------------------------------------------------------
+insert into player(player_username, player_email, player_password) values ("barbali", "barbali_2345@gmail.com", "12345");
+insert into player(player_username, player_email, player_password) values ("culiqui", "culiqui_123@gmail.com", "6789");
+-- -----------------------------------------------------------------------------------------------------------------------
+insert into characterStatus(character_status_name) values ("ready");
+insert into characterStatus(character_status_name) values ("not ready");
+-- ----------------------------------------------------------------------
+insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 1);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 2);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 3);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 4);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 5);
+
+insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 6);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 7);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 8);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 9);
+insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 10);
+-- ----------------------------------------------------------------------------------------------------
