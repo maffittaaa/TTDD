@@ -12,26 +12,44 @@
 </head>
 
 <body>
-    <img class="background" src="images/caixa_imprimirv2.png" alt="board">
-    <!-- <img src="images/caixa_imprimirv2.png" alt="caixa"> -->
-    <h2 class="player1" id="player1_id"> Player 1 </h2>
-
-    <h2 class="player2" id="player2_id"> Player 2 </h2>
+    <div class="player1">
+        <h2 id="player1_id"> Player 1 </h2>
     
-    <div id="characters1">
-
-        <div id="result"> </div>
+        <div id="characters1">
+            <div id="result"> </div>
+        </div>
+        
+        <br>
+        <div id="turn"> </div> <br>
     </div>
 
-    <div class="characters2" id="characters2">
+    <div class="player2">
+        <h2 id="player2_id"> Player 2 </h2>
+    
+        <div class="characters2" id="characters2">
+        </div>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <h1 class="match"> MATCH <br />
         <input type="button" onclick="endOfTurn()" value="End Turn"> <br />
         <input type="button" onclick="resetHPFromCharacters()" value="Reset HP"> <br />
         <input type="button" onclick="resetStatusFromCharacters()" value="Reset Attack Status">
         <input type="button" onclick="setsHPTo1FromCharacters()" value="Everyone Dies">
     </h1>
+
+
 </body>
 
 </html>

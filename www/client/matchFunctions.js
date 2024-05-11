@@ -33,10 +33,12 @@ function deltaChanges() {
             url: "/match/deltaChanges",
             success: function (data) {
                 if (data.matchFinished == true) {
-                    matchFinished();
+                    console.log(data)
+                    matchFinished(data.winner);
                 } else if (data.logged == false) {
                     window.location.replace("/login.html");
                 } else {
+                    isItMyTurn(data.turn, data.player)
                     setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), ongoing = true);
                 }
             },
@@ -47,7 +49,16 @@ function deltaChanges() {
     }
 }
 
-function matchFinished() {
+function isItMyTurn(turn_id, player_id){
+    if(turn_id == player_id){
+        document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn."
+    }else{
+        document.getElementById('turn').innerHTML = "Please wait for your turn while the other player does his move."
+    }
+}
+
+function matchFinished(player_name) {
+    started = false
     var order = [1, 4, 2, 5, 3];
 
     for (var i = 1; i < 3; i++) { //runs 2 times because there are 2 players
@@ -56,8 +67,14 @@ function matchFinished() {
         }
     }
 
-    window.location.replace("/choseCharacters.html");
+    document.getElementById('turn').innerHTML = "Match finished, the winner is: " + player_name 
+
+    setInterval(bye, 4000)
 };
+
+function bye(){
+    window.location.replace("/choseCharacters.html");
+}
 
 function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 

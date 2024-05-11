@@ -277,7 +277,7 @@ function addCharacter(req, res, characters, hp, tile) {
 
 router.get("/deltaChanges", (req, res) => {
     if (req.session.playerID && req.session.match) {
-        connection.execute("SELECT matche_player1_id, matche_player2_id FROM matche WHERE (matche_player1_id = " + req.session.playerID + " or matche_player2_id = " + req.session.playerID + " ) and matche_id = " + req.session.match + "",
+        connection.execute("SELECT matche_player1_id, matche_player2_id, matche_turn_player_id FROM matche WHERE (matche_player1_id = " + req.session.playerID + " or matche_player2_id = " + req.session.playerID + " ) and matche_id = " + req.session.match + "",
             function (err, rows, fields) {
                 if (err) {
                     console.log(err);
@@ -312,8 +312,7 @@ router.get("/deltaChanges", (req, res) => {
                                                 }
                                             }
                                         }
-
-                                        didEverybodyDied(req, res, rows[0].matche_player1_id, rows[0].matche_player2_id, JSON.stringify(ch1), JSON.stringify(ch2));
+                                        didEverybodyDied(req, res, rows[0].matche_player1_id, rows[0].matche_player2_id, JSON.stringify(ch1), JSON.stringify(ch2), rows[0].matche_turn_player_id);
 
                                     } else {
                                         console.log("No characters associated with the player");
@@ -339,16 +338,20 @@ router.get("/deltaChanges", (req, res) => {
     }
 });
 
-function didEverybodyDied(req, res, player1, player2, ch1, ch2) {
+function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
     var player_id = req.session.playerID;
     var match_id = req.session.match;
 
-    connection.execute("SELECT player_match_character_character_current_HP FROM playerMatchCharacter WHERE player_match_character_match_id = ? AND player_match_character_player_id <> ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
+
+    connection.execute("SELECT player_username, player_match_character_player_id, player_match_character_character_current_HP FROM playerMatchCharacter, player WHERE player_id = player_match_character_player_id AND player_match_character_match_id = ? AND player_match_character_player_id <> ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
                 if (rows.length > 0) {
+                    var otherPlayer_id = rows[0].player_match_character_player_id
+                    var otherPlayer_name = rows[0].player_username
+
                     connection.execute("SELECT player_match_character_character_current_HP FROM playerMatchCharacter WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
                         function (error, rows, fields) {
                             if (error) {
@@ -358,6 +361,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2) {
                                     res.send(
                                         {
                                             matchFinished: false,
+                                            turn: turn_id,
                                             player: req.session.playerID,
                                             player1: player1,
                                             player2: player2,
@@ -372,16 +376,27 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2) {
                                             if (error) {
                                                 res.send(error);
                                             } else {
-                                                res.send(
-                                                    {
-                                                        matchFinished: true,
-                                                        player: req.session.playerID,
-                                                        player1: player1,
-                                                        player2: player2,
-                                                        ch1: ch1,
-                                                        ch2: ch2
+                                                connection.execute("UPDATE matche SET matche_winner_id = ? WHERE matche_id = ?", [otherPlayer_id, match_id],
+                                                    function (error, rows, fields) {
+                                                        if (error) {
+                                                            res.send(error);
+                                                        } else {
+                                                            req.session.match = null;
+
+                                                            res.send(
+                                                                {
+                                                                    matchFinished: true,
+                                                                    player: req.session.playerID,
+                                                                    winner: otherPlayer_name,
+                                                                    player1: player1,
+                                                                    player2: player2,
+                                                                    ch1: ch1,
+                                                                    ch2: ch2
+                                                                }
+                                                            );
+                                                        }
                                                     }
-                                                );
+                                                )
                                             }
                                         }
                                     )
@@ -397,18 +412,28 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2) {
                             if (error) {
                                 res.send(error);
                             } else {
-                                req.session.match = null;
 
-                                res.send(
-                                    {
-                                        matchFinished: true,
-                                        player: req.session.playerID,
-                                        player1: player1,
-                                        player2: player2,
-                                        ch1: ch1,
-                                        ch2: ch2
+                                connection.execute("UPDATE matche SET matche_winner_id = ? WHERE matche_id = ?", [player_id, match_id],
+                                    function (error, rows, fields) {
+                                        if (error) {
+                                            res.send(error);
+                                        } else {
+                                            req.session.match = null;
+
+                                            res.send(
+                                                {
+                                                    matchFinished: true,
+                                                    player: req.session.playerID,
+                                                    winner: req.session.playerName,
+                                                    player1: player1,
+                                                    player2: player2,
+                                                    ch1: ch1,
+                                                    ch2: ch2
+                                                }
+                                            );
+                                        }
                                     }
-                                );
+                                )
                             }
                         }
                     )

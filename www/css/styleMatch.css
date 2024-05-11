@@ -1,5 +1,14 @@
+.player1{
+    text-align: left;
+    float: left;
+    width: 40vw;
+    /* transform: translateY(-265px); */
+}
+
 .player2{
     text-align: right;
+    float: right;
+    width: 40vw;
     /* transform: translateY(-265px); */
 }
 

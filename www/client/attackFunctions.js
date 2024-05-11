@@ -25,7 +25,7 @@ function doAttack1() { // passing the attackerslot and the targetslot to the ser
         },
         success: function (data) {
             console.log(data);
-            document.getElementById("result").innerHTML = "Oponent Atacked";
+            // document.getElementById("result").innerHTML = "Oponent Atacked";
         },
         error: function (err) {
             console.log(err);
@@ -40,7 +40,7 @@ function endOfTurn() {
 
         success: function (data) {
             console.log(data);
-            document.getElementById("result").innerHTML = "Turn Switched";
+            // document.getElementById("result").innerHTML = "Turn Switched";
         },
         error: function (err) {
             console.log(err);
