@@ -69,7 +69,9 @@ function matchFinished(player_name) {
 
     document.getElementById('turn').innerHTML = "Match finished, the winner is: " + player_name 
 
-    setInterval(bye, 8000)
+    if(player_name != undefined){
+        setInterval(bye, 8000)
+    }
 };
 
 function bye(){
@@ -92,6 +94,10 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch1[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
+                    
+                    if(ch1[i].player_match_character_character_current_HP <= 0){
+                        document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = true
+                    }
                 }
             }
 
@@ -102,6 +108,10 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch2[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
+                    
+                    if(ch2[i].player_match_character_character_current_HP <= 0){
+                        document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = true
+                    }
                 }
             }
 
@@ -114,6 +124,10 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch2[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
+                    
+                    if(ch2[i].player_match_character_character_current_HP <= 0){
+                        document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = true
+                    }
                 }
             }
 
@@ -124,6 +138,10 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch1[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
+                    
+                    if(ch1[i].player_match_character_character_current_HP <= 0){
+                        document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").disabled = true
+                    }
                 }
             }
         }
