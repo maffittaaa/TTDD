@@ -56,7 +56,7 @@ router.post("/login", (req, res) => {
 
                     console.log(req.session)
 
-                    connection.execute("SELECT player_character_character_id FROM playerCharacter WHERE player_character_player_id = ?", [req.session.playerID], 
+                    connection.execute("SELECT player_character_character_id, caracter_range FROM playerCharacter INNER JOIN caracter ON player_character_character_id = caracter_id WHERE player_character_player_id = ?", [req.session.playerID], 
                         function(err, rows, fields){
                             if(err){
                                 res.send(err);
@@ -68,7 +68,7 @@ router.post("/login", (req, res) => {
                                         "message": "No characters available."
                                     })
                                 }else{
-                                    req.session.characters = rows
+                                    req.session.characters = rows;
                                     res.send(
                                         {
                                             "loggedIn": req.session.logged,

@@ -189,7 +189,7 @@ router.post("/choseCharacters", (req, res) => {
     var charactersChosen = req.body.slots;
     charactersChosen = JSON.parse(charactersChosen);
 
-    connection.execute("SELECT caracter_id, caracter_name, caracter_HP, caracter_range FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
+    connection.execute("SELECT caracter_id, caracter_name, caracter_HP FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
                 res.send(err);
@@ -199,7 +199,6 @@ router.post("/choseCharacters", (req, res) => {
                     var charactersNameFound = [];
                     var charactersIdFound = [];
                     var charactersHpFound = [];
-                    var charactersRangeFound = [];
                     var chaSentLength = 0;
 
                     for (var i = 1; i < 6; i++) {
@@ -423,7 +422,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
 };
 
 
-function updatePlayerStats(winner, loser, winner_name, res, req, player1, player2, ch1, ch2){
+function updatePlayerStats(winner, loser, winner_name, res, req, player1, player2, ch1, ch2){ //update player victories
     if(winner == req.session.playerID){
         connection.execute("UPDATE player SET player_victories = player_victories + 1 WHERE player_id = ?", [winner],
             function (error, rows, fields) {

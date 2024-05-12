@@ -1,10 +1,10 @@
-var started = onAwake()
+var started = onAwake();
 
-var slots
-var lookingForMatch = false
-var chosing = false
-var slotChosen = 0
-var char
+var slots;
+var lookingForMatch = false;
+var choosing = false;
+var slotChosen = 0;
+var char;
 
 function onAwake() {
     $.ajax({
@@ -16,7 +16,7 @@ function onAwake() {
                 window.location.replace("/login.html");
                 return false;
             } else {
-                char = JSON.parse(data.characters)
+                char = JSON.parse(data.characters);
                 document.getElementById("account").innerHTML = 'Logged in account: '+ data.name + ' </br> <h6> XP: '+ data.xp +'</br> Matches done: '+ data.matchesDone +' </br> Victories: '+ data.victories +' </h6> ';
                 return true;
             }
@@ -91,7 +91,7 @@ function pickCharacters(slot_Id, ch_Id) {
     if (ch_Id != null) {
         var alreadyChosen = false;
 
-        for (let i = 1; i < 6; i++) {
+        for (let i = 1; i < 6; i++) { //there are 5 slots
             if (slots["slot_" + i + ""] == ch_Id) {
                 alreadyChosen = true;
             }
@@ -99,7 +99,14 @@ function pickCharacters(slot_Id, ch_Id) {
         }
 
         if (alreadyChosen == false) {
-            document.getElementById("slot_" + slotChosen + "").innerHTML = document.getElementById("ch_" + ch_Id + "").innerHTML;
+            if (slotChosen > 3  && ch_Id > 5) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
+                document.getElementById("slot_" + slotChosen + "").innerHTML = document.getElementById("ch_" + ch_Id + "").innerHTML;
+            } else if ( slotChosen > 3 && ch_Id <= 5) {
+                document.getElementById("characters").innerHTML = "Can't place the character there. Not a long-range character.";
+                return;
+            } else {
+                document.getElementById("slot_" + slotChosen + "").innerHTML = document.getElementById("ch_" + ch_Id + "").innerHTML;
+            }
 
             slots["slot_" + slotChosen + ""] = ch_Id;
 
@@ -108,25 +115,25 @@ function pickCharacters(slot_Id, ch_Id) {
             for (let i = 1; i < 6; i++) {
                 document.getElementById("slot_" + i + "").disabled = false;
             }
-            for (let i = 1; i < 11; i++) {
+            for (let i = 1; i < 11; i++) { // there are 10 characters
                 document.getElementById("ch_" + i + "").disabled = true;
             }
 
-            chosing = false;
+            choosing = false;
         } else {
             document.getElementById("characters").innerHTML = "You can't pick the same character twice";
         }
 
     } else {
-        if (chosing == true) {
-            for (let i = 1; i < 6; i++) {
+        if (choosing == true) {
+            for (let i = 1; i < 6; i++) { 
                 document.getElementById("slot_" + i + "").disabled = false;
             }
-            for (let i = 1; i < 11; i++) {
+            for (let i = 1; i < 11; i++) { 
                 document.getElementById("ch_" + i + "").disabled = true;
             }
 
-            chosing = false
+            choosing = false
         } else {
             for (let i = 1; i < 6; i++) {
                 document.getElementById("slot_" + i + "").disabled = true;
@@ -138,7 +145,7 @@ function pickCharacters(slot_Id, ch_Id) {
 
             slotChosen = slot_Id;
 
-            chosing = true;
+            choosing = true;
         }
     }
 }
