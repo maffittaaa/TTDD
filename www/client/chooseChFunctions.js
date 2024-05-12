@@ -17,7 +17,7 @@ function onAwake() {
                 return false;
             } else {
                 char = JSON.parse(data.characters)
-                document.getElementById("account").innerHTML = data.name + " XP: ";
+                document.getElementById("account").innerHTML = 'Logged in account: '+ data.name + ' </br> <h6> XP: '+ data.xp +'</br> Matches done: '+ data.matchesDone +' </br> Victories: '+ data.victories +' </h6> ';
                 return true;
             }
         },

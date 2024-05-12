@@ -1,3 +1,23 @@
 .front{
-    transform: translateX(100px);
+    transform: translateX(50px);
+}
+.back{
+    transform: translateX(-50px);
+}
+
+.close-range{
+    text-align: center;
+    float:inline-start;
+
+    width: 49vw;
+}
+
+.long-range{
+    text-align: center;
+    float: inline-end;
+    width: 49vw;
+}
+
+.characters{
+    text-align: center;
 }
