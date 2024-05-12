@@ -1,10 +1,10 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-    host: 'v7l.h.filess.io',
-    database: 'TTDD2_hungrymay',
+    host: 'wyr.h.filess.io',
+    database: 'TTDD2_sanghopedo',
     port: '3307',
-    user: 'TTDD2_hungrymay',
+    user: 'TTDD2_sanghopedo',
     password: 'Acoteias2015!' ,
 });
 

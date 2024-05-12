@@ -17,7 +17,6 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
         res.send("Not your turn yet..");
         return;
     } else {
-        console.log("player: ", playerID, "match: ", match_id, "attacker: ", attackerSlot);
         connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
             function (error, rows, fields) {
                 if (error) {
@@ -81,7 +80,7 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                             console.error("Error executing UPDATE query:", error);
                             res.send(error);
                         } else {
-                            connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],
+                            connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id], // updates the status to all the characters to ready, so they can all attack again
                                 function (error, rows, fields) {
                                     if (error) {
                                         console.error("Error executing UPDATE query:", error);
@@ -123,7 +122,7 @@ router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from e
         });
 });
 
-router.get('/setTo1', (req, res) => { //sets HP of characters to 1 from each match
+router.get('/setTo1', (req, res) => { //sets HP of all characters from the same match to 1 
     var match_id = req.session.match;
     connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = 1 WHERE player_match_character_match_id = ?", [match_id],
         function (error, rows, fields) {
@@ -137,7 +136,7 @@ router.get('/setTo1', (req, res) => { //sets HP of characters to 1 from each mat
 
 
 
-router.get('/resetStatusCharacters', (req, res) => { //reset attack status of characters from each match
+router.get('/resetStatusCharacters', (req, res) => { //reset attack status of all characters from the same match
     var match_id = req.session.match;
     console.log(match_id);
     connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id],

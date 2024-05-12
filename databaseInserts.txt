@@ -9,16 +9,16 @@ insert into card(card_name, card_damage, card_description) values('Sleeping Beau
 insert into card(card_name, card_damage, card_description) values('Fountain of Youth', null, 'revive character with 1/3 of HP');
 insert into card(card_name, card_damage, card_description) values('Drunken Power', null, '1 character can attack 2 enemies');
 -- ----------------------------------------------------------------------------------------------------------------------------------
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Madame Crisalda', 100, 3);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Velho Louco', 100, 8);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Mafia Zombie', 100, 4);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Big Billy', 200, 3);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Mister Frank', 100, 8);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Águosto', 100, 6);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Txuki', 100, 4);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Panda', 200, 4);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('João Pardal', 100, 3);
-insert into caracter(caracter_name, caracter_HP, caracter_attack) values('Sandrinho', 100, 4);
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Madame Crisalda', 100, 3, 'close-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Mafia Zombie', 100, 4, 'close-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Mister Frank', 100, 8, 'close-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Panda', 200, 4, 'close-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('João Pardal', 100, 3, 'close-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Velho Louco', 100, 8, 'long-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Big Billy', 200, 3, 'long-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Águosto', 100, 6, 'long-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Txuki', 100, 4, 'long-range');
+insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Sandrinho', 100, 4, 'long-range');
 -- ----------------------------------------------------------------------------------------------
 insert into tile(tile_x, tile_y) values(0, 0);
 insert into tile(tile_x, tile_y) values(1, 0);

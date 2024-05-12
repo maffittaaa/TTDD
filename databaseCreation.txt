@@ -87,6 +87,8 @@ create table ttdd_database.caracter (
 		caracter_HP int not null, 						# character HP
 
 		caracter_attack int not null, 						# character damage on attack
+		
+		caracter_range VARCHAR(30) not null, 			# character range
 
 		primary key (caracter_id)
 
@@ -245,7 +247,7 @@ foreign key (matche_state_id) references matchState(match_state_id)
 ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 	-- character_status_id
-alter table playermatchcharacter 
-add constraint playermatchcharacter_fk_characterStatus
+alter table playerMatchCharacter
+add constraint playerMatchCharacter_fk_characterStatus
 foreign key (player_match_character_character_status_id) references characterStatus(character_status_id) 
 ON DELETE NO ACTION ON UPDATE NO ACTION;
