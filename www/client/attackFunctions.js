@@ -1,5 +1,7 @@
 var attackerSlot = 0
 var targetSlot = 0
+var stillAttacking = false
+var cardOnHold
 
 function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
@@ -12,6 +14,8 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot
         doAttack1();
         attackerSlot = 0;
         targetSlot = 0;
+    } else if (stillAttacking = true){
+        playCard(cardOnHold, slot)
     }
 };
 
@@ -25,7 +29,31 @@ function doAttack1() { // passing the attackerslot and the targetslot to the ser
         },
         success: function (data) {
             console.log(data);
-            // document.getElementById("result").innerHTML = "Oponent Atacked";
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+};
+
+function playCard(card_id, charChosen = null) { // player picks a card
+    $.ajax({
+        type: 'POST',
+        url: '/cards/playCard',
+        data: {
+            "cardPicked": card_id,
+            "charChosen": charChosen
+        },
+        success: function (data) {
+            if(data.stillAttacking){
+                stillAttacking = data.stillAttacking
+                cardOnHold = data.card
+            }else if(data.card_id){
+                console.log(data)
+                document.getElementById("card_id_"+ data.card_id ).innerHTML = '<button class="graveyard" id="card_dead_id_'+ data.card_id +'"> '+ data.card_name +' </button>';
+                document.getElementById("card_dead_id_"+ data.card_id).disabled = true;
+                stillAttacking = false
+            }
         },
         error: function (err) {
             console.log(err);
@@ -40,7 +68,6 @@ function endOfTurn() {
 
         success: function (data) {
             console.log(data);
-            // document.getElementById("result").innerHTML = "Turn Switched";
         },
         error: function (err) {
             console.log(err);

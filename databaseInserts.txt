@@ -36,6 +36,9 @@ insert into player(player_username, player_email, player_password) values ("culi
 insert into characterStatus(character_status_name) values ("ready");
 insert into characterStatus(character_status_name) values ("not ready");
 -- ----------------------------------------------------------------------
+insert into deckCardState(deck_card_state_name) values ("on deck");
+insert into deckCardState(deck_card_state_name) values ("in hand");
+-- ----------------------------------------------------------------------
 insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 1);
 insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 10);
 insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 2);

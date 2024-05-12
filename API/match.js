@@ -56,6 +56,7 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
                                                         else {
                                                             req.session.match = rows1[0].matche_id;
                                                             addCharacter(req, res, charactersId, charactersHp, tile);
+                                                            addCards(req, res)
                                                             res.send(
                                                                 {
                                                                     "success": true,
@@ -82,6 +83,7 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
                                                 );
                                             } else {
                                                 req.session.match = rows2.insertId;
+                                                addCards(req, res)
                                                 addCharacter(req, res, charactersId, charactersHp, tile);
                                                 res.send(
                                                     {
@@ -269,6 +271,23 @@ function addCharacter(req, res, characters, hp, tile) {
                         }
                     }
                 }
+            }
+        }
+    )
+}
+
+function addCards(req, res) {
+    connection.execute("INSERT INTO deck(deck_match_id, deck_player_id, deck_card_id, deck_card_state_id) VALUES \
+    ("+ req.session.match +", "+ req.session.playerID +",1, 1), ("+ req.session.match +", "+ req.session.playerID +", 2, 1), ("+ req.session.match +", "+ req.session.playerID +", 3, 1), \
+    ("+ req.session.match +", "+ req.session.playerID +", 4, 1), ("+ req.session.match +", "+ req.session.playerID +", 5, 1), ("+ req.session.match +", "+ req.session.playerID +", 6, 1), \
+    ("+ req.session.match +", "+ req.session.playerID +", 7, 1), ("+ req.session.match +", "+ req.session.playerID +", 8, 1), ("+ req.session.match +", "+ req.session.playerID +", 9, 1), \
+    ("+ req.session.match +", "+ req.session.playerID +", 10, 1) ",
+        function (err, rows, fields) {
+            if (err) {
+                console.log("Deck, card 1: " + err);
+                // res.send(err);
+            } else {
+                console.log("yuppie, ", rows);
             }
         }
     )

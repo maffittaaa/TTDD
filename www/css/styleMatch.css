@@ -19,7 +19,6 @@
 
 .match{
     text-align: center;
-    /* transform: translateY(-265px); */
 }
 
 .front_p1{
@@ -28,4 +27,20 @@
 
 .front_p2{
     transform: translateX(-100px);
+}
+
+.deck{
+    float: inline-end;
+    transform: translateX( -340px);
+    width: 100px;
+    height: 105px;
+}
+
+.graveyard{
+    /* float: inline-end; */
+    transform: translate( 500px, -130px);
+}
+
+.dontbrake{
+    float: left;
 }

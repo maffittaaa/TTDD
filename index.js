@@ -3,6 +3,7 @@ const session = require("express-session");
 const attack = require('./API/attack');
 const login = require('./API/login');
 const register = require('./API/register');
+const cards = require('./API/cards');
 const match = require('./API/match');
 const bodyParser = require('body-parser');
 
@@ -38,6 +39,7 @@ app.use('/attack', attack);
 app.use('/login', login);
 app.use('/register', register);
 app.use('/match', match);
+app.use('/cards', cards);
 
 function resetMatches(){
     connection.execute("UPDATE matche SET matche_state_id = 2",

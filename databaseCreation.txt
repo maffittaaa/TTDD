@@ -1,12 +1,12 @@
-create table ttdd_database.player (
+create table player (
 
 		player_id int not null auto_increment,
 
 		player_username VARCHAR(30) not null, 			# player username
 
-		player_email VARCHAR(30), 				# player email
+		player_email VARCHAR(30), 						# player email
 
-		player_password VARCHAR(20), 				# player password
+		player_password VARCHAR(20), 					# player password
 
 		player_level int not null default 0, 			# player level
 
@@ -18,11 +18,11 @@ create table ttdd_database.player (
 
 );
 
-create table ttdd_database.playerCharacter (
+create table playerCharacter (
 
 		player_character_id int not null auto_increment,
 
-		player_character_player_id int not null, 		# player id in this table
+		player_character_player_id int not null, 			# player id in this table
 
 		player_character_character_id int not null, 		# character id in this table
 
@@ -31,7 +31,7 @@ create table ttdd_database.playerCharacter (
 );
 
 
-create table ttdd_database.playerMatch (
+create table playerMatch (
 
 		player_match_id int not null auto_increment,
 
@@ -44,19 +44,19 @@ create table ttdd_database.playerMatch (
 );
 
 
-create table ttdd_database.playerMatchCharacter (
+create table playerMatchCharacter (
 
 		player_match_character_id int not null auto_increment,
 
-		player_match_character_player_id int not null, 					# player id in this table
+		player_match_character_player_id int not null, 							# player id in this table
 
-		player_match_character_match_id int not null, 					# match id in this table
+		player_match_character_match_id int not null, 							# match id in this table
 
-		player_match_character_character_id int not null, 				# character id in this table
+		player_match_character_character_id int not null, 						# character id in this table
 
-		player_match_character_tile_id int not null, 					# tile id of the character
+		player_match_character_tile_id int not null, 							# tile id of the character
 
-		player_match_character_character_current_HP int not null, 			# current HP of the characters
+		player_match_character_character_current_HP int not null, 				# current HP of the characters
 
 		player_match_character_character_status_id int not null default 1, 		# status of the characters
 
@@ -65,7 +65,7 @@ create table ttdd_database.playerMatchCharacter (
 );
 
 
-create table ttdd_database.tile (
+create table tile (
 
 		tile_id int not null auto_increment,
 
@@ -78,24 +78,24 @@ create table ttdd_database.tile (
 );
 
 
-create table ttdd_database.caracter (
+create table caracter (
 
 		caracter_id int not null auto_increment,
 
-		caracter_name VARCHAR(30) not null, 					# character name
+		caracter_name VARCHAR(30) not null, 				# character name
 
-		caracter_HP int not null, 						# character HP
+		caracter_HP int not null, 							# character HP
 
 		caracter_attack int not null, 						# character damage on attack
 		
-		caracter_range VARCHAR(30) not null, 			# character range
+		caracter_range VARCHAR(30) not null, 				# character range (long or close-range)
 
 		primary key (caracter_id)
 
 );
 
 
-create table ttdd_database.matche (
+create table matche (
 
 		matche_id int not null auto_increment,
 
@@ -105,7 +105,7 @@ create table ttdd_database.matche (
 
 		matche_state_id int not null, 				# match state
 
-		matche_winner_id int null, 				# match winner id
+		matche_winner_id int null, 					# match winner id
 		
 		matche_turn_player_id int not null,			# id of the player which is the turn
 
@@ -114,7 +114,7 @@ create table ttdd_database.matche (
 );
 
 
-create table ttdd_database.matchState (
+create table matchState (
 
 		match_state_id int not null auto_increment,
 
@@ -125,13 +125,13 @@ create table ttdd_database.matchState (
 );
 
 
-create table ttdd_database.card (
+create table card (
 
 		card_id int not null auto_increment,
 
-		card_name VARCHAR(30) not null, 			# card name
+		card_name VARCHAR(30) not null, 				# card name
 
-		card_damage int null, 					# damage of the card
+		card_damage int null, 							# damage of the card
 
 		card_description VARCHAR(60) not null, 			# the attack that the card does
 
@@ -140,11 +140,11 @@ create table ttdd_database.card (
 );
 
 
-create table ttdd_database.deck (
+create table deck (
 
 		deck_id int not null auto_increment,
 
-		deck_card_id int not null, 				# card id
+		deck_card_id int not null, 					# card id
 
 		deck_card_state_id int not null, 			# state of the card on the deck id
 
@@ -157,7 +157,7 @@ create table ttdd_database.deck (
 );
 
 
-create table ttdd_database.deckCardState (
+create table deckCardState (
 
 		deck_card_state_id int not null auto_increment,
 
@@ -167,7 +167,7 @@ create table ttdd_database.deckCardState (
 
 );
 
-create table ttdd_database.characterStatus (
+create table characterStatus (
 
 		character_status_id int not null auto_increment,
 

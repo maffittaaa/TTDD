@@ -67,10 +67,10 @@ function matchFinished(player_name) {
         }
     }
 
-    document.getElementById('turn').innerHTML = "Match finished, the winner is: " + player_name 
+    document.getElementById('turn').innerHTML = "Match finished, the winner is: " + player_name;
 
     if(player_name != undefined){
-        setInterval(bye, 8000)
+        setInterval(bye, 8000);
     }
 };
 
@@ -162,8 +162,13 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 }
 
                 if (i == 1) {
-                    placeCh = placeCh + ' \
-                    <div class='+ classe + '> <button onclick="setAttackerSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> </br> </div>';
+                    if (j == 0) {
+                        placeCh = placeCh + ' \
+                        <div class='+ classe + '> <button onclick="setAttackerSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> <button onclick="pickCard()" class="deck"> Deck </button> </br> </div>';
+                    } else{
+                        placeCh = placeCh + ' \
+                        <div class='+ classe + '> <button onclick="setAttackerSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> </br> </div>';
+                    }
                 } else {
                     placeCh = placeCh + ' \
                     <div class='+ classe + '> <button onclick="setTargetSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> </br> </div>';
