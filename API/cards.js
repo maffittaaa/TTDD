@@ -98,13 +98,115 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
     } else if (cardID == 7) {
         //counter card to finish him and sleaping beauty
     } else if (cardID == 8) {
-        //sleaping beauty 
+        //sleeping beauty 
+        var firstID = req.body.charChosen;
+        var secondID = req.body.secCharChosen;
+        console.log("characterChosen: ", req.body)
+
+        if (firstID && secondID) {
+            console.log("Going to finish him");
+            sleepingBeauty(req, res, playerID, matchID, cardID, firstID, secondID);
+        } else {
+            if(firstID){
+                res.send({
+                    stillAttacking: true,
+                    card: cardID,
+                    charOnHold: firstID 
+                });
+            }else{
+                res.send({
+                    stillAttacking: true,
+                    card: cardID
+                });
+            }
+        }
     } else if (cardID == 9) {
         //Fountain of youth, revive a character
     } else if (cardID == 10) {
         // drunken power, one character attacks two at the same time
     }
 });
+
+function sleepingBeauty(req, res, playerID, matchID, cardID, fistCharID, secondCharID) {
+    connection.execute("SELECT deck_card_id, card_damage, card_name, deck_card_state_id FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_card_id = ? AND deck_card_state_id = 2 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                if (rows.length > 0) {
+                    var cardDamage = rows[0].card_damage;
+                    var cardName = rows[0].card_name;
+                    console.log("card_id: ", cardID);
+
+                    connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_player_id != ? AND player_match_character_match_id = ? and player_match_character_tile_id = ?", [playerID, matchID, fistCharID],
+                        function (err, rows, fields) {
+                            if (err) {
+                                res.send(err);
+                            }
+                            else {
+                                if (rows.length > 0) {
+                                    fistCharID = rows[0].player_match_character_character_id;
+                                    console.log("character_id: ", rows[0].player_match_character_character_id, " Damage: ", cardDamage);
+
+                                    connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_player_id != ? AND player_match_character_match_id = ? and player_match_character_tile_id = ?", [playerID, matchID, secondCharID],
+                                        function (err, rows, fields) {
+                                            if (err) {
+                                                res.send(err);
+                                            }
+                                            else {
+                                                if (rows.length > 0) {
+                                                    secondCharID = rows[0].player_match_character_character_id;
+                                                    
+                                                    console.log("character_id: ", rows[0].player_match_character_character_id, " Damage: ", cardDamage);
+                                    
+                                                    connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + cardDamage + " WHERE player_match_character_character_id = ? AND player_match_character_match_id = ? AND player_match_character_player_id <> ? ", [fistCharID, matchID, playerID],
+                                                        function (error, rows, fields) {
+                                                            if (error) {
+                                                                res.send(error);
+                                                            } else {
+                                                                console.log("almost all updated");
+
+                                                                connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + cardDamage + " WHERE player_match_character_character_id = ? AND player_match_character_match_id = ? AND player_match_character_player_id <> ? ", [secondCharID, matchID, playerID],
+                                                                    function (error, rows, fields) {
+                                                                        if (error) {
+                                                                            res.send(error);
+                                                                        } else {
+                                                                            console.log("almost all msm updated");
+                                                                            connection.execute("UPDATE deck SET deck_card_state_id = 3 WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
+                                                                                function (error, rows, fields) {
+                                                                                    if (error) {
+                                                                                        res.send(error);
+                                                                                    } else {
+                                                                                        console.log("all updated");
+                                                                                        res.send({
+                                                                                            card_id: cardID,
+                                                                                            card_name: cardName
+                                                                                        });
+                                                                                    }
+                                                                                }
+                                                                            );
+                                                                        }
+                                                                    }
+                                                                )
+                                                            }
+                                                        }
+                                                    );
+                                                }
+                                            }
+                                        }
+                                    )
+                                } else {
+                                    res.send("Something not right in here, character: ")
+                                }
+                            }
+                        }
+                    )
+                } else {
+                    res.send("You can't play that card anymore");
+                }
+            }
+        });
+}
 
 function finishHim(req, res, playerID, matchID, cardID, charID) {
     connection.execute("SELECT deck_card_id, card_damage, card_name, deck_card_state_id FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_card_id = ? AND deck_card_state_id = 2 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
@@ -117,7 +219,7 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                     var cardName = rows[0].card_name;
                     console.log("card_id: ", cardID);
 
-                    connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_player_id = ? AND player_match_character_match_id = ? and player_match_character_tile_id = ?", [playerID, matchID, charID],
+                    connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_player_id != ? AND player_match_character_match_id = ? and player_match_character_tile_id = ?", [playerID, matchID, charID],
                         function (err, rows, fields) {
                             if (err) {
                                 res.send(err);
@@ -125,9 +227,9 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                             else {
                                 if (rows.length > 0) {
                                     charID = rows[0].player_match_character_character_id;
-                                    console.log("character_id: ", rows);
+                                    console.log("character_id: ", rows[0].player_match_character_character_id, " Damage: ", cardDamage);
                                     
-                                    connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + cardDamage + " WHERE player_match_character_charater_id = ? AND player_match_character_match_id = ? AND player_match_character_player_id <> ? ", [charID, matchID, playerID],
+                                    connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + cardDamage + " WHERE player_match_character_character_id = ? AND player_match_character_match_id = ? AND player_match_character_player_id <> ? ", [charID, matchID, playerID],
                                         function (error, rows, fields) {
                                             if (error) {
                                                 res.send(error);
@@ -150,7 +252,7 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                                         }
                                     );
                                 } else {
-                                    res.send("Something not right in here, character: ", charID);
+                                    res.send("Something not right in here, character: ")
                                 }
                             }
                         }

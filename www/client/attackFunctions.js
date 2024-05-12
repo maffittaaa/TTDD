@@ -2,6 +2,7 @@ var attackerSlot = 0
 var targetSlot = 0
 var stillAttacking = false
 var cardOnHold
+var charOnHold
 
 function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
@@ -15,7 +16,11 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot
         attackerSlot = 0;
         targetSlot = 0;
     } else if (stillAttacking = true){
-        playCard(cardOnHold, slot)
+        if(charOnHold){
+            playCard(cardOnHold, charOnHold, slot)
+        }else{
+            playCard(cardOnHold, slot)
+        }
     }
 };
 
@@ -36,18 +41,22 @@ function doAttack1() { // passing the attackerslot and the targetslot to the ser
     })
 };
 
-function playCard(card_id, charChosen = null) { // player picks a card
+function playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
     $.ajax({
         type: 'POST',
         url: '/cards/playCard',
         data: {
             "cardPicked": card_id,
-            "charChosen": charChosen
+            "charChosen": charChosen,
+            "secCharChosen": secCharChosen
         },
         success: function (data) {
             if(data.stillAttacking){
                 stillAttacking = data.stillAttacking
                 cardOnHold = data.card
+                if(data.charOnHold){
+                    charOnHold = data.charOnHold
+                }
             }else if(data.card_id){
                 console.log(data)
                 document.getElementById("card_id_"+ data.card_id ).innerHTML = '<button class="graveyard" id="card_dead_id_'+ data.card_id +'"> '+ data.card_name +' </button>';
