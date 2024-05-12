@@ -74,15 +74,18 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
 
     console.log(cardID)
 
+    //thunderstorm card, does 10 damage to every character
     if (cardID == 1) {
-        //thunderstorm card, does 10 damage to everyone
-        takeImidiateDamage(req, res, playerID, matchID, cardID)
+        takeImidiateDamage(req, res, playerID, matchID, cardID);
+    
+    // skip turns, make a general function to skip turns
     } else if (cardID == 2 || cardID == 3 || cardID == 6) {
-        // skip turns, make a general function to skip turns
+    
+    //Glass on the floor
     } else if (cardID == 4) {
-        //Glass on the floor
+    
+    // Finish him
     } else if (cardID == 5) {
-        // Finish him
         var charID = req.body.charChosen;
         console.log("characterChosen: ", charID)
 
@@ -95,8 +98,11 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
                 card: cardID
             });
         }
+    
+    //counter card to finish him and sleaping beauty
     } else if (cardID == 7) {
-        //counter card to finish him and sleaping beauty
+        
+    //sleaping beauty 
     } else if (cardID == 8) {
         //sleeping beauty 
         var firstID = req.body.charChosen;
@@ -121,7 +127,8 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
             }
         }
     } else if (cardID == 9) {
-        //Fountain of youth, revive a character
+        
+    // drunken power, one character attacks two at the same time
     } else if (cardID == 10) {
         // drunken power, one character attacks two at the same time
     }
