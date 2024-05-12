@@ -2,7 +2,7 @@ const express = require('express');
 const connection = require('../database');
 const router = express.Router();
 
-function createMatch(req, res, charactersFond, charactersId, charactersHp, tile) {
+function createMatch(req, res, charactersFound, charactersId, charactersHp, tile) {
     //check if a player is in a match
     connection.execute("SELECT matche_id FROM matche WHERE (matche_state_id = 3 or matche_state_id = 1) and (matche_player1_id = " + req.session.playerID + " or matche_player2_id = " + req.session.playerID + ")",
         function (err, rows, fields) {
@@ -17,7 +17,7 @@ function createMatch(req, res, charactersFond, charactersId, charactersHp, tile)
                         {
                             "success": true,
                             "player_id": req.session.playerID,
-                            "charactersChosen": charactersFond,
+                            "charactersChosen": charactersFound,
                             "match": req.session.match
                         }
                     );
@@ -60,7 +60,7 @@ function createMatch(req, res, charactersFond, charactersId, charactersHp, tile)
                                                                 {
                                                                     "success": true,
                                                                     "player_id": req.session.playerID,
-                                                                    "charactersChosen": charactersFond,
+                                                                    "charactersChosen": charactersFound,
                                                                     "match": req.session.match
                                                                 }
                                                             );
@@ -87,7 +87,7 @@ function createMatch(req, res, charactersFond, charactersId, charactersHp, tile)
                                                     {
                                                         "success": true,
                                                         "player_id": req.session.playerID,
-                                                        "charactersChosen": charactersFond,
+                                                        "charactersChosen": charactersFound,
                                                         "match": req.session.match
                                                     }
                                                 );
@@ -189,26 +189,26 @@ router.post("/choseCharacters", (req, res) => {
     var charactersChosen = req.body.slots;
     charactersChosen = JSON.parse(charactersChosen);
 
-    connection.execute("SELECT caracter_id, caracter_name, caracter_HP FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
+    connection.execute("SELECT caracter_id, caracter_name, caracter_HP, caracter_range FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
                 res.send(err);
             }
             else {
                 if (rows.length > 0) {
-
-                    var charactersNameFond = [];
-                    var charactersIdFond = [];
-                    var charactersHpFond = [];
+                    var charactersNameFound = [];
+                    var charactersIdFound = [];
+                    var charactersHpFound = [];
+                    var charactersRangeFound = [];
                     var chaSentLength = 0;
 
                     for (var i = 1; i < 6; i++) {
                         for (var j = 0; j < rows.length; j++) {
                             if (charactersChosen["slot_" + i + ""] != 0) {
                                 if (rows[j].caracter_id == charactersChosen["slot_" + i + ""]) {
-                                    charactersNameFond.push(" " + rows[j].caracter_name)
-                                    charactersIdFond.push(rows[j].caracter_id);
-                                    charactersHpFond.push(rows[j].caracter_HP);
+                                    charactersNameFound.push(" " + rows[j].caracter_name)
+                                    charactersIdFound.push(rows[j].caracter_id);
+                                    charactersHpFound.push(rows[j].caracter_HP);
                                 }
                             }
                         }
@@ -216,14 +216,14 @@ router.post("/choseCharacters", (req, res) => {
                             chaSentLength++;
                         }
                     }
-                    if (charactersNameFond.length == chaSentLength) {
-                        createMatch(req, res, charactersNameFond, charactersIdFond, charactersHpFond, charactersChosen);
+                    if (charactersNameFound.length == chaSentLength) {
+                        createMatch(req, res, charactersNameFound, charactersIdFound, charactersHpFound, charactersChosen);
                     } else {
                         res.send(
                             {
                                 "success": false,
-                                "message": "Invalid character chosen. Only fond this: ",
-                                "charactersFond": JSON.stringify(charactersIdFond)
+                                "message": "Invalid character chosen. Only found this: ",
+                                "charactersFound": JSON.stringify(charactersIdFound)
                             }
                         );
                     }

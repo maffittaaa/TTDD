@@ -168,7 +168,7 @@ function choseCharacters() {
                     lookingForMatch = true;
                 } else {
                     slots = JSON.parse(slots);
-                    var char = JSON.parse(data.charactersFond);
+                    var char = JSON.parse(data.charactersFound);
 
                     document.getElementById("characters").innerHTML = "Chose another character";
 
