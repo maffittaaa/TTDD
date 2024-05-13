@@ -38,6 +38,7 @@ insert into characterStatus(character_status_name) values ("not ready");
 -- ----------------------------------------------------------------------
 insert into deckCardState(deck_card_state_name) values ("on deck");
 insert into deckCardState(deck_card_state_name) values ("in hand");
+insert into deckCardState(deck_card_state_name) values ("on graveyard");
 -- ----------------------------------------------------------------------
 insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 1);
 insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 10);
