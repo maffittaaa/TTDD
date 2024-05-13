@@ -56,6 +56,7 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
                                                         else {
                                                             req.session.match = rows1[0].matche_id;
                                                             req.session.turnsToSkip = 0
+                                                            req.session.tookCard = true
 
                                                             addCharacter(req, res, charactersId, charactersHp, tile);
                                                             addCards(req, res)
@@ -86,7 +87,7 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
                                             } else {
                                                 req.session.match = rows2.insertId;
                                                 req.session.turnsToSkip = 0
-                                                req.session.tookCard = false
+                                                req.session.tookCard = true
 
                                                 addCards(req, res)
                                                 addCharacter(req, res, charactersId, charactersHp, tile);

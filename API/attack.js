@@ -48,12 +48,15 @@ function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the 
                                             } else {
                                                 res.send(rows);
                                             }
-                                        })
+                                        }
+                                    );
                                 }
-                            });
+                            }
+                        );
                     }
                 }
-            })
+            }
+        );
     }
 };
 
@@ -71,14 +74,14 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                 //check if there is any turns to skip
                 console.log(req.session.turnsToSkip)
 
-                if(req.session.turnsToSkip == 0){
+                if (req.session.turnsToSkip == 0) {
                     if (playerID == rows[0].matche_player1_id) {
                         nextPlayer = rows[0].matche_player2_id;
                     } else if (playerID == rows[0].matche_player2_id) {
                         nextPlayer = rows[0].matche_player1_id;
+                        addRound(req, res, match_id);
                     }
-                    req.session.tookCard = false
-                }else{
+                } else {
                     nextPlayer = playerID
                     req.session.turnsToSkip = req.session.turnsToSkip - 1
                 }
@@ -103,6 +106,42 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
             }
         })
 });
+
+function addRound(req, res, match_id) {
+    connection.execute("UPDATE matche SET matche_round_count = matche_round_count + 1 WHERE matche_id = ?", [match_id],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                connection.execute("SELECT matche_round_count FROM matche WHERE matche_id = ?", [match_id],
+                    function (error, rows, fields) {
+                        if (error) {
+                            res.send(error);
+                        } else {
+                            if (rows.length > 0) {
+                                console.log("rounds: ", rows[0].matche_round_count);
+
+                                var round = rows[0].matche_round_count;
+
+                                console.log(round % 2 == 0);
+
+                                if (round % 2 == 0) {
+                                    req.session.tookCard = false;
+                                } else {
+                                    req.session.tookCard = true;
+                                }
+
+                                console.log("req.sess.tokkcard: ", req.session.tookCard)
+                            } else {
+                                console.log("You are dum, fix your code");
+                            }
+                        }
+                    }
+                );
+            }
+        }
+    );
+}
 
 
 function checkPlayerTurn(req, res, callback) { //is it the player's turn?

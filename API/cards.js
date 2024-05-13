@@ -9,57 +9,74 @@ router.post('/pickCard', (req, res) => {
     var cardID;
     var chosenID;
 
+    console.log("tookCard: ", req.session.tookCard)
     if (req.session.tookCard == false) {
-        req.session.tookCard = true
-        connection.execute("SELECT deck_card_id FROM deck WHERE deck_card_state_id = 1 AND deck_match_id = ? AND deck_player_id = ?", [matchID, playerID],
+
+        connection.execute("SELECT matche_id FROM matche WHERE matche_id = ? AND (matche_player1_id = ? or matche_player2_id = ?) AND matche_turn_player_id = ?", [matchID, playerID, playerID, playerID],
             function (error, rows, fields) {
                 if (error) {
                     res.send(error);
                 } else {
                     if (rows.length > 0) {
-                        //if there is any card available, lets randomize which one leaves the deck
-                        cardID = rows;
-                        var chosenCard = false;
-                        while (chosenCard == false) {
-                            chosenID = Math.floor(Math.random() * 10);
-                            if (chosenID <= cardID.length - 1) {
-                                chosenCard = true;
-                            }
-                        }
-
-                        cardID = cardID[chosenID].deck_card_id;
-                        connection.execute("SELECT deck_card_id FROM deck WHERE deck_card_id = ? AND deck_card_state_id = 1 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
+                        connection.execute("SELECT deck_card_id FROM deck WHERE deck_card_state_id = 1 AND deck_match_id = ? AND deck_player_id = ?", [matchID, playerID],
                             function (error, rows, fields) {
                                 if (error) {
                                     res.send(error);
                                 } else {
-                                    if (rows.length > 0) { //updates the deck_card_state_id to 2 which means that the player already picked up the card from the deck and it's on the player's hand
-                                        connection.execute("UPDATE deck SET deck_card_state_id = 2 WHERE deck_card_id = ? AND deck_player_id = ? AND deck_match_id = ?", [cardID, playerID, matchID],
+                                    if (rows.length > 0) {
+                                        //if there is any card available, randomize which one leaves the deck
+                                        cardID = rows;
+                                        var chosenCard = false;
+                                        while (chosenCard == false) {
+                                            chosenID = Math.floor(Math.random() * 10);
+                                            if (chosenID <= cardID.length - 1) {
+                                                chosenCard = true;
+                                            }
+                                        }
+
+                                        cardID = cardID[chosenID].deck_card_id;
+                                        connection.execute("SELECT deck_card_id FROM deck WHERE deck_card_id = ? AND deck_card_state_id = 1 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
                                             function (error, rows, fields) {
                                                 if (error) {
                                                     res.send(error);
                                                 } else {
-                                                    connection.execute("SELECT card_name, card_id FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_card_state_id = 2 AND deck_card_id = ? AND deck_player_id = ? AND deck_match_id = ?", [cardID, playerID, matchID],
-                                                        // selects the card from the player's hand that he receives
-                                                        function (error, rows, fields) {
-                                                            if (error) {
-                                                                res.send(error);
-                                                            } else {
-                                                                res.send({
-                                                                    cards: JSON.stringify(rows)
-                                                                });
-                                                            }
-                                                        });
+                                                    if (rows.length > 0) { //updates the deck_card_state_id to 2 which means that the player already picked up the card from the deck and it's on the player's hand
+                                                        connection.execute("UPDATE deck SET deck_card_state_id = 2 WHERE deck_card_id = ? AND deck_player_id = ? AND deck_match_id = ?", [cardID, playerID, matchID],
+                                                            function (error, rows, fields) {
+                                                                if (error) {
+                                                                    res.send(error);
+                                                                } else {
+                                                                    connection.execute("SELECT card_name, card_id FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_card_state_id = 2 AND deck_card_id = ? AND deck_player_id = ? AND deck_match_id = ?", [cardID, playerID, matchID],
+                                                                        // selects the card from the player's hand that he receives
+                                                                        function (error, rows, fields) {
+                                                                            if (error) {
+                                                                                res.send(error);
+                                                                            } else {
+                                                                                console.log("tookCard2:", req.session.tookCard);
+                                                                                req.session.tookCard = true;
+                                                                                console.log("tookCard3:", req.session.tookCard);
+                                                                                res.send({
+                                                                                    cards: JSON.stringify(rows)
+                                                                                });
+                                                                            }
+                                                                        });
+                                                                }
+                                                            });
+                                                    } else {
+                                                        res.send("Card already picked!");
+                                                    }
                                                 }
                                             });
                                     } else {
-                                        res.send("Card already picked!");
+                                        //if there is no card available, deck out of cards
+                                        res.send("Deck out of cards");
                                     }
                                 }
-                            });
+                            }
+                        )
                     } else {
-                        //if there is no card available, deck out of cards
-                        res.send("Deck out of cards");
+                        console.log("Not your turn, bitch, sorry");
+                        res.send("Not your turn, bitch, sorry")
                     }
                 }
             }
@@ -133,7 +150,7 @@ router.post('/playCard', (req, res) => {
         if (characterID) {
             fountainOfYouth(req, res, playerID, matchID, cardID, characterID);
         } else {
-              res.send({
+            res.send({
                 stillAttacking: true,
                 card: cardID
             });

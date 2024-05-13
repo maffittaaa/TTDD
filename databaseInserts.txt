@@ -26,9 +26,9 @@ insert into tile(tile_x, tile_y) values(2, 0);
 insert into tile(tile_x, tile_y) values(3, 0);
 insert into tile(tile_x, tile_y) values(4, 0);
 -- --------------------------------------------
-insert into matchstate(match_state_name) values ("in queue");
-insert into matchstate(match_state_name) values ("on going");
-insert into matchstate(match_state_name) values ("finished");
+insert into matchState(match_state_name) values ("in queue");
+insert into matchState(match_state_name) values ("on going");
+insert into matchState(match_state_name) values ("finished");
 -- --------------------------------------------------------------
 insert into player(player_username, player_email, player_password) values ("barbali", "barbali_2345@gmail.com", "12345");
 insert into player(player_username, player_email, player_password) values ("culiqui", "culiqui_123@gmail.com", "6789");
@@ -39,15 +39,15 @@ insert into characterStatus(character_status_name) values ("not ready");
 insert into deckCardState(deck_card_state_name) values ("on deck");
 insert into deckCardState(deck_card_state_name) values ("in hand");
 -- ----------------------------------------------------------------------
-insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 1);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 10);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 2);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 9);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (1, 3);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 1);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 10);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 2);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 9);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (1, 3);
 
-insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 4);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 5);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 6);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 7);
-insert into playercharacter(player_character_player_id, player_character_character_id) values (2, 8);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (2, 4);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (2, 5);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (2, 6);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (2, 7);
+insert into playerCharacter(player_character_player_id, player_character_character_id) values (2, 8);
 -- ----------------------------------------------------------------------------------------------------
