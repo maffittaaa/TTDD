@@ -77,6 +77,7 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                 if (req.session.turnsToSkip == 0) {
                     if (playerID == rows[0].matche_player1_id) {
                         nextPlayer = rows[0].matche_player2_id;
+                        checkRound(req, res, match_id, p1 = true);
                     } else if (playerID == rows[0].matche_player2_id) {
                         nextPlayer = rows[0].matche_player1_id;
                         addRound(req, res, match_id);
@@ -113,31 +114,39 @@ function addRound(req, res, match_id) {
             if (error) {
                 res.send(error);
             } else {
-                connection.execute("SELECT matche_round_count FROM matche WHERE matche_id = ?", [match_id],
-                    function (error, rows, fields) {
-                        if (error) {
-                            res.send(error);
+                checkRound(req, res, match_id);
+            }
+        }
+    );
+}
+
+function checkRound(req, res, match_id, p1 = false){
+    connection.execute("SELECT matche_round_count FROM matche WHERE matche_id = ?", [match_id],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                if (rows.length > 0) {
+                    var round = rows[0].matche_round_count;
+
+                    if(p1){
+                        if (round % 2 !== 0) {
+                            req.session.tookCard = false;
                         } else {
-                            if (rows.length > 0) {
-                                console.log("rounds: ", rows[0].matche_round_count);
-
-                                var round = rows[0].matche_round_count;
-
-                                console.log(round % 2 == 0);
-
-                                if (round % 2 == 0) {
-                                    req.session.tookCard = false;
-                                } else {
-                                    req.session.tookCard = true;
-                                }
-
-                                console.log("req.sess.tokkcard: ", req.session.tookCard)
-                            } else {
-                                console.log("You are dum, fix your code");
-                            }
+                            req.session.tookCard = true;
+                        }
+                    } else{
+                        if (round % 2 == 0) {
+                            req.session.tookCard = false;
+                        } else {
+                            req.session.tookCard = true;
                         }
                     }
-                );
+
+                    console.log("req.sess.tokkcard: ", req.session.tookCard)
+                } else {
+                    console.log("You are dum, fix your code");
+                }
             }
         }
     );

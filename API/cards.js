@@ -364,12 +364,15 @@ function thunderStorm(req, res, playerID, matchID, cardID) {
 
 //general functions to the cards that skip turns
 function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
+    console.log("entered")
     connection.execute("SELECT deck_card_id, card_damage, card_name, deck_card_state_id FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_card_id = ? AND deck_card_state_id = 2 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
         function (error, rows, fields) {
             if (error) {
                 res.send(error);
             } else {
                 if (rows.length > 0) {
+                    console.log("var name being declared")
+
                     var cardName = rows[0].card_name;
 
                     connection.execute("UPDATE deck SET deck_card_state_id = 3 WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
@@ -382,7 +385,9 @@ function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
                                 req.session.turnsToSkip = turnsToSkip
 
                                 console.log("session turns", req.session.turnsToSkip)
-
+                                
+                                
+                                console.log("Ended")
                                 res.send({
                                     card_id: cardID,
                                     card_name: cardName
