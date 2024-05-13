@@ -76,7 +76,7 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
 
     //thunderstorm card, does 10 damage to every character
     if (cardID == 1) {
-        takeImidiateDamage(req, res, playerID, matchID, cardID);
+        takeImediateDamage(req, res, playerID, matchID, cardID);
     
     // skip turns, make a general function to skip turns
     } else if (cardID == 2 || cardID == 3 || cardID == 6) {
@@ -102,9 +102,8 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
     //counter card to finish him and sleaping beauty
     } else if (cardID == 7) {
         
-    //sleaping beauty 
-    } else if (cardID == 8) {
-        //sleeping beauty 
+    //sleeping beauty 
+    } else if (cardID == 8) { 
         var firstID = req.body.charChosen;
         var secondID = req.body.secCharChosen;
         console.log("characterChosen: ", req.body)
@@ -271,7 +270,7 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
         });
 }
 
-function takeImidiateDamage(req, res, playerID, matchID, cardID) {
+function takeImediateDamage(req, res, playerID, matchID, cardID) {
     connection.execute("SELECT deck_card_id, card_damage, card_name, deck_card_state_id FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_card_id = ? AND deck_card_state_id = 2 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
         function (error, rows, fields) {
             if (error) {
@@ -306,9 +305,5 @@ function takeImidiateDamage(req, res, playerID, matchID, cardID) {
             }
         });
 }
-
-// function takeTurns() {
-
-// }
 
 module.exports = router;
