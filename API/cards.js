@@ -9,7 +9,6 @@ router.post('/pickCard', (req, res) => {
     var cardID;
     var chosenID;
 
-    console.log("tookCard: ", req.session.tookCard)
     if (req.session.tookCard == false) {
 
         connection.execute("SELECT matche_id FROM matche WHERE matche_id = ? AND (matche_player1_id = ? or matche_player2_id = ?) AND matche_turn_player_id = ?", [matchID, playerID, playerID, playerID],
@@ -52,9 +51,7 @@ router.post('/pickCard', (req, res) => {
                                                                             if (error) {
                                                                                 res.send(error);
                                                                             } else {
-                                                                                console.log("tookCard2:", req.session.tookCard);
                                                                                 req.session.tookCard = true;
-                                                                                console.log("tookCard3:", req.session.tookCard);
                                                                                 res.send({
                                                                                     cards: JSON.stringify(rows)
                                                                                 });
@@ -159,6 +156,26 @@ router.post('/playCard', (req, res) => {
     } else if (cardID == 10) {
     }
 });
+
+
+//endpoint where if you mouse over a card, it gives the description
+router.get('/getTheDescriptions', (req, res) => {
+    var playerID = req.session.playerID;
+    var matchID = req.session.match;
+    var cardID = req.query.cardPicked;
+
+    console.log("match: ", matchID);
+    console.log("player: ", playerID);
+    console.log("card: ", cardID);
+    connection.execute("SELECT card_id, card_description, card_name FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                res.send(JSON.stringify(rows));
+            }
+        })
+})
 
 //function for the Sleeping Beauty card, her behavior
 function sleepingBeauty(req, res, playerID, matchID, cardID, firstCharID, secondCharID) {
@@ -385,8 +402,8 @@ function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
                                 req.session.turnsToSkip = turnsToSkip
 
                                 console.log("session turns", req.session.turnsToSkip)
-                                
-                                
+
+
                                 console.log("Ended")
                                 res.send({
                                     card_id: cardID,
@@ -403,4 +420,5 @@ function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
         }
     )
 }
+
 module.exports = router;
