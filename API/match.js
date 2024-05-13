@@ -55,6 +55,8 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
                                                         }
                                                         else {
                                                             req.session.match = rows1[0].matche_id;
+                                                            req.session.turnsToSkip = 0
+
                                                             addCharacter(req, res, charactersId, charactersHp, tile);
                                                             addCards(req, res)
                                                             res.send(
@@ -83,6 +85,9 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
                                                 );
                                             } else {
                                                 req.session.match = rows2.insertId;
+                                                req.session.turnsToSkip = 0
+                                                req.session.tookCard = false
+
                                                 addCards(req, res)
                                                 addCharacter(req, res, charactersId, charactersHp, tile);
                                                 res.send(
@@ -146,7 +151,6 @@ router.get("/getMatchData", (req, res) => {
                                 res.send(err1);
                             } else {
                                 if (rows1.length > 0) {
-
                                     res.send(
                                         {
                                             inMatch: true,

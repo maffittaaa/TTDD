@@ -67,12 +67,20 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                 res.send(error);
             } else {
                 var nextPlayer;
-                if (playerID == rows[0].matche_player1_id) {
-                    nextPlayer = rows[0].matche_player2_id;
-                    console.log("Turn Switched!");
-                } else if (playerID == rows[0].matche_player2_id) {
-                    nextPlayer = rows[0].matche_player1_id;
-                    console.log("Turn Switched!");
+
+                //check if there is any turns to skip
+                console.log(req.session.turnsToSkip)
+
+                if(req.session.turnsToSkip == 0){
+                    if (playerID == rows[0].matche_player1_id) {
+                        nextPlayer = rows[0].matche_player2_id;
+                    } else if (playerID == rows[0].matche_player2_id) {
+                        nextPlayer = rows[0].matche_player1_id;
+                    }
+                    req.session.tookCard = false
+                }else{
+                    nextPlayer = playerID
+                    req.session.turnsToSkip = req.session.turnsToSkip - 1
                 }
                 connection.execute("UPDATE matche SET matche_turn_player_id = " + nextPlayer + " WHERE matche_id = " + match_id,
                     function (error, rows, fields) {
@@ -80,7 +88,7 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                             console.error("Error executing UPDATE query:", error);
                             res.send(error);
                         } else {
-                            connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ?", [match_id], // updates the status to all the characters to ready, so they can all attack again
+                            connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 1 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ?", [match_id, playerID], // updates the status to all the characters to ready, so they can all attack again
                                 function (error, rows, fields) {
                                     if (error) {
                                         console.error("Error executing UPDATE query:", error);

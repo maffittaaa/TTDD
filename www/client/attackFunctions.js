@@ -2,11 +2,12 @@ var attackerSlot = 0;
 var targetSlot = 0;
 var stillAttacking = false;
 var cardOnHold;
-var charOnHold = null;
+var characterOnHold = null;
 
 function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
     console.log(slot);
+    playCard(cardOnHold, slot);
 };
 
 function setTargetSlot(slot) { // if attacker has a slot, target has a slot 
@@ -16,8 +17,8 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot
         attackerSlot = 0;
         targetSlot = 0;
     } else if (stillAttacking = true){
-        if(charOnHold != null){
-            playCard(cardOnHold, charOnHold, slot);
+        if(characterOnHold != null){
+            playCard(cardOnHold, characterOnHold, slot);
         }else{
             playCard(cardOnHold, slot);
         }
@@ -52,17 +53,17 @@ function playCard(card_id, charChosen = null, secCharChosen = null) { // player 
         },
         success: function (data) {
             if(data.stillAttacking){
-                stillAttacking = data.stillAttacking
-                cardOnHold = data.card
-                if(data.charOnHold){
-                    charOnHold = data.charOnHold
+                stillAttacking = data.stillAttacking;
+                cardOnHold = data.card;
+                if(data.characterOnHold){
+                    characterOnHold = data.characterOnHold;
                 }
             }else if(data.card_id){
-                console.log(data)
+                console.log(data);
                 document.getElementById("card_id_"+ data.card_id ).innerHTML = '<button class="graveyard" id="card_dead_id_'+ data.card_id +'"> '+ data.card_name +' </button>';
                 document.getElementById("card_dead_id_"+ data.card_id).disabled = true;
                 stillAttacking = false;
-                charOnHold = null;
+                characterOnHold = null;
             }
         },
         error: function (err) {

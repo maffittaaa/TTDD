@@ -51,9 +51,11 @@ function deltaChanges() {
 
 function isItMyTurn(turn_id, player_id){
     if(turn_id == player_id){
-        document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn."
+        document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn." 
+        document.getElementById('endTurn').disabled = false
     }else{
         document.getElementById('turn').innerHTML = "Please wait for your turn while the other player does his move."
+        document.getElementById('endTurn').disabled = true
     }
 }
 
@@ -94,10 +96,11 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch1[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
+                    document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = false
                     
-                    if(ch1[i].player_match_character_character_current_HP <= 0){
-                        document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = true
-                    }
+                    // if(ch1[i].player_match_character_character_current_HP <= 0){
+                    //     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = true
+                    // }
                 }
             }
 
@@ -108,6 +111,7 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch2[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
+                    document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = false
                     
                     if(ch2[i].player_match_character_character_current_HP <= 0){
                         document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = true
@@ -124,10 +128,11 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch2[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
+                    document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = false
                     
-                    if(ch2[i].player_match_character_character_current_HP <= 0){
-                        document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = true
-                    }
+                    // if(ch2[i].player_match_character_character_current_HP <= 0){
+                    //     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = true
+                    // }
                 }
             }
 
@@ -138,6 +143,7 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                 if (character[1] != ch1[i].player_match_character_character_current_HP) {
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
+                    document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").disabled = false
                     
                     if(ch1[i].player_match_character_character_current_HP <= 0){
                         document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").disabled = true
