@@ -1,8 +1,8 @@
-var attackerSlot = 0
-var targetSlot = 0
-var stillAttacking = false
-var cardOnHold
-var charOnHold
+var attackerSlot = 0;
+var targetSlot = 0;
+var stillAttacking = false;
+var cardOnHold;
+var charOnHold = null;
 
 function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
@@ -16,10 +16,10 @@ function setTargetSlot(slot) { // if attacker has a slot, target has a slot
         attackerSlot = 0;
         targetSlot = 0;
     } else if (stillAttacking = true){
-        if(charOnHold){
-            playCard(cardOnHold, charOnHold, slot)
+        if(charOnHold != null){
+            playCard(cardOnHold, charOnHold, slot);
         }else{
-            playCard(cardOnHold, slot)
+            playCard(cardOnHold, slot);
         }
     }
 };
@@ -61,7 +61,8 @@ function playCard(card_id, charChosen = null, secCharChosen = null) { // player 
                 console.log(data)
                 document.getElementById("card_id_"+ data.card_id ).innerHTML = '<button class="graveyard" id="card_dead_id_'+ data.card_id +'"> '+ data.card_name +' </button>';
                 document.getElementById("card_dead_id_"+ data.card_id).disabled = true;
-                stillAttacking = false
+                stillAttacking = false;
+                charOnHold = null;
             }
         },
         error: function (err) {

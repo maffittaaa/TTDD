@@ -16,12 +16,12 @@ router.post('/pickCard', (req, res) => { //player picks a card if it's on deck (
                 if (rows.length > 0) {
                     //if there is any card available, lets randomize which one cames out
                     cardID = rows;
-                    chosen = false
+                    var chosenCard = false;
 
-                    while (chosen == false) {
+                    while (chosenCard == false) {
                         chosenID = Math.floor(Math.random() * 10);
                         if (chosenID <= cardID.length - 1) {
-                            chosen = true;
+                            chosenCard = true;
                         }
                     }
 
@@ -52,15 +52,13 @@ router.post('/pickCard', (req, res) => { //player picks a card if it's on deck (
                                             }
                                         });
                                 } else {
-                                    // console.log("Card already picked");
                                     res.send("Card already picked");
                                 }
                             }
                         });
                 } else {
                     //if there is no card available, deck out of cards
-                    res.send("Deck out of cards")
-                    console.log("Deck out of cards")
+                    res.send("Deck out of cards");
                 }
             }
         }
@@ -72,7 +70,7 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
     var matchID = req.session.match;
     var cardID = req.body.cardPicked;
 
-    console.log(cardID)
+    console.log(cardID);
 
     //thunderstorm card, does 10 damage to every character
     if (cardID == 1) {
@@ -87,7 +85,7 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
     // Finish him
     } else if (cardID == 5) {
         var charID = req.body.charChosen;
-        console.log("characterChosen: ", charID)
+        console.log("characterChosen: ", charID);
 
         if (charID) {
             console.log("Going to finish him");
@@ -104,19 +102,19 @@ router.post('/playCard', (req, res) => { //player plays the card and updates the
         
     //sleeping beauty 
     } else if (cardID == 8) { 
-        var firstID = req.body.charChosen;
-        var secondID = req.body.secCharChosen;
+        var firstCharacterID = req.body.charChosen;
+        var secondCharacterID = req.body.secCharChosen;
         console.log("characterChosen: ", req.body)
 
-        if (firstID && secondID) {
+        if (firstCharacterID && secondCharacterID) {
             console.log("Going to finish him");
-            sleepingBeauty(req, res, playerID, matchID, cardID, firstID, secondID);
+            sleepingBeauty(req, res, playerID, matchID, cardID, firstCharacterID, secondCharacterID);
         } else {
-            if(firstID){
+            if(firstCharacterID){
                 res.send({
                     stillAttacking: true,
                     card: cardID,
-                    charOnHold: firstID 
+                    charOnHold: firstCharacterID 
                 });
             }else{
                 res.send({
@@ -223,7 +221,6 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                 if (rows.length > 0) {
                     var cardDamage = rows[0].card_damage;
                     var cardName = rows[0].card_name;
-                    console.log("card_id: ", cardID);
 
                     connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_player_id != ? AND player_match_character_match_id = ? and player_match_character_tile_id = ?", [playerID, matchID, charID],
                         function (err, rows, fields) {
@@ -231,11 +228,10 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                                 res.send(err);
                             }
                             else {
-                                if (rows.length > 0) {
+                                if (rows.length == 1) {
                                     charID = rows[0].player_match_character_character_id;
-                                    console.log("character_id: ", rows[0].player_match_character_character_id, " Damage: ", cardDamage);
                                     
-                                    connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + cardDamage + " WHERE player_match_character_character_id = ? AND player_match_character_match_id = ? AND player_match_character_player_id <> ? ", [charID, matchID, playerID],
+                                    connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + cardDamage + " WHERE player_match_character_character_id = ? AND player_match_character_match_id = ? AND player_match_character_player_id <> ? ", [charID, matchID, playerID],
                                         function (error, rows, fields) {
                                             if (error) {
                                                 res.send(error);
