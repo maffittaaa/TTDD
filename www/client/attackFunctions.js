@@ -7,7 +7,9 @@ var characterOnHold = null;
 function setAttackerSlot(slot) { //attacker has a slot 
     attackerSlot = slot;
     console.log(slot);
-    playCard(cardOnHold, slot);
+    if (stillAttacking == true) {
+        playCard(cardOnHold, slot);
+    }
 };
 
 function setTargetSlot(slot) { // if attacker has a slot, target has a slot 
