@@ -135,7 +135,7 @@ create table card (
 
 		card_damage int null, 							# damage of the card
 
-		card_description VARCHAR(60) not null, 			# the attack that the card does
+		card_description VARCHAR(200) not null, 			# the attack that the card does
 
 		primary key (card_id)
 
