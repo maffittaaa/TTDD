@@ -190,7 +190,7 @@ function playCard(req, res, canPlay, cardID){
                 fountainOfYouth(req, res, playerID, matchID, cardID, characterID);
             } else {
                 res.send({
-                    stillAttacking: true,
+                    reviving: true,
                     card: cardID
                 });
             }
