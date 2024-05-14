@@ -3,25 +3,27 @@ const connection = require('../database');
 const router = express.Router();
 
 router.post('/attack', (req, res) => { // attack from player 1 to opponent // attack from player 2 to opponent
-    checkPlayerTurn(req, res, doAttack);
+    checkPlayerTurn(req, res, checkCardPlayed);
 });
 
-function doAttack(req, res, isPlayerTurn) { //attack after checking if it's the player's turn
+function doAttack(req, res, canAttack) { //attack after checking if it's the player's turn
     var attackerSlot = req.body.attackerSlot;
     var targetSlot = req.body.targetSlot;
 
     var playerID = req.session.playerID;
     var match_id = req.session.match;
 
-    if (!isPlayerTurn) {
+    if (!canAttack) {
         res.send("Not your turn yet..");
         return;
     } else {
-        connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
+        connection.execute("SELECT caracter_id, caracter_HP, caracter_attack, player_match_character_character_status_id FROM playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_character_current_HP > 0 AND player_match_character_player_id = " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + attackerSlot, //select a character from player to attack
             function (error, rows, fields) {
                 if (error) {
                     res.send(error);
                 } else {
+
+                    
                     if (attackerSlot == 1 || attackerSlot == 2 || attackerSlot == 3) {
                         if (targetSlot == 4 || targetSlot == 5) {
                             console.log("Can't attack that target");
@@ -98,7 +100,15 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                                         console.error("Error executing UPDATE query:", error);
                                         res.send(error);
                                     } else {
-                                        res.send(rows);
+                                        connection.execute("UPDATE deck SET deck_card_played = false WHERE deck_match_id = ? AND deck_player_id = ?", [match_id, playerID],
+                                            function (error, rows, fields) {
+                                                if (error) {
+                                                    res.send(error);
+                                                } else {
+                                                    res.send(rows);
+                                                }
+                                            }
+                                        );
                                     }
                                 }
                             )
@@ -156,15 +166,45 @@ function checkRound(req, res, match_id, p1 = false){
 function checkPlayerTurn(req, res, callback) { //is it the player's turn?
     var player_id = req.session.playerID;
     var match_id = req.session.match;
-    connection.execute("SELECT COUNT(*) as count FROM matche where matche_id = ? AND matche_turn_player_id = ? ", [match_id, player_id],
+    connection.execute("SELECT COUNT(*) as count FROM matche WHERE matche_id = ? AND matche_turn_player_id = ? ", [match_id, player_id],
         function (error, rows, fields) {
             if (error || rows[0].count == 0) {
-                callback(req, res, false);
+                callback(req, res, doAttack, false);
             } else {
-                callback(req, res, true);
+                callback(req, res, doAttack, true);
             }
-        });
+        }
+    );
 };
+
+function checkCardPlayed(req, res, callback, isPlayerTurn) {
+    var playerID = req.session.playerID;
+    var matchID = req.session.match;
+    
+    if(isPlayerTurn){
+        connection.execute("SELECT deck_card_id, deck_card_played FROM deck WHERE deck_card_played = true AND deck_match_id = ? AND deck_player_id = ?", [matchID, playerID],
+            function (error, rows, fields) {
+                if (error) {
+                    res.send(error);
+                } else {
+                    if (rows.length > 0) {
+                        var cardID = rows[0].deck_card_id
+
+                        if (cardID == 1 || cardID == 5 || cardID == 8) {
+                            callback(req, res, false);
+                        }else {
+                            callback(req, res, true);
+                        }
+                    }else{
+                        callback(req, res, true);
+                    }
+                }
+            }
+        )
+    }else{
+        console.log("Not players turn")
+    }
+}
 
 router.get('/resetHPCharacters', (req, res) => { //reset HP of characters from each match
     var match_id = req.session.match;
