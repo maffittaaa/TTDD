@@ -63,7 +63,10 @@ function playCard(card_id, charChosen = null, secCharChosen = null) { // player 
             "secCharChosen": secCharChosen
         },
         success: function (data) {
-            if(data.reviving){
+            if(data.notWorking) {
+                document.getElementById("result").innerHTML = data.message;
+                setInterval(erraseResult, 4000);
+            }else if(data.reviving){
                 reviving = data.reviving;
                 cardOnHold = data.card;
             }else if(data.stillAttacking){
@@ -86,6 +89,10 @@ function playCard(card_id, charChosen = null, secCharChosen = null) { // player 
         }
     })
 };
+
+function erraseResult(){
+    document.getElementById("result").innerHTML = ""
+}
 
 function endOfTurn() {
     $.ajax({

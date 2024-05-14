@@ -99,39 +99,84 @@ router.post('/pickCard', (req, res) => {
 
 router.post('/playCard', (req, res) => {
     var cardID = req.body.cardPicked;
-
-    checkCharacterAttacked(req, res, playCard, cardID);
+    
+    checkPlayerTurn(req, res, cardID);
 })
 
-function checkCharacterAttacked(req, res, callback, cardID) {
+function checkPlayerTurn(req, res, cardID) { //is it the player's turn?
+    var player_id = req.session.playerID;
+    var match_id = req.session.match;
+    connection.execute("SELECT COUNT(*) as count FROM matche WHERE matche_id = ? AND matche_turn_player_id = ? ", [match_id, player_id],
+        function (error, rows, fields) {
+            if (error || rows[0].count == 0) {
+                checkCardPlayed(req, res, false, cardID);
+            } else {
+                checkCardPlayed(req, res, true, cardID);
+            }
+        }
+    );
+};
+
+function checkCardPlayed(req, res, isPlayerTurn, cardID) {
+    var playerID = req.session.playerID;
+    var matchID = req.session.match;
+    
+    if(isPlayerTurn){
+        connection.execute("SELECT deck_card_id, deck_card_played FROM deck WHERE deck_card_played = true AND deck_match_id = ? AND deck_player_id = ?", [matchID, playerID],
+            function (error, rows, fields) {
+                if (error) {
+                    res.send(error);
+                } else {
+                    if (rows.length > 0) {
+                        checkCharacterAttacked(req, res, true, cardID);
+                    }else{
+                        checkCharacterAttacked(req, res, false, cardID);
+                    }
+                }
+            }
+        )
+    }else{
+        res.send({
+            notWorking: true, 
+            message: "Not your turn yet.",
+        })
+    }
+}
+
+function checkCharacterAttacked(req, res, cardPlayed, cardID) {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
 
-    connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_status_id = 2 AND player_match_character_player_id = ? AND player_match_character_match_id = ?",[playerID, matchID],
-        function (error, rows, fields) {
-            if (error) {
-                res.send(error);
-            } else {
-                if (rows.length > 0) {
-                    if (cardID == 1 || cardID == 5 || cardID == 8) {
-                        callback(req, res, false, cardID);
-                    }else {
-                        callback(req, res, true, cardID);
+    if(!cardPlayed){
+        connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_status_id = 2 AND player_match_character_player_id = ? AND player_match_character_match_id = ?",[playerID, matchID],
+            function (error, rows, fields) {
+                if (error) {
+                    res.send(error);
+                } else {
+                    if (rows.length > 0) {
+                        if (cardID == 1 || cardID == 5 || cardID == 8) {
+                            playCard(req, res, false, cardID);
+                        }else {
+                            playCard(req, res, true, cardID);
+                        }
+                    }else{
+                        playCard(req, res, true, cardID);
                     }
-                }else{
-                    callback(req, res, true, cardID);
                 }
             }
-        }
-    )
+        )
+    }else{
+        res.send({
+            notWorking: true,
+            message: "Already played with a card",
+        })
+    }
 }
 
 //endpoint for when the players play a card
 function playCard(req, res, canPlay, cardID){
     var playerID = req.session.playerID;
     var matchID = req.session.match;
-
-    console.log(cardID);
 
     if (canPlay == true) {
         //thunderstorm card, does 10 damage to every character
@@ -206,15 +251,14 @@ function playCard(req, res, canPlay, cardID){
 }
 
 
+
+
 //endpoint where if you mouse over a card, it gives the description
 router.get('/getTheDescriptions', (req, res) => {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
     var cardID = req.query.cardPicked;
-
-    console.log("match: ", matchID);
-    console.log("player: ", playerID);
-    console.log("card: ", cardID);
+    
     connection.execute("SELECT card_id, card_description, card_name FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
         function (error, rows, fields) {
             if (error) {
