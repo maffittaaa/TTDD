@@ -4,7 +4,10 @@ function pickCard() { // player picks a card
         url: '/cards/pickCard',
         success: function (data) {
             console.log(data)
-            if (data.cards) {
+            if (data.notWorking) {
+                document.getElementById("result").innerHTML = data.message;
+                setInterval(erraseResult, 4000);
+            }else if (data.cards) {
                 addCards(JSON.parse(data.cards));
             }
         },
@@ -12,7 +15,11 @@ function pickCard() { // player picks a card
             console.log(err);
         }
     })
-};
+};~
+
+function erraseResult(){
+    document.getElementById("result").innerHTML = ""
+}
 
 function getDescription(card_id) { //get the card description
     $.ajax({

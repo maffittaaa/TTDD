@@ -37,12 +37,20 @@ function doAttack1() { // passing the attackerslot and the targetslot to the ser
         },
         success: function (data) {
             console.log(data);
+            if(data.notWorking){
+                document.getElementById("result").innerHTML = data.message;
+                setInterval(erraseResult, 4000);
+            }
         },
         error: function (err) {
             console.log(err);
         }
     })
 };
+
+function erraseResult(){
+    document.getElementById("result").innerHTML = ""
+}
 
 function playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
     $.ajax({

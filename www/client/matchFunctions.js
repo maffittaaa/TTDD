@@ -51,16 +51,16 @@ function deltaChanges() {
 
 function isItMyTurn(turn_id, player_id){
     if(turn_id == player_id){
-        document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn." 
-        document.getElementById('endTurn').disabled = false
+        document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn.";
+        document.getElementById('endTurn').disabled = false;
     }else{
-        document.getElementById('turn').innerHTML = "Please wait for your turn while the other player does his move."
-        document.getElementById('endTurn').disabled = true
+        document.getElementById('turn').innerHTML = "Please wait for your turn while the other player does his move.";
+        document.getElementById('endTurn').disabled = true;
     }
 }
 
 function matchFinished(player_name) {
-    started = false
+    started = false;
     var order = [1, 4, 2, 5, 3];
 
     for (var i = 1; i < 3; i++) { //runs 2 times because there are 2 players

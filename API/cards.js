@@ -60,27 +60,39 @@ router.post('/pickCard', (req, res) => {
                                                                 }
                                                             });
                                                     } else {
-                                                        res.send("Card already picked!");
+                                                        res.send({
+                                                            notWorking: true,
+                                                            message: "Card already picked!",
+                                                        })
                                                     }
                                                 }
                                             });
                                     } else {
                                         //if there is no card available, deck out of cards
-                                        res.send("Deck out of cards");
+                                        res.send({
+                                            notWorking: true,
+                                            message: "Deck out of cards",
+                                        })
                                     }
                                 }
                             }
                         )
                     } else {
-                        console.log("Not your turn, bitch, sorry");
-                        res.send("Not your turn, bitch, sorry")
+                        console.log("Not your turn, sorry");
+                        res.send({
+                            notWorking: true,
+                            message: "Not your turn, sorry",
+                        })
                     }
                 }
             }
         )
     } else {
-        console.log("You already took a card this turn, sorry");
-        res.send("You already took a card this turn, sorry");
+        console.log("You can't take a card from the deck this turn");
+        res.send({
+            notWorking: true,
+            message: "You can't take a card from the deck this turn",
+        })
     }
 
 });
@@ -450,7 +462,6 @@ function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
                 res.send(error);
             } else {
                 if (rows.length > 0) {
-                    console.log("var name being declared")
 
                     var cardName = rows[0].card_name;
 
@@ -465,13 +476,9 @@ function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
                                         if (error) {
                                             res.send(error);
                                         } else {
-                                            console.log("turns", turnsToSkip)
 
                                             req.session.turnsToSkip = turnsToSkip
 
-                                            console.log("session turns", req.session.turnsToSkip)
-
-                                            console.log("Ended")
                                             res.send({
                                                 card_id: cardID,
                                                 card_name: cardName
