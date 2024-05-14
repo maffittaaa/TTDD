@@ -1,13 +1,13 @@
-insert into card(card_name, card_damage, card_description) values('Thunderstorm', 10, 'damage');
-insert into card(card_name, card_damage, card_description) values('Puke in the Bathroom', null, "2 turns not playing");
-insert into card(card_name, card_damage, card_description) values('Shhhhhhh', null, "1 turn not playing");
-insert into card(card_name, card_damage, card_description) values('Glass on the floor', 5, 'damage');
-insert into card(card_name, card_damage, card_description) values('Finish Him', 100, 'damage');
-insert into card(card_name, card_damage, card_description) values('Cops', null, "1 turn not playing");
-insert into card(card_name, card_damage, card_description) values('Holy Water', null, 'opposite of finish him card');
-insert into card(card_name, card_damage, card_description) values('Sleeping Beauty', 25, '1 turn not playing and damage');
-insert into card(card_name, card_damage, card_description) values('Fountain of Youth', null, 'revive character with 1/3 of HP');
-insert into card(card_name, card_damage, card_description) values('Drunken Power', null, '1 character can attack 2 enemies');
+insert into card(card_name, card_damage, card_description) values('Thunderstorm', 10, '| 10 damage to all characters of the opponent');
+insert into card(card_name, card_damage, card_description) values('Puke in the Bathroom', null, "| The opponent is blocked from playing for 2 turns");
+insert into card(card_name, card_damage, card_description) values('Shhhhhhh', null, "| The opponent is blocked from playing for 1 turn");
+insert into card(card_name, card_damage, card_description) values('Glass on the floor', 5, '| Gives 5 damage for 2 rounds to the characters of the opponent');
+insert into card(card_name, card_damage, card_description) values('Finish Him', 100, '| 100 damage to one character of the opponent of your choice');
+insert into card(card_name, card_damage, card_description) values('Cops', null, "| The opponent is blocked from playing for 1 turn");
+insert into card(card_name, card_damage, card_description) values('Holy Water', null, '| Counter of finish him card');
+insert into card(card_name, card_damage, card_description) values('Sleeping Beauty', 25, '| The opponent is blocked from playing for 1 turn and gives 10 damage to 2 characters of the opponent of your choice');
+insert into card(card_name, card_damage, card_description) values('Fountain of Youth', null, '| Revive one character at your choice with 1/3 of his HP');
+insert into card(card_name, card_damage, card_description) values('Drunken Power', null, '| 1 character can attack 2 characters of the opponent of your choice');
 -- ----------------------------------------------------------------------------------------------------------------------------------
 insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Madame Crisalda', 100, 3, 'close-range');
 insert into caracter(caracter_name, caracter_HP, caracter_attack, caracter_range) values('Mafia Zombie', 100, 4, 'close-range');
