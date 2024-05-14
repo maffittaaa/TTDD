@@ -97,10 +97,6 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
                     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = false
-                    
-                    // if(ch1[i].player_match_character_character_current_HP <= 0){
-                    //     document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = true
-                    // }
                 }
             }
 
@@ -129,10 +125,6 @@ function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, 
                     console.log("character toke damage");
                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = false
-                    
-                    // if(ch2[i].player_match_character_character_current_HP <= 0){
-                    //     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = true
-                    // }
                 }
             }
 
