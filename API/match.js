@@ -282,11 +282,11 @@ function addCharacter(req, res, characters, hp, tile) {
 }
 
 function addCards(req, res) {
-    connection.execute("INSERT INTO deck(deck_match_id, deck_player_id, deck_card_id, deck_card_state_id) VALUES \
-    ("+ req.session.match +", "+ req.session.playerID +",1, 1), ("+ req.session.match +", "+ req.session.playerID +", 2, 1), ("+ req.session.match +", "+ req.session.playerID +", 3, 1), \
-    ("+ req.session.match +", "+ req.session.playerID +", 4, 1), ("+ req.session.match +", "+ req.session.playerID +", 5, 1), ("+ req.session.match +", "+ req.session.playerID +", 6, 1), \
-    ("+ req.session.match +", "+ req.session.playerID +", 7, 1), ("+ req.session.match +", "+ req.session.playerID +", 8, 1), ("+ req.session.match +", "+ req.session.playerID +", 9, 1), \
-    ("+ req.session.match +", "+ req.session.playerID +", 10, 1) ",
+    connection.execute("INSERT INTO deck(deck_match_id, deck_player_id, deck_card_id, deck_card_state_id, deck_card_played) VALUES \
+    ("+ req.session.match +", "+ req.session.playerID +",1, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 2, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 3, 1, false), \
+    ("+ req.session.match +", "+ req.session.playerID +", 4, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 5, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 6, 1, false), \
+    ("+ req.session.match +", "+ req.session.playerID +", 7, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 8, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 9, 1, false), \
+    ("+ req.session.match +", "+ req.session.playerID +", 10, 1, false) ",
         function (err, rows, fields) {
             if (err) {
                 console.log("Deck, card 1: " + err);

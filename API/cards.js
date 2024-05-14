@@ -85,77 +85,113 @@ router.post('/pickCard', (req, res) => {
 
 });
 
-//endpoint for when the players play a card
 router.post('/playCard', (req, res) => {
+    var cardID = req.body.cardPicked;
+
+    checkCharacterAttacked(req, res, playCard, cardID);
+})
+
+function checkCharacterAttacked(req, res, callback, cardID) {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
-    var cardID = req.body.cardPicked;
+
+    connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_status_id = 2 AND player_match_character_player_id = ? AND player_match_character_match_id = ?",[playerID, matchID],
+        function (error, rows, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                if (rows.length > 0) {
+                    if (cardID == 1 || cardID == 5 || cardID == 8) {
+                        callback(req, res, false, cardID);
+                    }else {
+                        callback(req, res, true, cardID);
+                    }
+                }else{
+                    callback(req, res, true, cardID);
+                }
+            }
+        }
+    )
+}
+
+//endpoint for when the players play a card
+function playCard(req, res, canPlay, cardID){
+    var playerID = req.session.playerID;
+    var matchID = req.session.match;
 
     console.log(cardID);
 
-    //thunderstorm card, does 10 damage to every character
-    if (cardID == 1) {
-        thunderStorm(req, res, playerID, matchID, cardID);
-        // skip turns, make a general function to skip turns
-    } else if (cardID == 2) {
-        skipTurns(req, res, cardID, matchID, playerID, 2)
-    } else if (cardID == 3) {
-        skipTurns(req, res, cardID, matchID, playerID, 1)
-        //Glass on the floor
-    } else if (cardID == 4) {
-
-        // Finish him
-    } else if (cardID == 5) {
-        var charID = req.body.charChosen;
-        if (charID) {
-            finishHim(req, res, playerID, matchID, cardID, charID);
-        } else {
-            res.send({
-                stillAttacking: true,
-                card: cardID
-            });
-        }
-    } else if (cardID == 6) {
-        skipTurns(req, res, cardID, matchID, playerID, 1)
-        //counter card to finish him and sleaping beauty
-    } else if (cardID == 7) {
-
-        //sleeping beauty 
-    } else if (cardID == 8) {
-        var firstCharacterID = req.body.charChosen;
-        var secondCharacterID = req.body.secCharChosen;
-
-        if (firstCharacterID && secondCharacterID) {
-            sleepingBeauty(req, res, playerID, matchID, cardID, firstCharacterID, secondCharacterID);
-        } else {
-            if (firstCharacterID) {
-                res.send({
-                    stillAttacking: true,
-                    card: cardID,
-                    characterOnHold: firstCharacterID
-                });
+    if (canPlay == true) {
+        //thunderstorm card, does 10 damage to every character
+        if (cardID == 1) {
+            thunderStorm(req, res, playerID, matchID, cardID);
+            // skip turns, make a general function to skip turns
+        } else if (cardID == 2) {
+            skipTurns(req, res, cardID, matchID, playerID, 2)
+        } else if (cardID == 3) {
+            skipTurns(req, res, cardID, matchID, playerID, 1)
+            //Glass on the floor
+        } else if (cardID == 4) {
+    
+            // Finish him
+        } else if (cardID == 5) {
+            var charID = req.body.charChosen;
+            if (charID) {
+                finishHim(req, res, playerID, matchID, cardID, charID);
             } else {
                 res.send({
                     stillAttacking: true,
                     card: cardID
                 });
             }
+        } else if (cardID == 6) {
+            skipTurns(req, res, cardID, matchID, playerID, 1)
+            //counter card to finish him and sleaping beauty
+        } else if (cardID == 7) {
+    
+            //sleeping beauty 
+        } else if (cardID == 8) {
+            var firstCharacterID = req.body.charChosen;
+            var secondCharacterID = req.body.secCharChosen;
+    
+            if (firstCharacterID && secondCharacterID) {
+                sleepingBeauty(req, res, playerID, matchID, cardID, firstCharacterID, secondCharacterID);
+            } else {
+                if (firstCharacterID) {
+                    res.send({
+                        stillAttacking: true,
+                        card: cardID,
+                        characterOnHold: firstCharacterID
+                    });
+                } else {
+                    res.send({
+                        stillAttacking: true,
+                        card: cardID
+                    });
+                }
+            }
+            //fountain of youth, revives character to 1/3 of his health
+        } else if (cardID == 9) {
+            var characterID = req.body.charChosen;
+            if (characterID) {
+                fountainOfYouth(req, res, playerID, matchID, cardID, characterID);
+            } else {
+                res.send({
+                    stillAttacking: true,
+                    card: cardID
+                });
+            }
+            // drunken power, one character attacks two at the same time
+        } else if (cardID == 10) {
         }
-        //fountain of youth, revives character to 1/3 of his health
-    } else if (cardID == 9) {
-        var characterID = req.body.charChosen;
-        if (characterID) {
-            fountainOfYouth(req, res, playerID, matchID, cardID, characterID);
-        } else {
-            res.send({
-                stillAttacking: true,
-                card: cardID
-            });
-        }
-        // drunken power, one character attacks two at the same time
-    } else if (cardID == 10) {
+    }else{
+        console.log("You can't attack with your characters and use a imediate damage card, chose another card or continue attacking with your characters.")
+        res.send({
+            message: "You can't attack with your characters and use a imediate damage card, chose another card or continue attacking with your characters.",
+        });
     }
-});
+
+}
 
 
 //endpoint where if you mouse over a card, it gives the description
@@ -267,10 +303,18 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                                                             res.send(error);
                                                         } else {
                                                             console.log("all updated");
-                                                            res.send({
-                                                                card_id: cardID,
-                                                                card_name: cardName
-                                                            });
+                                                            connection.execute("UPDATE deck SET deck_card_played = true WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
+                                                                function (error, rows, fields) {
+                                                                    if (error) {
+                                                                        res.send(error);
+                                                                    } else {
+                                                                        res.send({
+                                                                            card_id: cardID,
+                                                                            card_name: cardName
+                                                                        });
+                                                                    }
+                                                                }
+                                                            );
                                                         }
                                                     }
                                                 );
@@ -324,10 +368,18 @@ function fountainOfYouth(req, res, playerID, matchID, cardID, firstCharID) {
                                                             res.send(error);
                                                         } else {
                                                             console.log("yeeeeeeeeeeeeeeeeeeeeey");
-                                                            res.send({
-                                                                card_id: cardID,
-                                                                card_name: cardName
-                                                            });
+                                                            connection.execute("UPDATE deck SET deck_card_played = true WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
+                                                                function (error, rows, fields) {
+                                                                    if (error) {
+                                                                        res.send(error);
+                                                                    } else {
+                                                                        res.send({
+                                                                            card_id: cardID,
+                                                                            card_name: cardName
+                                                                        });
+                                                                    }
+                                                                }
+                                                            );
                                                         }
                                                     });
                                             } else {
@@ -364,12 +416,22 @@ function thunderStorm(req, res, playerID, matchID, cardID) {
                                         if (error) {
                                             res.send(error);
                                         } else {
-                                            res.send({
-                                                card_id: cardID,
-                                                card_name: cardName
-                                            });
+
+                                            connection.execute("UPDATE deck SET deck_card_played = true WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
+                                                function (error, rows, fields) {
+                                                    if (error) {
+                                                        res.send(error);
+                                                    } else {
+                                                        res.send({
+                                                            card_id: cardID,
+                                                            card_name: cardName
+                                                        });
+                                                    }
+                                                }
+                                            );
                                         }
-                                    });
+                                    }
+                                );
                             }
                         });
                 } else {
@@ -397,22 +459,29 @@ function skipTurns(req, res, cardID, matchID, playerID, turnsToSkip) {
                             if (error) {
                                 res.send(error);
                             } else {
-                                console.log("turns", turnsToSkip)
 
-                                req.session.turnsToSkip = turnsToSkip
+                                connection.execute("UPDATE deck SET deck_card_played = true WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
+                                    function (error, rows, fields) {
+                                        if (error) {
+                                            res.send(error);
+                                        } else {
+                                            console.log("turns", turnsToSkip)
 
-                                console.log("session turns", req.session.turnsToSkip)
+                                            req.session.turnsToSkip = turnsToSkip
 
+                                            console.log("session turns", req.session.turnsToSkip)
 
-                                console.log("Ended")
-                                res.send({
-                                    card_id: cardID,
-                                    card_name: cardName
-                                });
+                                            console.log("Ended")
+                                            res.send({
+                                                card_id: cardID,
+                                                card_name: cardName
+                                            });
+                                        }
+                                    }
+                                );
                             }
                         }
                     );
-
                 } else {
                     res.send("You can't play that card anymore!")
                 }
