@@ -137,14 +137,14 @@ function playCard(req, res, canPlay, cardID){
         //thunderstorm card, does 10 damage to every character
         if (cardID == 1) {
             thunderStorm(req, res, playerID, matchID, cardID);
-            // skip turns, make a general function to skip turns
         } else if (cardID == 2) {
-            skipTurns(req, res, cardID, matchID, playerID, 2)
+            skipTurns(req, res, cardID, matchID, playerID, 2);
         } else if (cardID == 3) {
-            skipTurns(req, res, cardID, matchID, playerID, 1)
-            //Glass on the floor
+            skipTurns(req, res, cardID, matchID, playerID, 1);
+
+            //Glass on the floor, not done yet
         } else if (cardID == 4) {
-    
+            
             // Finish him
         } else if (cardID == 5) {
             var charID = req.body.charChosen;
@@ -157,8 +157,9 @@ function playCard(req, res, canPlay, cardID){
                 });
             }
         } else if (cardID == 6) {
-            skipTurns(req, res, cardID, matchID, playerID, 1)
-            //counter card to finish him and sleaping beauty
+            skipTurns(req, res, cardID, matchID, playerID, 1);
+
+            //counter card to finish him and sleaping beauty, not done yet
         } else if (cardID == 7) {
     
             //sleeping beauty 
@@ -193,11 +194,10 @@ function playCard(req, res, canPlay, cardID){
                     card: cardID
                 });
             }
-            // drunken power, one character attacks two at the same time
+            // drunken power, one character attacks two at the same time, not done yet
         } else if (cardID == 10) {
         }
     }else{
-        console.log("You can't attack with your characters and use a imediate damage card, chose another card or continue attacking with your characters.")
         res.send({
             message: "You can't attack with your characters and use a imediate damage card, chose another card or continue attacking with your characters.",
         });
@@ -308,13 +308,11 @@ function finishHim(req, res, playerID, matchID, cardID, charID) {
                                             if (error) {
                                                 res.send(error);
                                             } else {
-                                                console.log("almost all updated");
                                                 connection.execute("UPDATE deck SET deck_card_state_id = 3 WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
                                                     function (error, rows, fields) {
                                                         if (error) {
                                                             res.send(error);
                                                         } else {
-                                                            console.log("all updated");
                                                             connection.execute("UPDATE deck SET deck_card_played = true WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
                                                                 function (error, rows, fields) {
                                                                     if (error) {
@@ -362,7 +360,6 @@ function fountainOfYouth(req, res, playerID, matchID, cardID, firstCharID) {
                             }
                             else {
                                 firstCharID = rows[0].player_match_character_character_id;
-                                console.log("inside the function: ", firstCharID);
                                 connection.execute("SELECT player_match_character_character_current_HP, caracter_HP FROM playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_character_id = ?", [matchID, playerID, firstCharID], //select the caracter_id together with the hp in general of that caracter and his current hp on the match
                                     function (error, rows, fields) {
                                         if (error) {
@@ -370,16 +367,12 @@ function fountainOfYouth(req, res, playerID, matchID, cardID, firstCharID) {
                                         } else {
                                             var characterCurrentHP = rows[0].player_match_character_character_current_HP;
                                             var characterRealHP = rows[0].caracter_HP;
-                                            console.log("characterCurrentHP: ", characterCurrentHP);
-                                            console.log("characterRealHP: ", characterRealHP);
                                             if (characterCurrentHP <= 0) {
-                                                console.log("characterCurrentHP - Part2: ", characterCurrentHP);
                                                 connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = " + characterRealHP + " / 3 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_character_id = ?", [matchID, playerID, firstCharID],
                                                     function (error, rows, fields) {
                                                         if (error) {
                                                             res.send(error);
                                                         } else {
-                                                            console.log("yeeeeeeeeeeeeeeeeeeeeey");
                                                             connection.execute("UPDATE deck SET deck_card_played = true WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
                                                                 function (error, rows, fields) {
                                                                     if (error) {
