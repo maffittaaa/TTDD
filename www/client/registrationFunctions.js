@@ -23,12 +23,14 @@ function TryToLogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
+    var encryptedPassword = encryptPassword(password);
+
     $.ajax({
         type: "POST",
         url: "/login/login",
         data: {
             "login_name": username,
-            "login_password": password,
+            "login_password": encryptedPassword,
         },
         success: function (data) {
             console.log(data);
@@ -45,19 +47,30 @@ function TryToLogin(){
     })
 }
 
+function encryptPassword(password) {
+    const hashedPassword = CryptoJS.SHA256(password).toString();
+    return hashedPassword;
+}
+
 function TryToRegister(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var check_password = document.getElementById("check_password").value;
     var email = document.getElementById("email").value;
+    
+    if (password !== check_password) {
+        document.getElementById("message").innerHTML = "Passwords do not match!";
+        return;
+    }
+
+    var encryptedPassword = encryptPassword(password);
 
     $.ajax({
         type: "POST",
         url: "/register/register",
         data: {
             "login_name": username,
-            "login_password": password,
-            "login_check_password": check_password,
+            "login_password": encryptedPassword,
             "login_email": email
         },
         success: function (data) {
