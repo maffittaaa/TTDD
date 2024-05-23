@@ -1,0 +1,162 @@
+{
+    "id": "6cf4c3ef-83f9-4ae8-af19-8e49ee536597",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "CharactersAndCards",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "1ca3bb61-ac8b-4cca-b5e0-a852bef01dac",
+            "label": "specasdossheets",
+            "texture": {
+                "key": "Specasdossheets"
+            },
+            "x": 640,
+            "y": 360,
+            "scaleX": 0.66666,
+            "scaleY": 0.66666
+        },
+        {
+            "type": "Image",
+            "id": "f87f0a82-9538-4d58-b16e-411ca406a961",
+            "label": "cartas2_Imprimir0",
+            "texture": {
+                "key": "cartas2_Imprimir",
+                "frame": 0
+            },
+            "x": 178,
+            "y": 405,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "aef44df7-1d32-40e9-8dd1-1749c493e8a0",
+            "label": "cartas1_Imprimir8",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 8
+            },
+            "x": 101,
+            "y": 117,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "90b189af-0619-4764-b330-c9189c1187ec",
+            "label": "cartas1_Imprimir7",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 7
+            },
+            "x": 209,
+            "y": 119,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "23c1e259-f147-46b0-9bbf-09e8141ba4de",
+            "label": "cartas1_Imprimir6",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 6
+            },
+            "x": 467,
+            "y": 161,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "c1d4b19f-2c97-4b71-93ab-ebf37f0ffa5e",
+            "label": "cartas1_Imprimir5",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 5
+            },
+            "x": 640,
+            "y": 161,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "ecab909b-7a4b-4b2d-943b-fa5a638569cd",
+            "label": "cartas1_Imprimir4",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 4
+            },
+            "x": 815,
+            "y": 161,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "6808405b-21ef-4c39-b35f-50ba5cedb5d9",
+            "label": "cartas1_Imprimir3",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 3
+            },
+            "x": 983,
+            "y": 161,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "bab646eb-5353-4f14-b6ee-962a8f927bff",
+            "label": "cartas1_Imprimir2",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 2
+            },
+            "x": 1149,
+            "y": 161,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "c7804d27-2018-442a-9008-fdc5ee917b8c",
+            "label": "cartas1_Imprimir1",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 1
+            },
+            "x": 469,
+            "y": 400,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        },
+        {
+            "type": "Image",
+            "id": "294c69f7-17d3-4ab2-8896-dbbf741c2e0e",
+            "label": "cartas1_Imprimir0",
+            "texture": {
+                "key": "cartas1_Imprimir",
+                "frame": 0
+            },
+            "x": 815,
+            "y": 400,
+            "scaleX": 0.3,
+            "scaleY": 0.3
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

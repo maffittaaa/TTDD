@@ -10,26 +10,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Register </h1>
-     <form class="info" method="post" action="register"> <!--action tem de dar match ao end point do servidor -->
-        <div class="login">
-            Username: </br>
-            <input type="text" id="username" name="username"></br></br>
-            </br>
-            Email: </br>
-            <input type="text" id="email" name="password"></br></br>
-            </br>
-            Password: </br>
-            <input type="password" id="password" name="password"></br></br>
-            </br>
-            Confirm password: </br>
-            <input type="password" id="check_password" name="password"></br>
-        </div>
-        <input type="button" onclick="TryToRegister()" value="Register"></br></br>
-        <input type="button" onclick="GoToLogin()" value="Login"> </br></br>
 
-        <!-- <div class="pop-up" id="result"></div> -->
+    <div id="navbar"> <br> <br> </div>
+
+    <div class="container">
+        <span id="title">Register</span><br/><br/>
+        <input type="text" id="username" placeholder="Username"><br/>
+        <input type="text" id="email" placeholder="Email"><br/>
+        <input type="password" id="password" placeholder="Password"><br/>
+        <input type="password" id="password2" placeholder="Confirm Password"><br/>
         <div id="message"></div>
-    </form>
+        <input type="button" onclick="TryToRegister()" value="Register"><br/>
+        <a id="redirect" href="login.html"> Already created an account? Login</a>
+    </div>
+
 </body>
 </html>

@@ -59,7 +59,7 @@ class Preload extends Phaser.Scene {
 
 		this.editorCreate();
 
-		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Register"));
+		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("ChooseCharactersMenu"));
 	}
 
 	/* END-USER-CODE */

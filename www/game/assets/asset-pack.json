@@ -1,0 +1,143 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/base.png",
+                "frameConfig": {
+                    "frameWidth": 150,
+                    "frameHeight": 150,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 26,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "base"
+            },
+            {
+                "url": "assets/board_imprimir.png",
+                "type": "image",
+                "key": "board_imprimir"
+            },
+            {
+                "url": "assets/cartas1_Imprimir.png",
+                "frameConfig": {
+                    "frameWidth": 304,
+                    "frameHeight": 432,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 16,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "cartas1_Imprimir"
+            },
+            {
+                "url": "assets/cartas2_Imprimir.png",
+                "frameConfig": {
+                    "frameWidth": 304,
+                    "frameHeight": 432,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 16,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "cartas2_Imprimir"
+            },
+            {
+                "url": "assets/cartas3_Imprimir.png",
+                "frameConfig": {
+                    "frameWidth": 304,
+                    "frameHeight": 432,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 16,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "cartas3_Imprimir"
+            },
+            {
+                "url": "assets/cartas4_Imprimir.png",
+                "frameConfig": {
+                    "frameWidth": 304,
+                    "frameHeight": 432,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 16,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "cartas4_Imprimir"
+            },
+            {
+                "url": "src/scenes/CharactersAndCards.js",
+                "type": "sceneFile",
+                "key": "CharactersAndCards"
+            },
+            {
+                "url": "src/scenes/ChooseCharactersMenu.js",
+                "type": "sceneFile",
+                "key": "ChooseCharactersMenu"
+            },
+            {
+                "url": "assets/dino.png",
+                "key": "dino",
+                "type": "image"
+            },
+            {
+                "url": "src/scripts/GoToChooseCharacters.js",
+                "type": "script",
+                "key": "GoToChooseCharacters"
+            },
+            {
+                "url": "src/scripts/GoToProfile.js",
+                "type": "script",
+                "key": "GoToProfile"
+            },
+            {
+                "url": "src/scripts/HandleChooseMechanism.js",
+                "type": "script",
+                "key": "HandleChooseMechanism"
+            },
+            {
+                "url": "src/scenes/Login.js",
+                "type": "sceneFile",
+                "key": "Login"
+            },
+            {
+                "url": "src/scenes/Match.js",
+                "type": "sceneFile",
+                "key": "Match"
+            },
+            {
+                "url": "src/scenes/Profile.js",
+                "type": "sceneFile",
+                "key": "Profile"
+            },
+            {
+                "url": "src/scenes/Register.js",
+                "type": "sceneFile",
+                "key": "Register"
+            },
+            {
+                "url": "assets/Specasdossheets.png",
+                "type": "image",
+                "key": "Specasdossheets"
+            },
+            {
+                "url": "assets/Tipsy_Tussle_Logo.png",
+                "type": "image",
+                "key": "Tipsy_Tussle_Logo"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

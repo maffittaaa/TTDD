@@ -36,7 +36,7 @@ function TryToLogin(){
             console.log(data);
             if (data.loggedIn){
                 document.getElementById("message").innerHTML = "Welcome " + data.username;
-                window.location.replace("/choseCharacters.html");
+                window.location.replace("/game");
             } else {
                 document.getElementById("message").innerHTML = "Wrong stuff, try again";
             }

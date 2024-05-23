@@ -1,0 +1,136 @@
+{
+    "id": "8f0d5a1a-eabc-4723-86f9-f06e3a8ead17",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Profile",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "3dcd7843-87f4-4b72-96c5-fb7718f87afe",
+            "label": "specasdossheets",
+            "texture": {
+                "key": "Specasdossheets"
+            },
+            "x": 640,
+            "y": 360,
+            "scaleX": 0.66666,
+            "scaleY": 0.66666
+        },
+        {
+            "type": "Rectangle",
+            "id": "4e6e2b4a-caf5-4b1d-899f-ef8a9200b60a",
+            "label": "highlight",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.width": 128,
+            "hitArea.height": 128,
+            "x": 399,
+            "y": 48,
+            "scaleX": 0.6163930088366851,
+            "scaleY": 0.1807207308530191,
+            "fillColor": "#4000ff",
+            "strokeColor": "#4000ff",
+            "strokeAlpha": 4,
+            "lineWidth": 4,
+            "isStroked": true,
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "Text",
+            "id": "f1d76c22-5f67-4fd8-af54-a09e9e226cbe",
+            "label": "Profile",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.x": -15,
+            "hitArea.y": -17,
+            "hitArea.width": 100.09315749661158,
+            "hitArea.height": 53.83254699275936,
+            "x": 399,
+            "y": 48,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Profile",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "aa36f44c-9498-4d44-a761-e52775fcdd08",
+                    "label": "onPointerDownScript_1",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "b86fa431-871a-4315-8964-35cd3ff411f9",
+                            "label": "pushActionScript_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "391652d0-fb92-4578-bb0c-729a29d71a1c",
+            "label": "ChooseCharacters",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.width": 154,
+            "hitArea.height": 15,
+            "x": 180,
+            "y": 48,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Choose Characters",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "7f7f3942-a4ee-4d52-9f72-1d9509c8940a",
+                    "label": "onPointerDownScript",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "9a105bc6-66a7-4973-9f4b-b0dce12bbdb1",
+                            "label": "pushActionScript_2"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                    "id": "ba27d52b-de16-43bd-b189-5a6467880b2e",
+                    "label": "goToChooseCharacters"
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "7a0504c0-cde2-4f2c-90ff-692e15a53a4a",
+            "label": "XP",
+            "x": 632,
+            "y": 329,
+            "text": "XP:"
+        },
+        {
+            "type": "Text",
+            "id": "5ff5e4cd-0615-41c4-8dbc-55323246561b",
+            "label": "XP_1",
+            "x": -468.30355086828934,
+            "y": 37.346304441365966,
+            "text": "XP:"
+        },
+        {
+            "type": "Text",
+            "id": "31aace38-b334-4904-8717-2617c0d1d077",
+            "label": "XP_2",
+            "x": -468.30355086828934,
+            "y": 37.346304441365966,
+            "text": "XP:"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

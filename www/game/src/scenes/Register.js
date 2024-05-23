@@ -67,65 +67,16 @@ class Register extends Phaser.Scene {
         this.load.plugin('rextexteditplugin', url, true);
     }
 
-	textInput(){
-		var printText = this.add.rexBBCodeText(400, 300, 'abc', {
-            color: 'yellow',
-            fontSize: '24px',
-            fixedWidth: 200,
-            fixedHeight: 80,
-            backgroundColor: '#333333',
-            valign: 'center',
-            // rtl: true
-        })
-            .setOrigin(0.5)
-            .setInteractive()
-            .on('pointerdown', function () {
-                var config = {
-                    onOpen: function (textObject) {
-                        console.log('Open text editor');
-                    },
-                    onTextChanged: function (textObject, text) {
-                        textObject.text = text;
-                        console.log(`Text: ${text}`);
-                    },
-                    onClose: function (textObject) {
-                        console.log('Close text editor');
-                    },
-                    selectAll: true,
-                    // enterClose: false
-                }
-                this.plugins.get('rextexteditplugin').edit(printText, config);
-            }, this);
-
-        this.add.text(0, 580, 'Click text to start editing, press enter key to stop editing')
-	}
-
     create() {     
-		// this.editorCreate();
-		
-        this.textInput()
+		this.editorCreate();
 	}
 
-	update(){}
+	update(){
+		
+	}
 
 	/* END-USER-CODE */
 }
 
-
 /* END OF COMPILED CODE */
-
-var config = {
-	type: Phaser.AUTO,
-	parent: 'phaser-example',
-	scale: {
-		mode: Phaser.Scale.FIT,
-		autoCenter: Phaser.Scale.CENTER_BOTH,
-	},
-	dom: {
-		createContainer: true
-	},
-	scene: Register
-};
-
-var game = new Phaser.Game(config);
 // You can write more code here

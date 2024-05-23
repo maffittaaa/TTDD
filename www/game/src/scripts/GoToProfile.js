@@ -3,29 +3,22 @@
 
 /* START OF COMPILED CODE */
 
-class ChooseCharactersMenu extends Phaser.Scene {
+class GoToProfile extends ScriptNode {
 
-	constructor() {
-		super("ChooseCharactersMenu");
+	constructor(parent) {
+		super(parent);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
 
-	/** @returns {void} */
-	editorCreate() {
-
-		this.events.emit("scene-awake");
-	}
-
 	/* START-USER-CODE */
 
-	// Write your code here
-
-	create() {
-
-		this.editorCreate();
+	start(){
+		this.parent.on('pointerdown', event => {
+			goToProfile = true
+		})
 	}
 
 	/* END-USER-CODE */
