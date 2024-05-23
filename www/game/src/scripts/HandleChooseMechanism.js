@@ -1,5 +1,5 @@
-let slotChosen = 0
-let charChosen = 0
+let slotChosen = null
+let charChosen = null
 
 /* START OF COMPILED CODE */
 
@@ -24,25 +24,25 @@ class HandleChooseMechanism extends ScriptNode {
 
 	start(){
 		this.parent.on('pointerdown', event => {
-			if(this.CharacterID != 0){
-				console.log(this.CharacterID)
-				charChosen = this.CharacterID
-			}else{
+			if(this.SlotID != 0){
 				console.log(this.SlotID)
 				slotChosen = this.SlotID
+			}else{
+				console.log(this.CharacterID)
+				charChosen = this.CharacterID
 			}
+			console.log(this.CharacterID)
+			console.log(this.SlotID)
 		})
 	}
 
 	update(){
-		if(charChosen != 0 && slotChosen != 0){
-			if(this.type == "Text"){
+		if(charChosen != null && slotChosen != null){
+			if(this.type == "Slot"){
 				if(this.SlotID == slotChosen){
-					console.log(this.parent)
-					this.parent.text = charChosen
-
-					slotChosen = 0
-					charChosen = 0
+					this.parent.setTexture("peawns", charChosen)
+					slotChosen = null
+					charChosen = null
 				}
 			}
 		}

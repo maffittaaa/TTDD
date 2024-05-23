@@ -114,7 +114,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_9",
-                            "CharacterID": 3
+                            "CharacterID": 14
                         }
                     ]
                 },
@@ -150,7 +150,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_8",
-                            "CharacterID": 1
+                            "CharacterID": 18
                         }
                     ]
                 },
@@ -186,7 +186,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_7",
-                            "CharacterID": 6
+                            "CharacterID": 16
                         }
                     ]
                 },
@@ -222,7 +222,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_6",
-                            "CharacterID": 2
+                            "CharacterID": 12
                         }
                     ]
                 },
@@ -258,7 +258,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_5",
-                            "CharacterID": 5
+                            "CharacterID": 10
                         }
                     ]
                 },
@@ -294,7 +294,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_4",
-                            "CharacterID": 10
+                            "CharacterID": 8
                         }
                     ]
                 },
@@ -330,7 +330,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_3",
-                            "CharacterID": 8
+                            "CharacterID": 0
                         }
                     ]
                 },
@@ -366,7 +366,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_2",
-                            "CharacterID": 9
+                            "CharacterID": 6
                         }
                     ]
                 },
@@ -402,7 +402,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism_1",
-                            "CharacterID": 7
+                            "CharacterID": 4
                         }
                     ]
                 },
@@ -438,7 +438,7 @@
                                 "CharacterID"
                             ],
                             "label": "handleChooseMechanism",
-                            "CharacterID": 4
+                            "CharacterID": 2
                         }
                     ]
                 }
@@ -481,6 +481,7 @@
                     "type": "Image",
                     "id": "1473441e-2fc5-4a3f-b85c-705e8410ddbe",
                     "label": "slot_id_4",
+                    "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 150,
                     "hitArea.height": 150,
@@ -497,10 +498,12 @@
                             "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
                             "id": "f5095798-eb8a-4239-9963-7a328beef923",
                             "unlock": [
-                                "SlotID"
+                                "SlotID",
+                                "type"
                             ],
                             "label": "handleChooseMechanism_13",
-                            "SlotID": 4
+                            "SlotID": 4,
+                            "type": "Slot"
                         }
                     ]
                 },
@@ -508,6 +511,7 @@
                     "type": "Image",
                     "id": "722c94e1-6a69-4aea-b95b-82e0d639bd8d",
                     "label": "slot_id_1",
+                    "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 150,
                     "hitArea.height": 150,
@@ -524,10 +528,12 @@
                             "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
                             "id": "ffab6a62-052b-4725-9bde-73011a3c10b1",
                             "unlock": [
-                                "SlotID"
+                                "SlotID",
+                                "type"
                             ],
                             "label": "handleChooseMechanism_12",
-                            "SlotID": 1
+                            "SlotID": 1,
+                            "type": "Slot"
                         }
                     ]
                 },
@@ -535,6 +541,7 @@
                     "type": "Image",
                     "id": "a0f633a2-b075-4abe-a0c7-50f49e3fada9",
                     "label": "slot_id_2",
+                    "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 150,
                     "hitArea.height": 150,
@@ -551,10 +558,12 @@
                             "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
                             "id": "3b005818-c81a-42f6-b50e-abf8af39e136",
                             "unlock": [
-                                "SlotID"
+                                "SlotID",
+                                "type"
                             ],
                             "label": "handleChooseMechanism_11",
-                            "SlotID": 2
+                            "SlotID": 2,
+                            "type": "Slot"
                         }
                     ]
                 },
@@ -562,6 +571,7 @@
                     "type": "Image",
                     "id": "be3a8aa6-f8ac-4148-aef9-7d7d63d9d458",
                     "label": "slot_id_3",
+                    "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 150,
                     "hitArea.height": 150,
@@ -578,10 +588,12 @@
                             "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
                             "id": "8bf295ec-069f-4e48-872a-32dda279fe9d",
                             "unlock": [
-                                "SlotID"
+                                "SlotID",
+                                "type"
                             ],
                             "label": "handleChooseMechanism_10",
-                            "SlotID": 3
+                            "SlotID": 3,
+                            "type": "Slot"
                         }
                     ]
                 },
@@ -589,6 +601,7 @@
                     "type": "Image",
                     "id": "0b024884-f785-4651-9504-41787b42e52c",
                     "label": "slot_id_5",
+                    "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 150,
                     "hitArea.height": 150,
@@ -605,116 +618,12 @@
                             "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
                             "id": "c7c1aa0d-fe67-4d88-b085-80cd46503b71",
                             "unlock": [
-                                "SlotID"
+                                "SlotID",
+                                "type"
                             ],
                             "label": "handleChooseMechanism_14",
-                            "SlotID": 5
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "b1f5cccf-426a-4d5d-bcce-d3a5fa23cb7f",
-                    "label": "text_1",
-                    "x": 1054,
-                    "y": 258,
-                    "text": "Empty",
-                    "list": [
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "a1608351-a35c-47de-a460-6a5bae843991",
-                            "unlock": [
-                                "SlotID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_19",
-                            "SlotID": 1,
-                            "type": "Text"
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "4aafba36-6edd-4bed-a8d6-a745779f5d51",
-                    "label": "text_2",
-                    "x": 1054,
-                    "y": 370,
-                    "text": "Empty",
-                    "list": [
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "436cf14b-c737-4846-90cf-0818fa7552fb",
-                            "unlock": [
-                                "SlotID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_18",
-                            "SlotID": 2,
-                            "type": "Text"
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "a6519282-d7b0-44b7-9a41-f56de8df902c",
-                    "label": "text_3",
-                    "x": 1055,
-                    "y": 478,
-                    "text": "Empty",
-                    "list": [
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "7912f8ab-bbc7-4379-98fe-670d461d345e",
-                            "unlock": [
-                                "SlotID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_17",
-                            "SlotID": 3,
-                            "type": "Text"
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "11233dc4-734d-4012-bb38-b9e6a5326359",
-                    "label": "text_4",
-                    "x": 942,
-                    "y": 318,
-                    "text": "Empty",
-                    "list": [
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "6bfb9ecf-2575-442b-a42a-146dd9279431",
-                            "unlock": [
-                                "SlotID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_16",
-                            "SlotID": 4,
-                            "type": "Text"
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "77a0bc71-5121-492d-a33e-395219bdbb17",
-                    "label": "text_5",
-                    "x": 945,
-                    "y": 430,
-                    "text": "Empty",
-                    "list": [
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "d82a41e0-37a4-4b94-9b6c-37d8155e7598",
-                            "unlock": [
-                                "SlotID",
-                                "text",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_15",
                             "SlotID": 5,
-                            "type": "Text"
+                            "type": "Slot"
                         }
                     ]
                 }

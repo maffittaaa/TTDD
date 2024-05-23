@@ -266,46 +266,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_14
 		const handleChooseMechanism_14 = new HandleChooseMechanism(slot_id_5);
 
-		// text_1
-		const text_1 = this.add.text(1054, 258, "", {});
-		text_1.text = "Empty";
-		container_2.add(text_1);
-
-		// handleChooseMechanism_19
-		const handleChooseMechanism_19 = new HandleChooseMechanism(text_1);
-
-		// text_2
-		const text_2 = this.add.text(1054, 370, "", {});
-		text_2.text = "Empty";
-		container_2.add(text_2);
-
-		// handleChooseMechanism_18
-		const handleChooseMechanism_18 = new HandleChooseMechanism(text_2);
-
-		// text_3
-		const text_3 = this.add.text(1055, 478, "", {});
-		text_3.text = "Empty";
-		container_2.add(text_3);
-
-		// handleChooseMechanism_17
-		const handleChooseMechanism_17 = new HandleChooseMechanism(text_3);
-
-		// text_4
-		const text_4 = this.add.text(942, 318, "", {});
-		text_4.text = "Empty";
-		container_2.add(text_4);
-
-		// handleChooseMechanism_16
-		const handleChooseMechanism_16 = new HandleChooseMechanism(text_4);
-
-		// text_5
-		const text_5 = this.add.text(945, 430, "", {});
-		text_5.text = "Empty";
-		container_2.add(text_5);
-
-		// handleChooseMechanism_15
-		const handleChooseMechanism_15 = new HandleChooseMechanism(text_5);
-
 		// highlight_1
 		const highlight_1 = this.add.rectangle(640, 632, 128, 128);
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
@@ -330,72 +290,74 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript_12);
 
 		// handleChooseMechanism_9 (prefab fields)
-		handleChooseMechanism_9.CharacterID = 3;
+		handleChooseMechanism_9.CharacterID = 14;
 
 		// handleChooseMechanism_8 (prefab fields)
-		handleChooseMechanism_8.CharacterID = 1;
+		handleChooseMechanism_8.CharacterID = 18;
 
 		// handleChooseMechanism_7 (prefab fields)
-		handleChooseMechanism_7.CharacterID = 6;
+		handleChooseMechanism_7.CharacterID = 16;
 
 		// handleChooseMechanism_6 (prefab fields)
-		handleChooseMechanism_6.CharacterID = 2;
+		handleChooseMechanism_6.CharacterID = 12;
 
 		// handleChooseMechanism_5 (prefab fields)
-		handleChooseMechanism_5.CharacterID = 5;
+		handleChooseMechanism_5.CharacterID = 10;
 
 		// handleChooseMechanism_4 (prefab fields)
-		handleChooseMechanism_4.CharacterID = 10;
+		handleChooseMechanism_4.CharacterID = 8;
 
 		// handleChooseMechanism_3 (prefab fields)
-		handleChooseMechanism_3.CharacterID = 8;
+		handleChooseMechanism_3.CharacterID = 0;
 
 		// handleChooseMechanism_2 (prefab fields)
-		handleChooseMechanism_2.CharacterID = 9;
+		handleChooseMechanism_2.CharacterID = 6;
 
 		// handleChooseMechanism_1 (prefab fields)
-		handleChooseMechanism_1.CharacterID = 7;
+		handleChooseMechanism_1.CharacterID = 4;
 
 		// handleChooseMechanism (prefab fields)
-		handleChooseMechanism.CharacterID = 4;
+		handleChooseMechanism.CharacterID = 2;
 
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
+		handleChooseMechanism_13.type = "Slot";
 
 		// handleChooseMechanism_12 (prefab fields)
 		handleChooseMechanism_12.SlotID = 1;
+		handleChooseMechanism_12.type = "Slot";
 
 		// handleChooseMechanism_11 (prefab fields)
 		handleChooseMechanism_11.SlotID = 2;
+		handleChooseMechanism_11.type = "Slot";
 
 		// handleChooseMechanism_10 (prefab fields)
 		handleChooseMechanism_10.SlotID = 3;
+		handleChooseMechanism_10.type = "Slot";
 
 		// handleChooseMechanism_14 (prefab fields)
 		handleChooseMechanism_14.SlotID = 5;
+		handleChooseMechanism_14.type = "Slot";
 
-		// handleChooseMechanism_19 (prefab fields)
-		handleChooseMechanism_19.SlotID = 1;
-		handleChooseMechanism_19.type = "Text";
-
-		// handleChooseMechanism_18 (prefab fields)
-		handleChooseMechanism_18.SlotID = 2;
-		handleChooseMechanism_18.type = "Text";
-
-		// handleChooseMechanism_17 (prefab fields)
-		handleChooseMechanism_17.SlotID = 3;
-		handleChooseMechanism_17.type = "Text";
-
-		// handleChooseMechanism_16 (prefab fields)
-		handleChooseMechanism_16.SlotID = 4;
-		handleChooseMechanism_16.type = "Text";
-
-		// handleChooseMechanism_15 (prefab fields)
-		handleChooseMechanism_15.SlotID = 5;
-		handleChooseMechanism_15.type = "Text";
+		this.slot_id_4 = slot_id_4;
+		this.slot_id_1 = slot_id_1;
+		this.slot_id_2 = slot_id_2;
+		this.slot_id_3 = slot_id_3;
+		this.slot_id_5 = slot_id_5;
 
 		this.events.emit("scene-awake");
 	}
+
+	/** @type {Phaser.GameObjects.Image} */
+	slot_id_4;
+	/** @type {Phaser.GameObjects.Image} */
+	slot_id_1;
+	/** @type {Phaser.GameObjects.Image} */
+	slot_id_2;
+	/** @type {Phaser.GameObjects.Image} */
+	slot_id_3;
+	/** @type {Phaser.GameObjects.Image} */
+	slot_id_5;
 
 	/* START-USER-CODE */
 

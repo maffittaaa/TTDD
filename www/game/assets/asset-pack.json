@@ -102,24 +102,27 @@
                 "key": "HandleChooseMechanism"
             },
             {
-                "url": "src/scenes/Login.js",
-                "type": "sceneFile",
-                "key": "Login"
-            },
-            {
                 "url": "src/scenes/Match.js",
                 "type": "sceneFile",
                 "key": "Match"
             },
             {
+                "url": "assets/peawns.png",
+                "frameConfig": {
+                    "frameWidth": 215,
+                    "frameHeight": 263,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 4,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "peawns"
+            },
+            {
                 "url": "src/scenes/Profile.js",
                 "type": "sceneFile",
                 "key": "Profile"
-            },
-            {
-                "url": "src/scenes/Register.js",
-                "type": "sceneFile",
-                "key": "Register"
             },
             {
                 "url": "assets/Specasdossheets.png",
