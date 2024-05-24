@@ -30,36 +30,61 @@ class HandleChooseMechanism extends ScriptNode {
 	/* START-USER-CODE */
 
 	awake(){
-		var scene = this
-		$.ajax({
-			type: "GET",
-			url: "/login/CheckLogin",
-			success: function (data) {
-				if (data.logged == false) {
-					window.location.replace("/login.html");
-					return false;
-				} else {
-					char = JSON.parse(data.characters);
+		if(this.type != "Slot"){
+			var scene = this
+			$.ajax({
+				type: "GET",
+				url: "/login/CheckLogin",
+				success: function (data) {
+					if (data.logged == false) {
+						window.location.replace("/login.html");
+						return false;
+					} else {
+						char = JSON.parse(data.characters);
+						var characters = scene.parent.parentContainer.list
 
-					for (let i = 0; i < 10; i++) {
+						
+						console.log(scene.parent.parentContainer.list)
 						if(scene.type == "Character"){
-							scene.parent.visible = false
+							for (let i = 0; i < characters.length; i++) {
+								if(characters[i].name.search("character_id_") == 0){
+									// console.log(characters[i].name)
+									characters[i].visible = false
+									// scene.parent.visible = false
+								}
+							}
+
+							for (let i = 0; i < char.length; i++) {
+
+								if(characters[i].name.search("character_id_") == 0){
+									var splitChar = characters[i].name.split("id_", 2)
+
+									console.log(characters[i].name, splitChar[1], char[i].player_character_character_id)
+									if(splitChar[1] == char[i].player_character_character_id - 1){
+										// scene.parent.visible = true
+										characters[i].visible = true
+									}
+
+									// scene.parent.visible = false
+								}
+
+							}
 						}
-					}
-			
-					for (let i = 0; i < char.length; i++) {
-						if(scene.type == "Character"){
-							if(scene.CharacterID == char[i].player_character_character_id - 1){
-								scene.parent.visible = true
+						
+						
+						if(scene.type == "LookForMatch"){
+							if (data.match){
+								lookingForMatch = true
+								scene.parent.parentContainer.visible = false
 							}
 						}
 					}
+				},
+				error: function (err) {
+					console.log(err);
 				}
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
+			})
+		}
 	}
 
 	start(){
@@ -107,6 +132,7 @@ class HandleChooseMechanism extends ScriptNode {
 	}
 
 	checkMatchFound() {
+		var scene = this
 		$.ajax({
 			type: "GET",
 			url: "/login/CheckLogin",
@@ -115,6 +141,7 @@ class HandleChooseMechanism extends ScriptNode {
 					window.location.replace("/login.html");
 					return false;
 				}
+
 			},
 			error: function (err) {
 				console.log(err);
@@ -177,6 +204,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 		for (let i = 1; i < 6; i++) {
 			if (slots["slot_" + i + ""] != null) {
+				slots["slot_" + i + ""] += 1
 				empty = false;
 			}
 		}
@@ -191,9 +219,16 @@ class HandleChooseMechanism extends ScriptNode {
 					"slots": slots,
 				},
 				success: function (data) {
-					console.log(data)
 					if (data.success) {
-						scene.parent.visible = false
+						var textChange = scene.parent.parentContainer.list
+						for (let i = 0; i < textChange.length; i++) {
+							if(textChange[i].name == "Message"){
+								textChange[i].text = "Looking for a match"
+							}else{
+								textChange[i].visible = false
+							}
+						}
+						
 						lookingForMatch = true;
 					} else {
 						slots = JSON.parse(slots);

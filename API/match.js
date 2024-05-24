@@ -137,6 +137,8 @@ router.get("/checkMatchFound", (req, res) => {
 });
 
 router.get("/getMatchData", (req, res) => {
+    console.log(req.session)
+    console.log(req.session.match)
     connection.execute("SELECT player_username, matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id = player_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
@@ -210,15 +212,15 @@ router.post("/choseCharacters", (req, res) => {
 
                     for (var i = 1; i < 6; i++) {
                         for (var j = 0; j < rows.length; j++) {
-                            if (charactersChosen["slot_" + i + ""] != null) {
-                                if (rows[j].caracter_id == charactersChosen["slot_" + i + ""] + 1) {
+                            if (charactersChosen["slot_" + i] != null) {
+                                if (rows[j].caracter_id == charactersChosen["slot_" + i]) {
                                     charactersNameFound.push(" " + rows[j].caracter_name)
                                     charactersIdFound.push(rows[j].caracter_id);
                                     charactersHpFound.push(rows[j].caracter_HP);
                                 }
                             }
                         }
-                        if (charactersChosen["slot_" + i + ""] != null) {
+                        if (charactersChosen["slot_" + i] != null) {
                             chaSentLength++;
                         }
                     }
@@ -247,7 +249,7 @@ router.post("/choseCharacters", (req, res) => {
 });
 
 function addCharacter(req, res, characters, hp, tile) {
-
+    console.log(characters.length, hp, tile)
     //acabar de por os slots/tiles inseridos na base de dados quando os characters sao inseridos. fazer check a se o player é o player 1 ou o 2. falar com a mafaldo sobr os tiles pq se os dois jogadores vao ver-se a si mesmos do lado direit
 
     connection.execute("INSERT INTO playerMatch (player_match_player_id, player_match_match_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "')",
@@ -261,14 +263,15 @@ function addCharacter(req, res, characters, hp, tile) {
 
                 for (let i = 0; i < characters.length; i++) {
                     for (let j = 1; j < 6; j++) {
+                        console.log(tile["slot_" + j], characters[i])
                         if (tile["slot_" + j] == characters[i]) {
-
                             connection.execute("INSERT INTO playerMatchCharacter (player_match_character_player_id, player_match_character_match_id, player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "', '" + characters[i] + "', '" + hp[i] + "', '" + j + "')",
                                 function (err1, rows, fields) {
                                     if (err1) {
                                         console.log("player match character: " + err1);
                                         res.send(err1);
                                     } else {
+                                        
                                         console.log("character " + characters[i] + " added to slot " + j);
                                     }
                                 }

@@ -9,7 +9,7 @@ function onAwake() {
             if (data.logged == false) {
                 return false;
             } else {
-                window.location.replace("/choseCharacters.html");
+                window.location.replace("/match.html");
                 return true;
             }
         },

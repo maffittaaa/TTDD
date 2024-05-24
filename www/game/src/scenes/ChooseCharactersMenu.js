@@ -22,100 +22,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		specasdossheets.scaleX = 0.66666;
 		specasdossheets.scaleY = 0.66666;
 
-		// Profile
-		const profile = this.add.text(399, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
-		profile.setOrigin(0.5, 0.5);
-		profile.text = "Profile";
-
-		// onPointerDownScript_1
-		const onPointerDownScript_1 = new OnPointerDownScript(profile);
-
-		// pushActionScript_1
-		new PushActionScript(onPointerDownScript_1);
-
-		// goToProfile
-		new GoToProfile(profile);
-
-		// highlight
-		const highlight = this.add.rectangle(179, 48, 128, 128);
-		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.333615647299753;
-		highlight.scaleY = 0.1807207308530191;
-		highlight.fillColor = 4194559;
-		highlight.isStroked = true;
-		highlight.strokeColor = 4194559;
-		highlight.strokeAlpha = 4;
-		highlight.lineWidth = 4;
-
-		// container_1
-		const container_1 = this.add.container(-1, -38);
-
-		// cartas2_Imprimir
-		const cartas2_Imprimir = this.add.image(778, 511, "cartas2_Imprimir", 1);
-		cartas2_Imprimir.scaleX = 0.5;
-		cartas2_Imprimir.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir);
-
-		// cartas2_Imprimir_1
-		const cartas2_Imprimir_1 = this.add.image(620, 511, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_1.scaleX = 0.5;
-		cartas2_Imprimir_1.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_1);
-
-		// cartas2_Imprimir_2
-		const cartas2_Imprimir_2 = this.add.image(-185.12069702148438, 511, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_2.scaleX = 0.5;
-		cartas2_Imprimir_2.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_2);
-
-		// cartas2_Imprimir_3
-		const cartas2_Imprimir_3 = this.add.image(302, 511, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_3.scaleX = 0.5;
-		cartas2_Imprimir_3.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_3);
-
-		// cartas2_Imprimir_4
-		const cartas2_Imprimir_4 = this.add.image(143, 511, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_4.scaleX = 0.5;
-		cartas2_Imprimir_4.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_4);
-
-		// cartas2_Imprimir_5
-		const cartas2_Imprimir_5 = this.add.image(777, 260, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_5.scaleX = 0.5;
-		cartas2_Imprimir_5.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_5);
-
-		// cartas2_Imprimir_6
-		const cartas2_Imprimir_6 = this.add.image(620, 260, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_6.scaleX = 0.5;
-		cartas2_Imprimir_6.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_6);
-
-		// cartas2_Imprimir_7
-		const cartas2_Imprimir_7 = this.add.image(460, 260, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_7.scaleX = 0.5;
-		cartas2_Imprimir_7.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_7);
-
-		// cartas2_Imprimir_8
-		const cartas2_Imprimir_8 = this.add.image(302, 260, "cartas2_Imprimir", 1);
-		cartas2_Imprimir_8.scaleX = 0.5;
-		cartas2_Imprimir_8.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir_8);
-
-		// cartas2_Imprimir1
-		const cartas2_Imprimir1 = this.add.image(143, 260, "cartas2_Imprimir", 1);
-		cartas2_Imprimir1.scaleX = 0.5;
-		cartas2_Imprimir1.scaleY = 0.5;
-		container_1.add(cartas2_Imprimir1);
+		// Characters
+		const characters = this.add.container(-1, -38);
 
 		// character_id_2
-		const character_id_2 = this.add.image(620, 260, "cartas2_Imprimir", 0);
+		const character_id_2 = this.add.image(620, 259, "cartas2_Imprimir", 0);
+		character_id_2.name = "character_id_2";
 		character_id_2.scaleX = 0.5;
 		character_id_2.scaleY = 0.5;
-		container_1.add(character_id_2);
+		characters.add(character_id_2);
 
 		// onPointerDownScript_11
 		const onPointerDownScript_11 = new OnPointerDownScript(character_id_2);
@@ -127,10 +42,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_9 = new HandleChooseMechanism(character_id_2);
 
 		// character_id_0
-		const character_id_0 = this.add.image(143, 260, "cartas1_Imprimir", 8);
+		const character_id_0 = this.add.image(143, 259, "cartas1_Imprimir", 8);
+		character_id_0.name = "character_id_0";
 		character_id_0.scaleX = 0.5;
 		character_id_0.scaleY = 0.5;
-		container_1.add(character_id_0);
+		characters.add(character_id_0);
 
 		// onPointerDownScript_10
 		const onPointerDownScript_10 = new OnPointerDownScript(character_id_0);
@@ -142,10 +58,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_8 = new HandleChooseMechanism(character_id_0);
 
 		// character_id_5
-		const character_id_5 = this.add.image(143, 511, "cartas1_Imprimir", 7);
+		const character_id_5 = this.add.image(143, 510, "cartas1_Imprimir", 7);
+		character_id_5.name = "character_id_5";
 		character_id_5.scaleX = 0.5;
 		character_id_5.scaleY = 0.5;
-		container_1.add(character_id_5);
+		characters.add(character_id_5);
 
 		// onPointerDownScript_9
 		const onPointerDownScript_9 = new OnPointerDownScript(character_id_5);
@@ -157,10 +74,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_7 = new HandleChooseMechanism(character_id_5);
 
 		// character_id_1
-		const character_id_1 = this.add.image(302, 260, "cartas1_Imprimir", 6);
+		const character_id_1 = this.add.image(302, 259, "cartas1_Imprimir", 6);
+		character_id_1.name = "character_id_1";
 		character_id_1.scaleX = 0.5;
 		character_id_1.scaleY = 0.5;
-		container_1.add(character_id_1);
+		characters.add(character_id_1);
 
 		// onPointerDownScript_8
 		const onPointerDownScript_8 = new OnPointerDownScript(character_id_1);
@@ -172,10 +90,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_6 = new HandleChooseMechanism(character_id_1);
 
 		// character_id_4
-		const character_id_4 = this.add.image(460, 260, "cartas1_Imprimir", 5);
+		const character_id_4 = this.add.image(460, 259, "cartas1_Imprimir", 5);
+		character_id_4.name = "character_id_4";
 		character_id_4.scaleX = 0.5;
 		character_id_4.scaleY = 0.5;
-		container_1.add(character_id_4);
+		characters.add(character_id_4);
 
 		// onPointerDownScript_7
 		const onPointerDownScript_7 = new OnPointerDownScript(character_id_4);
@@ -187,10 +106,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_ = new HandleChooseMechanism(character_id_4);
 
 		// character_id_9
-		const character_id_9 = this.add.image(620, 511, "cartas1_Imprimir", 4);
+		const character_id_9 = this.add.image(620, 510, "cartas1_Imprimir", 4);
+		character_id_9.name = "character_id_9";
 		character_id_9.scaleX = 0.5;
 		character_id_9.scaleY = 0.5;
-		container_1.add(character_id_9);
+		characters.add(character_id_9);
 
 		// onPointerDownScript_6
 		const onPointerDownScript_6 = new OnPointerDownScript(character_id_9);
@@ -202,10 +122,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_4 = new HandleChooseMechanism(character_id_9);
 
 		// character_id_7
-		const character_id_7 = this.add.image(302, 511, "cartas1_Imprimir", 3);
+		const character_id_7 = this.add.image(302, 510, "cartas1_Imprimir", 3);
+		character_id_7.name = "character_id_7";
 		character_id_7.scaleX = 0.5;
 		character_id_7.scaleY = 0.5;
-		container_1.add(character_id_7);
+		characters.add(character_id_7);
 
 		// onPointerDownScript_5
 		const onPointerDownScript_5 = new OnPointerDownScript(character_id_7);
@@ -217,10 +138,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_3 = new HandleChooseMechanism(character_id_7);
 
 		// character_id_8
-		const character_id_8 = this.add.image(460, 511, "cartas1_Imprimir", 2);
+		const character_id_8 = this.add.image(460, 510, "cartas1_Imprimir", 2);
+		character_id_8.name = "character_id_8";
 		character_id_8.scaleX = 0.5;
 		character_id_8.scaleY = 0.5;
-		container_1.add(character_id_8);
+		characters.add(character_id_8);
 
 		// onPointerDownScript_4
 		const onPointerDownScript_4 = new OnPointerDownScript(character_id_8);
@@ -232,10 +154,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_2 = new HandleChooseMechanism(character_id_8);
 
 		// character_id_6
-		const character_id_6 = this.add.image(778, 511, "cartas1_Imprimir", 1);
+		const character_id_6 = this.add.image(778, 510, "cartas1_Imprimir", 1);
+		character_id_6.name = "character_id_6";
 		character_id_6.scaleX = 0.5;
 		character_id_6.scaleY = 0.5;
-		container_1.add(character_id_6);
+		characters.add(character_id_6);
 
 		// onPointerDownScript_3
 		const onPointerDownScript_3 = new OnPointerDownScript(character_id_6);
@@ -247,10 +170,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_1 = new HandleChooseMechanism(character_id_6);
 
 		// character_id_3
-		const character_id_3 = this.add.image(777, 260, "cartas1_Imprimir", 0);
+		const character_id_3 = this.add.image(777, 259, "cartas1_Imprimir", 0);
+		character_id_3.name = "character_id_3";
 		character_id_3.scaleX = 0.5;
 		character_id_3.scaleY = 0.5;
-		container_1.add(character_id_3);
+		characters.add(character_id_3);
 
 		// onPointerDownScript_2
 		const onPointerDownScript_2 = new OnPointerDownScript(character_id_3);
@@ -261,27 +185,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism
 		const handleChooseMechanism = new HandleChooseMechanism(character_id_3);
 
-		// ChooseCharacters
-		const chooseCharacters = this.add.text(180, 48, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
-		chooseCharacters.setOrigin(0.5, 0.5);
-		chooseCharacters.text = "Choose Characters";
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
-
-		// pushActionScript_2
-		new PushActionScript(onPointerDownScript);
-
-		// container_2
-		const container_2 = this.add.container(0, -38);
+		// Slots
+		const slots = this.add.container(0, -38);
 
 		// slot_id_4
 		const slot_id_4 = this.add.image(967, 307, "base", 0);
 		slot_id_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_id_4.scaleX = 0.5;
 		slot_id_4.scaleY = 0.5;
-		container_2.add(slot_id_4);
+		slots.add(slot_id_4);
 
 		// handleChooseMechanism_13
 		const handleChooseMechanism_13 = new HandleChooseMechanism(slot_id_4);
@@ -297,7 +209,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_id_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_id_1.scaleX = 0.5;
 		slot_id_1.scaleY = 0.5;
-		container_2.add(slot_id_1);
+		slots.add(slot_id_1);
 
 		// handleChooseMechanism_12
 		const handleChooseMechanism_12 = new HandleChooseMechanism(slot_id_1);
@@ -313,7 +225,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_id_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_id_2.scaleX = 0.5;
 		slot_id_2.scaleY = 0.5;
-		container_2.add(slot_id_2);
+		slots.add(slot_id_2);
 
 		// handleChooseMechanism_11
 		const handleChooseMechanism_11 = new HandleChooseMechanism(slot_id_2);
@@ -329,7 +241,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_id_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_id_3.scaleX = 0.5;
 		slot_id_3.scaleY = 0.5;
-		container_2.add(slot_id_3);
+		slots.add(slot_id_3);
 
 		// handleChooseMechanism_10
 		const handleChooseMechanism_10 = new HandleChooseMechanism(slot_id_3);
@@ -345,7 +257,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_id_5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_id_5.scaleX = 0.5;
 		slot_id_5.scaleY = 0.5;
-		container_2.add(slot_id_5);
+		slots.add(slot_id_5);
 
 		// handleChooseMechanism_14
 		const handleChooseMechanism_14 = new HandleChooseMechanism(slot_id_5);
@@ -356,8 +268,21 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
 
+		// Match
+		const match = this.add.container(0, 0);
+
+		// Message
+		const message = this.add.text(640, 633, "", {});
+		message.name = "Message";
+		message.setOrigin(0.5, 0.5);
+		match.add(message);
+
+		// handleChooseMechanism_15
+		const handleChooseMechanism_15 = new HandleChooseMechanism(message);
+
 		// highlight_1
 		const highlight_1 = this.add.rectangle(640, 632, 128, 128);
+		highlight_1.name = "highlight_1";
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
 		highlight_1.scaleX = 0.9889080771893287;
 		highlight_1.scaleY = 0.1807207308530191;
@@ -366,12 +291,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_1.strokeColor = 4194559;
 		highlight_1.strokeAlpha = 4;
 		highlight_1.lineWidth = 4;
+		match.add(highlight_1);
 
 		// GoToMatch
 		const goToMatch = this.add.text(640, 632, "", {});
+		goToMatch.name = "GoToMatch";
 		goToMatch.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		goToMatch.setOrigin(0.5, 0.5);
 		goToMatch.text = "Find a Match";
+		match.add(goToMatch);
 
 		// onPointerDownScript_12
 		const onPointerDownScript_12 = new OnPointerDownScript(goToMatch);
@@ -382,11 +310,122 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_5
 		const handleChooseMechanism_5 = new HandleChooseMechanism(goToMatch);
 
+		// Button Profile
+		const button_Profile = this.add.container(0, 0);
+
+		// Profile
+		const profile = this.add.text(399, 48, "", {});
+		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile.setOrigin(0.5, 0.5);
+		profile.text = "Profile";
+		button_Profile.add(profile);
+
+		// onPointerDownScript_1
+		const onPointerDownScript_1 = new OnPointerDownScript(profile);
+
+		// pushActionScript_1
+		new PushActionScript(onPointerDownScript_1);
+
+		// goToProfile
+		new GoToProfile(profile);
+
+		// Button Choose Characters
+		const button_Choose_Characters = this.add.container(75.16212463378906, -70.72154235839844);
+
+		// highlight
+		const highlight = this.add.rectangle(103.83787536621094, 118.72154235839844, 128, 128);
+		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight.scaleX = 1.333615647299753;
+		highlight.scaleY = 0.1807207308530191;
+		highlight.fillColor = 4194559;
+		highlight.isStroked = true;
+		highlight.strokeColor = 4194559;
+		highlight.strokeAlpha = 4;
+		highlight.lineWidth = 4;
+		button_Choose_Characters.add(highlight);
+
+		// ChooseCharacters
+		const chooseCharacters = this.add.text(104.83787536621094, 118.72154235839844, "", {});
+		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.setOrigin(0.5, 0.5);
+		chooseCharacters.text = "Choose Characters";
+		button_Choose_Characters.add(chooseCharacters);
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
+
+		// pushActionScript_2
+		new PushActionScript(onPointerDownScript);
+
+		// BackgroundAndText
+		const backgroundAndText = this.add.container(0, 0);
+
+		// cartas2_Imprimir
+		const cartas2_Imprimir = this.add.image(777, 473, "cartas2_Imprimir", 1);
+		cartas2_Imprimir.scaleX = 0.5;
+		cartas2_Imprimir.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir);
+
+		// cartas2_Imprimir_1
+		const cartas2_Imprimir_1 = this.add.image(619, 472, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_1.scaleX = 0.5;
+		cartas2_Imprimir_1.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_1);
+
+		// cartas2_Imprimir_2
+		const cartas2_Imprimir_2 = this.add.image(459, 472, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_2.scaleX = 0.5;
+		cartas2_Imprimir_2.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_2);
+
+		// cartas2_Imprimir_3
+		const cartas2_Imprimir_3 = this.add.image(301, 472, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_3.scaleX = 0.5;
+		cartas2_Imprimir_3.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_3);
+
+		// cartas2_Imprimir_4
+		const cartas2_Imprimir_4 = this.add.image(142, 472, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_4.scaleX = 0.5;
+		cartas2_Imprimir_4.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_4);
+
+		// cartas2_Imprimir_5
+		const cartas2_Imprimir_5 = this.add.image(776, 221, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_5.scaleX = 0.5;
+		cartas2_Imprimir_5.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_5);
+
+		// cartas2_Imprimir_6
+		const cartas2_Imprimir_6 = this.add.image(619, 221, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_6.scaleX = 0.5;
+		cartas2_Imprimir_6.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_6);
+
+		// cartas2_Imprimir_7
+		const cartas2_Imprimir_7 = this.add.image(459, 221, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_7.scaleX = 0.5;
+		cartas2_Imprimir_7.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_7);
+
+		// cartas2_Imprimir_8
+		const cartas2_Imprimir_8 = this.add.image(301, 221, "cartas2_Imprimir", 1);
+		cartas2_Imprimir_8.scaleX = 0.5;
+		cartas2_Imprimir_8.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir_8);
+
+		// cartas2_Imprimir1
+		const cartas2_Imprimir1 = this.add.image(142, 221, "cartas2_Imprimir", 1);
+		cartas2_Imprimir1.scaleX = 0.5;
+		cartas2_Imprimir1.scaleY = 0.5;
+		backgroundAndText.add(cartas2_Imprimir1);
+
 		// ChooseCharacters_1
 		const chooseCharacters_1 = this.add.text(460, 97, "", {});
 		chooseCharacters_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters_1.setOrigin(0.5, 0.5);
 		chooseCharacters_1.text = "Close-Range";
+		backgroundAndText.add(chooseCharacters_1);
 
 		// onPointerDownScript_18
 		const onPointerDownScript_18 = new OnPointerDownScript(chooseCharacters_1);
@@ -399,6 +438,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		chooseCharacters_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters_2.setOrigin(0.5, 0.5);
 		chooseCharacters_2.text = "Long-Range";
+		backgroundAndText.add(chooseCharacters_2);
 
 		// onPointerDownScript_19
 		const onPointerDownScript_19 = new OnPointerDownScript(chooseCharacters_2);
@@ -466,18 +506,52 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		handleChooseMechanism_14.SlotID = 5;
 		handleChooseMechanism_14.type = "Slot";
 
+		// handleChooseMechanism_15 (prefab fields)
+		handleChooseMechanism_15.type = "Message";
+
 		// handleChooseMechanism_5 (prefab fields)
 		handleChooseMechanism_5.type = "LookForMatch";
 
+		this.character_id_2 = character_id_2;
+		this.character_id_0 = character_id_0;
+		this.character_id_5 = character_id_5;
+		this.character_id_1 = character_id_1;
+		this.character_id_4 = character_id_4;
+		this.character_id_9 = character_id_9;
+		this.character_id_7 = character_id_7;
+		this.character_id_8 = character_id_8;
+		this.character_id_6 = character_id_6;
+		this.character_id_3 = character_id_3;
 		this.slot_id_4 = slot_id_4;
 		this.slot_id_1 = slot_id_1;
 		this.slot_id_2 = slot_id_2;
 		this.slot_id_3 = slot_id_3;
 		this.slot_id_5 = slot_id_5;
+		this.message = message;
 
 		this.events.emit("scene-awake");
 	}
 
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_2;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_0;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_5;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_1;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_4;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_9;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_7;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_8;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_6;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_3;
 	/** @type {Phaser.GameObjects.Image} */
 	slot_id_4;
 	/** @type {Phaser.GameObjects.Image} */
@@ -488,6 +562,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 	slot_id_3;
 	/** @type {Phaser.GameObjects.Image} */
 	slot_id_5;
+	/** @type {Phaser.GameObjects.Text} */
+	message;
 
 	/* START-USER-CODE */
 

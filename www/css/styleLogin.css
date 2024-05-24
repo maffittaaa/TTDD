@@ -90,7 +90,7 @@ body, html {
 
 .container #title {
     color: #4000ff;
-    font-size: 4vw;
+    font-size: 400%;
     text-shadow: 2px 2px 4px #000000;        
 }
 
@@ -107,7 +107,7 @@ a {
 }
 
 #message {
-    font-size: 1%;
+    font-size: 100%;
     color: #ccc;
 }
 

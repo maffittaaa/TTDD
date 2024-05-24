@@ -23,205 +23,24 @@
             "scaleY": 0.66666
         },
         {
-            "type": "Text",
-            "id": "8ce06cd5-0820-4789-94ae-043b6a6a132b",
-            "label": "Profile",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.x": -15,
-            "hitArea.y": -17,
-            "hitArea.width": 100.09315749661158,
-            "hitArea.height": 53.83254699275936,
-            "x": 399,
-            "y": 48,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Profile",
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "6d11b2f4-ad25-43a3-961f-cdb76e58c09d",
-                    "label": "onPointerDownScript_1",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "16034f5f-b490-44eb-9d1b-fb80c5cf2f42",
-                            "label": "pushActionScript_1"
-                        }
-                    ]
-                },
-                {
-                    "prefabId": "7156eec4-ebf3-4ede-b5a1-6c0ff7ed3f86",
-                    "id": "a21b151b-e9ed-432e-85cd-ab7a906b30d4",
-                    "label": "goToProfile"
-                }
-            ]
-        },
-        {
-            "type": "Rectangle",
-            "id": "17f3881e-a62c-472f-983a-87f2255df5bf",
-            "label": "highlight",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 128,
-            "hitArea.height": 128,
-            "x": 179,
-            "y": 48,
-            "scaleX": 1.333615647299753,
-            "scaleY": 0.1807207308530191,
-            "fillColor": "#4000ff",
-            "strokeColor": "#4000ff",
-            "strokeAlpha": 4,
-            "lineWidth": 4,
-            "isStroked": true,
-            "width": 128,
-            "height": 128
-        },
-        {
             "type": "Container",
             "id": "30f249a9-be2b-43a3-a5ae-514e71230743",
-            "label": "container_1",
+            "label": "Characters",
             "x": -1,
             "y": -38,
             "list": [
                 {
                     "type": "Image",
-                    "id": "3ce7bd96-8cc8-421d-b13f-db586c0bdc1f",
-                    "label": "cartas2_Imprimir",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 778,
-                    "y": 511,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "25a7a4c5-4fe2-4545-90e5-434fbc74fb65",
-                    "label": "cartas2_Imprimir_1",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 620,
-                    "y": 511,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "6bc0d560-ceac-4555-9a97-c8f560bbb35a",
-                    "label": "cartas2_Imprimir_2",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": -185.12069702148438,
-                    "y": 511,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "ebf7e518-8150-4e47-be55-37e4d4eeb776",
-                    "label": "cartas2_Imprimir_3",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 302,
-                    "y": 511,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "55dd0b14-4e3d-4c5f-832e-4e2e9a771277",
-                    "label": "cartas2_Imprimir_4",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 143,
-                    "y": 511,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "ffa1b28b-c239-476f-a54f-33c4e61b843b",
-                    "label": "cartas2_Imprimir_5",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 777,
-                    "y": 260,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "fb83505f-a8ce-4f2c-9b00-60e5c4be1d01",
-                    "label": "cartas2_Imprimir_6",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 620,
-                    "y": 260,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "945aee5e-81fc-42ed-a181-22cd1de03625",
-                    "label": "cartas2_Imprimir_7",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 460,
-                    "y": 260,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "6ce104fb-d728-4462-8dc4-8c594ceb4ed9",
-                    "label": "cartas2_Imprimir_8",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 302,
-                    "y": 260,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
-                    "id": "8d136e36-8742-41cb-9b03-6f871fc7f473",
-                    "label": "cartas2_Imprimir1",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 143,
-                    "y": 260,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
-                },
-                {
-                    "type": "Image",
                     "id": "78a8ecbf-f1e1-4c50-8541-832639241f71",
                     "label": "character_id_2",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas2_Imprimir",
                         "frame": 0
                     },
                     "x": 620,
-                    "y": 260,
+                    "y": 259,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -254,12 +73,14 @@
                     "type": "Image",
                     "id": "879e2ce5-6053-40c7-8a4c-bc158408069d",
                     "label": "character_id_0",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 8
                     },
                     "x": 143,
-                    "y": 260,
+                    "y": 259,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -292,12 +113,14 @@
                     "type": "Image",
                     "id": "9983436d-dc17-41fd-8db8-add6ea1716f1",
                     "label": "character_id_5",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 7
                     },
                     "x": 143,
-                    "y": 511,
+                    "y": 510,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -330,12 +153,14 @@
                     "type": "Image",
                     "id": "3db02f7d-2b05-4682-8c9e-f81ad31281ce",
                     "label": "character_id_1",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 6
                     },
                     "x": 302,
-                    "y": 260,
+                    "y": 259,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -368,12 +193,14 @@
                     "type": "Image",
                     "id": "2a3e633f-8451-4f87-a57b-cbe8fa8d37e1",
                     "label": "character_id_4",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 5
                     },
                     "x": 460,
-                    "y": 260,
+                    "y": 259,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -406,12 +233,14 @@
                     "type": "Image",
                     "id": "592bcf65-bff2-41a5-8b36-dcee1942f5e0",
                     "label": "character_id_9",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 4
                     },
                     "x": 620,
-                    "y": 511,
+                    "y": 510,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -444,12 +273,14 @@
                     "type": "Image",
                     "id": "93246071-fe98-4f05-9b60-f982271fa128",
                     "label": "character_id_7",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 3
                     },
                     "x": 302,
-                    "y": 511,
+                    "y": 510,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -482,12 +313,14 @@
                     "type": "Image",
                     "id": "9b600955-da86-411c-bb3a-71d8e6711dd6",
                     "label": "character_id_8",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 2
                     },
                     "x": 460,
-                    "y": 511,
+                    "y": 510,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -520,12 +353,14 @@
                     "type": "Image",
                     "id": "348fb04f-3df2-4ba8-8360-d06b74d2ff3d",
                     "label": "character_id_6",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 1
                     },
                     "x": 778,
-                    "y": 511,
+                    "y": 510,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -558,12 +393,14 @@
                     "type": "Image",
                     "id": "279c9091-37c3-4224-93f2-adfcadc809d6",
                     "label": "character_id_3",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas1_Imprimir",
                         "frame": 0
                     },
                     "x": 777,
-                    "y": 260,
+                    "y": 259,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -595,36 +432,9 @@
             ]
         },
         {
-            "type": "Text",
-            "id": "ad7fec9f-3108-4115-9a60-d9099dffbb12",
-            "label": "ChooseCharacters",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 154,
-            "hitArea.height": 15,
-            "x": 180,
-            "y": 48,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Choose Characters",
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "bcb6cab9-80d3-448c-8b5b-38f50b9e3ae5",
-                    "label": "onPointerDownScript",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "5fae41f2-6b90-4f6a-8be8-a03b7041a0d5",
-                            "label": "pushActionScript_2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "type": "Container",
             "id": "743a732d-cab9-4178-b07f-3d061d6b92b6",
-            "label": "container_2",
+            "label": "Slots",
             "y": -38,
             "list": [
                 {
@@ -840,109 +650,373 @@
             ]
         },
         {
-            "type": "Rectangle",
-            "id": "c646a229-e10a-49ff-a9a8-3470cea1194b",
-            "label": "highlight_1",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 128,
-            "hitArea.height": 128,
-            "x": 640,
-            "y": 632,
-            "scaleX": 0.9889080771893287,
-            "scaleY": 0.1807207308530191,
-            "fillColor": "#4000ff",
-            "strokeColor": "#4000ff",
-            "strokeAlpha": 4,
-            "lineWidth": 4,
-            "isStroked": true,
-            "width": 128,
-            "height": 128
-        },
-        {
-            "type": "Text",
-            "id": "82375d18-f6b0-41e7-99b5-2ad64c4bfbe2",
-            "label": "GoToMatch",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 154,
-            "hitArea.height": 15,
-            "x": 640,
-            "y": 632,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Find a Match",
+            "type": "Container",
+            "id": "aec5a246-1480-4f81-b759-d28f54a29609",
+            "label": "Match",
             "list": [
                 {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "5ccf3f8e-db57-4236-a3ed-f9af72d0240c",
-                    "label": "onPointerDownScript_12",
+                    "type": "Text",
+                    "id": "4ae56177-05f8-4295-90ca-3bd0e43dba93",
+                    "label": "Message",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "x": 640,
+                    "y": 633,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "list": [
                         {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "5bd1a2e0-e986-41d4-9a3c-0bf33ea26818",
-                            "label": "pushActionScript_12"
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "77b41892-d1f1-4a5e-9a36-204d26c211a5",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_15",
+                            "type": "Message"
                         }
                     ]
                 },
                 {
-                    "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                    "id": "6e8836ad-e3a9-4375-81e0-924ee4d18f05",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "handleChooseMechanism_5",
-                    "type": "LookForMatch"
-                }
-            ]
-        },
-        {
-            "type": "Text",
-            "id": "6befe9d2-45a0-4511-9f16-9fb9ac5d023f",
-            "label": "ChooseCharacters_1",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 154,
-            "hitArea.height": 15,
-            "x": 460,
-            "y": 97,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Close-Range",
-            "list": [
+                    "type": "Rectangle",
+                    "id": "c646a229-e10a-49ff-a9a8-3470cea1194b",
+                    "label": "highlight_1",
+                    "useGameObjectName": true,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 640,
+                    "y": 632,
+                    "scaleX": 0.9889080771893287,
+                    "scaleY": 0.1807207308530191,
+                    "fillColor": "#4000ff",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
                 {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "b331ab71-8c0a-4ff5-b089-f5380e7a2019",
-                    "label": "onPointerDownScript_18",
+                    "type": "Text",
+                    "id": "82375d18-f6b0-41e7-99b5-2ad64c4bfbe2",
+                    "label": "GoToMatch",
+                    "useGameObjectName": true,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 154,
+                    "hitArea.height": 15,
+                    "x": 640,
+                    "y": 632,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Find a Match",
                     "list": [
                         {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "1c1f6488-a782-40ed-a090-7f7ec1d702e0",
-                            "label": "pushActionScript_18"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "5ccf3f8e-db57-4236-a3ed-f9af72d0240c",
+                            "label": "onPointerDownScript_12",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "5bd1a2e0-e986-41d4-9a3c-0bf33ea26818",
+                                    "label": "pushActionScript_12"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "6e8836ad-e3a9-4375-81e0-924ee4d18f05",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_5",
+                            "type": "LookForMatch"
                         }
                     ]
                 }
             ]
         },
         {
-            "type": "Text",
-            "id": "cb392588-c1d1-4bcf-8e58-71fe72a6f43f",
-            "label": "ChooseCharacters_2",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.width": 154,
-            "hitArea.height": 15,
-            "x": 460,
-            "y": 351,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Long-Range",
+            "type": "Container",
+            "id": "85542a09-e894-42fa-8fbb-46068d957c94",
+            "label": "Button Profile",
             "list": [
                 {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "d914e661-2959-4dbb-9a5d-613adf5947df",
-                    "label": "onPointerDownScript_19",
+                    "type": "Text",
+                    "id": "8ce06cd5-0820-4789-94ae-043b6a6a132b",
+                    "label": "Profile",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": -15,
+                    "hitArea.y": -17,
+                    "hitArea.width": 100.09315749661158,
+                    "hitArea.height": 53.83254699275936,
+                    "x": 399,
+                    "y": 48,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Profile",
                     "list": [
                         {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "728d6c23-f1e0-4fad-bd8b-7cf80d444321",
-                            "label": "pushActionScript_19"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "6d11b2f4-ad25-43a3-961f-cdb76e58c09d",
+                            "label": "onPointerDownScript_1",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "16034f5f-b490-44eb-9d1b-fb80c5cf2f42",
+                                    "label": "pushActionScript_1"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "7156eec4-ebf3-4ede-b5a1-6c0ff7ed3f86",
+                            "id": "a21b151b-e9ed-432e-85cd-ab7a906b30d4",
+                            "label": "goToProfile"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "85a22995-225d-40bf-b694-9c97ea2a460c",
+            "label": "Button Choose Characters",
+            "x": 75.16212463378906,
+            "y": -70.72154235839844,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "17f3881e-a62c-472f-983a-87f2255df5bf",
+                    "label": "highlight",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 103.83787536621094,
+                    "y": 118.72154235839844,
+                    "scaleX": 1.333615647299753,
+                    "scaleY": 0.1807207308530191,
+                    "fillColor": "#4000ff",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "ad7fec9f-3108-4115-9a60-d9099dffbb12",
+                    "label": "ChooseCharacters",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 154,
+                    "hitArea.height": 15,
+                    "x": 104.83787536621094,
+                    "y": 118.72154235839844,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Choose Characters",
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "bcb6cab9-80d3-448c-8b5b-38f50b9e3ae5",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "5fae41f2-6b90-4f6a-8be8-a03b7041a0d5",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "73601ffe-00b7-4774-8455-e7ec80c8dad8",
+            "label": "BackgroundAndText",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "3ce7bd96-8cc8-421d-b13f-db586c0bdc1f",
+                    "label": "cartas2_Imprimir",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 777,
+                    "y": 473,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "25a7a4c5-4fe2-4545-90e5-434fbc74fb65",
+                    "label": "cartas2_Imprimir_1",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 619,
+                    "y": 472,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "6bc0d560-ceac-4555-9a97-c8f560bbb35a",
+                    "label": "cartas2_Imprimir_2",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 459,
+                    "y": 472,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "ebf7e518-8150-4e47-be55-37e4d4eeb776",
+                    "label": "cartas2_Imprimir_3",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 301,
+                    "y": 472,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "55dd0b14-4e3d-4c5f-832e-4e2e9a771277",
+                    "label": "cartas2_Imprimir_4",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 142,
+                    "y": 472,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "ffa1b28b-c239-476f-a54f-33c4e61b843b",
+                    "label": "cartas2_Imprimir_5",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 776,
+                    "y": 221,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "fb83505f-a8ce-4f2c-9b00-60e5c4be1d01",
+                    "label": "cartas2_Imprimir_6",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 619,
+                    "y": 221,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "945aee5e-81fc-42ed-a181-22cd1de03625",
+                    "label": "cartas2_Imprimir_7",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 459,
+                    "y": 221,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "6ce104fb-d728-4462-8dc4-8c594ceb4ed9",
+                    "label": "cartas2_Imprimir_8",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 301,
+                    "y": 221,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "8d136e36-8742-41cb-9b03-6f871fc7f473",
+                    "label": "cartas2_Imprimir1",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 142,
+                    "y": 221,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Text",
+                    "id": "6befe9d2-45a0-4511-9f16-9fb9ac5d023f",
+                    "label": "ChooseCharacters_1",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 154,
+                    "hitArea.height": 15,
+                    "x": 460,
+                    "y": 97,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Close-Range",
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "b331ab71-8c0a-4ff5-b089-f5380e7a2019",
+                            "label": "onPointerDownScript_18",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "1c1f6488-a782-40ed-a090-7f7ec1d702e0",
+                                    "label": "pushActionScript_18"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "cb392588-c1d1-4bcf-8e58-71fe72a6f43f",
+                    "label": "ChooseCharacters_2",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 154,
+                    "hitArea.height": 15,
+                    "x": 460,
+                    "y": 351,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Long-Range",
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "d914e661-2959-4dbb-9a5d-613adf5947df",
+                            "label": "onPointerDownScript_19",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "728d6c23-f1e0-4fad-bd8b-7cf80d444321",
+                                    "label": "pushActionScript_19"
+                                }
+                            ]
                         }
                     ]
                 }
