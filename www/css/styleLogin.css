@@ -1,6 +1,6 @@
-/* *{
+*{
     font-family: 'Minecraft', 'Pixeled';
-} */
+}
 
 @font-face {
     font-family: 'Minecraft';
@@ -18,7 +18,6 @@ body, html {
     background-color: black;
     background-image: url('../img/Specasdossheets.PNG');
 
-    /** Fullscreen background image without repeating. Adapt to the height of the screen */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -97,8 +96,6 @@ body, html {
 
 .container #redirect {
     color: #ccc;
-    /* font-size: 4vw;
-    text-shadow: 2px 2px 4px #000000;         */
 }
 
 #navbarright {
@@ -110,6 +107,7 @@ a {
 }
 
 #message {
-    font-size: 2vw;
+    font-size: 1%;
+    color: #ccc;
 }
 

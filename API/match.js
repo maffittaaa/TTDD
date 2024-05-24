@@ -210,15 +210,15 @@ router.post("/choseCharacters", (req, res) => {
 
                     for (var i = 1; i < 6; i++) {
                         for (var j = 0; j < rows.length; j++) {
-                            if (charactersChosen["slot_" + i + ""] != 0) {
-                                if (rows[j].caracter_id == charactersChosen["slot_" + i + ""]) {
+                            if (charactersChosen["slot_" + i + ""] != null) {
+                                if (rows[j].caracter_id == charactersChosen["slot_" + i + ""] + 1) {
                                     charactersNameFound.push(" " + rows[j].caracter_name)
                                     charactersIdFound.push(rows[j].caracter_id);
                                     charactersHpFound.push(rows[j].caracter_HP);
                                 }
                             }
                         }
-                        if (charactersChosen["slot_" + i + ""] != 0) {
+                        if (charactersChosen["slot_" + i + ""] != null) {
                             chaSentLength++;
                         }
                     }

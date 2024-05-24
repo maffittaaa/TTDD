@@ -56,7 +56,6 @@ function checkMatchFound() {
         type: "GET",
         url: "/login/CheckLogin",
         success: function (data) {
-            console.log(data)
             if (data.logged == false) {
                 window.location.replace("/login.html");
                 return false;
