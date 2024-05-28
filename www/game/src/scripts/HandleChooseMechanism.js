@@ -30,7 +30,7 @@ class HandleChooseMechanism extends ScriptNode {
 	/* START-USER-CODE */
 
 	awake(){
-		if(this.type != "Slot"){
+		if(this.type == "charSelct" || this.type == "LookForMatch"){
 			var scene = this
 			$.ajax({
 				type: "GET",
@@ -40,42 +40,42 @@ class HandleChooseMechanism extends ScriptNode {
 						window.location.replace("/login.html");
 						return false;
 					} else {
-						char = JSON.parse(data.characters);
-						var characters = scene.parent.parentContainer.list
 
-						
-						console.log(scene.parent.parentContainer.list)
-						if(scene.type == "Character"){
-							for (let i = 0; i < characters.length; i++) {
-								if(characters[i].name.search("character_id_") == 0){
-									// console.log(characters[i].name)
-									characters[i].visible = false
-									// scene.parent.visible = false
+						if(scene.type == "charSelct"){
+
+							var username = scene.parent.parentContainer.list
+							
+							for (let i = 0; i < username.length; i++) {
+								if(username[i].name.search("Username") == 0){
+									username[i].text = data.name
 								}
 							}
 
-							for (let i = 0; i < char.length; i++) {
+							char = JSON.parse(data.characters);
+							var characters = scene.parent.parentContainer.list
 
-								if(characters[i].name.search("character_id_") == 0){
-									var splitChar = characters[i].name.split("id_", 2)
-
-									console.log(characters[i].name, splitChar[1], char[i].player_character_character_id)
-									if(splitChar[1] == char[i].player_character_character_id - 1){
-										// scene.parent.visible = true
-										characters[i].visible = true
+							for (let j = 0; j < char.length; j++) {
+								for (let i = 0; i < characters.length; i++) {
+									if(characters[i].name.search("character_id_") == 0){
+										var splitChar = characters[i].name.split("id_", 2)
+					
+										if(splitChar[1] == char[j].player_character_character_id - 1){
+											characters[i].visible = true
+										}
 									}
-
-									// scene.parent.visible = false
 								}
-
 							}
-						}
-						
-						
-						if(scene.type == "LookForMatch"){
+						}else if(scene.type == "LookForMatch"){
 							if (data.match){
+								var textChange = scene.parent.parentContainer.list
+								for (let i = 0; i < textChange.length; i++) {
+									if(textChange[i].name == "Message"){
+										textChange[i].text = "Looking for a match"
+									}else{
+										textChange[i].visible = false
+									}
+								}
 								lookingForMatch = true
-								scene.parent.parentContainer.visible = false
 							}
 						}
 					}
@@ -124,7 +124,6 @@ class HandleChooseMechanism extends ScriptNode {
 		
 		if(this.type == "LookForMatch"){
 			if(time > (38 * 2)){
-				console.log(time)
 				this.checkMatchFound()
 				time = 0
 			}
@@ -141,7 +140,6 @@ class HandleChooseMechanism extends ScriptNode {
 					window.location.replace("/login.html");
 					return false;
 				}
-
 			},
 			error: function (err) {
 				console.log(err);
@@ -168,6 +166,19 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 	}
 
+	showMessage(message){
+		var textChange = this.parent.parentContainer.list
+		console.log(textChange)
+		for (let i = 0; i < textChange.length; i++) {
+			if(textChange[i].name == "MessageServer"){
+				textChange[i].text = message
+				setTimeout(() => {
+					textChange[i].text = ""
+				}, 4000);
+			}
+		}
+	}
+
 	pickCharacters(slot_Id, ch_Id) {
 		if (ch_Id != null) {
 			if(slotChosen == null){
@@ -184,14 +195,14 @@ class HandleChooseMechanism extends ScriptNode {
 				if (slotChosen > 3  && ch_Id > 5) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
 					charChosen = ch_Id
 				} else if ( slotChosen > 3 && ch_Id <= 5) {
-					console.log("Can't place the character there. Not a long-range character.")
+					this.showMessage("Can't place the character there. \n 	Not a long-range character.")
 					return;
 				} else {
 					charChosen = ch_Id
 				}
 				slots["slot_" + slotChosen] = ch_Id
 			} else {
-				console.log("You can't pick the same character twice");
+				this.showMessage("You can't pick the same character twice");
 			}
 		} else {
 			slotChosen = slot_Id;
@@ -231,25 +242,7 @@ class HandleChooseMechanism extends ScriptNode {
 						
 						lookingForMatch = true;
 					} else {
-						slots = JSON.parse(slots);
-						var char = JSON.parse(data.charactersFound);
-
-						document.getElementById("characters").innerHTML = "Chose another character";
-
-						for (let i = 1; i < 6; i++) {
-							var notIn = true;
-
-							for (let j = 0; j < char.length; j++) {
-								if (slots["slot_" + i + ""] == char[j] && notIn == true) {
-									notIn = false;
-								}
-							}
-
-							if (notIn == true) {
-								document.getElementById("slot_" + i + "").innerHTML = "chose slot";
-								slots["slot_" + i + ""] = 0;
-							}
-						}
+						this.showMessage("Chose another character")
 					}
 				},
 				error: function (err) {
@@ -258,10 +251,6 @@ class HandleChooseMechanism extends ScriptNode {
 			})
 		}
 	}
-
-
-
-
 	/* END-USER-CODE */
 }
 

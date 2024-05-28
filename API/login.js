@@ -8,7 +8,7 @@ router.get("/CheckLogin", (req, res) => {
         return
     }
 
-    connection.execute("SELECT player_level, player_matches, player_victories FROM player WHERE player_id = ?", [req.session.playerID], 
+    connection.execute("SELECT player_email, player_level, player_matches, player_victories FROM player WHERE player_id = ?", [req.session.playerID], 
         function(err, rows, fields){
             if(err){
                 res.send(err);
@@ -18,6 +18,7 @@ router.get("/CheckLogin", (req, res) => {
                     {
                         id: req.session.playerID,
                         name: req.session.playerName,
+                        email: rows[0].player_email,
                         characters: JSON.stringify(req.session.characters),
                         xp: rows[0].player_level,
                         matchesDone: rows[0].player_matches,

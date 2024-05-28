@@ -34,22 +34,26 @@ router.post("/register", (req, res) => {
                                 })
                             }
                             else {
-                                connection.execute("INSERT INTO playerCharacter(player_character_player_id, player_character_character_id) VALUES ("+ rows.insertId +", 1);",
-                                function (err, rows, fields) {
-                                    if (err) {
-                                        res.send({
-                                            "registered": false,
-                                            "message": "something went wrong: " + err
-                                        })
-                                    }
-                                    else {
-                                        res.send({
-                                            "registered": true,
-                                            "username": user[0],
-                                            "email": user[2]
-                                        })
-                                    }
-                                })
+                                for (let i = 0; i < 3; i++) {
+                                    connection.execute("INSERT INTO playerCharacter(player_character_player_id, player_character_character_id) VALUES ("+ rows.insertId +", "+ (i + 1) +");",
+                                        function (err, rows, fields) {
+                                            if (err) {
+                                                res.send({
+                                                    "registered": false,
+                                                    "message": "something went wrong: " + err
+                                                })
+                                            } else {
+                                                if(i == 2){
+                                                    res.send({
+                                                        "registered": true,
+                                                        "username": user[0],
+                                                        "email": user[2]
+                                                    })
+                                                }
+                                            }
+                                        }
+                                    )
+                                }
                             }
                         })
                 }

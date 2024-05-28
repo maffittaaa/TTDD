@@ -138,6 +138,11 @@
                 "key": "Profile"
             },
             {
+                "url": "src/scripts/ProfileDefenitions.js",
+                "type": "script",
+                "key": "ProfileDefenitions"
+            },
+            {
                 "url": "assets/Specasdossheets.png",
                 "type": "image",
                 "key": "Specasdossheets"
