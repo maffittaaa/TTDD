@@ -23,92 +23,47 @@ class Profile extends Phaser.Scene {
 		specasdossheets.scaleY = 0.66666;
 
 		// Profile Information
-		const profile_Information = this.add.container(18.75, 52.5);
+		const profile_Information = this.add.container(43.75000000000003, 62.5);
 
 		// XP
-		const xP = this.add.text(302, 191, "", {});
+		const xP = this.add.text(300, 191, "", {});
 		xP.name = "XP";
 		xP.setOrigin(0.5, 0.5);
 		xP.text = "XP:";
 		xP.setStyle({ "fontSize": "25px" });
 		profile_Information.add(xP);
 
-		// profileDefenitions
-		const profileDefenitions = new ProfileDefenitions(xP);
-
 		// Matches
-		const matches = this.add.text(302, 424, "", {});
+		const matches = this.add.text(300, 301, "", {});
 		matches.name = "Matches";
 		matches.setOrigin(0.5, 0.5);
 		matches.text = "Matches:";
 		matches.setStyle({ "fontSize": "25px" });
 		profile_Information.add(matches);
 
-		// profileDefenitions_2
-		const profileDefenitions_2 = new ProfileDefenitions(matches);
-
 		// Victories
-		const victories = this.add.text(302, 311, "", {});
+		const victories = this.add.text(300, 404, "", {});
 		victories.name = "Victories";
 		victories.setOrigin(0.5, 0.5);
 		victories.text = "Victories:";
 		victories.setStyle({ "fontSize": "25px" });
 		profile_Information.add(victories);
 
-		// profileDefenitions_1
-		const profileDefenitions_1 = new ProfileDefenitions(victories);
-
 		// Username
-		const username = this.add.text(948, 258, "", {});
+		const username = this.add.text(900, 237, "", {});
 		username.name = "Username";
 		username.setOrigin(0.5, 0.5);
 		username.text = "Username:";
 		username.setStyle({ "fontSize": "25px" });
 		profile_Information.add(username);
 
-		// profileDefenitions_4
-		const profileDefenitions_4 = new ProfileDefenitions(username);
-
 		// Email
-		const email = this.add.text(948, 365, "", {});
+		const email = this.add.text(900, 364, "", {});
 		email.name = "Email";
 		email.setOrigin(0.5, 0.5);
 		email.text = "Email:";
 		email.setStyle({ "fontSize": "25px" });
 		profile_Information.add(email);
-
-		// profileDefenitions_5
-		const profileDefenitions_5 = new ProfileDefenitions(email);
-
-		// Change Button
-		const change_Button = this.add.container(622, 579.5);
-		profile_Information.add(change_Button);
-
-		// highlight_1
-		const highlight_1 = this.add.rectangle(-0.5767543512015436, 0.3699310952790711, 128, 128);
-		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_1.scaleX = 1.25;
-		highlight_1.scaleY = 0.1807207308530191;
-		highlight_1.fillColor = 4194559;
-		highlight_1.isStroked = true;
-		highlight_1.strokeColor = 4194559;
-		highlight_1.strokeAlpha = 4;
-		highlight_1.lineWidth = 4;
-		change_Button.add(highlight_1);
-
-		// Change Profile
-		const change_Profile = this.add.text(-0.5767543512015436, -0.6300689047209289, "", {});
-		change_Profile.name = "Change Profile";
-		change_Profile.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
-		change_Profile.setOrigin(0.5, 0.5);
-		change_Profile.text = "Change profile";
-		change_Button.add(change_Profile);
-
-		// onPointerDownScript_3
-		const onPointerDownScript_3 = new OnPointerDownScript(change_Profile);
-
-		// pushActionScript_3
-		new PushActionScript(onPointerDownScript_3);
 
 		// Profile Button
 		const profile_Button = this.add.container(0, 0);
@@ -156,20 +111,38 @@ class Profile extends Phaser.Scene {
 		// goToChooseCharacters
 		new GoToChooseCharacters(chooseCharacters);
 
-		// profileDefenitions (prefab fields)
-		profileDefenitions.Type = "XP";
+		// Change Profile Button
+		const change_Profile_Button = this.add.container(640, 632);
 
-		// profileDefenitions_2 (prefab fields)
-		profileDefenitions_2.Type = "Matches";
+		// highlight_1
+		const highlight_1 = this.add.rectangle(0, 0, 128, 128);
+		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_1.scaleY = 0.1807207308530191;
+		highlight_1.fillColor = 4194559;
+		highlight_1.isStroked = true;
+		highlight_1.strokeColor = 4194559;
+		highlight_1.strokeAlpha = 4;
+		highlight_1.lineWidth = 4;
+		change_Profile_Button.add(highlight_1);
 
-		// profileDefenitions_1 (prefab fields)
-		profileDefenitions_1.Type = "Victories";
+		// Profile_1
+		const profile_1 = this.add.text(0, 0, "", {});
+		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_1.setOrigin(0.5, 0.5);
+		profile_1.text = "Profile";
+		change_Profile_Button.add(profile_1);
 
-		// profileDefenitions_4 (prefab fields)
-		profileDefenitions_4.Type = "Username";
+		// onPointerDownScript_2
+		const onPointerDownScript_2 = new OnPointerDownScript(profile_1);
 
-		// profileDefenitions_5 (prefab fields)
-		profileDefenitions_5.Type = "Email";
+		// pushActionScript
+		new PushActionScript(onPointerDownScript_2);
+
+		// goToProfile
+		const goToProfile = new GoToProfile(profile_1);
+
+		// goToProfile (prefab fields)
+		goToProfile.Type = "ChangeProfile";
 
 		this.xP = xP;
 		this.matches = matches;
@@ -221,6 +194,7 @@ class Profile extends Phaser.Scene {
 	}
 
 	start(){
+
 	}
 
 	update(){

@@ -2,6 +2,200 @@ const express = require('express');
 const connection = require('../database');
 const router = express.Router();
 
+router.post("/changeProfile", (req, res) => {
+    playerUsername = req.body.new_name;
+    playerPassword = req.body.password;
+    playerEmail = req.body.new_email;
+
+
+    connection.execute("SELECT player_username FROM player WHERE player_id = ? AND player_password = ?", [req.session.playerID, playerPassword],
+        function (err, rows, fields) {
+            if (err) {
+                res.send({
+                    "changed": false,
+                    "message": "something went wrong: " + err
+                });
+            } else {
+                if (rows.length > 0) {
+                    if(playerUsername != ""){
+                        if(playerEmail.search(" ") >= 0){
+                            res.send({
+                                "changed": false,
+                                "message": "You can't put spaces in your name or email"
+                            })
+                            return
+                        }
+                        if(playerUsername.search(" ") >= 0){
+                            res.send({
+                                "changed": false,
+                                "message": "You can't put spaces in your name or email"
+                            })
+                            return
+                        }else{
+                            connection.execute("SELECT * FROM player WHERE player_username = ? OR player_email = ? ", [playerUsername, playerEmail],
+                                function (err, rows1, fields) {
+                                    if (err) {
+                                        res.send({
+                                            "changed": false,
+                                            "message": "something went wrong: " + err
+                                        });
+                                    } else {
+                                        if (rows1.length > 0) {
+                                            console.log(rows1);
+                                            res.send({
+                                                "changed": false,
+                                                "message": "The user already exists, \n or the email is already in use, \n please try another one"
+                                            })
+                                        }else{
+                                            connection.execute("UPDATE player SET player_username = ? WHERE player_id = ?", [playerUsername, req.session.playerID],
+                                                function (err, rows, fields) {
+                                                    if (err) {
+                                                        res.send({
+                                                            "changed": false,
+                                                            "message": "something went wrong: " + err
+                                                        })
+                                                    }else {
+                                                        if(playerEmail == ""){
+                                                            res.send({
+                                                                "changed": true,
+                                                            })
+                                                            return
+                                                        }
+                                                        connection.execute("UPDATE player SET player_email = ? WHERE player_id = ?", [playerEmail, req.session.playerID], 
+                                                            function (err, rows, fields) {
+                                                                if (err) {
+                                                                    res.send({
+                                                                        "changed": false,
+                                                                        "message": "something went wrong: " + err
+                                                                    })
+                                                                }else {
+                                                                    res.send({
+                                                                        "changed": true,
+                                                                    })
+                                                                }
+                                                            }
+                                                        )
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    }
+                                }
+                            )
+                        }
+                    }else if(playerEmail != ""){
+                        if(playerEmail.search(" ") >= 0){
+                            res.send({
+                                "changed": false,
+                                "message": "You can't put spaces in your name or email"
+                            })
+                            return
+                        }
+                        connection.execute("SELECT * FROM player WHERE player_email = ? ", [playerEmail],
+                            function (err, rows, fields) {
+                                if (err) {
+                                    res.send({
+                                        "changed": false,
+                                        "message": "something went wrong: " + err
+                                    });
+                                } else {
+                                    if (rows.length > 0) {
+                                        console.log("Already exists");
+                                        res.send({
+                                            "changed": false,
+                                            "message": "The user already exists, \n or the email is already in use, \n please try another one"
+                                        })
+                                    }else{
+                                        connection.execute("UPDATE player SET player_email = ? WHERE player_id = ?", [playerEmail, req.session.playerID],
+                                            function (err, rows, fields) {
+                                                if (err) {
+                                                    res.send({
+                                                        "changed": false,
+                                                        "message": "something went wrong: " + err
+                                                    })
+                                                }else {
+                                                    res.send({
+                                                        "changed": true,
+                                                    })
+                                                }
+                                            }
+                                        )
+                                        
+                                    }
+                                }
+                            }
+                        )
+                    }else{
+                        res.send({
+                            "changed": false,
+                            "message": "To Change the profile please intruduce something on the boxes above.: '"+ playerUsername +"' and '"+ playerEmail +"'" 
+                        })
+                    }
+                } else {
+                    res.send({
+                        "changed": false,
+                        "message": "The password is not correct"
+                    })
+                }
+            }
+        }
+    )
+})
+
+router.post("/choseCharacters", (req, res) => {
+    var charactersChosen = req.body.slots;
+    charactersChosen = JSON.parse(charactersChosen);
+
+    connection.execute("SELECT caracter_id, caracter_name, caracter_HP FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
+        function (err, rows, fields) {
+            if (err) {
+                res.send(err);
+            }
+            else {
+                if (rows.length > 0) {
+                    var charactersNameFound = [];
+                    var charactersIdFound = [];
+                    var charactersHpFound = [];
+                    var chaSentLength = 0;
+
+                    for (var i = 1; i < 6; i++) {
+                        for (var j = 0; j < rows.length; j++) {
+                            if (charactersChosen["slot_" + i] != null) {
+                                if (rows[j].caracter_id == charactersChosen["slot_" + i]) {
+                                    charactersNameFound.push(" " + rows[j].caracter_name)
+                                    charactersIdFound.push(rows[j].caracter_id);
+                                    charactersHpFound.push(rows[j].caracter_HP);
+                                }
+                            }
+                        }
+                        if (charactersChosen["slot_" + i] != null) {
+                            chaSentLength++;
+                        }
+                    }
+                    if (charactersNameFound.length == chaSentLength) {
+                        createMatch(req, res, charactersNameFound, charactersIdFound, charactersHpFound, charactersChosen);
+                    } else {
+                        res.send(
+                            {
+                                "success": false,
+                                "message": "Invalid character chosen. Only found this: ",
+                                "charactersFound": JSON.stringify(charactersIdFound)
+                            }
+                        );
+                    }
+                } else {
+                    res.send(
+                        {
+                            "success": false,
+                            "message": "You don't have any characters yet"
+                        }
+                    );
+                }
+            }
+        }
+    )
+});
+
 function createMatch(req, res, charactersFound, charactersId, charactersHp, tile) {
     //check if a player is in a match
     connection.execute("SELECT matche_id FROM matche WHERE (matche_state_id = 3 or matche_state_id = 1) and (matche_player1_id = " + req.session.playerID + " or matche_player2_id = " + req.session.playerID + ")",
@@ -112,6 +306,59 @@ function createMatch(req, res, charactersFound, charactersId, charactersHp, tile
     )
 };
 
+function addCharacter(req, res, characters, hp, tile) {
+    console.log(characters.length, hp, tile)
+    //acabar de por os slots/tiles inseridos na base de dados quando os characters sao inseridos. fazer check a se o player é o player 1 ou o 2. falar com a mafaldo sobr os tiles pq se os dois jogadores vao ver-se a si mesmos do lado direit
+
+    connection.execute("INSERT INTO playerMatch (player_match_player_id, player_match_match_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "')",
+        function (err, rows, fields) {
+            if (err) {
+                console.log("player match: " + err);
+                res.send(err);
+            } else {
+                console.log("success");
+                // res.send("Player added to playermatch")
+
+                for (let i = 0; i < characters.length; i++) {
+                    for (let j = 1; j < 6; j++) {
+                        console.log(tile["slot_" + j], characters[i])
+                        if (tile["slot_" + j] == characters[i]) {
+                            connection.execute("INSERT INTO playerMatchCharacter (player_match_character_player_id, player_match_character_match_id, player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "', '" + characters[i] + "', '" + hp[i] + "', '" + j + "')",
+                                function (err1, rows, fields) {
+                                    if (err1) {
+                                        console.log("player match character: " + err1);
+                                        res.send(err1);
+                                    } else {
+                                        
+                                        console.log("character " + characters[i] + " added to slot " + j);
+                                    }
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    )
+}
+
+function addCards(req, res) {
+    connection.execute("INSERT INTO deck(deck_match_id, deck_player_id, deck_card_id, deck_card_state_id, deck_card_played) VALUES \
+    ("+ req.session.match +", "+ req.session.playerID +",1, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 2, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 3, 1, false), \
+    ("+ req.session.match +", "+ req.session.playerID +", 4, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 5, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 6, 1, false), \
+    ("+ req.session.match +", "+ req.session.playerID +", 7, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 8, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 9, 1, false), \
+    ("+ req.session.match +", "+ req.session.playerID +", 10, 1, false) ",
+        function (err, rows, fields) {
+            if (err) {
+                console.log("Deck, card 1: " + err);
+                // res.send(err);
+            } else {
+                console.log("yuppie, ", rows);
+            }
+        }
+    )
+}
+
 router.get("/checkMatchFound", (req, res) => {
     connection.execute("SELECT matche_id FROM matche WHERE (matche_player1_id = ? or matche_player2_id = ?) and matche_player1_id is not null and matche_player2_id is not null and matche_state_id = 3",
         [req.session.playerID, req.session.playerID],
@@ -193,113 +440,6 @@ router.get("/getMatchData", (req, res) => {
         }
     )
 });
-
-router.post("/choseCharacters", (req, res) => {
-    var charactersChosen = req.body.slots;
-    charactersChosen = JSON.parse(charactersChosen);
-
-    connection.execute("SELECT caracter_id, caracter_name, caracter_HP FROM player, playerCharacter, caracter WHERE player_id = " + req.session.playerID + " and player_id = player_character_player_id and player_character_character_id = caracter_id",
-        function (err, rows, fields) {
-            if (err) {
-                res.send(err);
-            }
-            else {
-                if (rows.length > 0) {
-                    var charactersNameFound = [];
-                    var charactersIdFound = [];
-                    var charactersHpFound = [];
-                    var chaSentLength = 0;
-
-                    for (var i = 1; i < 6; i++) {
-                        for (var j = 0; j < rows.length; j++) {
-                            if (charactersChosen["slot_" + i] != null) {
-                                if (rows[j].caracter_id == charactersChosen["slot_" + i]) {
-                                    charactersNameFound.push(" " + rows[j].caracter_name)
-                                    charactersIdFound.push(rows[j].caracter_id);
-                                    charactersHpFound.push(rows[j].caracter_HP);
-                                }
-                            }
-                        }
-                        if (charactersChosen["slot_" + i] != null) {
-                            chaSentLength++;
-                        }
-                    }
-                    if (charactersNameFound.length == chaSentLength) {
-                        createMatch(req, res, charactersNameFound, charactersIdFound, charactersHpFound, charactersChosen);
-                    } else {
-                        res.send(
-                            {
-                                "success": false,
-                                "message": "Invalid character chosen. Only found this: ",
-                                "charactersFound": JSON.stringify(charactersIdFound)
-                            }
-                        );
-                    }
-                } else {
-                    res.send(
-                        {
-                            "success": false,
-                            "message": "You don't have any characters yet"
-                        }
-                    );
-                }
-            }
-        }
-    )
-});
-
-function addCharacter(req, res, characters, hp, tile) {
-    console.log(characters.length, hp, tile)
-    //acabar de por os slots/tiles inseridos na base de dados quando os characters sao inseridos. fazer check a se o player é o player 1 ou o 2. falar com a mafaldo sobr os tiles pq se os dois jogadores vao ver-se a si mesmos do lado direit
-
-    connection.execute("INSERT INTO playerMatch (player_match_player_id, player_match_match_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "')",
-        function (err, rows, fields) {
-            if (err) {
-                console.log("player match: " + err);
-                res.send(err);
-            } else {
-                console.log("success");
-                // res.send("Player added to playermatch")
-
-                for (let i = 0; i < characters.length; i++) {
-                    for (let j = 1; j < 6; j++) {
-                        console.log(tile["slot_" + j], characters[i])
-                        if (tile["slot_" + j] == characters[i]) {
-                            connection.execute("INSERT INTO playerMatchCharacter (player_match_character_player_id, player_match_character_match_id, player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id) VALUES ('" + req.session.playerID + "', '" + req.session.match + "', '" + characters[i] + "', '" + hp[i] + "', '" + j + "')",
-                                function (err1, rows, fields) {
-                                    if (err1) {
-                                        console.log("player match character: " + err1);
-                                        res.send(err1);
-                                    } else {
-                                        
-                                        console.log("character " + characters[i] + " added to slot " + j);
-                                    }
-                                }
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    )
-}
-
-function addCards(req, res) {
-    connection.execute("INSERT INTO deck(deck_match_id, deck_player_id, deck_card_id, deck_card_state_id, deck_card_played) VALUES \
-    ("+ req.session.match +", "+ req.session.playerID +",1, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 2, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 3, 1, false), \
-    ("+ req.session.match +", "+ req.session.playerID +", 4, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 5, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 6, 1, false), \
-    ("+ req.session.match +", "+ req.session.playerID +", 7, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 8, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 9, 1, false), \
-    ("+ req.session.match +", "+ req.session.playerID +", 10, 1, false) ",
-        function (err, rows, fields) {
-            if (err) {
-                console.log("Deck, card 1: " + err);
-                // res.send(err);
-            } else {
-                console.log("yuppie, ", rows);
-            }
-        }
-    )
-}
 
 router.get("/deltaChanges", (req, res) => {
     if (req.session.playerID && req.session.match) {

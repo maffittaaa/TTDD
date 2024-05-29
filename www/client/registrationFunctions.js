@@ -9,7 +9,7 @@ function onAwake() {
             if (data.logged == false) {
                 return false;
             } else {
-                window.location.replace("/match.html");
+                window.location.replace("/game/");
                 return true;
             }
         },
@@ -36,7 +36,7 @@ function TryToLogin(){
             console.log(data);
             if (data.loggedIn){
                 document.getElementById("message").innerHTML = "Welcome " + data.username;
-                window.location.replace("/game");
+                window.location.replace("/game/");
             } else {
                 document.getElementById("message").innerHTML = "Wrong stuff, try again";
             }

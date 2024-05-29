@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleLogin.css">
-    <script src="game/src/scripts/ProfileDefenitions.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="client/profileDefenitions.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -12,11 +14,12 @@
 
     <div class="container">
         <span id="title"> Change Profile </span><br/><br/>
+        <input type="text" id="username" placeholder="Enter new Username"><br/>
+        <input type="email" id="email" placeholder="Enter new email"><br/>
         <input type="password" id="password" placeholder="Password"><br/>
-        <input type="text" id="username" placeholder="Username"><br/>
-        <input type="email" id="email" placeholder="Email"><br/>
+        <input type="password" id="check_password" placeholder="Confirm your Password"><br/>
         <div id="message"></div>
-        <input type="button" onclick="TryToRegister()" value="Change Profile"><br/>
+        <input type="button" onclick="tryToChangeProfile()" value="Change Profile"><br/>
         <a id="redirect" href="/game/"> Go back to the game </a>
     </div>
 </body>

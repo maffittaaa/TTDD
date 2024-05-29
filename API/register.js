@@ -9,7 +9,7 @@ router.post("/register", (req, res) => {
     user[1] = req.body.login_password;
     user[2] = req.body.login_email;
 
-    connection.execute("SELECT * FROM player WHERE player_username = '" + user[0] + "'",
+    connection.execute("SELECT * FROM player WHERE player_username = ? OR player_email = ? ", [user[0], user[2]],
         function (err, rows, fields) {
             if (err) {
                 res.send({
@@ -22,7 +22,7 @@ router.post("/register", (req, res) => {
                     console.log("Already exists");
                     res.send({
                         "registered": false,
-                        "message": "The user already exists, please try another one"
+                        "message": "The user already exists, \n or the email is already in use, \n please try another one"
                     })
                 } else {
                     connection.execute("INSERT INTO player (player_username, player_password, player_email) VALUES ('" + user[0] + "', '" + user[1] + "', '" + user[2] + "')",
