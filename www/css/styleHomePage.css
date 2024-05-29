@@ -41,5 +41,5 @@ fieldset {
     width: 70%;
     height: 30%;
     transform: translateX(20%);
-    /* align-items: center; */
+    background-color: rgb(0, 0, 0);
 }
