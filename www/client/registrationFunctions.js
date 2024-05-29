@@ -30,7 +30,7 @@ function TryToLogin(){
         url: "/login/login",
         data: {
             "login_name": username,
-            "login_password": encryptedPassword
+            "login_password": password
         },
         success: function (data) {
             console.log(data);

@@ -192,9 +192,10 @@ class HandleChooseMechanism extends ScriptNode {
 				}
 			}
 			if (alreadyChosen == false) {
-				if (slotChosen > 3  && ch_Id > 5) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
+				if (slotChosen > 3  && ch_Id > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
 					charChosen = ch_Id
-				} else if ( slotChosen > 3 && ch_Id <= 5) {
+				} else if ( slotChosen > 3 && ch_Id <= 4) {
+					console.log(slotChosen, ch_Id)
 					this.showMessage("Can't place the character there. \n 	Not a long-range character.")
 					return;
 				} else {
