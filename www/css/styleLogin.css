@@ -1,5 +1,6 @@
 * {
     font-family: 'Minecraft', 'Pixeled';
+
 }
 
 @font-face {
@@ -27,6 +28,7 @@ html {
 #Logo {
     /* transform: translate(30vw, 5vw); */
     align-items: center;
+    transform: translateY(-20px);
     width: 40vw;
     height: 20vw;
 }
