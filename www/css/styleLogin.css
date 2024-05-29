@@ -70,6 +70,7 @@ html {
 }
 
 .container input[type=text],
+.container input[type=email],
 .container input[type=password] {
     width: 20%;
     padding: 12px 20px;
