@@ -26,9 +26,9 @@ html {
 }
 
 #Logo {
-    /* transform: translate(30vw, 5vw); */
+    transform: translate(30vw, -1vw);
     align-items: center;
-    transform: translateY(-20px);
+
     width: 40vw;
     height: 20vw;
 }

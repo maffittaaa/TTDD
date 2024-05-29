@@ -32,6 +32,14 @@
 }
 
 
-#gametitle{
+#gametitle {
     font-size: 170%;
+}
+
+fieldset {
+    border-radius: 5px;
+    width: 70%;
+    height: 30%;
+    transform: translateX(20%);
+    /* align-items: center; */
 }
