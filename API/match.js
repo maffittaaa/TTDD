@@ -56,8 +56,11 @@ router.post("/changeProfile", (req, res) => {
                                                         })
                                                     }else {
                                                         if(playerEmail == ""){
+                                                            req.session.playerName = playerUsername
+                                                            console.log("aaa ", req.session.playerName)
                                                             res.send({
                                                                 "changed": true,
+                                                                "name": req.session.playerName
                                                             })
                                                             return
                                                         }
@@ -69,8 +72,11 @@ router.post("/changeProfile", (req, res) => {
                                                                         "message": "something went wrong: " + err
                                                                     })
                                                                 }else {
+                                                                    req.session.playerName = playerUsername
+                                                                    console.log("aaa ", req.session.playerName)
                                                                     res.send({
                                                                         "changed": true,
+                                                                        "name": req.session.playerName
                                                                     })
                                                                 }
                                                             }
@@ -114,8 +120,11 @@ router.post("/changeProfile", (req, res) => {
                                                         "message": "something went wrong: " + err
                                                     })
                                                 }else {
+                                                    req.session.playerName = playerUsername
+                                                    console.log("aaa ", req.session.playerName)
                                                     res.send({
                                                         "changed": true,
+                                                        "name": req.session.playerName
                                                     })
                                                 }
                                             }
@@ -128,7 +137,7 @@ router.post("/changeProfile", (req, res) => {
                     }else{
                         res.send({
                             "changed": false,
-                            "message": "To Change the profile please intruduce something on the boxes above.: '"+ playerUsername +"' and '"+ playerEmail +"'" 
+                            "message": "To change the profile please intruduce something on the boxes above." 
                         })
                     }
                 } else {
