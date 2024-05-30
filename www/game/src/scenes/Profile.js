@@ -115,8 +115,9 @@ class Profile extends Phaser.Scene {
 		const change_Profile_Button = this.add.container(640, 632);
 
 		// highlight_1
-		const highlight_1 = this.add.rectangle(0, 0, 128, 128);
+		const highlight_1 = this.add.rectangle(-2, 0, 128, 128);
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_1.scaleX = 1.3;
 		highlight_1.scaleY = 0.1807207308530191;
 		highlight_1.fillColor = 4194559;
 		highlight_1.isStroked = true;
@@ -129,7 +130,7 @@ class Profile extends Phaser.Scene {
 		const profile_1 = this.add.text(0, 0, "", {});
 		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_1.setOrigin(0.5, 0.5);
-		profile_1.text = "Profile";
+		profile_1.text = "Change profile";
 		change_Profile_Button.add(profile_1);
 
 		// onPointerDownScript_2

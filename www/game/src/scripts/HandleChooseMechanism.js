@@ -47,6 +47,7 @@ class HandleChooseMechanism extends ScriptNode {
 							
 							for (let i = 0; i < username.length; i++) {
 								if(username[i].name.search("Username") == 0){
+									console.log(data)
 									username[i].text = data.name
 								}
 							}

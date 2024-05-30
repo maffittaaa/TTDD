@@ -9,7 +9,7 @@ function onAwake() {
             if (data.logged == false) {
                 return false;
             } else {
-                window.location.replace("/game/");
+                window.location.replace("/game");
                 return true;
             }
         },
