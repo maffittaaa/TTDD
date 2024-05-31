@@ -1,6 +1,8 @@
 
 // You can write more code here
 goToProfile = false
+goToCharactersAndCards = false
+goToChooseChar = false
 
 /* START OF COMPILED CODE */
 
@@ -163,8 +165,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// pushActionScript_1
 		new PushActionScript(onPointerDownScript_1);
 
-		// goToProfile
-		new GoToProfile(profile);
+		// goToScene
+		const goToScene = new GoToScene(profile);
 
 		// BackgroundAndText
 		const backgroundAndText = this.add.container(0, 0);
@@ -261,7 +263,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// highlight
 		const highlight = this.add.rectangle(103.83787536621094, 118.72154235839844, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.333615647299753;
+		highlight.scaleX = 1.43;
 		highlight.scaleY = 0.1807207308530191;
 		highlight.fillColor = 4194559;
 		highlight.isStroked = true;
@@ -282,6 +284,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// pushActionScript_2
 		new PushActionScript(onPointerDownScript);
+
+		// goToScene_1
+		const goToScene_1 = new GoToScene(chooseCharacters);
 
 		// Characters
 		const characters = this.add.container(-1, -38);
@@ -477,6 +482,25 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism
 		const handleChooseMechanism = new HandleChooseMechanism(character_id_3);
 
+		// Characters and Cards
+		const characters_and_Cards = this.add.container(0, 0);
+
+		// Characters And Cards
+		const characters_And_Cards = this.add.text(622, 48, "", {});
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.setOrigin(0.5, 0.5);
+		characters_And_Cards.text = "Characters and Cards";
+		characters_and_Cards.add(characters_And_Cards);
+
+		// onPointerDownScript_20
+		const onPointerDownScript_20 = new OnPointerDownScript(characters_And_Cards);
+
+		// pushActionScript_20
+		new PushActionScript(onPointerDownScript_20);
+
+		// goToScene_2
+		const goToScene_2 = new GoToScene(characters_And_Cards);
+
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
 		handleChooseMechanism_13.type = "Slot";
@@ -502,6 +526,12 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_5 (prefab fields)
 		handleChooseMechanism_5.type = "LookForMatch";
+
+		// goToScene (prefab fields)
+		goToScene.sceneChosen = "Profile";
+
+		// goToScene_1 (prefab fields)
+		goToScene_1.sceneChosen = "ChooseCharacters";
 
 		// handleChooseMechanism_17 (prefab fields)
 		handleChooseMechanism_17.type = "charSelct";
@@ -548,6 +578,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism (prefab fields)
 		handleChooseMechanism.CharacterID = 3;
 		handleChooseMechanism.type = "Character";
+
+		// goToScene_2 (prefab fields)
+		goToScene_2.sceneChosen = "CharactersAndCards";
 
 		this.slot_id_4 = slot_id_4;
 		this.slot_id_1 = slot_id_1;
@@ -614,13 +647,17 @@ class ChooseCharactersMenu extends Phaser.Scene {
 	}
 
 	update(){
-		if (goToProfile){
-			this.scene.start("Profile");
-			goToProfile = false;
+		if(goToProfile){
+			this.scene.start("Profile")
+			goToProfile = false
+		}else if(goToChooseChar){
+			this.scene.start("ChooseCharactersMenu")
+			goToChooseChar = false
+		}else if(goToCharactersAndCards){
+			this.scene.start("CharactersAndCards")
+			goToCharactersAndCards = false
 		}
 	}
-
-
 
 	/* END-USER-CODE */
 }

@@ -92,6 +92,9 @@ class Profile extends Phaser.Scene {
 		// pushActionScript_1
 		new PushActionScript(onPointerDownScript_1);
 
+		// goToScene_1
+		const goToScene_1 = new GoToScene(profile);
+
 		// Choose Menu Button
 		const choose_Menu_Button = this.add.container(-233.9641265767494, 317.934904354586);
 
@@ -108,8 +111,8 @@ class Profile extends Phaser.Scene {
 		// pushActionScript_2
 		new PushActionScript(onPointerDownScript);
 
-		// goToChooseCharacters
-		new GoToChooseCharacters(chooseCharacters);
+		// goToScene
+		const goToScene = new GoToScene(chooseCharacters);
 
 		// Change Profile Button
 		const change_Profile_Button = this.add.container(640, 632);
@@ -139,11 +142,39 @@ class Profile extends Phaser.Scene {
 		// pushActionScript
 		new PushActionScript(onPointerDownScript_2);
 
-		// goToProfile
-		const goToProfile = new GoToProfile(profile_1);
+		// goToScene_3
+		const goToScene_3 = new GoToScene(profile_1);
 
-		// goToProfile (prefab fields)
-		goToProfile.Type = "ChangeProfile";
+		// Characters and Cards
+		const characters_and_Cards = this.add.container(0, 0);
+
+		// Characters And Cards
+		const characters_And_Cards = this.add.text(622, 48, "", {});
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.setOrigin(0.5, 0.5);
+		characters_And_Cards.text = "Characters and Cards";
+		characters_and_Cards.add(characters_And_Cards);
+
+		// onPointerDownScript_3
+		const onPointerDownScript_3 = new OnPointerDownScript(characters_And_Cards);
+
+		// pushActionScript_3
+		new PushActionScript(onPointerDownScript_3);
+
+		// goToScene_2
+		const goToScene_2 = new GoToScene(characters_And_Cards);
+
+		// goToScene_1 (prefab fields)
+		goToScene_1.sceneChosen = "Profile";
+
+		// goToScene (prefab fields)
+		goToScene.sceneChosen = "ChooseCharacters";
+
+		// goToScene_3 (prefab fields)
+		goToScene_3.sceneChosen = "ChangeProfile";
+
+		// goToScene_2 (prefab fields)
+		goToScene_2.sceneChosen = "CharactersAndCards";
 
 		this.xP = xP;
 		this.matches = matches;
@@ -199,10 +230,15 @@ class Profile extends Phaser.Scene {
 	}
 
 	update(){
-
-		if (goToChooseCharacters){
+		if(goToProfile){
+			this.scene.start("Profile")
+			goToProfile = false
+		}else if(goToChooseChar){
 			this.scene.start("ChooseCharactersMenu")
-			goToChooseCharacters = false
+			goToChooseChar = false
+		}else if(goToCharactersAndCards){
+			this.scene.start("CharactersAndCards")
+			goToCharactersAndCards = false
 		}
 	}
 

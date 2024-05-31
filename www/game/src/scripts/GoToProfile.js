@@ -19,13 +19,7 @@ class GoToProfile extends ScriptNode {
 	/* START-USER-CODE */
 
 	start(){
-		this.parent.on('pointerdown', event => {
-			if(this.Type == "ChangeProfile"){
-				window.location.replace("/changeProfile.html")
-			}else{
-				goToProfile = true
-			}
-		})
+
 	}
 
 	/* END-USER-CODE */

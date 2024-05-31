@@ -82,19 +82,24 @@
                 "key": "ChooseCharactersMenu"
             },
             {
+                "url": "src/scripts/DescriptionsMechanism.js",
+                "type": "script",
+                "key": "DescriptionsMechanism"
+            },
+            {
                 "url": "assets/dino.png",
                 "key": "dino",
                 "type": "image"
             },
             {
-                "url": "src/scripts/GoToChooseCharacters.js",
-                "type": "script",
-                "key": "GoToChooseCharacters"
-            },
-            {
                 "url": "src/scripts/GoToProfile.js",
                 "type": "script",
                 "key": "GoToProfile"
+            },
+            {
+                "url": "src/scripts/GoToScene.js",
+                "type": "script",
+                "key": "GoToScene"
             },
             {
                 "url": "src/scripts/HandleChooseMechanism.js",

@@ -359,9 +359,13 @@
                             ]
                         },
                         {
-                            "prefabId": "7156eec4-ebf3-4ede-b5a1-6c0ff7ed3f86",
-                            "id": "a21b151b-e9ed-432e-85cd-ab7a906b30d4",
-                            "label": "goToProfile"
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "18775d2c-7201-4b58-b556-204ebeb0703d",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene",
+                            "sceneChosen": "Profile"
                         }
                     ]
                 }
@@ -574,7 +578,7 @@
                     "hitArea.height": 128,
                     "x": 103.83787536621094,
                     "y": 118.72154235839844,
-                    "scaleX": 1.333615647299753,
+                    "scaleX": 1.43,
                     "scaleY": 0.1807207308530191,
                     "fillColor": "#4000ff",
                     "strokeColor": "#4000ff",
@@ -608,6 +612,15 @@
                                     "label": "pushActionScript_2"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "27cb000f-c26f-4ae7-80ba-6b08873feb2e",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_1",
+                            "sceneChosen": "ChooseCharacters"
                         }
                     ]
                 }
@@ -1073,6 +1086,49 @@
                             "label": "handleChooseMechanism",
                             "CharacterID": 3,
                             "type": "Character"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "8af03532-cf99-4fb2-bc01-377aab7f2101",
+            "label": "Characters and Cards",
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "f3063fef-451a-4e66-9667-375e1c021942",
+                    "label": "Characters And Cards",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 154,
+                    "hitArea.height": 15,
+                    "x": 622,
+                    "y": 48,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Characters and Cards",
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "aa8bb1c0-9bbb-4de1-b95f-dfe0cbbf48a2",
+                            "label": "onPointerDownScript_20",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "955cc953-0a7f-4c27-a46e-051070d51609",
+                                    "label": "pushActionScript_20"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "46e547a4-ad89-491f-998d-1ac87665f4ac",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_2",
+                            "sceneChosen": "CharactersAndCards"
                         }
                     ]
                 }

@@ -144,6 +144,15 @@
                                     "label": "pushActionScript_1"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "1476a9b3-aa37-48b7-9307-a037a064b428",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_1",
+                            "sceneChosen": "Profile"
                         }
                     ]
                 }
@@ -183,8 +192,12 @@
                         },
                         {
                             "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "ba27d52b-de16-43bd-b189-5a6467880b2e",
-                            "label": "goToChooseCharacters"
+                            "id": "ab233147-2501-4bad-8a1d-5401606dfee7",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene",
+                            "sceneChosen": "ChooseCharacters"
                         }
                     ]
                 }
@@ -241,13 +254,56 @@
                             ]
                         },
                         {
-                            "prefabId": "7156eec4-ebf3-4ede-b5a1-6c0ff7ed3f86",
-                            "id": "b27b084e-faf8-4edd-9ab5-737e8750e915",
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "e6b0949b-e643-440a-99a6-b85bef34353d",
                             "unlock": [
-                                "Type"
+                                "sceneChosen"
                             ],
-                            "label": "goToProfile",
-                            "Type": "ChangeProfile"
+                            "label": "goToScene_3",
+                            "sceneChosen": "ChangeProfile"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "80770e7b-f58e-46ed-891e-4c8e07a0ae4e",
+            "label": "Characters and Cards",
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "4b747409-b121-4641-99bb-53d6beca3352",
+                    "label": "Characters And Cards",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 154,
+                    "hitArea.height": 15,
+                    "x": 622,
+                    "y": 48,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Characters and Cards",
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "9fa801a7-96a4-4900-862c-5dad81caca74",
+                            "label": "onPointerDownScript_3",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "1a635616-d2e9-4d65-8274-7a9dff85734e",
+                                    "label": "pushActionScript_3"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "750ebb4c-f039-44e5-b56f-f949bc3d439d",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_2",
+                            "sceneChosen": "CharactersAndCards"
                         }
                     ]
                 }
