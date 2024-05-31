@@ -1,5 +1,6 @@
 const express = require('express');
 const connection = require('../database');
+const { escape } = require('mysql2');
 const router = express.Router();
 
 router.post("/changeProfile", (req, res) => {
@@ -149,6 +150,55 @@ router.post("/changeProfile", (req, res) => {
             }
         }
     )
+})
+
+router.post("/descriptions", (req, res) => {
+    var type = req.body.type
+    var id = req.body.id
+
+    if(type == "Char"){
+        connection.execute("SELECT caracter_name FROM caracter WHERE caracter_id = ?", [id],
+            function (err, rows, fields) {
+                if (err) {
+                    res.send(err);
+                }
+                else {
+                    if (rows.length > 0){
+                        res.send({
+                            "description": rows[0].caracter_name,
+                            "succesfull": true,
+                        })
+                    }else{
+                        res.send({
+                            "message": "Something went wrong",
+                            "succesfull": false,
+                        })
+                    }
+                }
+            }
+        )
+    }else if(type == "Card"){
+        connection.execute("SELECT card_description FROM card WHERE card_id = ?", [id],
+            function (err, rows, fields) {
+                if (err) {
+                    res.send(err);
+                }
+                else {
+                    if (rows.length > 0){
+                        res.send({
+                            "description": rows[0].card_description,
+                            "succesfull": true,
+                        })
+                    }else{
+                        res.send({
+                            "message": "Something went wrong",
+                            "succesfull": false,
+                        })
+                    }
+                }
+            }
+        )
+    }
 })
 
 router.post("/choseCharacters", (req, res) => {

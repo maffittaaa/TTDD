@@ -267,6 +267,7 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Card_description_1
 		const card_description_1 = this.add.text(1038, 517, "", {});
+		card_description_1.name = "Card_description_1";
 		card_description_1.setOrigin(0.5, 0.5);
 		card_description_1.text = "Character description";
 		characters_1.add(card_description_1);
@@ -462,6 +463,7 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Card_description
 		const card_description = this.add.text(1038, 517, "", {});
+		card_description.name = "Card_description";
 		card_description.setOrigin(0.5, 0.5);
 		card_description.text = "Card description";
 		cards_1.add(card_description);
@@ -605,6 +607,7 @@ class CharactersAndCards extends Phaser.Scene {
 		this.character_id_9 = character_id_9;
 		this.character_id_7 = character_id_7;
 		this.character_id_4 = character_id_4;
+		this.card_description_1 = card_description_1;
 		this.characters_option_button = characters_option_button;
 		this.characters = characters;
 		this.card_id_1 = card_id_1;
@@ -617,6 +620,7 @@ class CharactersAndCards extends Phaser.Scene {
 		this.card_id_8 = card_id_8;
 		this.card_id_9 = card_id_9;
 		this.card_id_5 = card_id_5;
+		this.card_description = card_description;
 		this.cartas4_Imprimir3 = cartas4_Imprimir3;
 		this.cards = cards;
 
@@ -643,6 +647,8 @@ class CharactersAndCards extends Phaser.Scene {
 	character_id_7;
 	/** @type {Phaser.GameObjects.Image} */
 	character_id_4;
+	/** @type {Phaser.GameObjects.Text} */
+	card_description_1;
 	/** @type {Phaser.GameObjects.Image} */
 	characters_option_button;
 	/** @type {Phaser.GameObjects.Container} */
@@ -667,6 +673,8 @@ class CharactersAndCards extends Phaser.Scene {
 	card_id_9;
 	/** @type {Phaser.GameObjects.Image} */
 	card_id_5;
+	/** @type {Phaser.GameObjects.Text} */
+	card_description;
 	/** @type {Phaser.GameObjects.Image} */
 	cartas4_Imprimir3;
 	/** @type {Phaser.GameObjects.Container} */
