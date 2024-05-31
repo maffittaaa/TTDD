@@ -40,6 +40,7 @@ class HandleChooseMechanism extends ScriptNode {
 						window.location.replace("/login.html");
 						return false;
 					} else {
+						console.log(data)
 
 						if(scene.type == "charSelct"){
 

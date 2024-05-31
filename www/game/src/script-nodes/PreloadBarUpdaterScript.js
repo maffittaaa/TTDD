@@ -16,7 +16,7 @@ class PreloadBarUpdaterScript extends ScriptNode {
 	/* START-USER-CODE */
 
 
-	 awake() {
+	awake() {
 
 		const fullWidth = this.gameObject.width;
 

@@ -266,14 +266,14 @@ class CharactersAndCards extends Phaser.Scene {
 		characters_1.add(cartas4_Imprimir_1);
 
 		// Card_description_1
-		const card_description_1 = this.add.text(1038, 517, "", {});
+		const card_description_1 = this.add.text(1038, 509.48346147003554, "", {});
 		card_description_1.name = "Card_description_1";
-		card_description_1.setOrigin(0.5, 0.5);
+		card_description_1.setOrigin(0.5, -0.0011025686642976021);
 		card_description_1.text = "Character description";
 		characters_1.add(card_description_1);
 
 		// characters_option_button
-		const characters_option_button = this.add.image(329, 360, "cartas2_Imprimir", 1);
+		const characters_option_button = this.add.image(411, 360, "cartas2_Imprimir", 1);
 		characters_option_button.name = "characters_option_button";
 		characters.add(characters_option_button);
 
@@ -462,14 +462,15 @@ class CharactersAndCards extends Phaser.Scene {
 		cards_1.add(cartas4_Imprimir);
 
 		// Card_description
-		const card_description = this.add.text(1038, 517, "", {});
+		const card_description = this.add.text(1038, 509.15665544699357, "", {});
 		card_description.name = "Card_description";
-		card_description.setOrigin(0.5, 0.5);
+		card_description.setOrigin(0.5, -0.022889636867095456);
 		card_description.text = "Card description";
+		card_description.setStyle({ "align": "center" });
 		cards_1.add(card_description);
 
 		// cartas4_Imprimir3
-		const cartas4_Imprimir3 = this.add.image(952, 360, "cartas4_Imprimir", 3);
+		const cartas4_Imprimir3 = this.add.image(861, 360, "cartas4_Imprimir", 3);
 		cartas4_Imprimir3.name = "cartas4_Imprimir3";
 		cards.add(cartas4_Imprimir3);
 

@@ -14,19 +14,45 @@ router.get("/CheckLogin", (req, res) => {
                 res.send(err);
             }
             else{
-                res.send(
-                    {
-                        id: req.session.playerID,
-                        name: req.session.playerName,
-                        email: rows[0].player_email,
-                        characters: JSON.stringify(req.session.characters),
-                        xp: rows[0].player_level,
-                        matchesDone: rows[0].player_matches,
-                        victories: rows[0].player_victories,
-                        match: req.session.match,
-                        logged: req.session.logged != undefined,
-                    },
-                );
+                connection.execute("SELECT player_character_character_id, caracter_range FROM playerCharacter INNER JOIN caracter ON player_character_character_id = caracter_id WHERE player_character_player_id = ?", [req.session.playerID], 
+                    function(err, rows1, fields){
+                        if(err){
+                            res.send(err);
+                        }
+                        else{
+                            if(rows.length == 0){
+                                res.send(
+                                    {
+                                        id: req.session.playerID,
+                                        name: req.session.playerName,
+                                        email: rows[0].player_email,
+                                        characters: "No characters available",
+                                        xp: rows[0].player_level,
+                                        matchesDone: rows[0].player_matches,
+                                        victories: rows[0].player_victories,
+                                        match: req.session.match,
+                                        logged: req.session.logged != undefined,
+                                    },
+                                );
+                            }else{
+                                res.send(
+                                    {
+                                        id: req.session.playerID,
+                                        name: req.session.playerName,
+                                        email: rows[0].player_email,
+                                        characters: JSON.stringify(rows1),
+                                        xp: rows[0].player_level,
+                                        matchesDone: rows[0].player_matches,
+                                        victories: rows[0].player_victories,
+                                        match: req.session.match,
+                                        logged: req.session.logged != undefined,
+                                    },
+                                );
+                            }
+                        }
+                    }
+                )
+                
             }
         }
     )
@@ -56,31 +82,14 @@ router.post("/login", (req, res) => {
                     req.session.playerName = rows[0].player_username;
 
                     console.log(req.session)
-
-                    connection.execute("SELECT player_character_character_id, caracter_range FROM playerCharacter INNER JOIN caracter ON player_character_character_id = caracter_id WHERE player_character_player_id = ?", [req.session.playerID], 
-                        function(err, rows, fields){
-                            if(err){
-                                res.send(err);
-                            }
-                            else{
-                                if(rows.length == 0){
-                                    res.send({
-                                        "loggedIn": true,
-                                        "message": "No characters available."
-                                    })
-                                }else{
-                                    req.session.characters = rows;
-                                    res.send(
-                                        {
-                                            "loggedIn": req.session.logged,
-                                            "username": req.session.playerName,
-                                            "id": req.session.playerID,
-                                        }
-                                    );
-                                }
-                            }
+                    
+                    res.send(
+                        {
+                            "loggedIn": req.session.logged,
+                            "username": req.session.playerName,
+                            "id": req.session.playerID,
                         }
-                    )
+                    );
                 }
             }
         }

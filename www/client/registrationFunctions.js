@@ -10,6 +10,7 @@ function onAwake() {
                 return false;
             } else {
                 window.location.replace("/game");
+                
                 return true;
             }
         },

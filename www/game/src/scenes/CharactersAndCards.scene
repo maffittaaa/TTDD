@@ -618,9 +618,9 @@
                             "useGameObjectName": true,
                             "scope": "CLASS",
                             "x": 1038,
-                            "y": 517,
+                            "y": 509.48346147003554,
                             "originX": 0.5,
-                            "originY": 0.5,
+                            "originY": -0.0011025686642976021,
                             "text": "Character description"
                         }
                     ]
@@ -635,7 +635,7 @@
                         "key": "cartas2_Imprimir",
                         "frame": 1
                     },
-                    "x": 329,
+                    "x": 411,
                     "y": 360,
                     "list": [
                         {
@@ -1119,10 +1119,11 @@
                             "useGameObjectName": true,
                             "scope": "CLASS",
                             "x": 1038,
-                            "y": 517,
+                            "y": 509.15665544699357,
                             "originX": 0.5,
-                            "originY": 0.5,
-                            "text": "Card description"
+                            "originY": -0.022889636867095456,
+                            "text": "Card description",
+                            "align": "center"
                         }
                     ]
                 },
@@ -1136,7 +1137,7 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 952,
+                    "x": 861,
                     "y": 360,
                     "list": [
                         {
