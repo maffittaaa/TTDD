@@ -37,6 +37,18 @@
     font-size: 170%;
 }
 
+#barraInicio{
+    position: fixed;    
+    z-index: 1;
+    width: 1908px;;
+}
+
+#barraFinal{
+    position: fixed;    
+    z-index: 1;
+    width: 1908px;;
+}
+
 fieldset {
     border-radius: 5px;
     width: 70%;
