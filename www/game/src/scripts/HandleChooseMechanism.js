@@ -2,8 +2,14 @@ let slotChosen = null
 let charChosen = null
 
 var time = 0
-var started
-var slots;
+var slots = {
+	"slot_1": null,
+	"slot_2": null,
+	"slot_3": null,
+	"slot_4": null,
+	"slot_5": null
+}
+
 var lookingForMatch = false;
 var choosing = false;
 var char;
@@ -38,45 +44,12 @@ class HandleChooseMechanism extends ScriptNode {
 				success: function (data) {
 					if (data.logged == false) {
 						window.location.replace("/login.html");
-						return false;
 					} else {
-						console.log(data)
-						if(scene.type == "charSelct"){
-
-							var username = scene.parent.parentContainer.list
+						if(data.levelChanged){
+							// scene.scene.start("")
 							
-							for (let i = 0; i < username.length; i++) {
-								if(username[i].name.search("Username") == 0){
-									username[i].text = data.name
-								}
-							}
-
-							char = JSON.parse(data.characters);
-							var characters = scene.parent.parentContainer.list
-
-							for (let j = 0; j < char.length; j++) {
-								for (let i = 0; i < characters.length; i++) {
-									if(characters[i].name.search("character_id_") == 0){
-										var splitChar = characters[i].name.split("id_", 2)
-					
-										if(splitChar[1] == char[j].player_character_character_id - 1){
-											characters[i].visible = true
-										}
-									}
-								}
-							}
-						}else if(scene.type == "LookForMatch"){
-							if (data.match){
-								var textChange = scene.parent.parentContainer.list
-								for (let i = 0; i < textChange.length; i++) {
-									if(textChange[i].name == "Message"){
-										textChange[i].text = "Looking for a match"
-									}else{
-										textChange[i].visible = false
-									}
-								}
-								lookingForMatch = true
-							}
+						}else{
+							scene.updateChooseCharMenu(data, scene)
 						}
 					}
 				},
@@ -89,7 +62,6 @@ class HandleChooseMechanism extends ScriptNode {
 
 	start(){
 		this.parent.on('pointerdown', event => {
-			console.log(this.type)
 			if(this.type == "Character" || this.type == "Slot"){
 				if(this.SlotID != 0){
 					this.pickCharacters(this.SlotID, charChosen)
@@ -100,13 +72,63 @@ class HandleChooseMechanism extends ScriptNode {
 				this.choseCharacters()
 			}
 		})
+	}
 
-		slots = {
-			"slot_1": null,
-			"slot_2": null,
-			"slot_3": null,
-			"slot_4": null,
-			"slot_5": null
+	updateChooseCharMenu(data, scene){
+		if(scene.type == "charSelct"){
+			char = JSON.parse(data.characters);
+			var characters = scene.parent.parentContainer.list
+
+			for (let j = 0; j < char.length; j++) {
+				for (let i = 0; i < characters.length; i++) {
+					if(characters[i].name.search("character_id_") == 0){
+						var splitChar = characters[i].name.split("id_", 2)
+	
+						if(splitChar[1] == char[j].player_character_character_id - 1){
+							characters[i].visible = true
+						}
+					}
+				}
+			}
+
+			var nameText = scene.parent.parentContainer.list
+			console.log(nameText)
+			for (let i = 0; i < nameText.length; i++) {
+				if(nameText[i].name.search("Username") == 0){
+					console.log(data)
+					nameText[i].text = data.name + "\nLevel: " + data.level
+					// scene.updateXp(data.level, data.name, nameText[i])
+				}
+			}
+		}else if(scene.type == "LookForMatch"){
+			if (data.match){
+				var textChange = scene.parent.parentContainer.list
+				for (let i = 0; i < textChange.length; i++) {
+					if(textChange[i].name == "Message"){
+						textChange[i].text = "Looking for a match"
+					}else{
+						textChange[i].visible = false
+					}
+				}
+				lookingForMatch = true
+			}
+
+			var slotsImages = scene.scene.children.list
+
+			for (let i = 0; i < slotsImages.length; i++) {
+				if(slotsImages[i].name == "Slots"){
+					var list = slotsImages[i].list
+					for (let j = 0; j < list.length; j++) {
+						for (let k = 1; k < 6; k++) {
+							if(list[j].name == "slot_" + k){
+								if(slots["slot_" + k + ""] != null){
+									list[j].setTexture("peawns", slots["slot_" + k + ""])
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -131,7 +153,6 @@ class HandleChooseMechanism extends ScriptNode {
 	}
 
 	checkMatchFound() {
-		var scene = this
 		$.ajax({
 			type: "GET",
 			url: "/login/CheckLogin",
@@ -152,7 +173,6 @@ class HandleChooseMechanism extends ScriptNode {
 				url: "/match/checkMatchFound",
 				success: function (data) {
 					if (data.matchFound == true) {
-						console.log(data);
 						window.location.replace("/match.html");
 					}
 					else {
@@ -241,6 +261,14 @@ class HandleChooseMechanism extends ScriptNode {
 				},
 				success: function (data) {
 					if (data.success) {
+						slots = JSON.parse(slots)
+
+						for (let i = 1; i < 6; i++) {
+							if(slots["slot_" + i] != null){
+								slots["slot_" + i] -= 1
+							}
+						}
+
 						var textChange = scene.parent.parentContainer.list
 						for (let i = 0; i < textChange.length; i++) {
 							if(textChange[i].name == "Message"){

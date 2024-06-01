@@ -34,7 +34,7 @@ function deltaChanges() {
             success: function (data) {
                 if (data.matchFinished == true) {
                     console.log(data)
-                    matchFinished(data.winner);
+                    matchFinished(data.winner, data.winnerID, data.loserID);
                 } else if (data.logged == false) {
                     window.location.replace("/login.html");
                 } else {
@@ -59,7 +59,7 @@ function isItMyTurn(turn_id, player_id){
     }
 }
 
-function matchFinished(player_name) {
+function matchFinished(winnerName, winID, losID) {
     started = false;
     var order = [1, 4, 2, 5, 3];
 
@@ -69,15 +69,29 @@ function matchFinished(player_name) {
         }
     }
 
-    document.getElementById('turn').innerHTML = "Match finished, the winner is: " + player_name;
+    document.getElementById('turn').innerHTML = "Match finished, the winner is: " + winnerName;
 
-    if(player_name != undefined){
-        setTimeout(bye, 8000);
+    if(winnerName != undefined){
+        setTimeout(updateLevelXp(winID, losID), 8000);
     }
 };
 
-function bye(){
-    window.location.replace("/choseCharacters.html");
+function updateLevelXp(winID, losID){
+    $.ajax({
+        type: "POST",
+        url: "/levelUp/upgradeLevel",
+        data:{
+            "winner": winID,
+            "loser": losID
+        },
+        success: function (data) {
+            console.log(data)
+            window.location.replace("/game/");
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
 }
 
 function setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {

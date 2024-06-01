@@ -20,6 +20,15 @@ router.get("/CheckLogin", (req, res) => {
                             res.send(err);
                         }
                         else{
+                            var newlevel = updateXp(rows[0].player_level)
+                            var oldLevel = req.session.playerLevel
+                            var changed = false
+
+                            if (newlevel != oldLevel){
+                                req.session.playerLevel = newlevel
+                                changed = true
+                            }
+
                             if(rows.length == 0){
                                 res.send(
                                     {
@@ -28,10 +37,12 @@ router.get("/CheckLogin", (req, res) => {
                                         email: rows[0].player_email,
                                         characters: "No characters available",
                                         xp: rows[0].player_level,
+                                        level: req.session.playerLevel,
                                         matchesDone: rows[0].player_matches,
                                         victories: rows[0].player_victories,
                                         match: req.session.match,
                                         logged: req.session.logged != undefined,
+                                        levelChanged: changed
                                     },
                                 );
                             }else{
@@ -42,10 +53,12 @@ router.get("/CheckLogin", (req, res) => {
                                         email: rows[0].player_email,
                                         characters: JSON.stringify(rows1),
                                         xp: rows[0].player_level,
+                                        level: req.session.playerLevel,
                                         matchesDone: rows[0].player_matches,
                                         victories: rows[0].player_victories,
                                         match: req.session.match,
                                         logged: req.session.logged != undefined,
+                                        levelChanged: changed
                                     },
                                 );
                             }
@@ -59,6 +72,23 @@ router.get("/CheckLogin", (req, res) => {
     
     
 });
+
+function updateXp(xp){
+    var i = 0
+    var intialLevel = 50
+    var levelFound = false
+
+    while (levelFound == false){
+        if(xp < intialLevel){
+            xp = i
+            levelFound = true
+        }else{
+            i += 1
+            intialLevel += (intialLevel/2)
+        }
+    }
+    return xp
+}
 
 router.post("/login", (req, res) => {
     var login_name = req.body.login_name;
@@ -80,6 +110,7 @@ router.post("/login", (req, res) => {
                     req.session.logged = true;
                     req.session.playerID = rows[0].player_id;
                     req.session.playerName = rows[0].player_username;
+                    req.session.playerLevel = updateXp(rows[0].player_level);
 
                     console.log(req.session)
                     
