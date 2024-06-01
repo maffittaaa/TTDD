@@ -58,7 +58,6 @@ router.post("/changeProfile", (req, res) => {
                                                     }else {
                                                         if(playerEmail == ""){
                                                             req.session.playerName = playerUsername
-                                                            console.log("aaa ", req.session.playerName)
                                                             res.send({
                                                                 "changed": true,
                                                                 "name": req.session.playerName
@@ -74,7 +73,6 @@ router.post("/changeProfile", (req, res) => {
                                                                     })
                                                                 }else {
                                                                     req.session.playerName = playerUsername
-                                                                    console.log("aaa ", req.session.playerName)
                                                                     res.send({
                                                                         "changed": true,
                                                                         "name": req.session.playerName
@@ -121,8 +119,6 @@ router.post("/changeProfile", (req, res) => {
                                                         "message": "something went wrong: " + err
                                                     })
                                                 }else {
-                                                    req.session.playerName = playerUsername
-                                                    console.log("aaa ", req.session.playerName)
                                                     res.send({
                                                         "changed": true,
                                                         "name": req.session.playerName

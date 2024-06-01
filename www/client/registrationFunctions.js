@@ -1,25 +1,3 @@
-var started = onAwake()
- 
-function onAwake() {
-    $.ajax({
-        type: "GET",
-        url: "/login/CheckLogin",
-        success: function (data) {
-            console.log(data)
-            if (data.logged == false) {
-                return false;
-            } else {
-                window.location.replace("/game");
-                
-                return true;
-            }
-        },
-        error: function (err) {
-            console.log(err);
-        }
-    })
-}
-
 function TryToLogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
@@ -31,7 +9,7 @@ function TryToLogin(){
         url: "/login/login",
         data: {
             "login_name": username,
-            "login_password": password
+            "login_password": encryptedPassword
         },
         success: function (data) {
             console.log(data);

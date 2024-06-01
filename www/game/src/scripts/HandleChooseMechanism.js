@@ -40,7 +40,6 @@ class HandleChooseMechanism extends ScriptNode {
 						window.location.replace("/login.html");
 						return false;
 					} else {
-						console.log(data)
 
 						if(scene.type == "charSelct"){
 
@@ -48,7 +47,6 @@ class HandleChooseMechanism extends ScriptNode {
 							
 							for (let i = 0; i < username.length; i++) {
 								if(username[i].name.search("Username") == 0){
-									console.log(data)
 									username[i].text = data.name
 								}
 							}
@@ -193,6 +191,7 @@ class HandleChooseMechanism extends ScriptNode {
 					alreadyChosen = true;
 				}
 			}
+
 			if (alreadyChosen == false) {
 				if (slotChosen > 3  && ch_Id > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
 					charChosen = ch_Id
@@ -208,7 +207,16 @@ class HandleChooseMechanism extends ScriptNode {
 				this.showMessage("You can't pick the same character twice");
 			}
 		} else {
-			slotChosen = slot_Id;
+			if(this.type == "Slot"){
+				this.parent.setTexture("base", 0)
+
+				if (slots["slot_" + slot_Id + ""] != null) {
+					slots["slot_" + slot_Id + ""] = null
+				}
+
+				slotChosen = slot_Id;
+				charChosen = null
+			}
 		}
 	}
 
@@ -224,7 +232,6 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 
 		if (empty == false) {
-			console.log(slots)
 			slots = JSON.stringify(slots)
 			$.ajax({
 				type: "POST",

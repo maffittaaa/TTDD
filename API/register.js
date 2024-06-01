@@ -9,6 +9,14 @@ router.post("/register", (req, res) => {
     user[1] = req.body.login_password;
     user[2] = req.body.login_email;
 
+    if(user[0] == "" || user[1] == "" || user[2] == ""){
+        res.send({
+            "registered": false,
+            "message": "Please fill all the spaces to complete your registry."
+        });
+        return
+    }
+
     connection.execute("SELECT * FROM player WHERE player_username = ? OR player_email = ? ", [user[0], user[2]],
         function (err, rows, fields) {
             if (err) {

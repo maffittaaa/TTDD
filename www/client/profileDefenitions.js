@@ -38,7 +38,7 @@ function tryToChangeProfile(){
         url: "/match/changeProfile",
         data: {
             "new_name": username,
-            "password": password,
+            "password": encryptedPassword,
             "new_email": email
         },
         success: function (data) {
