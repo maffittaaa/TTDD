@@ -1165,6 +1165,51 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "f451ade3-0226-4ec5-94a1-f39795ba600d",
+            "label": "Button Go Back To Home Page",
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "20616bf4-6107-4f3d-9e04-27db0f37a122",
+                    "label": "Profile_1",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": -15,
+                    "hitArea.y": -17,
+                    "hitArea.width": 100.09315749661158,
+                    "hitArea.height": 53.83254699275936,
+                    "x": 896,
+                    "y": 48,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Back To Home Page",
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "cbfca486-2c51-4f37-85a3-d4db6347fe78",
+                            "label": "onPointerDownScript_25",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "bdc5148c-ef06-41a3-8d83-e1b03c2eb245",
+                                    "label": "pushActionScript_25"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "52a3954d-8a90-46c5-b29f-c6e83228666f",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_3",
+                            "sceneChosen": "HomePage"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],

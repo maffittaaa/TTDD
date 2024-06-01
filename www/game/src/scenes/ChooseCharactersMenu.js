@@ -501,6 +501,25 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_2
 		const goToScene_2 = new GoToScene(characters_And_Cards);
 
+		// Button Go Back To Home Page
+		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+
+		// Profile_1
+		const profile_1 = this.add.text(896, 48, "", {});
+		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_1.setOrigin(0.5, 0.5);
+		profile_1.text = "Back To Home Page";
+		button_Go_Back_To_Home_Page.add(profile_1);
+
+		// onPointerDownScript_25
+		const onPointerDownScript_25 = new OnPointerDownScript(profile_1);
+
+		// pushActionScript_25
+		new PushActionScript(onPointerDownScript_25);
+
+		// goToScene_3
+		const goToScene_3 = new GoToScene(profile_1);
+
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
 		handleChooseMechanism_13.type = "Slot";
@@ -581,6 +600,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// goToScene_2 (prefab fields)
 		goToScene_2.sceneChosen = "CharactersAndCards";
+
+		// goToScene_3 (prefab fields)
+		goToScene_3.sceneChosen = "HomePage";
 
 		this.slot_id_4 = slot_id_4;
 		this.slot_id_1 = slot_id_1;

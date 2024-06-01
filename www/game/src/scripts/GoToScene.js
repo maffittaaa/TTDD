@@ -28,6 +28,8 @@ class GoToScene extends ScriptNode {
 				goToChooseChar = true
 			}else if(this.sceneChosen == "CharactersAndCards"){
 				goToCharactersAndCards = true
+			}else if(this.sceneChosen == "HomePage"){
+				window.location.replace("/")
 			}
 		})
 	}
