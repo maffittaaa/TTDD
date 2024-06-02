@@ -163,6 +163,11 @@
                 "key": "Profile"
             },
             {
+                "url": "assets/Shadow.png",
+                "type": "image",
+                "key": "Shadow"
+            },
+            {
                 "url": "assets/Specasdossheets.png",
                 "type": "image",
                 "key": "Specasdossheets"
@@ -171,6 +176,11 @@
                 "url": "assets/Tipsy_Tussle_Logo.png",
                 "type": "image",
                 "key": "Tipsy_Tussle_Logo"
+            },
+            {
+                "url": "src/scripts/UnlockCharacterMechanism.js",
+                "type": "script",
+                "key": "UnlockCharacterMechanism"
             }
         ]
     },

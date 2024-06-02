@@ -5,6 +5,7 @@ const login = require('./API/login');
 const register = require('./API/register');
 const cards = require('./API/cards');
 const match = require('./API/match');
+const levelUp = require('./API/levelUp');
 const bodyParser = require('body-parser');
 
 const connection = require('./database');
@@ -40,6 +41,7 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/match', match);
 app.use('/cards', cards);
+app.use('/levelUp', levelUp);
 
 function resetMatches(){
     connection.execute("UPDATE matche SET matche_state_id = 2",

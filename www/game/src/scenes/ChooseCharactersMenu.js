@@ -26,83 +26,89 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// Slots
 		const slots = this.add.container(0, -38);
+		slots.name = "Slots";
 
-		// slot_id_4
-		const slot_id_4 = this.add.image(967, 307, "base", 0);
-		slot_id_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
-		slot_id_4.scaleX = 0.5;
-		slot_id_4.scaleY = 0.5;
-		slots.add(slot_id_4);
+		// slot_4
+		const slot_4 = this.add.image(967, 307, "base", 0);
+		slot_4.name = "slot_4";
+		slot_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_4.scaleX = 0.5;
+		slot_4.scaleY = 0.5;
+		slots.add(slot_4);
 
 		// handleChooseMechanism_13
-		const handleChooseMechanism_13 = new HandleChooseMechanism(slot_id_4);
+		const handleChooseMechanism_13 = new HandleChooseMechanism(slot_4);
 
 		// onPointerDownScript_17
-		const onPointerDownScript_17 = new OnPointerDownScript(slot_id_4);
+		const onPointerDownScript_17 = new OnPointerDownScript(slot_4);
 
 		// pushActionScript_17
 		new PushActionScript(onPointerDownScript_17);
 
-		// slot_id_1
-		const slot_id_1 = this.add.image(1127, 230, "base", 0);
-		slot_id_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
-		slot_id_1.scaleX = 0.5;
-		slot_id_1.scaleY = 0.5;
-		slots.add(slot_id_1);
+		// slot_1
+		const slot_1 = this.add.image(1127, 230, "base", 0);
+		slot_1.name = "slot_1";
+		slot_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_1.scaleX = 0.5;
+		slot_1.scaleY = 0.5;
+		slots.add(slot_1);
 
 		// handleChooseMechanism_12
-		const handleChooseMechanism_12 = new HandleChooseMechanism(slot_id_1);
+		const handleChooseMechanism_12 = new HandleChooseMechanism(slot_1);
 
 		// onPointerDownScript_16
-		const onPointerDownScript_16 = new OnPointerDownScript(slot_id_1);
+		const onPointerDownScript_16 = new OnPointerDownScript(slot_1);
 
 		// pushActionScript_16
 		new PushActionScript(onPointerDownScript_16);
 
-		// slot_id_2
-		const slot_id_2 = this.add.image(1127, 378, "base", 0);
-		slot_id_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
-		slot_id_2.scaleX = 0.5;
-		slot_id_2.scaleY = 0.5;
-		slots.add(slot_id_2);
+		// slot_2
+		const slot_2 = this.add.image(1127, 378, "base", 0);
+		slot_2.name = "slot_2";
+		slot_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_2.scaleX = 0.5;
+		slot_2.scaleY = 0.5;
+		slots.add(slot_2);
 
 		// handleChooseMechanism_11
-		const handleChooseMechanism_11 = new HandleChooseMechanism(slot_id_2);
+		const handleChooseMechanism_11 = new HandleChooseMechanism(slot_2);
 
 		// onPointerDownScript_15
-		const onPointerDownScript_15 = new OnPointerDownScript(slot_id_2);
+		const onPointerDownScript_15 = new OnPointerDownScript(slot_2);
 
 		// pushActionScript_15
 		new PushActionScript(onPointerDownScript_15);
 
-		// slot_id_3
-		const slot_id_3 = this.add.image(1127, 522, "base", 0);
-		slot_id_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
-		slot_id_3.scaleX = 0.5;
-		slot_id_3.scaleY = 0.5;
-		slots.add(slot_id_3);
+		// slot_3
+		const slot_3 = this.add.image(1127, 522, "base", 0);
+		slot_3.name = "slot_3";
+		slot_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_3.scaleX = 0.5;
+		slot_3.scaleY = 0.5;
+		slots.add(slot_3);
 
 		// handleChooseMechanism_10
-		const handleChooseMechanism_10 = new HandleChooseMechanism(slot_id_3);
+		const handleChooseMechanism_10 = new HandleChooseMechanism(slot_3);
 
 		// onPointerDownScript_14
-		const onPointerDownScript_14 = new OnPointerDownScript(slot_id_3);
+		const onPointerDownScript_14 = new OnPointerDownScript(slot_3);
 
 		// pushActionScript_14
 		new PushActionScript(onPointerDownScript_14);
 
-		// slot_id_5
-		const slot_id_5 = this.add.image(969, 450, "base", 0);
-		slot_id_5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
-		slot_id_5.scaleX = 0.5;
-		slot_id_5.scaleY = 0.5;
-		slots.add(slot_id_5);
+		// slot_5
+		const slot_5 = this.add.image(969, 450, "base", 0);
+		slot_5.name = "slot_5";
+		slot_5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_5.scaleX = 0.5;
+		slot_5.scaleY = 0.5;
+		slots.add(slot_5);
 
 		// handleChooseMechanism_14
-		const handleChooseMechanism_14 = new HandleChooseMechanism(slot_id_5);
+		const handleChooseMechanism_14 = new HandleChooseMechanism(slot_5);
 
 		// onPointerDownScript_13
-		const onPointerDownScript_13 = new OnPointerDownScript(slot_id_5);
+		const onPointerDownScript_13 = new OnPointerDownScript(slot_5);
 
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
@@ -131,6 +137,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_1.strokeAlpha = 4;
 		highlight_1.lineWidth = 4;
 		match.add(highlight_1);
+
+		// handleChooseMechanism_18
+		const handleChooseMechanism_18 = new HandleChooseMechanism(highlight_1);
 
 		// GoToMatch
 		const goToMatch = this.add.text(640, 632, "", {});
@@ -292,10 +301,10 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const characters = this.add.container(-1, -38);
 
 		// Username
-		const username = this.add.text(1152, 92, "", {});
+		const username = this.add.text(1152, 77.5, "", {});
 		username.name = "Username";
 		username.scaleX = 1.05;
-		username.setOrigin(0.5, 0.5);
+		username.setOrigin(0.5, 0);
 		username.setStyle({ "fontSize": "30px" });
 		characters.add(username);
 
@@ -303,7 +312,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_17 = new HandleChooseMechanism(username);
 
 		// MessageServer
-		const messageServer = this.add.text(1046, 135, "", {});
+		const messageServer = this.add.text(1046, 648, "", {});
 		messageServer.name = "MessageServer";
 		messageServer.setOrigin(0.5, 0.5);
 		messageServer.text = "\n";
@@ -501,6 +510,92 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_2
 		const goToScene_2 = new GoToScene(characters_And_Cards);
 
+		// Button Go Back To Home Page
+		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+
+		// Profile_1
+		const profile_1 = this.add.text(896, 48, "", {});
+		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_1.setOrigin(0.5, 0.5);
+		profile_1.text = "Back To Home Page";
+		button_Go_Back_To_Home_Page.add(profile_1);
+
+		// onPointerDownScript_25
+		const onPointerDownScript_25 = new OnPointerDownScript(profile_1);
+
+		// pushActionScript_25
+		new PushActionScript(onPointerDownScript_25);
+
+		// goToScene_3
+		const goToScene_3 = new GoToScene(profile_1);
+
+		// LevelUpScreen
+		const levelUpScreen = this.add.container(0, 0);
+		levelUpScreen.name = "LevelUpScreen";
+		levelUpScreen.visible = false;
+
+		// shadow
+		const shadow = this.add.image(640, 360, "Shadow");
+		shadow.scaleX = 6.4;
+		shadow.scaleY = 3.6;
+		levelUpScreen.add(shadow);
+
+		// onPointerDownScript_24
+		new OnPointerDownScript(shadow);
+
+		// new_characters
+		const new_characters = this.add.container(0, 0);
+		levelUpScreen.add(new_characters);
+
+		// character_new_3
+		const character_new_3 = this.add.image(1000, 360, "cartas2_Imprimir", 1);
+		character_new_3.name = "character_new_3";
+		new_characters.add(character_new_3);
+
+		// onPointerDownScript_23
+		const onPointerDownScript_23 = new OnPointerDownScript(character_new_3);
+
+		// pushActionScript_23
+		new PushActionScript(onPointerDownScript_23);
+
+		// unlockCharacterMechanism
+		const unlockCharacterMechanism = new UnlockCharacterMechanism(character_new_3);
+
+		// character_new_2
+		const character_new_2 = this.add.image(640, 360, "cartas2_Imprimir", 1);
+		character_new_2.name = "character_new_2";
+		new_characters.add(character_new_2);
+
+		// onPointerDownScript_22
+		const onPointerDownScript_22 = new OnPointerDownScript(character_new_2);
+
+		// pushActionScript_22
+		new PushActionScript(onPointerDownScript_22);
+
+		// unlockCharacterMechanism_2
+		const unlockCharacterMechanism_2 = new UnlockCharacterMechanism(character_new_2);
+
+		// character_new_1
+		const character_new_1 = this.add.image(292, 360, "cartas2_Imprimir", 1);
+		character_new_1.name = "character_new_1";
+		new_characters.add(character_new_1);
+
+		// onPointerDownScript_21
+		const onPointerDownScript_21 = new OnPointerDownScript(character_new_1);
+
+		// pushActionScript_21
+		new PushActionScript(onPointerDownScript_21);
+
+		// unlockCharacterMechanism_1
+		const unlockCharacterMechanism_1 = new UnlockCharacterMechanism(character_new_1);
+
+		// LevelUpText
+		const levelUpText = this.add.text(640, 91.5, "", {});
+		levelUpText.setOrigin(0.5, 0.5);
+		levelUpText.text = "You have Leveled Up!! Now you can choose one of this three characters!!";
+		levelUpText.setStyle({ "fontSize": "25px" });
+		new_characters.add(levelUpText);
+
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
 		handleChooseMechanism_13.type = "Slot";
@@ -523,6 +618,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_15 (prefab fields)
 		handleChooseMechanism_15.type = "Message";
+
+		// handleChooseMechanism_18 (prefab fields)
+		handleChooseMechanism_18.type = "sceneManager";
 
 		// handleChooseMechanism_5 (prefab fields)
 		handleChooseMechanism_5.type = "LookForMatch";
@@ -582,11 +680,27 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_2 (prefab fields)
 		goToScene_2.sceneChosen = "CharactersAndCards";
 
-		this.slot_id_4 = slot_id_4;
-		this.slot_id_1 = slot_id_1;
-		this.slot_id_2 = slot_id_2;
-		this.slot_id_3 = slot_id_3;
-		this.slot_id_5 = slot_id_5;
+		// goToScene_3 (prefab fields)
+		goToScene_3.sceneChosen = "HomePage";
+
+		// unlockCharacterMechanism (prefab fields)
+		unlockCharacterMechanism.type = "character";
+		unlockCharacterMechanism.characterID = 0;
+
+		// unlockCharacterMechanism_2 (prefab fields)
+		unlockCharacterMechanism_2.type = "character";
+		unlockCharacterMechanism_2.characterID = 0;
+
+		// unlockCharacterMechanism_1 (prefab fields)
+		unlockCharacterMechanism_1.type = "LevelUpManager";
+		unlockCharacterMechanism_1.characterID = 0;
+
+		this.slot_4 = slot_4;
+		this.slot_1 = slot_1;
+		this.slot_2 = slot_2;
+		this.slot_3 = slot_3;
+		this.slot_5 = slot_5;
+		this.slots = slots;
 		this.message = message;
 		this.username = username;
 		this.character_id_2 = character_id_2;
@@ -599,20 +713,23 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		this.character_id_8 = character_id_8;
 		this.character_id_6 = character_id_6;
 		this.character_id_3 = character_id_3;
+		this.levelUpScreen = levelUpScreen;
 
 		this.events.emit("scene-awake");
 	}
 
 	/** @type {Phaser.GameObjects.Image} */
-	slot_id_4;
+	slot_4;
 	/** @type {Phaser.GameObjects.Image} */
-	slot_id_1;
+	slot_1;
 	/** @type {Phaser.GameObjects.Image} */
-	slot_id_2;
+	slot_2;
 	/** @type {Phaser.GameObjects.Image} */
-	slot_id_3;
+	slot_3;
 	/** @type {Phaser.GameObjects.Image} */
-	slot_id_5;
+	slot_5;
+	/** @type {Phaser.GameObjects.Container} */
+	slots;
 	/** @type {Phaser.GameObjects.Text} */
 	message;
 	/** @type {Phaser.GameObjects.Text} */
@@ -637,6 +754,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 	character_id_6;
 	/** @type {Phaser.GameObjects.Image} */
 	character_id_3;
+	/** @type {Phaser.GameObjects.Container} */
+	levelUpScreen;
 
 	/* START-USER-CODE */
 

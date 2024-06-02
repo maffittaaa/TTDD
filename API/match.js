@@ -671,6 +671,8 @@ function updatePlayerStats(winner, loser, winner_name, res, req, player1, player
                                                     matchFinished: true,
                                                     player: req.session.playerID,
                                                     winner: winner_name,
+                                                    winnerID: winner,
+                                                    loserID: loser,
                                                     player1: player1,
                                                     player2: player2,
                                                     ch1: ch1,

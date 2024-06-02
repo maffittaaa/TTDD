@@ -164,6 +164,25 @@ class Profile extends Phaser.Scene {
 		// goToScene_2
 		const goToScene_2 = new GoToScene(characters_And_Cards);
 
+		// Button Go Back To Home Page
+		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+
+		// Profile_2
+		const profile_2 = this.add.text(896, 48, "", {});
+		profile_2.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_2.setOrigin(0.5, 0.5);
+		profile_2.text = "Back To Home Page";
+		button_Go_Back_To_Home_Page.add(profile_2);
+
+		// onPointerDownScript_25
+		const onPointerDownScript_25 = new OnPointerDownScript(profile_2);
+
+		// pushActionScript_25
+		new PushActionScript(onPointerDownScript_25);
+
+		// goToScene_4
+		const goToScene_4 = new GoToScene(profile_2);
+
 		// goToScene_1 (prefab fields)
 		goToScene_1.sceneChosen = "Profile";
 
@@ -175,6 +194,9 @@ class Profile extends Phaser.Scene {
 
 		// goToScene_2 (prefab fields)
 		goToScene_2.sceneChosen = "CharactersAndCards";
+
+		// goToScene_4 (prefab fields)
+		goToScene_4.sceneChosen = "HomePage";
 
 		this.xP = xP;
 		this.matches = matches;
@@ -241,6 +263,8 @@ class Profile extends Phaser.Scene {
 			goToCharactersAndCards = false
 		}
 	}
+
+
 
 	/* END-USER-CODE */
 }
