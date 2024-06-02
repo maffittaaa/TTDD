@@ -82,7 +82,7 @@ class UnlockCharacterMechanism extends ScriptNode {
 	}
 
 	chooseCharacter(){
-		var charID = this.characterID
+		var charID = this.characterID;
 		$.ajax({
 			type: "put",
 			url: "/levelUp/addCharacters",
@@ -91,10 +91,10 @@ class UnlockCharacterMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				if(data.success){
-					console.log(data.message)
-					window.location.reload()
+					console.log(data.message);
+					window.location.reload();
 				}else{
-					console.log(data.message)
+					console.log(data.message);
 				}
 			},
 			error: function (err) {
@@ -104,18 +104,18 @@ class UnlockCharacterMechanism extends ScriptNode {
 	}
 
 	getRandomCharacters(){
-		var scene = this
+		var scene = this;
 		$.ajax({
 			type: "GET",
 			url: "/levelUp/getRandomCharacters",
 			success: function (data) {
 				if(data.gotCharacters){
-					randomChar = JSON.parse(data.characters)
-					orderCharImages = [8, 6, 0, 0, 5, 7, 1, 3, 2, 4]
-					imageList = scene.parent.parentContainer.list
+					randomChar = JSON.parse(data.characters);
+					orderCharImages = [8, 6, 0, 0, 5, 7, 1, 3, 2, 4];
+					imageList = scene.parent.parentContainer.list;
 
 				}else{
-					console.log(JSON.parse(data.characters))
+					console.log(JSON.parse(data.characters));
 				}
 			},
 			error: function (err) {

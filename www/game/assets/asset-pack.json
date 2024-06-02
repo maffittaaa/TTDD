@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "src/scripts/AttackMechanism.js",
+                "type": "script",
+                "key": "AttackMechanism"
+            },
+            {
                 "url": "assets/Bar1.png",
                 "type": "image",
                 "key": "Bar1"
@@ -125,6 +130,11 @@
                 "url": "src/scenes/Match.js",
                 "type": "sceneFile",
                 "key": "Match"
+            },
+            {
+                "url": "src/scripts/MatchMechanism.js",
+                "type": "script",
+                "key": "MatchMechanism"
             },
             {
                 "url": "assets/peawns.png",
