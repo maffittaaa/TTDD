@@ -261,7 +261,7 @@ class PushActionScript extends ScriptNode {
             }
         });
         //I can write code here
-        console.log(obj)
+        // console.log(obj)
         obj.name = "sand"
         obj.fillColor = this.RGBColor(100, 0, 255);
     }

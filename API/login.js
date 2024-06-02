@@ -24,7 +24,7 @@ router.get("/CheckLogin", (req, res) => {
                             var oldLevel = req.session.playerLevel
                             var changed = false
 
-                            if (newlevel != oldLevel){
+                            if(rows1.length < oldLevel + 3){
                                 req.session.playerLevel = newlevel
                                 changed = true
                             }

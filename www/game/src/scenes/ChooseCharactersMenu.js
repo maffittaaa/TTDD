@@ -138,6 +138,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_1.lineWidth = 4;
 		match.add(highlight_1);
 
+		// handleChooseMechanism_18
+		const handleChooseMechanism_18 = new HandleChooseMechanism(highlight_1);
+
 		// GoToMatch
 		const goToMatch = this.add.text(640, 632, "", {});
 		goToMatch.name = "GoToMatch";
@@ -526,6 +529,73 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_3
 		const goToScene_3 = new GoToScene(profile_1);
 
+		// LevelUpScreen
+		const levelUpScreen = this.add.container(0, 0);
+		levelUpScreen.name = "LevelUpScreen";
+		levelUpScreen.visible = false;
+
+		// shadow
+		const shadow = this.add.image(640, 360, "Shadow");
+		shadow.scaleX = 6.4;
+		shadow.scaleY = 3.6;
+		levelUpScreen.add(shadow);
+
+		// onPointerDownScript_24
+		new OnPointerDownScript(shadow);
+
+		// new_characters
+		const new_characters = this.add.container(0, 0);
+		levelUpScreen.add(new_characters);
+
+		// character_new_3
+		const character_new_3 = this.add.image(1000, 360, "cartas2_Imprimir", 1);
+		character_new_3.name = "character_new_3";
+		new_characters.add(character_new_3);
+
+		// onPointerDownScript_23
+		const onPointerDownScript_23 = new OnPointerDownScript(character_new_3);
+
+		// pushActionScript_23
+		new PushActionScript(onPointerDownScript_23);
+
+		// unlockCharacterMechanism
+		const unlockCharacterMechanism = new UnlockCharacterMechanism(character_new_3);
+
+		// character_new_2
+		const character_new_2 = this.add.image(640, 360, "cartas2_Imprimir", 1);
+		character_new_2.name = "character_new_2";
+		new_characters.add(character_new_2);
+
+		// onPointerDownScript_22
+		const onPointerDownScript_22 = new OnPointerDownScript(character_new_2);
+
+		// pushActionScript_22
+		new PushActionScript(onPointerDownScript_22);
+
+		// unlockCharacterMechanism_2
+		const unlockCharacterMechanism_2 = new UnlockCharacterMechanism(character_new_2);
+
+		// character_new_1
+		const character_new_1 = this.add.image(292, 360, "cartas2_Imprimir", 1);
+		character_new_1.name = "character_new_1";
+		new_characters.add(character_new_1);
+
+		// onPointerDownScript_21
+		const onPointerDownScript_21 = new OnPointerDownScript(character_new_1);
+
+		// pushActionScript_21
+		new PushActionScript(onPointerDownScript_21);
+
+		// unlockCharacterMechanism_1
+		const unlockCharacterMechanism_1 = new UnlockCharacterMechanism(character_new_1);
+
+		// LevelUpText
+		const levelUpText = this.add.text(640, 91.5, "", {});
+		levelUpText.setOrigin(0.5, 0.5);
+		levelUpText.text = "You have Leveled Up!! Now you can choose one of this three characters!!";
+		levelUpText.setStyle({ "fontSize": "25px" });
+		new_characters.add(levelUpText);
+
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
 		handleChooseMechanism_13.type = "Slot";
@@ -548,6 +618,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_15 (prefab fields)
 		handleChooseMechanism_15.type = "Message";
+
+		// handleChooseMechanism_18 (prefab fields)
+		handleChooseMechanism_18.type = "sceneManager";
 
 		// handleChooseMechanism_5 (prefab fields)
 		handleChooseMechanism_5.type = "LookForMatch";
@@ -610,6 +683,18 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_3 (prefab fields)
 		goToScene_3.sceneChosen = "HomePage";
 
+		// unlockCharacterMechanism (prefab fields)
+		unlockCharacterMechanism.type = "character";
+		unlockCharacterMechanism.characterID = 0;
+
+		// unlockCharacterMechanism_2 (prefab fields)
+		unlockCharacterMechanism_2.type = "character";
+		unlockCharacterMechanism_2.characterID = 0;
+
+		// unlockCharacterMechanism_1 (prefab fields)
+		unlockCharacterMechanism_1.type = "LevelUpManager";
+		unlockCharacterMechanism_1.characterID = 0;
+
 		this.slot_4 = slot_4;
 		this.slot_1 = slot_1;
 		this.slot_2 = slot_2;
@@ -628,6 +713,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		this.character_id_8 = character_id_8;
 		this.character_id_6 = character_id_6;
 		this.character_id_3 = character_id_3;
+		this.levelUpScreen = levelUpScreen;
 
 		this.events.emit("scene-awake");
 	}
@@ -668,6 +754,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 	character_id_6;
 	/** @type {Phaser.GameObjects.Image} */
 	character_id_3;
+	/** @type {Phaser.GameObjects.Container} */
+	levelUpScreen;
 
 	/* START-USER-CODE */
 

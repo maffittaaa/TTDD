@@ -36,7 +36,7 @@ class HandleChooseMechanism extends ScriptNode {
 	/* START-USER-CODE */
 
 	awake(){
-		if(this.type == "charSelct" || this.type == "LookForMatch"){
+		if(this.type == "charSelct" || this.type == "LookForMatch" || this.type == "sceneManager"){
 			var scene = this
 			$.ajax({
 				type: "GET",
@@ -45,9 +45,16 @@ class HandleChooseMechanism extends ScriptNode {
 					if (data.logged == false) {
 						window.location.replace("/login.html");
 					} else {
-						if(data.levelChanged){
-							// scene.scene.start("")
-							
+						if(scene.type == "sceneManager"){
+							if(data.levelChanged){
+								var levelUpScreen = scene.scene.children.list
+								for (let i = 0; i < levelUpScreen.length; i++) {
+									if(levelUpScreen[i].name == "LevelUpScreen"){
+										levelUpScreen[i].visible = true
+										leveledUp = true
+									}
+								}
+							}
 						}else{
 							scene.updateChooseCharMenu(data, scene)
 						}
@@ -92,10 +99,8 @@ class HandleChooseMechanism extends ScriptNode {
 			}
 
 			var nameText = scene.parent.parentContainer.list
-			console.log(nameText)
 			for (let i = 0; i < nameText.length; i++) {
 				if(nameText[i].name.search("Username") == 0){
-					console.log(data)
 					nameText[i].text = data.name + "\nLevel: " + data.level
 					// scene.updateXp(data.level, data.name, nameText[i])
 				}
@@ -188,7 +193,6 @@ class HandleChooseMechanism extends ScriptNode {
 
 	showMessage(message){
 		var textChange = this.parent.parentContainer.list
-		console.log(textChange)
 		for (let i = 0; i < textChange.length; i++) {
 			if(textChange[i].name == "MessageServer"){
 				textChange[i].text = message
