@@ -67,10 +67,10 @@ class MatchMechanism extends ScriptNode {
 		})
 	};
 
-	isItMyTurn(turn_id, player_id) { //change the sprites!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	isItMyTurn(turn_id, player_id) { //placas
 		if (turn_id == player_id) {
 			document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn.";
-			document.getElementById('endTurn').disabled = false;
+			document.getElementById('endTurn').disabled = false; 
 		} else {
 			document.getElementById('turn').innerHTML = "Please wait for your turn while the other player does his move.";
 			document.getElementById('endTurn').disabled = true;
@@ -82,11 +82,11 @@ class MatchMechanism extends ScriptNode {
 
 		for (var i = 1; i < 3; i++) { //runs 2 times because there are 2 players
 			for (let j = 0; j < order.length; j++) { // runs 5 times because it's the size of the order and because of the quantity of the slots available
-				document.getElementById('slot_' + order[j] + '_p' + i + '').disabled = true;
+				document.getElementById('slot_' + order[j] + '_p' + i + '').disabled = true; // desativar todos quando morrem.
 			}
 		}
 
-		document.getElementById('turn').innerHTML = "Match finished, the winner is: " + winnerName;
+		document.getElementById('turn').innerHTML = "Match finished, the winner is: " + winnerName; //scene a dizer you won/you lost
 
 		if (winnerName != undefined) {
 			setTimeout(this.updateLevelXp(winID, losID), 8000);
@@ -113,15 +113,12 @@ class MatchMechanism extends ScriptNode {
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 
-		// it's just because of html order of the slots, when we pass to phaser, this stops existing
-		var order = [1, 4, 2, 5, 3];
-
 		if (ongoing) {
 			if (p1 == player) {
 				//player = ch1
 
 				for (let i = 0; i < ch1.length; i++) {
-					var character = document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML;
+
 					character = character.split(":")
 
 					if (character[1] != ch1[i].player_match_character_character_current_HP) {
@@ -178,69 +175,71 @@ class MatchMechanism extends ScriptNode {
 
 			console.log("Match: ", match, "\ Players: ", p1_name + " " + p2_name)
 
-			for (var i = 1; i < 3; i++) { //corre 2 vezes por serem dois players
-				for (let j = 0; j < order.length; j++) { // 5 vezes por ser o tamanho da order e a quantidade de slots disponiveis
-					var placeCh = document.getElementById("characters" + i + "").innerHTML;
-
-					var classe;
-
-					if (order[j] > 3) {
-						classe = "back_p" + i + ""; //characters that are in the back that belongs either to player1 or player2
-					} else {
-						classe = "front_p" + i + "";
-					}
-
-					if (i == 1) {
-						if (j == 0) {
-							placeCh = placeCh + ' \
-                        <div class='+ classe + '> <button onclick="setAttackerSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> <button onclick="pickCard()" class="deck"> Deck </button> </br> </div>';
-						} else {
-							placeCh = placeCh + ' \
-                        <div class='+ classe + '> <button onclick="setAttackerSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> </br> </div>';
-						}
-					} else {
-						placeCh = placeCh + ' \
-                    <div class='+ classe + '> <button onclick="setTargetSlot(' + order[j] + ')" id = slot_' + order[j] + '_p' + i + '> Empty Slot </button> </br> </div>';
-					}
-
-					document.getElementById("characters" + i + "").innerHTML = placeCh;
-
-					document.getElementById('slot_' + order[j] + '_p' + i + '').disabled = true;
-				}
-			}
-
-
 			if (p1 == player) {
 				//player = ch1
+				var character = this.parent.scene.children.list;
+				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
-				document.getElementById("player1_id").innerHTML = p1_name
-				document.getElementById("player2_id").innerHTML = p2_name
-
-
-				for (let i = 0; i < ch1.length; i++) {
-					document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = false;
-					document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML = ch1[i].caracter_name + ": " + ch1[i].player_match_character_character_current_HP;
+				for (let i = 0; i < character.length; i++) {
+					if (character[i].name == "CharacterSlotsPlayer1") {
+						for (let j = 0; j < character[i].list.length; j++) {
+							if (character[i].list[j].name.search("player1_slot") == 0) {
+								for (let k = 0; k < ch1.length; k++) {
+									if (ch1[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].setTexture("peawns", ch1[k].player_match_character_character_id - 1);
+									}
+								}
+							}
+						}
+					}
 				}
-
-				for (let i = 0; i < ch2.length; i++) {
-					document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = false;
-					document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").innerHTML = ch2[i].caracter_name + ": " + ch2[i].player_match_character_character_current_HP;
+				
+				for (let i = 0; i < character.length; i++) {
+					if (character[i].name == "CharacterSlotsPlayer2") {
+						for (let j = 0; j < character[i].list.length; j++) {
+							if (character[i].list[j].name.search("player2_slot") == 0) {
+								for (let k = 0; k < ch2.length; k++) {
+									if (ch2[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].setTexture("peawns2", orderCharacterPlayer2Images[ch2[k].player_match_character_character_id - 1]);
+									}
+								}
+							}
+						}
+					}
 				}
 
 			} else {
 				//player = ch2
 
-				document.getElementById("player1_id").innerHTML = p2_name
-				document.getElementById("player2_id").innerHTML = p1_name
+				var character = this.parent.scene.children.list;
+				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
-				for (let i = 0; i < ch2.length; i++) {
-					document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = false;
-					document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").innerHTML = ch2[i].caracter_name + ": " + ch2[i].player_match_character_character_current_HP;
+				for (let i = 0; i < character.length; i++) {
+					if (character[i].name == "CharacterSlotsPlayer2") {
+						for (let j = 0; j < character[i].list.length; j++) {
+							if (character[i].list[j].name.search("player2_slot") == 0) {
+								for (let k = 0; k < ch1.length; k++) {
+									if (ch1[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].setTexture("peawns2", orderCharacterPlayer2Images[ch1[k].player_match_character_character_id - 1]);
+									}
+								}
+							}
+						}
+					}
 				}
 
-				for (let i = 0; i < ch1.length; i++) {
-					document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").disabled = false;
-					document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").innerHTML = ch1[i].caracter_name + ": " + ch1[i].player_match_character_character_current_HP;
+				for (let i = 0; i < character.length; i++) {
+					if (character[i].name == "CharacterSlotsPlayer1") {
+						for (let j = 0; j < character[i].list.length; j++) {
+							if (character[i].list[j].name.search("player1_slot") == 0) {
+								for (let k = 0; k < ch2.length; k++) {
+									if (ch2[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].setTexture("peawns", ch2[k].player_match_character_character_id - 1);
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}

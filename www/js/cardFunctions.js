@@ -6,7 +6,7 @@ function pickCard() { // player picks a card
             console.log(data)
             if (data.notWorking) {
                 document.getElementById("result").innerHTML = data.message;
-                setInterval(erraseResult, 4000);
+                setInterval(eraseResult, 4000);
             }else if (data.cards) {
                 addCards(JSON.parse(data.cards));
             }
@@ -17,7 +17,7 @@ function pickCard() { // player picks a card
     })
 };~
 
-function erraseResult(){
+function eraseResult(){
     document.getElementById("result").innerHTML = ""
 }
 

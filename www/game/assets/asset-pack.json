@@ -183,6 +183,19 @@
                 "key": "Specasdossheets"
             },
             {
+                "url": "assets/spritesheet.png",
+                "frameConfig": {
+                    "frameWidth": 51,
+                    "frameHeight": 9,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 2,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "spritesheet"
+            },
+            {
                 "url": "assets/Tipsy_Tussle_Logo.png",
                 "type": "image",
                 "key": "Tipsy_Tussle_Logo"
