@@ -258,7 +258,6 @@ class HandleChooseMechanism extends ScriptNode {
 						}
 					}else if(glowChange[i].name == "Characters"){
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							console.log(glowChange[i].list[j].name, "character_id_" + charChosen)
 							if(glowChange[i].list[j].name == "sand"){
 								glowChange[i].list[j].preFX.list[0].active = true
 								glowChange[i].list[j].name = "character_id_" + charChosen
@@ -271,6 +270,18 @@ class HandleChooseMechanism extends ScriptNode {
 
 			} else {
 				this.showMessage("You can't pick the same character twice");
+				var glowChange = this.scene.children.list
+
+				for (let i = 0; i < glowChange.length; i++) {
+					if(glowChange[i].name == "Characters"){
+						for (let j = 0; j < glowChange[i].list.length; j++) {
+							if(glowChange[i].list[j].name == "sand"){
+								glowChange[i].list[j].name = "character_id_" + charChosen
+							}
+						}
+					}
+				}
+
 			}
 		} else {
 			if(charChosen != null){
@@ -290,6 +301,12 @@ class HandleChooseMechanism extends ScriptNode {
 					if(glowChange[i].name == "Slots"){
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if(glowChange[i].list[j].name != "MessageServer"){
+								glowChange[i].list[j].preFX.list[0].active = false
+							}
+						}
+					}else if(glowChange[i].name == "Characters"){
+						for (let j = 0; j < glowChange[i].list.length; j++) {
+							if(glowChange[i].list[j].name != "Username"){
 								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
