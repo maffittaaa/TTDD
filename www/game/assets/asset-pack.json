@@ -137,6 +137,11 @@
                 "key": "MatchMechanism"
             },
             {
+                "url": "assets/Minecraft.ttf",
+                "type": "binary",
+                "key": "Minecraft"
+            },
+            {
                 "url": "assets/peawns.png",
                 "frameConfig": {
                     "frameWidth": 215,

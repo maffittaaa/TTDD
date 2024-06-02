@@ -44,7 +44,7 @@
                         "frame": 0
                     },
                     "x": 967,
-                    "y": 307,
+                    "y": 317,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -93,7 +93,7 @@
                         "frame": 0
                     },
                     "x": 1127,
-                    "y": 230,
+                    "y": 240,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -142,7 +142,7 @@
                         "frame": 0
                     },
                     "x": 1127,
-                    "y": 378,
+                    "y": 388,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -191,7 +191,7 @@
                         "frame": 0
                     },
                     "x": 1127,
-                    "y": 522,
+                    "y": 532,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -240,7 +240,7 @@
                         "frame": 0
                     },
                     "x": 969,
-                    "y": 450,
+                    "y": 460,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -1442,6 +1442,42 @@
                             "fontSize": "25px"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "9ccd042e-1f5a-4844-a28c-d67e927bac11",
+            "label": "XpBar",
+            "useGameObjectName": true,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "52ab2b2e-3abf-41ee-8694-de1633a53a6d",
+                    "label": "spritesheet10",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 10
+                    },
+                    "x": 1149,
+                    "y": 114,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Text",
+                    "id": "d17c82af-5747-4071-9194-f4055532d515",
+                    "label": "XpTotal",
+                    "x": 1151,
+                    "y": 114,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "XpTotal",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "20px",
+                    "color": "#000000ff",
+                    "stroke": "#000000ff",
+                    "strokeThickness": 1
                 }
             ]
         }

@@ -101,7 +101,6 @@ class HandleChooseMechanism extends ScriptNode {
 			for (let i = 0; i < nameText.length; i++) {
 				if(nameText[i].name.search("Username") == 0){
 					nameText[i].text = data.name + "\nLevel: " + data.level
-					// scene.updateXp(data.level, data.name, nameText[i])
 				}
 			}
 		}else if(scene.type == "LookForMatch"){
@@ -150,7 +149,38 @@ class HandleChooseMechanism extends ScriptNode {
 					}
 				}
 			}
+
+			this.updateXpBar(data.level, data.xp)
 		}
+	}
+
+	updateXpBar(level, xp){
+		var index = 0;
+		var playerXp = xp
+		var finalXp = 50;
+
+
+		while (index < level){
+			finalXp += finalXp/2 
+			index++
+		}
+
+		var xpbar = this.scene.children.list
+
+		for (let i = 0; i < xpbar.length; i++) {
+			if(xpbar[i].name == "XpBar"){
+				for (let j = 0; j < 10; j++) {
+					console.log(playerXp, finalXp * (j * 0.1))
+					if(playerXp > finalXp * (j * 0.1)){
+						console.log(j, 10-j)
+						xpbar[i].list[0].setTexture("spritesheet", 10 - j)
+						xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp)
+					}
+				}
+			}
+		}
+
+		return finalXp;
 	}
 
 	update(dt){
@@ -191,7 +221,6 @@ class HandleChooseMechanism extends ScriptNode {
 		})
 
 		if (lookingForMatch) {
-			var scene = this;
 			$.ajax({
 				type: "GET",
 				url: "/match/checkMatchFound",
@@ -209,6 +238,8 @@ class HandleChooseMechanism extends ScriptNode {
 			})
 		}
 	}
+
+
 
 	showMessage(message){
 		var textChange = this.scene.children.list
@@ -237,7 +268,14 @@ class HandleChooseMechanism extends ScriptNode {
 			}
 
 			if (alreadyChosen == false) {
-				charChosen = ch_Id
+				var glowOnOff = true
+
+				if(charChosen == ch_Id){
+					glowOnOff = false
+					charChosen = null
+				}else{
+					charChosen = ch_Id
+				}
 
 				var glowChange = this.scene.children.list
 				for (let i = 0; i < glowChange.length; i++) {
@@ -245,21 +283,21 @@ class HandleChooseMechanism extends ScriptNode {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if(glowChange[i].list[j].name != "MessageServer"){
 								if(charChosen <= 4 ){
-									glowChange[i].list[1].preFX.list[0].active = true
-									glowChange[i].list[2].preFX.list[0].active = true
-									glowChange[i].list[3].preFX.list[0].active = true
+									glowChange[i].list[1].preFX.list[0].active = glowOnOff
+									glowChange[i].list[2].preFX.list[0].active = glowOnOff
+									glowChange[i].list[3].preFX.list[0].active = glowOnOff
 
 									glowChange[i].list[0].preFX.list[0].active = false
 									glowChange[i].list[4].preFX.list[0].active = false
 								}else if (charChosen > 4){
-									glowChange[i].list[j].preFX.list[0].active = true
+									glowChange[i].list[j].preFX.list[0].active = glowOnOff
 								}
 							}
 						}
 					}else if(glowChange[i].name == "Characters"){
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if(glowChange[i].list[j].name == "sand"){
-								glowChange[i].list[j].preFX.list[0].active = true
+								glowChange[i].list[j].preFX.list[0].active = glowOnOff
 								glowChange[i].list[j].name = "character_id_" + charChosen
 							}else if(glowChange[i].list[j].name != "Username"){
 								glowChange[i].list[j].preFX.list[0].active = false

@@ -26,7 +26,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slots.name = "Slots";
 
 		// slot_4
-		const slot_4 = this.add.image(967, 307, "base", 0);
+		const slot_4 = this.add.image(967, 317, "base", 0);
 		slot_4.name = "slot_4";
 		slot_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_4.scaleX = 0.5;
@@ -46,7 +46,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_4.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_1
-		const slot_1 = this.add.image(1127, 230, "base", 0);
+		const slot_1 = this.add.image(1127, 240, "base", 0);
 		slot_1.name = "slot_1";
 		slot_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_1.scaleX = 0.5;
@@ -66,7 +66,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_1.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_2
-		const slot_2 = this.add.image(1127, 378, "base", 0);
+		const slot_2 = this.add.image(1127, 388, "base", 0);
 		slot_2.name = "slot_2";
 		slot_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_2.scaleX = 0.5;
@@ -86,7 +86,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_2.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_3
-		const slot_3 = this.add.image(1127, 522, "base", 0);
+		const slot_3 = this.add.image(1127, 532, "base", 0);
 		slot_3.name = "slot_3";
 		slot_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_3.scaleX = 0.5;
@@ -106,7 +106,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_3.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_5
-		const slot_5 = this.add.image(969, 450, "base", 0);
+		const slot_5 = this.add.image(969, 460, "base", 0);
 		slot_5.name = "slot_5";
 		slot_5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_5.scaleX = 0.5;
@@ -638,6 +638,23 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		levelUpText.text = "You have Leveled Up!! Now you can choose one of this three characters!!";
 		levelUpText.setStyle({ "fontSize": "25px" });
 		new_characters.add(levelUpText);
+
+		// XpBar
+		const xpBar = this.add.container(0, 0);
+		xpBar.name = "XpBar";
+
+		// spritesheet10
+		const spritesheet10 = this.add.image(1149, 114, "spritesheet", 10);
+		spritesheet10.scaleX = 3;
+		spritesheet10.scaleY = 3;
+		xpBar.add(spritesheet10);
+
+		// XpTotal
+		const xpTotal = this.add.text(1151, 114, "", {});
+		xpTotal.setOrigin(0.5, 0.5);
+		xpTotal.text = "XpTotal";
+		xpTotal.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "20px", "stroke": "#000000ff", "strokeThickness":1});
+		xpBar.add(xpTotal);
 
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
