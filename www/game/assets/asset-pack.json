@@ -112,11 +112,6 @@
                 "type": "image"
             },
             {
-                "url": "src/scripts/GoToProfile.js",
-                "type": "script",
-                "key": "GoToProfile"
-            },
-            {
                 "url": "src/scripts/GoToScene.js",
                 "type": "script",
                 "key": "GoToScene"

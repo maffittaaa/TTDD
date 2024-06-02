@@ -3,8 +3,6 @@ var started = onAwake()
 setInterval(deltaChanges, 2000)
 
 function onAwake() {
-    console.log("start");
-
     $.ajax({
         type: "GET",
         url: "/match/getMatchData",

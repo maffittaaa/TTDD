@@ -45,6 +45,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// pushActionScript_17
 		new PushActionScript(onPointerDownScript_17);
 
+		// glowFx_2
+		slot_4.preFX.addGlow(16777215, 4, 0, false);
+
 		// slot_1
 		const slot_1 = this.add.image(1127, 230, "base", 0);
 		slot_1.name = "slot_1";
@@ -61,6 +64,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// pushActionScript_16
 		new PushActionScript(onPointerDownScript_16);
+
+		// glowFx
+		slot_1.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_2
 		const slot_2 = this.add.image(1127, 378, "base", 0);
@@ -79,6 +85,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// pushActionScript_15
 		new PushActionScript(onPointerDownScript_15);
 
+		// glowFx
+		slot_2.preFX.addGlow(16777215, 4, 0, false);
+
 		// slot_3
 		const slot_3 = this.add.image(1127, 522, "base", 0);
 		slot_3.name = "slot_3";
@@ -96,6 +105,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// pushActionScript_14
 		new PushActionScript(onPointerDownScript_14);
 
+		// glowFx
+		slot_3.preFX.addGlow(16777215, 4, 0, false);
+
 		// slot_5
 		const slot_5 = this.add.image(969, 450, "base", 0);
 		slot_5.name = "slot_5";
@@ -112,6 +124,19 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
+
+		// glowFx_1
+		slot_5.preFX.addGlow(16777215, 4, 0, false);
+
+		// MessageServer
+		const messageServer = this.add.text(1050, 629, "", {});
+		messageServer.name = "MessageServer";
+		messageServer.setOrigin(0.5, 0.5);
+		messageServer.text = "\n";
+		slots.add(messageServer);
+
+		// handleChooseMechanism_16
+		const handleChooseMechanism_16 = new HandleChooseMechanism(messageServer);
 
 		// Match
 		const match = this.add.container(0, 0);
@@ -299,6 +324,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// Characters
 		const characters = this.add.container(-1, -38);
+		characters.name = "Characters";
 
 		// Username
 		const username = this.add.text(1152, 77.5, "", {});
@@ -310,16 +336,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_17
 		const handleChooseMechanism_17 = new HandleChooseMechanism(username);
-
-		// MessageServer
-		const messageServer = this.add.text(1046, 648, "", {});
-		messageServer.name = "MessageServer";
-		messageServer.setOrigin(0.5, 0.5);
-		messageServer.text = "\n";
-		characters.add(messageServer);
-
-		// handleChooseMechanism_16
-		const handleChooseMechanism_16 = new HandleChooseMechanism(messageServer);
 
 		// character_id_2
 		const character_id_2 = this.add.image(620, 259, "cartas2_Imprimir", 0);
@@ -338,6 +354,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_9
 		const handleChooseMechanism_9 = new HandleChooseMechanism(character_id_2);
 
+		// glowFx_12
+		character_id_2.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_0
 		const character_id_0 = this.add.image(143, 259, "cartas1_Imprimir", 8);
 		character_id_0.name = "character_id_0";
@@ -354,6 +373,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_8
 		const handleChooseMechanism_8 = new HandleChooseMechanism(character_id_0);
+
+		// glowFx_11
+		character_id_0.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_5
 		const character_id_5 = this.add.image(143, 510, "cartas1_Imprimir", 7);
@@ -372,6 +394,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_7
 		const handleChooseMechanism_7 = new HandleChooseMechanism(character_id_5);
 
+		// glowFx_10
+		character_id_5.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_1
 		const character_id_1 = this.add.image(302, 259, "cartas1_Imprimir", 6);
 		character_id_1.name = "character_id_1";
@@ -388,6 +413,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_6
 		const handleChooseMechanism_6 = new HandleChooseMechanism(character_id_1);
+
+		// glowFx_9
+		character_id_1.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_4
 		const character_id_4 = this.add.image(460, 259, "cartas1_Imprimir", 5);
@@ -406,6 +434,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_
 		const handleChooseMechanism_ = new HandleChooseMechanism(character_id_4);
 
+		// glowFx_8
+		character_id_4.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_9
 		const character_id_9 = this.add.image(620, 510, "cartas1_Imprimir", 4);
 		character_id_9.name = "character_id_9";
@@ -422,6 +453,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_4
 		const handleChooseMechanism_4 = new HandleChooseMechanism(character_id_9);
+
+		// glowFx_7
+		character_id_9.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_7
 		const character_id_7 = this.add.image(302, 510, "cartas1_Imprimir", 3);
@@ -440,6 +474,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_3
 		const handleChooseMechanism_3 = new HandleChooseMechanism(character_id_7);
 
+		// glowFx_6
+		character_id_7.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_8
 		const character_id_8 = this.add.image(460, 510, "cartas1_Imprimir", 2);
 		character_id_8.name = "character_id_8";
@@ -456,6 +493,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_2
 		const handleChooseMechanism_2 = new HandleChooseMechanism(character_id_8);
+
+		// glowFx_5
+		character_id_8.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_6
 		const character_id_6 = this.add.image(778, 510, "cartas1_Imprimir", 1);
@@ -474,6 +514,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_1
 		const handleChooseMechanism_1 = new HandleChooseMechanism(character_id_6);
 
+		// glowFx_4
+		character_id_6.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_3
 		const character_id_3 = this.add.image(777, 259, "cartas1_Imprimir", 0);
 		character_id_3.name = "character_id_3";
@@ -490,6 +533,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism
 		const handleChooseMechanism = new HandleChooseMechanism(character_id_3);
+
+		// glowFx_3
+		character_id_3.preFX.addGlow(16777215, 4, 0, false);
 
 		// Characters and Cards
 		const characters_and_Cards = this.add.container(0, 0);
@@ -616,6 +662,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		handleChooseMechanism_14.SlotID = 5;
 		handleChooseMechanism_14.type = "Slot";
 
+		// handleChooseMechanism_16 (prefab fields)
+		handleChooseMechanism_16.type = "charSelct";
+
 		// handleChooseMechanism_15 (prefab fields)
 		handleChooseMechanism_15.type = "Message";
 
@@ -633,9 +682,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_17 (prefab fields)
 		handleChooseMechanism_17.type = "charSelct";
-
-		// handleChooseMechanism_16 (prefab fields)
-		handleChooseMechanism_16.type = "charSelct";
 
 		// handleChooseMechanism_9 (prefab fields)
 		handleChooseMechanism_9.CharacterID = 2;

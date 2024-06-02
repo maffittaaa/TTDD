@@ -50,7 +50,6 @@ class UnlockCharacterMechanism extends ScriptNode {
 				if (randomChar[i] == 3){
 					imageList[i].setTexture("cartas2_Imprimir", orderCharImages[randomChar[i] - 1])
 				}else{
-					console.log(imageList)
 					imageList[i].setTexture("cartas1_Imprimir", orderCharImages[randomChar[i] - 1])
 				}
 			}
@@ -70,8 +69,6 @@ class UnlockCharacterMechanism extends ScriptNode {
 
 						imageList[i + randomChar.length].visible = false
 					}
-
-					console.log(imageList[i])
 				}
 			}
 
