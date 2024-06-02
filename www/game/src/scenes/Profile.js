@@ -18,19 +18,19 @@ class Profile extends Phaser.Scene {
 	editorCreate() {
 
 		// specasdossheets
-		const specasdossheets = this.add.image(640, 360, "Specasdossheets");
-		specasdossheets.scaleX = 0.66666;
-		specasdossheets.scaleY = 0.66666;
+		this.add.image(960, 540, "Specasdossheets");
 
 		// Profile Information
 		const profile_Information = this.add.container(43.75000000000003, 62.5);
+		profile_Information.scaleX = 1.5;
+		profile_Information.scaleY = 1.5;
 
 		// XP
 		const xP = this.add.text(300, 191, "", {});
 		xP.name = "XP";
 		xP.setOrigin(0.5, 0.5);
 		xP.text = "XP:";
-		xP.setStyle({ "fontSize": "25px" });
+		xP.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
 		profile_Information.add(xP);
 
 		// Matches
@@ -38,7 +38,7 @@ class Profile extends Phaser.Scene {
 		matches.name = "Matches";
 		matches.setOrigin(0.5, 0.5);
 		matches.text = "Matches:";
-		matches.setStyle({ "fontSize": "25px" });
+		matches.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
 		profile_Information.add(matches);
 
 		// Victories
@@ -46,7 +46,7 @@ class Profile extends Phaser.Scene {
 		victories.name = "Victories";
 		victories.setOrigin(0.5, 0.5);
 		victories.text = "Victories:";
-		victories.setStyle({ "fontSize": "25px" });
+		victories.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
 		profile_Information.add(victories);
 
 		// Username
@@ -54,7 +54,7 @@ class Profile extends Phaser.Scene {
 		username.name = "Username";
 		username.setOrigin(0.5, 0.5);
 		username.text = "Username:";
-		username.setStyle({ "fontSize": "25px" });
+		username.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
 		profile_Information.add(username);
 
 		// Email
@@ -62,15 +62,18 @@ class Profile extends Phaser.Scene {
 		email.name = "Email";
 		email.setOrigin(0.5, 0.5);
 		email.text = "Email:";
-		email.setStyle({ "fontSize": "25px" });
+		email.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
 		profile_Information.add(email);
 
 		// Profile Button
 		const profile_Button = this.add.container(0, 0);
+		profile_Button.scaleX = 1.5;
+		profile_Button.scaleY = 1.5;
 
 		// highlight
-		const highlight = this.add.rectangle(399, 48, 128, 128);
+		const highlight = this.add.rectangle(622, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight.scaleX = 0.75;
 		highlight.scaleY = 0.1807207308530191;
 		highlight.fillColor = 4194559;
 		highlight.isStroked = true;
@@ -80,10 +83,11 @@ class Profile extends Phaser.Scene {
 		profile_Button.add(highlight);
 
 		// Profile
-		const profile = this.add.text(399, 48, "", {});
+		const profile = this.add.text(622, 48, "", {});
 		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
+		profile.setStyle({ "fontFamily": "minecraft" });
 		profile_Button.add(profile);
 
 		// onPointerDownScript_1
@@ -96,13 +100,16 @@ class Profile extends Phaser.Scene {
 		const goToScene_1 = new GoToScene(profile);
 
 		// Choose Menu Button
-		const choose_Menu_Button = this.add.container(-233.9641265767494, 317.934904354586);
+		const choose_Menu_Button = this.add.container(0, 0);
+		choose_Menu_Button.scaleX = 1.5;
+		choose_Menu_Button.scaleY = 1.5;
 
 		// ChooseCharacters
-		const chooseCharacters = this.add.text(413.96412658691406, -269.9349060058594, "", {});
+		const chooseCharacters = this.add.text(180, 48, "", {});
 		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
+		chooseCharacters.setStyle({ "fontFamily": "minecraft" });
 		choose_Menu_Button.add(chooseCharacters);
 
 		// onPointerDownScript
@@ -115,13 +122,15 @@ class Profile extends Phaser.Scene {
 		const goToScene = new GoToScene(chooseCharacters);
 
 		// Change Profile Button
-		const change_Profile_Button = this.add.container(640, 632);
+		const change_Profile_Button = this.add.container(0, 0);
+		change_Profile_Button.scaleX = 1.5;
+		change_Profile_Button.scaleY = 1.5;
 
 		// highlight_1
-		const highlight_1 = this.add.rectangle(-2, 0, 128, 128);
+		const highlight_1 = this.add.rectangle(640, 632, 128, 128);
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_1.scaleX = 1.3;
-		highlight_1.scaleY = 0.1807207308530191;
+		highlight_1.scaleX = 1.0590319501176437;
+		highlight_1.scaleY = 0.2;
 		highlight_1.fillColor = 4194559;
 		highlight_1.isStroked = true;
 		highlight_1.strokeColor = 4194559;
@@ -130,10 +139,11 @@ class Profile extends Phaser.Scene {
 		change_Profile_Button.add(highlight_1);
 
 		// Profile_1
-		const profile_1 = this.add.text(0, 0, "", {});
+		const profile_1 = this.add.text(640, 632, "", {});
 		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_1.setOrigin(0.5, 0.5);
 		profile_1.text = "Change profile";
+		profile_1.setStyle({ "fontFamily": "minecraft" });
 		change_Profile_Button.add(profile_1);
 
 		// onPointerDownScript_2
@@ -147,12 +157,15 @@ class Profile extends Phaser.Scene {
 
 		// Characters and Cards
 		const characters_and_Cards = this.add.container(0, 0);
+		characters_and_Cards.scaleX = 1.5;
+		characters_and_Cards.scaleY = 1.5;
 
 		// Characters And Cards
-		const characters_And_Cards = this.add.text(622, 48, "", {});
+		const characters_And_Cards = this.add.text(422, 48, "", {});
 		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
+		characters_And_Cards.setStyle({ "fontFamily": "minecraft" });
 		characters_and_Cards.add(characters_And_Cards);
 
 		// onPointerDownScript_3
@@ -166,12 +179,15 @@ class Profile extends Phaser.Scene {
 
 		// Button Go Back To Home Page
 		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+		button_Go_Back_To_Home_Page.scaleX = 1.5;
+		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// Profile_2
 		const profile_2 = this.add.text(896, 48, "", {});
 		profile_2.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_2.setOrigin(0.5, 0.5);
 		profile_2.text = "Back To Home Page";
+		profile_2.setStyle({ "fontFamily": "minecraft" });
 		button_Go_Back_To_Home_Page.add(profile_2);
 
 		// onPointerDownScript_25

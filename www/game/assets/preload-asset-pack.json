@@ -5,6 +5,24 @@
                 "url": "assets/guapen.png",
                 "type": "image",
                 "key": "guapen"
+            },
+            {
+                "url": "assets/peawnsPreload.png",
+                "frameConfig": {
+                    "frameWidth": 215,
+                    "frameHeight": 263,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 4,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "peawnsPreload"
+            },
+            {
+                "url": "src/scenes/SpecasdossheetsPreload.png",
+                "type": "image",
+                "key": "SpecasdossheetsPreload"
             }
         ]
     },

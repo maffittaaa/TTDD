@@ -17,15 +17,15 @@ class CharactersAndCards extends Phaser.Scene {
 	editorCreate() {
 
 		// specasdossheets
-		const specasdossheets = this.add.image(640, 360, "Specasdossheets");
-		specasdossheets.scaleX = 0.66666;
-		specasdossheets.scaleY = 0.66666;
+		this.add.image(960, 540, "Specasdossheets");
 
 		// Characters and Cards
 		const characters_and_Cards = this.add.container(0, 0);
+		characters_and_Cards.scaleX = 1.5;
+		characters_and_Cards.scaleY = 1.5;
 
 		// highlight
-		const highlight = this.add.rectangle(621, 48, 128, 128);
+		const highlight = this.add.rectangle(422, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
 		highlight.scaleX = 1.63;
 		highlight.scaleY = 0.1807207308530191;
@@ -37,10 +37,11 @@ class CharactersAndCards extends Phaser.Scene {
 		characters_and_Cards.add(highlight);
 
 		// Characters And Cards
-		const characters_And_Cards = this.add.text(622, 48, "", {});
+		const characters_And_Cards = this.add.text(422, 48, "", {});
 		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
+		characters_And_Cards.setStyle({ "fontFamily": "minecraft" });
 		characters_and_Cards.add(characters_And_Cards);
 
 		// onPointerDownScript_20
@@ -54,12 +55,15 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Button Choose Characters
 		const button_Choose_Characters = this.add.container(0, 0);
+		button_Choose_Characters.scaleX = 1.5;
+		button_Choose_Characters.scaleY = 1.5;
 
 		// ChooseCharacters
 		const chooseCharacters = this.add.text(180, 48, "", {});
 		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
+		chooseCharacters.setStyle({ "fontFamily": "minecraft" });
 		button_Choose_Characters.add(chooseCharacters);
 
 		// onPointerDownScript
@@ -73,12 +77,15 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Button Profile
 		const button_Profile = this.add.container(0, 0);
+		button_Profile.scaleX = 1.5;
+		button_Profile.scaleY = 1.5;
 
 		// Profile
-		const profile = this.add.text(399, 48, "", {});
+		const profile = this.add.text(622, 48, "", {});
 		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
+		profile.setStyle({ "fontFamily": "minecraft" });
 		button_Profile.add(profile);
 
 		// onPointerDownScript_1
@@ -93,6 +100,8 @@ class CharactersAndCards extends Phaser.Scene {
 		// Characters
 		const characters = this.add.container(0, 0);
 		characters.name = "Characters";
+		characters.scaleX = 1.5;
+		characters.scaleY = 1.5;
 
 		// Characters_1
 		const characters_1 = this.add.container(30.5, 12.25);
@@ -270,10 +279,11 @@ class CharactersAndCards extends Phaser.Scene {
 		card_description_1.name = "Card_description_1";
 		card_description_1.setOrigin(0.5, -0.0011025686642976021);
 		card_description_1.text = "Character description";
+		card_description_1.setStyle({ "fontFamily": "minecraft" });
 		characters_1.add(card_description_1);
 
 		// characters_option_button
-		const characters_option_button = this.add.image(411, 360, "cartas2_Imprimir", 1);
+		const characters_option_button = this.add.image(401, 360, "cartas2_Imprimir", 1);
 		characters_option_button.name = "characters_option_button";
 		characters.add(characters_option_button);
 
@@ -289,6 +299,8 @@ class CharactersAndCards extends Phaser.Scene {
 		// Cards
 		const cards = this.add.container(0, 0);
 		cards.name = "Cards";
+		cards.scaleX = 1.5;
+		cards.scaleY = 1.5;
 
 		// Cards_1
 		const cards_1 = this.add.container(30.5, 12.25);
@@ -466,11 +478,11 @@ class CharactersAndCards extends Phaser.Scene {
 		card_description.name = "Card_description";
 		card_description.setOrigin(0.5, -0.022889636867095456);
 		card_description.text = "Card description";
-		card_description.setStyle({ "align": "center" });
+		card_description.setStyle({ "align": "center", "fontFamily": "minecraft" });
 		cards_1.add(card_description);
 
 		// cartas4_Imprimir3
-		const cartas4_Imprimir3 = this.add.image(861, 360, "cartas4_Imprimir", 3);
+		const cartas4_Imprimir3 = this.add.image(864, 360, "cartas4_Imprimir", 3);
 		cartas4_Imprimir3.name = "cartas4_Imprimir3";
 		cards.add(cartas4_Imprimir3);
 
@@ -485,12 +497,15 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Button Go Back To Home Page
 		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+		button_Go_Back_To_Home_Page.scaleX = 1.5;
+		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// Profile_1
 		const profile_1 = this.add.text(896, 48, "", {});
 		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_1.setOrigin(0.5, 0.5);
 		profile_1.text = "Back To Home Page";
+		profile_1.setStyle({ "fontFamily": "minecraft" });
 		button_Go_Back_To_Home_Page.add(profile_1);
 
 		// onPointerDownScript_25

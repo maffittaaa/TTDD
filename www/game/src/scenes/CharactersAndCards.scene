@@ -5,8 +5,8 @@
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "CharactersAndCards",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -16,15 +16,15 @@
             "texture": {
                 "key": "Specasdossheets"
             },
-            "x": 640,
-            "y": 360,
-            "scaleX": 0.66666,
-            "scaleY": 0.66666
+            "x": 960,
+            "y": 540
         },
         {
             "type": "Container",
             "id": "8641c683-8031-4b50-826f-7d8208a8fb08",
             "label": "Characters and Cards",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
@@ -33,7 +33,7 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
-                    "x": 621,
+                    "x": 422,
                     "y": 48,
                     "scaleX": 1.63,
                     "scaleY": 0.1807207308530191,
@@ -52,11 +52,12 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 154,
                     "hitArea.height": 15,
-                    "x": 622,
+                    "x": 422,
                     "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Characters and Cards",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -87,6 +88,8 @@
             "type": "Container",
             "id": "29ac9e4f-c598-40ea-9e57-9be96931b9fd",
             "label": "Button Choose Characters",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -100,6 +103,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Choose Characters",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -130,6 +134,8 @@
             "type": "Container",
             "id": "64614d55-c9a4-4f16-882a-01fcf6e4bcbf",
             "label": "Button Profile",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -140,11 +146,12 @@
                     "hitArea.y": -17,
                     "hitArea.width": 100.09315749661158,
                     "hitArea.height": 53.83254699275936,
-                    "x": 399,
+                    "x": 622,
                     "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Profile",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -177,6 +184,8 @@
             "label": "Characters",
             "useGameObjectName": true,
             "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Container",
@@ -621,7 +630,8 @@
                             "y": 509.48346147003554,
                             "originX": 0.5,
                             "originY": -0.0011025686642976021,
-                            "text": "Character description"
+                            "text": "Character description",
+                            "fontFamily": "minecraft"
                         }
                     ]
                 },
@@ -635,7 +645,7 @@
                         "key": "cartas2_Imprimir",
                         "frame": 1
                     },
-                    "x": 411,
+                    "x": 401,
                     "y": 360,
                     "list": [
                         {
@@ -670,6 +680,8 @@
             "label": "Cards",
             "useGameObjectName": true,
             "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Container",
@@ -1123,7 +1135,8 @@
                             "originX": 0.5,
                             "originY": -0.022889636867095456,
                             "text": "Card description",
-                            "align": "center"
+                            "align": "center",
+                            "fontFamily": "minecraft"
                         }
                     ]
                 },
@@ -1137,7 +1150,7 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 861,
+                    "x": 864,
                     "y": 360,
                     "list": [
                         {
@@ -1170,6 +1183,8 @@
             "type": "Container",
             "id": "f451ade3-0226-4ec5-94a1-f39795ba600d",
             "label": "Button Go Back To Home Page",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -1185,6 +1200,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Back To Home Page",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
