@@ -173,12 +173,13 @@ class HandleChooseMechanism extends ScriptNode {
 		})
 
 		if (lookingForMatch) {
+			var scene = this;
 			$.ajax({
 				type: "GET",
 				url: "/match/checkMatchFound",
 				success: function (data) {
 					if (data.matchFound == true) {
-						window.location.replace("/match.html");
+						goToMatch = true;
 					}
 					else {
 						console.log(data);

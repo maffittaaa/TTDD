@@ -1,5 +1,7 @@
-
-// You can write more code here
+var goToProfile = false;
+var goToCharactersAndCards = false;
+var goToChooseChar = false;
+var goToMatch = false;
 
 /* START OF COMPILED CODE */
 

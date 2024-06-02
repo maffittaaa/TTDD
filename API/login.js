@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/CheckLogin", (req, res) => {
     if (!req.session.playerID){
         res.send({logged: false});
-        return
+        return;
     }
 
     connection.execute("SELECT player_email, player_level, player_matches, player_victories FROM player WHERE player_id = ?", [req.session.playerID], 
@@ -74,21 +74,20 @@ router.get("/CheckLogin", (req, res) => {
 });
 
 function updateXp(xp){
-    var i = 0
-    var intialLevel = 50
-    var levelFound = false
+    var i = 0;
+    var intialLevel = 50;
+    var levelFound = false;
 
     while (levelFound == false){
         if(xp < intialLevel){
-            xp = i
-            levelFound = true
+            xp = i;
+            levelFound = true;
         }else{
-            i += 1
-            intialLevel += (intialLevel/2)
+            i += 1;;
+            intialLevel += (intialLevel/2);
         }
     }
-
-    return xp
+    return xp;
 }
 
 router.post("/login", (req, res) => {

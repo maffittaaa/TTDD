@@ -17,7 +17,7 @@
                 "key": "board_imprimir"
             },
             "x": 641,
-            "y": 688,
+            "y": 566.6006695988915,
             "scaleX": 0.4505119835568532,
             "scaleY": 0.4505119835568532
         },
@@ -40,9 +40,9 @@
                 "key": "Bar1"
             },
             "x": 278,
-            "y": 322,
-            "scaleX": 1.6003615787994372,
-            "scaleY": 1.6003615787994372
+            "y": 324,
+            "scaleX": 1.4,
+            "scaleY": 1.5
         },
         {
             "type": "Image",
@@ -52,167 +52,263 @@
                 "key": "Bar2"
             },
             "x": 1029,
-            "y": 322,
-            "scaleX": 1.3719325801769293,
-            "scaleY": 1.3719325801769293
+            "y": 324,
+            "scaleX": 1.4,
+            "scaleY": 1.3
         },
         {
-            "type": "Image",
-            "id": "aac1966c-b7bb-4372-8bf0-e452eb53d39b",
-            "label": "player1_slot1",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 380,
-            "y": 486,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
+            "type": "Container",
+            "id": "6eed717f-2209-430f-95e3-b535301037c6",
+            "label": "CharacterSlotsPlayer1",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "aac1966c-b7bb-4372-8bf0-e452eb53d39b",
+                    "label": "player1_slot1",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 380,
+                    "y": 486,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "dbeb66bf-139f-43d9-92d9-1a3fc76a3db1",
+                            "label": "matchMechanism"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "3fc3c8de-bddd-4f52-ac34-74ea3d85fa4e",
+                    "label": "player1_slot2",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 288,
+                    "y": 573,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "bcff87ae-1613-4335-b1ba-155927afacf9",
+                            "label": "matchMechanism_1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "5aca7a59-bcbe-4d1f-b369-075312392101",
+                    "label": "player1_slot3",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 381,
+                    "y": 650,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "9b2c05c3-f6ec-41fc-8deb-ed790bb5546c",
+                            "label": "matchMechanism_2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "e71e8385-be8c-4135-81f4-12a20c276e38",
+                    "label": "player1_slot4",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 160,
+                    "y": 486,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "ced713d0-e783-4a41-8bcc-501be0ac34af",
+                            "label": "matchMechanism_3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "8f970d0f-c21e-44db-871f-a5e06e39323b",
+                    "label": "player1_slot5",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 161,
+                    "y": 650,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "e934b9ff-4a84-4667-a81d-819c2298ad0c",
+                            "label": "matchMechanism_4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "681b45c4-1ff8-4ce3-8e23-3570b25d8324",
+                    "label": "player1_deck1",
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 515,
+                    "y": 381,
+                    "scaleX": 0.28128232019065635,
+                    "scaleY": 0.28128232019065635,
+                    "angle": 90
+                }
+            ]
         },
         {
-            "type": "Image",
-            "id": "3fc3c8de-bddd-4f52-ac34-74ea3d85fa4e",
-            "label": "player1_slot2",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 288,
-            "y": 573,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "5aca7a59-bcbe-4d1f-b369-075312392101",
-            "label": "player1_slot3",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 381,
-            "y": 650,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "e71e8385-be8c-4135-81f4-12a20c276e38",
-            "label": "player1_slot4",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 160,
-            "y": 486,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "8f970d0f-c21e-44db-871f-a5e06e39323b",
-            "label": "player1_slot5",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 161,
-            "y": 650,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "2fa4998f-0771-467b-abb9-5e75e8511efe",
-            "label": "player2_slot6",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 908,
-            "y": 486,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "873cef2c-5bac-4bdd-bf54-793d36adc909",
-            "label": "player2_slot7",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 1000,
-            "y": 573,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "afab82c4-88e0-43af-9978-25de1d5f8e3e",
-            "label": "player2_slot8",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 908,
-            "y": 650,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "e78c429d-1b1c-4933-bae2-d251554c91ca",
-            "label": "player2_slot9",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 1128,
-            "y": 486,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "5c853a09-63e4-46bb-9135-c08034673482",
-            "label": "player2_slot10",
-            "texture": {
-                "key": "base",
-                "frame": 0
-            },
-            "x": 1128,
-            "y": 650,
-            "scaleX": 0.2981159453364421,
-            "scaleY": 0.2981159453364421
-        },
-        {
-            "type": "Image",
-            "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
-            "label": "player2_deck",
-            "texture": {
-                "key": "cartas2_Imprimir",
-                "frame": 1
-            },
-            "x": 789,
-            "y": 381,
-            "scaleX": 0.28128232019065635,
-            "scaleY": 0.28128232019065635,
-            "angle": -90
-        },
-        {
-            "type": "Image",
-            "id": "681b45c4-1ff8-4ce3-8e23-3570b25d8324",
-            "label": "player1_deck1",
-            "texture": {
-                "key": "cartas2_Imprimir",
-                "frame": 1
-            },
-            "x": 515,
-            "y": 381,
-            "scaleX": 0.28128232019065635,
-            "scaleY": 0.28128232019065635,
-            "angle": 90
+            "type": "Container",
+            "id": "95890bb9-249d-4330-ac74-75c4f444ffa5",
+            "label": "CharacterSlotsPlayer2",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "2fa4998f-0771-467b-abb9-5e75e8511efe",
+                    "label": "player2_slot6",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 908,
+                    "y": 486,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "c0c4b1b6-8d5c-4cc1-935c-c4d5064037d6",
+                            "label": "matchMechanism_5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "873cef2c-5bac-4bdd-bf54-793d36adc909",
+                    "label": "player2_slot7",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 1000,
+                    "y": 573,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "0f1a6f98-9bf1-4131-b769-16eb2d932df4",
+                            "label": "matchMechanism_6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "afab82c4-88e0-43af-9978-25de1d5f8e3e",
+                    "label": "player2_slot8",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 908,
+                    "y": 650,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "61a86eca-5bb8-4c87-b3e8-c5a3cc584863",
+                            "label": "matchMechanism_7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "e78c429d-1b1c-4933-bae2-d251554c91ca",
+                    "label": "player2_slot9",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 1128,
+                    "y": 486,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "69067a90-ef35-4a9c-98d2-36d4ad3e4365",
+                            "label": "matchMechanism_8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "5c853a09-63e4-46bb-9135-c08034673482",
+                    "label": "player2_slot10",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 1128,
+                    "y": 650,
+                    "scaleX": 0.2981159453364421,
+                    "scaleY": 0.2981159453364421,
+                    "list": [
+                        {
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "557c3b0d-a29c-4173-a693-02dbd6391326",
+                            "label": "matchMechanism_9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
+                    "label": "player2_deck",
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 789,
+                    "y": 381,
+                    "scaleX": 0.28128232019065635,
+                    "scaleY": 0.28128232019065635,
+                    "angle": -90
+                }
+            ]
         }
     ],
     "plainObjects": [],
