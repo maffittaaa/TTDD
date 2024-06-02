@@ -97,7 +97,7 @@ class HandleChooseMechanism extends ScriptNode {
 					this.pickCharacters(slotChosen, this.CharacterID)
 				}
 			}else if(this.type == "LookForMatch"){
-				this.choseCharacters()
+				this.chooseCharacters()
 			}
 		})
 
@@ -220,7 +220,7 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 	}
 
-	choseCharacters() {
+	chooseCharacters() {
 		var empty = true;
 		var scene = this
 

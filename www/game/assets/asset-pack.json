@@ -2,6 +2,21 @@
     "section1": {
         "files": [
             {
+                "url": "assets/Bar1.png",
+                "type": "image",
+                "key": "Bar1"
+            },
+            {
+                "url": "assets/Bar2.png",
+                "type": "image",
+                "key": "Bar2"
+            },
+            {
+                "url": "assets/Bar3.png",
+                "type": "image",
+                "key": "Bar3"
+            },
+            {
                 "url": "assets/base.png",
                 "frameConfig": {
                     "frameWidth": 150,
@@ -80,6 +95,11 @@
                 "url": "src/scenes/ChooseCharactersMenu.js",
                 "type": "sceneFile",
                 "key": "ChooseCharactersMenu"
+            },
+            {
+                "url": "assets/city.png",
+                "type": "image",
+                "key": "city"
             },
             {
                 "url": "src/scripts/DescriptionsMechanism.js",
