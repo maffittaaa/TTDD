@@ -69,11 +69,11 @@ class HandleChooseMechanism extends ScriptNode {
 
 	start(){
 		this.parent.on('pointerdown', event => {
-			if(this.type == "Character" || this.type == "Slot"){
+			if(this.type == "Character" || this.type == "Slot" ){
 				if(this.SlotID != 0){
-					this.pickCharacters(this.SlotID, charChosen)
+					this.pickCharacters(this.SlotID, null)
 				}else{
-					this.pickCharacters(slotChosen, this.CharacterID)
+					this.pickCharacters(null, this.CharacterID)
 				}
 			}else if(this.type == "LookForMatch"){
 				this.chooseCharacters()
@@ -90,7 +90,6 @@ class HandleChooseMechanism extends ScriptNode {
 				for (let i = 0; i < characters.length; i++) {
 					if(characters[i].name.search("character_id_") == 0){
 						var splitChar = characters[i].name.split("id_", 2)
-	
 						if(splitChar[1] == char[j].player_character_character_id - 1){
 							characters[i].visible = true
 						}
@@ -134,12 +133,31 @@ class HandleChooseMechanism extends ScriptNode {
 					}
 				}
 			}
+
+			var glowChange = scene.scene.children.list
+			for (let i = 0; i < glowChange.length; i++) {
+				if(glowChange[i].name == "Slots"){
+					for (let j = 0; j < glowChange[i].list.length; j++) {
+						if(glowChange[i].list[j].name != "MessageServer"){
+							glowChange[i].list[j].preFX.list[0].active = false
+						}
+					}
+				}else if(glowChange[i].name == "Characters"){
+					for (let j = 0; j < glowChange[i].list.length; j++) {
+						if(glowChange[i].list[j].name != "Username"){
+							glowChange[i].list[j].preFX.list[0].active = false
+						}
+					}
+				}
+			}
 		}
 	}
 
 	update(dt){
 		time = time + 0.0166
 		if(charChosen != null && slotChosen != null){
+		console.log(charChosen, slotChosen)
+
 			if(this.type == "Slot"){
 				if(this.SlotID == slotChosen){
 					this.parent.setTexture("peawns", charChosen)
@@ -193,22 +211,23 @@ class HandleChooseMechanism extends ScriptNode {
 	}
 
 	showMessage(message){
-		var textChange = this.parent.parentContainer.list
+		var textChange = this.scene.children.list
 		for (let i = 0; i < textChange.length; i++) {
-			if(textChange[i].name == "MessageServer"){
-				textChange[i].text = message
-				setTimeout(() => {
-					textChange[i].text = ""
-				}, 4000);
+			if(textChange[i].name == "Slots"){
+				for (let j = 0; j < textChange[i].list.length; j++) {
+					if(textChange[i].list[j].name == "MessageServer"){
+						textChange[i].list[j].text = message
+						setTimeout(() => {
+							textChange[i].list[j].text = ""
+						}, 4000);
+					}
+				}
 			}
 		}
 	}
 
 	pickCharacters(slot_Id, ch_Id) {
 		if (ch_Id != null) {
-			if(slotChosen == null){
-				return
-			}
 			var alreadyChosen = false;
 
 			for (let i = 1; i < 6; i++) { //there are 5 slots
@@ -218,29 +237,73 @@ class HandleChooseMechanism extends ScriptNode {
 			}
 
 			if (alreadyChosen == false) {
-				if (slotChosen > 3  && ch_Id > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
-					charChosen = ch_Id
-				} else if ( slotChosen > 3 && ch_Id <= 4) {
-					console.log(slotChosen, ch_Id)
-					this.showMessage("Can't place the character there. \n 	Not a long-range character.")
-					return;
-				} else {
-					charChosen = ch_Id
+				charChosen = ch_Id
+
+				var glowChange = this.scene.children.list
+				for (let i = 0; i < glowChange.length; i++) {
+					if(glowChange[i].name == "Slots"){
+						for (let j = 0; j < glowChange[i].list.length; j++) {
+							if(glowChange[i].list[j].name != "MessageServer"){
+								if(charChosen <= 4 ){
+									glowChange[i].list[1].preFX.list[0].active = true
+									glowChange[i].list[2].preFX.list[0].active = true
+									glowChange[i].list[3].preFX.list[0].active = true
+
+									glowChange[i].list[0].preFX.list[0].active = false
+									glowChange[i].list[4].preFX.list[0].active = false
+								}else if (charChosen > 4){
+									glowChange[i].list[j].preFX.list[0].active = true
+								}
+							}
+						}
+					}else if(glowChange[i].name == "Characters"){
+						for (let j = 0; j < glowChange[i].list.length; j++) {
+							console.log(glowChange[i].list[j].name, "character_id_" + charChosen)
+							if(glowChange[i].list[j].name == "sand"){
+								glowChange[i].list[j].preFX.list[0].active = true
+								glowChange[i].list[j].name = "character_id_" + charChosen
+							}else if(glowChange[i].list[j].name != "Username"){
+								glowChange[i].list[j].preFX.list[0].active = false
+							}
+						}
+					}
 				}
-				slots["slot_" + slotChosen] = ch_Id
+
 			} else {
 				this.showMessage("You can't pick the same character twice");
 			}
 		} else {
-			if(this.type == "Slot"){
-				this.parent.setTexture("base", 0)
-
-				if (slots["slot_" + slot_Id + ""] != null) {
-					slots["slot_" + slot_Id + ""] = null
+			if(charChosen != null){
+				if (slot_Id > 3  && charChosen > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
+					slots["slot_" + slot_Id + ""] = charChosen	
+					slotChosen = slot_Id
+				} else if ( slot_Id > 3 && charChosen <= 4) {
+					this.showMessage("Can't place the character there. \n Not a long-range character.")
+					return;
+				} else {
+					slots["slot_" + slot_Id + ""] = charChosen	
+					slotChosen = slot_Id
 				}
 
-				slotChosen = slot_Id;
-				charChosen = null
+				var glowChange = this.scene.children.list
+				for (let i = 0; i < glowChange.length; i++) {
+					if(glowChange[i].name == "Slots"){
+						for (let j = 0; j < glowChange[i].list.length; j++) {
+							if(glowChange[i].list[j].name != "MessageServer"){
+								glowChange[i].list[j].preFX.list[0].active = false
+							}
+						}
+					}
+				}
+			}else{
+				if(this.type == "Slot"){
+					this.parent.setTexture("base", 0)
+	
+					if (slots["slot_" + slot_Id + ""] != null) {
+						slots["slot_" + slot_Id + ""] = null
+					}
+					charChosen = null
+				}
 			}
 		}
 	}
@@ -285,7 +348,7 @@ class HandleChooseMechanism extends ScriptNode {
 						
 						lookingForMatch = true;
 					} else {
-						this.showMessage("Chose another character")
+						this.showMessage("Choose another character")
 					}
 				},
 				error: function (err) {
