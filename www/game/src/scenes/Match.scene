@@ -16,7 +16,7 @@
             "texture": {
                 "key": "board_imprimir"
             },
-            "x": 641,
+            "x": 640,
             "y": 566.6006695988915,
             "scaleX": 0.4505119835568532,
             "scaleY": 0.4505119835568532
@@ -51,7 +51,7 @@
             "texture": {
                 "key": "Bar2"
             },
-            "x": 1029,
+            "x": 1060,
             "y": 324,
             "scaleX": 1.4,
             "scaleY": 1.3
@@ -60,26 +60,41 @@
             "type": "Container",
             "id": "6eed717f-2209-430f-95e3-b535301037c6",
             "label": "CharacterSlotsPlayer1",
+            "useGameObjectName": true,
             "scope": "CLASS",
             "list": [
                 {
                     "type": "Image",
                     "id": "aac1966c-b7bb-4372-8bf0-e452eb53d39b",
                     "label": "player1_slot1",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 380,
-                    "y": 486,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 381,
+                    "y": 438.99999955296516,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
                             "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
                             "id": "dbeb66bf-139f-43d9-92d9-1a3fc76a3db1",
                             "label": "matchMechanism"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "7ef38043-9bf4-401e-aadc-0fd3611f8973",
+                            "label": "onPointerDownScript_1",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "ec20a0a0-05ce-43e8-853b-9784c206b363",
+                                    "label": "pushActionScript_1"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -87,20 +102,29 @@
                     "type": "Image",
                     "id": "3fc3c8de-bddd-4f52-ac34-74ea3d85fa4e",
                     "label": "player1_slot2",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 288,
-                    "y": 573,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 283,
+                    "y": 522.9999995529652,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "bcff87ae-1613-4335-b1ba-155927afacf9",
-                            "label": "matchMechanism_1"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "51f8e160-0fdd-4799-b760-ace208e1887e",
+                            "label": "onPointerDownScript_2",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "01a5efb4-722d-403f-8433-339d90fc27ce",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -108,20 +132,29 @@
                     "type": "Image",
                     "id": "5aca7a59-bcbe-4d1f-b369-075312392101",
                     "label": "player1_slot3",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 381,
-                    "y": 650,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 382,
+                    "y": 601.9999995529652,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "9b2c05c3-f6ec-41fc-8deb-ed790bb5546c",
-                            "label": "matchMechanism_2"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "bd60db59-a8cb-487b-a952-a9e9f99f422e",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "ea9d7495-2af6-48a1-9e94-7bb142b7c968",
+                                    "label": "pushActionScript"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -129,20 +162,29 @@
                     "type": "Image",
                     "id": "e71e8385-be8c-4135-81f4-12a20c276e38",
                     "label": "player1_slot4",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 160,
-                    "y": 486,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 161,
+                    "y": 437.99999955296516,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "ced713d0-e783-4a41-8bcc-501be0ac34af",
-                            "label": "matchMechanism_3"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "29fa70aa-d82e-440e-8b39-9074a2d976fb",
+                            "label": "onPointerDownScript_3",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "0d6089ac-7acf-4387-8a78-3a5df5a86346",
+                                    "label": "pushActionScript_3"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -150,20 +192,29 @@
                     "type": "Image",
                     "id": "8f970d0f-c21e-44db-871f-a5e06e39323b",
                     "label": "player1_slot5",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 161,
-                    "y": 650,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 164,
+                    "y": 598.9999995529652,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "e934b9ff-4a84-4667-a81d-819c2298ad0c",
-                            "label": "matchMechanism_4"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "7119ffbd-9351-4c94-ac97-b69a503daa1b",
+                            "label": "onPointerDownScript_4",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "b91e7920-7a81-4d10-8116-a0e55d9a68e8",
+                                    "label": "pushActionScript_4"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -177,9 +228,23 @@
                     },
                     "x": 515,
                     "y": 381,
-                    "scaleX": 0.28128232019065635,
-                    "scaleY": 0.28128232019065635,
-                    "angle": 90
+                    "scaleX": 0.28,
+                    "scaleY": 0.28,
+                    "angle": 90,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "39d8dbb0-878d-4e84-b47e-d816619babf8",
+                            "label": "onPointerDownScript_5",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "41caa89e-65ee-4353-b651-71a8cf9b8431",
+                                    "label": "pushActionScript_5"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -187,110 +252,156 @@
             "type": "Container",
             "id": "95890bb9-249d-4330-ac74-75c4f444ffa5",
             "label": "CharacterSlotsPlayer2",
+            "useGameObjectName": true,
             "scope": "CLASS",
             "list": [
                 {
                     "type": "Image",
                     "id": "2fa4998f-0771-467b-abb9-5e75e8511efe",
-                    "label": "player2_slot6",
+                    "label": "player2_slot1",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 908,
-                    "y": 486,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 909,
+                    "y": 438.99999955296516,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "c0c4b1b6-8d5c-4cc1-935c-c4d5064037d6",
-                            "label": "matchMechanism_5"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
+                            "label": "onPointerDownScript_6",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
+                                    "label": "pushActionScript_6"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "type": "Image",
                     "id": "873cef2c-5bac-4bdd-bf54-793d36adc909",
-                    "label": "player2_slot7",
+                    "label": "player2_slot2",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1000,
-                    "y": 573,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 1007,
+                    "y": 520.9999995529652,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "0f1a6f98-9bf1-4131-b769-16eb2d932df4",
-                            "label": "matchMechanism_6"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
+                            "label": "onPointerDownScript_7",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
+                                    "label": "pushActionScript_7"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "type": "Image",
                     "id": "afab82c4-88e0-43af-9978-25de1d5f8e3e",
-                    "label": "player2_slot8",
+                    "label": "player2_slot3",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 908,
-                    "y": 650,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 909,
+                    "y": 599.9999995529652,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "61a86eca-5bb8-4c87-b3e8-c5a3cc584863",
-                            "label": "matchMechanism_7"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
+                            "label": "onPointerDownScript_8",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
+                                    "label": "pushActionScript_8"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "type": "Image",
                     "id": "e78c429d-1b1c-4933-bae2-d251554c91ca",
-                    "label": "player2_slot9",
+                    "label": "player2_slot4",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1128,
-                    "y": 486,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 1132,
+                    "y": 437.99999955296516,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "69067a90-ef35-4a9c-98d2-36d4ad3e4365",
-                            "label": "matchMechanism_8"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
+                            "label": "onPointerDownScript_9",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
+                                    "label": "pushActionScript_9"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "type": "Image",
                     "id": "5c853a09-63e4-46bb-9135-c08034673482",
-                    "label": "player2_slot10",
+                    "label": "player2_slot5",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1128,
-                    "y": 650,
-                    "scaleX": 0.2981159453364421,
-                    "scaleY": 0.2981159453364421,
+                    "x": 1130,
+                    "y": 600.9999995529652,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "557c3b0d-a29c-4173-a693-02dbd6391326",
-                            "label": "matchMechanism_9"
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
+                            "label": "onPointerDownScript_10",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
+                                    "label": "pushActionScript_10"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -302,13 +413,176 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 789,
+                    "x": 781,
                     "y": 381,
-                    "scaleX": 0.28128232019065635,
-                    "scaleY": 0.28128232019065635,
-                    "angle": -90
+                    "scaleX": 0.28,
+                    "scaleY": 0.28,
+                    "angle": -90,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "ed52eb00-f1e0-407f-b689-8683bc0e8e94",
+                            "label": "onPointerDownScript_11",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "3b83da14-a5e6-4f47-a8ff-eaac18781137",
+                                    "label": "pushActionScript_11"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "6ab197e4-a4b4-4efc-92ea-da56dc411c15",
+            "label": "Healthbars",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "7253eb11-2b8e-4363-9c1d-c6e304fead0c",
+                    "label": "spritesheet0",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 381,
+                    "y": 432,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "1a78a970-f285-4258-9158-14ce823d92cb",
+                    "label": "spritesheet",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 161,
+                    "y": 431,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "1ed47bcb-05bf-4c00-8e37-994b8e04df03",
+                    "label": "spritesheet_1",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 164,
+                    "y": 592,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "c59fcc1b-28d4-4524-8e19-5b7451b51abe",
+                    "label": "spritesheet_2",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 282,
+                    "y": 516,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "bef6603a-c7c0-4772-8d52-bb531784ca53",
+                    "label": "spritesheet_3",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 382,
+                    "y": 595,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "bdd98e1f-9fda-4fad-b93c-1109c95690e1",
+                    "label": "spritesheet_4",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 909,
+                    "y": 432,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "124b83ba-da94-476e-a8f7-2fcc6385bd40",
+                    "label": "spritesheet_5",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 1131,
+                    "y": 431,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "e98050ff-eb7a-4ec6-a688-e0a8f1e4e8c3",
+                    "label": "spritesheet_6",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 1129,
+                    "y": 594,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "c77d782f-cb9b-456c-aa05-d862a7e1e213",
+                    "label": "spritesheet_7",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 908,
+                    "y": 593,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                },
+                {
+                    "type": "Image",
+                    "id": "ab22fe14-451c-46a9-a86b-be4988c4e863",
+                    "label": "spritesheet_8",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 1006,
+                    "y": 514,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "60c2b35b-15ee-444e-b5bc-ef29047401f1",
+            "label": "text_1",
+            "x": 65,
+            "y": 665,
+            "text": "New text",
+            "fontSize": "32px",
+            "color": "#000000ff",
+            "stroke": "#000000ff"
         }
     ],
     "plainObjects": [],

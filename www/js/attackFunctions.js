@@ -40,7 +40,7 @@ function doAttack1() { // passing the attackerslot and the targetslot to the ser
             console.log(data);
             if(data.notWorking){
                 document.getElementById("result").innerHTML = data.message;
-                setInterval(erraseResult, 4000);
+                setInterval(eraseResult, 4000);
             }
         },
         error: function (err) {
@@ -49,7 +49,7 @@ function doAttack1() { // passing the attackerslot and the targetslot to the ser
     })
 };
 
-function erraseResult(){
+function eraseResult(){
     document.getElementById("result").innerHTML = ""
 }
 
@@ -65,7 +65,7 @@ function playCard(card_id, charChosen = null, secCharChosen = null) { // player 
         success: function (data) {
             if(data.notWorking) {
                 document.getElementById("result").innerHTML = data.message;
-                setInterval(erraseResult, 4000);
+                setInterval(eraseResult, 4000);
             }else if(data.reviving){
                 reviving = data.reviving;
                 cardOnHold = data.card;
@@ -90,7 +90,7 @@ function playCard(card_id, charChosen = null, secCharChosen = null) { // player 
     })
 };
 
-function erraseResult(){
+function eraseResult(){
     document.getElementById("result").innerHTML = ""
 }
 
