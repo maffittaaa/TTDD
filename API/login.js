@@ -128,7 +128,7 @@ router.post("/login", (req, res) => {
 router.post("/Logout", (req, res) => {
     req.session.logged = false;
 
-    if(req.session.match != null){
+    if(req.session.match != null && req.session.match != undefined){
         connection.execute("SELECT * FROM matche WHERE matche_player1_id = ? OR matche_player2_id = ? AND matche_state_id = 1 or matche_state_id = 3 AND matche_id = ?", [req.session.playerID, req.session.playerID, req.session.match],
             function(err, rows, fields){
                 if(err){
@@ -179,6 +179,9 @@ router.post("/Logout", (req, res) => {
                         req.session.match = null;
                         req.session.turnsToSkip = null;
                         req.session.tookCard = null;
+                        res.send({
+                            logged: false
+                        })
                     }
                 }
             }
@@ -190,6 +193,9 @@ router.post("/Logout", (req, res) => {
         req.session.match = null;
         req.session.turnsToSkip = null;
         req.session.tookCard = null;
+        res.send({
+            logged: false
+        })
     }
 })
 
