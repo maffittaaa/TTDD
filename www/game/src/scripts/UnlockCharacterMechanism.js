@@ -43,23 +43,45 @@ class UnlockCharacterMechanism extends ScriptNode {
 				getRandomChar = true
 			}
 		}
-		if(randomChar != null && charQnt < 3){
+		
+		if(randomChar != null && charQnt < randomChar.length){
 			for (let i = 0; i < randomChar.length; i++) {
 				this.characterID = randomChar[charQnt]
 				if (randomChar[i] == 3){
 					imageList[i].setTexture("cartas2_Imprimir", orderCharImages[randomChar[i] - 1])
 				}else{
+					console.log(imageList)
 					imageList[i].setTexture("cartas1_Imprimir", orderCharImages[randomChar[i] - 1])
 				}
 			}
-			charQnt += 1
+
+			if(randomChar.length < 3){
+				var emptySlots = 3 - randomChar.length
+				for (let i = 0; i < emptySlots; i++) {
+					if(emptySlots == 1){
+						if(i == 0){
+							imageList[i].x = 840
+							imageList[i + 1].x = 440 
+						}
+
+						imageList[i + randomChar.length].visible = false
+					}else if (emptySlots == 2){
+						imageList[i].x = 640
+
+						imageList[i + randomChar.length].visible = false
+					}
+
+					console.log(imageList[i])
+				}
+			}
+
+			charQnt++
 		}else{
 			randomChar = null
 			orderCharImages = null
 			imageList = null
 			charQnt = 0
 		}
-
 	}
 
 	chooseCharacter(){

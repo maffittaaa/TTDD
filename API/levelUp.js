@@ -28,22 +28,29 @@ router.get("/getRandomCharacters", (req, res) => {
                             charactersNotFound.push(totalCharacters[i])
                         }
                     }
-                    
-                    while (charctersChosen.length < 3){
-                        choseChar = false
 
-                        var randomChar = Math.floor(Math.random() * charactersNotFound.length)
-
-                        for (let i = 0; i < charctersChosen.length; i++) {
-                            if(charactersNotFound[randomChar] == charctersChosen[i]){
-                                choseChar = true
+                    if(charactersNotFound.length > 2){
+                        while (charctersChosen.length < 3){
+                            choseChar = false
+    
+                            var randomChar = Math.floor(Math.random() * charactersNotFound.length)
+    
+                            for (let i = 0; i < charctersChosen.length; i++) {
+                                if(charactersNotFound[randomChar] == charctersChosen[i]){
+                                    choseChar = true
+                                }
+                            }
+    
+                            if(!choseChar){
+                                charctersChosen.push(charactersNotFound[randomChar])
                             }
                         }
-
-                        if(!choseChar){
-                            charctersChosen.push(charactersNotFound[randomChar])
+                    }else{
+                        for (let i = 0; i < charactersNotFound.length; i++) {
+                            charctersChosen.push(charactersNotFound[i])
                         }
                     }
+                    
 
                     res.send({
                         gotCharacters: true,
@@ -112,5 +119,22 @@ router.put("/addCharacters", (req, res) => {
         }
     )
 })
+
+function updateXp(xp){
+    var i = 0
+    var intialLevel = 50
+    var levelFound = false
+
+    while (levelFound == false){
+        if(xp < intialLevel){
+            xp = i
+            levelFound = true
+        }else{
+            i += 1
+            intialLevel += (intialLevel/2)
+        }
+    }
+    return xp
+}
 
 module.exports = router;

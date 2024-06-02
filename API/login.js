@@ -26,9 +26,12 @@ router.get("/CheckLogin", (req, res) => {
 
                             if(rows1.length < oldLevel + 3){
                                 req.session.playerLevel = newlevel
-                                changed = true
-                            }
 
+                                if(newlevel <= 7) {
+                                    changed = true
+                                }
+
+                            }
                             if(rows.length == 0){
                                 res.send(
                                     {
@@ -65,12 +68,9 @@ router.get("/CheckLogin", (req, res) => {
                         }
                     }
                 )
-                
             }
         }
     )
-    
-    
 });
 
 function updateXp(xp){
@@ -87,6 +87,7 @@ function updateXp(xp){
             intialLevel += (intialLevel/2)
         }
     }
+
     return xp
 }
 
@@ -111,8 +112,6 @@ router.post("/login", (req, res) => {
                     req.session.playerID = rows[0].player_id;
                     req.session.playerName = rows[0].player_username;
                     req.session.playerLevel = updateXp(rows[0].player_level);
-
-                    console.log(req.session)
                     
                     res.send(
                         {
