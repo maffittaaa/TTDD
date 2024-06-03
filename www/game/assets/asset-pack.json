@@ -97,6 +97,11 @@
                 "key": "CharactersAndCards"
             },
             {
+                "url": "src/scripts/CheatsMechanism.js",
+                "type": "script",
+                "key": "CheatsMechanism"
+            },
+            {
                 "url": "src/scenes/ChooseCharactersMenu.js",
                 "type": "sceneFile",
                 "key": "ChooseCharactersMenu"
@@ -115,6 +120,11 @@
                 "url": "assets/dino.png",
                 "key": "dino",
                 "type": "image"
+            },
+            {
+                "url": "src/scripts/EndTurnMechanism.js",
+                "type": "script",
+                "key": "EndTurnMechanism"
             },
             {
                 "url": "src/scripts/GoToScene.js",

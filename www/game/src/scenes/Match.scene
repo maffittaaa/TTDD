@@ -57,6 +57,20 @@
             "scaleY": 1.3
         },
         {
+            "type": "Text",
+            "id": "60c2b35b-15ee-444e-b5bc-ef29047401f1",
+            "label": "result",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "x": 640,
+            "y": 506,
+            "originX": 0.5,
+            "text": "Something\n",
+            "fontSize": "20px",
+            "color": "#000000ff",
+            "stroke": "#000000ff"
+        },
+        {
             "type": "Container",
             "id": "6eed717f-2209-430f-95e3-b535301037c6",
             "label": "CharacterSlotsPlayer1",
@@ -82,7 +96,13 @@
                         {
                             "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
                             "id": "dbeb66bf-139f-43d9-92d9-1a3fc76a3db1",
-                            "label": "matchMechanism"
+                            "unlock": [
+                                "turnText",
+                                "winnerText"
+                            ],
+                            "label": "matchMechanism",
+                            "turnText": "turn",
+                            "winnerText": "winnerText"
                         },
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -95,6 +115,17 @@
                                     "label": "pushActionScript_1"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "3a338169-5e34-4714-aa95-f0d98f9c06f7",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism",
+                            "type": "player",
+                            "slotID": 1
                         }
                     ]
                 },
@@ -125,6 +156,17 @@
                                     "label": "pushActionScript_2"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "904f0a37-6d63-415d-aecf-25ba88bcd35a",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_1",
+                            "type": "player",
+                            "slotID": 2
                         }
                     ]
                 },
@@ -155,6 +197,17 @@
                                     "label": "pushActionScript"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "2223d55d-b7c3-4fe0-a420-514c866d1713",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_2",
+                            "type": "player",
+                            "slotID": 3
                         }
                     ]
                 },
@@ -185,6 +238,17 @@
                                     "label": "pushActionScript_3"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "dc2a8527-393f-4bd9-9a3f-9053eae5c248",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_3",
+                            "type": "player",
+                            "slotID": 4
                         }
                     ]
                 },
@@ -215,6 +279,17 @@
                                     "label": "pushActionScript_4"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "55472cd8-ba01-47ca-a761-822362106c0d",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_4",
+                            "type": "player",
+                            "slotID": 5
                         }
                     ]
                 },
@@ -282,6 +357,17 @@
                                     "label": "pushActionScript_6"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "54fa5fa5-b777-4622-9659-a6a6ed82e391",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_5",
+                            "type": "opponent",
+                            "slotID": 1
                         }
                     ]
                 },
@@ -312,6 +398,17 @@
                                     "label": "pushActionScript_7"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "631518fc-18a6-4672-8d62-c7d9abacad12",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_6",
+                            "type": "opponent",
+                            "slotID": 2
                         }
                     ]
                 },
@@ -342,6 +439,17 @@
                                     "label": "pushActionScript_8"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "f614301c-1f63-4d56-928d-82a234541553",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_7",
+                            "type": "opponent",
+                            "slotID": 3
                         }
                     ]
                 },
@@ -372,6 +480,17 @@
                                     "label": "pushActionScript_9"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "7043baf6-f4e2-4a3c-9a88-b30f124a41b5",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_8",
+                            "type": "opponent",
+                            "slotID": 4
                         }
                     ]
                 },
@@ -402,6 +521,17 @@
                                     "label": "pushActionScript_10"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "54a20ae7-71c3-4ffb-be07-4364005aa71d",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_9",
+                            "type": "opponent",
+                            "slotID": 5
                         }
                     ]
                 },
@@ -574,15 +704,209 @@
             ]
         },
         {
+            "type": "Rectangle",
+            "id": "681180d1-99bb-46f8-bd6a-2d5a881791a6",
+            "label": "endTurnButton",
+            "scope": "CLASS",
+            "x": 641,
+            "y": 695,
+            "scaleX": 1.7,
+            "scaleY": 0.22,
+            "isFilled": true,
+            "width": 128,
+            "height": 128,
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "2b555bf6-003f-4c3f-9309-fccf9f13c47e",
+                    "label": "onPointerDownScript_12",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "ac24336a-3d85-4f5f-b9f3-400624dc9bae",
+                            "label": "pushActionScript_12"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "c1f303fd-0c45-4cc0-be3c-93b6aa87b551",
+                    "id": "4949b66f-d9dc-44e6-bf8c-e4741db0c242",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "endTurnMechanism",
+                    "type": "endTurn"
+                }
+            ]
+        },
+        {
             "type": "Text",
-            "id": "60c2b35b-15ee-444e-b5bc-ef29047401f1",
-            "label": "text_1",
-            "x": 65,
-            "y": 665,
+            "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
+            "label": "endTurnText",
+            "scope": "CLASS",
+            "x": 579.5,
+            "y": 681,
+            "text": "End Turn",
+            "fontSize": "25px",
+            "color": "#000000ff"
+        },
+        {
+            "type": "Rectangle",
+            "id": "71320ef9-cbda-4af8-a209-c18cf79bdeee",
+            "label": "resetHPButton",
+            "scope": "CLASS",
+            "x": 108,
+            "y": 27,
+            "scaleX": 1.5,
+            "scaleY": 0.3,
+            "isFilled": true,
+            "width": 128,
+            "height": 128,
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "e21aa010-5b05-436a-9316-1ad88ed2e3ca",
+                    "label": "onPointerDownScript_13",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "d32e1d55-9eb2-4547-bebe-325216f70049",
+                            "label": "pushActionScript_13"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                    "id": "707e0f7a-673e-4965-ac35-7d3cc17a1cf8",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cheatsMechanism",
+                    "type": "resetHP"
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "13ae4c69-44c5-479b-a07e-2371b045aede",
+            "label": "resetAttackStatusButton",
+            "scope": "CLASS",
+            "x": 108,
+            "y": 75,
+            "scaleX": 1.5,
+            "scaleY": 0.3,
+            "isFilled": true,
+            "width": 128,
+            "height": 128,
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "d597dc28-dd35-4dc6-a3b5-f64ea7dee599",
+                    "label": "onPointerDownScript_14",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "f6cbcfb0-6c9d-4c09-9c9f-e4c3609e354a",
+                            "label": "pushActionScript_14"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                    "id": "2f32e633-9201-4fad-a277-a5f6df9fa309",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cheatsMechanism_1",
+                    "type": "resetAttackStatus"
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "ae1abf5a-64dd-4704-a1e6-fa7e4be007db",
+            "label": "setHPTo1Button",
+            "scope": "CLASS",
+            "x": 108,
+            "y": 121,
+            "scaleX": 1.5,
+            "scaleY": 0.3,
+            "isFilled": true,
+            "width": 128,
+            "height": 128,
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "407e2cb6-97aa-4414-86f9-522ac4153f3f",
+                    "label": "onPointerDownScript_15",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "52f4e4af-e2b6-4cae-89f3-1f85bf2cf152",
+                            "label": "pushActionScript_15"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                    "id": "c7a572d5-6b32-4877-b954-351d15fb04d7",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cheatsMechanism_2",
+                    "type": "hpTo1"
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
+            "label": "setHPTo1Text",
+            "x": 36,
+            "y": 112,
+            "text": "Everyone to 1HP",
+            "color": "#000000ff"
+        },
+        {
+            "type": "Text",
+            "id": "52658ea1-6bbe-414a-893d-fe53e77ad78b",
+            "label": "resetAttackStatusText",
+            "x": 17,
+            "y": 66,
+            "text": "Reset Attack Status",
+            "color": "#000000ff"
+        },
+        {
+            "type": "Text",
+            "id": "5c28c047-d023-4065-8663-206c91fda482",
+            "label": "resetHPText",
+            "x": 73,
+            "y": 20,
+            "text": "Reset HP",
+            "color": "#000000ff"
+        },
+        {
+            "type": "Text",
+            "id": "c5248266-f203-4610-bce5-0bd548b873e7",
+            "label": "turn",
+            "scope": "CLASS",
+            "x": 289,
+            "y": 322,
+            "visible": false,
+            "text": "something",
+            "fontSize": "20px",
+            "color": "#fd6464ff"
+        },
+        {
+            "type": "Text",
+            "id": "cf92613e-7b63-4ef8-b58e-2c94aa576a7c",
+            "label": "winnerText",
+            "scope": "CLASS",
+            "x": 544,
+            "y": 139,
+            "visible": false,
             "text": "New text",
-            "fontSize": "32px",
-            "color": "#000000ff",
-            "stroke": "#000000ff"
+            "fontSize": "50px"
         }
     ],
     "plainObjects": [],

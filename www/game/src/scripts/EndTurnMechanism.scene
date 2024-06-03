@@ -1,5 +1,5 @@
 {
-    "id": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+    "id": "c1f303fd-0c45-4cc0-be3c-93b6aa87b551",
     "sceneType": "PREFAB",
     "settings": {
         "preloadMethodName": "",
@@ -11,7 +11,7 @@
     "displayList": [
         {
             "type": "ScriptNode",
-            "id": "158591dc-87c9-400b-8798-a57fab6d39ba",
+            "id": "012f8a11-0d10-483c-97c6-6543fd32b761",
             "label": "scriptnode_1"
         }
     ],
@@ -24,25 +24,13 @@
     },
     "prefabProperties": [
         {
-            "name": "turnText",
-            "label": "TurnText",
+            "name": "type",
+            "label": "type",
             "tooltip": "",
             "defValue": "",
             "customDefinition": false,
             "type": {
-                "id": "object-var",
-                "expressionType": "Phaser.GameObjects.GameObject"
-            }
-        },
-        {
-            "name": "winnerText",
-            "label": "WinnerText",
-            "tooltip": "",
-            "defValue": "",
-            "customDefinition": false,
-            "type": {
-                "id": "object-var",
-                "expressionType": "Phaser.GameObjects.GameObject"
+                "id": "string"
             }
         }
     ]

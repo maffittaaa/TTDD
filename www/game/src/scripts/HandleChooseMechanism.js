@@ -35,8 +35,8 @@ class HandleChooseMechanism extends ScriptNode {
 
 	/* START-USER-CODE */
 
-	awake(){
-		if(this.type == "charSelct" || this.type == "LookForMatch" || this.type == "sceneManager"){
+	awake() {
+		if (this.type == "charSelct" || this.type == "LookForMatch" || this.type == "sceneManager") {
 			var scene = this
 			$.ajax({
 				type: "GET",
@@ -45,17 +45,17 @@ class HandleChooseMechanism extends ScriptNode {
 					if (data.logged == false) {
 						window.location.replace("/login.html");
 					} else {
-						if(scene.type == "sceneManager"){
-							if(data.levelChanged){
+						if (scene.type == "sceneManager") {
+							if (data.levelChanged) {
 								var levelUpScreen = scene.scene.children.list
 								for (let i = 0; i < levelUpScreen.length; i++) {
-									if(levelUpScreen[i].name == "LevelUpScreen"){
+									if (levelUpScreen[i].name == "LevelUpScreen") {
 										levelUpScreen[i].visible = true
 										leveledUp = true
 									}
 								}
 							}
-						}else{
+						} else {
 							scene.updateChooseCharMenu(data, scene)
 						}
 					}
@@ -67,30 +67,30 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 	}
 
-	start(){
+	start() {
 		this.parent.on('pointerdown', event => {
-			if(this.type == "Character" || this.type == "Slot" ){
-				if(this.SlotID != 0){
+			if (this.type == "Character" || this.type == "Slot") {
+				if (this.SlotID != 0) {
 					this.pickCharacters(this.SlotID, null)
-				}else{
+				} else {
 					this.pickCharacters(null, this.CharacterID)
 				}
-			}else if(this.type == "LookForMatch"){
+			} else if (this.type == "LookForMatch") {
 				this.chooseCharacters()
 			}
 		})
 	}
 
-	updateChooseCharMenu(data, scene){
-		if(scene.type == "charSelct"){
+	updateChooseCharMenu(data, scene) {
+		if (scene.type == "charSelct") {
 			char = JSON.parse(data.characters);
 			var characters = scene.parent.parentContainer.list
 
 			for (let j = 0; j < char.length; j++) {
 				for (let i = 0; i < characters.length; i++) {
-					if(characters[i].name.search("character_id_") == 0){
+					if (characters[i].name.search("character_id_") == 0) {
 						var splitChar = characters[i].name.split("id_", 2)
-						if(splitChar[1] == char[j].player_character_character_id - 1){
+						if (splitChar[1] == char[j].player_character_character_id - 1) {
 							characters[i].visible = true
 						}
 					}
@@ -99,18 +99,18 @@ class HandleChooseMechanism extends ScriptNode {
 
 			var nameText = scene.parent.parentContainer.list
 			for (let i = 0; i < nameText.length; i++) {
-				if(nameText[i].name.search("Username") == 0){
+				if (nameText[i].name.search("Username") == 0) {
 					nameText[i].text = data.name + "\nLevel: " + data.level
 					// scene.updateXp(data.level, data.name, nameText[i])
 				}
 			}
-		}else if(scene.type == "LookForMatch"){
-			if (data.match){
+		} else if (scene.type == "LookForMatch") {
+			if (data.match) {
 				var textChange = scene.parent.parentContainer.list
 				for (let i = 0; i < textChange.length; i++) {
-					if(textChange[i].name == "Message"){
+					if (textChange[i].name == "Message") {
 						textChange[i].text = "Looking for a match"
-					}else{
+					} else {
 						textChange[i].visible = false
 					}
 				}
@@ -120,12 +120,12 @@ class HandleChooseMechanism extends ScriptNode {
 			var slotsImages = scene.scene.children.list
 
 			for (let i = 0; i < slotsImages.length; i++) {
-				if(slotsImages[i].name == "Slots"){
+				if (slotsImages[i].name == "Slots") {
 					var list = slotsImages[i].list
 					for (let j = 0; j < list.length; j++) {
 						for (let k = 1; k < 6; k++) {
-							if(list[j].name == "slot_" + k){
-								if(slots["slot_" + k + ""] != null){
+							if (list[j].name == "slot_" + k) {
+								if (slots["slot_" + k + ""] != null) {
 									list[j].setTexture("peawns", slots["slot_" + k + ""])
 								}
 							}
@@ -136,15 +136,15 @@ class HandleChooseMechanism extends ScriptNode {
 
 			var glowChange = scene.scene.children.list
 			for (let i = 0; i < glowChange.length; i++) {
-				if(glowChange[i].name == "Slots"){
+				if (glowChange[i].name == "Slots") {
 					for (let j = 0; j < glowChange[i].list.length; j++) {
-						if(glowChange[i].list[j].name != "MessageServer"){
+						if (glowChange[i].list[j].name != "MessageServer") {
 							glowChange[i].list[j].preFX.list[0].active = false
 						}
 					}
-				}else if(glowChange[i].name == "Characters"){
+				} else if (glowChange[i].name == "Characters") {
 					for (let j = 0; j < glowChange[i].list.length; j++) {
-						if(glowChange[i].list[j].name != "Username"){
+						if (glowChange[i].list[j].name != "Username") {
 							glowChange[i].list[j].preFX.list[0].active = false
 						}
 					}
@@ -153,22 +153,22 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 	}
 
-	update(dt){
+	update(dt) {
 		time = time + 0.0166
-		if(charChosen != null && slotChosen != null){
-		console.log(charChosen, slotChosen)
+		if (charChosen != null && slotChosen != null) {
+			console.log(charChosen, slotChosen)
 
-			if(this.type == "Slot"){
-				if(this.SlotID == slotChosen){
+			if (this.type == "Slot") {
+				if (this.SlotID == slotChosen) {
 					this.parent.setTexture("peawns", charChosen)
 					slotChosen = null
 					charChosen = null
 				}
 			}
 		}
-		
-		if(this.type == "LookForMatch"){
-			if(time > (38 * 2)){
+
+		if (this.type == "LookForMatch") {
+			if (time > (38 * 2)) {
 				this.checkMatchFound()
 				time = 0
 			}
@@ -210,12 +210,12 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 	}
 
-	showMessage(message){
+	showMessage(message) {
 		var textChange = this.scene.children.list
 		for (let i = 0; i < textChange.length; i++) {
-			if(textChange[i].name == "Slots"){
+			if (textChange[i].name == "Slots") {
 				for (let j = 0; j < textChange[i].list.length; j++) {
-					if(textChange[i].list[j].name == "MessageServer"){
+					if (textChange[i].list[j].name == "MessageServer") {
 						textChange[i].list[j].text = message
 						setTimeout(() => {
 							textChange[i].list[j].text = ""
@@ -241,27 +241,27 @@ class HandleChooseMechanism extends ScriptNode {
 
 				var glowChange = this.scene.children.list
 				for (let i = 0; i < glowChange.length; i++) {
-					if(glowChange[i].name == "Slots"){
+					if (glowChange[i].name == "Slots") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name != "MessageServer"){
-								if(charChosen <= 4 ){
+							if (glowChange[i].list[j].name != "MessageServer") {
+								if (charChosen <= 4) {
 									glowChange[i].list[1].preFX.list[0].active = true
 									glowChange[i].list[2].preFX.list[0].active = true
 									glowChange[i].list[3].preFX.list[0].active = true
 
 									glowChange[i].list[0].preFX.list[0].active = false
 									glowChange[i].list[4].preFX.list[0].active = false
-								}else if (charChosen > 4){
+								} else if (charChosen > 4) {
 									glowChange[i].list[j].preFX.list[0].active = true
 								}
 							}
 						}
-					}else if(glowChange[i].name == "Characters"){
+					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name == "sand"){
+							if (glowChange[i].list[j].name == "sand") {
 								glowChange[i].list[j].preFX.list[0].active = true
 								glowChange[i].list[j].name = "character_id_" + charChosen
-							}else if(glowChange[i].list[j].name != "Username"){
+							} else if (glowChange[i].list[j].name != "Username") {
 								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
@@ -273,9 +273,9 @@ class HandleChooseMechanism extends ScriptNode {
 				var glowChange = this.scene.children.list
 
 				for (let i = 0; i < glowChange.length; i++) {
-					if(glowChange[i].name == "Characters"){
+					if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name == "sand"){
+							if (glowChange[i].list[j].name == "sand") {
 								glowChange[i].list[j].name = "character_id_" + charChosen
 							}
 						}
@@ -284,38 +284,38 @@ class HandleChooseMechanism extends ScriptNode {
 
 			}
 		} else {
-			if(charChosen != null){
-				if (slot_Id > 3  && charChosen > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
-					slots["slot_" + slot_Id + ""] = charChosen	
+			if (charChosen != null) {
+				if (slot_Id > 3 && charChosen > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
+					slots["slot_" + slot_Id + ""] = charChosen
 					slotChosen = slot_Id
-				} else if ( slot_Id > 3 && charChosen <= 4) {
+				} else if (slot_Id > 3 && charChosen <= 4) {
 					this.showMessage("Can't place the character there. \n Not a long-range character.")
 					return;
 				} else {
-					slots["slot_" + slot_Id + ""] = charChosen	
+					slots["slot_" + slot_Id + ""] = charChosen
 					slotChosen = slot_Id
 				}
 
 				var glowChange = this.scene.children.list
 				for (let i = 0; i < glowChange.length; i++) {
-					if(glowChange[i].name == "Slots"){
+					if (glowChange[i].name == "Slots") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name != "MessageServer"){
+							if (glowChange[i].list[j].name != "MessageServer") {
 								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
-					}else if(glowChange[i].name == "Characters"){
+					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name != "Username"){
+							if (glowChange[i].list[j].name != "Username") {
 								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
 					}
 				}
-			}else{
-				if(this.type == "Slot"){
+			} else {
+				if (this.type == "Slot") {
 					this.parent.setTexture("base", 0)
-	
+
 					if (slots["slot_" + slot_Id + ""] != null) {
 						slots["slot_" + slot_Id + ""] = null
 					}
@@ -331,7 +331,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 		for (let i = 1; i < 6; i++) {
 			if (slots["slot_" + i + ""] != null) {
-				slots["slot_" + i + ""] += 1
+				slots["slot_" + i + ""] += 1;
 				empty = false;
 			}
 		}
@@ -346,26 +346,26 @@ class HandleChooseMechanism extends ScriptNode {
 				},
 				success: function (data) {
 					if (data.success) {
-						slots = JSON.parse(slots)
+						slots = JSON.parse(slots);
 
 						for (let i = 1; i < 6; i++) {
-							if(slots["slot_" + i] != null){
-								slots["slot_" + i] -= 1
+							if (slots["slot_" + i] != null) {
+								slots["slot_" + i] -= 1;
 							}
 						}
 
 						var textChange = scene.parent.parentContainer.list
 						for (let i = 0; i < textChange.length; i++) {
-							if(textChange[i].name == "Message"){
-								textChange[i].text = "Looking for a match"
-							}else{
-								textChange[i].visible = false
+							if (textChange[i].name == "Message") {
+								textChange[i].text = "Looking for a match";
+							} else {
+								textChange[i].visible = false;
 							}
 						}
-						
+
 						lookingForMatch = true;
 					} else {
-						this.showMessage("Choose another character")
+						this.showMessage("Choose another character");
 					}
 				},
 				error: function (err) {

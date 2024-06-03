@@ -72,7 +72,7 @@ class DescriptionsMechanism extends ScriptNode {
 					scene.parent.parentContainer.list[11].text = data.description
 					scene.parent.parentContainer.list[11].setWordWrapWidth(300)
 				}else{
-					scene.parent.parentContainer.list[11].text = data.message
+					scene.parent.parentContainer.list[11].text = data.message;
 				}
 			},
 			error: function (err) {

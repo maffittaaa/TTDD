@@ -52,12 +52,11 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                     if (error) {
                                         res.send(error);
                                     } else {
-                                        var knockbackDamage = 0
+                                        var knockbackDamage = 0;
 
                                         if(rows[0].player_match_character_character_id == 2){
-                                            knockbackDamage = 1
+                                            knockbackDamage = 1;
                                         }
-
                                         connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_status_id = 2 WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [match_id, playerID, attackerSlot],
                                             function (error, rows, fields) {
                                                 if (error) {

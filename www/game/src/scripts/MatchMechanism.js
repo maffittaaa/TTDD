@@ -12,6 +12,11 @@ class MatchMechanism extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {Phaser.GameObjects.GameObject} */
+	turnText;
+	/** @type {Phaser.GameObjects.GameObject} */
+	winnerText;
+
 	/* START-USER-CODE */
 
 	awake() {
@@ -37,7 +42,7 @@ class MatchMechanism extends ScriptNode {
 
 	}
 
-	update() {
+	update(dt) {
 		time = time + 0.01666;
 		if (time > (38 * 2)) {
 			this.deltaChanges();
@@ -57,7 +62,7 @@ class MatchMechanism extends ScriptNode {
 				} else if (data.logged == false) {
 					window.location.replace("/login.html");
 				} else {
-					scene.isItMyTurn(data.turn, data.player)
+					scene.isItMyTurn(data.turn, data.player);
 					scene.setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), ongoing = true);
 				}
 			},
@@ -67,13 +72,13 @@ class MatchMechanism extends ScriptNode {
 		})
 	};
 
-	isItMyTurn(turn_id, player_id) { //placas
+	isItMyTurn(turn_id, player_id) {
 		if (turn_id == player_id) {
-			document.getElementById('turn').innerHTML = "Its your turn, when you finish attacking, please end the turn.";
-			document.getElementById('endTurn').disabled = false; 
+			this.turnText.text = "It's\nyour\nTurn!";
+			this.turnText.setVisible(true);
 		} else {
-			document.getElementById('turn').innerHTML = "Please wait for your turn while the other player does his move.";
-			document.getElementById('endTurn').disabled = true;
+			this.turnText.text = "Please\nwait!";
+			this.turnText.setVisible(true);
 		}
 	}
 
@@ -86,7 +91,7 @@ class MatchMechanism extends ScriptNode {
 			}
 		}
 
-		document.getElementById('turn').innerHTML = "Match finished, the winner is: " + winnerName; //scene a dizer you won/you lost
+		this.winnerText.text = "Match finished, the winner is: " + winnerName;
 
 		if (winnerName != undefined) {
 			setTimeout(this.updateLevelXp(winID, losID), 8000);
@@ -193,7 +198,7 @@ class MatchMechanism extends ScriptNode {
 						}
 					}
 				}
-				
+
 				for (let i = 0; i < character.length; i++) {
 					if (character[i].name == "CharacterSlotsPlayer2") {
 						for (let j = 0; j < character[i].list.length; j++) {

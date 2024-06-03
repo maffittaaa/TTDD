@@ -18,7 +18,22 @@ class AttackMechanism extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {string} */
+	type = "";
+	/** @type {number} */
+	slotID = 0;
+
 	/* START-USER-CODE */
+
+	start() {
+		this.parent.on('pointerdown', event => {
+			if (this.type == "player") {
+				this.setAttackerSlot(this.slotID);
+			} else if (this.type == "opponent") {
+				this.setTargetSlot(this.slotID);
+			}
+		})
+	}
 
 	setAttackerSlot(slot) { //attacker has a slot
 		attackerSlot = slot;
@@ -26,7 +41,7 @@ class AttackMechanism extends ScriptNode {
 		if (reviving == true) {
 			this.playCard(cardOnHold, slot);
 		}
-	};
+	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
 		if (attackerSlot != 0) {
@@ -55,8 +70,8 @@ class AttackMechanism extends ScriptNode {
 			success: function (data) {
 				console.log(data);
 				if (data.notWorking) {
-					document.getElementById("result").innerHTML = data.message; //cant attack anymore
-					setTimeout(scene.eraseResult, 4000);
+					scene.parent.scene.children.list[4].text = data.message;
+					setTimeout(function () { scene.parent.scene.children.list[4].text = "" }, 4000);
 				}
 			},
 			error: function (err) {
@@ -64,10 +79,6 @@ class AttackMechanism extends ScriptNode {
 			}
 		})
 	};
-
-	eraseResult() {
-		document.getElementById("result").innerHTML = ""
-	}
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
 		var scene = this;
@@ -81,8 +92,8 @@ class AttackMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				if (data.notWorking) {
-					document.getElementById("result").innerHTML = data.message;
-					setTimeout(scene.eraseResult, 4000);
+					scene.parent.scene.children.list[4].text = data.message;
+					setTimeout(function () { scene.parent.scene.children.list[4].text = "" }, 4000);
 				} else if (data.reviving) {
 					reviving = data.reviving;
 					cardOnHold = data.card;
@@ -106,63 +117,6 @@ class AttackMechanism extends ScriptNode {
 			}
 		})
 	};
-
-	endOfTurn() {
-		$.ajax({
-			type: 'GET',
-			url: '/attack/endTurn',
-
-			success: function (data) {
-				console.log(data);
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
-	};
-
-	resetHPFromCharacters() {
-		$.ajax({
-			type: 'GET',
-			url: '/attack/resetHPCharacters',
-
-			success: function (data) {
-				console.log(data);
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
-	};
-
-	resetStatusFromCharacters() {
-		$.ajax({
-			type: 'GET',
-			url: '/attack/resetStatusCharacters',
-
-			success: function (data) {
-				console.log(data);
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
-	};
-
-	setsHPTo1FromCharacters() {
-		$.ajax({
-			type: 'GET',
-			url: '/attack/setTo1',
-
-			success: function (data) {
-				console.log(data);
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
-	};
-
 	/* END-USER-CODE */
 }
 
