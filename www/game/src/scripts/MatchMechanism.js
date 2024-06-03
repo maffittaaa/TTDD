@@ -43,8 +43,11 @@ class MatchMechanism extends ScriptNode {
 	}
 
 	update(dt) {
-		time = time + 0.01666;
-		if (time > (38 * 2)) {
+		time = time + 0.01666
+		
+		if (time > 5) {
+			console.log(time)
+			console.log("gonna do it now")
 			this.deltaChanges();
 			time = 0;
 		}
@@ -63,7 +66,7 @@ class MatchMechanism extends ScriptNode {
 					window.location.replace("/login.html");
 				} else {
 					scene.isItMyTurn(data.turn, data.player);
-					scene.setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), ongoing = true);
+					scene.setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), true);
 				}
 			},
 			error: function (err) {
@@ -87,7 +90,7 @@ class MatchMechanism extends ScriptNode {
 
 		for (var i = 1; i < 3; i++) { //runs 2 times because there are 2 players
 			for (let j = 0; j < order.length; j++) { // runs 5 times because it's the size of the order and because of the quantity of the slots available
-				document.getElementById('slot_' + order[j] + '_p' + i + '').disabled = true; // desativar todos quando morrem.
+				// document.getElementById('slot_' + order[j] + '_p' + i + '').disabled = true; // desativar todos quando morrem.
 			}
 		}
 
@@ -117,61 +120,91 @@ class MatchMechanism extends ScriptNode {
 	}
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
-
 		if (ongoing) {
 			if (p1 == player) {
 				//player = ch1
 
+				var characterHP = this.scene.children.list
+
 				for (let i = 0; i < ch1.length; i++) {
 
-					character = character.split(":")
+					for (let j = 0; j < characterHP.length; j++) {
 
-					if (character[1] != ch1[i].player_match_character_character_current_HP) {
-						console.log("character toke damage");
-						document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
-						document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p1").disabled = false
+						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
+
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch1[i].player_match_character_tile_id) {
+									var hp = characterHP[j].list[k].text.split("/");
+
+									if (hp[0] != ch1[i].player_match_character_character_current_HP) {
+										console.log("character toke damage");
+										characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " /" + hp[1];
+									}
+								}
+							}
+						}
 					}
 				}
 
 				for (let i = 0; i < ch2.length; i++) {
-					var character = document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").innerHTML;
-					character = character.split(":")
 
-					if (character[1] != ch2[i].player_match_character_character_current_HP) {
-						console.log("character toke damage");
-						document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
-						document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = false
+					for (let j = 0; j < characterHP.length; j++) {
 
-						if (ch2[i].player_match_character_character_current_HP <= 0) {
-							document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = true
+						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
+
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch2[i].player_match_character_tile_id) {
+									var hp = characterHP[j].list[k].text.split("/");
+
+									if (hp[0] != ch2[i].player_match_character_character_current_HP) {
+										console.log("character toke damage");
+										characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " /" + hp[1];
+									}
+								}
+							}
 						}
 					}
 				}
 
 			} else {
-				//player = ch2
-				for (let i = 0; i < ch2.length; i++) {
-					var character = document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").innerHTML;
-					character = character.split(":")
+				// player = ch2
+				var characterHP = this.scene.children.list
 
-					if (character[1] != ch2[i].player_match_character_character_current_HP) {
-						console.log("character toke damage");
-						document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").innerHTML = character[0] + ": " + ch2[i].player_match_character_character_current_HP;
-						document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p1").disabled = false
+				for (let i = 0; i < ch2.length; i++) {
+
+					for (let j = 0; j < characterHP.length; j++) {
+
+						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch2[i].player_match_character_tile_id) {
+									var hp = characterHP[j].list[k].text.split("/")
+
+									if (hp[0] != ch2[i].player_match_character_character_current_HP) {
+										console.log("character toke damage");
+										characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " /" + hp[1];
+									}
+								}
+							}
+						}
 					}
 				}
 
 				for (let i = 0; i < ch1.length; i++) {
-					var character = document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").innerHTML;
-					character = character.split(":")
 
-					if (character[1] != ch1[i].player_match_character_character_current_HP) {
-						console.log("character toke damage");
-						document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").innerHTML = character[0] + ": " + ch1[i].player_match_character_character_current_HP;
-						document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").disabled = false
+					for (let j = 0; j < characterHP.length; j++) {
 
-						if (ch1[i].player_match_character_character_current_HP <= 0) {
-							document.getElementById("slot_" + ch1[i].player_match_character_tile_id + "_p2").disabled = true
+						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
+
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch1[i].player_match_character_tile_id) {
+									var hp = characterHP[j].list[k].text.split("/")
+
+									if (hp[0] != ch1[i].player_match_character_character_current_HP) {
+										console.log("character toke damage");
+										characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " /" + hp[1];
+									}
+								}
+							}
 						}
 					}
 				}
@@ -213,6 +246,38 @@ class MatchMechanism extends ScriptNode {
 					}
 				}
 
+				var characterHP = this.scene.children.list
+
+				for (let i = 0; i < ch1.length; i++) {
+
+					for (let j = 0; j < characterHP.length; j++) {
+
+						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
+
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch1[i].player_match_character_tile_id) {
+									characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " / " + ch1[i].player_match_character_character_current_HP
+								}
+							}
+						}
+					}
+				}
+
+				for (let i = 0; i < ch2.length; i++) {
+
+					for (let j = 0; j < characterHP.length; j++) {
+
+						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
+
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch2[i].player_match_character_tile_id) {
+									characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " / " + ch2[i].player_match_character_character_current_HP
+								}
+							}
+						}
+					}
+				}
+
 			} else {
 				//player = ch2
 
@@ -241,6 +306,37 @@ class MatchMechanism extends ScriptNode {
 									if (ch2[k].player_match_character_tile_id == j + 1) {
 										character[i].list[j].setTexture("peawns", ch2[k].player_match_character_character_id - 1);
 									}
+								}
+							}
+						}
+					}
+				}
+
+				var characterHP = this.scene.children.list
+
+				for (let i = 0; i < ch2.length; i++) {
+
+					for (let j = 0; j < characterHP.length; j++) {
+
+						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch2[i].player_match_character_tile_id) {
+									characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " / " + ch2[i].player_match_character_character_current_HP
+								}
+							}
+						}
+					}
+				}
+
+				for (let i = 0; i < ch1.length; i++) {
+
+					for (let j = 0; j < characterHP.length; j++) {
+
+						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
+
+							for (let k = 0; k < characterHP[j].list.length; k++) {
+								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch1[i].player_match_character_tile_id) {
+									characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " / " + ch1[i].player_match_character_character_current_HP
 								}
 							}
 						}

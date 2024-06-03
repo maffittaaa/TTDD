@@ -5,8 +5,8 @@
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "Match",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -16,10 +16,10 @@
             "texture": {
                 "key": "board_imprimir"
             },
-            "x": 640,
-            "y": 566.6006695988915,
-            "scaleX": 0.4505119835568532,
-            "scaleY": 0.4505119835568532
+            "x": 960,
+            "y": 855,
+            "scaleX": 0.68,
+            "scaleY": 0.68
         },
         {
             "type": "Image",
@@ -28,9 +28,10 @@
             "texture": {
                 "key": "city"
             },
-            "x": 640,
-            "y": 160,
-            "scaleY": 1.0867736819992728
+            "x": 960,
+            "y": 239,
+            "scaleX": 1.5,
+            "scaleY": 1.5
         },
         {
             "type": "Image",
@@ -39,10 +40,10 @@
             "texture": {
                 "key": "Bar1"
             },
-            "x": 278,
-            "y": 324,
-            "scaleX": 1.4,
-            "scaleY": 1.5
+            "x": 377,
+            "y": 452,
+            "scaleX": 2.775537681726914,
+            "scaleY": 2.775537681726914
         },
         {
             "type": "Image",
@@ -51,10 +52,10 @@
             "texture": {
                 "key": "Bar2"
             },
-            "x": 1060,
-            "y": 324,
-            "scaleX": 1.4,
-            "scaleY": 1.3
+            "x": 1587,
+            "y": 449,
+            "scaleX": 2.452926912380252,
+            "scaleY": 2.452926912380252
         },
         {
             "type": "Text",
@@ -62,8 +63,10 @@
             "label": "result",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "x": 640,
-            "y": 506,
+            "x": 960,
+            "y": 773,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "originX": 0.5,
             "text": "Something\n",
             "fontSize": "20px",
@@ -76,6 +79,8 @@
             "label": "CharacterSlotsPlayer1",
             "useGameObjectName": true,
             "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Image",
@@ -301,7 +306,7 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 515,
+                    "x": 514,
                     "y": 381,
                     "scaleX": 0.28,
                     "scaleY": 0.28,
@@ -329,6 +334,8 @@
             "label": "CharacterSlotsPlayer2",
             "useGameObjectName": true,
             "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Image",
@@ -543,8 +550,8 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 781,
-                    "y": 381,
+                    "x": 778,
+                    "y": 384,
                     "scaleX": 0.28,
                     "scaleY": 0.28,
                     "angle": -90,
@@ -567,14 +574,19 @@
         },
         {
             "type": "Container",
-            "id": "6ab197e4-a4b4-4efc-92ea-da56dc411c15",
-            "label": "Healthbars",
-            "scope": "CLASS",
+            "id": "fbd1b4e3-80e3-40e6-bb84-06ae54282589",
+            "label": "HealthBarsPlayer1",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Image",
                     "id": "7253eb11-2b8e-4363-9c1d-c6e304fead0c",
-                    "label": "spritesheet0",
+                    "label": "healthbar_p1_slot1",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
                     "texture": {
                         "key": "spritesheet",
                         "frame": 0
@@ -582,64 +594,186 @@
                     "x": 381,
                     "y": 432,
                     "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "3a507983-02dd-48ed-ad63-c36dad50c75e",
+                            "label": "healthBarMechanism",
+                            "scope": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "c59fcc1b-28d4-4524-8e19-5b7451b51abe",
+                    "label": "healthbar_p1_slot2",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 283,
+                    "y": 514,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "72b5ec51-2795-41b6-9a29-77ab77e3489e",
+                            "label": "healthBarMechanism_3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "bef6603a-c7c0-4772-8d52-bb531784ca53",
+                    "label": "healthbar_p1_slot3",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 383,
+                    "y": 593,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "c1dc091d-e27d-490a-ae38-304de7283c27",
+                            "label": "healthBarMechanism_4"
+                        }
+                    ]
                 },
                 {
                     "type": "Image",
                     "id": "1a78a970-f285-4258-9158-14ce823d92cb",
-                    "label": "spritesheet",
+                    "label": "healthbar_p1_slot4",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
                     "texture": {
                         "key": "spritesheet",
                         "frame": 0
                     },
                     "x": 161,
-                    "y": 431,
+                    "y": 432,
                     "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "8a111127-9fb2-4efc-8703-17b338c516ea",
+                            "label": "healthBarMechanism_1"
+                        }
+                    ]
                 },
                 {
                     "type": "Image",
                     "id": "1ed47bcb-05bf-4c00-8e37-994b8e04df03",
-                    "label": "spritesheet_1",
+                    "label": "healthbar_p1_slot5",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
                     "texture": {
                         "key": "spritesheet",
                         "frame": 0
                     },
                     "x": 164,
-                    "y": 592,
+                    "y": 593,
                     "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "845d22bc-fe50-4efb-ad12-c171493b4f52",
+                            "label": "healthBarMechanism_2"
+                        }
+                    ]
                 },
                 {
-                    "type": "Image",
-                    "id": "c59fcc1b-28d4-4524-8e19-5b7451b51abe",
-                    "label": "spritesheet_2",
-                    "texture": {
-                        "key": "spritesheet",
-                        "frame": 0
-                    },
-                    "x": 282,
-                    "y": 516,
-                    "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "type": "Text",
+                    "id": "78c24f00-929b-47c7-92dc-586078c7829c",
+                    "label": "hp_p1_slot5",
+                    "useGameObjectName": true,
+                    "x": 160.5,
+                    "y": 586,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
                 },
                 {
-                    "type": "Image",
-                    "id": "bef6603a-c7c0-4772-8d52-bb531784ca53",
-                    "label": "spritesheet_3",
-                    "texture": {
-                        "key": "spritesheet",
-                        "frame": 0
-                    },
-                    "x": 382,
-                    "y": 595,
-                    "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "type": "Text",
+                    "id": "385bb095-e1fe-483b-b7de-fd93d05f2ef9",
+                    "label": "hp_p1_slot2",
+                    "useGameObjectName": true,
+                    "x": 281.5,
+                    "y": 507,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
                 },
+                {
+                    "type": "Text",
+                    "id": "482a7f9e-a42c-4344-ba54-bae702b31d5e",
+                    "label": "hp_p1_slot3",
+                    "useGameObjectName": true,
+                    "x": 379.5,
+                    "y": 586,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                },
+                {
+                    "type": "Text",
+                    "id": "b256afcd-d27f-4b42-9220-3a2119611439",
+                    "label": "hp_p1_slot1",
+                    "useGameObjectName": true,
+                    "x": 377.5,
+                    "y": 425,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                },
+                {
+                    "type": "Text",
+                    "id": "52208898-1204-43d1-bcfc-8f5f59278058",
+                    "label": "hp_p1_slot4",
+                    "useGameObjectName": true,
+                    "x": 159.5,
+                    "y": 425,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "6ab197e4-a4b4-4efc-92ea-da56dc411c15",
+            "label": "HealthBarsPlayer2",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
                 {
                     "type": "Image",
                     "id": "bdd98e1f-9fda-4fad-b93c-1109c95690e1",
-                    "label": "spritesheet_4",
+                    "label": "healthbar_p2_slot1",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
                     "texture": {
                         "key": "spritesheet",
                         "frame": 0
@@ -647,51 +781,21 @@
                     "x": 909,
                     "y": 432,
                     "scaleX": 1.5,
-                    "scaleY": 1.5
-                },
-                {
-                    "type": "Image",
-                    "id": "124b83ba-da94-476e-a8f7-2fcc6385bd40",
-                    "label": "spritesheet_5",
-                    "texture": {
-                        "key": "spritesheet",
-                        "frame": 0
-                    },
-                    "x": 1131,
-                    "y": 431,
-                    "scaleX": 1.5,
-                    "scaleY": 1.5
-                },
-                {
-                    "type": "Image",
-                    "id": "e98050ff-eb7a-4ec6-a688-e0a8f1e4e8c3",
-                    "label": "spritesheet_6",
-                    "texture": {
-                        "key": "spritesheet",
-                        "frame": 0
-                    },
-                    "x": 1129,
-                    "y": 594,
-                    "scaleX": 1.5,
-                    "scaleY": 1.5
-                },
-                {
-                    "type": "Image",
-                    "id": "c77d782f-cb9b-456c-aa05-d862a7e1e213",
-                    "label": "spritesheet_7",
-                    "texture": {
-                        "key": "spritesheet",
-                        "frame": 0
-                    },
-                    "x": 908,
-                    "y": 593,
-                    "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "b4081818-553a-41d2-af08-97a95d41178c",
+                            "label": "healthBarMechanism_5"
+                        }
+                    ]
                 },
                 {
                     "type": "Image",
                     "id": "ab22fe14-451c-46a9-a86b-be4988c4e863",
-                    "label": "spritesheet_8",
+                    "label": "healthbar_p2_slot2",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
                     "texture": {
                         "key": "spritesheet",
                         "frame": 0
@@ -699,7 +803,145 @@
                     "x": 1006,
                     "y": 514,
                     "scaleX": 1.5,
-                    "scaleY": 1.5
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "96416e18-f2bf-4833-9d4c-6fd2ce9fc5cc",
+                            "label": "healthBarMechanism_9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "c77d782f-cb9b-456c-aa05-d862a7e1e213",
+                    "label": "healthbar_p2_slot3",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 908,
+                    "y": 593,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "8437ca94-775c-4a39-a172-ab758cbf49c4",
+                            "label": "healthBarMechanism_8"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "124b83ba-da94-476e-a8f7-2fcc6385bd40",
+                    "label": "healthbar_p2_slot4",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 1131,
+                    "y": 431,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "eb5780a4-2263-44a4-bc99-88885e848f19",
+                            "label": "healthBarMechanism_6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "e98050ff-eb7a-4ec6-a688-e0a8f1e4e8c3",
+                    "label": "healthbar_p2_slot5",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "spritesheet",
+                        "frame": 0
+                    },
+                    "x": 1129,
+                    "y": 593,
+                    "scaleX": 1.5,
+                    "scaleY": 1.5,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "e41e1e37-679c-49bf-9aad-dc74b4c79a6a",
+                            "label": "healthBarMechanism_7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "10b4da20-7356-4dec-9445-997e0e6561c6",
+                    "label": "hp_p2_slot2",
+                    "useGameObjectName": true,
+                    "x": 1003.5,
+                    "y": 507,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                },
+                {
+                    "type": "Text",
+                    "id": "be479ce1-c578-4ccb-af1c-eda4a636161d",
+                    "label": "hp_p2_slot1",
+                    "useGameObjectName": true,
+                    "x": 905.5,
+                    "y": 425,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                },
+                {
+                    "type": "Text",
+                    "id": "415334cd-a947-4019-9b54-9eec7be4436f",
+                    "label": "hp_p2_slot3",
+                    "useGameObjectName": true,
+                    "x": 905.5,
+                    "y": 586,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                },
+                {
+                    "type": "Text",
+                    "id": "6625ad01-3ee7-47ef-bf0a-5a0bf5d31e09",
+                    "label": "hp_p2_slot5",
+                    "useGameObjectName": true,
+                    "x": 1126.5,
+                    "y": 586,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
+                },
+                {
+                    "type": "Text",
+                    "id": "351c2c28-d372-4c86-a07d-07ad8d8e6672",
+                    "label": "hp_p2_slot4",
+                    "useGameObjectName": true,
+                    "x": 1129.5,
+                    "y": 424,
+                    "originX": 0.5,
+                    "text": "New text",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "14px"
                 }
             ]
         },
@@ -708,10 +950,10 @@
             "id": "681180d1-99bb-46f8-bd6a-2d5a881791a6",
             "label": "endTurnButton",
             "scope": "CLASS",
-            "x": 641,
-            "y": 695,
-            "scaleX": 1.7,
-            "scaleY": 0.22,
+            "x": 952,
+            "y": 1049,
+            "scaleX": 2.3,
+            "scaleY": 0.36,
             "isFilled": true,
             "width": 128,
             "height": 128,
@@ -744,8 +986,10 @@
             "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
             "label": "endTurnText",
             "scope": "CLASS",
-            "x": 579.5,
-            "y": 681,
+            "x": 869,
+            "y": 1030,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "text": "End Turn",
             "fontSize": "25px",
             "color": "#000000ff"
@@ -755,9 +999,9 @@
             "id": "71320ef9-cbda-4af8-a209-c18cf79bdeee",
             "label": "resetHPButton",
             "scope": "CLASS",
-            "x": 108,
+            "x": 151,
             "y": 27,
-            "scaleX": 1.5,
+            "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
             "width": 128,
@@ -791,9 +1035,9 @@
             "id": "13ae4c69-44c5-479b-a07e-2371b045aede",
             "label": "resetAttackStatusButton",
             "scope": "CLASS",
-            "x": 108,
-            "y": 75,
-            "scaleX": 1.5,
+            "x": 151,
+            "y": 131,
+            "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
             "width": 128,
@@ -827,9 +1071,9 @@
             "id": "ae1abf5a-64dd-4704-a1e6-fa7e4be007db",
             "label": "setHPTo1Button",
             "scope": "CLASS",
-            "x": 108,
-            "y": 121,
-            "scaleX": 1.5,
+            "x": 151,
+            "y": 82,
+            "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
             "width": 128,
@@ -862,8 +1106,10 @@
             "type": "Text",
             "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
             "label": "setHPTo1Text",
-            "x": 36,
-            "y": 112,
+            "x": 45,
+            "y": 119,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "text": "Everyone to 1HP",
             "color": "#000000ff"
         },
@@ -871,8 +1117,10 @@
             "type": "Text",
             "id": "52658ea1-6bbe-414a-893d-fe53e77ad78b",
             "label": "resetAttackStatusText",
-            "x": 17,
-            "y": 66,
+            "x": 15,
+            "y": 71,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "text": "Reset Attack Status",
             "color": "#000000ff"
         },
@@ -880,8 +1128,10 @@
             "type": "Text",
             "id": "5c28c047-d023-4065-8663-206c91fda482",
             "label": "resetHPText",
-            "x": 73,
-            "y": 20,
+            "x": 98,
+            "y": 16,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "text": "Reset HP",
             "color": "#000000ff"
         },
@@ -892,6 +1142,8 @@
             "scope": "CLASS",
             "x": 289,
             "y": 322,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "visible": false,
             "text": "something",
             "fontSize": "20px",
@@ -904,6 +1156,8 @@
             "scope": "CLASS",
             "x": 544,
             "y": 139,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "visible": false,
             "text": "New text",
             "fontSize": "50px"

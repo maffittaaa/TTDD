@@ -137,6 +137,11 @@
                 "key": "HandleChooseMechanism"
             },
             {
+                "url": "src/scripts/HealthBarMechanism.js",
+                "type": "script",
+                "key": "HealthBarMechanism"
+            },
+            {
                 "url": "src/scenes/Match.js",
                 "type": "sceneFile",
                 "key": "Match"

@@ -138,7 +138,7 @@ class HandleChooseMechanism extends ScriptNode {
 				if (glowChange[i].name == "Slots") {
 					for (let j = 0; j < glowChange[i].list.length; j++) {
 						if (glowChange[i].list[j].name != "MessageServer") {
-							glowChange[i].list[j].preFX.list[0].active = false
+							glowChange[i].list[j].preFX.list[0].active = false;
 						}
 					}
 				} else if (glowChange[i].name == "Characters") {
@@ -154,26 +154,24 @@ class HandleChooseMechanism extends ScriptNode {
 		}
 	}
 
-	updateXpBar(level, xp){
+	updateXpBar(level, xp) {
 		var index = 0;
 		var playerXp = xp
 		var finalXp = 50;
 
 
-		while (index < level){
-			finalXp += finalXp/2 
+		while (index < level) {
+			finalXp += finalXp / 2
 			index++
 		}
 
 		var xpbar = this.scene.children.list
 
 		for (let i = 0; i < xpbar.length; i++) {
-			if(xpbar[i].name == "XpBar"){
+			if (xpbar[i].name == "XpBar") {
 				xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp)
 				for (let j = 0; j < 10; j++) {
-					console.log(playerXp, finalXp * (j * 0.1))
-					if(playerXp > finalXp * (j * 0.1)){
-						console.log(j, 10-j)
+					if (playerXp > finalXp * (j * 0.1)) {
 						xpbar[i].list[0].setTexture("spritesheet", 10 - j)
 						xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp)
 					}
@@ -269,53 +267,56 @@ class HandleChooseMechanism extends ScriptNode {
 			}
 
 			if (alreadyChosen == false) {
-				var glowOnOff = true
+				var glowOnOff = true;
 
-				if(charChosen == ch_Id){
-					glowOnOff = false
-					charChosen = null
-				}else{
-					charChosen = ch_Id
+				if (charChosen == ch_Id) {
+					glowOnOff = false;
+					charChosen = null;
+				} else {
+					charChosen = ch_Id;
 				}
 
 				var glowChange = this.scene.children.list
 				for (let i = 0; i < glowChange.length; i++) {
+
 					if (glowChange[i].name == "Slots") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name != "MessageServer"){
-								if(charChosen <= 4 ){
-									glowChange[i].list[1].preFX.list[0].active = glowOnOff
-									glowChange[i].list[2].preFX.list[0].active = glowOnOff
-									glowChange[i].list[3].preFX.list[0].active = glowOnOff
 							if (glowChange[i].list[j].name != "MessageServer") {
 								if (charChosen <= 4) {
-									glowChange[i].list[1].preFX.list[0].active = true
-									glowChange[i].list[2].preFX.list[0].active = true
-									glowChange[i].list[3].preFX.list[0].active = true
+									glowChange[i].list[1].preFX.list[0].active = glowOnOff;
+									glowChange[i].list[2].preFX.list[0].active = glowOnOff;
+									glowChange[i].list[3].preFX.list[0].active = glowOnOff;
+									if (glowChange[i].list[j].name != "MessageServer") {
+										if (charChosen <= 4) {
+											glowChange[i].list[1].preFX.list[0].active = true;
+											glowChange[i].list[2].preFX.list[0].active = true;
+											glowChange[i].list[3].preFX.list[0].active = true;
 
-									glowChange[i].list[0].preFX.list[0].active = false
-									glowChange[i].list[4].preFX.list[0].active = false
-								}else if (charChosen > 4){
-									glowChange[i].list[j].preFX.list[0].active = glowOnOff
-								} else if (charChosen > 4) {
-									glowChange[i].list[j].preFX.list[0].active = true
+											glowChange[i].list[0].preFX.list[0].active = false;
+											glowChange[i].list[4].preFX.list[0].active = false;
+										} else if (charChosen > 4) {
+											glowChange[i].list[j].preFX.list[0].active = glowOnOff;
+										} else if (charChosen > 4) {
+											glowChange[i].list[j].preFX.list[0].active = true;
+										}
+									}
 								}
-							}
+							} 
 						}
 					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if(glowChange[i].list[j].name == "sand"){
-								glowChange[i].list[j].preFX.list[0].active = glowOnOff
 							if (glowChange[i].list[j].name == "sand") {
-								glowChange[i].list[j].preFX.list[0].active = true
-								glowChange[i].list[j].name = "character_id_" + charChosen
-							} else if (glowChange[i].list[j].name != "Username") {
-								glowChange[i].list[j].preFX.list[0].active = false
+								glowChange[i].list[j].preFX.list[0].active = glowOnOff;
+								if (glowChange[i].list[j].name == "sand") {
+									glowChange[i].list[j].preFX.list[0].active = true;
+									glowChange[i].list[j].name = "character_id_" + charChosen
+								} else if (glowChange[i].list[j].name != "Username") {
+									glowChange[i].list[j].preFX.list[0].active = false
+								}
 							}
 						}
-					}
+					} 
 				}
-
 			} else {
 				this.showMessage("You can't pick the same character twice");
 				var glowChange = this.scene.children.list
@@ -329,7 +330,6 @@ class HandleChooseMechanism extends ScriptNode {
 						}
 					}
 				}
-
 			}
 		} else {
 			if (charChosen != null) {
@@ -340,8 +340,8 @@ class HandleChooseMechanism extends ScriptNode {
 					this.showMessage("Can't place the character there. \n Not a long-range character.")
 					return;
 				} else {
-					slots["slot_" + slot_Id + ""] = charChosen
-					slotChosen = slot_Id
+					slots["slot_" + slot_Id + ""] = charChosen;
+					slotChosen = slot_Id;
 				}
 
 				var glowChange = this.scene.children.list
@@ -349,13 +349,13 @@ class HandleChooseMechanism extends ScriptNode {
 					if (glowChange[i].name == "Slots") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if (glowChange[i].list[j].name != "MessageServer") {
-								glowChange[i].list[j].preFX.list[0].active = false
+								glowChange[i].list[j].preFX.list[0].active = false;
 							}
 						}
 					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if (glowChange[i].list[j].name != "Username") {
-								glowChange[i].list[j].preFX.list[0].active = false
+								glowChange[i].list[j].preFX.list[0].active = false;
 							}
 						}
 					}
@@ -365,9 +365,9 @@ class HandleChooseMechanism extends ScriptNode {
 					this.parent.setTexture("base", 0)
 
 					if (slots["slot_" + slot_Id + ""] != null) {
-						slots["slot_" + slot_Id + ""] = null
+						slots["slot_" + slot_Id + ""] = null;
 					}
-					charChosen = null
+					charChosen = null;
 				}
 			}
 		}
@@ -375,7 +375,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 	chooseCharacters() {
 		var empty = true;
-		var scene = this
+		var scene = this;
 
 		for (let i = 1; i < 6; i++) {
 			if (slots["slot_" + i + ""] != null) {
@@ -422,8 +422,10 @@ class HandleChooseMechanism extends ScriptNode {
 			})
 		}
 	}
-	/* END-USER-CODE */
 }
+/* END-USER-CODE */
+
+
 
 /* END OF COMPILED CODE */
 
