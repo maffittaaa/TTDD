@@ -40,19 +40,19 @@ class Preload extends Phaser.Scene {
 		new PreloadBarUpdaterScript(progressBar);
 
 		// progressBarBg
-		const progressBarBg = this.add.rectangle(800, 520, 256, 20);
+		const progressBarBg = this.add.rectangle(1056, 540, 256, 20);
 		progressBarBg.scaleX = 2;
 		progressBarBg.scaleY = 2;
-		progressBarBg.setOrigin(0, 0);
 		progressBarBg.fillColor = 0;
 		progressBarBg.isStroked = true;
 
 		// loadingText
-		const loadingText = this.add.text(969, 518, "", {});
-		loadingText.scaleX = 2;
-		loadingText.scaleY = 2;
+		const loadingText = this.add.text(1056, 540, "", {});
+		loadingText.scaleX = 0.3;
+		loadingText.scaleY = 0.3;
+		loadingText.setOrigin(0.5, 0.5);
 		loadingText.text = "Loading...";
-		loadingText.setStyle({ "color": "#e0e0e0", "fontFamily": "minecraft", "fontSize": "20px" });
+		loadingText.setStyle({ "color": "#e0e0e0", "fontFamily": "minecraft", "fontSize": "100px" });
 
 		this.events.emit("scene-awake");
 	}

@@ -27,21 +27,26 @@ class CharactersAndCards extends Phaser.Scene {
 		// highlight
 		const highlight = this.add.rectangle(422, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.63;
-		highlight.scaleY = 0.1807207308530191;
-		highlight.fillColor = 4194559;
-		highlight.isStroked = true;
+		highlight.scaleX = 1.68;
+		highlight.scaleY = 0.21995512106258827;
+		highlight.isFilled = true;
+		highlight.fillColor = 0;
 		highlight.strokeColor = 4194559;
 		highlight.strokeAlpha = 4;
 		highlight.lineWidth = 4;
 		characters_and_Cards.add(highlight);
 
+		// glowFx_11
+		highlight.postFX.addGlow(4194559, 3, 3, false);
+
 		// Characters And Cards
 		const characters_And_Cards = this.add.text(422, 48, "", {});
-		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1097.241662634838, 111.44192764300475), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.scaleX = 0.18;
+		characters_And_Cards.scaleY = 0.18;
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
-		characters_And_Cards.setStyle({ "fontFamily": "minecraft" });
+		characters_And_Cards.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		characters_and_Cards.add(characters_And_Cards);
 
 		// onPointerDownScript_20
@@ -60,10 +65,12 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// ChooseCharacters
 		const chooseCharacters = this.add.text(180, 48, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 948.5118758619749, 109.22020857176696), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.scaleX = 0.18;
+		chooseCharacters.scaleY = 0.18;
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "fontFamily": "minecraft" });
+		chooseCharacters.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		button_Choose_Characters.add(chooseCharacters);
 
 		// onPointerDownScript
@@ -82,10 +89,12 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Profile
 		const profile = this.add.text(622, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 355.63445920052266, 132.8853657854798), Phaser.Geom.Rectangle.Contains);
+		profile.scaleX = 0.18;
+		profile.scaleY = 0.18;
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
-		profile.setStyle({ "fontFamily": "minecraft" });
+		profile.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		button_Profile.add(profile);
 
 		// onPointerDownScript_1
@@ -562,10 +571,12 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// Profile_1
 		const profile_1 = this.add.text(808, 48, "", {});
-		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 1009.0030155537183, 139.55052299919248), Phaser.Geom.Rectangle.Contains);
+		profile_1.scaleX = 0.18;
+		profile_1.scaleY = 0.18;
 		profile_1.setOrigin(0.5, 0.5);
 		profile_1.text = "Back To Home Page";
-		profile_1.setStyle({ "fontFamily": "minecraft" });
+		profile_1.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		button_Go_Back_To_Home_Page.add(profile_1);
 
 		// onPointerDownScript_25

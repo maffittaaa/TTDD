@@ -21,48 +21,58 @@ class Profile extends Phaser.Scene {
 		this.add.image(960, 540, "Specasdossheets");
 
 		// Profile Information
-		const profile_Information = this.add.container(43.75000000000003, 62.5);
+		const profile_Information = this.add.container(50.88749999999993, 93.75);
 		profile_Information.scaleX = 1.5;
 		profile_Information.scaleY = 1.5;
 
 		// XP
 		const xP = this.add.text(300, 191, "", {});
 		xP.name = "XP";
+		xP.scaleX = 0.3;
+		xP.scaleY = 0.3;
 		xP.setOrigin(0.5, 0.5);
 		xP.text = "XP:";
-		xP.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
+		xP.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		profile_Information.add(xP);
 
 		// Matches
 		const matches = this.add.text(300, 301, "", {});
 		matches.name = "Matches";
+		matches.scaleX = 0.3;
+		matches.scaleY = 0.3;
 		matches.setOrigin(0.5, 0.5);
 		matches.text = "Matches:";
-		matches.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
+		matches.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		profile_Information.add(matches);
 
 		// Victories
 		const victories = this.add.text(300, 404, "", {});
 		victories.name = "Victories";
+		victories.scaleX = 0.3;
+		victories.scaleY = 0.3;
 		victories.setOrigin(0.5, 0.5);
 		victories.text = "Victories:";
-		victories.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
+		victories.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		profile_Information.add(victories);
 
 		// Username
 		const username = this.add.text(900, 237, "", {});
 		username.name = "Username";
+		username.scaleX = 0.3;
+		username.scaleY = 0.3;
 		username.setOrigin(0.5, 0.5);
 		username.text = "Username:";
-		username.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
+		username.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		profile_Information.add(username);
 
 		// Email
 		const email = this.add.text(900, 364, "", {});
 		email.name = "Email";
+		email.scaleX = 0.3;
+		email.scaleY = 0.3;
 		email.setOrigin(0.5, 0.5);
 		email.text = "Email:";
-		email.setStyle({ "fontFamily": "minecraft", "fontSize": "25px" });
+		email.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		profile_Information.add(email);
 
 		// Profile Button
@@ -74,20 +84,25 @@ class Profile extends Phaser.Scene {
 		const highlight = this.add.rectangle(622, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
 		highlight.scaleX = 0.75;
-		highlight.scaleY = 0.1807207308530191;
-		highlight.fillColor = 4194559;
-		highlight.isStroked = true;
+		highlight.scaleY = 0.21995512106258827;
+		highlight.isFilled = true;
+		highlight.fillColor = 0;
 		highlight.strokeColor = 4194559;
 		highlight.strokeAlpha = 4;
 		highlight.lineWidth = 4;
 		profile_Button.add(highlight);
 
+		// glowFx_1
+		highlight.postFX.addGlow(4194559, 3, 3, false);
+
 		// Profile
 		const profile = this.add.text(622, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile.setInteractive(new Phaser.Geom.Rectangle(-126, -17, 596.45805613654, 134.9449253851471), Phaser.Geom.Rectangle.Contains);
+		profile.scaleX = 0.18;
+		profile.scaleY = 0.18;
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
-		profile.setStyle({ "fontFamily": "minecraft" });
+		profile.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		profile_Button.add(profile);
 
 		// onPointerDownScript_1
@@ -106,10 +121,12 @@ class Profile extends Phaser.Scene {
 
 		// ChooseCharacters
 		const chooseCharacters = this.add.text(180, 48, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 938.7022180518616, 106.19393534231743), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.scaleX = 0.18;
+		chooseCharacters.scaleY = 0.18;
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "fontFamily": "minecraft" });
+		chooseCharacters.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		choose_Menu_Button.add(chooseCharacters);
 
 		// onPointerDownScript
@@ -130,20 +147,24 @@ class Profile extends Phaser.Scene {
 		const highlight_1 = this.add.rectangle(640, 632, 128, 128);
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
 		highlight_1.scaleX = 1.0590319501176437;
-		highlight_1.scaleY = 0.2;
-		highlight_1.fillColor = 4194559;
-		highlight_1.isStroked = true;
+		highlight_1.scaleY = 0.21995512106258827;
+		highlight_1.isFilled = true;
+		highlight_1.fillColor = 0;
 		highlight_1.strokeColor = 4194559;
-		highlight_1.strokeAlpha = 4;
-		highlight_1.lineWidth = 4;
+		highlight_1.lineWidth = 0;
 		change_Profile_Button.add(highlight_1);
+
+		// glowFx
+		highlight_1.postFX.addGlow(4194559, 3, 2, false);
 
 		// Profile_1
 		const profile_1 = this.add.text(640, 632, "", {});
-		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_1.setInteractive(new Phaser.Geom.Rectangle(-66, -19, 853.5246855678633, 148.41470913262742), Phaser.Geom.Rectangle.Contains);
+		profile_1.scaleX = 0.15;
+		profile_1.scaleY = 0.15;
 		profile_1.setOrigin(0.5, 0.5);
 		profile_1.text = "Change profile";
-		profile_1.setStyle({ "fontFamily": "minecraft" });
+		profile_1.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		change_Profile_Button.add(profile_1);
 
 		// onPointerDownScript_2
@@ -162,10 +183,12 @@ class Profile extends Phaser.Scene {
 
 		// Characters And Cards
 		const characters_And_Cards = this.add.text(422, 48, "", {});
-		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1113.1380000583476, 106.19393534231743), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.scaleX = 0.18;
+		characters_And_Cards.scaleY = 0.18;
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
-		characters_And_Cards.setStyle({ "fontFamily": "minecraft" });
+		characters_And_Cards.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		characters_and_Cards.add(characters_And_Cards);
 
 		// onPointerDownScript_3
@@ -184,10 +207,12 @@ class Profile extends Phaser.Scene {
 
 		// Profile_2
 		const profile_2 = this.add.text(808, 48, "", {});
-		profile_2.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
+		profile_2.setInteractive(new Phaser.Geom.Rectangle(-15, 3, 1006.8885150534778, 106.26468581356662), Phaser.Geom.Rectangle.Contains);
+		profile_2.scaleX = 0.18;
+		profile_2.scaleY = 0.18;
 		profile_2.setOrigin(0.5, 0.5);
 		profile_2.text = "Back To Home Page";
-		profile_2.setStyle({ "fontFamily": "minecraft" });
+		profile_2.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		button_Go_Back_To_Home_Page.add(profile_2);
 
 		// onPointerDownScript_25

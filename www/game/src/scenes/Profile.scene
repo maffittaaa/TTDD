@@ -23,8 +23,8 @@
             "type": "Container",
             "id": "1f41d751-fd62-43ab-b187-bcb634bf00b0",
             "label": "Profile Information",
-            "x": 43.75000000000003,
-            "y": 62.5,
+            "x": 50.88749999999993,
+            "y": 93.75,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -36,11 +36,13 @@
                     "scope": "CLASS",
                     "x": 300,
                     "y": 191,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "XP:",
                     "fontFamily": "minecraft",
-                    "fontSize": "25px"
+                    "fontSize": "100px"
                 },
                 {
                     "type": "Text",
@@ -50,11 +52,13 @@
                     "scope": "CLASS",
                     "x": 300,
                     "y": 301,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Matches:",
                     "fontFamily": "minecraft",
-                    "fontSize": "25px"
+                    "fontSize": "100px"
                 },
                 {
                     "type": "Text",
@@ -64,11 +68,13 @@
                     "scope": "CLASS",
                     "x": 300,
                     "y": 404,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Victories:",
                     "fontFamily": "minecraft",
-                    "fontSize": "25px"
+                    "fontSize": "100px"
                 },
                 {
                     "type": "Text",
@@ -78,11 +84,13 @@
                     "scope": "CLASS",
                     "x": 900,
                     "y": 237,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Username:",
                     "fontFamily": "minecraft",
-                    "fontSize": "25px"
+                    "fontSize": "100px"
                 },
                 {
                     "type": "Text",
@@ -92,11 +100,13 @@
                     "scope": "CLASS",
                     "x": 900,
                     "y": 364,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Email:",
                     "fontFamily": "minecraft",
-                    "fontSize": "25px"
+                    "fontSize": "100px"
                 }
             ]
         },
@@ -117,30 +127,43 @@
                     "x": 622,
                     "y": 48,
                     "scaleX": 0.75,
-                    "scaleY": 0.1807207308530191,
-                    "fillColor": "#4000ff",
+                    "scaleY": 0.21995512106258827,
+                    "isFilled": true,
+                    "fillColor": "#000000",
                     "strokeColor": "#4000ff",
                     "strokeAlpha": 4,
                     "lineWidth": 4,
-                    "isStroked": true,
                     "width": 128,
-                    "height": 128
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "b1392c6c-4060-4510-91f0-8765295ff1c2",
+                            "label": "glowFx_1",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
                 },
                 {
                     "type": "Text",
                     "id": "f1d76c22-5f67-4fd8-af54-a09e9e226cbe",
                     "label": "Profile",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -15,
+                    "hitArea.x": -126,
                     "hitArea.y": -17,
-                    "hitArea.width": 100.09315749661158,
-                    "hitArea.height": 53.83254699275936,
+                    "hitArea.width": 596.45805613654,
+                    "hitArea.height": 134.9449253851471,
                     "x": 622,
                     "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Profile",
                     "fontFamily": "minecraft",
+                    "fontSize": "100px",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -179,14 +202,17 @@
                     "id": "391652d0-fb92-4578-bb0c-729a29d71a1c",
                     "label": "ChooseCharacters",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 154,
-                    "hitArea.height": 15,
+                    "hitArea.width": 938.7022180518616,
+                    "hitArea.height": 106.19393534231743,
                     "x": 180,
                     "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Choose Characters",
                     "fontFamily": "minecraft",
+                    "fontSize": "100px",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -230,30 +256,42 @@
                     "x": 640,
                     "y": 632,
                     "scaleX": 1.0590319501176437,
-                    "scaleY": 0.2,
-                    "fillColor": "#4000ff",
+                    "scaleY": 0.21995512106258827,
+                    "isFilled": true,
+                    "fillColor": "#000000",
                     "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "isStroked": true,
+                    "lineWidth": 0,
                     "width": 128,
-                    "height": 128
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "6d51563f-0bfc-499b-9fd7-82d21b25ea5f",
+                            "label": "glowFx",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 2
+                        }
+                    ]
                 },
                 {
                     "type": "Text",
                     "id": "3a8d4219-c91c-4490-ba2a-a6175865cd5d",
                     "label": "Profile_1",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -15,
-                    "hitArea.y": -17,
-                    "hitArea.width": 100.09315749661158,
-                    "hitArea.height": 53.83254699275936,
+                    "hitArea.x": -66,
+                    "hitArea.y": -19,
+                    "hitArea.width": 853.5246855678633,
+                    "hitArea.height": 148.41470913262742,
                     "x": 640,
                     "y": 632,
+                    "scaleX": 0.15,
+                    "scaleY": 0.15,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Change profile",
                     "fontFamily": "minecraft",
+                    "fontSize": "100px",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -292,14 +330,17 @@
                     "id": "4b747409-b121-4641-99bb-53d6beca3352",
                     "label": "Characters And Cards",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 154,
-                    "hitArea.height": 15,
+                    "hitArea.width": 1113.1380000583476,
+                    "hitArea.height": 106.19393534231743,
                     "x": 422,
                     "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Characters and Cards",
                     "fontFamily": "minecraft",
+                    "fontSize": "100px",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -339,15 +380,18 @@
                     "label": "Profile_2",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.x": -15,
-                    "hitArea.y": -17,
-                    "hitArea.width": 100.09315749661158,
-                    "hitArea.height": 53.83254699275936,
+                    "hitArea.y": 3,
+                    "hitArea.width": 1006.8885150534778,
+                    "hitArea.height": 106.26468581356662,
                     "x": 808,
                     "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Back To Home Page",
                     "fontFamily": "minecraft",
+                    "fontSize": "100px",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",

@@ -173,7 +173,7 @@ class HandleChooseMechanism extends ScriptNode {
 				for (let j = 0; j < 10; j++) {
 					if (playerXp > finalXp * (j * 0.1)) {
 						xpbar[i].list[0].setTexture("spritesheet", 10 - j);
-						xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp);
+						xpbar[i].list[1].text = Math.floor((playerXp * 100)/finalXp) + "%";
 					}
 				}
 			}
@@ -237,8 +237,6 @@ class HandleChooseMechanism extends ScriptNode {
 			})
 		}
 	}
-
-
 
 	showMessage(message) {
 		var textChange = this.scene.children.list
@@ -401,7 +399,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 						lookingForMatch = true;
 					} else {
-						this.showMessage("Choose another character");
+						scene.showMessage("Choose another character");
 					}
 				},
 				error: function (err) {
