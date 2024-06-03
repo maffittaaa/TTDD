@@ -149,7 +149,7 @@ class MatchMechanism extends ScriptNode {
 
 			if (p1 == player) {
 				//player = ch1
-				var character = this.parent.scene.children.list;
+				var character = this.scene.children.list;
 				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
 
@@ -193,7 +193,7 @@ class MatchMechanism extends ScriptNode {
 
 			} else {
 				//player = ch2
-				var character = this.parent.scene.children.list;
+				var character = this.scene.children.list;
 				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
 				for (let i = 0; i < character.length; i++) {

@@ -37,7 +37,6 @@ class AttackMechanism extends ScriptNode {
 
 	setAttackerSlot(slot) { //attacker has a slot
 		attackerSlot = slot;
-		console.log(slot);
 		if (reviving == true) {
 			this.playCard(cardOnHold, slot);
 		}
@@ -70,8 +69,8 @@ class AttackMechanism extends ScriptNode {
 			success: function (data) {
 				console.log(data);
 				if (data.notWorking) {
-					scene.parent.scene.children.list[4].text = data.message;
-					setTimeout(function () { scene.parent.scene.children.list[4].text = "" }, 4000);
+					scene.scene.children.list[4].text = data.message;
+					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				}
 			},
 			error: function (err) {
@@ -92,8 +91,8 @@ class AttackMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				if (data.notWorking) {
-					scene.parent.scene.children.list[4].text = data.message;
-					setTimeout(function () { scene.parent.scene.children.list[4].text = "" }, 4000);
+					scene.scene.children.list[4].text = data.message;
+					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				} else if (data.reviving) {
 					reviving = data.reviving;
 					cardOnHold = data.card;

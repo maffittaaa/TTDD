@@ -57,6 +57,7 @@ class Match extends Phaser.Scene {
 		player1_slot1.scaleX = 0.4;
 		player1_slot1.scaleY = 0.4;
 		player1_slot1.setOrigin(0.5, 0);
+		player1_slot1.visible = false;
 		characterSlotsPlayer1.add(player1_slot1);
 
 		// matchMechanism
@@ -77,6 +78,7 @@ class Match extends Phaser.Scene {
 		player1_slot2.scaleX = 0.4;
 		player1_slot2.scaleY = 0.4;
 		player1_slot2.setOrigin(0.5, 0);
+		player1_slot2.visible = false;
 		characterSlotsPlayer1.add(player1_slot2);
 
 		// onPointerDownScript_2
@@ -94,6 +96,7 @@ class Match extends Phaser.Scene {
 		player1_slot3.scaleX = 0.4;
 		player1_slot3.scaleY = 0.4;
 		player1_slot3.setOrigin(0.5, 0);
+		player1_slot3.visible = false;
 		characterSlotsPlayer1.add(player1_slot3);
 
 		// onPointerDownScript
@@ -111,6 +114,7 @@ class Match extends Phaser.Scene {
 		player1_slot4.scaleX = 0.4;
 		player1_slot4.scaleY = 0.4;
 		player1_slot4.setOrigin(0.5, 0);
+		player1_slot4.visible = false;
 		characterSlotsPlayer1.add(player1_slot4);
 
 		// onPointerDownScript_3
@@ -128,6 +132,7 @@ class Match extends Phaser.Scene {
 		player1_slot5.scaleX = 0.4;
 		player1_slot5.scaleY = 0.4;
 		player1_slot5.setOrigin(0.5, 0);
+		player1_slot5.visible = false;
 		characterSlotsPlayer1.add(player1_slot5);
 
 		// onPointerDownScript_4
@@ -164,6 +169,7 @@ class Match extends Phaser.Scene {
 		player2_slot1.scaleX = 0.4;
 		player2_slot1.scaleY = 0.4;
 		player2_slot1.setOrigin(0.5, 0);
+		player2_slot1.visible = false;
 		characterSlotsPlayer2.add(player2_slot1);
 
 		// onPointerDownScript_6
@@ -181,6 +187,7 @@ class Match extends Phaser.Scene {
 		player2_slot2.scaleX = 0.4;
 		player2_slot2.scaleY = 0.4;
 		player2_slot2.setOrigin(0.5, 0);
+		player2_slot2.visible = false;
 		characterSlotsPlayer2.add(player2_slot2);
 
 		// onPointerDownScript_7
@@ -198,6 +205,7 @@ class Match extends Phaser.Scene {
 		player2_slot3.scaleX = 0.4;
 		player2_slot3.scaleY = 0.4;
 		player2_slot3.setOrigin(0.5, 0);
+		player2_slot3.visible = false;
 		characterSlotsPlayer2.add(player2_slot3);
 
 		// onPointerDownScript_8
@@ -215,6 +223,7 @@ class Match extends Phaser.Scene {
 		player2_slot4.scaleX = 0.4;
 		player2_slot4.scaleY = 0.4;
 		player2_slot4.setOrigin(0.5, 0);
+		player2_slot4.visible = false;
 		characterSlotsPlayer2.add(player2_slot4);
 
 		// onPointerDownScript_9
@@ -232,6 +241,7 @@ class Match extends Phaser.Scene {
 		player2_slot5.scaleX = 0.4;
 		player2_slot5.scaleY = 0.4;
 		player2_slot5.setOrigin(0.5, 0);
+		player2_slot5.visible = false;
 		characterSlotsPlayer2.add(player2_slot5);
 
 		// onPointerDownScript_10
@@ -267,6 +277,7 @@ class Match extends Phaser.Scene {
 		healthbar_p1_slot1.name = "healthbar_p1_slot1";
 		healthbar_p1_slot1.scaleX = 1.5;
 		healthbar_p1_slot1.scaleY = 1.5;
+		healthbar_p1_slot1.visible = false;
 		healthBarsPlayer1.add(healthbar_p1_slot1);
 
 		// healthBarMechanism
@@ -277,6 +288,7 @@ class Match extends Phaser.Scene {
 		healthbar_p1_slot2.name = "healthbar_p1_slot2";
 		healthbar_p1_slot2.scaleX = 1.5;
 		healthbar_p1_slot2.scaleY = 1.5;
+		healthbar_p1_slot2.visible = false;
 		healthBarsPlayer1.add(healthbar_p1_slot2);
 
 		// healthbar_p1_slot3
@@ -284,6 +296,7 @@ class Match extends Phaser.Scene {
 		healthbar_p1_slot3.name = "healthbar_p1_slot3";
 		healthbar_p1_slot3.scaleX = 1.5;
 		healthbar_p1_slot3.scaleY = 1.5;
+		healthbar_p1_slot3.visible = false;
 		healthBarsPlayer1.add(healthbar_p1_slot3);
 
 		// healthbar_p1_slot4
@@ -291,6 +304,7 @@ class Match extends Phaser.Scene {
 		healthbar_p1_slot4.name = "healthbar_p1_slot4";
 		healthbar_p1_slot4.scaleX = 1.5;
 		healthbar_p1_slot4.scaleY = 1.5;
+		healthbar_p1_slot4.visible = false;
 		healthBarsPlayer1.add(healthbar_p1_slot4);
 
 		// healthbar_p1_slot5
@@ -298,46 +312,52 @@ class Match extends Phaser.Scene {
 		healthbar_p1_slot5.name = "healthbar_p1_slot5";
 		healthbar_p1_slot5.scaleX = 1.5;
 		healthbar_p1_slot5.scaleY = 1.5;
+		healthbar_p1_slot5.visible = false;
 		healthBarsPlayer1.add(healthbar_p1_slot5);
 
 		// hp_p1_slot5
-		const hp_p1_slot5 = this.add.text(160.5, 586, "", {});
+		const hp_p1_slot5 = this.add.text(163, 587, "", {});
 		hp_p1_slot5.name = "hp_p1_slot5";
 		hp_p1_slot5.setOrigin(0.5, 0);
+		hp_p1_slot5.visible = false;
 		hp_p1_slot5.text = "New text";
-		hp_p1_slot5.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p1_slot5.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer1.add(hp_p1_slot5);
 
 		// hp_p1_slot2
-		const hp_p1_slot2 = this.add.text(281.5, 507, "", {});
+		const hp_p1_slot2 = this.add.text(284, 508, "", {});
 		hp_p1_slot2.name = "hp_p1_slot2";
 		hp_p1_slot2.setOrigin(0.5, 0);
+		hp_p1_slot2.visible = false;
 		hp_p1_slot2.text = "New text";
-		hp_p1_slot2.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p1_slot2.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer1.add(hp_p1_slot2);
 
 		// hp_p1_slot3
-		const hp_p1_slot3 = this.add.text(379.5, 586, "", {});
+		const hp_p1_slot3 = this.add.text(382, 587, "", {});
 		hp_p1_slot3.name = "hp_p1_slot3";
 		hp_p1_slot3.setOrigin(0.5, 0);
+		hp_p1_slot3.visible = false;
 		hp_p1_slot3.text = "New text";
-		hp_p1_slot3.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p1_slot3.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer1.add(hp_p1_slot3);
 
 		// hp_p1_slot1
-		const hp_p1_slot1 = this.add.text(377.5, 425, "", {});
+		const hp_p1_slot1 = this.add.text(380, 426, "", {});
 		hp_p1_slot1.name = "hp_p1_slot1";
 		hp_p1_slot1.setOrigin(0.5, 0);
+		hp_p1_slot1.visible = false;
 		hp_p1_slot1.text = "New text";
-		hp_p1_slot1.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p1_slot1.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer1.add(hp_p1_slot1);
 
 		// hp_p1_slot4
-		const hp_p1_slot4 = this.add.text(159.5, 425, "", {});
+		const hp_p1_slot4 = this.add.text(162, 426, "", {});
 		hp_p1_slot4.name = "hp_p1_slot4";
 		hp_p1_slot4.setOrigin(0.5, 0);
+		hp_p1_slot4.visible = false;
 		hp_p1_slot4.text = "New text";
-		hp_p1_slot4.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p1_slot4.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer1.add(hp_p1_slot4);
 
 		// HealthBarsPlayer2
@@ -351,6 +371,7 @@ class Match extends Phaser.Scene {
 		healthbar_p2_slot1.name = "healthbar_p2_slot1";
 		healthbar_p2_slot1.scaleX = 1.5;
 		healthbar_p2_slot1.scaleY = 1.5;
+		healthbar_p2_slot1.visible = false;
 		healthBarsPlayer2.add(healthbar_p2_slot1);
 
 		// healthbar_p2_slot2
@@ -358,6 +379,7 @@ class Match extends Phaser.Scene {
 		healthbar_p2_slot2.name = "healthbar_p2_slot2";
 		healthbar_p2_slot2.scaleX = 1.5;
 		healthbar_p2_slot2.scaleY = 1.5;
+		healthbar_p2_slot2.visible = false;
 		healthBarsPlayer2.add(healthbar_p2_slot2);
 
 		// healthbar_p2_slot3
@@ -365,6 +387,7 @@ class Match extends Phaser.Scene {
 		healthbar_p2_slot3.name = "healthbar_p2_slot3";
 		healthbar_p2_slot3.scaleX = 1.5;
 		healthbar_p2_slot3.scaleY = 1.5;
+		healthbar_p2_slot3.visible = false;
 		healthBarsPlayer2.add(healthbar_p2_slot3);
 
 		// healthbar_p2_slot4
@@ -372,6 +395,7 @@ class Match extends Phaser.Scene {
 		healthbar_p2_slot4.name = "healthbar_p2_slot4";
 		healthbar_p2_slot4.scaleX = 1.5;
 		healthbar_p2_slot4.scaleY = 1.5;
+		healthbar_p2_slot4.visible = false;
 		healthBarsPlayer2.add(healthbar_p2_slot4);
 
 		// healthbar_p2_slot5
@@ -379,46 +403,52 @@ class Match extends Phaser.Scene {
 		healthbar_p2_slot5.name = "healthbar_p2_slot5";
 		healthbar_p2_slot5.scaleX = 1.5;
 		healthbar_p2_slot5.scaleY = 1.5;
+		healthbar_p2_slot5.visible = false;
 		healthBarsPlayer2.add(healthbar_p2_slot5);
 
 		// hp_p2_slot2
-		const hp_p2_slot2 = this.add.text(1003.5, 507, "", {});
+		const hp_p2_slot2 = this.add.text(1006, 508, "", {});
 		hp_p2_slot2.name = "hp_p2_slot2";
 		hp_p2_slot2.setOrigin(0.5, 0);
+		hp_p2_slot2.visible = false;
 		hp_p2_slot2.text = "New text";
-		hp_p2_slot2.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p2_slot2.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer2.add(hp_p2_slot2);
 
 		// hp_p2_slot1
-		const hp_p2_slot1 = this.add.text(905.5, 425, "", {});
+		const hp_p2_slot1 = this.add.text(908, 426, "", {});
 		hp_p2_slot1.name = "hp_p2_slot1";
 		hp_p2_slot1.setOrigin(0.5, 0);
+		hp_p2_slot1.visible = false;
 		hp_p2_slot1.text = "New text";
-		hp_p2_slot1.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p2_slot1.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer2.add(hp_p2_slot1);
 
 		// hp_p2_slot3
-		const hp_p2_slot3 = this.add.text(905.5, 586, "", {});
+		const hp_p2_slot3 = this.add.text(908, 587, "", {});
 		hp_p2_slot3.name = "hp_p2_slot3";
 		hp_p2_slot3.setOrigin(0.5, 0);
+		hp_p2_slot3.visible = false;
 		hp_p2_slot3.text = "New text";
-		hp_p2_slot3.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p2_slot3.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer2.add(hp_p2_slot3);
 
 		// hp_p2_slot5
-		const hp_p2_slot5 = this.add.text(1126.5, 586, "", {});
+		const hp_p2_slot5 = this.add.text(1129, 587, "", {});
 		hp_p2_slot5.name = "hp_p2_slot5";
 		hp_p2_slot5.setOrigin(0.5, 0);
+		hp_p2_slot5.visible = false;
 		hp_p2_slot5.text = "New text";
-		hp_p2_slot5.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p2_slot5.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer2.add(hp_p2_slot5);
 
 		// hp_p2_slot4
-		const hp_p2_slot4 = this.add.text(1129.5, 424, "", {});
+		const hp_p2_slot4 = this.add.text(1132, 425, "", {});
 		hp_p2_slot4.name = "hp_p2_slot4";
 		hp_p2_slot4.setOrigin(0.5, 0);
+		hp_p2_slot4.visible = false;
 		hp_p2_slot4.text = "New text";
-		hp_p2_slot4.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "14px" });
+		hp_p2_slot4.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "12px" });
 		healthBarsPlayer2.add(hp_p2_slot4);
 
 		// endTurnButton
