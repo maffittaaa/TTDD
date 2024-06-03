@@ -169,6 +169,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 		for (let i = 0; i < xpbar.length; i++) {
 			if(xpbar[i].name == "XpBar"){
+				xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp)
 				for (let j = 0; j < 10; j++) {
 					console.log(playerXp, finalXp * (j * 0.1))
 					if(playerXp > finalXp * (j * 0.1)){

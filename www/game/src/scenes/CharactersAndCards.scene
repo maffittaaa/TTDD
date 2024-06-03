@@ -191,8 +191,8 @@
                     "type": "Container",
                     "id": "a633278f-d925-4ac1-9156-37cdc94da366",
                     "label": "Characters_1",
-                    "x": 30.5,
-                    "y": 12.25,
+                    "x": 37,
+                    "y": -15,
                     "visible": false,
                     "list": [
                         {
@@ -687,8 +687,8 @@
                     "type": "Container",
                     "id": "c1f539cc-69f4-4f64-b384-31e7397e4c83",
                     "label": "Cards_1",
-                    "x": 30.5,
-                    "y": 12.25,
+                    "x": 37,
+                    "y": -15,
                     "visible": false,
                     "list": [
                         {
@@ -1195,7 +1195,7 @@
                     "hitArea.y": -17,
                     "hitArea.width": 100.09315749661158,
                     "hitArea.height": 53.83254699275936,
-                    "x": 896,
+                    "x": 808,
                     "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,

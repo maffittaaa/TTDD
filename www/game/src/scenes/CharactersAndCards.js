@@ -104,7 +104,7 @@ class CharactersAndCards extends Phaser.Scene {
 		characters.scaleY = 1.5;
 
 		// Characters_1
-		const characters_1 = this.add.container(30.5, 12.25);
+		const characters_1 = this.add.container(37, -15);
 		characters_1.visible = false;
 		characters.add(characters_1);
 
@@ -303,7 +303,7 @@ class CharactersAndCards extends Phaser.Scene {
 		cards.scaleY = 1.5;
 
 		// Cards_1
-		const cards_1 = this.add.container(30.5, 12.25);
+		const cards_1 = this.add.container(37, -15);
 		cards_1.visible = false;
 		cards.add(cards_1);
 
@@ -501,7 +501,7 @@ class CharactersAndCards extends Phaser.Scene {
 		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// Profile_1
-		const profile_1 = this.add.text(896, 48, "", {});
+		const profile_1 = this.add.text(808, 48, "", {});
 		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_1.setOrigin(0.5, 0.5);
 		profile_1.text = "Back To Home Page";

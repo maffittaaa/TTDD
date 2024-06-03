@@ -183,7 +183,7 @@ class Profile extends Phaser.Scene {
 		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// Profile_2
-		const profile_2 = this.add.text(896, 48, "", {});
+		const profile_2 = this.add.text(808, 48, "", {});
 		profile_2.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_2.setOrigin(0.5, 0.5);
 		profile_2.text = "Back To Home Page";
