@@ -100,7 +100,7 @@ class HandleChooseMechanism extends ScriptNode {
 			var nameText = scene.parent.parentContainer.list
 			for (let i = 0; i < nameText.length; i++) {
 				if (nameText[i].name.search("Username") == 0) {
-					nameText[i].text = data.name + "\nLevel: " + data.level
+					nameText[i].text = "Level: " + data.level + "\n" + data.name 
 				}
 			}
 		} else if (scene.type == "LookForMatch") {

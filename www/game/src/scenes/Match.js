@@ -39,10 +39,11 @@ class Match extends Phaser.Scene {
 		// result
 		const result = this.add.text(960, 787.25, "", {});
 		result.name = "result";
-		result.scaleX = 1.5;
-		result.scaleY = 1.5;
+		result.scaleX = 0.2;
+		result.scaleY = 0.2;
 		result.setOrigin(0.5, 0.5);
-		result.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "20px", "stroke": "#000000ff" });
+		result.text = "It's not your turn yet";
+		result.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
 
 		// CharacterSlotsPlayer1
 		const characterSlotsPlayer1 = this.add.container(0, 0);
@@ -472,8 +473,8 @@ class Match extends Phaser.Scene {
 
 		// endTurnButton
 		const endTurnButton = this.add.rectangle(960, 1049, 128, 128);
-		endTurnButton.scaleX = 2.3;
-		endTurnButton.scaleY = 0.36;
+		endTurnButton.scaleX = 2.9058704523073344;
+		endTurnButton.scaleY = 0.3725989586164394;
 		endTurnButton.isFilled = true;
 
 		// onPointerDownScript_12
@@ -568,11 +569,11 @@ class Match extends Phaser.Scene {
 		turn.scaleY = 0.23;
 		turn.setOrigin(0.5, 0);
 		turn.visible = false;
-		turn.text = "something";
-		turn.setStyle({ "align": "center", "color": "#fd6464ff", "fontFamily": "Minecraft", "fontSize": "100px" });
+		turn.text = "Please Wait";
+		turn.setStyle({ "align": "center", "color": "#fd6464ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff", "strokeThickness":10});
 
 		// winnerText
-		const winnerText = this.add.text(960, 705, "", {});
+		const winnerText = this.add.text(960, 700, "", {});
 		winnerText.scaleX = 0.12;
 		winnerText.scaleY = 0.12;
 		winnerText.setOrigin(0.5, 0.5);
