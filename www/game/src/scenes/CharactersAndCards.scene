@@ -234,6 +234,12 @@
                                     "label": "descriptionsMechanism_21",
                                     "option": "Char",
                                     "frameId": 0
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c6c79117-1f37-4eb1-95f7-aa56f97e1daf",
+                                    "label": "glowFx_10",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -275,6 +281,12 @@
                                     "label": "descriptionsMechanism_14",
                                     "option": "Char",
                                     "frameId": 8
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "7f69e490-b401-4bc2-a204-33536d642619",
+                                    "label": "glowFx_9",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -316,6 +328,12 @@
                                     "label": "descriptionsMechanism_15",
                                     "option": "Char",
                                     "frameId": 7
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "06df2d1f-39a4-4c6f-8f3f-9f2bc1d1181f",
+                                    "label": "glowFx_8",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -357,6 +375,12 @@
                                     "label": "descriptionsMechanism_16",
                                     "option": "Char",
                                     "frameId": 6
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c29139c3-d27e-44b5-962b-786f8ef7f2c1",
+                                    "label": "glowFx_7",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -398,6 +422,12 @@
                                     "label": "descriptionsMechanism_17",
                                     "option": "Char",
                                     "frameId": 5
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c8939cce-05ba-4776-a086-1c37f4329a3b",
+                                    "label": "glowFx_6",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -439,6 +469,12 @@
                                     "label": "descriptionsMechanism_18",
                                     "option": "Char",
                                     "frameId": 4
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "a48197df-17c9-4bbf-9047-d53e80c44b69",
+                                    "label": "glowFx_5",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -480,6 +516,12 @@
                                     "label": "descriptionsMechanism_19",
                                     "option": "Char",
                                     "frameId": 3
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "0f30d843-14d3-4d95-a16d-41ac81f39155",
+                                    "label": "glowFx_4",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -521,6 +563,12 @@
                                     "label": "descriptionsMechanism_20",
                                     "option": "Char",
                                     "frameId": 2
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "56c1c187-103c-40e8-b731-2058a2e87504",
+                                    "label": "glowFx_3",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -562,6 +610,12 @@
                                     "label": "descriptionsMechanism_13",
                                     "option": "Char",
                                     "frameId": 1
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "11eda6d4-41ad-4705-a390-14f6006041a9",
+                                    "label": "glowFx_2",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -604,6 +658,12 @@
                                     "label": "descriptionsMechanism_12",
                                     "option": "Char",
                                     "frameId": 0
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "ff7fb585-1c65-4b93-b05e-0143f38c1435",
+                                    "label": "glowFx_1",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -616,9 +676,9 @@
                                 "frame": 1
                             },
                             "x": 1038,
-                            "y": 346,
-                            "scaleX": 0.7,
-                            "scaleY": 0.7
+                            "y": 343,
+                            "scaleX": 0.9,
+                            "scaleY": 0.9
                         },
                         {
                             "type": "Text",
@@ -627,7 +687,7 @@
                             "useGameObjectName": true,
                             "scope": "CLASS",
                             "x": 1038,
-                            "y": 509.48346147003554,
+                            "y": 554,
                             "originX": 0.5,
                             "originY": -0.0011025686642976021,
                             "text": "Character description",
@@ -730,6 +790,12 @@
                                     "label": "descriptionsMechanism_11",
                                     "option": "Card",
                                     "frameId": 4
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "d21ba878-aa77-4a70-af8f-3b1375bf3f23",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -772,6 +838,12 @@
                                     "label": "descriptionsMechanism_10",
                                     "option": "Card",
                                     "frameId": 1
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "d7fcd06c-6d98-442d-aba9-c67993cd935d",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -814,6 +886,12 @@
                                     "label": "descriptionsMechanism_9",
                                     "option": "Card",
                                     "frameId": 0
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c6922395-1056-4473-b86f-a909677eabf2",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -856,6 +934,12 @@
                                     "label": "descriptionsMechanism_8",
                                     "option": "Card",
                                     "frameId": 2
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "36a24de0-9697-480c-94a6-ce668b1f38f9",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -898,6 +982,12 @@
                                     "label": "descriptionsMechanism_7",
                                     "option": "Card",
                                     "frameId": 5
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "8effd351-6072-45b1-94a0-6a7ead940929",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -940,6 +1030,12 @@
                                     "label": "descriptionsMechanism_6",
                                     "option": "Card",
                                     "frameId": 8
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "072d05fc-a481-46df-aee2-bb4588cab778",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -982,6 +1078,12 @@
                                     "label": "descriptionsMechanism_5",
                                     "option": "Card",
                                     "frameId": 6
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "1bca6d85-bd87-4604-a20a-dc701c4f10b2",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -1024,6 +1126,12 @@
                                     "label": "descriptionsMechanism_4",
                                     "option": "Card",
                                     "frameId": 7
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "eb411ca3-5971-4dd8-8a07-bab7770e290b",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -1066,6 +1174,12 @@
                                     "label": "descriptionsMechanism_3",
                                     "option": "Card",
                                     "frameId": 2
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c8be91e6-8767-41b3-ae2d-7390267d8604",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -1108,6 +1222,12 @@
                                     "label": "descriptionsMechanism_2",
                                     "option": "Card",
                                     "frameId": "3"
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "7e682e80-0595-4714-99de-7bf95747ba05",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 }
                             ]
                         },
@@ -1120,9 +1240,9 @@
                                 "frame": 3
                             },
                             "x": 1038,
-                            "y": 346,
-                            "scaleX": 0.7,
-                            "scaleY": 0.7
+                            "y": 343,
+                            "scaleX": 0.9,
+                            "scaleY": 0.9
                         },
                         {
                             "type": "Text",
@@ -1131,7 +1251,7 @@
                             "useGameObjectName": true,
                             "scope": "CLASS",
                             "x": 1038,
-                            "y": 509.15665544699357,
+                            "y": 554,
                             "originX": 0.5,
                             "originY": -0.022889636867095456,
                             "text": "Card description",

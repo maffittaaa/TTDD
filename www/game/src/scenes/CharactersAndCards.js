@@ -124,6 +124,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_21
 		const descriptionsMechanism_21 = new DescriptionsMechanism(character_id_3);
 
+		// glowFx_10
+		character_id_3.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_1
 		const character_id_1 = this.add.image(143, 259, "cartas1_Imprimir", 8);
 		character_id_1.name = "character_id_1";
@@ -139,6 +142,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_14
 		const descriptionsMechanism_14 = new DescriptionsMechanism(character_id_1);
+
+		// glowFx_9
+		character_id_1.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_6
 		const character_id_6 = this.add.image(143, 510, "cartas1_Imprimir", 7);
@@ -156,6 +162,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_15
 		const descriptionsMechanism_15 = new DescriptionsMechanism(character_id_6);
 
+		// glowFx_8
+		character_id_6.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_2
 		const character_id_2 = this.add.image(302, 259, "cartas1_Imprimir", 6);
 		character_id_2.name = "character_id_2";
@@ -171,6 +180,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_16
 		const descriptionsMechanism_16 = new DescriptionsMechanism(character_id_2);
+
+		// glowFx_7
+		character_id_2.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_5
 		const character_id_5 = this.add.image(460, 259, "cartas1_Imprimir", 5);
@@ -188,6 +200,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_17
 		const descriptionsMechanism_17 = new DescriptionsMechanism(character_id_5);
 
+		// glowFx_6
+		character_id_5.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_10
 		const character_id_10 = this.add.image(620, 510, "cartas1_Imprimir", 4);
 		character_id_10.name = "character_id_10";
@@ -203,6 +218,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_18
 		const descriptionsMechanism_18 = new DescriptionsMechanism(character_id_10);
+
+		// glowFx_5
+		character_id_10.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_8
 		const character_id_8 = this.add.image(302, 510, "cartas1_Imprimir", 3);
@@ -220,6 +238,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_19
 		const descriptionsMechanism_19 = new DescriptionsMechanism(character_id_8);
 
+		// glowFx_4
+		character_id_8.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_9
 		const character_id_9 = this.add.image(460, 510, "cartas1_Imprimir", 2);
 		character_id_9.name = "character_id_9";
@@ -235,6 +256,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_20
 		const descriptionsMechanism_20 = new DescriptionsMechanism(character_id_9);
+
+		// glowFx_3
+		character_id_9.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_7
 		const character_id_7 = this.add.image(778, 510, "cartas1_Imprimir", 1);
@@ -252,6 +276,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_13
 		const descriptionsMechanism_13 = new DescriptionsMechanism(character_id_7);
 
+		// glowFx_2
+		character_id_7.preFX.addGlow(16777215, 4, 0, false);
+
 		// character_id_4
 		const character_id_4 = this.add.image(777, 259, "cartas1_Imprimir", 0);
 		character_id_4.name = "character_id_4";
@@ -268,14 +295,17 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_12
 		const descriptionsMechanism_12 = new DescriptionsMechanism(character_id_4);
 
+		// glowFx_1
+		character_id_4.preFX.addGlow(16777215, 4, 0, false);
+
 		// cartas4_Imprimir_1
-		const cartas4_Imprimir_1 = this.add.image(1038, 346, "cartas2_Imprimir", 1);
-		cartas4_Imprimir_1.scaleX = 0.7;
-		cartas4_Imprimir_1.scaleY = 0.7;
+		const cartas4_Imprimir_1 = this.add.image(1038, 343, "cartas2_Imprimir", 1);
+		cartas4_Imprimir_1.scaleX = 0.9;
+		cartas4_Imprimir_1.scaleY = 0.9;
 		characters_1.add(cartas4_Imprimir_1);
 
 		// Card_description_1
-		const card_description_1 = this.add.text(1038, 509.48346147003554, "", {});
+		const card_description_1 = this.add.text(1038, 554, "", {});
 		card_description_1.name = "Card_description_1";
 		card_description_1.setOrigin(0.5, -0.0011025686642976021);
 		card_description_1.text = "Character description";
@@ -323,6 +353,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_11
 		const descriptionsMechanism_11 = new DescriptionsMechanism(card_id_1);
 
+		// glowFx
+		card_id_1.preFX.addGlow(16777215, 4, 0, false);
+
 		// card_id_6
 		const card_id_6 = this.add.image(143, 259, "cartas4_Imprimir", 1);
 		card_id_6.name = "card_id_6";
@@ -338,6 +371,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_10
 		const descriptionsMechanism_10 = new DescriptionsMechanism(card_id_6);
+
+		// glowFx
+		card_id_6.preFX.addGlow(16777215, 4, 0, false);
 
 		// card_id_4
 		const card_id_4 = this.add.image(143, 510, "cartas4_Imprimir", 0);
@@ -355,6 +391,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_9
 		const descriptionsMechanism_9 = new DescriptionsMechanism(card_id_4);
 
+		// glowFx
+		card_id_4.preFX.addGlow(16777215, 4, 0, false);
+
 		// card_id_10
 		const card_id_10 = this.add.image(302, 259, "cartas4_Imprimir", 2);
 		card_id_10.name = "card_id_10";
@@ -370,6 +409,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_8
 		const descriptionsMechanism_8 = new DescriptionsMechanism(card_id_10);
+
+		// glowFx
+		card_id_10.preFX.addGlow(16777215, 4, 0, false);
 
 		// card_id_3
 		const card_id_3 = this.add.image(460, 259, "cartas3_Imprimir", 5);
@@ -387,6 +429,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_7
 		const descriptionsMechanism_7 = new DescriptionsMechanism(card_id_3);
 
+		// glowFx
+		card_id_3.preFX.addGlow(16777215, 4, 0, false);
+
 		// card_id_7
 		const card_id_7 = this.add.image(620, 510, "cartas3_Imprimir", 8);
 		card_id_7.name = "card_id_7";
@@ -402,6 +447,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_6
 		const descriptionsMechanism_6 = new DescriptionsMechanism(card_id_7);
+
+		// glowFx
+		card_id_7.preFX.addGlow(16777215, 4, 0, false);
 
 		// card_id_2
 		const card_id_2 = this.add.image(302, 510, "cartas3_Imprimir", 6);
@@ -419,6 +467,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_5
 		const descriptionsMechanism_5 = new DescriptionsMechanism(card_id_2);
 
+		// glowFx
+		card_id_2.preFX.addGlow(16777215, 4, 0, false);
+
 		// card_id_8
 		const card_id_8 = this.add.image(460, 510, "cartas3_Imprimir", 7);
 		card_id_8.name = "card_id_8";
@@ -434,6 +485,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_4
 		const descriptionsMechanism_4 = new DescriptionsMechanism(card_id_8);
+
+		// glowFx
+		card_id_8.preFX.addGlow(16777215, 4, 0, false);
 
 		// card_id_9
 		const card_id_9 = this.add.image(778, 510, "cartas3_Imprimir", 2);
@@ -451,6 +505,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_3
 		const descriptionsMechanism_3 = new DescriptionsMechanism(card_id_9);
 
+		// glowFx
+		card_id_9.preFX.addGlow(16777215, 4, 0, false);
+
 		// card_id_5
 		const card_id_5 = this.add.image(777, 259, "cartas3_Imprimir", 3);
 		card_id_5.name = "card_id_5";
@@ -467,14 +524,17 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_2
 		const descriptionsMechanism_2 = new DescriptionsMechanism(card_id_5);
 
+		// glowFx
+		card_id_5.preFX.addGlow(16777215, 4, 0, false);
+
 		// cartas4_Imprimir
-		const cartas4_Imprimir = this.add.image(1038, 346, "cartas4_Imprimir", 3);
-		cartas4_Imprimir.scaleX = 0.7;
-		cartas4_Imprimir.scaleY = 0.7;
+		const cartas4_Imprimir = this.add.image(1038, 343, "cartas4_Imprimir", 3);
+		cartas4_Imprimir.scaleX = 0.9;
+		cartas4_Imprimir.scaleY = 0.9;
 		cards_1.add(cartas4_Imprimir);
 
 		// Card_description
-		const card_description = this.add.text(1038, 509.15665544699357, "", {});
+		const card_description = this.add.text(1038, 554, "", {});
 		card_description.name = "Card_description";
 		card_description.setOrigin(0.5, -0.022889636867095456);
 		card_description.text = "Card description";

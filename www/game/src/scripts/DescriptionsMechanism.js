@@ -25,17 +25,42 @@ class DescriptionsMechanism extends ScriptNode {
 	start(){
 		this.parent.on('pointerdown', event => {
 			console.log(this.id)
+
 			if(this.option == "Cards"){
+
+				for (let i = 0; i < this.parent.parentContainer.list[0].list.length; i++) {
+					if(this.parent.parentContainer.list[0].list[i].name.search("card_id") == 0){
+						this.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
+					}
+				}
+
 				this.parent.visible = false
 				this.parent.scene.children.list[4].visible = false
 				this.parent.parentContainer.list[0].visible = true
 
 			}else if(this.option == "Characters"){
+
+				for (let i = 0; i < this.parent.parentContainer.list[0].list.length; i++) {
+					if(this.parent.parentContainer.list[0].list[i].name.search("character_id") == 0){
+						this.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
+					}
+				}
+
 				this.parent.visible = false
 				this.parent.scene.children.list[5].visible = false
 				this.parent.parentContainer.list[0].visible = true
 
 			}else if(this.option == "Char"){
+				console.log(this.parent.parentContainer)
+				for (let i = 0; i < this.parent.parentContainer.list.length; i++) {
+					if(this.parent.parentContainer.list[i].name.search("character_id") == 0){
+						this.parent.parentContainer.list[i].preFX.list[0].active = false
+					}
+				}
+
+				this.parent.preFX.list[0].active = true
+				this.parent.name = "character_id_" + this.id
+
 				if(this.id == 3){
 					this.parent.parentContainer.list[10].setTexture("cartas2_Imprimir", this.frameId)
 					this.getCardCharacterDescription("Char", this.id)
@@ -45,6 +70,15 @@ class DescriptionsMechanism extends ScriptNode {
 				}
 
 			}else if(this.option == "Card"){
+				for (let i = 0; i < this.parent.parentContainer.list.length; i++) {
+					if(this.parent.parentContainer.list[i].name.search("card_id") == 0){
+						this.parent.parentContainer.list[i].preFX.list[0].active = false
+					}
+				}
+				
+				this.parent.preFX.list[0].active = true
+				this.parent.name = "card_id_" + this.id
+
 				if(this.id == 4 || this.id == 6 || this.id == 10){
 					this.parent.parentContainer.list[10].setTexture("cartas4_Imprimir", this.frameId)
 					this.getCardCharacterDescription("Card", this.id)
