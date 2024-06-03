@@ -16,6 +16,8 @@ class MatchMechanism extends ScriptNode {
 	turnText;
 	/** @type {Phaser.GameObjects.GameObject} */
 	winnerText;
+	/** @type {Phaser.GameObjects.GameObject} */
+	health;
 
 	/* START-USER-CODE */
 
@@ -42,9 +44,9 @@ class MatchMechanism extends ScriptNode {
 
 	}
 
-	update(dt) {
+	update() {
 		time = time + 0.01666
-		
+
 		if (time > 5) {
 			console.log(time)
 			console.log("gonna do it now")
@@ -123,90 +125,22 @@ class MatchMechanism extends ScriptNode {
 		if (ongoing) {
 			if (p1 == player) {
 				//player = ch1
-
-				var characterHP = this.scene.children.list
-
 				for (let i = 0; i < ch1.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
-
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch1[i].player_match_character_tile_id) {
-									var hp = characterHP[j].list[k].text.split("/");
-
-									if (hp[0] != ch1[i].player_match_character_character_current_HP) {
-										console.log("character toke damage");
-										characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " /" + hp[1];
-									}
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 				}
 
 				for (let i = 0; i < ch2.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
-
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch2[i].player_match_character_tile_id) {
-									var hp = characterHP[j].list[k].text.split("/");
-
-									if (hp[0] != ch2[i].player_match_character_character_current_HP) {
-										console.log("character toke damage");
-										characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " /" + hp[1];
-									}
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
 				}
 
 			} else {
 				// player = ch2
-				var characterHP = this.scene.children.list
-
 				for (let i = 0; i < ch2.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch2[i].player_match_character_tile_id) {
-									var hp = characterHP[j].list[k].text.split("/")
-
-									if (hp[0] != ch2[i].player_match_character_character_current_HP) {
-										console.log("character toke damage");
-										characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " /" + hp[1];
-									}
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
 				}
 
 				for (let i = 0; i < ch1.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
-
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch1[i].player_match_character_tile_id) {
-									var hp = characterHP[j].list[k].text.split("/")
-
-									if (hp[0] != ch1[i].player_match_character_character_current_HP) {
-										console.log("character toke damage");
-										characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " /" + hp[1];
-									}
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 				}
 			}
 		} else {
@@ -218,12 +152,14 @@ class MatchMechanism extends ScriptNode {
 				var character = this.parent.scene.children.list;
 				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
+
 				for (let i = 0; i < character.length; i++) {
 					if (character[i].name == "CharacterSlotsPlayer1") {
 						for (let j = 0; j < character[i].list.length; j++) {
 							if (character[i].list[j].name.search("player1_slot") == 0) {
 								for (let k = 0; k < ch1.length; k++) {
 									if (ch1[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].visible = true
 										character[i].list[j].setTexture("peawns", ch1[k].player_match_character_character_id - 1);
 									}
 								}
@@ -238,6 +174,7 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player2_slot") == 0) {
 								for (let k = 0; k < ch2.length; k++) {
 									if (ch2[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].visible = true
 										character[i].list[j].setTexture("peawns2", orderCharacterPlayer2Images[ch2[k].player_match_character_character_id - 1]);
 									}
 								}
@@ -246,41 +183,16 @@ class MatchMechanism extends ScriptNode {
 					}
 				}
 
-				var characterHP = this.scene.children.list
-
 				for (let i = 0; i < ch1.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
-
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch1[i].player_match_character_tile_id) {
-									characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " / " + ch1[i].player_match_character_character_current_HP
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 				}
 
 				for (let i = 0; i < ch2.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
-
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch2[i].player_match_character_tile_id) {
-									characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " / " + ch2[i].player_match_character_character_current_HP
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
 				}
 
 			} else {
 				//player = ch2
-
 				var character = this.parent.scene.children.list;
 				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
@@ -290,6 +202,7 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player2_slot") == 0) {
 								for (let k = 0; k < ch1.length; k++) {
 									if (ch1[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].visible = true
 										character[i].list[j].setTexture("peawns2", orderCharacterPlayer2Images[ch1[k].player_match_character_character_id - 1]);
 									}
 								}
@@ -304,6 +217,7 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player1_slot") == 0) {
 								for (let k = 0; k < ch2.length; k++) {
 									if (ch2[k].player_match_character_tile_id == j + 1) {
+										character[i].list[j].visible = true
 										character[i].list[j].setTexture("peawns", ch2[k].player_match_character_character_id - 1);
 									}
 								}
@@ -312,35 +226,12 @@ class MatchMechanism extends ScriptNode {
 					}
 				}
 
-				var characterHP = this.scene.children.list
-
 				for (let i = 0; i < ch2.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 1) {
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 1 + "_slot" + ch2[i].player_match_character_tile_id) {
-									characterHP[j].list[k].text = ch2[i].player_match_character_character_current_HP + " / " + ch2[i].player_match_character_character_current_HP
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
 				}
 
 				for (let i = 0; i < ch1.length; i++) {
-
-					for (let j = 0; j < characterHP.length; j++) {
-
-						if (characterHP[j].name == "HealthBarsPlayer" + 2) {
-
-							for (let k = 0; k < characterHP[j].list.length; k++) {
-								if (characterHP[j].list[k].name == "hp_p" + 2 + "_slot" + ch1[i].player_match_character_tile_id) {
-									characterHP[j].list[k].text = ch1[i].player_match_character_character_current_HP + " / " + ch1[i].player_match_character_character_current_HP
-								}
-							}
-						}
-					}
+					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 				}
 			}
 		}

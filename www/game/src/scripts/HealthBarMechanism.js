@@ -36,13 +36,18 @@ class HealthBarMechanism extends ScriptNode {
 					if (healthBar[i].list[j].name == "healthbar_p" + player + "_slot" + slot_id) {
 						for (let k = 0; k < 11; k++) {
 							if (currentHP >= maxHP * (k * 0.1)) {
+								healthBar[i].list[j].visible = true
 								healthBar[i].list[j].setTexture("spritesheet", 10 - k);
+								if(currentHP > 0 && k == 0){
+									healthBar[i].list[j].setTexture("spritesheet", 9);
+								}
 							}
 						}
 					}
 					if (healthBar[i].list[j].name == "hp_p" + player + "_slot" + slot_id) {
 						for (let k = 0; k < 11; k++) {
 							if (currentHP >= maxHP * (k * 0.1)) {
+								healthBar[i].list[j].visible = true
 								healthBar[i].list[j].text = currentHP + " / " + Math.floor(maxHP);
 							}
 						}

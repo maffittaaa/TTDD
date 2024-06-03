@@ -103,11 +103,14 @@
                             "id": "dbeb66bf-139f-43d9-92d9-1a3fc76a3db1",
                             "unlock": [
                                 "turnText",
-                                "winnerText"
+                                "winnerText",
+                                "health"
                             ],
                             "label": "matchMechanism",
+                            "scope": "PUBLIC",
                             "turnText": "turn",
-                            "winnerText": "winnerText"
+                            "winnerText": "winnerText",
+                            "health": "healthBarMechanism"
                         },
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -129,6 +132,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism",
+                            "scope": "PUBLIC",
                             "type": "player",
                             "slotID": 1
                         }
@@ -617,14 +621,7 @@
                     "x": 283,
                     "y": 514,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "72b5ec51-2795-41b6-9a29-77ab77e3489e",
-                            "label": "healthBarMechanism_3"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -639,14 +636,7 @@
                     "x": 383,
                     "y": 593,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "c1dc091d-e27d-490a-ae38-304de7283c27",
-                            "label": "healthBarMechanism_4"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -661,14 +651,7 @@
                     "x": 161,
                     "y": 432,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "8a111127-9fb2-4efc-8703-17b338c516ea",
-                            "label": "healthBarMechanism_1"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -683,14 +666,7 @@
                     "x": 164,
                     "y": 593,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "845d22bc-fe50-4efb-ad12-c171493b4f52",
-                            "label": "healthBarMechanism_2"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Text",
@@ -703,7 +679,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -716,7 +693,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -729,7 +707,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -742,7 +721,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -755,7 +735,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 }
             ]
         },
@@ -781,14 +762,7 @@
                     "x": 909,
                     "y": 432,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "b4081818-553a-41d2-af08-97a95d41178c",
-                            "label": "healthBarMechanism_5"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -803,14 +777,7 @@
                     "x": 1006,
                     "y": 514,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "96416e18-f2bf-4833-9d4c-6fd2ce9fc5cc",
-                            "label": "healthBarMechanism_9"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -825,14 +792,7 @@
                     "x": 908,
                     "y": 593,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "8437ca94-775c-4a39-a172-ab758cbf49c4",
-                            "label": "healthBarMechanism_8"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -847,14 +807,7 @@
                     "x": 1131,
                     "y": 431,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "eb5780a4-2263-44a4-bc99-88885e848f19",
-                            "label": "healthBarMechanism_6"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Image",
@@ -869,14 +822,7 @@
                     "x": 1129,
                     "y": 593,
                     "scaleX": 1.5,
-                    "scaleY": 1.5,
-                    "list": [
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "e41e1e37-679c-49bf-9aad-dc74b4c79a6a",
-                            "label": "healthBarMechanism_7"
-                        }
-                    ]
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Text",
@@ -889,7 +835,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -902,7 +849,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -915,7 +863,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -928,7 +877,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 },
                 {
                     "type": "Text",
@@ -941,7 +891,8 @@
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "14px"
+                    "fontSize": "14px",
+                    "color": "#000000ff"
                 }
             ]
         },
@@ -1062,7 +1013,7 @@
                         "type"
                     ],
                     "label": "cheatsMechanism_1",
-                    "type": "resetAttackStatus"
+                    "type": "hpTo1"
                 }
             ]
         },
@@ -1098,7 +1049,7 @@
                         "type"
                     ],
                     "label": "cheatsMechanism_2",
-                    "type": "hpTo1"
+                    "type": "resetAttackStatus"
                 }
             ]
         },

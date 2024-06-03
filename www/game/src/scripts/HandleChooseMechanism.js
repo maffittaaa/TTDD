@@ -169,11 +169,11 @@ class HandleChooseMechanism extends ScriptNode {
 
 		for (let i = 0; i < xpbar.length; i++) {
 			if (xpbar[i].name == "XpBar") {
-				xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp)
+				xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp);
 				for (let j = 0; j < 10; j++) {
 					if (playerXp > finalXp * (j * 0.1)) {
-						xpbar[i].list[0].setTexture("spritesheet", 10 - j)
-						xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp)
+						xpbar[i].list[0].setTexture("spritesheet", 10 - j);
+						xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp);
 					}
 				}
 			}
@@ -283,39 +283,27 @@ class HandleChooseMechanism extends ScriptNode {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if (glowChange[i].list[j].name != "MessageServer") {
 								if (charChosen <= 4) {
-									glowChange[i].list[1].preFX.list[0].active = glowOnOff;
-									glowChange[i].list[2].preFX.list[0].active = glowOnOff;
-									glowChange[i].list[3].preFX.list[0].active = glowOnOff;
-									if (glowChange[i].list[j].name != "MessageServer") {
-										if (charChosen <= 4) {
-											glowChange[i].list[1].preFX.list[0].active = true;
-											glowChange[i].list[2].preFX.list[0].active = true;
-											glowChange[i].list[3].preFX.list[0].active = true;
+									glowChange[i].list[1].preFX.list[0].active = glowOnOff
+									glowChange[i].list[2].preFX.list[0].active = glowOnOff
+									glowChange[i].list[3].preFX.list[0].active = glowOnOff
 
-											glowChange[i].list[0].preFX.list[0].active = false;
-											glowChange[i].list[4].preFX.list[0].active = false;
-										} else if (charChosen > 4) {
-											glowChange[i].list[j].preFX.list[0].active = glowOnOff;
-										} else if (charChosen > 4) {
-											glowChange[i].list[j].preFX.list[0].active = true;
-										}
-									}
+									glowChange[i].list[0].preFX.list[0].active = false
+									glowChange[i].list[4].preFX.list[0].active = false
+								} else if (charChosen > 4) {
+									glowChange[i].list[j].preFX.list[0].active = glowOnOff
 								}
-							} 
+							}
 						}
 					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if (glowChange[i].list[j].name == "sand") {
-								glowChange[i].list[j].preFX.list[0].active = glowOnOff;
-								if (glowChange[i].list[j].name == "sand") {
-									glowChange[i].list[j].preFX.list[0].active = true;
-									glowChange[i].list[j].name = "character_id_" + charChosen
-								} else if (glowChange[i].list[j].name != "Username") {
-									glowChange[i].list[j].preFX.list[0].active = false
-								}
+								glowChange[i].list[j].preFX.list[0].active = glowOnOff
+								glowChange[i].list[j].name = "character_id_" + charChosen
+							} else if (glowChange[i].list[j].name != "Username") {
+								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
-					} 
+					}
 				}
 			} else {
 				this.showMessage("You can't pick the same character twice");
