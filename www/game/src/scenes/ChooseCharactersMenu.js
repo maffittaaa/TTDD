@@ -17,16 +17,16 @@ class ChooseCharactersMenu extends Phaser.Scene {
 	editorCreate() {
 
 		// specasdossheets
-		const specasdossheets = this.add.image(640.0064, 360.0036, "Specasdossheets");
-		specasdossheets.scaleX = 0.66666;
-		specasdossheets.scaleY = 0.66666;
+		this.add.image(960, 540, "Specasdossheets");
 
 		// Slots
 		const slots = this.add.container(0, -38);
 		slots.name = "Slots";
+		slots.scaleX = 1.5;
+		slots.scaleY = 1.5;
 
 		// slot_4
-		const slot_4 = this.add.image(967, 307, "base", 0);
+		const slot_4 = this.add.image(967, 317, "base", 0);
 		slot_4.name = "slot_4";
 		slot_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_4.scaleX = 0.5;
@@ -46,7 +46,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_4.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_1
-		const slot_1 = this.add.image(1127, 230, "base", 0);
+		const slot_1 = this.add.image(1127, 240, "base", 0);
 		slot_1.name = "slot_1";
 		slot_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_1.scaleX = 0.5;
@@ -66,7 +66,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_1.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_2
-		const slot_2 = this.add.image(1127, 378, "base", 0);
+		const slot_2 = this.add.image(1127, 388, "base", 0);
 		slot_2.name = "slot_2";
 		slot_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_2.scaleX = 0.5;
@@ -86,7 +86,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_2.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_3
-		const slot_3 = this.add.image(1127, 522, "base", 0);
+		const slot_3 = this.add.image(1127, 532, "base", 0);
 		slot_3.name = "slot_3";
 		slot_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_3.scaleX = 0.5;
@@ -106,7 +106,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_3.preFX.addGlow(16777215, 4, 0, false);
 
 		// slot_5
-		const slot_5 = this.add.image(969, 450, "base", 0);
+		const slot_5 = this.add.image(969, 460, "base", 0);
 		slot_5.name = "slot_5";
 		slot_5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
 		slot_5.scaleX = 0.5;
@@ -130,6 +130,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		messageServer.name = "MessageServer";
 		messageServer.setOrigin(0.5, 0.5);
 		messageServer.text = "\n";
+		messageServer.setStyle({ "fontFamily": "Minecraft" });
 		slots.add(messageServer);
 
 		// handleChooseMechanism_16
@@ -137,11 +138,14 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// Match
 		const match = this.add.container(0, 0);
+		match.scaleX = 1.5;
+		match.scaleY = 1.5;
 
 		// Message
 		const message = this.add.text(640, 633, "", {});
 		message.name = "Message";
 		message.setOrigin(0.5, 0.5);
+		message.setStyle({ "fontFamily": "Minecraft" });
 		match.add(message);
 
 		// handleChooseMechanism_15
@@ -151,7 +155,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlight_1 = this.add.rectangle(640, 632, 128, 128);
 		highlight_1.name = "highlight_1";
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_1.scaleX = 0.9889080771893287;
 		highlight_1.scaleY = 0.1807207308530191;
 		highlight_1.fillColor = 4194559;
 		highlight_1.isStroked = true;
@@ -169,6 +172,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		goToMatch.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		goToMatch.setOrigin(0.5, 0.5);
 		goToMatch.text = "Find a Match";
+		goToMatch.setStyle({ "fontFamily": "Minecraft" });
 		match.add(goToMatch);
 
 		// onPointerDownScript_12
@@ -182,12 +186,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// Button Profile
 		const button_Profile = this.add.container(0, 0);
+		button_Profile.scaleX = 1.5;
+		button_Profile.scaleY = 1.5;
 
 		// Profile
-		const profile = this.add.text(399, 48, "", {});
+		const profile = this.add.text(622, 48, "", {});
 		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
+		profile.setStyle({ "fontFamily": "Minecraft" });
 		button_Profile.add(profile);
 
 		// onPointerDownScript_1
@@ -201,6 +208,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// BackgroundAndText
 		const backgroundAndText = this.add.container(0, 0);
+		backgroundAndText.scaleX = 1.5;
+		backgroundAndText.scaleY = 1.5;
 
 		// cartas2_Imprimir
 		const cartas2_Imprimir = this.add.image(777, 473, "cartas2_Imprimir", 1);
@@ -267,6 +276,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		chooseCharacters_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters_1.setOrigin(0.5, 0.5);
 		chooseCharacters_1.text = "Close-Range";
+		chooseCharacters_1.setStyle({ "fontFamily": "Minecraft" });
 		backgroundAndText.add(chooseCharacters_1);
 
 		// onPointerDownScript_18
@@ -280,6 +290,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		chooseCharacters_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters_2.setOrigin(0.5, 0.5);
 		chooseCharacters_2.text = "Long-Range";
+		chooseCharacters_2.setStyle({ "fontFamily": "Minecraft" });
 		backgroundAndText.add(chooseCharacters_2);
 
 		// onPointerDownScript_19
@@ -289,10 +300,12 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript_19);
 
 		// Button Choose Characters
-		const button_Choose_Characters = this.add.container(75.16212463378906, -70.72154235839844);
+		const button_Choose_Characters = this.add.container(0, 0);
+		button_Choose_Characters.scaleX = 1.5;
+		button_Choose_Characters.scaleY = 1.5;
 
 		// highlight
-		const highlight = this.add.rectangle(103.83787536621094, 118.72154235839844, 128, 128);
+		const highlight = this.add.rectangle(180, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
 		highlight.scaleX = 1.43;
 		highlight.scaleY = 0.1807207308530191;
@@ -304,10 +317,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		button_Choose_Characters.add(highlight);
 
 		// ChooseCharacters
-		const chooseCharacters = this.add.text(104.83787536621094, 118.72154235839844, "", {});
+		const chooseCharacters = this.add.text(180, 48, "", {});
 		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
+		chooseCharacters.setStyle({ "fontFamily": "Minecraft" });
 		button_Choose_Characters.add(chooseCharacters);
 
 		// onPointerDownScript
@@ -320,22 +334,23 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const goToScene_1 = new GoToScene(chooseCharacters);
 
 		// Characters
-		const characters = this.add.container(-1, -38);
+		const characters = this.add.container(0, 0);
 		characters.name = "Characters";
+		characters.scaleX = 1.5;
+		characters.scaleY = 1.5;
 
 		// Username
-		const username = this.add.text(1152, 77.5, "", {});
+		const username = this.add.text(1151, 37, "", {});
 		username.name = "Username";
-		username.scaleX = 1.05;
 		username.setOrigin(0.5, 0);
-		username.setStyle({ "fontSize": "30px" });
+		username.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "30px" });
 		characters.add(username);
 
 		// handleChooseMechanism_17
 		const handleChooseMechanism_17 = new HandleChooseMechanism(username);
 
 		// character_id_2
-		const character_id_2 = this.add.image(620, 259, "cartas2_Imprimir", 0);
+		const character_id_2 = this.add.image(619, 221, "cartas2_Imprimir", 0);
 		character_id_2.name = "character_id_2";
 		character_id_2.scaleX = 0.5;
 		character_id_2.scaleY = 0.5;
@@ -355,7 +370,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_2.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_0
-		const character_id_0 = this.add.image(143, 259, "cartas1_Imprimir", 8);
+		const character_id_0 = this.add.image(142, 221, "cartas1_Imprimir", 8);
 		character_id_0.name = "character_id_0";
 		character_id_0.scaleX = 0.5;
 		character_id_0.scaleY = 0.5;
@@ -375,7 +390,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_0.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_5
-		const character_id_5 = this.add.image(143, 510, "cartas1_Imprimir", 7);
+		const character_id_5 = this.add.image(142, 472, "cartas1_Imprimir", 7);
 		character_id_5.name = "character_id_5";
 		character_id_5.scaleX = 0.5;
 		character_id_5.scaleY = 0.5;
@@ -395,7 +410,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_5.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_1
-		const character_id_1 = this.add.image(302, 259, "cartas1_Imprimir", 6);
+		const character_id_1 = this.add.image(301, 221, "cartas1_Imprimir", 6);
 		character_id_1.name = "character_id_1";
 		character_id_1.scaleX = 0.5;
 		character_id_1.scaleY = 0.5;
@@ -415,7 +430,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_1.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_4
-		const character_id_4 = this.add.image(460, 259, "cartas1_Imprimir", 5);
+		const character_id_4 = this.add.image(459, 221, "cartas1_Imprimir", 5);
 		character_id_4.name = "character_id_4";
 		character_id_4.scaleX = 0.5;
 		character_id_4.scaleY = 0.5;
@@ -435,7 +450,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_4.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_9
-		const character_id_9 = this.add.image(620, 510, "cartas1_Imprimir", 4);
+		const character_id_9 = this.add.image(619, 472, "cartas1_Imprimir", 4);
 		character_id_9.name = "character_id_9";
 		character_id_9.scaleX = 0.5;
 		character_id_9.scaleY = 0.5;
@@ -455,7 +470,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_9.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_7
-		const character_id_7 = this.add.image(302, 510, "cartas1_Imprimir", 3);
+		const character_id_7 = this.add.image(301, 472, "cartas1_Imprimir", 3);
 		character_id_7.name = "character_id_7";
 		character_id_7.scaleX = 0.5;
 		character_id_7.scaleY = 0.5;
@@ -475,7 +490,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_7.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_8
-		const character_id_8 = this.add.image(460, 510, "cartas1_Imprimir", 2);
+		const character_id_8 = this.add.image(459, 472, "cartas1_Imprimir", 2);
 		character_id_8.name = "character_id_8";
 		character_id_8.scaleX = 0.5;
 		character_id_8.scaleY = 0.5;
@@ -495,7 +510,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_8.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_6
-		const character_id_6 = this.add.image(778, 510, "cartas1_Imprimir", 1);
+		const character_id_6 = this.add.image(777, 472, "cartas1_Imprimir", 1);
 		character_id_6.name = "character_id_6";
 		character_id_6.scaleX = 0.5;
 		character_id_6.scaleY = 0.5;
@@ -515,7 +530,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_6.preFX.addGlow(16777215, 4, 0, false);
 
 		// character_id_3
-		const character_id_3 = this.add.image(777, 259, "cartas1_Imprimir", 0);
+		const character_id_3 = this.add.image(776, 221, "cartas1_Imprimir", 0);
 		character_id_3.name = "character_id_3";
 		character_id_3.scaleX = 0.5;
 		character_id_3.scaleY = 0.5;
@@ -536,12 +551,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// Characters and Cards
 		const characters_and_Cards = this.add.container(0, 0);
+		characters_and_Cards.scaleX = 1.5;
+		characters_and_Cards.scaleY = 1.5;
 
 		// Characters And Cards
-		const characters_And_Cards = this.add.text(622, 48, "", {});
+		const characters_And_Cards = this.add.text(422, 48, "", {});
 		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
+		characters_And_Cards.setStyle({ "fontFamily": "Minecraft" });
 		characters_and_Cards.add(characters_And_Cards);
 
 		// onPointerDownScript_20
@@ -555,12 +573,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// Button Go Back To Home Page
 		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+		button_Go_Back_To_Home_Page.scaleX = 1.5;
+		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// Profile_1
-		const profile_1 = this.add.text(896, 48, "", {});
+		const profile_1 = this.add.text(808, 48, "", {});
 		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
 		profile_1.setOrigin(0.5, 0.5);
 		profile_1.text = "Back To Home Page";
+		profile_1.setStyle({ "fontFamily": "Minecraft" });
 		button_Go_Back_To_Home_Page.add(profile_1);
 
 		// onPointerDownScript_25
@@ -572,9 +593,30 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_3
 		const goToScene_3 = new GoToScene(profile_1);
 
+		// XpBar
+		const xpBar = this.add.container(0, 0);
+		xpBar.name = "XpBar";
+		xpBar.scaleX = 1.5;
+		xpBar.scaleY = 1.5;
+
+		// spritesheet10
+		const spritesheet10 = this.add.image(1151, 123, "spritesheet", 10);
+		spritesheet10.scaleX = 3;
+		spritesheet10.scaleY = 3;
+		xpBar.add(spritesheet10);
+
+		// XpTotal
+		const xpTotal = this.add.text(1151, 123, "", {});
+		xpTotal.setOrigin(0.5, 0.5);
+		xpTotal.text = "XpTotal";
+		xpTotal.setStyle({ "backgroundColor": "", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "20px", "stroke": "#000000ff", "strokeThickness":1});
+		xpBar.add(xpTotal);
+
 		// LevelUpScreen
 		const levelUpScreen = this.add.container(0, 0);
 		levelUpScreen.name = "LevelUpScreen";
+		levelUpScreen.scaleX = 1.5;
+		levelUpScreen.scaleY = 1.5;
 		levelUpScreen.visible = false;
 
 		// shadow
@@ -636,7 +678,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const levelUpText = this.add.text(640, 91.5, "", {});
 		levelUpText.setOrigin(0.5, 0.5);
 		levelUpText.text = "You have Leveled Up!! Now you can choose one of this three characters!!";
-		levelUpText.setStyle({ "fontSize": "25px" });
+		levelUpText.setStyle({ "fontFamily": "Minecraft", "fontSize": "25px" });
 		new_characters.add(levelUpText);
 
 		// handleChooseMechanism_13 (prefab fields)

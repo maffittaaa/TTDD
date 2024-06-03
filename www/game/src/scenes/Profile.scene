@@ -5,8 +5,8 @@
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "Profile",
-        "borderWidth": 1280,
-        "borderHeight": 720
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -16,10 +16,8 @@
             "texture": {
                 "key": "Specasdossheets"
             },
-            "x": 640,
-            "y": 360,
-            "scaleX": 0.66666,
-            "scaleY": 0.66666
+            "x": 960,
+            "y": 540
         },
         {
             "type": "Container",
@@ -27,6 +25,8 @@
             "label": "Profile Information",
             "x": 43.75000000000003,
             "y": 62.5,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -39,6 +39,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "XP:",
+                    "fontFamily": "minecraft",
                     "fontSize": "25px"
                 },
                 {
@@ -52,6 +53,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Matches:",
+                    "fontFamily": "minecraft",
                     "fontSize": "25px"
                 },
                 {
@@ -65,6 +67,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Victories:",
+                    "fontFamily": "minecraft",
                     "fontSize": "25px"
                 },
                 {
@@ -78,6 +81,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Username:",
+                    "fontFamily": "minecraft",
                     "fontSize": "25px"
                 },
                 {
@@ -91,6 +95,7 @@
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Email:",
+                    "fontFamily": "minecraft",
                     "fontSize": "25px"
                 }
             ]
@@ -99,6 +104,8 @@
             "type": "Container",
             "id": "371f6a9a-0853-4598-806d-fc491f083775",
             "label": "Profile Button",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
@@ -107,8 +114,9 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
-                    "x": 399,
+                    "x": 622,
                     "y": 48,
+                    "scaleX": 0.75,
                     "scaleY": 0.1807207308530191,
                     "fillColor": "#4000ff",
                     "strokeColor": "#4000ff",
@@ -127,11 +135,12 @@
                     "hitArea.y": -17,
                     "hitArea.width": 100.09315749661158,
                     "hitArea.height": 53.83254699275936,
-                    "x": 399,
+                    "x": 622,
                     "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Profile",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -162,8 +171,8 @@
             "type": "Container",
             "id": "56998d23-452d-4f27-8d91-f866931d2945",
             "label": "Choose Menu Button",
-            "x": -233.9641265767494,
-            "y": 317.934904354586,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -172,11 +181,12 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 154,
                     "hitArea.height": 15,
-                    "x": 413.96412658691406,
-                    "y": -269.9349060058594,
+                    "x": 180,
+                    "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Choose Characters",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -207,8 +217,8 @@
             "type": "Container",
             "id": "ca055682-24e8-4674-8075-68caf15abc53",
             "label": "Change Profile Button",
-            "x": 640,
-            "y": 632,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
@@ -217,9 +227,10 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
-                    "x": -2,
-                    "scaleX": 1.3,
-                    "scaleY": 0.1807207308530191,
+                    "x": 640,
+                    "y": 632,
+                    "scaleX": 1.0590319501176437,
+                    "scaleY": 0.2,
                     "fillColor": "#4000ff",
                     "strokeColor": "#4000ff",
                     "strokeAlpha": 4,
@@ -237,9 +248,12 @@
                     "hitArea.y": -17,
                     "hitArea.width": 100.09315749661158,
                     "hitArea.height": 53.83254699275936,
+                    "x": 640,
+                    "y": 632,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Change profile",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -270,6 +284,8 @@
             "type": "Container",
             "id": "80770e7b-f58e-46ed-891e-4c8e07a0ae4e",
             "label": "Characters and Cards",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -278,11 +294,12 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 154,
                     "hitArea.height": 15,
-                    "x": 622,
+                    "x": 422,
                     "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Characters and Cards",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -313,6 +330,8 @@
             "type": "Container",
             "id": "baa5ad27-a759-41eb-8bc3-c79c724a7bb7",
             "label": "Button Go Back To Home Page",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "list": [
                 {
                     "type": "Text",
@@ -323,11 +342,12 @@
                     "hitArea.y": -17,
                     "hitArea.width": 100.09315749661158,
                     "hitArea.height": 53.83254699275936,
-                    "x": 896,
+                    "x": 808,
                     "y": 48,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Back To Home Page",
+                    "fontFamily": "minecraft",
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
