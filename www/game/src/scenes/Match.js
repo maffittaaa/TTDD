@@ -52,10 +52,6 @@ class Match extends Phaser.Scene {
 		characterSlotsPlayer1.scaleX = 1.5;
 		characterSlotsPlayer1.scaleY = 1.5;
 
-		// damageAnimation
-		const damageAnimation = new DamageAnimationMechanism(this, 825, 523);
-		characterSlotsPlayer1.add(damageAnimation);
-
 		// player1_slot1
 		const player1_slot1 = this.add.image(381, 438.99999955296516, "base", 0);
 		player1_slot1.name = "player1_slot1";
@@ -151,6 +147,7 @@ class Match extends Phaser.Scene {
 
 		// player1_deck1
 		const player1_deck1 = this.add.image(514, 381, "cartas4_Imprimir", 3);
+		player1_deck1.name = "player1_deck1";
 		player1_deck1.scaleX = 0.28;
 		player1_deck1.scaleY = 0.28;
 		player1_deck1.angle = 90;
@@ -161,6 +158,10 @@ class Match extends Phaser.Scene {
 
 		// pushActionScript_5
 		new PushActionScript(onPointerDownScript_5);
+
+		// damageAnimationMechanism
+		const damageAnimationMechanism = new DamageAnimationMechanism(this, 347, 415);
+		characterSlotsPlayer1.add(damageAnimationMechanism);
 
 		// CharacterSlotsPlayer2
 		const characterSlotsPlayer2 = this.add.container(0, 0);
@@ -519,25 +520,27 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism_2 = new CheatsMechanism(setHPTo1Button);
 
 		// setHPTo1Text
-		const setHPTo1Text = this.add.text(45, 119, "", {});
+		const setHPTo1Text = this.add.text(156, 132, "", {});
 		setHPTo1Text.scaleX = 1.5;
 		setHPTo1Text.scaleY = 1.5;
+		setHPTo1Text.setOrigin(0.5, 0.5);
 		setHPTo1Text.text = "Everyone to 1HP";
-		setHPTo1Text.setStyle({ "color": "#000000ff" });
+		setHPTo1Text.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft" });
 
 		// resetAttackStatusText
-		const resetAttackStatusText = this.add.text(15, 71, "", {});
+		const resetAttackStatusText = this.add.text(151, 82, "", {});
 		resetAttackStatusText.scaleX = 1.5;
 		resetAttackStatusText.scaleY = 1.5;
+		resetAttackStatusText.setOrigin(0.5, 0.5);
 		resetAttackStatusText.text = "Reset Attack Status";
-		resetAttackStatusText.setStyle({ "color": "#000000ff" });
+		resetAttackStatusText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft" });
 
 		// resetHPText
 		const resetHPText = this.add.text(98, 16, "", {});
 		resetHPText.scaleX = 1.5;
 		resetHPText.scaleY = 1.5;
 		resetHPText.text = "Reset HP";
-		resetHPText.setStyle({ "color": "#000000ff" });
+		resetHPText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft" });
 
 		// turn
 		const turn = this.add.text(458, 497, "", {});
@@ -564,6 +567,7 @@ class Match extends Phaser.Scene {
 		// attackMechanism (prefab fields)
 		attackMechanism.type = "player";
 		attackMechanism.slotID = 1;
+		attackMechanism.damageText = damageAnimationMechanism;
 
 		// attackMechanism_1 (prefab fields)
 		attackMechanism_1.type = "player";
@@ -621,6 +625,7 @@ class Match extends Phaser.Scene {
 		this.player1_slot3 = player1_slot3;
 		this.player1_slot4 = player1_slot4;
 		this.player1_slot5 = player1_slot5;
+		this.damageAnimationMechanism = damageAnimationMechanism;
 		this.characterSlotsPlayer1 = characterSlotsPlayer1;
 		this.player2_slot1 = player2_slot1;
 		this.player2_slot2 = player2_slot2;
@@ -667,6 +672,8 @@ class Match extends Phaser.Scene {
 	player1_slot4;
 	/** @type {Phaser.GameObjects.Image} */
 	player1_slot5;
+	/** @type {DamageAnimationMechanism} */
+	damageAnimationMechanism;
 	/** @type {Phaser.GameObjects.Container} */
 	characterSlotsPlayer1;
 	/** @type {Phaser.GameObjects.Image} */

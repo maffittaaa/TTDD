@@ -1,4 +1,6 @@
 
+
+
 var attackerSlot = 0;
 var targetSlot = 0;
 var stillAttacking = false;
@@ -14,7 +16,7 @@ class AttackMechanism extends ScriptNode {
 		super(parent);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -22,6 +24,8 @@ class AttackMechanism extends ScriptNode {
 	type = "";
 	/** @type {number} */
 	slotID = 0;
+	/** @type {Phaser.GameObjects.GameObject} */
+	damageText;
 
 	/* START-USER-CODE */
 
@@ -45,9 +49,7 @@ class AttackMechanism extends ScriptNode {
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
 		if (attackerSlot != 0) {
 			targetSlot = slot;
-			this.doAttack1();
-			console.log(this.parent);
-			// new this.parent.
+			this.doAttack();
 			attackerSlot = 0;
 			targetSlot = 0;
 		} else if (stillAttacking = true) {
@@ -59,7 +61,7 @@ class AttackMechanism extends ScriptNode {
 		}
 	};
 
-	doAttack1() { // passing the attackerslot and the targetslot to the server
+	doAttack() { // passing the attackerslot and the targetslot to the server
 		var scene = this;
 		$.ajax({
 			type: 'POST',
@@ -74,6 +76,9 @@ class AttackMechanism extends ScriptNode {
 					scene.scene.children.list[4].text = data.message;
 					scene.scene.children.list[4].setVisible(true);
 					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
+				} else {
+					var damageAnimation = new DamageAnimationMechanism(scene.scene, 347, 415);
+					console.log(damageAnimation);
 				}
 			},
 			error: function (err) {
@@ -81,6 +86,7 @@ class AttackMechanism extends ScriptNode {
 			}
 		})
 	};
+
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
 		var scene = this;

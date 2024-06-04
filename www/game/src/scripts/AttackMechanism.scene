@@ -42,6 +42,17 @@
             "type": {
                 "id": "number"
             }
+        },
+        {
+            "name": "damageText",
+            "label": "DamageText",
+            "tooltip": "",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "Phaser.GameObjects.GameObject"
+            }
         }
     ]
 }

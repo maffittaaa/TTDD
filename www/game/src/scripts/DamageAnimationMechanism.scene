@@ -11,18 +11,12 @@
     "displayList": [
         {
             "type": "Text",
-            "id": "d8db61b5-78a9-40e0-9b2b-9ab5012e575a",
+            "id": "4324c855-6440-4d8a-b47c-5d04f15a2c9b",
             "label": "text_1",
-            "x": 573,
-            "y": 262,
-            "text": "New text",
-            "list": [
-                {
-                    "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
-                    "id": "9bcdde57-b419-4f9e-94ff-88cbd6cad7d0",
-                    "label": "moveInSceneActionScript"
-                }
-            ]
+            "x": -13,
+            "y": -17,
+            "text": "0\n",
+            "fontSize": "40px"
         }
     ],
     "plainObjects": [],
