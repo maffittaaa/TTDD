@@ -24,7 +24,7 @@ class DescriptionsMechanism extends ScriptNode {
 
 	start(){
 		this.parent.on('pointerdown', event => {
-			console.log(this.id)
+			console.log(this.scene.children.list, this.parent.parentContainer.list)
 
 			if(this.option == "Cards"){
 
@@ -35,7 +35,7 @@ class DescriptionsMechanism extends ScriptNode {
 				}
 
 				this.parent.visible = false
-				this.scene.children.list[4].visible = false
+				this.scene.children.list[1].visible = false
 				this.parent.parentContainer.list[0].visible = true
 
 			}else if(this.option == "Characters"){
@@ -47,7 +47,7 @@ class DescriptionsMechanism extends ScriptNode {
 				}
 
 				this.parent.visible = false
-				this.scene.children.list[5].visible = false
+				this.scene.children.list[2].visible = false
 				this.parent.parentContainer.list[0].visible = true
 
 			}else if(this.option == "Char"){

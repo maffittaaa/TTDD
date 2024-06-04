@@ -20,7 +20,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		this.add.image(960, 540, "Specasdossheets");
 
 		// Slots
-		const slots = this.add.container(0, -14);
+		const slots = this.add.container(0, 10);
 		slots.name = "Slots";
 		slots.scaleX = 1.5;
 		slots.scaleY = 1.5;
@@ -126,11 +126,12 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_5.preFX.addGlow(16777215, 4, 0, false);
 
 		// MessageServer
-		const messageServer = this.add.text(1050, 629, "", {});
+		const messageServer = this.add.text(1050, 109, "", {});
 		messageServer.name = "MessageServer";
+		messageServer.scaleX = 0.15;
+		messageServer.scaleY = 0.15;
 		messageServer.setOrigin(0.5, 0.5);
-		messageServer.text = "\n";
-		messageServer.setStyle({ "fontFamily": "Minecraft" });
+		messageServer.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px" });
 		slots.add(messageServer);
 
 		// handleChooseMechanism_16
@@ -145,6 +146,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlight_1 = this.add.rectangle(640, 650, 128, 128);
 		highlight_1.name = "highlight_1";
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_1.scaleX = 1.1388420943512119;
 		highlight_1.scaleY = 0.21995512106258827;
 		highlight_1.isFilled = true;
 		highlight_1.fillColor = 0;
@@ -160,26 +162,26 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_1.postFX.addGlow(4194559, 3, 3, false);
 
 		// Message
-		const message = this.add.text(640, 650, "", {});
+		const message = this.add.text(640, 647, "", {});
 		message.name = "Message";
 		message.scaleX = 0.15;
 		message.scaleY = 0.15;
 		message.setOrigin(0.5, 0.5);
-		message.setStyle({ "fontFamily": "Minecraft", "fontSize": "99px" });
+		message.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px" });
 		match.add(message);
 
 		// handleChooseMechanism_15
 		const handleChooseMechanism_15 = new HandleChooseMechanism(message);
 
 		// GoToMatch
-		const goToMatch = this.add.text(640, 650, "", {});
+		const goToMatch = this.add.text(640, 647, "", {});
 		goToMatch.name = "GoToMatch";
-		goToMatch.setInteractive(new Phaser.Geom.Rectangle(-102, -14, 809.6450896406499, 139.26814478268307), Phaser.Geom.Rectangle.Contains);
+		goToMatch.setInteractive(new Phaser.Geom.Rectangle(0, 0, 833.8514778467293, 155.18677416630507), Phaser.Geom.Rectangle.Contains);
 		goToMatch.scaleX = 0.15;
 		goToMatch.scaleY = 0.15;
 		goToMatch.setOrigin(0.5, 0.5);
 		goToMatch.text = "Find a Match";
-		goToMatch.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		goToMatch.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		match.add(goToMatch);
 
 		// onPointerDownScript_12
@@ -195,14 +197,14 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const goToScene_4 = new GoToScene(goToMatch);
 
 		// Button Profile
-		const button_Profile = this.add.container(-95, 12);
+		const button_Profile = this.add.container(99, 12);
 		button_Profile.scaleX = 1.5;
 		button_Profile.scaleY = 1.5;
 
 		// highlight_3
 		const highlight_3 = this.add.rectangle(622, 48, 128, 128);
 		highlight_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_3.scaleX = 0.63;
+		highlight_3.scaleX = 0.9;
 		highlight_3.scaleY = 0.21995512106258827;
 		highlight_3.isFilled = true;
 		highlight_3.fillColor = 0;
@@ -215,13 +217,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_3.postFX.addGlow(4194559, 3, 3, false);
 
 		// Profile
-		const profile = this.add.text(622, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 351.15663686934727, 134.83406914622725), Phaser.Geom.Rectangle.Contains);
+		const profile = this.add.text(622, 45, "", {});
+		profile.setInteractive(new Phaser.Geom.Rectangle(0, 13, 564.2197191237312, 122.48591140528264), Phaser.Geom.Rectangle.Contains);
 		profile.scaleX = 0.18;
 		profile.scaleY = 0.18;
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
-		profile.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		profile.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Profile.add(profile);
 
 		// onPointerDownScript_1
@@ -300,12 +302,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// ChooseCharacters_1
 		const chooseCharacters_1 = this.add.text(460, 97, "", {});
-		chooseCharacters_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters_1.scaleX = 0.15;
 		chooseCharacters_1.scaleY = 0.15;
 		chooseCharacters_1.setOrigin(0.5, 0.5);
 		chooseCharacters_1.text = "Close-Range";
-		chooseCharacters_1.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px" });
+		chooseCharacters_1.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px" });
 		backgroundAndText.add(chooseCharacters_1);
 
 		// onPointerDownScript_18
@@ -321,7 +322,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		chooseCharacters_2.scaleY = 0.15;
 		chooseCharacters_2.setOrigin(0.5, 0.5);
 		chooseCharacters_2.text = "Long-Range";
-		chooseCharacters_2.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px" });
+		chooseCharacters_2.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px" });
 		backgroundAndText.add(chooseCharacters_2);
 
 		// onPointerDownScript_19
@@ -331,14 +332,14 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript_19);
 
 		// Button Choose Characters
-		const button_Choose_Characters = this.add.container(-51, 12);
+		const button_Choose_Characters = this.add.container(4, 12);
 		button_Choose_Characters.scaleX = 1.5;
 		button_Choose_Characters.scaleY = 1.5;
 
 		// highlight
 		const highlight = this.add.rectangle(180, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.44;
+		highlight.scaleX = 1.9;
 		highlight.scaleY = 0.21995512106258827;
 		highlight.isFilled = true;
 		highlight.fillColor = 0;
@@ -351,13 +352,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight.postFX.addGlow(4194559, 3, 3, false);
 
 		// ChooseCharacters
-		const chooseCharacters = this.add.text(180, 48, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 949.9773032706995, 100.90937292581162), Phaser.Geom.Rectangle.Contains);
+		const chooseCharacters = this.add.text(180, 45, "", {});
+		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1268.2666054535543, 142.22720719779235), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters.scaleX = 0.18;
 		chooseCharacters.scaleY = 0.18;
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		chooseCharacters.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Choose_Characters.add(chooseCharacters);
 
 		// goToScene_1
@@ -369,14 +370,24 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		characters.scaleX = 1.5;
 		characters.scaleY = 1.5;
 
+		// Level
+		const level = this.add.text(1244, 614, "", {});
+		level.name = "Level";
+		level.scaleX = 0.2;
+		level.scaleY = 0.2;
+		level.setOrigin(1, 0.5);
+		level.text = "Level: 0";
+		level.setStyle({ "align": "right", "fontFamily": "pixelfont", "fontSize": "180px" });
+		characters.add(level);
+
 		// Username
-		const username = this.add.text(1247, 80, "", {});
+		const username = this.add.text(1244, 52, "", {});
 		username.name = "Username";
 		username.scaleX = 0.2;
 		username.scaleY = 0.2;
 		username.setOrigin(1, 0.5);
-		username.text = "Level: 0\nUsername";
-		username.setStyle({ "align": "right", "fontFamily": "Minecraft", "fontSize": "200px" });
+		username.text = "Username";
+		username.setStyle({ "align": "right", "fontFamily": "pixelfont", "fontSize": "180px" });
 		characters.add(username);
 
 		// handleChooseMechanism_17
@@ -583,14 +594,14 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		character_id_3.preFX.addGlow(16777215, 4, 0, false);
 
 		// Characters and Cards
-		const characters_and_Cards = this.add.container(-66, 12);
+		const characters_and_Cards = this.add.container(69, 12);
 		characters_and_Cards.scaleX = 1.5;
 		characters_and_Cards.scaleY = 1.5;
 
 		// highlight_2
 		const highlight_2 = this.add.rectangle(422, 48, 128, 128);
 		highlight_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_2.scaleX = 1.68;
+		highlight_2.scaleX = 2.18;
 		highlight_2.scaleY = 0.21995512106258827;
 		highlight_2.isFilled = true;
 		highlight_2.fillColor = 0;
@@ -603,27 +614,27 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_2.postFX.addGlow(4194559, 3, 3, false);
 
 		// Characters And Cards
-		const characters_And_Cards = this.add.text(422, 48, "", {});
-		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1101.472090680232, 112.19250373942205), Phaser.Geom.Rectangle.Contains);
+		const characters_And_Cards = this.add.text(422, 45, "", {});
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 9, 1469.3133443414108, 132.930961599787), Phaser.Geom.Rectangle.Contains);
 		characters_And_Cards.scaleX = 0.18;
 		characters_And_Cards.scaleY = 0.18;
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
-		characters_And_Cards.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		characters_And_Cards.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		characters_and_Cards.add(characters_And_Cards);
 
 		// goToScene_2
 		const goToScene_2 = new GoToScene(characters_And_Cards);
 
 		// Button Go Back To Home Page
-		const button_Go_Back_To_Home_Page = this.add.container(-121, 12);
+		const button_Go_Back_To_Home_Page = this.add.container(120, 12);
 		button_Go_Back_To_Home_Page.scaleX = 1.5;
 		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// highlight_4
 		const highlight_4 = this.add.rectangle(808, 48, 128, 128);
 		highlight_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_4.scaleX = 1.53;
+		highlight_4.scaleX = 1.84;
 		highlight_4.scaleY = 0.21995512106258827;
 		highlight_4.isFilled = true;
 		highlight_4.fillColor = 0;
@@ -636,13 +647,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_4.postFX.addGlow(4194559, 3, 3, false);
 
 		// ButtonGoToHomePage
-		const buttonGoToHomePage = this.add.text(808, 48, "", {});
-		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(-3, 3, 990.1760256343523, 103.70293702497405), Phaser.Geom.Rectangle.Contains);
+		const buttonGoToHomePage = this.add.text(808, 45, "", {});
+		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(0, 9, 1202.4097953442165, 132.9309615997871), Phaser.Geom.Rectangle.Contains);
 		buttonGoToHomePage.scaleX = 0.18;
 		buttonGoToHomePage.scaleY = 0.18;
 		buttonGoToHomePage.setOrigin(0.5, 0.5);
 		buttonGoToHomePage.text = "Back To Home Page";
-		buttonGoToHomePage.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		buttonGoToHomePage.setStyle({ "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Go_Back_To_Home_Page.add(buttonGoToHomePage);
 
 		// onPointerDownScript_25
@@ -661,18 +672,18 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		xpBar.scaleY = 1.5;
 
 		// spritesheet10
-		const spritesheet10 = this.add.image(955, 48, "spritesheet", 10);
-		spritesheet10.scaleX = 3.8;
-		spritesheet10.scaleY = 3.8;
+		const spritesheet10 = this.add.image(1120, 655, "spritesheet", 10);
+		spritesheet10.scaleX = 4.9;
+		spritesheet10.scaleY = 4.9;
 		xpBar.add(spritesheet10);
 
 		// XpTotal
-		const xpTotal = this.add.text(955, 48, "", {});
+		const xpTotal = this.add.text(1120, 652, "", {});
 		xpTotal.scaleX = 0.18;
 		xpTotal.scaleY = 0.18;
 		xpTotal.setOrigin(0.5, 0.5);
-		xpTotal.text = "XpTotal";
-		xpTotal.setStyle({ "backgroundColor": "", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff", "strokeThickness":1});
+		xpTotal.text = "TotalXP";
+		xpTotal.setStyle({ "backgroundColor": "", "color": "#000000ff", "fontFamily": "pixelfont", "fontSize": "150px", "stroke": "#000000ff", "strokeThickness":1});
 		xpBar.add(xpTotal);
 
 		// LevelUpScreen

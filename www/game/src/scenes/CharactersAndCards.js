@@ -458,9 +458,11 @@ class CharactersAndCards extends Phaser.Scene {
 		// Card_description
 		const card_description = this.add.text(1038, 554, "", {});
 		card_description.name = "Card_description";
+		card_description.scaleX = 0.2;
+		card_description.scaleY = 0.2;
 		card_description.setOrigin(0.5, -0.022889636867095456);
 		card_description.text = "Card description";
-		card_description.setStyle({ "align": "center", "fontFamily": "minecraft" });
+		card_description.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "100px" });
 		cards_1.add(card_description);
 
 		// cartas4_Imprimir3

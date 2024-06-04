@@ -62,12 +62,15 @@ class Preload extends Phaser.Scene {
 	// Write your code here
 
 	preload() {
-		this.editorPreload();
-
-		this.editorCreate();
-
+		
+		
 		this.loadFont("minecraft", "../css/Minecraft.ttf");
 		this.loadFont("pixeled", "../css/Pixeled.ttf");
+		this.loadFont("pixelfont", "../css/PixelFont.ttf");
+		
+		this.editorPreload();
+		
+		this.editorCreate();
 
 		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("ChooseCharactersMenu"));
 	}

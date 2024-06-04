@@ -1093,11 +1093,14 @@
                             "scope": "CLASS",
                             "x": 1038,
                             "y": 554,
+                            "scaleX": 0.2,
+                            "scaleY": 0.2,
                             "originX": 0.5,
                             "originY": -0.022889636867095456,
                             "text": "Card description",
                             "align": "center",
-                            "fontFamily": "minecraft"
+                            "fontFamily": "Minecraft",
+                            "fontSize": "100px"
                         }
                     ]
                 },

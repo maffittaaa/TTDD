@@ -473,8 +473,8 @@ class Match extends Phaser.Scene {
 
 		// endTurnButton
 		const endTurnButton = this.add.rectangle(960, 1049, 128, 128);
-		endTurnButton.scaleX = 2.9058704523073344;
-		endTurnButton.scaleY = 0.3725989586164394;
+		endTurnButton.scaleX = 2.790039230922742;
+		endTurnButton.scaleY = 0.2591208839469102;
 		endTurnButton.isFilled = true;
 
 		// onPointerDownScript_12
@@ -495,7 +495,7 @@ class Match extends Phaser.Scene {
 		endTurnText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// resetHPButton
-		const resetHPButton = this.add.rectangle(151, 27, 128, 128);
+		const resetHPButton = this.add.rectangle(150, 27, 128, 128);
 		resetHPButton.scaleX = 2.2;
 		resetHPButton.scaleY = 0.3;
 		resetHPButton.isFilled = true;
@@ -510,7 +510,7 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism = new CheatsMechanism(resetHPButton);
 
 		// resetAttackStatusButton
-		const resetAttackStatusButton = this.add.rectangle(151, 131, 128, 128);
+		const resetAttackStatusButton = this.add.rectangle(150, 127, 128, 128);
 		resetAttackStatusButton.scaleX = 2.2;
 		resetAttackStatusButton.scaleY = 0.3;
 		resetAttackStatusButton.isFilled = true;
@@ -525,7 +525,7 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism_1 = new CheatsMechanism(resetAttackStatusButton);
 
 		// setHPTo1Button
-		const setHPTo1Button = this.add.rectangle(151, 82, 128, 128);
+		const setHPTo1Button = this.add.rectangle(151, 77, 128, 128);
 		setHPTo1Button.scaleX = 2.2;
 		setHPTo1Button.scaleY = 0.3;
 		setHPTo1Button.isFilled = true;
@@ -540,7 +540,7 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism_2 = new CheatsMechanism(setHPTo1Button);
 
 		// resetAttackStatusText
-		const resetAttackStatusText = this.add.text(151, 131, "", {});
+		const resetAttackStatusText = this.add.text(150, 127, "", {});
 		resetAttackStatusText.scaleX = 0.28;
 		resetAttackStatusText.scaleY = 0.28;
 		resetAttackStatusText.setOrigin(0.5, 0.5);
@@ -548,7 +548,7 @@ class Match extends Phaser.Scene {
 		resetAttackStatusText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// setHPTo1Text
-		const setHPTo1Text = this.add.text(151, 82, "", {});
+		const setHPTo1Text = this.add.text(150, 77, "", {});
 		setHPTo1Text.scaleX = 0.28;
 		setHPTo1Text.scaleY = 0.28;
 		setHPTo1Text.setOrigin(0.5, 0.5);
@@ -556,7 +556,7 @@ class Match extends Phaser.Scene {
 		setHPTo1Text.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// resetHPText
-		const resetHPText = this.add.text(151, 27, "", {});
+		const resetHPText = this.add.text(150, 27, "", {});
 		resetHPText.scaleX = 0.28;
 		resetHPText.scaleY = 0.28;
 		resetHPText.setOrigin(0.5, 0.5);
@@ -564,22 +564,22 @@ class Match extends Phaser.Scene {
 		resetHPText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// turn
-		const turn = this.add.text(461, 449.75, "", {});
+		const turn = this.add.text(461, 497, "", {});
 		turn.scaleX = 0.23;
 		turn.scaleY = 0.23;
-		turn.setOrigin(0.5, 0);
+		turn.setOrigin(0.5, 0.5);
 		turn.visible = false;
 		turn.text = "Please Wait";
-		turn.setStyle({ "align": "center", "color": "#fd6464ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff", "strokeThickness":10});
+		turn.setStyle({ "align": "center", "color": "#fd6464ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff", "strokeThickness":15});
 
 		// winnerText
-		const winnerText = this.add.text(960, 700, "", {});
-		winnerText.scaleX = 0.12;
-		winnerText.scaleY = 0.12;
+		const winnerText = this.add.text(960, 201, "", {});
+		winnerText.scaleX = 0.5;
+		winnerText.scaleY = 0.5;
 		winnerText.setOrigin(0.5, 0.5);
 		winnerText.visible = false;
-		winnerText.text = "New text";
-		winnerText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "500px" });
+		winnerText.text = "Winner";
+		winnerText.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "500px" });
 
 		// matchMechanism (prefab fields)
 		matchMechanism.turnText = turn;

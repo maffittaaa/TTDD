@@ -99,8 +99,10 @@ class HandleChooseMechanism extends ScriptNode {
 
 			var nameText = scene.parent.parentContainer.list
 			for (let i = 0; i < nameText.length; i++) {
-				if (nameText[i].name.search("Username") == 0) {
-					nameText[i].text = "Level: " + data.level + "\n" + data.name 
+				if (nameText[i].name == "Username") {
+					nameText[i].text = data.name 
+				}else if (nameText[i].name == "Level") {
+					nameText[i].text = "Level: " + data.level
 				}
 			}
 		} else if (scene.type == "LookForMatch") {
@@ -143,7 +145,7 @@ class HandleChooseMechanism extends ScriptNode {
 					}
 				} else if (glowChange[i].name == "Characters") {
 					for (let j = 0; j < glowChange[i].list.length; j++) {
-						if (glowChange[i].list[j].name != "Username") {
+						if (glowChange[i].list[j].name != "Username" && glowChange[i].list[j].name != "Level") {
 							glowChange[i].list[j].preFX.list[0].active = false
 						}
 					}
