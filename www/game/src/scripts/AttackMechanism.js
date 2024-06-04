@@ -46,6 +46,8 @@ class AttackMechanism extends ScriptNode {
 		if (attackerSlot != 0) {
 			targetSlot = slot;
 			this.doAttack1();
+			console.log(this.parent);
+			// new this.parent.
 			attackerSlot = 0;
 			targetSlot = 0;
 		} else if (stillAttacking = true) {

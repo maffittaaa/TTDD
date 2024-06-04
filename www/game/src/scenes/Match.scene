@@ -87,6 +87,17 @@
             "scaleY": 1.5,
             "list": [
                 {
+                    "prefabId": "e364e56a-2464-4cf4-a6ac-adc1aa1fa05b",
+                    "id": "bf6bd2c8-3672-4657-af3d-3116d7daac93",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "damageAnimation",
+                    "x": 825,
+                    "y": 523
+                },
+                {
                     "type": "Image",
                     "id": "aac1966c-b7bb-4372-8bf0-e452eb53d39b",
                     "label": "player1_slot1",
@@ -97,7 +108,7 @@
                         "frame": 0
                     },
                     "x": 381,
-                    "y": 439,
+                    "y": 438.99999955296516,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -137,14 +148,9 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism",
+                            "scope": "PUBLIC",
                             "type": "player",
                             "slotID": 1
-                        },
-                        {
-                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
-                            "id": "c1037b39-cec2-4f3a-aaea-6b2b14069b81",
-                            "label": "healthBarMechanism",
-                            "scope": "PUBLIC"
                         }
                     ]
                 },
@@ -159,7 +165,7 @@
                         "frame": 0
                     },
                     "x": 283,
-                    "y": 522,
+                    "y": 522.9999995529652,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -200,7 +206,7 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 381,
+                    "x": 382,
                     "y": 601.9999995529652,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
@@ -243,7 +249,7 @@
                         "frame": 0
                     },
                     "x": 161,
-                    "y": 439,
+                    "y": 437.99999955296516,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -284,8 +290,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 161,
-                    "y": 600,
+                    "x": 164,
+                    "y": 598.9999995529652,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -407,8 +413,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1006,
-                    "y": 522,
+                    "x": 1007,
+                    "y": 520.9999995529652,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -449,8 +455,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 908,
-                    "y": 600,
+                    "x": 909,
+                    "y": 599.9999995529652,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -533,8 +539,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1132,
-                    "y": 600,
+                    "x": 1130,
+                    "y": 600.9999995529652,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -618,7 +624,15 @@
                     "y": 432,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
-                    "visible": false
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "b5b83be5-f1ee-4514-baf1-2f1666b92f6b",
+                            "id": "3a507983-02dd-48ed-ad63-c36dad50c75e",
+                            "label": "healthBarMechanism",
+                            "scope": "PUBLIC"
+                        }
+                    ]
                 },
                 {
                     "type": "Image",
@@ -631,7 +645,7 @@
                         "frame": 0
                     },
                     "x": 283,
-                    "y": 515,
+                    "y": 514,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
                     "visible": false
@@ -646,7 +660,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 381,
+                    "x": 383,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -678,7 +692,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 161,
+                    "x": 164,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -689,17 +703,14 @@
                     "id": "78c24f00-929b-47c7-92dc-586078c7829c",
                     "label": "hp_p1_slot5",
                     "useGameObjectName": true,
-                    "x": 161,
-                    "y": 593,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "x": 163,
+                    "y": 587,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -707,17 +718,14 @@
                     "id": "385bb095-e1fe-483b-b7de-fd93d05f2ef9",
                     "label": "hp_p1_slot2",
                     "useGameObjectName": true,
-                    "x": 283,
-                    "y": 515,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "x": 284,
+                    "y": 508,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -725,17 +733,14 @@
                     "id": "482a7f9e-a42c-4344-ba54-bae702b31d5e",
                     "label": "hp_p1_slot3",
                     "useGameObjectName": true,
-                    "x": 381,
-                    "y": 593,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "x": 382,
+                    "y": 587,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -743,17 +748,14 @@
                     "id": "b256afcd-d27f-4b42-9220-3a2119611439",
                     "label": "hp_p1_slot1",
                     "useGameObjectName": true,
-                    "x": 381,
-                    "y": 432,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "x": 380,
+                    "y": 426,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
-                    "fontFamily": "minecraft",
-                    "fontSize": "100px",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -761,17 +763,14 @@
                     "id": "52208898-1204-43d1-bcfc-8f5f59278058",
                     "label": "hp_p1_slot4",
                     "useGameObjectName": true,
-                    "x": 161,
-                    "y": 432,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "x": 162,
+                    "y": 426,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 }
             ]
@@ -795,7 +794,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 908,
+                    "x": 909,
                     "y": 432,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -812,7 +811,7 @@
                         "frame": 0
                     },
                     "x": 1006,
-                    "y": 515,
+                    "y": 514,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
                     "visible": false
@@ -843,8 +842,8 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 1132,
-                    "y": 432,
+                    "x": 1131,
+                    "y": 431,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
                     "visible": false
@@ -859,7 +858,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 1132,
+                    "x": 1129,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -871,16 +870,13 @@
                     "label": "hp_p2_slot2",
                     "useGameObjectName": true,
                     "x": 1006,
-                    "y": 515,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "y": 508,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -889,16 +885,13 @@
                     "label": "hp_p2_slot1",
                     "useGameObjectName": true,
                     "x": 908,
-                    "y": 432,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "y": 426,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -907,16 +900,13 @@
                     "label": "hp_p2_slot3",
                     "useGameObjectName": true,
                     "x": 908,
-                    "y": 593,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "y": 587,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -924,17 +914,14 @@
                     "id": "6625ad01-3ee7-47ef-bf0a-5a0bf5d31e09",
                     "label": "hp_p2_slot5",
                     "useGameObjectName": true,
-                    "x": 1132,
-                    "y": 593,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "x": 1129,
+                    "y": 587,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 },
                 {
@@ -943,33 +930,16 @@
                     "label": "hp_p2_slot4",
                     "useGameObjectName": true,
                     "x": 1132,
-                    "y": 432,
-                    "scaleX": 0.1,
-                    "scaleY": 0.1,
+                    "y": 425,
                     "originX": 0.5,
-                    "originY": 0.5,
                     "visible": false,
                     "text": "New text",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px",
+                    "fontSize": "12px",
                     "color": "#000000ff"
                 }
             ]
-        },
-        {
-            "type": "Rectangle",
-            "id": "681180d1-99bb-46f8-bd6a-2d5a881791a6",
-            "label": "endTurnButton",
-            "scope": "CLASS",
-            "x": 953,
-            "y": 1049,
-            "scaleX": 2.790039230922742,
-            "scaleY": 0.2591208839469102,
-            "isFilled": true,
-            "fillColor": "#ffffff",
-            "width": 128,
-            "height": 128
         },
         {
             "type": "Text",
@@ -1016,7 +986,7 @@
             "id": "71320ef9-cbda-4af8-a209-c18cf79bdeee",
             "label": "resetHPButton",
             "scope": "CLASS",
-            "x": 150,
+            "x": 151,
             "y": 27,
             "scaleX": 2.2,
             "scaleY": 0.3,
@@ -1052,8 +1022,8 @@
             "id": "13ae4c69-44c5-479b-a07e-2371b045aede",
             "label": "resetAttackStatusButton",
             "scope": "CLASS",
-            "x": 150,
-            "y": 127,
+            "x": 151,
+            "y": 131,
             "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
@@ -1079,7 +1049,7 @@
                         "type"
                     ],
                     "label": "cheatsMechanism_1",
-                    "type": "resetAttackStatus"
+                    "type": "hpTo1"
                 }
             ]
         },
@@ -1089,7 +1059,7 @@
             "label": "setHPTo1Button",
             "scope": "CLASS",
             "x": 151,
-            "y": 77,
+            "y": 82,
             "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
@@ -1115,53 +1085,41 @@
                         "type"
                     ],
                     "label": "cheatsMechanism_2",
-                    "type": "hpTo1"
+                    "type": "resetAttackStatus"
                 }
             ]
         },
         {
             "type": "Text",
             "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
-            "label": "resetAttackStatusText",
-            "x": 150,
-            "y": 127,
-            "scaleX": 0.28,
-            "scaleY": 0.28,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Reset Attack Status",
-            "fontFamily": "Minecraft",
-            "fontSize": "100px",
+            "label": "setHPTo1Text",
+            "x": 45,
+            "y": 119,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "text": "Everyone to 1HP",
             "color": "#000000ff"
         },
         {
             "type": "Text",
             "id": "52658ea1-6bbe-414a-893d-fe53e77ad78b",
-            "label": "setHPTo1Text",
-            "x": 150,
-            "y": 77,
-            "scaleX": 0.28,
-            "scaleY": 0.28,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "Everyone to 1HP",
-            "fontFamily": "Minecraft",
-            "fontSize": "100px",
+            "label": "resetAttackStatusText",
+            "x": 15,
+            "y": 71,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "text": "Reset Attack Status",
             "color": "#000000ff"
         },
         {
             "type": "Text",
             "id": "5c28c047-d023-4065-8663-206c91fda482",
             "label": "resetHPText",
-            "x": 150,
-            "y": 27,
-            "scaleX": 0.28,
-            "scaleY": 0.28,
-            "originX": 0.5,
-            "originY": 0.5,
+            "x": 98,
+            "y": 16,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "text": "Reset HP",
-            "fontFamily": "Minecraft",
-            "fontSize": "100px",
             "color": "#000000ff"
         },
         {

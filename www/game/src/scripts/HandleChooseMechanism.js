@@ -100,8 +100,8 @@ class HandleChooseMechanism extends ScriptNode {
 			var nameText = scene.parent.parentContainer.list
 			for (let i = 0; i < nameText.length; i++) {
 				if (nameText[i].name == "Username") {
-					nameText[i].text = data.name 
-				}else if (nameText[i].name == "Level") {
+					nameText[i].text = data.name
+				} else if (nameText[i].name == "Level") {
 					nameText[i].text = "Level: " + data.level
 				}
 			}
@@ -165,7 +165,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 		while (index < level) {
 			index++
-			if(index <= level){
+			if (index <= level) {
 				initialLevelXp = finalXp
 			}
 			finalXp += finalXp / 2
@@ -180,11 +180,11 @@ class HandleChooseMechanism extends ScriptNode {
 
 		for (let i = 0; i < xpbar.length; i++) {
 			if (xpbar[i].name == "XpBar") {
-				xpbar[i].list[1].text = Math.floor((playerXp * 100)/finalXp) + "%";
+				xpbar[i].list[1].text = Math.floor((playerXp * 100) / finalXp) + "%";
 				for (let j = 0; j < 10; j++) {
 					if (playerXp > finalXp * (j * 0.1)) {
 						xpbar[i].list[0].setTexture("spritesheet", 10 - j);
-						xpbar[i].list[1].text = Math.floor((playerXp * 100)/finalXp) + "%";
+						xpbar[i].list[1].text = Math.floor((playerXp * 100) / finalXp) + "%";
 					}
 				}
 			}
@@ -308,7 +308,7 @@ class HandleChooseMechanism extends ScriptNode {
 							if (glowChange[i].list[j].name == "sand") {
 								glowChange[i].list[j].preFX.list[0].active = glowOnOff
 								glowChange[i].list[j].name = "character_id_" + charChosen
-							} else if (glowChange[i].list[j].name != "Username") {
+							} else if (glowChange[i].list[j].name != "Username" && glowChange[i].list[j].name != "Level") {
 								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
@@ -351,7 +351,7 @@ class HandleChooseMechanism extends ScriptNode {
 						}
 					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if (glowChange[i].list[j].name != "Username") {
+							if (glowChange[i].list[j].name != "Username" && glowChange[i].list[j].name != "Level") {
 								glowChange[i].list[j].preFX.list[0].active = false;
 							}
 						}

@@ -112,6 +112,11 @@
                 "key": "city"
             },
             {
+                "url": "src/scripts/DamageAnimationMechanism.js",
+                "type": "script",
+                "key": "DamageAnimationMechanism"
+            },
+            {
                 "url": "src/scripts/DescriptionsMechanism.js",
                 "type": "script",
                 "key": "DescriptionsMechanism"
