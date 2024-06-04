@@ -64,11 +64,15 @@
             "useGameObjectName": true,
             "scope": "CLASS",
             "x": 960,
-            "y": 773,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
+            "y": 806,
+            "scaleX": 2,
+            "scaleY": 2,
             "originX": 0.5,
-            "text": "Something\n",
+            "originY": 0.5,
+            "visible": false,
+            "text": "ola\n",
+            "align": "center",
+            "fontFamily": "Minecraft",
             "fontSize": "20px",
             "color": "#000000ff",
             "stroke": "#000000ff"
@@ -931,29 +935,47 @@
             "id": "681180d1-99bb-46f8-bd6a-2d5a881791a6",
             "label": "endTurnButton",
             "scope": "CLASS",
-            "x": 952,
+            "x": 953,
             "y": 1049,
             "scaleX": 2.3,
             "scaleY": 0.36,
             "isFilled": true,
+            "fillColor": "#ffffff",
             "width": 128,
-            "height": 128,
+            "height": 128
+        },
+        {
+            "type": "Text",
+            "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
+            "label": "endTurnText",
+            "scope": "CLASS",
+            "x": 960,
+            "y": 1052,
+            "scaleX": 2,
+            "scaleY": 2,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "End turn",
+            "align": "center",
+            "fontFamily": "Minecraft",
+            "fontSize": "25px",
+            "color": "#000000ff",
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "2b555bf6-003f-4c3f-9309-fccf9f13c47e",
+                    "id": "0b6a0054-b86f-4ea7-a5c3-cff648d87422",
                     "label": "onPointerDownScript_12",
                     "list": [
                         {
                             "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "ac24336a-3d85-4f5f-b9f3-400624dc9bae",
+                            "id": "7a796749-1736-4a5a-8f4a-ed509b792d81",
                             "label": "pushActionScript_12"
                         }
                     ]
                 },
                 {
                     "prefabId": "c1f303fd-0c45-4cc0-be3c-93b6aa87b551",
-                    "id": "4949b66f-d9dc-44e6-bf8c-e4741db0c242",
+                    "id": "ec80397f-90dd-4e6f-b70b-b0ce8e526868",
                     "unlock": [
                         "type"
                     ],
@@ -961,19 +983,6 @@
                     "type": "endTurn"
                 }
             ]
-        },
-        {
-            "type": "Text",
-            "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
-            "label": "endTurnText",
-            "scope": "CLASS",
-            "x": 869,
-            "y": 1030,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "text": "End Turn",
-            "fontSize": "25px",
-            "color": "#000000ff"
         },
         {
             "type": "Rectangle",
@@ -1121,13 +1130,16 @@
             "id": "c5248266-f203-4610-bce5-0bd548b873e7",
             "label": "turn",
             "scope": "CLASS",
-            "x": 289,
-            "y": 322,
+            "x": 458,
+            "y": 497,
             "scaleX": 1.5,
             "scaleY": 1.5,
+            "originX": 0.5,
+            "originY": 0.5,
             "visible": false,
             "text": "something",
-            "fontSize": "20px",
+            "fontFamily": "Minecraft",
+            "fontSize": "18px",
             "color": "#fd6464ff"
         },
         {
@@ -1135,13 +1147,14 @@
             "id": "cf92613e-7b63-4ef8-b58e-2c94aa576a7c",
             "label": "winnerText",
             "scope": "CLASS",
-            "x": 544,
-            "y": 139,
+            "x": 369,
+            "y": 373.5,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "visible": false,
-            "text": "New text",
-            "fontSize": "50px"
+            "text": "WINNER",
+            "fontFamily": "Minecraft",
+            "fontSize": "200px"
         }
     ],
     "plainObjects": [],

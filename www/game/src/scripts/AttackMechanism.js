@@ -70,6 +70,7 @@ class AttackMechanism extends ScriptNode {
 				console.log(data);
 				if (data.notWorking) {
 					scene.scene.children.list[4].text = data.message;
+					scene.scene.children.list[4].setVisible(true);
 					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				}
 			},
@@ -105,7 +106,7 @@ class AttackMechanism extends ScriptNode {
 				} else if (data.card_id) {
 					console.log(data);
 					document.getElementById("card_id_" + data.card_id).innerHTML = '<button class="graveyard" id="card_dead_id_' + data.card_id + '"> ' + data.card_name + ' </button>';
-					document.getElementById("card_dead_id_" + data.card_id).disabled = true;
+					document.getElementById("card_dead_id_" + data.card_id).enable = false;//!!
 					stillAttacking = false;
 					reviving = false;
 					characterOnHold = null;

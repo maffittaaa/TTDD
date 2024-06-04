@@ -37,13 +37,14 @@ class Match extends Phaser.Scene {
 		bar2.scaleY = 2.452926912380252;
 
 		// result
-		const result = this.add.text(960, 773, "", {});
+		const result = this.add.text(960, 806, "", {});
 		result.name = "result";
-		result.scaleX = 1.5;
-		result.scaleY = 1.5;
-		result.setOrigin(0.5, 0);
-		result.text = "Something\n";
-		result.setStyle({ "color": "#000000ff", "fontSize": "20px", "stroke": "#000000ff" });
+		result.scaleX = 2;
+		result.scaleY = 2;
+		result.setOrigin(0.5, 0.5);
+		result.visible = false;
+		result.text = "ola\n";
+		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "20px", "stroke": "#000000ff" });
 
 		// CharacterSlotsPlayer1
 		const characterSlotsPlayer1 = this.add.container(0, 0);
@@ -452,26 +453,27 @@ class Match extends Phaser.Scene {
 		healthBarsPlayer2.add(hp_p2_slot4);
 
 		// endTurnButton
-		const endTurnButton = this.add.rectangle(952, 1049, 128, 128);
+		const endTurnButton = this.add.rectangle(953, 1049, 128, 128);
 		endTurnButton.scaleX = 2.3;
 		endTurnButton.scaleY = 0.36;
 		endTurnButton.isFilled = true;
 
+		// endTurnText
+		const endTurnText = this.add.text(960, 1052, "", {});
+		endTurnText.scaleX = 2;
+		endTurnText.scaleY = 2;
+		endTurnText.setOrigin(0.5, 0.5);
+		endTurnText.text = "End turn";
+		endTurnText.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "25px" });
+
 		// onPointerDownScript_12
-		const onPointerDownScript_12 = new OnPointerDownScript(endTurnButton);
+		const onPointerDownScript_12 = new OnPointerDownScript(endTurnText);
 
 		// pushActionScript_12
 		new PushActionScript(onPointerDownScript_12);
 
 		// endTurnMechanism
-		const endTurnMechanism = new EndTurnMechanism(endTurnButton);
-
-		// endTurnText
-		const endTurnText = this.add.text(869, 1030, "", {});
-		endTurnText.scaleX = 1.5;
-		endTurnText.scaleY = 1.5;
-		endTurnText.text = "End Turn";
-		endTurnText.setStyle({ "color": "#000000ff", "fontSize": "25px" });
+		const endTurnMechanism = new EndTurnMechanism(endTurnText);
 
 		// resetHPButton
 		const resetHPButton = this.add.rectangle(151, 27, 128, 128);
@@ -540,20 +542,21 @@ class Match extends Phaser.Scene {
 		resetHPText.setStyle({ "color": "#000000ff" });
 
 		// turn
-		const turn = this.add.text(289, 322, "", {});
+		const turn = this.add.text(458, 497, "", {});
 		turn.scaleX = 1.5;
 		turn.scaleY = 1.5;
+		turn.setOrigin(0.5, 0.5);
 		turn.visible = false;
 		turn.text = "something";
-		turn.setStyle({ "color": "#fd6464ff", "fontSize": "20px" });
+		turn.setStyle({ "color": "#fd6464ff", "fontFamily": "Minecraft", "fontSize": "18px" });
 
 		// winnerText
-		const winnerText = this.add.text(544, 139, "", {});
+		const winnerText = this.add.text(369, 373.5, "", {});
 		winnerText.scaleX = 1.5;
 		winnerText.scaleY = 1.5;
 		winnerText.visible = false;
-		winnerText.text = "New text";
-		winnerText.setStyle({ "fontSize": "50px" });
+		winnerText.text = "WINNER";
+		winnerText.setStyle({ "fontFamily": "Minecraft", "fontSize": "200px" });
 
 		// matchMechanism (prefab fields)
 		matchMechanism.turnText = turn;

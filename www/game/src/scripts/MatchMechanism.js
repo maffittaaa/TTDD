@@ -48,8 +48,6 @@ class MatchMechanism extends ScriptNode {
 		time = time + 0.01666
 
 		if (time > 5) {
-			console.log(time)
-			console.log("gonna do it now")
 			this.deltaChanges();
 			time = 0;
 		}
@@ -79,10 +77,10 @@ class MatchMechanism extends ScriptNode {
 
 	isItMyTurn(turn_id, player_id) {
 		if (turn_id == player_id) {
-			this.turnText.text = "It's\nyour\nTurn!";
+			this.turnText.text = "It's your\n  Turn!";
 			this.turnText.setVisible(true);
 		} else {
-			this.turnText.text = "Please\nwait!";
+			this.turnText.text = " Not your\n turn yet";
 			this.turnText.setVisible(true);
 		}
 	}
