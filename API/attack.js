@@ -74,7 +74,10 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                                                             if (error) {
                                                                                 res.send(error);
                                                                             } else {
-                                                                                res.send(rows);
+                                                                                res.send({
+                                                                                    notWorking: false,
+                                                                                    message: "Here it goooess!!",
+                                                                                })
                                                                             }
                                                                         }
                                                                     )

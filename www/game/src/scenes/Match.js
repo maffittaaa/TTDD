@@ -73,6 +73,12 @@ class Match extends Phaser.Scene {
 		// attackMechanism
 		const attackMechanism = new AttackMechanism(player1_slot1);
 
+		// healthBarMechanism
+		const healthBarMechanism = new HealthBarMechanism(player1_slot1);
+
+		// throwables
+		new Throwables(player1_slot1);
+
 		// player1_slot2
 		const player1_slot2 = this.add.image(283, 522.9999995529652, "base", 0);
 		player1_slot2.name = "player1_slot2";
@@ -285,9 +291,6 @@ class Match extends Phaser.Scene {
 		healthbar_p1_slot1.scaleY = 1.5;
 		healthbar_p1_slot1.visible = false;
 		healthBarsPlayer1.add(healthbar_p1_slot1);
-
-		// healthBarMechanism
-		const healthBarMechanism = new HealthBarMechanism(healthbar_p1_slot1);
 
 		// healthbar_p1_slot2
 		const healthbar_p1_slot2 = this.add.image(283, 514, "spritesheet", 0);

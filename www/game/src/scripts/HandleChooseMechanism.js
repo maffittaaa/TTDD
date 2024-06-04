@@ -385,7 +385,7 @@ class HandleChooseMechanism extends ScriptNode {
 			slots = JSON.stringify(slots)
 			$.ajax({
 				type: "POST",
-				url: "/match/choseCharacters",
+				url: "/match/chooseCharacters",
 				data: {
 					"slots": slots,
 				},

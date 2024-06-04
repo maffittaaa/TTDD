@@ -142,6 +142,11 @@
                             "type": "player",
                             "slotID": 1,
                             "damageText": "damageAnimationMechanism"
+                        },
+                        {
+                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
+                            "id": "7c89ff89-c9b4-4881-94dc-f52d886fc964",
+                            "label": "throwables"
                         }
                     ]
                 },
