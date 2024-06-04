@@ -104,7 +104,7 @@ class DescriptionsMechanism extends ScriptNode {
 				if(data.succesfull){
 					console.log(scene.parent.parentContainer.list[11])
 					scene.parent.parentContainer.list[11].text = data.description
-					scene.parent.parentContainer.list[11].setWordWrapWidth(300)
+					scene.parent.parentContainer.list[11].setWordWrapWidth(1600)
 				}else{
 					scene.parent.parentContainer.list[11].text = data.message;
 				}

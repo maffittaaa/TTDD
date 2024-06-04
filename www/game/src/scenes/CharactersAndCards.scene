@@ -529,10 +529,13 @@
                             "scope": "CLASS",
                             "x": 1038,
                             "y": 554,
+                            "scaleX": 0.2,
+                            "scaleY": 0.2,
                             "originX": 0.5,
                             "originY": -0.0011025686642976021,
                             "text": "Character description",
-                            "fontFamily": "minecraft"
+                            "fontFamily": "minecraft",
+                            "fontSize": "100px"
                         }
                     ]
                 },

@@ -20,7 +20,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		this.add.image(960, 540, "Specasdossheets");
 
 		// Slots
-		const slots = this.add.container(0, 10);
+		const slots = this.add.container(0, 8);
 		slots.name = "Slots";
 		slots.scaleX = 1.5;
 		slots.scaleY = 1.5;
@@ -371,7 +371,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		characters.scaleY = 1.5;
 
 		// Level
-		const level = this.add.text(1244, 614, "", {});
+		const level = this.add.text(1244, 48, "", {});
 		level.name = "Level";
 		level.scaleX = 0.2;
 		level.scaleY = 0.2;
@@ -381,7 +381,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		characters.add(level);
 
 		// Username
-		const username = this.add.text(1244, 52, "", {});
+		const username = this.add.text(1244, 647, "", {});
 		username.name = "Username";
 		username.scaleX = 0.2;
 		username.scaleY = 0.2;
@@ -672,13 +672,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		xpBar.scaleY = 1.5;
 
 		// spritesheet10
-		const spritesheet10 = this.add.image(1120, 655, "spritesheet", 10);
+		const spritesheet10 = this.add.image(1120, 90, "spritesheet", 10);
 		spritesheet10.scaleX = 4.9;
 		spritesheet10.scaleY = 4.9;
 		xpBar.add(spritesheet10);
 
 		// XpTotal
-		const xpTotal = this.add.text(1120, 652, "", {});
+		const xpTotal = this.add.text(1120, 87, "", {});
 		xpTotal.scaleX = 0.18;
 		xpTotal.scaleY = 0.18;
 		xpTotal.setOrigin(0.5, 0.5);

@@ -160,18 +160,27 @@ class HandleChooseMechanism extends ScriptNode {
 		var index = 0;
 		var playerXp = xp
 		var finalXp = 50;
+		var initialLevelXp = 0
 
 
 		while (index < level) {
-			finalXp += finalXp / 2
 			index++
+			if(index <= level){
+				initialLevelXp = finalXp
+			}
+			finalXp += finalXp / 2
 		}
+
+		finalXp -= initialLevelXp
+		playerXp -= initialLevelXp
+
+		console.log(initialLevelXp, finalXp, playerXp)
 
 		var xpbar = this.scene.children.list
 
 		for (let i = 0; i < xpbar.length; i++) {
 			if (xpbar[i].name == "XpBar") {
-				xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp);
+				xpbar[i].list[1].text = Math.floor((playerXp * 100)/finalXp) + "%";
 				for (let j = 0; j < 10; j++) {
 					if (playerXp > finalXp * (j * 0.1)) {
 						xpbar[i].list[0].setTexture("spritesheet", 10 - j);
