@@ -19,84 +19,6 @@ class CharactersAndCards extends Phaser.Scene {
 		// specasdossheets
 		this.add.image(960, 540, "Specasdossheets");
 
-		// Characters and Cards
-		const characters_and_Cards = this.add.container(0, 0);
-		characters_and_Cards.scaleX = 1.5;
-		characters_and_Cards.scaleY = 1.5;
-
-		// highlight
-		const highlight = this.add.rectangle(422, 48, 128, 128);
-		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.63;
-		highlight.scaleY = 0.1807207308530191;
-		highlight.fillColor = 4194559;
-		highlight.isStroked = true;
-		highlight.strokeColor = 4194559;
-		highlight.strokeAlpha = 4;
-		highlight.lineWidth = 4;
-		characters_and_Cards.add(highlight);
-
-		// Characters And Cards
-		const characters_And_Cards = this.add.text(422, 48, "", {});
-		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
-		characters_And_Cards.setOrigin(0.5, 0.5);
-		characters_And_Cards.text = "Characters and Cards";
-		characters_And_Cards.setStyle({ "fontFamily": "minecraft" });
-		characters_and_Cards.add(characters_And_Cards);
-
-		// onPointerDownScript_20
-		const onPointerDownScript_20 = new OnPointerDownScript(characters_And_Cards);
-
-		// pushActionScript_20
-		new PushActionScript(onPointerDownScript_20);
-
-		// goToScene_2
-		const goToScene_2 = new GoToScene(characters_And_Cards);
-
-		// Button Choose Characters
-		const button_Choose_Characters = this.add.container(0, 0);
-		button_Choose_Characters.scaleX = 1.5;
-		button_Choose_Characters.scaleY = 1.5;
-
-		// ChooseCharacters
-		const chooseCharacters = this.add.text(180, 48, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
-		chooseCharacters.setOrigin(0.5, 0.5);
-		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "fontFamily": "minecraft" });
-		button_Choose_Characters.add(chooseCharacters);
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
-
-		// pushActionScript_2
-		new PushActionScript(onPointerDownScript);
-
-		// goToScene_1
-		const goToScene_1 = new GoToScene(chooseCharacters);
-
-		// Button Profile
-		const button_Profile = this.add.container(0, 0);
-		button_Profile.scaleX = 1.5;
-		button_Profile.scaleY = 1.5;
-
-		// Profile
-		const profile = this.add.text(622, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
-		profile.setOrigin(0.5, 0.5);
-		profile.text = "Profile";
-		profile.setStyle({ "fontFamily": "minecraft" });
-		button_Profile.add(profile);
-
-		// onPointerDownScript_1
-		const onPointerDownScript_1 = new OnPointerDownScript(profile);
-
-		// pushActionScript_1
-		new PushActionScript(onPointerDownScript_1);
-
-		// goToScene
-		const goToScene = new GoToScene(profile);
-
 		// Characters
 		const characters = this.add.container(0, 0);
 		characters.name = "Characters";
@@ -307,9 +229,11 @@ class CharactersAndCards extends Phaser.Scene {
 		// Card_description_1
 		const card_description_1 = this.add.text(1038, 554, "", {});
 		card_description_1.name = "Card_description_1";
+		card_description_1.scaleX = 0.2;
+		card_description_1.scaleY = 0.2;
 		card_description_1.setOrigin(0.5, -0.0011025686642976021);
 		card_description_1.text = "Character description";
-		card_description_1.setStyle({ "fontFamily": "minecraft" });
+		card_description_1.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		characters_1.add(card_description_1);
 
 		// characters_option_button
@@ -536,9 +460,11 @@ class CharactersAndCards extends Phaser.Scene {
 		// Card_description
 		const card_description = this.add.text(1038, 554, "", {});
 		card_description.name = "Card_description";
+		card_description.scaleX = 0.2;
+		card_description.scaleY = 0.2;
 		card_description.setOrigin(0.5, -0.022889636867095456);
 		card_description.text = "Card description";
-		card_description.setStyle({ "align": "center", "fontFamily": "minecraft" });
+		card_description.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "100px" });
 		cards_1.add(card_description);
 
 		// cartas4_Imprimir3
@@ -555,36 +481,149 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_1
 		const descriptionsMechanism_1 = new DescriptionsMechanism(cartas4_Imprimir3);
 
+		// Button Choose Characters
+		const button_Choose_Characters = this.add.container(-51, 12);
+		button_Choose_Characters.scaleX = 1.5;
+		button_Choose_Characters.scaleY = 1.5;
+
+		// highlight
+		const highlight = this.add.rectangle(180, 48, 128, 128);
+		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight.scaleX = 1.44;
+		highlight.scaleY = 0.21995512106258827;
+		highlight.isFilled = true;
+		highlight.fillColor = 0;
+		highlight.strokeColor = 4194559;
+		highlight.strokeAlpha = 4;
+		highlight.lineWidth = 4;
+		button_Choose_Characters.add(highlight);
+
+		// glowFx_13
+		highlight.postFX.addGlow(4194559, 3, 3, false);
+
+		// ChooseCharacters
+		const chooseCharacters = this.add.text(180, 48, "", {});
+		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 949.9773032706995, 100.90937292581162), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.scaleX = 0.18;
+		chooseCharacters.scaleY = 0.18;
+		chooseCharacters.setOrigin(0.5, 0.5);
+		chooseCharacters.text = "Choose Characters";
+		chooseCharacters.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Choose_Characters.add(chooseCharacters);
+
+		// goToScene_1
+		const goToScene_1 = new GoToScene(chooseCharacters);
+
+		// Characters and Cards
+		const characters_and_Cards = this.add.container(-66, 12);
+		characters_and_Cards.scaleX = 1.5;
+		characters_and_Cards.scaleY = 1.5;
+
+		// highlight_2
+		const highlight_2 = this.add.rectangle(422, 48, 128, 128);
+		highlight_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_2.scaleX = 1.68;
+		highlight_2.scaleY = 0.21995512106258827;
+		highlight_2.isFilled = true;
+		highlight_2.fillColor = 0;
+		highlight_2.strokeColor = 4194559;
+		highlight_2.strokeAlpha = 4;
+		highlight_2.lineWidth = 4;
+		characters_and_Cards.add(highlight_2);
+
+		// glowFx_15
+		highlight_2.postFX.addGlow(4194559, 3, 3, false);
+
+		// Characters And Cards
+		const characters_And_Cards = this.add.text(422, 48, "", {});
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1101.472090680232, 112.19250373942205), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.scaleX = 0.18;
+		characters_And_Cards.scaleY = 0.18;
+		characters_And_Cards.setOrigin(0.5, 0.5);
+		characters_And_Cards.text = "Characters and Cards";
+		characters_And_Cards.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		characters_and_Cards.add(characters_And_Cards);
+
+		// goToScene_2
+		const goToScene_2 = new GoToScene(characters_And_Cards);
+
+		// Button Profile
+		const button_Profile = this.add.container(-95, 12);
+		button_Profile.scaleX = 1.5;
+		button_Profile.scaleY = 1.5;
+
+		// highlight_3
+		const highlight_3 = this.add.rectangle(622, 48, 128, 128);
+		highlight_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_3.scaleX = 0.63;
+		highlight_3.scaleY = 0.21995512106258827;
+		highlight_3.isFilled = true;
+		highlight_3.fillColor = 0;
+		highlight_3.strokeColor = 4194559;
+		highlight_3.strokeAlpha = 4;
+		highlight_3.lineWidth = 4;
+		button_Profile.add(highlight_3);
+
+		// glowFx_16
+		highlight_3.postFX.addGlow(4194559, 3, 3, false);
+
+		// Profile
+		const profile = this.add.text(622, 48, "", {});
+		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 351.15663686934727, 134.83406914622725), Phaser.Geom.Rectangle.Contains);
+		profile.scaleX = 0.18;
+		profile.scaleY = 0.18;
+		profile.setOrigin(0.5, 0.5);
+		profile.text = "Profile";
+		profile.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Profile.add(profile);
+
+		// onPointerDownScript_1
+		const onPointerDownScript_1 = new OnPointerDownScript(profile);
+
+		// pushActionScript_1
+		new PushActionScript(onPointerDownScript_1);
+
+		// goToScene_4
+		const goToScene_4 = new GoToScene(profile);
+
 		// Button Go Back To Home Page
-		const button_Go_Back_To_Home_Page = this.add.container(0, 0);
+		const button_Go_Back_To_Home_Page = this.add.container(-121, 12);
 		button_Go_Back_To_Home_Page.scaleX = 1.5;
 		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
-		// Profile_1
-		const profile_1 = this.add.text(808, 48, "", {});
-		profile_1.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 100.09315749661158, 53.83254699275936), Phaser.Geom.Rectangle.Contains);
-		profile_1.setOrigin(0.5, 0.5);
-		profile_1.text = "Back To Home Page";
-		profile_1.setStyle({ "fontFamily": "minecraft" });
-		button_Go_Back_To_Home_Page.add(profile_1);
+		// highlight_4
+		const highlight_4 = this.add.rectangle(808, 48, 128, 128);
+		highlight_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_4.scaleX = 1.53;
+		highlight_4.scaleY = 0.21995512106258827;
+		highlight_4.isFilled = true;
+		highlight_4.fillColor = 0;
+		highlight_4.strokeColor = 4194559;
+		highlight_4.strokeAlpha = 4;
+		highlight_4.lineWidth = 4;
+		button_Go_Back_To_Home_Page.add(highlight_4);
+
+		// glowFx_17
+		highlight_4.postFX.addGlow(4194559, 3, 3, false);
+
+		// ButtonGoToHomePage
+		const buttonGoToHomePage = this.add.text(808, 48, "", {});
+		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(-3, 3, 990.1760256343523, 103.70293702497405), Phaser.Geom.Rectangle.Contains);
+		buttonGoToHomePage.scaleX = 0.18;
+		buttonGoToHomePage.scaleY = 0.18;
+		buttonGoToHomePage.setOrigin(0.5, 0.5);
+		buttonGoToHomePage.text = "Back To Home Page";
+		buttonGoToHomePage.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Go_Back_To_Home_Page.add(buttonGoToHomePage);
 
 		// onPointerDownScript_25
-		const onPointerDownScript_25 = new OnPointerDownScript(profile_1);
+		const onPointerDownScript_25 = new OnPointerDownScript(buttonGoToHomePage);
 
 		// pushActionScript_25
 		new PushActionScript(onPointerDownScript_25);
 
-		// goToScene_3
-		const goToScene_3 = new GoToScene(profile_1);
-
-		// goToScene_2 (prefab fields)
-		goToScene_2.sceneChosen = "CharactersAndCards";
-
-		// goToScene_1 (prefab fields)
-		goToScene_1.sceneChosen = "ChooseCharacters";
-
-		// goToScene (prefab fields)
-		goToScene.sceneChosen = "Profile";
+		// goToScene
+		const goToScene = new GoToScene(buttonGoToHomePage);
 
 		// descriptionsMechanism_21 (prefab fields)
 		descriptionsMechanism_21.option = "Char";
@@ -692,8 +731,17 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism_1 (prefab fields)
 		descriptionsMechanism_1.option = "Cards";
 
-		// goToScene_3 (prefab fields)
-		goToScene_3.sceneChosen = "HomePage";
+		// goToScene_1 (prefab fields)
+		goToScene_1.sceneChosen = "ChooseCharacters";
+
+		// goToScene_2 (prefab fields)
+		goToScene_2.sceneChosen = "CharactersAndCards";
+
+		// goToScene_4 (prefab fields)
+		goToScene_4.sceneChosen = "Profile";
+
+		// goToScene (prefab fields)
+		goToScene.sceneChosen = "HomePage";
 
 		this.character_id_3 = character_id_3;
 		this.character_id_1 = character_id_1;

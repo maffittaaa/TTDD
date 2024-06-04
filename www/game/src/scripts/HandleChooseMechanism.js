@@ -99,8 +99,10 @@ class HandleChooseMechanism extends ScriptNode {
 
 			var nameText = scene.parent.parentContainer.list
 			for (let i = 0; i < nameText.length; i++) {
-				if (nameText[i].name.search("Username") == 0) {
-					nameText[i].text = data.name + "\nLevel: " + data.level
+				if (nameText[i].name == "Username") {
+					nameText[i].text = data.name 
+				}else if (nameText[i].name == "Level") {
+					nameText[i].text = "Level: " + data.level
 				}
 			}
 		} else if (scene.type == "LookForMatch") {
@@ -143,7 +145,7 @@ class HandleChooseMechanism extends ScriptNode {
 					}
 				} else if (glowChange[i].name == "Characters") {
 					for (let j = 0; j < glowChange[i].list.length; j++) {
-						if (glowChange[i].list[j].name != "Username") {
+						if (glowChange[i].list[j].name != "Username" && glowChange[i].list[j].name != "Level") {
 							glowChange[i].list[j].preFX.list[0].active = false
 						}
 					}
@@ -158,22 +160,31 @@ class HandleChooseMechanism extends ScriptNode {
 		var index = 0;
 		var playerXp = xp
 		var finalXp = 50;
+		var initialLevelXp = 0
 
 
 		while (index < level) {
-			finalXp += finalXp / 2
 			index++
+			if(index <= level){
+				initialLevelXp = finalXp
+			}
+			finalXp += finalXp / 2
 		}
+
+		finalXp -= initialLevelXp
+		playerXp -= initialLevelXp
+
+		console.log(initialLevelXp, finalXp, playerXp)
 
 		var xpbar = this.scene.children.list
 
 		for (let i = 0; i < xpbar.length; i++) {
 			if (xpbar[i].name == "XpBar") {
-				xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp);
+				xpbar[i].list[1].text = Math.floor((playerXp * 100)/finalXp) + "%";
 				for (let j = 0; j < 10; j++) {
 					if (playerXp > finalXp * (j * 0.1)) {
 						xpbar[i].list[0].setTexture("spritesheet", 10 - j);
-						xpbar[i].list[1].text = playerXp + " / " + Math.floor(finalXp);
+						xpbar[i].list[1].text = Math.floor((playerXp * 100)/finalXp) + "%";
 					}
 				}
 			}
@@ -237,8 +248,6 @@ class HandleChooseMechanism extends ScriptNode {
 			})
 		}
 	}
-
-
 
 	showMessage(message) {
 		var textChange = this.scene.children.list
@@ -401,7 +410,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 						lookingForMatch = true;
 					} else {
-						this.showMessage("Choose another character");
+						scene.showMessage("Choose another character");
 					}
 				},
 				error: function (err) {

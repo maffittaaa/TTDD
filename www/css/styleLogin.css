@@ -1,5 +1,5 @@
 * {
-    font-family: 'Minecraft', 'Pixeled';
+    font-family: 'Minecraft', 'PixelFont', 'Pixeled';
 }
 
 @font-face {
@@ -10,6 +10,11 @@
 @font-face {
     font-family: 'Pixeled';
     src: url('Pixeled.ttf');
+}
+
+@font-face {
+    font-family: 'PixelFont';
+    src: url('PixelFont.ttf');
 }
 
 body,

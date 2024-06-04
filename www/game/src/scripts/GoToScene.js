@@ -21,6 +21,8 @@ class GoToScene extends ScriptNode {
 	/* START-USER-CODE */
 
 	start(){
+		this.parent.parentContainer.list[0].visible = false
+		
 		this.parent.on('pointerdown', event => {
 			if(this.sceneChosen == "ChangeProfile"){
 				window.location.replace("/changeProfile.html")
@@ -33,6 +35,12 @@ class GoToScene extends ScriptNode {
 			}else if(this.sceneChosen == "HomePage"){
 				window.location.replace("/")
 			}
+		})
+		this.parent.on('pointerover', event => {
+			this.parent.parentContainer.list[0].visible = true
+		})
+		this.parent.on('pointerout', event => {
+			this.parent.parentContainer.list[0].visible = false
 		})
 	}
 
