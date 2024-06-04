@@ -25,7 +25,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slots.scaleX = 1.5;
 		slots.scaleY = 1.5;
 
-		// slot_4
+		// slot_4mk 
 		const slot_4 = this.add.image(967, 280, "base", 0);
 		slot_4.name = "slot_4";
 		slot_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);

@@ -37,10 +37,10 @@ class Match extends Phaser.Scene {
 		bar2.scaleY = 2.452926912380252;
 
 		// result
-		const result = this.add.text(960, 806, "", {});
+		const result = this.add.text(957, 787, "", {});
 		result.name = "result";
-		result.scaleX = 2;
-		result.scaleY = 2;
+		result.scaleX = 2.5;
+		result.scaleY = 1.5;
 		result.setOrigin(0.5, 0.5);
 		result.visible = false;
 		result.text = "ola\n";
