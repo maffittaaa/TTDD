@@ -1,4 +1,4 @@
-var showHandCards = false
+var showHandCards = false;
 
 /* START OF COMPILED CODE */
 
@@ -35,7 +35,7 @@ class CardsMechanism extends ScriptNode {
 			success: function (data) {
 				if (data.notWorking) {
 					scene.scene.children.list[4].text = data.message;
-					setInterval(function () { scene.scene.children.list[4].text = "" }, 4000);
+					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				} else if (data.cards) {
 					scene.addCards(JSON.parse(data.cards));
 				}
@@ -48,15 +48,13 @@ class CardsMechanism extends ScriptNode {
 
 	showHandCards(boolean) {
 		var handCards = this.scene.children.list[this.scene.children.list.length - 1];
-		handCards.visible = boolean;
-		showHandCards = boolean
+		setTimeout(function () {
+			handCards.visible = boolean;
+			showHandCards = boolean;
+		}, 200);
 	}
 
 	addCards(cards) {
-		console.log(cards)
-		console.log(this.scene)
-		console.log(window.outerWidth)
-		console.log(window.outerHeight)
 		var handCards = this.scene.children.list[this.scene.children.list.length - 1];
 		var slotFound = false;
 		var j = 0;
@@ -86,7 +84,7 @@ class CardsMechanism extends ScriptNode {
 							handCards.list[i].list[j].visible = true
 							slotFound = true;
 						}
-					}else{
+					} else {
 						j++;
 					}
 				}
@@ -115,8 +113,8 @@ class CardsMechanism extends ScriptNode {
 		}
 	}
 
-	getCardPositionX(cardNumber, totalCards){
-		
+	getCardPositionX(cardNumber, totalCards) {
+
 	}
 
 	getDescription(card_id) { //get the card description

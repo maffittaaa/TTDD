@@ -694,13 +694,9 @@ class Match extends Phaser.Scene {
 
 		// shadow
 		const shadow = this.add.image(960, 540, "Shadow");
-		shadow.setInteractive(new Phaser.Geom.Rectangle(4, 6, 191.99313021289976, 188.84173021194542), Phaser.Geom.Rectangle.Contains);
 		shadow.scaleX = 10.03127832345736;
 		shadow.scaleY = 5.743648692660658;
 		handCards.add(shadow);
-
-		// cardsMechanism_2
-		const cardsMechanism_2 = new CardsMechanism(shadow);
 
 		// cards
 		const cards = this.add.container(0, 0);
@@ -797,6 +793,23 @@ class Match extends Phaser.Scene {
 		// attackMechanism_19
 		const attackMechanism_19 = new AttackMechanism(cardSlot10);
 
+		// goBackButton
+		const goBackButton = this.add.image(111, 1026, "goBackButton");
+		goBackButton.name = "goBackButton";
+		goBackButton.setInteractive(new Phaser.Geom.Rectangle(0, 0, 28, 20), Phaser.Geom.Rectangle.Contains);
+		goBackButton.scaleX = 4;
+		goBackButton.scaleY = 4;
+		handCards.add(goBackButton);
+
+		// onPointerDownScript_17
+		const onPointerDownScript_17 = new OnPointerDownScript(goBackButton);
+
+		// pushActionScript_17
+		new PushActionScript(onPointerDownScript_17);
+
+		// cardsMechanism_2
+		const cardsMechanism_2 = new CardsMechanism(goBackButton);
+
 		// attackMechanism (prefab fields)
 		attackMechanism.type = "Player";
 		attackMechanism.slotID = 1;
@@ -865,9 +878,6 @@ class Match extends Phaser.Scene {
 		// cardsMechanism_1 (prefab fields)
 		cardsMechanism_1.type = "ShowCards";
 
-		// cardsMechanism_2 (prefab fields)
-		cardsMechanism_2.type = "ShowCards";
-
 		// attackMechanism_10 (prefab fields)
 		attackMechanism_10.type = "Cards";
 
@@ -897,6 +907,9 @@ class Match extends Phaser.Scene {
 
 		// attackMechanism_19 (prefab fields)
 		attackMechanism_19.type = "Cards";
+
+		// cardsMechanism_2 (prefab fields)
+		cardsMechanism_2.type = "ShowCards";
 
 		this.result = result;
 		this.attackMechanism = attackMechanism;
@@ -955,6 +968,8 @@ class Match extends Phaser.Scene {
 		this.cardSlot9 = cardSlot9;
 		this.cardSlot10 = cardSlot10;
 		this.cards = cards;
+		this.cardsMechanism_2 = cardsMechanism_2;
+		this.goBackButton = goBackButton;
 		this.handCards = handCards;
 
 		this.events.emit("scene-awake");
@@ -1074,6 +1089,10 @@ class Match extends Phaser.Scene {
 	cardSlot10;
 	/** @type {Phaser.GameObjects.Container} */
 	cards;
+	/** @type {CardsMechanism} */
+	cardsMechanism_2;
+	/** @type {Phaser.GameObjects.Image} */
+	goBackButton;
 	/** @type {Phaser.GameObjects.Container} */
 	handCards;
 

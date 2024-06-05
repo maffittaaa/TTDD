@@ -77,7 +77,7 @@ class AttackMechanism extends ScriptNode {
 			this.doAttack();
 			attackerSlot = 0;
 			targetSlot = 0;
-		} else if (stillAttacking = true) {
+		} else if (stillAttacking == true) {
 			if (characterOnHold != null) {
 				this.playCard(cardOnHold, characterOnHold, slot);
 			} else {
