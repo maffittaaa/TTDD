@@ -39,12 +39,12 @@ class Match extends Phaser.Scene {
 		// result
 		const result = this.add.text(957, 787, "", {});
 		result.name = "result";
-		result.scaleX = 2.5;
-		result.scaleY = 1.5;
+		result.scaleX = 0.4;
+		result.scaleY = 0.4;
 		result.setOrigin(0.5, 0.5);
 		result.visible = false;
-		result.text = "ola\n";
-		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "20px", "stroke": "#000000ff" });
+		result.text = "result";
+		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
 
 		// CharacterSlotsPlayer1
 		const characterSlotsPlayer1 = this.add.container(0, 0);
@@ -184,9 +184,7 @@ class Match extends Phaser.Scene {
 		const cardsMechanism = new CardsMechanism(player1_deck1);
 
 		// damageAnimationMechanism
-		const damageAnimationMechanism = new DamageAnimationMechanism(this, 285, 415);
-		damageAnimationMechanism.name = "damageAnimationMechanism";
-		damageAnimationMechanism.visible = false;
+		const damageAnimationMechanism = new DamageAnimationMechanism(this, 347, 415);
 		characterSlotsPlayer1.add(damageAnimationMechanism);
 
 		// CharacterSlotsPlayer2
@@ -710,92 +708,162 @@ class Match extends Phaser.Scene {
 		// cardSlot1
 		const cardSlot1 = this.add.image(180, 245, "cartas4_Imprimir", 3);
 		cardSlot1.name = "cardSlot1";
+		cardSlot1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot1.visible = false;
 		cards.add(cardSlot1);
 
 		// attackMechanism_10
 		const attackMechanism_10 = new AttackMechanism(cardSlot1);
 
+		// onPointerDownScript_26
+		const onPointerDownScript_26 = new OnPointerDownScript(cardSlot1);
+
+		// pushActionScript_26
+		new PushActionScript(onPointerDownScript_26);
+
 		// cardSlot2
 		const cardSlot2 = this.add.image(510, 245, "cartas4_Imprimir", 3);
 		cardSlot2.name = "cardSlot2";
+		cardSlot2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot2.visible = false;
 		cards.add(cardSlot2);
 
 		// attackMechanism_11
 		const attackMechanism_11 = new AttackMechanism(cardSlot2);
 
+		// onPointerDownScript_25
+		const onPointerDownScript_25 = new OnPointerDownScript(cardSlot2);
+
+		// pushActionScript_25
+		new PushActionScript(onPointerDownScript_25);
+
 		// cardSlot3
 		const cardSlot3 = this.add.image(830, 245, "cartas4_Imprimir", 3);
 		cardSlot3.name = "cardSlot3";
+		cardSlot3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot3.visible = false;
 		cards.add(cardSlot3);
 
 		// attackMechanism_12
 		const attackMechanism_12 = new AttackMechanism(cardSlot3);
 
+		// onPointerDownScript_24
+		const onPointerDownScript_24 = new OnPointerDownScript(cardSlot3);
+
+		// pushActionScript_24
+		new PushActionScript(onPointerDownScript_24);
+
 		// cardSlot4
 		const cardSlot4 = this.add.image(1157, 245, "cartas4_Imprimir", 3);
 		cardSlot4.name = "cardSlot4";
+		cardSlot4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot4.visible = false;
 		cards.add(cardSlot4);
 
 		// attackMechanism_13
 		const attackMechanism_13 = new AttackMechanism(cardSlot4);
 
+		// onPointerDownScript_23
+		const onPointerDownScript_23 = new OnPointerDownScript(cardSlot4);
+
+		// pushActionScript_23
+		new PushActionScript(onPointerDownScript_23);
+
 		// cardSlot5
 		const cardSlot5 = this.add.image(1491, 245, "cartas4_Imprimir", 3);
 		cardSlot5.name = "cardSlot5";
+		cardSlot5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot5.visible = false;
 		cards.add(cardSlot5);
 
 		// attackMechanism_14
 		const attackMechanism_14 = new AttackMechanism(cardSlot5);
 
+		// onPointerDownScript_22
+		const onPointerDownScript_22 = new OnPointerDownScript(cardSlot5);
+
+		// pushActionScript_22
+		new PushActionScript(onPointerDownScript_22);
+
 		// cardSlot6
 		const cardSlot6 = this.add.image(180, 707, "cartas4_Imprimir", 3);
 		cardSlot6.name = "cardSlot6";
+		cardSlot6.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot6.visible = false;
 		cards.add(cardSlot6);
 
 		// attackMechanism_15
 		const attackMechanism_15 = new AttackMechanism(cardSlot6);
 
+		// onPointerDownScript_21
+		const onPointerDownScript_21 = new OnPointerDownScript(cardSlot6);
+
+		// pushActionScript_21
+		new PushActionScript(onPointerDownScript_21);
+
 		// cardSlot7
 		const cardSlot7 = this.add.image(510, 715, "cartas4_Imprimir", 3);
 		cardSlot7.name = "cardSlot7";
+		cardSlot7.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot7.visible = false;
 		cards.add(cardSlot7);
 
 		// attackMechanism_16
 		const attackMechanism_16 = new AttackMechanism(cardSlot7);
 
+		// onPointerDownScript_20
+		const onPointerDownScript_20 = new OnPointerDownScript(cardSlot7);
+
+		// pushActionScript_20
+		new PushActionScript(onPointerDownScript_20);
+
 		// cardSlot8
 		const cardSlot8 = this.add.image(834, 718, "cartas4_Imprimir", 3);
 		cardSlot8.name = "cardSlot8";
+		cardSlot8.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot8.visible = false;
 		cards.add(cardSlot8);
 
 		// attackMechanism_17
 		const attackMechanism_17 = new AttackMechanism(cardSlot8);
 
+		// onPointerDownScript_19
+		const onPointerDownScript_19 = new OnPointerDownScript(cardSlot8);
+
+		// pushActionScript_19
+		new PushActionScript(onPointerDownScript_19);
+
 		// cardSlot9
 		const cardSlot9 = this.add.image(1167, 718, "cartas4_Imprimir", 3);
 		cardSlot9.name = "cardSlot9";
+		cardSlot9.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot9.visible = false;
 		cards.add(cardSlot9);
 
 		// attackMechanism_18
 		const attackMechanism_18 = new AttackMechanism(cardSlot9);
 
+		// onPointerDownScript_18
+		const onPointerDownScript_18 = new OnPointerDownScript(cardSlot9);
+
+		// pushActionScript_18
+		new PushActionScript(onPointerDownScript_18);
+
 		// cardSlot10
 		const cardSlot10 = this.add.image(1511, 718, "cartas4_Imprimir", 3);
 		cardSlot10.name = "cardSlot10";
+		cardSlot10.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
 		cardSlot10.visible = false;
 		cards.add(cardSlot10);
 
 		// attackMechanism_19
 		const attackMechanism_19 = new AttackMechanism(cardSlot10);
+
+		// onPointerDownScript_17
+		const onPointerDownScript_17 = new OnPointerDownScript(cardSlot10);
+
+		// pushActionScript_17
+		new PushActionScript(onPointerDownScript_17);
 
 		// attackMechanism (prefab fields)
 		attackMechanism.type = "Player";
@@ -870,33 +938,53 @@ class Match extends Phaser.Scene {
 
 		// attackMechanism_10 (prefab fields)
 		attackMechanism_10.type = "Cards";
+		attackMechanism_10.slotID = 1;
+		attackMechanism_10.cardID = 0;
 
 		// attackMechanism_11 (prefab fields)
 		attackMechanism_11.type = "Cards";
+		attackMechanism_11.slotID = 2;
+		attackMechanism_11.cardID = 0;
 
 		// attackMechanism_12 (prefab fields)
 		attackMechanism_12.type = "Cards";
+		attackMechanism_12.slotID = 3;
+		attackMechanism_12.cardID = 0;
 
 		// attackMechanism_13 (prefab fields)
 		attackMechanism_13.type = "Cards";
+		attackMechanism_13.slotID = 4;
+		attackMechanism_13.cardID = 0;
 
 		// attackMechanism_14 (prefab fields)
 		attackMechanism_14.type = "Cards";
+		attackMechanism_14.slotID = 5;
+		attackMechanism_14.cardID = 0;
 
 		// attackMechanism_15 (prefab fields)
 		attackMechanism_15.type = "Cards";
+		attackMechanism_15.slotID = 6;
+		attackMechanism_15.cardID = 0;
 
 		// attackMechanism_16 (prefab fields)
 		attackMechanism_16.type = "Cards";
+		attackMechanism_16.slotID = 7;
+		attackMechanism_16.cardID = 0;
 
 		// attackMechanism_17 (prefab fields)
 		attackMechanism_17.type = "Cards";
+		attackMechanism_17.slotID = 8;
+		attackMechanism_17.cardID = 0;
 
 		// attackMechanism_18 (prefab fields)
 		attackMechanism_18.type = "Cards";
+		attackMechanism_18.slotID = 9;
+		attackMechanism_18.cardID = 0;
 
 		// attackMechanism_19 (prefab fields)
 		attackMechanism_19.type = "Cards";
+		attackMechanism_19.slotID = 10;
+		attackMechanism_19.cardID = 0;
 
 		this.result = result;
 		this.attackMechanism = attackMechanism;
