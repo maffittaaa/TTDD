@@ -1439,29 +1439,13 @@
                     "type": "Image",
                     "id": "a8a05233-a729-4ab3-8dcf-c9daf528c140",
                     "label": "shadow",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": 4,
-                    "hitArea.y": 6,
-                    "hitArea.width": 191.99313021289976,
-                    "hitArea.height": 188.84173021194542,
                     "texture": {
                         "key": "Shadow"
                     },
                     "x": 960,
                     "y": 540,
                     "scaleX": 10.03127832345736,
-                    "scaleY": 5.743648692660658,
-                    "list": [
-                        {
-                            "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
-                            "id": "34a261db-8872-4b98-aafd-35f0a2f18806",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "cardsMechanism_2",
-                            "type": "ShowCards"
-                        }
-                    ]
+                    "scaleY": 5.743648692660658
                 },
                 {
                     "type": "Container",
@@ -1909,6 +1893,47 @@
                                     ]
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "77da5816-4f37-44f8-8086-461bcf334a34",
+                    "label": "goBackButton",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 28,
+                    "hitArea.height": 20,
+                    "texture": {
+                        "key": "goBackButton"
+                    },
+                    "x": 111,
+                    "y": 1026,
+                    "scaleX": 4,
+                    "scaleY": 4,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "41e59f44-0cd3-425c-9fdd-a7d260498b60",
+                            "label": "onPointerDownScript_27",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "13062a8a-1b36-416c-aafb-e773ca8ecf0c",
+                                    "label": "pushActionScript_27"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                            "id": "f40dbdb7-eb80-4a2c-bb56-e852c7d03a72",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cardsMechanism_2",
+                            "scope": "PUBLIC",
+                            "type": "ShowCards"
                         }
                     ]
                 }

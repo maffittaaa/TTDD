@@ -11,6 +11,7 @@ class DamageAnimationMechanism extends Phaser.GameObjects.Text {
 		this.scaleX = 0.5;
 		this.scaleY = 0.5;
 		this.setOrigin(0.5, 0.5);
+		this.visible = false;
 		this.text = "0";
 		this.setStyle({ "align": "center", "color": "#c30d0dff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff", "strokeThickness":6});
 

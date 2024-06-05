@@ -137,6 +137,11 @@
                 "key": "EndTurnMechanism"
             },
             {
+                "url": "assets/goBackButton.png",
+                "type": "image",
+                "key": "goBackButton"
+            },
+            {
                 "url": "src/scripts/GoToScene.js",
                 "type": "script",
                 "key": "GoToScene"
