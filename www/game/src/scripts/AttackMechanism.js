@@ -91,7 +91,7 @@ class AttackMechanism extends ScriptNode {
 			this.doAttack();
 			attackerSlot = 0;
 			targetSlot = 0;
-		} else if (stillAttacking = true) {
+		} else if (stillAttacking == true) {
 			if (characterOnHold != null) {
 				this.playCard(cardOnHold, characterOnHold, slot);
 			} else {
@@ -102,7 +102,6 @@ class AttackMechanism extends ScriptNode {
 
 	setGlowOnOff(object, boolean) {
 		object.preFX.list[0].active = boolean;
-
 	}
 
 	doAttack() { // passing the attackerSlot and the targetslot to the server
@@ -124,7 +123,7 @@ class AttackMechanism extends ScriptNode {
 					scene.playerThrowAnimation();
 
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
-					damageAnimation.visible = true; //SO PODE DAR DANO DEPOIS DO BONECO LA CHEGAR
+					damageAnimation.visible = true;
 					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
 					scene.setGlowOnOff(scene.parent, false);
@@ -149,6 +148,9 @@ class AttackMechanism extends ScriptNode {
 	}
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
+
+		console.log("playing card")
+
 		var scene = this;
 		$.ajax({
 			type: 'POST',
@@ -170,6 +172,7 @@ class AttackMechanism extends ScriptNode {
 					reviving = data.reviving;
 					cardOnHold = data.card;
 				} else if (data.stillAttacking) {
+					
 					stillAttacking = data.stillAttacking;
 					cardOnHold = data.card;
 					if (data.characterOnHold) {
@@ -177,7 +180,13 @@ class AttackMechanism extends ScriptNode {
 					}
 				} else if (data.card_id) {
 					console.log(data);
-					scene.parent.name = "cardSlot"
+
+					if(scene.type == "Cards"){
+
+						scene.parent.visible = false
+						scene.parent.name = "cardUsed" + data.card_id
+						scene.parent.parentContainer.bringToTop(scene.parent)
+					}
 					
 					stillAttacking = false;
 					reviving = false;

@@ -62,6 +62,9 @@ class Throwables extends ScriptNode {
 			finalY = null
 			peakHeight = null
 			startTime = null
+
+			item.x = initialX;
+			item.y = initialY;
 			throwing = false
 		}
 	}
