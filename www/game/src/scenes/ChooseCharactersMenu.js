@@ -99,13 +99,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_3.postFX.addGlow(4194559, 3, 3, false);
 
 		// Profile
-		const profile = this.add.text(622, 43, "", {});
+		const profile = this.add.text(622, 47, "", {});
 		profile.setInteractive(new Phaser.Geom.Rectangle(-46, 56, 685.0914454010407, 162.00620464863744), Phaser.Geom.Rectangle.Contains);
-		profile.scaleX = 0.13;
-		profile.scaleY = 0.13;
+		profile.scaleX = 0.15;
+		profile.scaleY = 0.15;
 		profile.setOrigin(0.5, 0.5);
 		profile.text = "Profile";
-		profile.setStyle({ "align": "center", "fontFamily": "pixeled", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		profile.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Profile.add(profile);
 
 		// onPointerDownScript_1
@@ -234,13 +234,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight.postFX.addGlow(4194559, 3, 3, false);
 
 		// ChooseCharacters
-		const chooseCharacters = this.add.text(180, 43, "", {});
+		const chooseCharacters = this.add.text(180, 47, "", {});
 		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(-12, 49, 1721.7117200552311, 164.44063936199876), Phaser.Geom.Rectangle.Contains);
-		chooseCharacters.scaleX = 0.13;
-		chooseCharacters.scaleY = 0.13;
+		chooseCharacters.scaleX = 0.15;
+		chooseCharacters.scaleY = 0.15;
 		chooseCharacters.setOrigin(0.5, 0.5);
 		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "align": "center", "fontFamily": "pixeled", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		chooseCharacters.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Choose_Characters.add(chooseCharacters);
 
 		// goToScene_1
@@ -496,13 +496,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_2.postFX.addGlow(4194559, 3, 3, false);
 
 		// Characters And Cards
-		const characters_And_Cards = this.add.text(422, 43, "", {});
+		const characters_And_Cards = this.add.text(422, 47, "", {});
 		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(-23, 46, 1913.2290962755528, 167.44063936199893), Phaser.Geom.Rectangle.Contains);
-		characters_And_Cards.scaleX = 0.13;
-		characters_And_Cards.scaleY = 0.13;
+		characters_And_Cards.scaleX = 0.15;
+		characters_And_Cards.scaleY = 0.15;
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
-		characters_And_Cards.setStyle({ "align": "center", "fontFamily": "pixeled", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		characters_And_Cards.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		characters_and_Cards.add(characters_And_Cards);
 
 		// goToScene_2
@@ -529,13 +529,13 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_4.postFX.addGlow(4194559, 3, 3, false);
 
 		// ButtonGoToHomePage
-		const buttonGoToHomePage = this.add.text(808, 42, "", {});
+		const buttonGoToHomePage = this.add.text(808, 46, "", {});
 		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(-17, 58, 1616.4785766301125, 163.13294733645859), Phaser.Geom.Rectangle.Contains);
-		buttonGoToHomePage.scaleX = 0.13;
-		buttonGoToHomePage.scaleY = 0.13;
+		buttonGoToHomePage.scaleX = 0.15;
+		buttonGoToHomePage.scaleY = 0.15;
 		buttonGoToHomePage.setOrigin(0.5, 0.5);
 		buttonGoToHomePage.text = "Back To Home Page";
-		buttonGoToHomePage.setStyle({ "align": "center", "fontFamily": "pixeled", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		buttonGoToHomePage.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Go_Back_To_Home_Page.add(buttonGoToHomePage);
 
 		// onPointerDownScript_25
