@@ -82,10 +82,10 @@ class AttackMechanism extends ScriptNode {
 					scene.scene.children.list[4].setVisible(true);
 					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				} else {
-					scene.playerThrowAnimation()
-					var damageAnimation = new DamageAnimationMechanism(scene.scene, 347, 415);
-					damageText.text = targetSlot.caracter_attack; // NOT CORRETO 
-					console.log(damageAnimation);
+					scene.playerThrowAnimation();
+					// var damageAnimation = new DamageAnimationMechanism(scene.scene, 347, 415);
+					// damageText.text = targetSlot.caracter_attack; // NOT CORRETO 
+					// console.log(damageAnimation);
 				}
 			},
 			error: function (err) {
