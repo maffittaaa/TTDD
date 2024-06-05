@@ -142,6 +142,23 @@
                             "type": "player",
                             "slotID": 1,
                             "damageText": "damageAnimationMechanism"
+                        },
+                        {
+                            "prefabId": "b9f77bc1-409e-42c7-8c94-c90e3424de68",
+                            "id": "e6758cf6-806d-4589-900c-161152ce4af0",
+                            "unlock": [
+                                "nameText",
+                                "levelText"
+                            ],
+                            "label": "nameAndLevelMechanism",
+                            "nameText": "namePlayer1Text",
+                            "levelText": "levelPlayer1Text"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "f1ecacf3-06e1-486b-9037-720d00942ca2",
+                            "label": "glowFx",
+                            "preFX": true
                         }
                     ]
                 },
@@ -184,6 +201,12 @@
                             "label": "attackMechanism_1",
                             "type": "player",
                             "slotID": 2
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "fdd312a0-17e6-47ab-9013-8da3f2db2c11",
+                            "label": "glowFx_1",
+                            "preFX": true
                         }
                     ]
                 },
@@ -226,6 +249,12 @@
                             "label": "attackMechanism_2",
                             "type": "player",
                             "slotID": 3
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "0903a005-a263-4fa1-be43-6697b8421c6c",
+                            "label": "glowFx_2",
+                            "preFX": true
                         }
                     ]
                 },
@@ -268,6 +297,12 @@
                             "label": "attackMechanism_3",
                             "type": "player",
                             "slotID": 4
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "56dfb38d-8cf5-4bd8-9f33-e1f5f50720d8",
+                            "label": "glowFx_3",
+                            "preFX": true
                         }
                     ]
                 },
@@ -310,6 +345,12 @@
                             "label": "attackMechanism_4",
                             "type": "player",
                             "slotID": 5
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "9a5b2a4d-9fc5-4f19-b236-a58a06d171e7",
+                            "label": "glowFx_4",
+                            "preFX": true
                         }
                     ]
                 },
@@ -405,6 +446,13 @@
                             "label": "attackMechanism_5",
                             "type": "opponent",
                             "slotID": 1
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
+                            "label": "glowFx_5",
+                            "color": "#8d0202",
+                            "preFX": true
                         }
                     ]
                 },
@@ -447,6 +495,13 @@
                             "label": "attackMechanism_6",
                             "type": "opponent",
                             "slotID": 2
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
+                            "label": "glowFx_6",
+                            "color": "#8d0202",
+                            "preFX": true
                         }
                     ]
                 },
@@ -489,6 +544,12 @@
                             "label": "attackMechanism_7",
                             "type": "opponent",
                             "slotID": 3
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
+                            "label": "glowFx_7",
+                            "preFX": true
                         }
                     ]
                 },
@@ -531,6 +592,13 @@
                             "label": "attackMechanism_8",
                             "type": "opponent",
                             "slotID": 4
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
+                            "label": "glowFx_8",
+                            "color": "#8d0202",
+                            "preFX": true
                         }
                     ]
                 },
@@ -573,6 +641,13 @@
                             "label": "attackMechanism_9",
                             "type": "opponent",
                             "slotID": 5
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
+                            "label": "glowFx_9",
+                            "color": "#8d0202",
+                            "preFX": true
                         }
                     ]
                 },
@@ -584,7 +659,7 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 778,
+                    "x": 770,
                     "y": 384,
                     "scaleX": 0.28,
                     "scaleY": 0.28,
@@ -991,8 +1066,8 @@
             "id": "71320ef9-cbda-4af8-a209-c18cf79bdeee",
             "label": "resetHPButton",
             "scope": "CLASS",
-            "x": 151,
-            "y": 27,
+            "x": 960,
+            "y": 267,
             "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
@@ -1027,8 +1102,8 @@
             "id": "13ae4c69-44c5-479b-a07e-2371b045aede",
             "label": "resetAttackStatusButton",
             "scope": "CLASS",
-            "x": 151,
-            "y": 131,
+            "x": 960,
+            "y": 363,
             "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
@@ -1063,8 +1138,8 @@
             "id": "ae1abf5a-64dd-4704-a1e6-fa7e4be007db",
             "label": "setHPTo1Button",
             "scope": "CLASS",
-            "x": 151,
-            "y": 82,
+            "x": 960,
+            "y": 315,
             "scaleX": 2.2,
             "scaleY": 0.3,
             "isFilled": true,
@@ -1098,8 +1173,8 @@
             "type": "Text",
             "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
             "label": "setHPTo1Text",
-            "x": 156,
-            "y": 132,
+            "x": 960,
+            "y": 364,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "originX": 0.5,
@@ -1112,8 +1187,8 @@
             "type": "Text",
             "id": "52658ea1-6bbe-414a-893d-fe53e77ad78b",
             "label": "resetAttackStatusText",
-            "x": 151,
-            "y": 82,
+            "x": 960,
+            "y": 315,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "originX": 0.5,
@@ -1126,8 +1201,8 @@
             "type": "Text",
             "id": "5c28c047-d023-4065-8663-206c91fda482",
             "label": "resetHPText",
-            "x": 98,
-            "y": 16,
+            "x": 906,
+            "y": 256,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "text": "Reset HP",
@@ -1164,6 +1239,131 @@
             "text": "WINNER",
             "fontFamily": "Minecraft",
             "fontSize": "200px"
+        },
+        {
+            "type": "Container",
+            "id": "437728b4-1b6a-4c67-8007-6bef1ecf0610",
+            "label": "namesAndLevelsPlayers",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "e40cd8dc-2200-4d19-9273-7eac265269aa",
+                    "label": "player2NameShape",
+                    "scope": "PUBLIC",
+                    "x": 1561,
+                    "y": 66,
+                    "scaleX": 4,
+                    "scaleY": 0.5,
+                    "strokeColor": "#3c039b",
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "179a4f5f-796e-4f8a-8985-5146eb8f883e",
+                    "label": "player1NameShape",
+                    "scope": "PUBLIC",
+                    "x": 359,
+                    "y": 66,
+                    "scaleX": 4,
+                    "scaleY": 0.5,
+                    "strokeColor": "#3c039b",
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "d020c11a-6f8f-4e70-9e2b-2e50aab80667",
+                    "label": "levelPlayer1Shape",
+                    "scope": "PUBLIC",
+                    "x": 352,
+                    "y": 121,
+                    "scaleX": 3,
+                    "scaleY": 0.3,
+                    "strokeColor": "#3c03b4",
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "16b5301d-39bb-4448-a354-706bcc5b673f",
+                    "label": "levelPlayer2Shape",
+                    "scope": "PUBLIC",
+                    "x": 1568,
+                    "y": 121,
+                    "scaleX": 3,
+                    "scaleY": 0.3,
+                    "strokeColor": "#3c03b4",
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "659c057e-36cb-4348-8fd5-77c3b6eecfe3",
+                    "label": "namePlayer1Text",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 344.5,
+                    "y": 67,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Player 1",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "45px"
+                },
+                {
+                    "type": "Text",
+                    "id": "3a658f93-55e8-4ccf-821b-8762896272ea",
+                    "label": "namePlayer2Text",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 1568,
+                    "y": 67,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Player 2",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "45px"
+                },
+                {
+                    "type": "Text",
+                    "id": "0ae65cd0-d0de-426d-9f63-611af106125f",
+                    "label": "levelPlayer1Text",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 333,
+                    "y": 123,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Level: ",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "20px"
+                },
+                {
+                    "type": "Text",
+                    "id": "a0bc87e5-6fe1-4fa6-b6b2-ab797d7289bf",
+                    "label": "levelPlayer2Text",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 1565,
+                    "y": 123,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Level: ",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "20px"
+                }
+            ]
         }
     ],
     "plainObjects": [],

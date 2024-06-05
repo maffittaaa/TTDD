@@ -18,21 +18,21 @@ router.post("/changeProfile", (req, res) => {
                 });
             } else {
                 if (rows.length > 0) {
-                    if(playerUsername != ""){
-                        if(playerEmail.search(" ") >= 0){
+                    if (playerUsername != "") {
+                        if (playerEmail.search(" ") >= 0) {
                             res.send({
                                 "changed": false,
                                 "message": "You can't put spaces in your name or email"
                             })
                             return
                         }
-                        if(playerUsername.search(" ") >= 0){
+                        if (playerUsername.search(" ") >= 0) {
                             res.send({
                                 "changed": false,
                                 "message": "You can't put spaces in your name or email"
                             })
                             return
-                        }else{
+                        } else {
                             connection.execute("SELECT * FROM player WHERE player_username = ? OR player_email = ? ", [playerUsername, playerEmail],
                                 function (err, rows1, fields) {
                                     if (err) {
@@ -47,7 +47,7 @@ router.post("/changeProfile", (req, res) => {
                                                 "changed": false,
                                                 "message": "The user already exists, \n or the email is already in use, \n please try another one"
                                             })
-                                        }else{
+                                        } else {
                                             connection.execute("UPDATE player SET player_username = ? WHERE player_id = ?", [playerUsername, req.session.playerID],
                                                 function (err, rows, fields) {
                                                     if (err) {
@@ -55,8 +55,8 @@ router.post("/changeProfile", (req, res) => {
                                                             "changed": false,
                                                             "message": "something went wrong: " + err
                                                         })
-                                                    }else {
-                                                        if(playerEmail == ""){
+                                                    } else {
+                                                        if (playerEmail == "") {
                                                             req.session.playerName = playerUsername
                                                             res.send({
                                                                 "changed": true,
@@ -64,14 +64,14 @@ router.post("/changeProfile", (req, res) => {
                                                             })
                                                             return
                                                         }
-                                                        connection.execute("UPDATE player SET player_email = ? WHERE player_id = ?", [playerEmail, req.session.playerID], 
+                                                        connection.execute("UPDATE player SET player_email = ? WHERE player_id = ?", [playerEmail, req.session.playerID],
                                                             function (err, rows, fields) {
                                                                 if (err) {
                                                                     res.send({
                                                                         "changed": false,
                                                                         "message": "something went wrong: " + err
                                                                     })
-                                                                }else {
+                                                                } else {
                                                                     req.session.playerName = playerUsername
                                                                     res.send({
                                                                         "changed": true,
@@ -88,8 +88,8 @@ router.post("/changeProfile", (req, res) => {
                                 }
                             )
                         }
-                    }else if(playerEmail != ""){
-                        if(playerEmail.search(" ") >= 0){
+                    } else if (playerEmail != "") {
+                        if (playerEmail.search(" ") >= 0) {
                             res.send({
                                 "changed": false,
                                 "message": "You can't put spaces in your name or email"
@@ -110,7 +110,7 @@ router.post("/changeProfile", (req, res) => {
                                             "changed": false,
                                             "message": "The user already exists, \n or the email is already in use, \n please try another one"
                                         })
-                                    }else{
+                                    } else {
                                         connection.execute("UPDATE player SET player_email = ? WHERE player_id = ?", [playerEmail, req.session.playerID],
                                             function (err, rows, fields) {
                                                 if (err) {
@@ -118,7 +118,7 @@ router.post("/changeProfile", (req, res) => {
                                                         "changed": false,
                                                         "message": "something went wrong: " + err
                                                     })
-                                                }else {
+                                                } else {
                                                     res.send({
                                                         "changed": true,
                                                         "name": req.session.playerName
@@ -126,15 +126,15 @@ router.post("/changeProfile", (req, res) => {
                                                 }
                                             }
                                         )
-                                        
+
                                     }
                                 }
                             }
                         )
-                    }else{
+                    } else {
                         res.send({
                             "changed": false,
-                            "message": "To change the profile please intruduce something on the boxes above." 
+                            "message": "To change the profile please intruduce something on the boxes above."
                         })
                     }
                 } else {
@@ -152,19 +152,19 @@ router.post("/descriptions", (req, res) => {
     var type = req.body.type
     var id = req.body.id
 
-    if(type == "Char"){
+    if (type == "Char") {
         connection.execute("SELECT caracter_name FROM caracter WHERE caracter_id = ?", [id],
             function (err, rows, fields) {
                 if (err) {
                     res.send(err);
                 }
                 else {
-                    if (rows.length > 0){
+                    if (rows.length > 0) {
                         res.send({
                             "description": rows[0].caracter_name,
                             "succesfull": true,
                         })
-                    }else{
+                    } else {
                         res.send({
                             "message": "Something went wrong",
                             "succesfull": false,
@@ -173,19 +173,19 @@ router.post("/descriptions", (req, res) => {
                 }
             }
         )
-    }else if(type == "Card"){
+    } else if (type == "Card") {
         connection.execute("SELECT card_description FROM card WHERE card_id = ?", [id],
             function (err, rows, fields) {
                 if (err) {
                     res.send(err);
                 }
                 else {
-                    if (rows.length > 0){
+                    if (rows.length > 0) {
                         res.send({
                             "description": rows[0].card_description,
                             "succesfull": true,
                         })
-                    }else{
+                    } else {
                         res.send({
                             "message": "Something went wrong",
                             "succesfull": false,
@@ -250,6 +250,8 @@ router.post("/choseCharacters", (req, res) => {
         }
     )
 });
+
+
 
 function createMatch(req, res, charactersFound, charactersId, charactersHp, tile) {
     //check if a player is in a match
@@ -384,7 +386,7 @@ function addCharacter(req, res, characters, hp, tile) {
                                         console.log("player match character: " + err1);
                                         res.send(err1);
                                     } else {
-                                        
+
                                         console.log("character " + characters[i] + " added to slot " + j);
                                     }
                                 }
@@ -399,10 +401,10 @@ function addCharacter(req, res, characters, hp, tile) {
 
 function addCards(req, res) {
     connection.execute("INSERT INTO deck(deck_match_id, deck_player_id, deck_card_id, deck_card_state_id, deck_card_played) VALUES \
-    ("+ req.session.match +", "+ req.session.playerID +",1, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 2, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 3, 1, false), \
-    ("+ req.session.match +", "+ req.session.playerID +", 4, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 5, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 6, 1, false), \
-    ("+ req.session.match +", "+ req.session.playerID +", 7, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 8, 1, false), ("+ req.session.match +", "+ req.session.playerID +", 9, 1, false), \
-    ("+ req.session.match +", "+ req.session.playerID +", 10, 1, false) ",
+    ("+ req.session.match + ", " + req.session.playerID + ",1, 1, false), (" + req.session.match + ", " + req.session.playerID + ", 2, 1, false), (" + req.session.match + ", " + req.session.playerID + ", 3, 1, false), \
+    ("+ req.session.match + ", " + req.session.playerID + ", 4, 1, false), (" + req.session.match + ", " + req.session.playerID + ", 5, 1, false), (" + req.session.match + ", " + req.session.playerID + ", 6, 1, false), \
+    ("+ req.session.match + ", " + req.session.playerID + ", 7, 1, false), (" + req.session.match + ", " + req.session.playerID + ", 8, 1, false), (" + req.session.match + ", " + req.session.playerID + ", 9, 1, false), \
+    ("+ req.session.match + ", " + req.session.playerID + ", 10, 1, false) ",
         function (err, rows, fields) {
             if (err) {
                 console.log("Deck, card 1: " + err);
@@ -495,6 +497,41 @@ router.get("/getMatchData", (req, res) => {
         }
     )
 });
+
+router.get('/getPlayerNameAndLevel', (req, res) => {
+    connection.execute("SELECT player_username, player_level FROM player INNER JOIN matche ON player_id = matche_player1_id OR player_id = matche_player2_id WHERE player_id != ? AND matche_id = ? ", [req.session.playerID, req.session.match],
+        function (err, rows, fields) {
+            if (err) {
+                console.log(err);
+                res.send(err);
+            } else {
+                console.log(rows);
+                res.send({
+                    playerName: req.session.playerName,
+                    playerLevel: req.session.playerLevel,
+                    opponentName: rows[0].player_username,
+                    opponentLevel: updateXp(rows[0].player_level)
+                });
+            }
+        })
+});
+
+function updateXp(xp) {
+    var i = 0;
+    var intialLevel = 50;
+    var levelFound = false;
+
+    while (levelFound == false) {
+        if (xp < intialLevel) {
+            xp = i;
+            levelFound = true;
+        } else {
+            i += 1;;
+            intialLevel += (intialLevel / 2);
+        }
+    }
+    return xp;
+}
 
 router.get("/deltaChanges", (req, res) => {
     if (req.session.playerID && req.session.match) {
@@ -616,10 +653,10 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                     )
 
                 } else {
-                    
-                    if(player_id == player1) otherPlayer_id = player2
-                    else if(player_id == player2) otherPlayer_id = player1
-                
+
+                    if (player_id == player1) otherPlayer_id = player2
+                    else if (player_id == player2) otherPlayer_id = player1
+
                     connection.execute("UPDATE matche SET matche_state_id = 2 WHERE matche_id = ?", [match_id],
                         function (error, rows, fields) {
                             if (error) {
@@ -644,8 +681,8 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
 };
 
 
-function updatePlayerStats(winner, loser, winner_name, res, req, player1, player2, ch1, ch2){ //update player victories
-    if(winner == req.session.playerID){
+function updatePlayerStats(winner, loser, winner_name, res, req, player1, player2, ch1, ch2) { //update player victories
+    if (winner == req.session.playerID) {
         connection.execute("UPDATE player SET player_victories = player_victories + 1 WHERE player_id = ?", [winner],
             function (error, rows, fields) {
                 if (error) {
@@ -664,8 +701,8 @@ function updatePlayerStats(winner, loser, winner_name, res, req, player1, player
                                             res.send(error);
                                         } else {
                                             console.log("updated the loser matches")
-                                            req.session.match = null;   
-        
+                                            req.session.match = null;
+
                                             res.send(
                                                 {
                                                     matchFinished: true,
@@ -688,8 +725,8 @@ function updatePlayerStats(winner, loser, winner_name, res, req, player1, player
                 }
             }
         )
-    }else{
-        req.session.match = null; 
+    } else {
+        req.session.match = null;
         res.send(
             {
                 matchFinished: true,
