@@ -197,7 +197,7 @@ router.post("/descriptions", (req, res) => {
     }
 })
 
-router.post("/choseCharacters", (req, res) => {
+router.post("/chooseCharacters", (req, res) => {
     var charactersChosen = req.body.slots;
     charactersChosen = JSON.parse(charactersChosen);
 

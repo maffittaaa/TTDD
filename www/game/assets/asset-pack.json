@@ -221,6 +221,11 @@
                 "key": "spritesheet"
             },
             {
+                "url": "src/scripts/Throwables.js",
+                "type": "script",
+                "key": "Throwables"
+            },
+            {
                 "url": "assets/Tipsy_Tussle_Logo.png",
                 "type": "image",
                 "key": "Tipsy_Tussle_Logo"

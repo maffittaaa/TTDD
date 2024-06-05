@@ -1,6 +1,3 @@
-
-
-
 var attackerSlot = 0;
 var targetSlot = 0;
 var stillAttacking = false;
@@ -31,16 +28,24 @@ class AttackMechanism extends ScriptNode {
 
 	start() {
 		this.parent.on('pointerdown', event => {
-			if (this.type == "player") {
-				this.setAttackerSlot(this.slotID);
-			} else if (this.type == "opponent") {
-				this.setTargetSlot(this.slotID);
+			if(throwing == false){
+				if (this.type == "player") {
+					this.setAttackerSlot(this.slotID);
+				} else if (this.type == "opponent") {
+					this.setTargetSlot(this.slotID);
+				}
 			}
 		})
 	}
 
 	setAttackerSlot(slot) { //attacker has a slot
 		attackerSlot = slot;
+		initialX = this.parent.x;
+		initialY = this.parent.y;
+		finalX = null
+		finalY = null
+		item = this.parent;
+
 		if (reviving == true) {
 			this.playCard(cardOnHold, slot);
 		}
@@ -72,11 +77,12 @@ class AttackMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				console.log(data);
-				if (data.notWorking) {
+				if (data.notWorking == true) {
 					scene.scene.children.list[4].text = data.message;
 					scene.scene.children.list[4].setVisible(true);
 					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				} else {
+					scene.playerThrowAnimation()
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, 347, 415);
 					damageText.text = targetSlot.caracter_attack; // NOT CORRETO 
 					console.log(damageAnimation);
@@ -88,6 +94,14 @@ class AttackMechanism extends ScriptNode {
 		})
 	};
 
+	playerThrowAnimation(){
+		startTime = performance.now();
+		finalX = this.parent.x 
+		finalY = this.parent.y 
+		peakHeight = Math.abs(finalY - initialY) + 100
+		throwing = true
+		console.log(throwing, item, initialX, initialY, finalX, finalY, peakHeight, startTime)
+	}
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
 		var scene = this;

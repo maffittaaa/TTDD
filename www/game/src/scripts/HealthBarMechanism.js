@@ -26,8 +26,6 @@ class HealthBarMechanism extends ScriptNode {
 			maxHP = 200;
 		}
 
-		console.log(currentHP)
-
 		var healthBar = this.scene.children.list;
 
 		for (let i = 0; i < healthBar.length; i++) {
