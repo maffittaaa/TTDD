@@ -1916,12 +1916,12 @@
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
                             "id": "41e59f44-0cd3-425c-9fdd-a7d260498b60",
-                            "label": "onPointerDownScript_17",
+                            "label": "onPointerDownScript_27",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
                                     "id": "13062a8a-1b36-416c-aafb-e773ca8ecf0c",
-                                    "label": "pushActionScript_17"
+                                    "label": "pushActionScript_27"
                                 }
                             ]
                         },

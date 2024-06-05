@@ -869,11 +869,11 @@ class Match extends Phaser.Scene {
 		goBackButton.scaleY = 4;
 		handCards.add(goBackButton);
 
-		// onPointerDownScript_17
-		const onPointerDownScript_17 = new OnPointerDownScript(goBackButton);
+		// onPointerDownScript_27
+		const onPointerDownScript_27 = new OnPointerDownScript(goBackButton);
 
-		// pushActionScript_17
-		new PushActionScript(onPointerDownScript_17);
+		// pushActionScript_27
+		new PushActionScript(onPointerDownScript_27);
 
 		// cardsMechanism_2
 		const cardsMechanism_2 = new CardsMechanism(goBackButton);
@@ -995,6 +995,9 @@ class Match extends Phaser.Scene {
 		attackMechanism_19.type = "Cards";
 		attackMechanism_19.slotID = 10;
 		attackMechanism_19.cardID = 0;
+
+		// cardsMechanism_2 (prefab fields)
+		cardsMechanism_2.type = "ShowCards";
 
 		this.result = result;
 		this.attackMechanism = attackMechanism;
