@@ -77,11 +77,15 @@ class CardsMechanism extends ScriptNode {
 							handCards.list[i].list[j].setTexture("cartas4_Imprimir", cardsImgs[cards[0].card_id - 1]);
 							handCards.list[i].list[j].name = "card" + cards[0].card_id;
 							handCards.list[i].list[j].visible = true
+							slotID = j + 1;
+							cardID = cards[0].card_id;
 							slotFound = true;
 						} else {
 							handCards.list[i].list[j].setTexture("cartas3_Imprimir", cardsImgs[cards[0].card_id - 1]);
 							handCards.list[i].list[j].name = "card" + cards[0].card_id;
 							handCards.list[i].list[j].visible = true
+							slotID = j + 1;
+							cardID = cards[0].card_id;
 							slotFound = true;
 						}
 					} else {

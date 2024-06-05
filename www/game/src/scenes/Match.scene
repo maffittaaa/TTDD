@@ -65,15 +65,15 @@
             "scope": "CLASS",
             "x": 957,
             "y": 787,
-            "scaleX": 2.5,
-            "scaleY": 1.5,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
             "originX": 0.5,
             "originY": 0.5,
             "visible": false,
-            "text": "ola\n",
+            "text": "result",
             "align": "center",
             "fontFamily": "Minecraft",
-            "fontSize": "20px",
+            "fontSize": "100px",
             "color": "#000000ff",
             "stroke": "#000000ff"
         },
@@ -404,15 +404,12 @@
                     "unlock": [
                         "x",
                         "y",
-                        "damageText",
-                        "visible"
+                        "damageText"
                     ],
                     "label": "damageAnimationMechanism",
-                    "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 285,
-                    "y": 415,
-                    "visible": false
+                    "x": 347,
+                    "y": 415
                 }
             ]
         },
@@ -1463,6 +1460,9 @@
                             "label": "cardSlot1",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1475,10 +1475,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "4458b7e5-10fc-40a0-95c5-cadd90633261",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_10",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 1,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "15cd795c-4408-4eea-b7e3-bf808d94c356",
+                                    "label": "onPointerDownScript_26",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "3c1a858c-03c3-4f86-8df6-68133c009df0",
+                                            "label": "pushActionScript_26"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1488,6 +1504,9 @@
                             "label": "cardSlot2",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1500,10 +1519,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "1cec9bed-e8f9-4027-a0e5-ee544616d4fc",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_11",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 2,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "aa4a284d-7125-4ced-b43b-ca1f04c264be",
+                                    "label": "onPointerDownScript_25",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "6b3bc24a-05ea-45f4-8b99-0515738995c0",
+                                            "label": "pushActionScript_25"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1513,6 +1548,9 @@
                             "label": "cardSlot3",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1525,10 +1563,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "d502785a-8bc5-49a8-8771-17d6515d981c",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_12",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 3,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "2a4f2ec3-c8b3-4a70-821a-246361af8597",
+                                    "label": "onPointerDownScript_24",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "3c1f3e1e-0876-4f94-808d-2e0ffa771ad5",
+                                            "label": "pushActionScript_24"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1538,6 +1592,9 @@
                             "label": "cardSlot4",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1550,10 +1607,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "db856ac6-7b0d-4baf-a972-6ab951563f6d",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_13",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 4,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "c6b44c4e-bdf8-49ed-a839-a4659db88792",
+                                    "label": "onPointerDownScript_23",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "082ad824-fad0-4a44-a45f-e59e13b39b20",
+                                            "label": "pushActionScript_23"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1563,6 +1636,9 @@
                             "label": "cardSlot5",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1575,10 +1651,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "f5637c77-932f-4802-80b9-63f6d47b6a93",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_14",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 5,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "677c5f08-fc31-4085-a220-effaee8392d3",
+                                    "label": "onPointerDownScript_22",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "d3a99f5a-3317-4172-9cd2-194cbb2dd949",
+                                            "label": "pushActionScript_22"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1588,6 +1680,9 @@
                             "label": "cardSlot6",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1600,10 +1695,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "1b188b7a-61d4-49b0-874a-61785c2505ec",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_15",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 6,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "11391687-7a02-46a0-855e-13c57223aae8",
+                                    "label": "onPointerDownScript_21",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "a8effa99-c730-4b6e-bdec-0dae2e59688a",
+                                            "label": "pushActionScript_21"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1613,6 +1724,9 @@
                             "label": "cardSlot7",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1625,10 +1739,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "67b88d77-a8e0-40a9-af3e-17b166d6558a",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_16",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 7,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "769e1312-ced2-41cf-841b-d6227ff1b5bd",
+                                    "label": "onPointerDownScript_20",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "907aa647-ba7e-4d11-bbe6-68d72c57c1c5",
+                                            "label": "pushActionScript_20"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1638,6 +1768,9 @@
                             "label": "cardSlot8",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1650,10 +1783,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "2acbf76e-a1e3-4948-afe5-a009477226a1",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_17",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 8,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "b516e932-339c-4637-9677-d59fcbd92ad0",
+                                    "label": "onPointerDownScript_19",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "4c5aa2b6-2554-4d25-8fc0-077638fea281",
+                                            "label": "pushActionScript_19"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1663,6 +1812,9 @@
                             "label": "cardSlot9",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1675,10 +1827,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "b5aa7d9a-e19d-49db-a32e-c74db9ccbfa6",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_18",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 9,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "ee395695-310e-4cea-9440-a17c7b205393",
+                                    "label": "onPointerDownScript_18",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "774931d3-d6ba-4832-a47e-fcad689837cd",
+                                            "label": "pushActionScript_18"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -1688,6 +1856,9 @@
                             "label": "cardSlot10",
                             "useGameObjectName": true,
                             "scope": "PUBLIC",
+                            "hitArea.shape": "RECTANGLE",
+                            "hitArea.width": 304,
+                            "hitArea.height": 432,
                             "texture": {
                                 "key": "cartas4_Imprimir",
                                 "frame": 3
@@ -1700,10 +1871,26 @@
                                     "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
                                     "id": "f539c77b-c05a-465e-b1a8-cfd85f73d7c9",
                                     "unlock": [
-                                        "type"
+                                        "type",
+                                        "slotID",
+                                        "cardID"
                                     ],
                                     "label": "attackMechanism_19",
-                                    "type": "Cards"
+                                    "type": "Cards",
+                                    "slotID": 10,
+                                    "cardID": 0
+                                },
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "8d378351-3fe8-4153-85f1-d114336bf971",
+                                    "label": "onPointerDownScript_17",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "041af6a8-e9c4-4a3b-937a-beadd619be84",
+                                            "label": "pushActionScript_17"
+                                        }
+                                    ]
                                 }
                             ]
                         }

@@ -5,6 +5,8 @@ var stillAttacking = false;
 var cardOnHold;
 var characterOnHold = null;
 var reviving = false;
+var slotID = 0
+var cardID = 0
 
 /* START OF COMPILED CODE */
 
@@ -49,6 +51,18 @@ class AttackMechanism extends ScriptNode {
 				}
 			}
 		})
+	}
+
+	update(){
+		if (this.type == "Cards") {
+			if(slotID != 0 && cardID != 0){
+				if(slotID == this.slotID){
+					this.cardID = cardID
+					slotID = 0
+					cardID = 0
+				}
+			}		
+		}
 	}
 
 	setAttackerSlot(slot) { //attacker has a slot
@@ -113,7 +127,6 @@ class AttackMechanism extends ScriptNode {
 					damageAnimation.visible = true; //SO PODE DAR DANO DEPOIS DO BONECO LA CHEGAR
 					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
-					console.log(damageAnimation);
 					scene.setGlowOnOff(scene.parent, false);
 					scene.setGlowOnOff(attacker, false);
 					attacker = null;
@@ -146,6 +159,10 @@ class AttackMechanism extends ScriptNode {
 				"secCharChosen": secCharChosen
 			},
 			success: function (data) {
+				var handCards = scene.scene.children.list[scene.scene.children.list.length - 1];
+				handCards.visible = !showHandCards
+				showHandCards = !showHandCards
+
 				if (data.notWorking) {
 					scene.scene.children.list[4].text = data.message;
 					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
@@ -160,8 +177,8 @@ class AttackMechanism extends ScriptNode {
 					}
 				} else if (data.card_id) {
 					console.log(data);
-					document.getElementById("card_id_" + data.card_id).innerHTML = '<button class="graveyard" id="card_dead_id_' + data.card_id + '"> ' + data.card_name + ' </button>';
-					document.getElementById("card_dead_id_" + data.card_id).enable = false;//!!
+					scene.parent.name = "cardSlot"
+					
 					stillAttacking = false;
 					reviving = false;
 					characterOnHold = null;
