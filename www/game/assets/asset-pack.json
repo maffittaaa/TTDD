@@ -162,6 +162,11 @@
                 "key": "Minecraft"
             },
             {
+                "url": "src/scripts/NameAndLevelMechanism.js",
+                "type": "script",
+                "key": "NameAndLevelMechanism"
+            },
+            {
                 "url": "assets/peawns.png",
                 "frameConfig": {
                     "frameWidth": 215,

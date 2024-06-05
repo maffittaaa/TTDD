@@ -56,7 +56,7 @@ class HandleChooseMechanism extends ScriptNode {
 								}
 							}
 						} else {
-							scene.updateChooseCharMenu(data, scene)
+							scene.updateChooseCharMenu(data, scene);
 						}
 					}
 				},

@@ -79,6 +79,12 @@ class Match extends Phaser.Scene {
 		// throwables
 		new Throwables(player1_slot1);
 
+		// nameAndLevelMechanism
+		const nameAndLevelMechanism = new NameAndLevelMechanism(player1_slot1);
+
+		// glowFx
+		player1_slot1.preFX.addGlow(16777215, 4, 0, false);
+
 		// player1_slot2
 		const player1_slot2 = this.add.image(283, 522.9999995529652, "base", 0);
 		player1_slot2.name = "player1_slot2";
@@ -96,6 +102,9 @@ class Match extends Phaser.Scene {
 
 		// attackMechanism_1
 		const attackMechanism_1 = new AttackMechanism(player1_slot2);
+
+		// glowFx_1
+		player1_slot2.preFX.addGlow(16777215, 4, 0, false);
 
 		// player1_slot3
 		const player1_slot3 = this.add.image(382, 601.9999995529652, "base", 0);
@@ -115,6 +124,9 @@ class Match extends Phaser.Scene {
 		// attackMechanism_2
 		const attackMechanism_2 = new AttackMechanism(player1_slot3);
 
+		// glowFx_2
+		player1_slot3.preFX.addGlow(16777215, 4, 0, false);
+
 		// player1_slot4
 		const player1_slot4 = this.add.image(161, 437.99999955296516, "base", 0);
 		player1_slot4.name = "player1_slot4";
@@ -133,6 +145,9 @@ class Match extends Phaser.Scene {
 		// attackMechanism_3
 		const attackMechanism_3 = new AttackMechanism(player1_slot4);
 
+		// glowFx_3
+		player1_slot4.preFX.addGlow(16777215, 4, 0, false);
+
 		// player1_slot5
 		const player1_slot5 = this.add.image(164, 598.9999995529652, "base", 0);
 		player1_slot5.name = "player1_slot5";
@@ -150,6 +165,9 @@ class Match extends Phaser.Scene {
 
 		// attackMechanism_4
 		const attackMechanism_4 = new AttackMechanism(player1_slot5);
+
+		// glowFx_4
+		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
 
 		// player1_deck1
 		const player1_deck1 = this.add.image(514, 381, "cartas4_Imprimir", 3);
@@ -193,6 +211,9 @@ class Match extends Phaser.Scene {
 		// attackMechanism_5
 		const attackMechanism_5 = new AttackMechanism(player2_slot1);
 
+		// glowFx_5
+		player2_slot1.preFX.addGlow(9241090, 4, 0, false);
+
 		// player2_slot2
 		const player2_slot2 = this.add.image(1007, 520.9999995529652, "base", 0);
 		player2_slot2.name = "player2_slot2";
@@ -210,6 +231,9 @@ class Match extends Phaser.Scene {
 
 		// attackMechanism_6
 		const attackMechanism_6 = new AttackMechanism(player2_slot2);
+
+		// glowFx_6
+		player2_slot2.preFX.addGlow(9241090, 4, 0, false);
 
 		// player2_slot3
 		const player2_slot3 = this.add.image(909, 599.9999995529652, "base", 0);
@@ -229,6 +253,9 @@ class Match extends Phaser.Scene {
 		// attackMechanism_7
 		const attackMechanism_7 = new AttackMechanism(player2_slot3);
 
+		// glowFx_7
+		player2_slot3.preFX.addGlow(16777215, 4, 0, false);
+
 		// player2_slot4
 		const player2_slot4 = this.add.image(1132, 437.99999955296516, "base", 0);
 		player2_slot4.name = "player2_slot4";
@@ -246,6 +273,9 @@ class Match extends Phaser.Scene {
 
 		// attackMechanism_8
 		const attackMechanism_8 = new AttackMechanism(player2_slot4);
+
+		// glowFx_8
+		player2_slot4.preFX.addGlow(9241090, 4, 0, false);
 
 		// player2_slot5
 		const player2_slot5 = this.add.image(1130, 600.9999995529652, "base", 0);
@@ -265,8 +295,11 @@ class Match extends Phaser.Scene {
 		// attackMechanism_9
 		const attackMechanism_9 = new AttackMechanism(player2_slot5);
 
+		// glowFx_9
+		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
+
 		// player2_deck
-		const player2_deck = this.add.image(778, 384, "cartas4_Imprimir", 3);
+		const player2_deck = this.add.image(770, 384, "cartas4_Imprimir", 3);
 		player2_deck.scaleX = 0.28;
 		player2_deck.scaleY = 0.28;
 		player2_deck.angle = -90;
@@ -478,7 +511,7 @@ class Match extends Phaser.Scene {
 		const endTurnMechanism = new EndTurnMechanism(endTurnText);
 
 		// resetHPButton
-		const resetHPButton = this.add.rectangle(151, 27, 128, 128);
+		const resetHPButton = this.add.rectangle(960, 267, 128, 128);
 		resetHPButton.scaleX = 2.2;
 		resetHPButton.scaleY = 0.3;
 		resetHPButton.isFilled = true;
@@ -493,7 +526,7 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism = new CheatsMechanism(resetHPButton);
 
 		// resetAttackStatusButton
-		const resetAttackStatusButton = this.add.rectangle(151, 131, 128, 128);
+		const resetAttackStatusButton = this.add.rectangle(960, 363, 128, 128);
 		resetAttackStatusButton.scaleX = 2.2;
 		resetAttackStatusButton.scaleY = 0.3;
 		resetAttackStatusButton.isFilled = true;
@@ -508,7 +541,7 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism_1 = new CheatsMechanism(resetAttackStatusButton);
 
 		// setHPTo1Button
-		const setHPTo1Button = this.add.rectangle(151, 82, 128, 128);
+		const setHPTo1Button = this.add.rectangle(960, 315, 128, 128);
 		setHPTo1Button.scaleX = 2.2;
 		setHPTo1Button.scaleY = 0.3;
 		setHPTo1Button.isFilled = true;
@@ -523,7 +556,7 @@ class Match extends Phaser.Scene {
 		const cheatsMechanism_2 = new CheatsMechanism(setHPTo1Button);
 
 		// setHPTo1Text
-		const setHPTo1Text = this.add.text(156, 132, "", {});
+		const setHPTo1Text = this.add.text(960, 364, "", {});
 		setHPTo1Text.scaleX = 1.5;
 		setHPTo1Text.scaleY = 1.5;
 		setHPTo1Text.setOrigin(0.5, 0.5);
@@ -531,7 +564,7 @@ class Match extends Phaser.Scene {
 		setHPTo1Text.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft" });
 
 		// resetAttackStatusText
-		const resetAttackStatusText = this.add.text(151, 82, "", {});
+		const resetAttackStatusText = this.add.text(960, 315, "", {});
 		resetAttackStatusText.scaleX = 1.5;
 		resetAttackStatusText.scaleY = 1.5;
 		resetAttackStatusText.setOrigin(0.5, 0.5);
@@ -539,7 +572,7 @@ class Match extends Phaser.Scene {
 		resetAttackStatusText.setStyle({ "color": "#000000ff", "fontFamily": "Minecraft" });
 
 		// resetHPText
-		const resetHPText = this.add.text(98, 16, "", {});
+		const resetHPText = this.add.text(906, 256, "", {});
 		resetHPText.scaleX = 1.5;
 		resetHPText.scaleY = 1.5;
 		resetHPText.text = "Reset HP";
@@ -562,6 +595,74 @@ class Match extends Phaser.Scene {
 		winnerText.text = "WINNER";
 		winnerText.setStyle({ "fontFamily": "Minecraft", "fontSize": "200px" });
 
+		// namesAndLevelsPlayers
+		const namesAndLevelsPlayers = this.add.container(0, 0);
+		namesAndLevelsPlayers.name = "namesAndLevelsPlayers";
+
+		// player2NameShape
+		const player2NameShape = this.add.rectangle(1561, 66, 128, 128);
+		player2NameShape.scaleX = 4;
+		player2NameShape.scaleY = 0.5;
+		player2NameShape.isStroked = true;
+		player2NameShape.strokeColor = 3933083;
+		namesAndLevelsPlayers.add(player2NameShape);
+
+		// player1NameShape
+		const player1NameShape = this.add.rectangle(359, 66, 128, 128);
+		player1NameShape.scaleX = 4;
+		player1NameShape.scaleY = 0.5;
+		player1NameShape.isStroked = true;
+		player1NameShape.strokeColor = 3933083;
+		namesAndLevelsPlayers.add(player1NameShape);
+
+		// levelPlayer1Shape
+		const levelPlayer1Shape = this.add.rectangle(352, 121, 128, 128);
+		levelPlayer1Shape.scaleX = 3;
+		levelPlayer1Shape.scaleY = 0.3;
+		levelPlayer1Shape.isStroked = true;
+		levelPlayer1Shape.strokeColor = 3933108;
+		namesAndLevelsPlayers.add(levelPlayer1Shape);
+
+		// levelPlayer2Shape
+		const levelPlayer2Shape = this.add.rectangle(1568, 121, 128, 128);
+		levelPlayer2Shape.scaleX = 3;
+		levelPlayer2Shape.scaleY = 0.3;
+		levelPlayer2Shape.isStroked = true;
+		levelPlayer2Shape.strokeColor = 3933108;
+		namesAndLevelsPlayers.add(levelPlayer2Shape);
+
+		// namePlayer1Text
+		const namePlayer1Text = this.add.text(344.5, 67, "", {});
+		namePlayer1Text.name = "namePlayer1Text";
+		namePlayer1Text.setOrigin(0.5, 0.5);
+		namePlayer1Text.text = "Player 1";
+		namePlayer1Text.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "45px" });
+		namesAndLevelsPlayers.add(namePlayer1Text);
+
+		// namePlayer2Text
+		const namePlayer2Text = this.add.text(1568, 67, "", {});
+		namePlayer2Text.name = "namePlayer2Text";
+		namePlayer2Text.setOrigin(0.5, 0.5);
+		namePlayer2Text.text = "Player 2";
+		namePlayer2Text.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "45px" });
+		namesAndLevelsPlayers.add(namePlayer2Text);
+
+		// levelPlayer1Text
+		const levelPlayer1Text = this.add.text(333, 123, "", {});
+		levelPlayer1Text.name = "levelPlayer1Text";
+		levelPlayer1Text.setOrigin(0.5, 0.5);
+		levelPlayer1Text.text = "Level: ";
+		levelPlayer1Text.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "20px" });
+		namesAndLevelsPlayers.add(levelPlayer1Text);
+
+		// levelPlayer2Text
+		const levelPlayer2Text = this.add.text(1565, 123, "", {});
+		levelPlayer2Text.name = "levelPlayer2Text";
+		levelPlayer2Text.setOrigin(0.5, 0.5);
+		levelPlayer2Text.text = "Level: ";
+		levelPlayer2Text.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "20px" });
+		namesAndLevelsPlayers.add(levelPlayer2Text);
+
 		// matchMechanism (prefab fields)
 		matchMechanism.turnText = turn;
 		matchMechanism.winnerText = winnerText;
@@ -571,6 +672,10 @@ class Match extends Phaser.Scene {
 		attackMechanism.type = "player";
 		attackMechanism.slotID = 1;
 		attackMechanism.damageText = damageAnimationMechanism;
+
+		// nameAndLevelMechanism (prefab fields)
+		nameAndLevelMechanism.nameText = namePlayer1Text;
+		nameAndLevelMechanism.levelText = levelPlayer1Text;
 
 		// attackMechanism_1 (prefab fields)
 		attackMechanism_1.type = "player";
@@ -655,6 +760,15 @@ class Match extends Phaser.Scene {
 		this.setHPTo1Button = setHPTo1Button;
 		this.turn = turn;
 		this.winnerText = winnerText;
+		this.player2NameShape = player2NameShape;
+		this.player1NameShape = player1NameShape;
+		this.levelPlayer1Shape = levelPlayer1Shape;
+		this.levelPlayer2Shape = levelPlayer2Shape;
+		this.namePlayer1Text = namePlayer1Text;
+		this.namePlayer2Text = namePlayer2Text;
+		this.levelPlayer1Text = levelPlayer1Text;
+		this.levelPlayer2Text = levelPlayer2Text;
+		this.namesAndLevelsPlayers = namesAndLevelsPlayers;
 
 		this.events.emit("scene-awake");
 	}
@@ -729,6 +843,24 @@ class Match extends Phaser.Scene {
 	turn;
 	/** @type {Phaser.GameObjects.Text} */
 	winnerText;
+	/** @type {Phaser.GameObjects.Rectangle} */
+	player2NameShape;
+	/** @type {Phaser.GameObjects.Rectangle} */
+	player1NameShape;
+	/** @type {Phaser.GameObjects.Rectangle} */
+	levelPlayer1Shape;
+	/** @type {Phaser.GameObjects.Rectangle} */
+	levelPlayer2Shape;
+	/** @type {Phaser.GameObjects.Text} */
+	namePlayer1Text;
+	/** @type {Phaser.GameObjects.Text} */
+	namePlayer2Text;
+	/** @type {Phaser.GameObjects.Text} */
+	levelPlayer1Text;
+	/** @type {Phaser.GameObjects.Text} */
+	levelPlayer2Text;
+	/** @type {Phaser.GameObjects.Container} */
+	namesAndLevelsPlayers;
 
 	/* START-USER-CODE */
 
