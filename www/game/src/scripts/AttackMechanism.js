@@ -1,4 +1,5 @@
 var attackerSlot = 0;
+var attacker = null;
 var targetSlot = 0;
 var stillAttacking = false;
 var cardOnHold;
@@ -23,37 +24,56 @@ class AttackMechanism extends ScriptNode {
 	slotID = 0;
 	/** @type {Phaser.GameObjects.GameObject} */
 	damageText;
+	/** @type {number} */
+	cardID = 0;
 
 	/* START-USER-CODE */
 
+	awake() {
+		if (this.type == "Player") {
+			this.setGlowOnOff(this.parent, false)
+		} else if (this.type == "Opponent") {
+			this.setGlowOnOff(this.parent, false)
+		}
+	}
+
 	start() {
 		this.parent.on('pointerdown', event => {
-			if(throwing == false){
-				if (this.type == "player") {
+			if (throwing == false) {
+				if (this.type == "Player") {
 					this.setAttackerSlot(this.slotID);
-				} else if (this.type == "opponent") {
+				} else if (this.type == "Opponent") {
 					this.setTargetSlot(this.slotID);
+				} else if (this.type == "Cards") {
+					this.playCard(this.cardID);
 				}
 			}
 		})
 	}
 
 	setAttackerSlot(slot) { //attacker has a slot
-		attackerSlot = slot;
-		initialX = this.parent.x;
-		initialY = this.parent.y;
-		finalX = null
-		finalY = null
-		item = this.parent;
-
 		if (reviving == true) {
 			this.playCard(cardOnHold, slot);
+		} else if (attackerSlot == slot) {
+			this.setGlowOnOff(this.parent, false);
+			attackerSlot = 0;
+			attacker = null;
+		} else {
+			attackerSlot = slot;
+			attacker = this.parent
+			this.setGlowOnOff(this.parent, true)
+			initialX = this.parent.x;
+			initialY = this.parent.y;
+			finalX = null;
+			finalY = null;
+			item = this.parent;
 		}
 	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
 		if (attackerSlot != 0) {
 			targetSlot = slot;
+			this.setGlowOnOff(this.parent, true);
 			this.doAttack();
 			attackerSlot = 0;
 			targetSlot = 0;
@@ -66,7 +86,12 @@ class AttackMechanism extends ScriptNode {
 		}
 	};
 
-	doAttack() { // passing the attackerslot and the targetslot to the server
+	setGlowOnOff(object, boolean) {
+		object.preFX.list[0].active = boolean;
+
+	}
+
+	doAttack() { // passing the attackerSlot and the targetslot to the server
 		var scene = this;
 		$.ajax({
 			type: 'POST',
@@ -86,6 +111,11 @@ class AttackMechanism extends ScriptNode {
 					// var damageAnimation = new DamageAnimationMechanism(scene.scene, 347, 415);
 					// damageText.text = targetSlot.caracter_attack; // NOT CORRETO 
 					// console.log(damageAnimation);
+					scene.setGlowOnOff(scene.parent, false);
+					scene.setGlowOnOff(attacker, false);
+					attacker = null;
+					attackerSlot = 0;
+					targetSlot = 0;
 				}
 			},
 			error: function (err) {
@@ -94,13 +124,12 @@ class AttackMechanism extends ScriptNode {
 		})
 	};
 
-	playerThrowAnimation(){
+	playerThrowAnimation() {
 		startTime = performance.now();
-		finalX = this.parent.x 
-		finalY = this.parent.y 
+		finalX = this.parent.x
+		finalY = this.parent.y
 		peakHeight = Math.abs(finalY - initialY) + 100
 		throwing = true
-		console.log(throwing, item, initialX, initialY, finalX, finalY, peakHeight, startTime)
 	}
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card

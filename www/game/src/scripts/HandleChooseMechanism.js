@@ -287,7 +287,6 @@ class HandleChooseMechanism extends ScriptNode {
 
 				var glowChange = this.scene.children.list
 				for (let i = 0; i < glowChange.length; i++) {
-
 					if (glowChange[i].name == "Slots") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if (glowChange[i].list[j].name != "MessageServer") {

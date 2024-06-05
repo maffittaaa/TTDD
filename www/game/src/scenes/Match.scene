@@ -104,18 +104,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
-                            "id": "dbeb66bf-139f-43d9-92d9-1a3fc76a3db1",
-                            "unlock": [
-                                "turnText",
-                                "winnerText",
-                                "health"
-                            ],
-                            "label": "matchMechanism",
-                            "scope": "PUBLIC",
-                            "turnText": "turn",
-                            "winnerText": "winnerText",
-                            "health": "healthBarMechanism"
+                            "type": "Glow",
+                            "id": "f1ecacf3-06e1-486b-9037-720d00942ca2",
+                            "label": "glowFx",
+                            "preFX": true
                         },
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -139,7 +131,7 @@
                             ],
                             "label": "attackMechanism",
                             "scope": "PUBLIC",
-                            "type": "player",
+                            "type": "Player",
                             "slotID": 1,
                             "damageText": "damageAnimationMechanism"
                         },
@@ -155,10 +147,23 @@
                             "levelText": "levelPlayer1Text"
                         },
                         {
-                            "type": "Glow",
-                            "id": "f1ecacf3-06e1-486b-9037-720d00942ca2",
-                            "label": "glowFx",
-                            "preFX": true
+                            "prefabId": "68234ec0-a7da-4082-b3f6-0e2267a33ce1",
+                            "id": "dbeb66bf-139f-43d9-92d9-1a3fc76a3db1",
+                            "unlock": [
+                                "turnText",
+                                "winnerText",
+                                "health"
+                            ],
+                            "label": "matchMechanism",
+                            "scope": "PUBLIC",
+                            "turnText": "turn",
+                            "winnerText": "winnerText",
+                            "health": "healthBarMechanism"
+                        },
+                        {
+                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
+                            "id": "5ed83eee-5610-479c-9616-56f91182656d",
+                            "label": "throwables"
                         }
                     ]
                 },
@@ -199,7 +204,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_1",
-                            "type": "player",
+                            "type": "Player",
                             "slotID": 2
                         },
                         {
@@ -247,7 +252,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_2",
-                            "type": "player",
+                            "type": "Player",
                             "slotID": 3
                         },
                         {
@@ -295,7 +300,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_3",
-                            "type": "player",
+                            "type": "Player",
                             "slotID": 4
                         },
                         {
@@ -343,7 +348,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_4",
-                            "type": "player",
+                            "type": "Player",
                             "slotID": 5
                         },
                         {
@@ -359,6 +364,7 @@
                     "id": "681b45c4-1ff8-4ce3-8e23-3570b25d8324",
                     "label": "player1_deck1",
                     "useGameObjectName": true,
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "cartas4_Imprimir",
                         "frame": 3
@@ -380,6 +386,15 @@
                                     "label": "pushActionScript_5"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                            "id": "3f5d01ca-8a13-4283-9ee7-06cc27e0c1d0",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cardsMechanism",
+                            "type": "Deck"
                         }
                     ]
                 },
@@ -444,7 +459,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_5",
-                            "type": "opponent",
+                            "type": "Opponent",
                             "slotID": 1
                         },
                         {
@@ -493,7 +508,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_6",
-                            "type": "opponent",
+                            "type": "Opponent",
                             "slotID": 2
                         },
                         {
@@ -542,7 +557,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_7",
-                            "type": "opponent",
+                            "type": "Opponent",
                             "slotID": 3
                         },
                         {
@@ -591,7 +606,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_8",
-                            "type": "opponent",
+                            "type": "Opponent",
                             "slotID": 4
                         },
                         {
@@ -640,7 +655,7 @@
                                 "slotID"
                             ],
                             "label": "attackMechanism_9",
-                            "type": "opponent",
+                            "type": "Opponent",
                             "slotID": 5
                         },
                         {
@@ -661,7 +676,7 @@
                         "frame": 3
                     },
                     "x": 770,
-                    "y": 384,
+                    "y": 381,
                     "scaleX": 0.28,
                     "scaleY": 0.28,
                     "angle": -90,
@@ -1363,6 +1378,349 @@
                     "align": "center",
                     "fontFamily": "Minecraft",
                     "fontSize": "20px"
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "c98ad327-3a99-4c6f-bf52-f5f756b6ac1d",
+            "label": "showCards",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.x": -38,
+            "hitArea.y": -140,
+            "hitArea.width": 652.3814994495934,
+            "hitArea.height": 910.5149565734912,
+            "x": 288,
+            "y": 472,
+            "scaleX": 0.23,
+            "scaleY": 0.23,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Show Cards",
+            "align": "center",
+            "fontFamily": "Minecraft",
+            "fontSize": "100px",
+            "color": "#000000ff",
+            "list": [
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "21e827aa-9e2b-4cc4-91e9-558e02f4783a",
+                    "label": "onPointerDownScript_16",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "a5b64087-adf3-46dc-9d9b-3e36d00f41c5",
+                            "label": "pushActionScript_16"
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                    "id": "4974157c-858b-4e2f-bada-ac847b05aa91",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cardsMechanism_1",
+                    "type": "ShowCards"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "0872d723-49ef-42fb-832e-c406ca76d6d5",
+            "label": "handCards",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "a8a05233-a729-4ab3-8dcf-c9daf528c140",
+                    "label": "shadow",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": 4,
+                    "hitArea.y": 6,
+                    "hitArea.width": 191.99313021289976,
+                    "hitArea.height": 188.84173021194542,
+                    "texture": {
+                        "key": "Shadow"
+                    },
+                    "x": 960,
+                    "y": 540,
+                    "scaleX": 10.03127832345736,
+                    "scaleY": 5.743648692660658,
+                    "list": [
+                        {
+                            "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                            "id": "34a261db-8872-4b98-aafd-35f0a2f18806",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cardsMechanism_2",
+                            "type": "ShowCards"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "1a833989-13b7-4865-89fb-fd762d469b30",
+                    "label": "cards",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "c25a2a2c-999d-4e3d-8fac-fe535320ee3c",
+                            "label": "cardSlot1",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 180,
+                            "y": 245,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "4458b7e5-10fc-40a0-95c5-cadd90633261",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_10",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "74150904-7324-4dcb-8ac5-0f10d4012ec8",
+                            "label": "cardSlot2",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 510,
+                            "y": 245,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "1cec9bed-e8f9-4027-a0e5-ee544616d4fc",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_11",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3bbd278a-5727-481e-87f6-64e98c42320e",
+                            "label": "cardSlot3",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 830,
+                            "y": 245,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "d502785a-8bc5-49a8-8771-17d6515d981c",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_12",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "47c944e7-246f-48dd-a5cf-985e01ff662a",
+                            "label": "cardSlot4",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 1157,
+                            "y": 245,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "db856ac6-7b0d-4baf-a972-6ab951563f6d",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_13",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "8388cdb2-09f6-4339-94a2-e13fa68bbc8e",
+                            "label": "cardSlot5",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 1491,
+                            "y": 245,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "f5637c77-932f-4802-80b9-63f6d47b6a93",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_14",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4112e7a5-c074-4f93-a2cc-ed4d27c88fb3",
+                            "label": "cardSlot6",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 180,
+                            "y": 707,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "1b188b7a-61d4-49b0-874a-61785c2505ec",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_15",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ef792699-eb21-40e4-a2db-47186d3062f7",
+                            "label": "cardSlot7",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 510,
+                            "y": 715,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "67b88d77-a8e0-40a9-af3e-17b166d6558a",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_16",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "5fb09e5a-d844-4f80-ac2f-70a920c2d02e",
+                            "label": "cardSlot8",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 834,
+                            "y": 718,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "2acbf76e-a1e3-4948-afe5-a009477226a1",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_17",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "49dffa91-20c6-4674-9b42-e94b1901f308",
+                            "label": "cardSlot9",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 1167,
+                            "y": 718,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "b5aa7d9a-e19d-49db-a32e-c74db9ccbfa6",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_18",
+                                    "type": "Cards"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "8da0e06a-1a29-45cb-815c-acb162355152",
+                            "label": "cardSlot10",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas4_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 1511,
+                            "y": 718,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                                    "id": "f539c77b-c05a-465e-b1a8-cfd85f73d7c9",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "attackMechanism_19",
+                                    "type": "Cards"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }

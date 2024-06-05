@@ -40,6 +40,11 @@
                 "key": "board_imprimir"
             },
             {
+                "url": "src/scripts/CardsMechanism.js",
+                "type": "script",
+                "key": "CardsMechanism"
+            },
+            {
                 "url": "assets/cartas1_Imprimir.png",
                 "frameConfig": {
                     "frameWidth": 304,
