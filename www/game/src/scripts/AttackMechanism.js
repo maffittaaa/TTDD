@@ -124,8 +124,8 @@ class AttackMechanism extends ScriptNode {
 					scene.playerThrowAnimation();
 
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
-					damageAnimation.visible = true; //coordenadas target_slot_id! SO PODE DAR DANO DEPOIS DO BONECO LA CHEGAR
-					damageAnimation.text = data.attackDamage;
+					damageAnimation.visible = true; //SO PODE DAR DANO DEPOIS DO BONECO LA CHEGAR
+					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
 					scene.setGlowOnOff(scene.parent, false);
 					scene.setGlowOnOff(attacker, false);
