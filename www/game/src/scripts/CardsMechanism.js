@@ -80,39 +80,43 @@ class CardsMechanism extends ScriptNode {
 							handCards.list[i].list[j].name = "card" + cards[0].card_id;
 							handCards.list[i].list[j].visible = true
 							slotFound = true;
-							return
 						} else {
 							handCards.list[i].list[j].setTexture("cartas3_Imprimir", cardsImgs[cards[0].card_id - 1]);
 							handCards.list[i].list[j].name = "card" + cards[0].card_id;
 							handCards.list[i].list[j].visible = true
 							slotFound = true;
-							return
 						}
+					}else{
 						j++;
 					}
 				}
+
 				if (j > 4) {
+					const initialPosition = width / (((j - 5) + 1) + 1)
 					for (let k = 0; k < (j + 1); k++) {
 						if (k < 5) {
 							handCards.list[i].list[k].y = height / 3 - 50;
 						} else {
 							handCards.list[i].list[k].y = (height / 3) * 2 + 50;
+							handCards.list[i].list[k].x = initialPosition + ((k - 5) * initialPosition);
 						}
 					}
 				} else {
+					const initialPosition = width / ((j + 1) + 1)
+
 					for (let k = 0; k < (j + 1); k++) {
 
 						handCards.list[i].list[k].y = height / 2;
 
-						if(j == 0){
-							handCards.list[i].list[k].x = width / 2;
-						}else{
-							handCards.list[i].list[k].x = width;
-						}
+						handCards.list[i].list[k].x = initialPosition + (k * initialPosition);
 					}
 				}
 			}
 		}
+	}
+
+	getCardPositionX(cardNumber, totalCards){
+		
 	}
 
 	getDescription(card_id) { //get the card description
