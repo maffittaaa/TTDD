@@ -25,7 +25,7 @@ class Throwables extends ScriptNode {
 
 	update(){
 		if (throwing == true) {
-			console.log(throwing, item, initialX, initialY, finalX, finalY, peakHeight, startTime)
+			// console.log(throwing, item, initialX, initialY, finalX, finalY, peakHeight, startTime)
 
 			if(item.x != finalX || item.y != finalY ){
 				item.angle += angle

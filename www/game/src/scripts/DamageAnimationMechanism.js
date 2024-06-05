@@ -6,17 +6,20 @@
 class DamageAnimationMechanism extends Phaser.GameObjects.Text {
 
 	constructor(scene, x, y) {
-		super(scene, x ?? -13, y ?? -17, "", {});
+		super(scene, x ?? 1, y ?? 3, "", {});
 
-		this.text = "0\n";
-		this.setStyle({ "fontSize": "40px" });
+		this.scaleX = 0.5;
+		this.scaleY = 0.5;
+		this.setOrigin(0.5, 0.5);
+		this.text = "0";
+		this.setStyle({ "align": "center", "color": "#c30d0dff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff", "strokeThickness":6});
 
 		/* START-USER-CTR-CODE */
 		this.scene.tweens.add({
 			targets: this,
 			y: y - 50,
 			alpha: 0,
-			duration: 1000,
+			duration: 2500,
 			ease: 'Power1',
 			onComplete: () => {
 				this.destroy();

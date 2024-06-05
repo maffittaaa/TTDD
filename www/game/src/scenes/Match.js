@@ -184,7 +184,9 @@ class Match extends Phaser.Scene {
 		const cardsMechanism = new CardsMechanism(player1_deck1);
 
 		// damageAnimationMechanism
-		const damageAnimationMechanism = new DamageAnimationMechanism(this, 347, 415);
+		const damageAnimationMechanism = new DamageAnimationMechanism(this, 285, 415);
+		damageAnimationMechanism.name = "damageAnimationMechanism";
+		damageAnimationMechanism.visible = false;
 		characterSlotsPlayer1.add(damageAnimationMechanism);
 
 		// CharacterSlotsPlayer2

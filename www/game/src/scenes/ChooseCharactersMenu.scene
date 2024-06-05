@@ -1229,215 +1229,6 @@
         },
         {
             "type": "Container",
-            "id": "1f1fd60d-63d9-479c-bc0a-aebaef30cefa",
-            "label": "LevelUpScreen",
-            "useGameObjectName": true,
-            "scope": "CLASS",
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "visible": false,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "f97ad480-0659-4b51-9b6b-16b5bac874e9",
-                    "label": "shadow",
-                    "texture": {
-                        "key": "Shadow"
-                    },
-                    "x": 640,
-                    "y": 360,
-                    "scaleX": 6.4,
-                    "scaleY": 3.6,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "53a52046-0cd4-4c4f-9cf8-59382f31e1aa",
-                            "label": "onPointerDownScript_24"
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "df95f443-9047-4604-b2ad-cedcad2e2783",
-                    "label": "new_characters",
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "ece86365-ae58-4c67-a95a-1a728cfb652a",
-                            "label": "character_new_3",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "cartas2_Imprimir",
-                                "frame": 1
-                            },
-                            "x": 1000,
-                            "y": 360,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "74cc92ce-0592-418c-8e4c-19671061e836",
-                                    "label": "onPointerDownScript_23",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "bb9d4998-89d3-4e81-8840-01b0dcf38180",
-                                            "label": "pushActionScript_23"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "1594bd1d-a633-47ed-a451-eeeb759325f7",
-                                    "id": "c17122e0-7228-4313-a978-a0a0a6828835",
-                                    "unlock": [
-                                        "type",
-                                        "characterID"
-                                    ],
-                                    "label": "unlockCharacterMechanism",
-                                    "type": "character",
-                                    "characterID": 0
-                                },
-                                {
-                                    "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
-                                    "id": "82926736-f29a-45d6-93dc-a054c3c738af",
-                                    "label": "onAwakeScript_2",
-                                    "list": [
-                                        {
-                                            "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
-                                            "id": "c306f2a0-9902-459d-96e0-8c08be6cf6ad",
-                                            "unlock": [
-                                                "from"
-                                            ],
-                                            "label": "moveInSceneActionScript_2",
-                                            "from": "RIGHT"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "abae5049-d24f-49c0-bdae-b1279a425918",
-                            "label": "character_new_2",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "cartas2_Imprimir",
-                                "frame": 1
-                            },
-                            "x": 640,
-                            "y": 360,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "8f0c3d8e-1ee9-4105-a6f0-172c13058ca4",
-                                    "label": "onPointerDownScript_22",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "1bc7303f-5a54-4432-8f46-bc764fbaa39d",
-                                            "label": "pushActionScript_22"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "1594bd1d-a633-47ed-a451-eeeb759325f7",
-                                    "id": "1f0a4287-4535-4eee-9eaa-7433eaf83fec",
-                                    "unlock": [
-                                        "type",
-                                        "characterID"
-                                    ],
-                                    "label": "unlockCharacterMechanism_2",
-                                    "type": "character",
-                                    "characterID": 0
-                                },
-                                {
-                                    "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
-                                    "id": "202164a0-f945-4e9b-9b2c-7e007272330a",
-                                    "label": "onAwakeScript_1",
-                                    "list": [
-                                        {
-                                            "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
-                                            "id": "add5f141-0fc6-432d-8b42-eee5356bdf53",
-                                            "unlock": [
-                                                "from"
-                                            ],
-                                            "label": "moveInSceneActionScript_1",
-                                            "from": "BOTTOM"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "b5392702-873c-4473-97dc-3ef428edb084",
-                            "label": "character_new_1",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "cartas2_Imprimir",
-                                "frame": 1
-                            },
-                            "x": 292,
-                            "y": 360,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "d25302ab-3760-4757-a839-cd796c9d718c",
-                                    "label": "onPointerDownScript_21",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "a1852631-ddea-4875-a30d-3bf6cac632fa",
-                                            "label": "pushActionScript_21"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "1594bd1d-a633-47ed-a451-eeeb759325f7",
-                                    "id": "0a4a87d6-f608-4033-8705-6500b258c6dd",
-                                    "unlock": [
-                                        "type",
-                                        "characterID"
-                                    ],
-                                    "label": "unlockCharacterMechanism_1",
-                                    "type": "LevelUpManager",
-                                    "characterID": 0
-                                },
-                                {
-                                    "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
-                                    "id": "f0d3af08-c3c4-4927-8ca3-a801e8d84db7",
-                                    "label": "onAwakeScript",
-                                    "list": [
-                                        {
-                                            "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
-                                            "id": "ceba76b0-8942-44ae-ac7f-1dfc9e047108",
-                                            "unlock": [
-                                                "from"
-                                            ],
-                                            "label": "moveInSceneActionScript",
-                                            "from": "LEFT"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Text",
-                            "id": "af05184c-34db-4350-94c5-2d8dbdfb7f3e",
-                            "label": "LevelUpText",
-                            "x": 640,
-                            "y": 91.5,
-                            "originX": 0.5,
-                            "originY": 0.5,
-                            "text": "You have Leveled Up!! Now you can choose one of this three characters!!",
-                            "fontFamily": "Minecraft",
-                            "fontSize": "25px"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
             "id": "743a732d-cab9-4178-b07f-3d061d6b92b6",
             "label": "Slots",
             "useGameObjectName": true,
@@ -1714,6 +1505,215 @@
                             ],
                             "label": "handleChooseMechanism_16",
                             "type": "charSelct"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "1f1fd60d-63d9-479c-bc0a-aebaef30cefa",
+            "label": "LevelUpScreen",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "f97ad480-0659-4b51-9b6b-16b5bac874e9",
+                    "label": "shadow",
+                    "texture": {
+                        "key": "Shadow"
+                    },
+                    "x": 640,
+                    "y": 360,
+                    "scaleX": 6.4,
+                    "scaleY": 3.6,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "53a52046-0cd4-4c4f-9cf8-59382f31e1aa",
+                            "label": "onPointerDownScript_24"
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "id": "df95f443-9047-4604-b2ad-cedcad2e2783",
+                    "label": "new_characters",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "ece86365-ae58-4c67-a95a-1a728cfb652a",
+                            "label": "character_new_3",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "cartas2_Imprimir",
+                                "frame": 1
+                            },
+                            "x": 1000,
+                            "y": 360,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "74cc92ce-0592-418c-8e4c-19671061e836",
+                                    "label": "onPointerDownScript_23",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "bb9d4998-89d3-4e81-8840-01b0dcf38180",
+                                            "label": "pushActionScript_23"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "1594bd1d-a633-47ed-a451-eeeb759325f7",
+                                    "id": "c17122e0-7228-4313-a978-a0a0a6828835",
+                                    "unlock": [
+                                        "type",
+                                        "characterID"
+                                    ],
+                                    "label": "unlockCharacterMechanism",
+                                    "type": "character",
+                                    "characterID": 0
+                                },
+                                {
+                                    "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                                    "id": "82926736-f29a-45d6-93dc-a054c3c738af",
+                                    "label": "onAwakeScript_2",
+                                    "list": [
+                                        {
+                                            "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
+                                            "id": "c306f2a0-9902-459d-96e0-8c08be6cf6ad",
+                                            "unlock": [
+                                                "from"
+                                            ],
+                                            "label": "moveInSceneActionScript_2",
+                                            "from": "RIGHT"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "abae5049-d24f-49c0-bdae-b1279a425918",
+                            "label": "character_new_2",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "cartas2_Imprimir",
+                                "frame": 1
+                            },
+                            "x": 640,
+                            "y": 360,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "8f0c3d8e-1ee9-4105-a6f0-172c13058ca4",
+                                    "label": "onPointerDownScript_22",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "1bc7303f-5a54-4432-8f46-bc764fbaa39d",
+                                            "label": "pushActionScript_22"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "1594bd1d-a633-47ed-a451-eeeb759325f7",
+                                    "id": "1f0a4287-4535-4eee-9eaa-7433eaf83fec",
+                                    "unlock": [
+                                        "type",
+                                        "characterID"
+                                    ],
+                                    "label": "unlockCharacterMechanism_2",
+                                    "type": "character",
+                                    "characterID": 0
+                                },
+                                {
+                                    "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                                    "id": "202164a0-f945-4e9b-9b2c-7e007272330a",
+                                    "label": "onAwakeScript_1",
+                                    "list": [
+                                        {
+                                            "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
+                                            "id": "add5f141-0fc6-432d-8b42-eee5356bdf53",
+                                            "unlock": [
+                                                "from"
+                                            ],
+                                            "label": "moveInSceneActionScript_1",
+                                            "from": "BOTTOM"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b5392702-873c-4473-97dc-3ef428edb084",
+                            "label": "character_new_1",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "cartas2_Imprimir",
+                                "frame": 1
+                            },
+                            "x": 292,
+                            "y": 360,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "d25302ab-3760-4757-a839-cd796c9d718c",
+                                    "label": "onPointerDownScript_21",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "a1852631-ddea-4875-a30d-3bf6cac632fa",
+                                            "label": "pushActionScript_21"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "1594bd1d-a633-47ed-a451-eeeb759325f7",
+                                    "id": "0a4a87d6-f608-4033-8705-6500b258c6dd",
+                                    "unlock": [
+                                        "type",
+                                        "characterID"
+                                    ],
+                                    "label": "unlockCharacterMechanism_1",
+                                    "type": "LevelUpManager",
+                                    "characterID": 0
+                                },
+                                {
+                                    "prefabId": "7028a0e2-cd14-44b7-b2a4-68dac16ece00",
+                                    "id": "f0d3af08-c3c4-4927-8ca3-a801e8d84db7",
+                                    "label": "onAwakeScript",
+                                    "list": [
+                                        {
+                                            "prefabId": "3d337935-cdca-4937-9126-9f75bc2486de",
+                                            "id": "ceba76b0-8942-44ae-ac7f-1dfc9e047108",
+                                            "unlock": [
+                                                "from"
+                                            ],
+                                            "label": "moveInSceneActionScript",
+                                            "from": "LEFT"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Text",
+                            "id": "af05184c-34db-4350-94c5-2d8dbdfb7f3e",
+                            "label": "LevelUpText",
+                            "x": 640,
+                            "y": 91.5,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "You have Leveled Up!! Now you can choose one of this three characters!!",
+                            "fontFamily": "Minecraft",
+                            "fontSize": "25px"
                         }
                     ]
                 }

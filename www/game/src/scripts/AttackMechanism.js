@@ -108,9 +108,12 @@ class AttackMechanism extends ScriptNode {
 					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
 				} else {
 					scene.playerThrowAnimation();
-					// var damageAnimation = new DamageAnimationMechanism(scene.scene, 347, 415);
-					// damageText.text = targetSlot.caracter_attack; // NOT CORRETO 
-					// console.log(damageAnimation);
+
+					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
+					damageAnimation.visible = true; //coordenadas target_slot_id! SO PODE DAR DANO DEPOIS DO BONECO LA CHEGAR
+					damageAnimation.text = data.attackDamage;
+					scene.scene.add.existing(damageAnimation);
+					console.log(damageAnimation);
 					scene.setGlowOnOff(scene.parent, false);
 					scene.setGlowOnOff(attacker, false);
 					attacker = null;

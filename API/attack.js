@@ -15,7 +15,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
 
     if (!canAttack) {
         res.send({
-            notWorking: true, 
+            notWorking: true,
             message: "You can't attack after using a imediate damage card.",
         })
         return;
@@ -25,37 +25,37 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                 if (error) {
                     res.send(error);
                 } else {
-                    if(rows.length > 0){
+                    if (rows.length > 0) {
                         if (attackerSlot == 1 || attackerSlot == 2 || attackerSlot == 3) {
                             if (targetSlot == 4 || targetSlot == 5) {
                                 res.send({
-                                    notWorking: true, 
+                                    notWorking: true,
                                     message: "Can't attack that target.",
                                 })
                                 return;
                             }
                         }
-    
+
                         var attackStatus = rows[0].player_match_character_character_status_id;
                         var attackDamage = rows[0].caracter_attack;
-    
+
                         if (attackStatus == 2) { // check if attack status is 2, meaning if the character already attacked: if it has it can't attack more
                             res.send({
-                                notWorking: true, 
+                                notWorking: true,
                                 message: "This character can't attack anymore!.",
                             })
                             return;
                         } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
-                            
+
                             connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_current_HP > 0 AND player_match_character_player_id != " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + targetSlot, //select a character from player to attack
                                 function (error, rows, fields) {
                                     if (error) {
                                         res.send(error);
                                     } else {
-                                        if(rows.length > 0){
+                                        if (rows.length > 0) {
                                             var knockbackDamage = 0;
 
-                                            if(rows[0].player_match_character_character_id == 2){
+                                            if (rows[0].player_match_character_character_id == 2) {
                                                 knockbackDamage = 1;
                                             }
 
@@ -76,6 +76,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                                                             } else {
                                                                                 res.send({
                                                                                     notWorking: false,
+                                                                                    attackDamage: attackDamage,
                                                                                     message: "Here it goooess!!",
                                                                                 })
                                                                             }
@@ -92,10 +93,10 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                 }
                             )
                         }
-                    }else{
+                    } else {
                         console.log("You can't attack with your characters after using a imediate damage card.")
                         res.send({
-                            notWorking: true, 
+                            notWorking: true,
                             message: "You can't attack with your characters after using a imediate damage card.",
                         })
                     }
@@ -173,7 +174,7 @@ function addRound(req, res, match_id) {
     );
 }
 
-function checkRound(req, res, match_id, p1 = false){
+function checkRound(req, res, match_id, p1 = false) {
     connection.execute("SELECT matche_round_count FROM matche WHERE matche_id = ?", [match_id],
         function (error, rows, fields) {
             if (error) {
@@ -182,13 +183,13 @@ function checkRound(req, res, match_id, p1 = false){
                 if (rows.length > 0) {
                     var round = rows[0].matche_round_count;
 
-                    if(p1){
+                    if (p1) {
                         if (round % 2 !== 0) {
                             req.session.tookCard = false;
                         } else {
                             req.session.tookCard = true;
                         }
-                    } else{
+                    } else {
                         if (round % 2 == 0) {
                             req.session.tookCard = false;
                         } else {
@@ -221,8 +222,8 @@ function checkPlayerTurn(req, res, callback) { //is it the player's turn?
 function checkCardPlayed(req, res, callback, isPlayerTurn) {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
-    
-    if(isPlayerTurn){
+
+    if (isPlayerTurn) {
         connection.execute("SELECT deck_card_id, deck_card_played FROM deck WHERE deck_card_played = true AND deck_match_id = ? AND deck_player_id = ?", [matchID, playerID],
             function (error, rows, fields) {
                 if (error) {
@@ -233,18 +234,18 @@ function checkCardPlayed(req, res, callback, isPlayerTurn) {
 
                         if (cardID == 1 || cardID == 5 || cardID == 8) {
                             callback(req, res, false);
-                        }else {
+                        } else {
                             callback(req, res, true);
                         }
-                    }else{
+                    } else {
                         callback(req, res, true);
                     }
                 }
             }
         )
-    }else{
+    } else {
         res.send({
-            notWorking: true, 
+            notWorking: true,
             message: "Not your turn yet.",
         })
     }

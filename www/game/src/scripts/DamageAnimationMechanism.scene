@@ -13,10 +13,19 @@
             "type": "Text",
             "id": "4324c855-6440-4d8a-b47c-5d04f15a2c9b",
             "label": "text_1",
-            "x": -13,
-            "y": -17,
-            "text": "0\n",
-            "fontSize": "40px"
+            "x": 1,
+            "y": 3,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "0",
+            "align": "center",
+            "fontFamily": "Minecraft",
+            "fontSize": "100px",
+            "color": "#c30d0dff",
+            "stroke": "#000000ff",
+            "strokeThickness": 6
         }
     ],
     "plainObjects": [],

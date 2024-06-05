@@ -404,12 +404,15 @@
                     "unlock": [
                         "x",
                         "y",
-                        "damageText"
+                        "damageText",
+                        "visible"
                     ],
                     "label": "damageAnimationMechanism",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 347,
-                    "y": 415
+                    "x": 285,
+                    "y": 415,
+                    "visible": false
                 }
             ]
         },
