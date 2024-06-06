@@ -56,8 +56,11 @@ class AttackMechanism extends ScriptNode {
 	update(){
 		if (this.type == "Cards") {
 			if(slotID != 0 && cardID != 0){
+				console.log(cardID, slotID)
 				if(slotID == this.slotID){
+
 					this.cardID = cardID
+					console.log(this.cardID, cardID, slotID)
 					slotID = 0
 					cardID = 0
 				}
@@ -116,9 +119,9 @@ class AttackMechanism extends ScriptNode {
 			success: function (data) {
 				console.log(data);
 				if (data.notWorking == true) {
-					scene.scene.children.list[4].text = data.message;
-					scene.scene.children.list[4].setVisible(true);
-					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
+					scene.scene.children.list[5].text = data.message;
+					scene.scene.children.list[5].setVisible(true);
+					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
 				} else {
 					scene.playerThrowAnimation();
 
@@ -149,9 +152,11 @@ class AttackMechanism extends ScriptNode {
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
 
+		console.log(this.cardID, card_id, this.parent.name)
 		console.log("playing card")
 
 		var scene = this;
+		console.log(scene.type)
 		$.ajax({
 			type: 'POST',
 			url: '/cards/playCard',
@@ -162,35 +167,35 @@ class AttackMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				var handCards = scene.scene.children.list[scene.scene.children.list.length - 1];
-				handCards.visible = !showHandCards
-				showHandCards = !showHandCards
-
+				
+			
 				if (data.notWorking) {
-					scene.scene.children.list[4].text = data.message;
-					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
+					scene.scene.children.list[5].text = data.message;
+					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
 				} else if (data.reviving) {
 					reviving = data.reviving;
 					cardOnHold = data.card;
 				} else if (data.stillAttacking) {
-					
 					stillAttacking = data.stillAttacking;
 					cardOnHold = data.card;
 					if (data.characterOnHold) {
 						characterOnHold = data.characterOnHold;
 					}
-				} else if (data.card_id) {
-					console.log(data);
-
-					if(scene.type == "Cards"){
-
-						scene.parent.visible = false
-						scene.parent.name = "cardUsed" + data.card_id
-						scene.parent.parentContainer.bringToTop(scene.parent)
-					}
 					
+				} else if (data.card_id) {
 					stillAttacking = false;
 					reviving = false;
 					characterOnHold = null;
+				}
+
+
+				if(!data.notWorking && scene.type == "Cards"){
+					handCards.visible = !showHandCards
+					showHandCards = !showHandCards
+					scene.parent.visible = false
+					scene.parent.name = "cardUsed" + data.card_id
+					scene.parent.parentContainer.bringToTop(scene.parent)
+					console.log(scene.parent.parentContainer.list)
 				}
 			},
 			error: function (err) {

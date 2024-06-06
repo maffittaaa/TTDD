@@ -40,6 +40,11 @@
                 "key": "board_imprimir"
             },
             {
+                "url": "assets/calçada.png",
+                "type": "image",
+                "key": "calçada"
+            },
+            {
                 "url": "src/scripts/CardsMechanism.js",
                 "type": "script",
                 "key": "CardsMechanism"

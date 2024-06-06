@@ -34,10 +34,11 @@ class CardsMechanism extends ScriptNode {
 			url: '/cards/pickCard',
 			success: function (data) {
 				if (data.notWorking) {
-					scene.scene.children.list[4].text = data.message;
-					setTimeout(function () { scene.scene.children.list[4].text = "" }, 4000);
+					scene.scene.children.list[5].text = data.message;
+					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
 				} else if (data.cards) {
 					scene.addCards(JSON.parse(data.cards));
+					scene.showAddedCard(JSON.parse(data.cards))
 				}
 			},
 			error: function (err) {
@@ -45,6 +46,34 @@ class CardsMechanism extends ScriptNode {
 			}
 		})
 	};
+
+	showAddedCard(card){
+		var handCards = this.scene.children.list[6];
+
+		console.log(handCards)
+
+		var cardsImgs = [4, 6, 5, 0, 3, 1, 8, 7, 2, 2];
+
+		for (let i = 0; i < handCards.list.length; i++) {
+			if (handCards.list[i].name == "cardTook") {
+				if (card[0].card_id == 4 || card[0].card_id == 6 || card[0].card_id == 10) {
+					handCards.list[i].setTexture("cartas4_Imprimir", cardsImgs[card[0].card_id - 1]);
+					handCards.list[i].visible = true
+					
+				} else {
+					handCards.list[i].setTexture("cartas3_Imprimir", cardsImgs[card[0].card_id - 1]);
+					handCards.list[i].visible = true
+				}
+
+				initialX = -(304/2) // a width de cada carta
+				initialY = handCards.list[i].y
+				finalX = handCards.list[i].x
+				finalY = handCards.list[i].y
+				startTime = performance.now();
+				peakHeight = Math.abs(finalY - initialY) + 100 
+			}
+		}
+	}
 
 	showHandCards(boolean) {
 		var handCards = this.scene.children.list[this.scene.children.list.length - 1];
@@ -54,7 +83,7 @@ class CardsMechanism extends ScriptNode {
 		}, 200);
 	}
 
-	addCards(cards) {
+	addCards(card) {
 		var handCards = this.scene.children.list[this.scene.children.list.length - 1];
 		var slotFound = false;
 		var j = 0;
@@ -68,24 +97,24 @@ class CardsMechanism extends ScriptNode {
 
 				while (slotFound == false) {
 					console.log("finding cardSlot")
-					if (handCards.list[i].list[j].name.search("cardSlot") == 0) {
+					if (handCards.list[i].list[j].name.search("cardSlot") == 0 || handCards.list[i].list[j].name.search("sand") == 0) {
 						console.log("found cardSlot")
-						console.log("card_id: " + cards[0].card_id)
+						console.log("card_id: " + card[0].card_id)
 
-						if (cards[0].card_id == 4 || cards[0].card_id == 6 || cards[0].card_id == 10) {
+						if (card[0].card_id == 4 || card[0].card_id == 6 || card[0].card_id == 10) {
 							console.log("here NO");
-							handCards.list[i].list[j].setTexture("cartas4_Imprimir", cardsImgs[cards[0].card_id - 1]);
-							handCards.list[i].list[j].name = "card" + cards[0].card_id;
+							handCards.list[i].list[j].setTexture("cartas4_Imprimir", cardsImgs[card[0].card_id - 1]);
+							handCards.list[i].list[j].name = "card" + card[0].card_id;
 							handCards.list[i].list[j].visible = true
 							slotID = j + 1;
-							cardID = cards[0].card_id;
+							cardID = card[0].card_id;
 							slotFound = true;
 						} else {
-							handCards.list[i].list[j].setTexture("cartas3_Imprimir", cardsImgs[cards[0].card_id - 1]);
-							handCards.list[i].list[j].name = "card" + cards[0].card_id;
+							handCards.list[i].list[j].setTexture("cartas3_Imprimir", cardsImgs[card[0].card_id - 1]);
+							handCards.list[i].list[j].name = "card" + card[0].card_id;
 							handCards.list[i].list[j].visible = true
 							slotID = j + 1;
-							cardID = cards[0].card_id;
+							cardID = card[0].card_id;
 							slotFound = true;
 						}
 					} else {

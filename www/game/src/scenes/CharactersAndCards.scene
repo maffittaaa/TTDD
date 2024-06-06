@@ -1211,6 +1211,18 @@
                             ],
                             "label": "goToScene_1",
                             "sceneChosen": "ChooseCharacters"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "95e8bb9f-f7bc-48ee-b694-a9ccb8ebd8e3",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "23f05772-ec9f-4f4e-a1c6-4765ecc688c9",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1281,6 +1293,18 @@
                             ],
                             "label": "goToScene_2",
                             "sceneChosen": "CharactersAndCards"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "6e12f815-51c5-4cca-9312-8f2ed5821bb9",
+                            "label": "onPointerDownScript_20",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "8791174f-f063-4110-b1b9-cf8fd0484d78",
+                                    "label": "pushActionScript_20"
+                                }
+                            ]
                         }
                     ]
                 }

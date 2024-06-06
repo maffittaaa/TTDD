@@ -24,34 +24,38 @@ class DescriptionsMechanism extends ScriptNode {
 
 	start(){
 		this.parent.on('pointerdown', event => {
-			console.log(this.scene.children.list, this.parent.parentContainer.list)
+
+			var script = this
 
 			if(this.option == "Cards"){
 
-				for (let i = 0; i < this.parent.parentContainer.list[0].list.length; i++) {
-					if(this.parent.parentContainer.list[0].list[i].name.search("card_id") == 0){
-						this.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
+				setTimeout(function () {
+					for (let i = 0; i < script.parent.parentContainer.list[0].list.length; i++) {
+						if(script.parent.parentContainer.list[0].list[i].name.search("card_id") == 0){
+							script.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
+						}
 					}
-				}
-
-				this.parent.visible = false
-				this.scene.children.list[1].visible = false
-				this.parent.parentContainer.list[0].visible = true
+	
+					script.parent.visible = false
+					script.scene.children.list[1].visible = false
+					script.parent.parentContainer.list[0].visible = true
+				}, 200);
 
 			}else if(this.option == "Characters"){
 
-				for (let i = 0; i < this.parent.parentContainer.list[0].list.length; i++) {
-					if(this.parent.parentContainer.list[0].list[i].name.search("character_id") == 0){
-						this.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
+				setTimeout(function () {
+					for (let i = 0; i < script.parent.parentContainer.list[0].list.length; i++) {
+						if(script.parent.parentContainer.list[0].list[i].name.search("character_id") == 0){
+							script.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
+						}
 					}
-				}
-
-				this.parent.visible = false
-				this.scene.children.list[2].visible = false
-				this.parent.parentContainer.list[0].visible = true
+	
+					script.parent.visible = false
+					script.scene.children.list[2].visible = false
+					script.parent.parentContainer.list[0].visible = true
+				}, 200);
 
 			}else if(this.option == "Char"){
-				console.log(this.parent.parentContainer)
 				for (let i = 0; i < this.parent.parentContainer.list.length; i++) {
 					if(this.parent.parentContainer.list[i].name.search("character_id") == 0){
 						this.parent.parentContainer.list[i].preFX.list[0].active = false
@@ -91,7 +95,6 @@ class DescriptionsMechanism extends ScriptNode {
 	}
 
 	getCardCharacterDescription(type, id){
-		console.log(type, id)
 		var scene = this
 		$.ajax({
 			type: "POST",
@@ -102,7 +105,6 @@ class DescriptionsMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				if(data.succesfull){
-					console.log(scene.parent.parentContainer.list[11])
 					scene.parent.parentContainer.list[11].text = data.description
 					scene.parent.parentContainer.list[11].setWordWrapWidth(1600)
 				}else{

@@ -514,6 +514,12 @@ class CharactersAndCards extends Phaser.Scene {
 		// goToScene_1
 		const goToScene_1 = new GoToScene(chooseCharacters);
 
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
+
+		// pushActionScript_2
+		new PushActionScript(onPointerDownScript);
+
 		// Characters and Cards
 		const characters_and_Cards = this.add.container(-66, 12);
 		characters_and_Cards.scaleX = 1.5;
@@ -546,6 +552,12 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// goToScene_2
 		const goToScene_2 = new GoToScene(characters_And_Cards);
+
+		// onPointerDownScript_20
+		const onPointerDownScript_20 = new OnPointerDownScript(characters_And_Cards);
+
+		// pushActionScript_20
+		new PushActionScript(onPointerDownScript_20);
 
 		// Button Profile
 		const button_Profile = this.add.container(-95, 12);
