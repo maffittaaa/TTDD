@@ -578,25 +578,19 @@ class Match extends Phaser.Scene {
 		// pushActionScript_14
 		new PushActionScript(onPointerDownScript_14);
 
-		// cheatsMechanism_2
-		const cheatsMechanism_2 = new CheatsMechanism(resetAttackStatusButton);
-
 		// resetHpButton
 		const resetHpButton = this.add.image(960, 253, "buttons");
 		resetHpButton.scaleX = 4.2;
 		resetHpButton.scaleY = 3;
 
-		// cheatsMechanism_3
-		const cheatsMechanism_3 = new CheatsMechanism(resetHpButton);
+		// cheatsMechanism_2
+		const cheatsMechanism_2 = new CheatsMechanism(resetHpButton);
 
 		// onPointerDownScript_13
 		const onPointerDownScript_13 = new OnPointerDownScript(resetHpButton);
 
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
-
-		// cheatsMechanism_4
-		const cheatsMechanism_4 = new CheatsMechanism(resetHpButton);
 
 		// setHPTo1Text
 		const setHPTo1Text = this.add.text(960, 383, "", {});
@@ -996,13 +990,7 @@ class Match extends Phaser.Scene {
 		cheatsMechanism_1.type = "resetAttackStatus";
 
 		// cheatsMechanism_2 (prefab fields)
-		cheatsMechanism_2.type = "resetAttackStatus";
-
-		// cheatsMechanism_3 (prefab fields)
-		cheatsMechanism_3.type = "resetAttackStatus";
-
-		// cheatsMechanism_4 (prefab fields)
-		cheatsMechanism_4.type = "resetAttackStatus";
+		cheatsMechanism_2.type = "resetHP";
 
 		// cardsMechanism_1 (prefab fields)
 		cardsMechanism_1.type = "ShowCards";

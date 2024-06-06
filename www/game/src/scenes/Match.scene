@@ -1232,15 +1232,6 @@
                             "label": "pushActionScript_14"
                         }
                     ]
-                },
-                {
-                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "c7a572d5-6b32-4877-b954-351d15fb04d7",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cheatsMechanism_2",
-                    "type": "resetAttackStatus"
                 }
             ]
         },
@@ -1263,8 +1254,8 @@
                     "unlock": [
                         "type"
                     ],
-                    "label": "cheatsMechanism_3",
-                    "type": "resetAttackStatus"
+                    "label": "cheatsMechanism_2",
+                    "type": "resetHP"
                 },
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -1277,15 +1268,6 @@
                             "label": "pushActionScript_13"
                         }
                     ]
-                },
-                {
-                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "f30fdf48-5d6c-460a-8272-659fb1dbf06e",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cheatsMechanism_4",
-                    "type": "resetAttackStatus"
                 }
             ]
         },
