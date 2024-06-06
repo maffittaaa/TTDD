@@ -40,6 +40,11 @@
                 "key": "board_imprimir"
             },
             {
+                "url": "assets/buttons.png",
+                "type": "image",
+                "key": "buttons"
+            },
+            {
                 "url": "src/scripts/CardsMechanism.js",
                 "type": "script",
                 "key": "CardsMechanism"
@@ -211,6 +216,11 @@
                 "url": "assets/Shadow.png",
                 "type": "image",
                 "key": "Shadow"
+            },
+            {
+                "url": "assets/showCardsImage.png",
+                "type": "image",
+                "key": "showCardsImage"
             },
             {
                 "url": "assets/Specasdossheets.png",
