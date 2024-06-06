@@ -1164,99 +1164,86 @@
             ]
         },
         {
-            "type": "Rectangle",
-            "id": "71320ef9-cbda-4af8-a209-c18cf79bdeee",
-            "label": "resetHPButton",
+            "type": "Image",
+            "id": "39f7ca88-faad-4457-b637-fbd6b0de288b",
+            "label": "setHPTo1Button",
             "scope": "CLASS",
+            "texture": {
+                "key": "buttons"
+            },
             "x": 960,
-            "y": 267,
-            "scaleX": 2.2,
-            "scaleY": 0.3,
-            "isFilled": true,
-            "width": 128,
-            "height": 128,
+            "y": 383,
+            "scaleX": 4.2,
+            "scaleY": 3,
             "list": [
                 {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "e21aa010-5b05-436a-9316-1ad88ed2e3ca",
-                    "label": "onPointerDownScript_13",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "d32e1d55-9eb2-4547-bebe-325216f70049",
-                            "label": "pushActionScript_13"
-                        }
-                    ]
-                },
-                {
                     "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "707e0f7a-673e-4965-ac35-7d3cc17a1cf8",
+                    "id": "efa1f67c-b369-4646-a2f3-ccd008336d2b",
                     "unlock": [
                         "type"
                     ],
                     "label": "cheatsMechanism",
-                    "type": "resetHP"
-                }
-            ]
-        },
-        {
-            "type": "Rectangle",
-            "id": "13ae4c69-44c5-479b-a07e-2371b045aede",
-            "label": "resetAttackStatusButton",
-            "scope": "CLASS",
-            "x": 960,
-            "y": 363,
-            "scaleX": 2.2,
-            "scaleY": 0.3,
-            "isFilled": true,
-            "width": 128,
-            "height": 128,
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "d597dc28-dd35-4dc6-a3b5-f64ea7dee599",
-                    "label": "onPointerDownScript_14",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "f6cbcfb0-6c9d-4c09-9c9f-e4c3609e354a",
-                            "label": "pushActionScript_14"
-                        }
-                    ]
+                    "type": "hpTo1"
                 },
                 {
-                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "2f32e633-9201-4fad-a277-a5f6df9fa309",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cheatsMechanism_1",
-                    "type": "hpTo1"
-                }
-            ]
-        },
-        {
-            "type": "Rectangle",
-            "id": "ae1abf5a-64dd-4704-a1e6-fa7e4be007db",
-            "label": "setHPTo1Button",
-            "scope": "CLASS",
-            "x": 960,
-            "y": 315,
-            "scaleX": 2.2,
-            "scaleY": 0.3,
-            "isFilled": true,
-            "width": 128,
-            "height": 128,
-            "list": [
-                {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "407e2cb6-97aa-4414-86f9-522ac4153f3f",
+                    "id": "2f48b4f7-83a6-426b-aff3-447253122bc1",
                     "label": "onPointerDownScript_15",
                     "list": [
                         {
                             "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "52f4e4af-e2b6-4cae-89f3-1f85bf2cf152",
+                            "id": "b4868f59-1995-42c5-b0b4-a44b338c17c2",
                             "label": "pushActionScript_15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Text",
+            "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
+            "label": "setHPTo1Text",
+            "x": 960,
+            "y": 384,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "Everyone to 1HP",
+            "fontFamily": "Minecraft",
+            "color": "#ffffffff"
+        },
+        {
+            "type": "Image",
+            "id": "12f2b395-0f47-46e7-8ac2-46c7e1ea000c",
+            "label": "resetAttackStatusButton",
+            "scope": "CLASS",
+            "texture": {
+                "key": "buttons"
+            },
+            "x": 960,
+            "y": 318,
+            "scaleX": 4.2,
+            "scaleY": 3,
+            "list": [
+                {
+                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                    "id": "f294dff6-9fb6-4a9a-882f-b5cab01de340",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cheatsMechanism_1",
+                    "type": "resetAttackStatus"
+                },
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "b1a85b0c-13e5-40cf-b03d-cde776f77bac",
+                    "label": "onPointerDownScript_14",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "55366846-b898-46f4-98e0-c4c236912a4a",
+                            "label": "pushActionScript_14"
                         }
                     ]
                 },
@@ -1276,14 +1263,13 @@
             "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
             "label": "setHPTo1Text",
             "x": 960,
-            "y": 363,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
+            "y": 364,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "originX": 0.5,
             "originY": 0.5,
             "text": "Everyone to 1HP",
             "fontFamily": "Minecraft",
-            "fontSize": "100px",
             "color": "#000000ff"
         },
         {
@@ -1292,28 +1278,24 @@
             "label": "resetAttackStatusText",
             "x": 960,
             "y": 315,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "originX": 0.5,
             "originY": 0.5,
             "text": "Reset Attack Status",
             "fontFamily": "Minecraft",
-            "fontSize": "100px",
             "color": "#000000ff"
         },
         {
             "type": "Text",
             "id": "5c28c047-d023-4065-8663-206c91fda482",
             "label": "resetHPText",
-            "x": 960,
-            "y": 267,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
-            "originX": 0.5,
-            "originY": 0.5,
+            "x": 906,
+            "y": 256,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
             "text": "Reset HP",
             "fontFamily": "Minecraft",
-            "fontSize": "100px",
             "color": "#000000ff"
         },
         {
@@ -1356,60 +1338,55 @@
             "scope": "PUBLIC",
             "list": [
                 {
-                    "type": "Rectangle",
-                    "id": "e40cd8dc-2200-4d19-9273-7eac265269aa",
-                    "label": "player2NameShape",
-                    "scope": "PUBLIC",
-                    "x": 1561,
-                    "y": 66,
-                    "scaleX": 4,
-                    "scaleY": 0.5,
-                    "strokeColor": "#3c039b",
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "179a4f5f-796e-4f8a-8985-5146eb8f883e",
+                    "type": "Image",
+                    "id": "f9da9492-8574-47c7-be01-84a82dbb00c3",
                     "label": "player1NameShape",
-                    "scope": "PUBLIC",
-                    "x": 359,
-                    "y": 66,
-                    "scaleX": 4,
-                    "scaleY": 0.5,
-                    "strokeColor": "#3c039b",
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 339,
+                    "y": 65,
+                    "scaleX": 5,
+                    "scaleY": 3.5
                 },
                 {
-                    "type": "Rectangle",
-                    "id": "d020c11a-6f8f-4e70-9e2b-2e50aab80667",
+                    "type": "Image",
+                    "id": "78dbbca9-8ea4-4c8d-98ed-5c97f4c5d577",
+                    "label": "player2NameShape",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 1572,
+                    "y": 63,
+                    "scaleX": 5,
+                    "scaleY": 3.5
+                },
+                {
+                    "type": "Image",
+                    "id": "84d07b55-45cc-47b5-b5c5-50136c67a42f",
                     "label": "levelPlayer1Shape",
                     "scope": "PUBLIC",
-                    "x": 359,
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 352,
                     "y": 121,
                     "scaleX": 3,
-                    "scaleY": 0.3,
-                    "strokeColor": "#3c03b4",
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128
+                    "scaleY": 1.5
                 },
                 {
-                    "type": "Rectangle",
-                    "id": "16b5301d-39bb-4448-a354-706bcc5b673f",
+                    "type": "Image",
+                    "id": "d1635d08-7cbb-4365-b490-efcca264088c",
                     "label": "levelPlayer2Shape",
                     "scope": "PUBLIC",
-                    "x": 1561,
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 1568,
                     "y": 121,
                     "scaleX": 3,
-                    "scaleY": 0.3,
-                    "strokeColor": "#3c03b4",
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128
+                    "scaleY": 1.5
                 },
                 {
                     "type": "Text",
@@ -1417,7 +1394,7 @@
                     "label": "namePlayer1Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 359,
+                    "x": 344.5,
                     "y": 67,
                     "scaleX": 0.18,
                     "scaleY": 0.18,
@@ -1451,16 +1428,14 @@
                     "label": "levelPlayer1Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 359,
+                    "x": 333,
                     "y": 123,
-                    "scaleX": 0.2,
-                    "scaleY": 0.2,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Level: ",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px"
+                    "fontSize": "20px"
                 },
                 {
                     "type": "Text",
@@ -1468,18 +1443,28 @@
                     "label": "levelPlayer2Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 1561,
+                    "x": 1565,
                     "y": 123,
-                    "scaleX": 0.2,
-                    "scaleY": 0.2,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Level: ",
                     "align": "center",
                     "fontFamily": "Minecraft",
-                    "fontSize": "100px"
+                    "fontSize": "20px"
                 }
             ]
+        },
+        {
+            "type": "Image",
+            "id": "dfc077ad-75b0-4b6d-8bed-e7572d68e88f",
+            "label": "showCardsImage",
+            "texture": {
+                "key": "showCardsImage"
+            },
+            "x": 287,
+            "y": 404,
+            "scaleX": 2.16,
+            "scaleY": 1.14
         },
         {
             "type": "Text",
@@ -1492,13 +1477,13 @@
             "hitArea.y": -140,
             "hitArea.width": 652.3814994495934,
             "hitArea.height": 910.5149565734912,
-            "x": 287,
-            "y": 406,
-            "scaleX": 0.23,
-            "scaleY": 0.23,
+            "x": 288,
+            "y": 405,
+            "scaleX": 0.2,
+            "scaleY": 0.2,
             "originX": 0.5,
             "originY": 0.5,
-            "text": "Show Cards",
+            "text": "SHOW CARDS",
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",

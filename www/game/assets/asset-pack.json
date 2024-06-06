@@ -43,6 +43,12 @@
                 "url": "assets/calçada.png",
                 "type": "image",
                 "key": "calçada"
+                
+            },
+            {
+                "url": "assets/buttons.png",
+                "type": "image",
+                "key": "buttons"
             },
             {
                 "url": "src/scripts/CardsMechanism.js",
@@ -216,6 +222,11 @@
                 "url": "assets/Shadow.png",
                 "type": "image",
                 "key": "Shadow"
+            },
+            {
+                "url": "assets/showCardsImage.png",
+                "type": "image",
+                "key": "showCardsImage"
             },
             {
                 "url": "assets/Specasdossheets.png",
