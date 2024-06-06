@@ -1311,7 +1311,7 @@
             "scaleY": 0.25,
             "originX": 0.5,
             "originY": 0.5,
-            "text": "Reset HP",
+            "text": "Card Used",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
             "color": "#ffffffff"

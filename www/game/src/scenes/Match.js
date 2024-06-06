@@ -613,7 +613,7 @@ class Match extends Phaser.Scene {
 		resetHPText.scaleX = 0.25;
 		resetHPText.scaleY = 0.25;
 		resetHPText.setOrigin(0.5, 0.5);
-		resetHPText.text = "Reset HP";
+		resetHPText.text = "Card Used";
 		resetHPText.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// turn
