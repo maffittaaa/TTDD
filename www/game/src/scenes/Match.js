@@ -535,11 +535,11 @@ class Match extends Phaser.Scene {
 
 		// endTurnText
 		const endTurnText = this.add.text(960, 1052, "", {});
-		endTurnText.scaleX = 0.5;
-		endTurnText.scaleY = 0.5;
+		endTurnText.scaleX = 0.25;
+		endTurnText.scaleY = 0.25;
 		endTurnText.setOrigin(0.5, 0.5);
 		endTurnText.text = "End turn";
-		endTurnText.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
+		endTurnText.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "200px" });
 
 		// onPointerDownScript_12
 		const onPointerDownScript_12 = new OnPointerDownScript(endTurnText);
@@ -564,14 +564,6 @@ class Match extends Phaser.Scene {
 		// pushActionScript_15
 		new PushActionScript(onPointerDownScript_15);
 
-		// setHPTo1Text
-		const setHPTo1Text = this.add.text(960, 363, "", {});
-		setHPTo1Text.scaleX = 0.25;
-		setHPTo1Text.scaleY = 0.25;
-		setHPTo1Text.setOrigin(0.5, 0.5);
-		setHPTo1Text.text = "Everyone to 1HP";
-		setHPTo1Text.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft" });
-
 		// resetAttackStatusButton
 		const resetAttackStatusButton = this.add.image(960, 318, "buttons");
 		resetAttackStatusButton.scaleX = 4.2;
@@ -586,38 +578,49 @@ class Match extends Phaser.Scene {
 		// pushActionScript_14
 		new PushActionScript(onPointerDownScript_14);
 
-		// resetAttackStatusText
-		const resetAttackStatusText = this.add.text(960, 318, "", {});
-		resetAttackStatusText.scaleX = 1.5;
-		resetAttackStatusText.scaleY = 1.5;
-		const resetAttackStatusText = this.add.text(960, 315, "", {});
-		resetAttackStatusText.scaleX = 0.25;
-		resetAttackStatusText.scaleY = 0.25;
-		resetAttackStatusText.setOrigin(0.5, 0.5);
-		resetAttackStatusText.text = "Reset Attack Status";
-		resetAttackStatusText.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft" });
-
-		// resetHPButton
-		const resetHPButton = this.add.image(960, 253, "buttons");
-		resetHPButton.scaleX = 4.2;
-		resetHPButton.scaleY = 3;
-
 		// cheatsMechanism_2
-		const cheatsMechanism_2 = new CheatsMechanism(resetHPButton);
+		const cheatsMechanism_2 = new CheatsMechanism(resetAttackStatusButton);
+
+		// resetHpButton
+		const resetHpButton = this.add.image(960, 253, "buttons");
+		resetHpButton.scaleX = 4.2;
+		resetHpButton.scaleY = 3;
+
+		// cheatsMechanism_3
+		const cheatsMechanism_3 = new CheatsMechanism(resetHpButton);
 
 		// onPointerDownScript_13
-		const onPointerDownScript_13 = new OnPointerDownScript(resetHPButton);
+		const onPointerDownScript_13 = new OnPointerDownScript(resetHpButton);
 
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
 
+		// cheatsMechanism_4
+		const cheatsMechanism_4 = new CheatsMechanism(resetHpButton);
+
+		// setHPTo1Text
+		const setHPTo1Text = this.add.text(960, 383, "", {});
+		setHPTo1Text.scaleX = 0.25;
+		setHPTo1Text.scaleY = 0.25;
+		setHPTo1Text.setOrigin(0.5, 0.5);
+		setHPTo1Text.text = "Everyone to 1HP";
+		setHPTo1Text.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
+
+		// resetAttackStatusText
+		const resetAttackStatusText = this.add.text(960, 318, "", {});
+		resetAttackStatusText.scaleX = 0.25;
+		resetAttackStatusText.scaleY = 0.25;
+		resetAttackStatusText.setOrigin(0.5, 0.5);
+		resetAttackStatusText.text = "Reset Attack Status";
+		resetAttackStatusText.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
+
 		// resetHPText
-		const resetHPText = this.add.text(960, 267, "", {});
+		const resetHPText = this.add.text(960, 253, "", {});
 		resetHPText.scaleX = 0.25;
 		resetHPText.scaleY = 0.25;
 		resetHPText.setOrigin(0.5, 0.5);
 		resetHPText.text = "Reset HP";
-		resetHPText.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft" });
+		resetHPText.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// turn
 		const turn = this.add.text(458, 429, "", {});
@@ -653,19 +656,19 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(player2NameShape);
 
 		// levelPlayer1Shape
-		const levelPlayer1Shape = this.add.image(336, 119, "buttons");
+		const levelPlayer1Shape = this.add.image(339, 121, "buttons");
 		levelPlayer1Shape.scaleX = 3;
 		levelPlayer1Shape.scaleY = 1.5;
 		namesAndLevelsPlayers.add(levelPlayer1Shape);
 
 		// levelPlayer2Shape
-		const levelPlayer2Shape = this.add.image(1573, 119, "buttons");
+		const levelPlayer2Shape = this.add.image(1572, 121, "buttons");
 		levelPlayer2Shape.scaleX = 3;
 		levelPlayer2Shape.scaleY = 1.5;
 		namesAndLevelsPlayers.add(levelPlayer2Shape);
 
 		// namePlayer1Text
-		const namePlayer1Text = this.add.text(337, 67, "", {});
+		const namePlayer1Text = this.add.text(339, 65, "", {});
 		namePlayer1Text.name = "namePlayer1Text";
 		namePlayer1Text.scaleX = 0.18;
 		namePlayer1Text.scaleY = 0.18;
@@ -675,7 +678,7 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(namePlayer1Text);
 
 		// namePlayer2Text
-		const namePlayer2Text = this.add.text(1561, 67, "", {});
+		const namePlayer2Text = this.add.text(1572, 63, "", {});
 		namePlayer2Text.name = "namePlayer2Text";
 		namePlayer2Text.scaleX = 0.18;
 		namePlayer2Text.scaleY = 0.18;
@@ -685,7 +688,7 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(namePlayer2Text);
 
 		// levelPlayer1Text
-		const levelPlayer1Text = this.add.text(334, 121, "", {});
+		const levelPlayer1Text = this.add.text(339, 121, "", {});
 		levelPlayer1Text.name = "levelPlayer1Text";
 		levelPlayer1Text.scaleX = 0.2;
 		levelPlayer1Text.scaleY = 0.2;
@@ -695,7 +698,7 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(levelPlayer1Text);
 
 		// levelPlayer2Text
-		const levelPlayer2Text = this.add.text(1561, 123, "", {});
+		const levelPlayer2Text = this.add.text(1572, 121, "", {});
 		levelPlayer2Text.name = "levelPlayer2Text";
 		levelPlayer2Text.scaleX = 0.2;
 		levelPlayer2Text.scaleY = 0.2;
@@ -705,16 +708,16 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(levelPlayer2Text);
 
 		// showCardsImage
-		const showCardsImage = this.add.image(288, 472, "showCardsImage");
+		const showCardsImage = this.add.image(287, 404, "showCardsImage");
 		showCardsImage.scaleX = 2.16;
 		showCardsImage.scaleY = 1.14;
 
 		// showCards
-		const showCards = this.add.text(287, 406, "", {});
+		const showCards = this.add.text(288, 405, "", {});
 		showCards.name = "showCards";
 		showCards.setInteractive(new Phaser.Geom.Rectangle(-38, -140, 652.3814994495934, 910.5149565734912), Phaser.Geom.Rectangle.Contains);
-		showCards.scaleX = 0.19;
-		showCards.scaleY = 0.19;
+		showCards.scaleX = 0.2;
+		showCards.scaleY = 0.2;
 		showCards.setOrigin(0.5, 0.5);
 		showCards.text = "SHOW CARDS";
 		showCards.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
@@ -993,7 +996,13 @@ class Match extends Phaser.Scene {
 		cheatsMechanism_1.type = "resetAttackStatus";
 
 		// cheatsMechanism_2 (prefab fields)
-		cheatsMechanism_2.type = "resetHP";
+		cheatsMechanism_2.type = "resetAttackStatus";
+
+		// cheatsMechanism_3 (prefab fields)
+		cheatsMechanism_3.type = "resetAttackStatus";
+
+		// cheatsMechanism_4 (prefab fields)
+		cheatsMechanism_4.type = "resetAttackStatus";
 
 		// cardsMechanism_1 (prefab fields)
 		cardsMechanism_1.type = "ShowCards";
@@ -1085,7 +1094,7 @@ class Match extends Phaser.Scene {
 		this.endTurnText = endTurnText;
 		this.setHPTo1Button = setHPTo1Button;
 		this.resetAttackStatusButton = resetAttackStatusButton;
-		this.resetHPButton = resetHPButton;
+		this.resetHpButton = resetHpButton;
 		this.turn = turn;
 		this.winnerText = winnerText;
 		this.player2NameShape = player2NameShape;
@@ -1184,7 +1193,7 @@ class Match extends Phaser.Scene {
 	/** @type {Phaser.GameObjects.Image} */
 	resetAttackStatusButton;
 	/** @type {Phaser.GameObjects.Image} */
-	resetHPButton;
+	resetHpButton;
 	/** @type {Phaser.GameObjects.Text} */
 	turn;
 	/** @type {Phaser.GameObjects.Text} */
