@@ -236,8 +236,27 @@ class CharactersAndCards extends Phaser.Scene {
 		card_description_1.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
 		characters_1.add(card_description_1);
 
+		// peawns0
+		const peawns0 = this.add.image(246, 395, "peawns", 0);
+		peawns0.angle = -42;
+		characters.add(peawns0);
+
+		// peawns3
+		const peawns3 = this.add.image(394, 194, "peawns", 3);
+		characters.add(peawns3);
+
+		// peawns22
+		const peawns22 = this.add.image(577, 296, "peawns2", 2);
+		peawns22.angle = 35;
+		characters.add(peawns22);
+
+		// peawns23
+		const peawns23 = this.add.image(548, 458, "peawns2", 3);
+		peawns23.angle = 66;
+		characters.add(peawns23);
+
 		// characters_option_button
-		const characters_option_button = this.add.image(401, 360, "cartas2_Imprimir", 1);
+		const characters_option_button = this.add.image(401, 375, "cartas2_Imprimir", 1);
 		characters_option_button.name = "characters_option_button";
 		characters.add(characters_option_button);
 
@@ -249,6 +268,12 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism
 		const descriptionsMechanism = new DescriptionsMechanism(characters_option_button);
+
+		// highlights
+		const highlights = new Highlights(characters_option_button);
+
+		// glowFx_11
+		characters.postFX.addGlow(16777215, 4, 0, false);
 
 		// Cards
 		const cards = this.add.container(0, 0);
@@ -467,8 +492,26 @@ class CharactersAndCards extends Phaser.Scene {
 		card_description.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "100px" });
 		cards_1.add(card_description);
 
+		// cartas3_Imprimir3
+		const cartas3_Imprimir3 = this.add.image(1035, 271, "cartas3_Imprimir", 3);
+		cartas3_Imprimir3.scaleX = 0.5;
+		cartas3_Imprimir3.scaleY = 0.5;
+		cards.add(cartas3_Imprimir3);
+
+		// cartas3_Imprimir7
+		const cartas3_Imprimir7 = this.add.image(1059, 375, "cartas3_Imprimir", 7);
+		cartas3_Imprimir7.scaleX = 0.5;
+		cartas3_Imprimir7.scaleY = 0.5;
+		cards.add(cartas3_Imprimir7);
+
+		// cartas3_Imprimir6
+		const cartas3_Imprimir6 = this.add.image(1080, 479, "cartas3_Imprimir", 6);
+		cartas3_Imprimir6.scaleX = 0.5;
+		cartas3_Imprimir6.scaleY = 0.5;
+		cards.add(cartas3_Imprimir6);
+
 		// cartas4_Imprimir3
-		const cartas4_Imprimir3 = this.add.image(864, 360, "cartas4_Imprimir", 3);
+		const cartas4_Imprimir3 = this.add.image(864, 375, "cartas4_Imprimir", 3);
 		cartas4_Imprimir3.name = "cartas4_Imprimir3";
 		cards.add(cartas4_Imprimir3);
 
@@ -480,6 +523,12 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_1
 		const descriptionsMechanism_1 = new DescriptionsMechanism(cartas4_Imprimir3);
+
+		// highlights_1
+		const highlights_1 = new Highlights(cartas4_Imprimir3);
+
+		// glowFx_12
+		cards.postFX.addGlow(16777215, 4, 0, false);
 
 		// Button Choose Characters
 		const button_Choose_Characters = this.add.container(-51, 12);
@@ -690,6 +739,9 @@ class CharactersAndCards extends Phaser.Scene {
 		// descriptionsMechanism (prefab fields)
 		descriptionsMechanism.option = "Characters";
 
+		// highlights (prefab fields)
+		highlights.type = "DescriptionCards";
+
 		// descriptionsMechanism_11 (prefab fields)
 		descriptionsMechanism_11.option = "Card";
 		descriptionsMechanism_11.id = 1;
@@ -742,6 +794,9 @@ class CharactersAndCards extends Phaser.Scene {
 
 		// descriptionsMechanism_1 (prefab fields)
 		descriptionsMechanism_1.option = "Cards";
+
+		// highlights_1 (prefab fields)
+		highlights_1.type = "DescriptionChar";
 
 		// goToScene_1 (prefab fields)
 		goToScene_1.sceneChosen = "ChooseCharacters";

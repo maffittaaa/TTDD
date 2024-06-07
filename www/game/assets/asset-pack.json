@@ -167,6 +167,11 @@
                 "key": "HealthBarMechanism"
             },
             {
+                "url": "src/scripts/Highlights.js",
+                "type": "script",
+                "key": "Highlights"
+            },
+            {
                 "url": "src/scenes/Match.js",
                 "type": "sceneFile",
                 "key": "Match"
