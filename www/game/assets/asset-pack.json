@@ -228,6 +228,11 @@
                 "key": "showCardsImage"
             },
             {
+                "url": "assets/sidewalk.png",
+                "type": "image",
+                "key": "sidewalk"
+            },
+            {
                 "url": "assets/Specasdossheets.png",
                 "type": "image",
                 "key": "Specasdossheets"
