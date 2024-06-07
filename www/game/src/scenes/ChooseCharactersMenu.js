@@ -78,45 +78,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_4
 		const goToScene_4 = new GoToScene(goToMatch);
 
-		// Button Profile
-		const button_Profile = this.add.container(99, 12);
-		button_Profile.scaleX = 1.5;
-		button_Profile.scaleY = 1.5;
-
-		// highlight_3
-		const highlight_3 = this.add.rectangle(622, 48, 128, 128);
-		highlight_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_3.scaleX = 0.9;
-		highlight_3.scaleY = 0.21995512106258827;
-		highlight_3.isFilled = true;
-		highlight_3.fillColor = 0;
-		highlight_3.strokeColor = 4194559;
-		highlight_3.strokeAlpha = 4;
-		highlight_3.lineWidth = 4;
-		button_Profile.add(highlight_3);
-
-		// glowFx_16
-		highlight_3.postFX.addGlow(4194559, 3, 3, false);
-
-		// Profile
-		const profile = this.add.text(622, 47, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-46, 56, 685.0914454010407, 162.00620464863744), Phaser.Geom.Rectangle.Contains);
-		profile.scaleX = 0.15;
-		profile.scaleY = 0.15;
-		profile.setOrigin(0.5, 0.5);
-		profile.text = "Profile";
-		profile.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		button_Profile.add(profile);
-
-		// onPointerDownScript_1
-		const onPointerDownScript_1 = new OnPointerDownScript(profile);
-
-		// pushActionScript_1
-		new PushActionScript(onPointerDownScript_1);
-
-		// goToScene
-		const goToScene = new GoToScene(profile);
-
 		// Slots
 		const slots = this.add.container(0, 8);
 		slots.name = "Slots";
@@ -224,7 +185,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slot_5.preFX.addGlow(16777215, 4, 0, false);
 
 		// MessageServer
-		const messageServer = this.add.text(1050, 109, "", {});
+		const messageServer = this.add.text(1050, 590, "", {});
 		messageServer.name = "MessageServer";
 		messageServer.scaleX = 0.15;
 		messageServer.scaleY = 0.15;
@@ -330,45 +291,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// pushActionScript_19
 		new PushActionScript(onPointerDownScript_19);
-
-		// Button Choose Characters
-		const button_Choose_Characters = this.add.container(4, 12);
-		button_Choose_Characters.scaleX = 1.5;
-		button_Choose_Characters.scaleY = 1.5;
-
-		// highlight
-		const highlight = this.add.rectangle(180, 48, 128, 128);
-		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.9;
-		highlight.scaleY = 0.21995512106258827;
-		highlight.isFilled = true;
-		highlight.fillColor = 0;
-		highlight.strokeColor = 4194559;
-		highlight.strokeAlpha = 4;
-		highlight.lineWidth = 4;
-		button_Choose_Characters.add(highlight);
-
-		// glowFx_13
-		highlight.postFX.addGlow(4194559, 3, 3, false);
-
-		// ChooseCharacters
-		const chooseCharacters = this.add.text(180, 47, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(-12, 49, 1721.7117200552311, 164.44063936199876), Phaser.Geom.Rectangle.Contains);
-		chooseCharacters.scaleX = 0.15;
-		chooseCharacters.scaleY = 0.15;
-		chooseCharacters.setOrigin(0.5, 0.5);
-		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		button_Choose_Characters.add(chooseCharacters);
-
-		// goToScene_1
-		const goToScene_1 = new GoToScene(chooseCharacters);
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
-
-		// pushActionScript_2
-		new PushActionScript(onPointerDownScript);
 
 		// Characters
 		const characters = this.add.container(0, 0);
@@ -599,84 +521,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// glowFx_3
 		character_id_3.preFX.addGlow(16777215, 4, 0, false);
 
-		// Characters and Cards
-		const characters_and_Cards = this.add.container(69, 12);
-		characters_and_Cards.scaleX = 1.5;
-		characters_and_Cards.scaleY = 1.5;
-
-		// highlight_2
-		const highlight_2 = this.add.rectangle(422, 48, 128, 128);
-		highlight_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_2.scaleX = 2.18;
-		highlight_2.scaleY = 0.21995512106258827;
-		highlight_2.isFilled = true;
-		highlight_2.fillColor = 0;
-		highlight_2.strokeColor = 4194559;
-		highlight_2.strokeAlpha = 4;
-		highlight_2.lineWidth = 4;
-		characters_and_Cards.add(highlight_2);
-
-		// glowFx_15
-		highlight_2.postFX.addGlow(4194559, 3, 3, false);
-
-		// Characters And Cards
-		const characters_And_Cards = this.add.text(422, 47, "", {});
-		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(-23, 46, 1913.2290962755528, 167.44063936199893), Phaser.Geom.Rectangle.Contains);
-		characters_And_Cards.scaleX = 0.15;
-		characters_And_Cards.scaleY = 0.15;
-		characters_And_Cards.setOrigin(0.5, 0.5);
-		characters_And_Cards.text = "Characters and Cards";
-		characters_And_Cards.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		characters_and_Cards.add(characters_And_Cards);
-
-		// goToScene_2
-		const goToScene_2 = new GoToScene(characters_And_Cards);
-
-		// onPointerDownScript_20
-		const onPointerDownScript_20 = new OnPointerDownScript(characters_And_Cards);
-
-		// pushActionScript_20
-		new PushActionScript(onPointerDownScript_20);
-
-		// Button Go Back To Home Page
-		const button_Go_Back_To_Home_Page = this.add.container(120, 12);
-		button_Go_Back_To_Home_Page.scaleX = 1.5;
-		button_Go_Back_To_Home_Page.scaleY = 1.5;
-
-		// highlight_4
-		const highlight_4 = this.add.rectangle(808, 48, 128, 128);
-		highlight_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_4.scaleX = 1.84;
-		highlight_4.scaleY = 0.21995512106258827;
-		highlight_4.isFilled = true;
-		highlight_4.fillColor = 0;
-		highlight_4.strokeColor = 4194559;
-		highlight_4.strokeAlpha = 4;
-		highlight_4.lineWidth = 4;
-		button_Go_Back_To_Home_Page.add(highlight_4);
-
-		// glowFx_17
-		highlight_4.postFX.addGlow(4194559, 3, 3, false);
-
-		// ButtonGoToHomePage
-		const buttonGoToHomePage = this.add.text(808, 46, "", {});
-		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(-17, 58, 1616.4785766301125, 163.13294733645859), Phaser.Geom.Rectangle.Contains);
-		buttonGoToHomePage.scaleX = 0.15;
-		buttonGoToHomePage.scaleY = 0.15;
-		buttonGoToHomePage.setOrigin(0.5, 0.5);
-		buttonGoToHomePage.text = "Back To Home Page";
-		buttonGoToHomePage.setStyle({ "align": "center", "fontFamily": "pixelfont", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		button_Go_Back_To_Home_Page.add(buttonGoToHomePage);
-
-		// onPointerDownScript_25
-		const onPointerDownScript_25 = new OnPointerDownScript(buttonGoToHomePage);
-
-		// pushActionScript_25
-		new PushActionScript(onPointerDownScript_25);
-
-		// goToScene_3
-		const goToScene_3 = new GoToScene(buttonGoToHomePage);
-
 		// XpBar
 		const xpBar = this.add.container(0, 12);
 		xpBar.name = "XpBar";
@@ -697,6 +541,162 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		xpTotal.text = "TotalXP";
 		xpTotal.setStyle({ "backgroundColor": "", "color": "#000000ff", "fontFamily": "pixelfont", "fontSize": "150px", "stroke": "#000000ff", "strokeThickness":1});
 		xpBar.add(xpTotal);
+
+		// Button Choose Characters
+		const button_Choose_Characters = this.add.container(-51, 12);
+		button_Choose_Characters.scaleX = 1.5;
+		button_Choose_Characters.scaleY = 1.5;
+
+		// highlight
+		const highlight = this.add.rectangle(180, 48, 128, 128);
+		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight.scaleX = 1.44;
+		highlight.scaleY = 0.21995512106258827;
+		highlight.isFilled = true;
+		highlight.fillColor = 0;
+		highlight.strokeColor = 4194559;
+		highlight.strokeAlpha = 4;
+		highlight.lineWidth = 4;
+		button_Choose_Characters.add(highlight);
+
+		// glowFx_13
+		highlight.postFX.addGlow(4194559, 3, 3, false);
+
+		// ChooseCharacters
+		const chooseCharacters = this.add.text(180, 48, "", {});
+		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 949.9773032706995, 100.90937292581162), Phaser.Geom.Rectangle.Contains);
+		chooseCharacters.scaleX = 0.18;
+		chooseCharacters.scaleY = 0.18;
+		chooseCharacters.setOrigin(0.5, 0.5);
+		chooseCharacters.text = "Choose Characters";
+		chooseCharacters.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Choose_Characters.add(chooseCharacters);
+
+		// goToScene_1
+		const goToScene_1 = new GoToScene(chooseCharacters);
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
+
+		// pushActionScript_2
+		new PushActionScript(onPointerDownScript);
+
+		// Characters and Cards
+		const characters_and_Cards = this.add.container(-66, 12);
+		characters_and_Cards.scaleX = 1.5;
+		characters_and_Cards.scaleY = 1.5;
+
+		// highlight_2
+		const highlight_2 = this.add.rectangle(422, 48, 128, 128);
+		highlight_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_2.scaleX = 1.68;
+		highlight_2.scaleY = 0.21995512106258827;
+		highlight_2.isFilled = true;
+		highlight_2.fillColor = 0;
+		highlight_2.strokeColor = 4194559;
+		highlight_2.strokeAlpha = 4;
+		highlight_2.lineWidth = 4;
+		characters_and_Cards.add(highlight_2);
+
+		// glowFx_15
+		highlight_2.postFX.addGlow(4194559, 3, 3, false);
+
+		// Characters And Cards
+		const characters_And_Cards = this.add.text(422, 48, "", {});
+		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1101.472090680232, 112.19250373942205), Phaser.Geom.Rectangle.Contains);
+		characters_And_Cards.scaleX = 0.18;
+		characters_And_Cards.scaleY = 0.18;
+		characters_And_Cards.setOrigin(0.5, 0.5);
+		characters_And_Cards.text = "Characters and Cards";
+		characters_And_Cards.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		characters_and_Cards.add(characters_And_Cards);
+
+		// goToScene_2
+		const goToScene_2 = new GoToScene(characters_And_Cards);
+
+		// onPointerDownScript_20
+		const onPointerDownScript_20 = new OnPointerDownScript(characters_And_Cards);
+
+		// pushActionScript_20
+		new PushActionScript(onPointerDownScript_20);
+
+		// Button Profile
+		const button_Profile = this.add.container(-95, 12);
+		button_Profile.scaleX = 1.5;
+		button_Profile.scaleY = 1.5;
+
+		// highlight_3
+		const highlight_3 = this.add.rectangle(622, 48, 128, 128);
+		highlight_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_3.scaleX = 0.63;
+		highlight_3.scaleY = 0.21995512106258827;
+		highlight_3.isFilled = true;
+		highlight_3.fillColor = 0;
+		highlight_3.strokeColor = 4194559;
+		highlight_3.strokeAlpha = 4;
+		highlight_3.lineWidth = 4;
+		button_Profile.add(highlight_3);
+
+		// glowFx_16
+		highlight_3.postFX.addGlow(4194559, 3, 3, false);
+
+		// Profile
+		const profile = this.add.text(622, 48, "", {});
+		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 351.15663686934727, 134.83406914622725), Phaser.Geom.Rectangle.Contains);
+		profile.scaleX = 0.18;
+		profile.scaleY = 0.18;
+		profile.setOrigin(0.5, 0.5);
+		profile.text = "Profile";
+		profile.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Profile.add(profile);
+
+		// onPointerDownScript_1
+		const onPointerDownScript_1 = new OnPointerDownScript(profile);
+
+		// pushActionScript_1
+		new PushActionScript(onPointerDownScript_1);
+
+		// goToScene
+		const goToScene = new GoToScene(profile);
+
+		// Button Go Back To Home Page
+		const button_Go_Back_To_Home_Page = this.add.container(-121, 12);
+		button_Go_Back_To_Home_Page.scaleX = 1.5;
+		button_Go_Back_To_Home_Page.scaleY = 1.5;
+
+		// highlight_4
+		const highlight_4 = this.add.rectangle(808, 48, 128, 128);
+		highlight_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
+		highlight_4.scaleX = 1.53;
+		highlight_4.scaleY = 0.21995512106258827;
+		highlight_4.isFilled = true;
+		highlight_4.fillColor = 0;
+		highlight_4.strokeColor = 4194559;
+		highlight_4.strokeAlpha = 4;
+		highlight_4.lineWidth = 4;
+		button_Go_Back_To_Home_Page.add(highlight_4);
+
+		// glowFx_17
+		highlight_4.postFX.addGlow(4194559, 3, 3, false);
+
+		// ButtonGoToHomePage
+		const buttonGoToHomePage = this.add.text(808, 48, "", {});
+		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(-3, 3, 990.1760256343523, 103.70293702497405), Phaser.Geom.Rectangle.Contains);
+		buttonGoToHomePage.scaleX = 0.18;
+		buttonGoToHomePage.scaleY = 0.18;
+		buttonGoToHomePage.setOrigin(0.5, 0.5);
+		buttonGoToHomePage.text = "Back To Home Page";
+		buttonGoToHomePage.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Go_Back_To_Home_Page.add(buttonGoToHomePage);
+
+		// onPointerDownScript_25
+		const onPointerDownScript_25 = new OnPointerDownScript(buttonGoToHomePage);
+
+		// pushActionScript_25
+		new PushActionScript(onPointerDownScript_25);
+
+		// goToScene_1
+		const goToScene_1 = new GoToScene(buttonGoToHomePage);
 
 		// LevelUpScreen
 		const levelUpScreen = this.add.container(0, 0);
@@ -797,9 +797,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// goToScene_4 (prefab fields)
 		goToScene_4.sceneChosen = "NotToBeUsed";
 
-		// goToScene (prefab fields)
-		goToScene.sceneChosen = "Profile";
-
 		// handleChooseMechanism_13 (prefab fields)
 		handleChooseMechanism_13.SlotID = 4;
 		handleChooseMechanism_13.type = "Slot";
@@ -822,9 +819,6 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// handleChooseMechanism_16 (prefab fields)
 		handleChooseMechanism_16.type = "charSelct";
-
-		// goToScene_1 (prefab fields)
-		goToScene_1.sceneChosen = "ChooseCharacters";
 
 		// handleChooseMechanism_17 (prefab fields)
 		handleChooseMechanism_17.type = "charSelct";
@@ -869,11 +863,17 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		handleChooseMechanism.CharacterID = 3;
 		handleChooseMechanism.type = "Character";
 
+		// goToScene_1 (prefab fields)
+		goToScene_1.sceneChosen = "ChooseCharacters";
+
 		// goToScene_2 (prefab fields)
 		goToScene_2.sceneChosen = "CharactersAndCards";
 
-		// goToScene_3 (prefab fields)
-		goToScene_3.sceneChosen = "HomePage";
+		// goToScene (prefab fields)
+		goToScene.sceneChosen = "Profile";
+
+		// goToScene_1 (prefab fields)
+		goToScene_1.sceneChosen = "HomePage";
 
 		// unlockCharacterMechanism (prefab fields)
 		unlockCharacterMechanism.type = "character";

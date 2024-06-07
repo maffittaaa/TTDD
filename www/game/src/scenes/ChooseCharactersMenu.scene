@@ -148,91 +148,6 @@
         },
         {
             "type": "Container",
-            "id": "85542a09-e894-42fa-8fbb-46068d957c94",
-            "label": "Button Profile",
-            "x": 99,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "67fed3c7-32c4-42e7-840f-7529d8dabfa5",
-                    "label": "highlight_3",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 622,
-                    "y": 48,
-                    "scaleX": 0.9,
-                    "scaleY": 0.21995512106258827,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "6e84c3b8-894e-4068-9310-745362fe0b40",
-                            "label": "glowFx_16",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "8ce06cd5-0820-4789-94ae-043b6a6a132b",
-                    "label": "Profile",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -46,
-                    "hitArea.y": 56,
-                    "hitArea.width": 685.0914454010407,
-                    "hitArea.height": 162.00620464863744,
-                    "x": 622,
-                    "y": 47,
-                    "scaleX": 0.15,
-                    "scaleY": 0.15,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Profile",
-                    "align": "center",
-                    "fontFamily": "pixelfont",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "6d11b2f4-ad25-43a3-961f-cdb76e58c09d",
-                            "label": "onPointerDownScript_1",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "16034f5f-b490-44eb-9d1b-fb80c5cf2f42",
-                                    "label": "pushActionScript_1"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "18775d2c-7201-4b58-b556-204ebeb0703d",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene",
-                            "sceneChosen": "Profile"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
             "id": "743a732d-cab9-4178-b07f-3d061d6b92b6",
             "label": "Slots",
             "useGameObjectName": true,
@@ -492,7 +407,7 @@
                     "label": "MessageServer",
                     "useGameObjectName": true,
                     "x": 1050,
-                    "y": 109,
+                    "y": 590,
                     "scaleX": 0.15,
                     "scaleY": 0.15,
                     "originX": 0.5,
@@ -706,91 +621,6 @@
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
                                     "id": "728d6c23-f1e0-4fad-bd8b-7cf80d444321",
                                     "label": "pushActionScript_19"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "85a22995-225d-40bf-b694-9c97ea2a460c",
-            "label": "Button Choose Characters",
-            "x": 4,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "17f3881e-a62c-472f-983a-87f2255df5bf",
-                    "label": "highlight",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 180,
-                    "y": 48,
-                    "scaleX": 1.9,
-                    "scaleY": 0.21995512106258827,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "22ddbb3b-43b0-4ace-97d7-5b6ee0fb286f",
-                            "label": "glowFx_13",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "ad7fec9f-3108-4115-9a60-d9099dffbb12",
-                    "label": "ChooseCharacters",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -12,
-                    "hitArea.y": 49,
-                    "hitArea.width": 1721.7117200552311,
-                    "hitArea.height": 164.44063936199876,
-                    "x": 180,
-                    "y": 47,
-                    "scaleX": 0.15,
-                    "scaleY": 0.15,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Choose Characters",
-                    "align": "center",
-                    "fontFamily": "pixelfont",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "27cb000f-c26f-4ae7-80ba-6b08873feb2e",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene_1",
-                            "sceneChosen": "ChooseCharacters"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "487ed28f-195e-4a59-b335-632bbfb3ecec",
-                            "label": "onPointerDownScript",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "294e1966-1634-45de-b77d-1294fde426e2",
-                                    "label": "pushActionScript_2"
                                 }
                             ]
                         }
@@ -1324,176 +1154,6 @@
         },
         {
             "type": "Container",
-            "id": "8af03532-cf99-4fb2-bc01-377aab7f2101",
-            "label": "Characters and Cards",
-            "x": 69,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "f7d860c8-935d-44f7-88ae-859d58cf9318",
-                    "label": "highlight_2",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 422,
-                    "y": 48,
-                    "scaleX": 2.18,
-                    "scaleY": 0.21995512106258827,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "a22d03ec-c0a6-414c-a5df-5f76e3c579b3",
-                            "label": "glowFx_15",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "f3063fef-451a-4e66-9667-375e1c021942",
-                    "label": "Characters And Cards",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -23,
-                    "hitArea.y": 46,
-                    "hitArea.width": 1913.2290962755528,
-                    "hitArea.height": 167.44063936199893,
-                    "x": 422,
-                    "y": 47,
-                    "scaleX": 0.15,
-                    "scaleY": 0.15,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Characters and Cards",
-                    "align": "center",
-                    "fontFamily": "pixelfont",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "46e547a4-ad89-491f-998d-1ac87665f4ac",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene_2",
-                            "sceneChosen": "CharactersAndCards"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "228be7c7-10d5-4481-baf3-8bd8fe0a8d0d",
-                            "label": "onPointerDownScript_20",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "d79c97a1-4fb3-4f5f-9a5e-23ac0772a1bd",
-                                    "label": "pushActionScript_20"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "abbf14f2-7afa-4848-9a22-e770758cf169",
-            "label": "Button Go Back To Home Page",
-            "x": 120,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "6de2f540-7736-4bfd-ac37-a62530be5aba",
-                    "label": "highlight_4",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 808,
-                    "y": 48,
-                    "scaleX": 1.84,
-                    "scaleY": 0.21995512106258827,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "0a669f32-2655-4e1b-90cd-dfebc4c36208",
-                            "label": "glowFx_17",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "14424a48-7468-49d5-9596-4d0475515d59",
-                    "label": "ButtonGoToHomePage",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -17,
-                    "hitArea.y": 58,
-                    "hitArea.width": 1616.4785766301125,
-                    "hitArea.height": 163.13294733645859,
-                    "x": 808,
-                    "y": 46,
-                    "scaleX": 0.15,
-                    "scaleY": 0.15,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Back To Home Page",
-                    "align": "center",
-                    "fontFamily": "pixelfont",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "a5c4ad16-cd5d-46fd-8722-c6fee174ced9",
-                            "label": "onPointerDownScript_25",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "03c40913-e0ca-4ae9-8546-f35822845fe3",
-                                    "label": "pushActionScript_25"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "b1cb102c-836d-4a3e-8e0c-8ce82461dcc3",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene_3",
-                            "sceneChosen": "HomePage"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
             "id": "9ccd042e-1f5a-4844-a28c-d67e927bac11",
             "label": "XpBar",
             "useGameObjectName": true,
@@ -1531,6 +1191,338 @@
                     "stroke": "#000000ff",
                     "strokeThickness": 1,
                     "backgroundColor": ""
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "2644fbcf-18ce-42a6-a456-bf3d78f015a5",
+            "label": "Button Choose Characters",
+            "x": -51,
+            "y": 12,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "b94649d2-bd58-467c-b919-aff89cf5fb6e",
+                    "label": "highlight",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 180,
+                    "y": 48,
+                    "scaleX": 1.44,
+                    "scaleY": 0.21995512106258827,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "width": 128,
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "143e14ba-5c44-44a1-bcb3-2df61f6be610",
+                            "label": "glowFx_13",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "eadfaca4-df51-44a7-9ac1-b0c5067eb56d",
+                    "label": "ChooseCharacters",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 949.9773032706995,
+                    "hitArea.height": 100.90937292581162,
+                    "x": 180,
+                    "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Choose Characters",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "stroke": "#4000ff",
+                    "strokeThickness": 10,
+                    "list": [
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "dd41a523-f140-49b6-bb7c-fd3a280f816c",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_1",
+                            "sceneChosen": "ChooseCharacters"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "a707c05d-52ac-4cf7-9e7d-6a6cc4660225",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "206c9080-42f9-4b83-a10d-4c353f59468c",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "a8c29fd8-9804-4443-aa0c-2a07a731437d",
+            "label": "Characters and Cards",
+            "x": -66,
+            "y": 12,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "9ffd2245-b131-4498-bd89-bd80cc5669b1",
+                    "label": "highlight_2",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 422,
+                    "y": 48,
+                    "scaleX": 1.68,
+                    "scaleY": 0.21995512106258827,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "width": 128,
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "e8fed412-eba1-443d-9205-37136c6b14f8",
+                            "label": "glowFx_15",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "a07b4492-913a-4425-8ed1-a648d75b2990",
+                    "label": "Characters And Cards",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 1101.472090680232,
+                    "hitArea.height": 112.19250373942205,
+                    "x": 422,
+                    "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Characters and Cards",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "stroke": "#4000ff",
+                    "strokeThickness": 10,
+                    "list": [
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "8bcff487-8794-41be-8a07-68fa4e26f645",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_2",
+                            "sceneChosen": "CharactersAndCards"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "0ea6ac85-0a73-4b9d-9738-2a094e227d37",
+                            "label": "onPointerDownScript_20",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "9a92d109-6ef0-4376-80d8-6efaa06886f1",
+                                    "label": "pushActionScript_20"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "42e4812e-afa4-4d11-b813-d45ec66398bd",
+            "label": "Button Profile",
+            "x": -95,
+            "y": 12,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "2bff4d86-306e-442c-851a-cf246ec189f7",
+                    "label": "highlight_3",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 622,
+                    "y": 48,
+                    "scaleX": 0.63,
+                    "scaleY": 0.21995512106258827,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "width": 128,
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "e6be618b-7fdf-4547-a6b2-3dfe5acc8d5e",
+                            "label": "glowFx_16",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "edcbc78c-633f-43a3-a46a-788ec56fce58",
+                    "label": "Profile",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": -15,
+                    "hitArea.y": -17,
+                    "hitArea.width": 351.15663686934727,
+                    "hitArea.height": 134.83406914622725,
+                    "x": 622,
+                    "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Profile",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "stroke": "#4000ff",
+                    "strokeThickness": 10,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "dbe895a8-d225-4900-86f2-57e5921cee29",
+                            "label": "onPointerDownScript_1",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "5999bcad-13f9-4982-b8b2-05d78baea9b6",
+                                    "label": "pushActionScript_1"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "5d5c0f2f-e4e0-4c95-b86d-b755782020e0",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene",
+                            "sceneChosen": "Profile"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "fd5c7ed8-9d49-4c45-824a-951d715d0943",
+            "label": "Button Go Back To Home Page",
+            "x": -121,
+            "y": 12,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "f2f93643-7e10-4b05-9206-f18b9f48a81f",
+                    "label": "highlight_4",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 808,
+                    "y": 48,
+                    "scaleX": 1.53,
+                    "scaleY": 0.21995512106258827,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "width": 128,
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "bcb1d204-1fb5-4362-902b-e8dcfe7602ee",
+                            "label": "glowFx_17",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "ab573557-f02f-4248-b9fb-79d8b467c344",
+                    "label": "ButtonGoToHomePage",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": -3,
+                    "hitArea.y": 3,
+                    "hitArea.width": 990.1760256343523,
+                    "hitArea.height": 103.70293702497405,
+                    "x": 808,
+                    "y": 48,
+                    "scaleX": 0.18,
+                    "scaleY": 0.18,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Back To Home Page",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "stroke": "#4000ff",
+                    "strokeThickness": 10,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "015f12be-4eab-44ed-9447-0c40df8631db",
+                            "label": "onPointerDownScript_25",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "412d38b1-77b9-45f2-a18d-78e5f25644ab",
+                                    "label": "pushActionScript_25"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "70adaac6-de9e-4b84-bda9-bb5d42b0d9bb",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_1",
+                            "sceneChosen": "HomePage"
+                        }
+                    ]
                 }
             ]
         },

@@ -66,7 +66,7 @@ class CardsMechanism extends ScriptNode {
 				}
 
 				initialX = -(304/2) // a width de cada carta
-				initialY = handCards.list[i].y
+				initialY = handCards.list[i].yphas
 				finalX = handCards.list[i].x
 				finalY = handCards.list[i].y
 				startTime = performance.now();

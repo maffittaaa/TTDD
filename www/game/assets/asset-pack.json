@@ -40,15 +40,14 @@
                 "key": "board_imprimir"
             },
             {
-                "url": "assets/calçada.png",
-                "type": "image",
-                "key": "calçada"
-                
-            },
-            {
                 "url": "assets/buttons.png",
                 "type": "image",
                 "key": "buttons"
+            },
+            {
+                "url": "assets/calçada.png",
+                "type": "image",
+                "key": "calçada"
             },
             {
                 "url": "src/scripts/CardsMechanism.js",
@@ -166,6 +165,11 @@
                 "url": "src/scripts/HealthBarMechanism.js",
                 "type": "script",
                 "key": "HealthBarMechanism"
+            },
+            {
+                "url": "src/scripts/Highlights.js",
+                "type": "script",
+                "key": "Highlights"
             },
             {
                 "url": "src/scenes/Match.js",
