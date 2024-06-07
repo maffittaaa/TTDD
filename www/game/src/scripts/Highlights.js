@@ -1,5 +1,18 @@
+cardsAnimIn = false
+cardsAnimOut = false
+cardsDist = 143
+cardsDistInc = cardsDist * 0.07
+cardsInitialX = [892, 916, 937]
 
-// You can write more code here
+charAnimIn = false
+charAnimOut = false
+charDistY = 80
+charDistX = 150
+charDistIncY = charDistY * 0.07
+charDistIncX = charDistX * 0.07
+charInitialX = [405, 385, 425]
+pandaInitialY = 262
+
 
 /* START OF COMPILED CODE */
 
@@ -28,13 +41,25 @@ class Highlights extends ScriptNode {
 
 			this.parent.on('pointerover', event => {
 				this.parent.parentContainer.postPipelines[0].active = true
+				if(this.type == "DescriptionCards"){
+					cardsAnimIn = true
+				}else if(this.type == "DescriptionChar"){
+					charAnimIn = true
+				}
 			})
 			this.parent.on('pointerout', event => {
 				this.parent.parentContainer.postPipelines[0].active = false
+				if(this.type == "DescriptionCards"){
+					cardsAnimOut = true
+				}else if(this.type == "DescriptionChar"){
+					charAnimOut = true
+				}
 			})
 		}else{
 			this.parent.on('pointerover', event => {
-				this.parent.preFX.list[0].active = true;
+				if(charChosen == null){
+					this.parent.preFX.list[0].active = true;
+				}
 			})
 			this.parent.on('pointerout', event => {
 				if(charChosen == null){
@@ -43,6 +68,83 @@ class Highlights extends ScriptNode {
 			})
 		}
 	}
+
+	update(){
+		if(this.type == "DescriptionCards"){
+			if(cardsAnimIn == true){
+				this.moveToRight(this.parent.parentContainer)
+			}else if (cardsAnimOut == true){
+				this.moveToLeft(this.parent.parentContainer)
+			}
+		}else if(this.type == "DescriptionChar"){
+			if(charAnimIn == true){
+				this.moveCharIn(this.parent.parentContainer)
+			}else if (charAnimOut == true){
+				this.moveCharOut(this.parent.parentContainer)
+			}
+		}
+	}
+
+	moveToRight(parentContainer){
+		if(parentContainer.list[1].x < cardsInitialX[0] + cardsDist){
+			parentContainer.list[1].x += cardsDistInc
+		}else if (parentContainer.list[2].x < cardsInitialX[1] + cardsDist){
+			parentContainer.list[2].x += cardsDistInc
+		}else if (parentContainer.list[3].x < cardsInitialX[2] + cardsDist){
+			parentContainer.list[3].x += cardsDistInc	
+		}else{
+			cardsAnimIn = false
+		}
+	}
+
+	moveToLeft(parentContainer){
+		if(parentContainer.list[3].x > cardsInitialX[2]){
+			parentContainer.list[3].x -= cardsDistInc
+		}else if (parentContainer.list[2].x > cardsInitialX[1]){
+			parentContainer.list[2].x -= cardsDistInc
+		}else if (parentContainer.list[1].x > cardsInitialX[0]){
+			parentContainer.list[1].x -= cardsDistInc	
+		}else{
+			cardsAnimOut = false
+		}
+	}
+
+	moveCharIn(parentContainer){
+		if(parentContainer.list[1].y > pandaInitialY - charDistY){
+			parentContainer.list[1].y -= charDistIncY
+		}
+		if (parentContainer.list[2].x < charInitialX[0] + charDistX){
+			parentContainer.list[2].x += charDistIncX	
+		}
+		if (parentContainer.list[3].x > charInitialX[1] - charDistX){
+			parentContainer.list[3].x -= charDistIncX	
+		}
+		if (parentContainer.list[4].x < charInitialX[2] + charDistX){
+			parentContainer.list[4].x += charDistIncX	
+		}else{
+			charAnimIn = false
+		}
+	}
+
+	moveCharOut(parentContainer){
+
+		if(parentContainer.list[1].y < pandaInitialY){
+			parentContainer.list[1].y += charDistIncY
+		}
+		if (parentContainer.list[2].x > charInitialX[0]){
+			parentContainer.list[2].x -= charDistIncX	
+		}
+		if (parentContainer.list[3].x < charInitialX[1]){
+			parentContainer.list[3].x += charDistIncX	
+		}
+		if (parentContainer.list[4].x > charInitialX[2]){
+			parentContainer.list[4].x -= charDistIncX	
+		}else{
+			charAnimOut = false
+		}
+	}
+
+
 
 	/* END-USER-CODE */
 }
