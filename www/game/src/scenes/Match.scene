@@ -52,7 +52,7 @@
             "texture": {
                 "key": "Bar1"
             },
-            "x": 376,
+            "x": 363,
             "y": 385,
             "scaleX": 2.754494288270423,
             "scaleY": 2.754494288270423
@@ -75,7 +75,7 @@
             "label": "result",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "x": 957,
+            "x": 960,
             "y": 787,
             "scaleX": 0.4,
             "scaleY": 0.4,
@@ -88,6 +88,349 @@
             "fontSize": "100px",
             "color": "#000000ff",
             "stroke": "#000000ff"
+        },
+        {
+            "type": "Container",
+            "id": "95890bb9-249d-4330-ac74-75c4f444ffa5",
+            "label": "CharacterSlotsPlayer2",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "2fa4998f-0771-467b-abb9-5e75e8511efe",
+                    "label": "player2_slot1",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 455,
+                    "y": 439,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
+                            "label": "onPointerDownScript_6",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
+                                    "label": "pushActionScript_6"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "54fa5fa5-b777-4622-9659-a6a6ed82e391",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_5",
+                            "type": "Opponent",
+                            "slotID": 1
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
+                            "label": "glowFx_5",
+                            "color": "#8d0202",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "873cef2c-5bac-4bdd-bf54-793d36adc909",
+                    "label": "player2_slot2",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 357,
+                    "y": 523,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
+                            "label": "onPointerDownScript_7",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
+                                    "label": "pushActionScript_7"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "631518fc-18a6-4672-8d62-c7d9abacad12",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_6",
+                            "type": "Opponent",
+                            "slotID": 2
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
+                            "label": "glowFx_6",
+                            "color": "#8d0202",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "afab82c4-88e0-43af-9978-25de1d5f8e3e",
+                    "label": "player2_slot3",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 456,
+                    "y": 602,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
+                            "label": "onPointerDownScript_8",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
+                                    "label": "pushActionScript_8"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "f614301c-1f63-4d56-928d-82a234541553",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_7",
+                            "type": "Opponent",
+                            "slotID": 3
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
+                            "label": "glowFx_7",
+                            "color": "#8d0202",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "e78c429d-1b1c-4933-bae2-d251554c91ca",
+                    "label": "player2_slot4",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 235,
+                    "y": 438,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
+                            "label": "onPointerDownScript_9",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
+                                    "label": "pushActionScript_9"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "7043baf6-f4e2-4a3c-9a88-b30f124a41b5",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_8",
+                            "type": "Opponent",
+                            "slotID": 4
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
+                            "label": "glowFx_8",
+                            "color": "#8d0202",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "5c853a09-63e4-46bb-9135-c08034673482",
+                    "label": "player2_slot5",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "base",
+                        "frame": 0
+                    },
+                    "x": 238,
+                    "y": 599,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originY": 0,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
+                            "label": "onPointerDownScript_10",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
+                                    "label": "pushActionScript_10"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
+                            "id": "54a20ae7-71c3-4ffb-be07-4364005aa71d",
+                            "unlock": [
+                                "type",
+                                "slotID"
+                            ],
+                            "label": "attackMechanism_9",
+                            "type": "Opponent",
+                            "slotID": 5
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
+                            "label": "glowFx_9",
+                            "color": "#8d0202",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
+                    "label": "player2_deck",
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 74,
+                    "y": 582,
+                    "scaleX": 0.28,
+                    "scaleY": 0.28,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "ed52eb00-f1e0-407f-b689-8683bc0e8e94",
+                            "label": "onPointerDownScript_11",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "41caa89e-65ee-4353-b651-71a8cf9b8431",
+                                    "label": "pushActionScript_5"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                            "id": "3f5d01ca-8a13-4283-9ee7-06cc27e0c1d0",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cardsMechanism",
+                            "type": "Deck"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "cbeffbf1-2bae-445c-9935-fe7040e12b3f",
+                            "label": "glowFx_10",
+                            "scope": "PUBLIC",
+                            "outerStrength": 10,
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "prefabId": "e364e56a-2464-4cf4-a6ac-adc1aa1fa05b",
+                    "id": "4cc9c9fe-1811-4dc3-9230-57124476a00a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "damageText"
+                    ],
+                    "label": "damageAnimationMechanism",
+                    "scope": "PUBLIC",
+                    "x": 347,
+                    "y": 415
+                },
+                {
+                    "type": "Image",
+                    "id": "5b8aff88-33f3-47f7-8f93-a91fa9446b82",
+                    "label": "cardTook",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 304,
+                    "hitArea.height": 432,
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 640,
+                    "y": 388,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
+                            "id": "9b82eb0e-4657-439c-a963-26b08a33bc67",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "throwables_1",
+                            "type": "CardTook"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "Container",
@@ -108,7 +451,7 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 455,
+                    "x": 827,
                     "y": 439,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
@@ -193,8 +536,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 357,
-                    "y": 523,
+                    "x": 925,
+                    "y": 521,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -241,8 +584,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 456,
-                    "y": 602,
+                    "x": 827,
+                    "y": 600,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -289,7 +632,7 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 235,
+                    "x": 1050,
                     "y": 438,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
@@ -337,8 +680,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 238,
-                    "y": 599,
+                    "x": 1048,
+                    "y": 601,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -385,10 +728,11 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 74,
+                    "x": 1206,
                     "y": 582,
                     "scaleX": 0.28,
                     "scaleY": 0.28,
+                    "angle": 90,
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -410,14 +754,6 @@
                             ],
                             "label": "cardsMechanism",
                             "type": "Deck"
-                        },
-                        {
-                            "type": "Glow",
-                            "id": "cbeffbf1-2bae-445c-9935-fe7040e12b3f",
-                            "label": "glowFx_10",
-                            "scope": "PUBLIC",
-                            "outerStrength": 10,
-                            "preFX": true
                         }
                     ]
                 },
@@ -463,275 +799,6 @@
                             "type": "CardTook"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "95890bb9-249d-4330-ac74-75c4f444ffa5",
-            "label": "CharacterSlotsPlayer2",
-            "useGameObjectName": true,
-            "scope": "CLASS",
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Image",
-                    "id": "2fa4998f-0771-467b-abb9-5e75e8511efe",
-                    "label": "player2_slot1",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "texture": {
-                        "key": "base",
-                        "frame": 0
-                    },
-                    "x": 827,
-                    "y": 439,
-                    "scaleX": 0.4,
-                    "scaleY": 0.4,
-                    "originY": 0,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
-                            "label": "onPointerDownScript_6",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
-                                    "label": "pushActionScript_6"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
-                            "id": "54fa5fa5-b777-4622-9659-a6a6ed82e391",
-                            "unlock": [
-                                "type",
-                                "slotID"
-                            ],
-                            "label": "attackMechanism_5",
-                            "type": "Opponent",
-                            "slotID": 1
-                        },
-                        {
-                            "type": "Glow",
-                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
-                            "label": "glowFx_5",
-                            "color": "#8d0202",
-                            "preFX": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "873cef2c-5bac-4bdd-bf54-793d36adc909",
-                    "label": "player2_slot2",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "texture": {
-                        "key": "base",
-                        "frame": 0
-                    },
-                    "x": 925,
-                    "y": 521,
-                    "scaleX": 0.4,
-                    "scaleY": 0.4,
-                    "originY": 0,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
-                            "label": "onPointerDownScript_7",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
-                                    "label": "pushActionScript_7"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
-                            "id": "631518fc-18a6-4672-8d62-c7d9abacad12",
-                            "unlock": [
-                                "type",
-                                "slotID"
-                            ],
-                            "label": "attackMechanism_6",
-                            "type": "Opponent",
-                            "slotID": 2
-                        },
-                        {
-                            "type": "Glow",
-                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
-                            "label": "glowFx_6",
-                            "color": "#8d0202",
-                            "preFX": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "afab82c4-88e0-43af-9978-25de1d5f8e3e",
-                    "label": "player2_slot3",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "texture": {
-                        "key": "base",
-                        "frame": 0
-                    },
-                    "x": 827,
-                    "y": 600,
-                    "scaleX": 0.4,
-                    "scaleY": 0.4,
-                    "originY": 0,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
-                            "label": "onPointerDownScript_8",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
-                                    "label": "pushActionScript_8"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
-                            "id": "f614301c-1f63-4d56-928d-82a234541553",
-                            "unlock": [
-                                "type",
-                                "slotID"
-                            ],
-                            "label": "attackMechanism_7",
-                            "type": "Opponent",
-                            "slotID": 3
-                        },
-                        {
-                            "type": "Glow",
-                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
-                            "label": "glowFx_7",
-                            "color": "#8d0202",
-                            "preFX": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "e78c429d-1b1c-4933-bae2-d251554c91ca",
-                    "label": "player2_slot4",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "texture": {
-                        "key": "base",
-                        "frame": 0
-                    },
-                    "x": 1050,
-                    "y": 438,
-                    "scaleX": 0.4,
-                    "scaleY": 0.4,
-                    "originY": 0,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
-                            "label": "onPointerDownScript_9",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
-                                    "label": "pushActionScript_9"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
-                            "id": "7043baf6-f4e2-4a3c-9a88-b30f124a41b5",
-                            "unlock": [
-                                "type",
-                                "slotID"
-                            ],
-                            "label": "attackMechanism_8",
-                            "type": "Opponent",
-                            "slotID": 4
-                        },
-                        {
-                            "type": "Glow",
-                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
-                            "label": "glowFx_8",
-                            "color": "#8d0202",
-                            "preFX": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "5c853a09-63e4-46bb-9135-c08034673482",
-                    "label": "player2_slot5",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "texture": {
-                        "key": "base",
-                        "frame": 0
-                    },
-                    "x": 1048,
-                    "y": 601,
-                    "scaleX": 0.4,
-                    "scaleY": 0.4,
-                    "originY": 0,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
-                            "label": "onPointerDownScript_10",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
-                                    "label": "pushActionScript_10"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
-                            "id": "54a20ae7-71c3-4ffb-be07-4364005aa71d",
-                            "unlock": [
-                                "type",
-                                "slotID"
-                            ],
-                            "label": "attackMechanism_9",
-                            "type": "Opponent",
-                            "slotID": 5
-                        },
-                        {
-                            "type": "Glow",
-                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
-                            "label": "glowFx_9",
-                            "color": "#8d0202",
-                            "preFX": true
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
-                    "label": "player2_deck",
-                    "texture": {
-                        "key": "cartas4_Imprimir",
-                        "frame": 3
-                    },
-                    "x": 1206,
-                    "y": 582,
-                    "scaleX": 0.28,
-                    "scaleY": 0.28
                 }
             ]
         },
@@ -1319,7 +1386,7 @@
             "id": "c5248266-f203-4610-bce5-0bd548b873e7",
             "label": "turn",
             "scope": "CLASS",
-            "x": 458,
+            "x": 446,
             "y": 429,
             "scaleX": 0.22,
             "scaleY": 0.22,
@@ -1360,8 +1427,8 @@
                     "texture": {
                         "key": "buttons"
                     },
-                    "x": 339,
-                    "y": 65,
+                    "x": 363,
+                    "y": 79,
                     "scaleX": 5,
                     "scaleY": 3.5
                 },
@@ -1373,8 +1440,8 @@
                     "texture": {
                         "key": "buttons"
                     },
-                    "x": 1572,
-                    "y": 63,
+                    "x": 1575,
+                    "y": 77,
                     "scaleX": 5,
                     "scaleY": 3.5
                 },
@@ -1386,8 +1453,8 @@
                     "texture": {
                         "key": "buttons"
                     },
-                    "x": 339,
-                    "y": 121,
+                    "x": 363,
+                    "y": 135,
                     "scaleX": 3,
                     "scaleY": 1.5
                 },
@@ -1399,8 +1466,8 @@
                     "texture": {
                         "key": "buttons"
                     },
-                    "x": 1572,
-                    "y": 121,
+                    "x": 1575,
+                    "y": 135,
                     "scaleX": 3,
                     "scaleY": 1.5
                 },
@@ -1410,8 +1477,8 @@
                     "label": "namePlayer1Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 339,
-                    "y": 65,
+                    "x": 363,
+                    "y": 79,
                     "scaleX": 0.18,
                     "scaleY": 0.18,
                     "originX": 0.5,
@@ -1427,8 +1494,8 @@
                     "label": "namePlayer2Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 1572,
-                    "y": 63,
+                    "x": 1575,
+                    "y": 77,
                     "scaleX": 0.18,
                     "scaleY": 0.18,
                     "originX": 0.5,
@@ -1444,8 +1511,8 @@
                     "label": "levelPlayer1Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 339,
-                    "y": 121,
+                    "x": 363,
+                    "y": 135,
                     "scaleX": 0.2,
                     "scaleY": 0.2,
                     "originX": 0.5,
@@ -1461,8 +1528,8 @@
                     "label": "levelPlayer2Text",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
-                    "x": 1572,
-                    "y": 121,
+                    "x": 1575,
+                    "y": 135,
                     "scaleX": 0.2,
                     "scaleY": 0.2,
                     "originX": 0.5,
@@ -1481,7 +1548,7 @@
             "texture": {
                 "key": "showCardsImage"
             },
-            "x": 287,
+            "x": 274,
             "y": 404,
             "scaleX": 2.16,
             "scaleY": 1.14
@@ -1497,7 +1564,7 @@
             "hitArea.y": -140,
             "hitArea.width": 652.3814994495934,
             "hitArea.height": 910.5149565734912,
-            "x": 288,
+            "x": 275,
             "y": 405,
             "scaleX": 0.2,
             "scaleY": 0.2,

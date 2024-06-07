@@ -36,7 +36,7 @@ class Throwables extends ScriptNode {
 				finalX = 1920 + 304/2
 				finalY = this.parent.y
 				startTime = performance.now();
-				peakHeight = Math.abs(finalY - initialY) + 100
+				peakHeight = Math.abs(finalY - initialY) + 0
 				thrownBack = true
 			}
 		})
@@ -74,7 +74,7 @@ class Throwables extends ScriptNode {
 			
 			//angle of thrown card
 			if(card == true){
-				item.angle = maxAngle * Math.sin(Math.PI * progress);
+				item.angle += 1.9
 			}
 
 			// Update item's position
