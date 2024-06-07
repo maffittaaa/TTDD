@@ -43,16 +43,20 @@ class Highlights extends ScriptNode {
 				this.parent.parentContainer.postPipelines[0].active = true
 				if(this.type == "DescriptionCards"){
 					cardsAnimIn = true
+					cardsAnimOut = false
 				}else if(this.type == "DescriptionChar"){
 					charAnimIn = true
+					charAnimOut = false
 				}
 			})
 			this.parent.on('pointerout', event => {
 				this.parent.parentContainer.postPipelines[0].active = false
 				if(this.type == "DescriptionCards"){
 					cardsAnimOut = true
+					cardsAnimIn = false
 				}else if(this.type == "DescriptionChar"){
 					charAnimOut = true
+					charAnimIn = false
 				}
 			})
 		}else{
@@ -71,16 +75,18 @@ class Highlights extends ScriptNode {
 
 	update(){
 		if(this.type == "DescriptionCards"){
-			if(cardsAnimIn == true){
-				this.moveToRight(this.parent.parentContainer)
-			}else if (cardsAnimOut == true){
+			if (cardsAnimOut == true){
 				this.moveToLeft(this.parent.parentContainer)
 			}
+			if(cardsAnimIn == true){
+				this.moveToRight(this.parent.parentContainer)
+			}
 		}else if(this.type == "DescriptionChar"){
+			if (charAnimOut == true){
+				this.moveCharOut(this.parent.parentContainer)
+			}
 			if(charAnimIn == true){
 				this.moveCharIn(this.parent.parentContainer)
-			}else if (charAnimOut == true){
-				this.moveCharOut(this.parent.parentContainer)
 			}
 		}
 	}
