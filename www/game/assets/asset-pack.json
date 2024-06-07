@@ -40,15 +40,14 @@
                 "key": "board_imprimir"
             },
             {
-                "url": "assets/calçada.png",
-                "type": "image",
-                "key": "calçada"
-                
-            },
-            {
                 "url": "assets/buttons.png",
                 "type": "image",
                 "key": "buttons"
+            },
+            {
+                "url": "assets/calçada.png",
+                "type": "image",
+                "key": "calçada"
             },
             {
                 "url": "src/scripts/CardsMechanism.js",
@@ -245,6 +244,11 @@
                 },
                 "type": "spritesheet",
                 "key": "spritesheet"
+            },
+            {
+                "url": "assets/street.png",
+                "type": "image",
+                "key": "street"
             },
             {
                 "url": "src/scripts/Throwables.js",

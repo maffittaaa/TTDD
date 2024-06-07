@@ -23,10 +23,10 @@
         },
         {
             "type": "Image",
-            "id": "0d19255a-576e-4d7c-a52b-c07d98ce1d61",
-            "label": "board_imprimir",
+            "id": "47022ea1-8b4c-40a5-970c-9fb1a9b6d48d",
+            "label": "street",
             "texture": {
-                "key": "board_imprimir"
+                "key": "street"
             },
             "x": 960,
             "y": 855,
@@ -54,8 +54,8 @@
             },
             "x": 376,
             "y": 385,
-            "scaleX": 2.775537681726914,
-            "scaleY": 2.775537681726914
+            "scaleX": 2.754494288270423,
+            "scaleY": 2.754494288270423
         },
         {
             "type": "Image",
@@ -65,9 +65,9 @@
                 "key": "Bar2"
             },
             "x": 1587,
-            "y": 381,
-            "scaleX": 2.452926912380252,
-            "scaleY": 2.452926912380252
+            "y": 385,
+            "scaleX": 2.3663060242524527,
+            "scaleY": 2.3663060242524527
         },
         {
             "type": "Text",
@@ -108,8 +108,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 381,
-                    "y": 438.99999955296516,
+                    "x": 455,
+                    "y": 439,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -193,8 +193,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 283,
-                    "y": 522.9999995529652,
+                    "x": 357,
+                    "y": 523,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -241,8 +241,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 382,
-                    "y": 601.9999995529652,
+                    "x": 456,
+                    "y": 602,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -289,8 +289,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 161,
-                    "y": 437.99999955296516,
+                    "x": 235,
+                    "y": 438,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -337,8 +337,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 164,
-                    "y": 598.9999995529652,
+                    "x": 238,
+                    "y": 599,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -385,11 +385,10 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 514,
-                    "y": 368,
+                    "x": 74,
+                    "y": 582,
                     "scaleX": 0.28,
                     "scaleY": 0.28,
-                    "angle": 90,
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -411,6 +410,14 @@
                             ],
                             "label": "cardsMechanism",
                             "type": "Deck"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "cbeffbf1-2bae-445c-9935-fe7040e12b3f",
+                            "label": "glowFx_10",
+                            "scope": "PUBLIC",
+                            "outerStrength": 10,
+                            "preFX": true
                         }
                     ]
                 },
@@ -478,8 +485,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 909,
-                    "y": 438.99999955296516,
+                    "x": 827,
+                    "y": 439,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -527,8 +534,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1007,
-                    "y": 520.9999995529652,
+                    "x": 925,
+                    "y": 521,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -576,8 +583,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 909,
-                    "y": 599.9999995529652,
+                    "x": 827,
+                    "y": 600,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -625,8 +632,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1132,
-                    "y": 437.99999955296516,
+                    "x": 1050,
+                    "y": 438,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -674,8 +681,8 @@
                         "key": "base",
                         "frame": 0
                     },
-                    "x": 1130,
-                    "y": 600.9999995529652,
+                    "x": 1048,
+                    "y": 601,
                     "scaleX": 0.4,
                     "scaleY": 0.4,
                     "originY": 0,
@@ -721,25 +728,10 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 770,
-                    "y": 368,
+                    "x": 1206,
+                    "y": 582,
                     "scaleX": 0.28,
-                    "scaleY": 0.28,
-                    "angle": -90,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "ed52eb00-f1e0-407f-b689-8683bc0e8e94",
-                            "label": "onPointerDownScript_11",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "3b83da14-a5e6-4f47-a8ff-eaac18781137",
-                                    "label": "pushActionScript_11"
-                                }
-                            ]
-                        }
-                    ]
+                    "scaleY": 0.28
                 }
             ]
         },
@@ -762,7 +754,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 383,
+                    "x": 455,
                     "y": 432,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -786,7 +778,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 283,
+                    "x": 355,
                     "y": 514,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -802,7 +794,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 383,
+                    "x": 455,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -818,7 +810,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 162,
+                    "x": 234,
                     "y": 432,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -834,7 +826,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 162,
+                    "x": 234,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -845,7 +837,7 @@
                     "id": "78c24f00-929b-47c7-92dc-586078c7829c",
                     "label": "hp_p1_slot5",
                     "useGameObjectName": true,
-                    "x": 162,
+                    "x": 235,
                     "y": 594,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -864,7 +856,7 @@
                     "id": "385bb095-e1fe-483b-b7de-fd93d05f2ef9",
                     "label": "hp_p1_slot2",
                     "useGameObjectName": true,
-                    "x": 283,
+                    "x": 356,
                     "y": 515,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -883,7 +875,7 @@
                     "id": "482a7f9e-a42c-4344-ba54-bae702b31d5e",
                     "label": "hp_p1_slot3",
                     "useGameObjectName": true,
-                    "x": 383,
+                    "x": 456,
                     "y": 594,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -902,7 +894,7 @@
                     "id": "b256afcd-d27f-4b42-9220-3a2119611439",
                     "label": "hp_p1_slot1",
                     "useGameObjectName": true,
-                    "x": 383,
+                    "x": 456,
                     "y": 433,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -921,7 +913,7 @@
                     "id": "52208898-1204-43d1-bcfc-8f5f59278058",
                     "label": "hp_p1_slot4",
                     "useGameObjectName": true,
-                    "x": 162,
+                    "x": 235,
                     "y": 433,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -956,7 +948,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 909,
+                    "x": 828,
                     "y": 432,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -972,7 +964,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 1006,
+                    "x": 925,
                     "y": 514,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -988,7 +980,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 909,
+                    "x": 828,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -1004,7 +996,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 1129,
+                    "x": 1048,
                     "y": 431,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -1020,7 +1012,7 @@
                         "key": "spritesheet",
                         "frame": 0
                     },
-                    "x": 1129,
+                    "x": 1048,
                     "y": 593,
                     "scaleX": 1.5,
                     "scaleY": 1.5,
@@ -1031,7 +1023,7 @@
                     "id": "10b4da20-7356-4dec-9445-997e0e6561c6",
                     "label": "hp_p2_slot2",
                     "useGameObjectName": true,
-                    "x": 1006,
+                    "x": 926,
                     "y": 515,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -1050,7 +1042,7 @@
                     "id": "be479ce1-c578-4ccb-af1c-eda4a636161d",
                     "label": "hp_p2_slot1",
                     "useGameObjectName": true,
-                    "x": 909,
+                    "x": 829,
                     "y": 433,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -1069,7 +1061,7 @@
                     "id": "415334cd-a947-4019-9b54-9eec7be4436f",
                     "label": "hp_p2_slot3",
                     "useGameObjectName": true,
-                    "x": 909,
+                    "x": 829,
                     "y": 594,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -1088,7 +1080,7 @@
                     "id": "6625ad01-3ee7-47ef-bf0a-5a0bf5d31e09",
                     "label": "hp_p2_slot5",
                     "useGameObjectName": true,
-                    "x": 1129,
+                    "x": 1049,
                     "y": 594,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -1107,7 +1099,7 @@
                     "id": "351c2c28-d372-4c86-a07d-07ad8d8e6672",
                     "label": "hp_p2_slot4",
                     "useGameObjectName": true,
-                    "x": 1129,
+                    "x": 1049,
                     "y": 432,
                     "scaleX": 0.12,
                     "scaleY": 0.12,
@@ -1129,7 +1121,7 @@
             "label": "endTurnText",
             "scope": "CLASS",
             "x": 960,
-            "y": 1052,
+            "y": 1052.25,
             "scaleX": 0.25,
             "scaleY": 0.25,
             "originX": 0.5,
@@ -1138,7 +1130,7 @@
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "200px",
-            "color": "#000000ff",
+            "color": "#ffffffff",
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -1175,6 +1167,7 @@
             "y": 383,
             "scaleX": 4.2,
             "scaleY": 3,
+            "visible": false,
             "list": [
                 {
                     "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
@@ -1211,6 +1204,7 @@
             "y": 318,
             "scaleX": 4.2,
             "scaleY": 3,
+            "visible": false,
             "list": [
                 {
                     "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
@@ -1247,6 +1241,7 @@
             "y": 253,
             "scaleX": 4.2,
             "scaleY": 3,
+            "visible": false,
             "list": [
                 {
                     "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
@@ -1281,6 +1276,7 @@
             "scaleY": 0.25,
             "originX": 0.5,
             "originY": 0.5,
+            "visible": false,
             "text": "Everyone to 1HP",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
@@ -1296,6 +1292,7 @@
             "scaleY": 0.25,
             "originX": 0.5,
             "originY": 0.5,
+            "visible": false,
             "text": "Reset Attack Status",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
@@ -1311,6 +1308,7 @@
             "scaleY": 0.25,
             "originX": 0.5,
             "originY": 0.5,
+            "visible": false,
             "text": "Reset HP",
             "fontFamily": "Minecraft",
             "fontSize": "100px",

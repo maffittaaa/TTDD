@@ -16,6 +16,12 @@ class CardsMechanism extends ScriptNode {
 	type = "";
 
 	/* START-USER-CODE */
+	awake() {
+		if (this.type == "Deck") {
+			this.setGlowOnOffCards(this.parent, false);
+		}
+	}
+
 
 	start() {
 		this.parent.on('pointerdown', event => {
@@ -47,7 +53,7 @@ class CardsMechanism extends ScriptNode {
 		})
 	};
 
-	showAddedCard(card){
+	showAddedCard(card) {
 		var handCards = this.scene.children.list[6];
 
 		console.log(handCards)
@@ -59,18 +65,18 @@ class CardsMechanism extends ScriptNode {
 				if (card[0].card_id == 4 || card[0].card_id == 6 || card[0].card_id == 10) {
 					handCards.list[i].setTexture("cartas4_Imprimir", cardsImgs[card[0].card_id - 1]);
 					handCards.list[i].visible = true
-					
+
 				} else {
 					handCards.list[i].setTexture("cartas3_Imprimir", cardsImgs[card[0].card_id - 1]);
 					handCards.list[i].visible = true
 				}
 
-				initialX = -(304/2) // a width de cada carta
+				initialX = -(304 / 2) // a width de cada carta
 				initialY = handCards.list[i].y
 				finalX = handCards.list[i].x
 				finalY = handCards.list[i].y
 				startTime = performance.now();
-				peakHeight = Math.abs(finalY - initialY) + 100 
+				peakHeight = Math.abs(finalY - initialY) + 100
 			}
 		}
 	}
@@ -146,10 +152,6 @@ class CardsMechanism extends ScriptNode {
 		}
 	}
 
-	getCardPositionX(cardNumber, totalCards) {
-
-	}
-
 	getDescription(card_id) { //get the card description
 		$.ajax({
 			type: 'GET',
@@ -167,6 +169,11 @@ class CardsMechanism extends ScriptNode {
 			}
 		})
 	}
+
+	setGlowOnOffCards(object, boolean) {
+		object.preFX.list[0].active = boolean;
+	}
+
 
 	/* END-USER-CODE */
 }

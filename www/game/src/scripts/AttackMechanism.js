@@ -53,18 +53,18 @@ class AttackMechanism extends ScriptNode {
 		})
 	}
 
-	update(){
+	update() {
 		if (this.type == "Cards") {
-			if(slotID != 0 && cardID != 0){
+			if (slotID != 0 && cardID != 0) {
 				console.log(cardID, slotID)
-				if(slotID == this.slotID){
+				if (slotID == this.slotID) {
 
 					this.cardID = cardID
 					console.log(this.cardID, cardID, slotID)
 					slotID = 0
 					cardID = 0
 				}
-			}		
+			}
 		}
 	}
 
@@ -167,8 +167,6 @@ class AttackMechanism extends ScriptNode {
 			},
 			success: function (data) {
 				var handCards = scene.scene.children.list[scene.scene.children.list.length - 1];
-				
-			
 				if (data.notWorking) {
 					scene.scene.children.list[5].text = data.message;
 					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
@@ -181,15 +179,14 @@ class AttackMechanism extends ScriptNode {
 					if (data.characterOnHold) {
 						characterOnHold = data.characterOnHold;
 					}
-					
+
 				} else if (data.card_id) {
 					stillAttacking = false;
 					reviving = false;
 					characterOnHold = null;
 				}
 
-
-				if(!data.notWorking && scene.type == "Cards"){
+				if (!data.notWorking && scene.type == "Cards") {
 					handCards.visible = !showHandCards
 					showHandCards = !showHandCards
 					scene.parent.visible = false
