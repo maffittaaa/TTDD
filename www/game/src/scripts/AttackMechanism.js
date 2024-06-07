@@ -42,6 +42,7 @@ class AttackMechanism extends ScriptNode {
 	start() {
 		this.parent.on('pointerdown', event => {
 			if (throwing == false) {
+				console.log(this.type)
 				if (this.type == "Player") {
 					this.setAttackerSlot(this.slotID);
 				} else if (this.type == "Opponent") {
@@ -76,6 +77,7 @@ class AttackMechanism extends ScriptNode {
 			attackerSlot = 0;
 			attacker = null;
 		} else {
+
 			attackerSlot = slot;
 			attacker = this.parent
 			this.setGlowOnOff(this.parent, true)
@@ -88,6 +90,7 @@ class AttackMechanism extends ScriptNode {
 	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
+		
 		if (attackerSlot != 0) {
 			targetSlot = slot;
 			this.setGlowOnOff(this.parent, true);
@@ -104,6 +107,7 @@ class AttackMechanism extends ScriptNode {
 	};
 
 	setGlowOnOff(object, boolean) {
+		console.log(object, boolean)
 		object.preFX.list[0].active = boolean;
 	}
 

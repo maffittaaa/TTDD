@@ -30,7 +30,7 @@ class Match extends Phaser.Scene {
 		city.scaleY = 1.5;
 
 		// bar1
-		const bar1 = this.add.image(363, 385, "Bar1");
+		const bar1 = this.add.image(376, 385, "Bar1");
 		bar1.scaleX = 2.754494288270423;
 		bar1.scaleY = 2.754494288270423;
 
@@ -923,6 +923,7 @@ class Match extends Phaser.Scene {
 		// attackMechanism (prefab fields)
 		attackMechanism.type = "Opponent";
 		attackMechanism.slotID = 1;
+		attackMechanism.damageText;
 
 		// attackMechanism_1 (prefab fields)
 		attackMechanism_1.type = "Opponent";
@@ -943,7 +944,6 @@ class Match extends Phaser.Scene {
 		// attackMechanism_5 (prefab fields)
 		attackMechanism_5.type = "Player";
 		attackMechanism_5.slotID = 1;
-		attackMechanism_5.damageText = damageAnimationMechanism;
 
 		// throwables (prefab fields)
 		throwables.type = "Throwables";
@@ -978,26 +978,6 @@ class Match extends Phaser.Scene {
 
 		// throwables_1 (prefab fields)
 		throwables_1.type = "CardTook";
-
-		// attackMechanism_5 (prefab fields)
-		attackMechanism_5.type = "Opponent";
-		attackMechanism_5.slotID = 1;
-
-		// attackMechanism_6 (prefab fields)
-		attackMechanism_6.type = "Opponent";
-		attackMechanism_6.slotID = 2;
-
-		// attackMechanism_7 (prefab fields)
-		attackMechanism_7.type = "Opponent";
-		attackMechanism_7.slotID = 3;
-
-		// attackMechanism_8 (prefab fields)
-		attackMechanism_8.type = "Opponent";
-		attackMechanism_8.slotID = 4;
-
-		// attackMechanism_9 (prefab fields)
-		attackMechanism_9.type = "Opponent";
-		attackMechanism_9.slotID = 5;
 
 		// endTurnMechanism (prefab fields)
 		endTurnMechanism.type = "endTurn";
@@ -1086,12 +1066,6 @@ class Match extends Phaser.Scene {
 		this.damageAnimationMechanism = damageAnimationMechanism;
 		this.cardTook = cardTook;
 		this.characterSlotsPlayer1 = characterSlotsPlayer1;
-		this.player2_slot1 = player2_slot1;
-		this.player2_slot2 = player2_slot2;
-		this.player2_slot3 = player2_slot3;
-		this.player2_slot4 = player2_slot4;
-		this.player2_slot5 = player2_slot5;
-		this.characterSlotsPlayer2 = characterSlotsPlayer2;
 		this.healthBarMechanism = healthBarMechanism;
 		this.healthbar_p1_slot1 = healthbar_p1_slot1;
 		this.healthbar_p1_slot2 = healthbar_p1_slot2;
@@ -1176,18 +1150,6 @@ class Match extends Phaser.Scene {
 	cardTook;
 	/** @type {Phaser.GameObjects.Container} */
 	characterSlotsPlayer1;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot1;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot2;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot3;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot4;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot5;
-	/** @type {Phaser.GameObjects.Container} */
-	characterSlotsPlayer2;
 	/** @type {HealthBarMechanism} */
 	healthBarMechanism;
 	/** @type {Phaser.GameObjects.Image} */

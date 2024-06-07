@@ -143,7 +143,8 @@
                             "label": "attackMechanism",
                             "scope": "PUBLIC",
                             "type": "Opponent",
-                            "slotID": 1
+                            "slotID": 1,
+                            "damageText": ""
                         }
                     ]
                 },
@@ -407,8 +408,7 @@
                             ],
                             "label": "attackMechanism_5",
                             "type": "Player",
-                            "slotID": 1,
-                            "damageText": "damageAnimationMechanism"
+                            "slotID": 1
                         },
                         {
                             "type": "Glow",
