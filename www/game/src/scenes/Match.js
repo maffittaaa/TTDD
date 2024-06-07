@@ -51,6 +51,124 @@ class Match extends Phaser.Scene {
 		result.text = "result";
 		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
 
+		// CharacterSlotsPlayer2
+		const characterSlotsPlayer2 = this.add.container(0, 0);
+		characterSlotsPlayer2.name = "CharacterSlotsPlayer2";
+		characterSlotsPlayer2.scaleX = 1.5;
+		characterSlotsPlayer2.scaleY = 1.5;
+
+		// player2_slot1
+		const player2_slot1 = this.add.image(827, 439, "base", 0);
+		player2_slot1.name = "player2_slot1";
+		player2_slot1.scaleX = 0.4;
+		player2_slot1.scaleY = 0.4;
+		player2_slot1.setOrigin(0.5, 0);
+		player2_slot1.visible = false;
+		characterSlotsPlayer2.add(player2_slot1);
+
+		// glowFx
+		player2_slot1.preFX.addGlow(9241090, 4, 0, false);
+
+		// onPointerDownScript_1
+		const onPointerDownScript_1 = new OnPointerDownScript(player2_slot1);
+
+		// pushActionScript_1
+		new PushActionScript(onPointerDownScript_1);
+
+		// attackMechanism
+		const attackMechanism = new AttackMechanism(player2_slot1);
+
+		// player2_slot2
+		const player2_slot2 = this.add.image(925, 521, "base", 0);
+		player2_slot2.name = "player2_slot2";
+		player2_slot2.scaleX = 0.4;
+		player2_slot2.scaleY = 0.4;
+		player2_slot2.setOrigin(0.5, 0);
+		player2_slot2.visible = false;
+		characterSlotsPlayer2.add(player2_slot2);
+
+		// onPointerDownScript_2
+		const onPointerDownScript_2 = new OnPointerDownScript(player2_slot2);
+
+		// pushActionScript_2
+		new PushActionScript(onPointerDownScript_2);
+
+		// attackMechanism_1
+		const attackMechanism_1 = new AttackMechanism(player2_slot2);
+
+		// glowFx_1
+		player2_slot2.preFX.addGlow(9241090, 4, 0, false);
+
+		// player2_slot3
+		const player2_slot3 = this.add.image(827, 600, "base", 0);
+		player2_slot3.name = "player2_slot3";
+		player2_slot3.scaleX = 0.4;
+		player2_slot3.scaleY = 0.4;
+		player2_slot3.setOrigin(0.5, 0);
+		player2_slot3.visible = false;
+		characterSlotsPlayer2.add(player2_slot3);
+
+		// onPointerDownScript
+		const onPointerDownScript = new OnPointerDownScript(player2_slot3);
+
+		// pushActionScript
+		new PushActionScript(onPointerDownScript);
+
+		// attackMechanism_2
+		const attackMechanism_2 = new AttackMechanism(player2_slot3);
+
+		// glowFx_2
+		player2_slot3.preFX.addGlow(9241090, 4, 0, false);
+
+		// player2_slot4
+		const player2_slot4 = this.add.image(1050, 438, "base", 0);
+		player2_slot4.name = "player2_slot4";
+		player2_slot4.scaleX = 0.4;
+		player2_slot4.scaleY = 0.4;
+		player2_slot4.setOrigin(0.5, 0);
+		player2_slot4.visible = false;
+		characterSlotsPlayer2.add(player2_slot4);
+
+		// onPointerDownScript_3
+		const onPointerDownScript_3 = new OnPointerDownScript(player2_slot4);
+
+		// pushActionScript_3
+		new PushActionScript(onPointerDownScript_3);
+
+		// attackMechanism_3
+		const attackMechanism_3 = new AttackMechanism(player2_slot4);
+
+		// glowFx_3
+		player2_slot4.preFX.addGlow(9241090, 4, 0, false);
+
+		// player2_slot5
+		const player2_slot5 = this.add.image(1048, 601, "base", 0);
+		player2_slot5.name = "player2_slot5";
+		player2_slot5.scaleX = 0.4;
+		player2_slot5.scaleY = 0.4;
+		player2_slot5.setOrigin(0.5, 0);
+		player2_slot5.visible = false;
+		characterSlotsPlayer2.add(player2_slot5);
+
+		// onPointerDownScript_4
+		const onPointerDownScript_4 = new OnPointerDownScript(player2_slot5);
+
+		// pushActionScript_4
+		new PushActionScript(onPointerDownScript_4);
+
+		// attackMechanism_4
+		const attackMechanism_4 = new AttackMechanism(player2_slot5);
+
+		// glowFx_4
+		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
+
+		// player2_deck1
+		const player2_deck1 = this.add.image(1206, 582, "cartas4_Imprimir", 3);
+		player2_deck1.name = "player2_deck1";
+		player2_deck1.scaleX = 0.28;
+		player2_deck1.scaleY = 0.28;
+		characterSlotsPlayer2.add(player2_deck1);
+
 		// CharacterSlotsPlayer1
 		const characterSlotsPlayer1 = this.add.container(0, 0);
 		characterSlotsPlayer1.name = "CharacterSlotsPlayer1";
@@ -76,7 +194,16 @@ class Match extends Phaser.Scene {
 		const attackMechanism_5 = new AttackMechanism(player1_slot1);
 
 		// glowFx_5
-		player1_slot1.preFX.addGlow(9241090, 4, 0, false);
+		player1_slot1.preFX.addGlow(16777215, 4, 0, false);
+
+		// throwables
+		const throwables = new Throwables(player1_slot1);
+
+		// matchMechanism
+		const matchMechanism = new MatchMechanism(player1_slot1);
+
+		// nameAndLevelMechanism
+		const nameAndLevelMechanism = new NameAndLevelMechanism(player1_slot1);
 
 		// player1_slot2
 		const player1_slot2 = this.add.image(357, 523, "base", 0);
@@ -97,7 +224,7 @@ class Match extends Phaser.Scene {
 		const attackMechanism_6 = new AttackMechanism(player1_slot2);
 
 		// glowFx_6
-		player1_slot2.preFX.addGlow(9241090, 4, 0, false);
+		player1_slot2.preFX.addGlow(16777215, 4, 0, false);
 
 		// player1_slot3
 		const player1_slot3 = this.add.image(456, 602, "base", 0);
@@ -118,7 +245,7 @@ class Match extends Phaser.Scene {
 		const attackMechanism_7 = new AttackMechanism(player1_slot3);
 
 		// glowFx_7
-		player1_slot3.preFX.addGlow(9241090, 4, 0, false);
+		player1_slot3.preFX.addGlow(16777215, 4, 0, false);
 
 		// player1_slot4
 		const player1_slot4 = this.add.image(235, 438, "base", 0);
@@ -139,7 +266,7 @@ class Match extends Phaser.Scene {
 		const attackMechanism_8 = new AttackMechanism(player1_slot4);
 
 		// glowFx_8
-		player1_slot4.preFX.addGlow(9241090, 4, 0, false);
+		player1_slot4.preFX.addGlow(16777215, 4, 0, false);
 
 		// player1_slot5
 		const player1_slot5 = this.add.image(238, 599, "base", 0);
@@ -160,7 +287,7 @@ class Match extends Phaser.Scene {
 		const attackMechanism_9 = new AttackMechanism(player1_slot5);
 
 		// glowFx_9
-		player1_slot5.preFX.addGlow(9241090, 4, 0, false);
+		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
 
 		// player1_deck
 		const player1_deck = this.add.image(74, 582, "cartas4_Imprimir", 3);
@@ -195,143 +322,6 @@ class Match extends Phaser.Scene {
 
 		// throwables_1
 		const throwables_1 = new Throwables(cardTook);
-
-		// CharacterSlotsPlayer2
-		const characterSlotsPlayer2 = this.add.container(0, 0);
-		characterSlotsPlayer2.name = "CharacterSlotsPlayer2";
-		characterSlotsPlayer2.scaleX = 1.5;
-		characterSlotsPlayer2.scaleY = 1.5;
-
-		// player2_slot1
-		const player2_slot1 = this.add.image(827, 439, "base", 0);
-		player2_slot1.name = "player2_slot1";
-		player2_slot1.scaleX = 0.4;
-		player2_slot1.scaleY = 0.4;
-		player2_slot1.setOrigin(0.5, 0);
-		player2_slot1.visible = false;
-		characterSlotsPlayer2.add(player2_slot1);
-
-		// glowFx
-		player2_slot1.preFX.addGlow(16777215, 4, 0, false);
-
-		// onPointerDownScript_1
-		const onPointerDownScript_1 = new OnPointerDownScript(player2_slot1);
-
-		// pushActionScript_1
-		new PushActionScript(onPointerDownScript_1);
-
-		// attackMechanism
-		const attackMechanism = new AttackMechanism(player2_slot1);
-
-		// nameAndLevelMechanism
-		const nameAndLevelMechanism = new NameAndLevelMechanism(player2_slot1);
-
-		// matchMechanism
-		const matchMechanism = new MatchMechanism(player2_slot1);
-
-		// throwables
-		const throwables = new Throwables(player2_slot1);
-
-		// player2_slot2
-		const player2_slot2 = this.add.image(925, 521, "base", 0);
-		player2_slot2.name = "player2_slot2";
-		player2_slot2.scaleX = 0.4;
-		player2_slot2.scaleY = 0.4;
-		player2_slot2.setOrigin(0.5, 0);
-		player2_slot2.visible = false;
-		characterSlotsPlayer2.add(player2_slot2);
-
-		// onPointerDownScript_2
-		const onPointerDownScript_2 = new OnPointerDownScript(player2_slot2);
-
-		// pushActionScript_2
-		new PushActionScript(onPointerDownScript_2);
-
-		// attackMechanism_1
-		const attackMechanism_1 = new AttackMechanism(player2_slot2);
-
-		// glowFx_1
-		player2_slot2.preFX.addGlow(16777215, 4, 0, false);
-
-		// player2_slot3
-		const player2_slot3 = this.add.image(827, 600, "base", 0);
-		player2_slot3.name = "player2_slot3";
-		player2_slot3.scaleX = 0.4;
-		player2_slot3.scaleY = 0.4;
-		player2_slot3.setOrigin(0.5, 0);
-		player2_slot3.visible = false;
-		characterSlotsPlayer2.add(player2_slot3);
-
-		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(player2_slot3);
-
-		// pushActionScript
-		new PushActionScript(onPointerDownScript);
-
-		// attackMechanism_2
-		const attackMechanism_2 = new AttackMechanism(player2_slot3);
-
-		// glowFx_2
-		player2_slot3.preFX.addGlow(16777215, 4, 0, false);
-
-		// player2_slot4
-		const player2_slot4 = this.add.image(1050, 438, "base", 0);
-		player2_slot4.name = "player2_slot4";
-		player2_slot4.scaleX = 0.4;
-		player2_slot4.scaleY = 0.4;
-		player2_slot4.setOrigin(0.5, 0);
-		player2_slot4.visible = false;
-		characterSlotsPlayer2.add(player2_slot4);
-
-		// onPointerDownScript_3
-		const onPointerDownScript_3 = new OnPointerDownScript(player2_slot4);
-
-		// pushActionScript_3
-		new PushActionScript(onPointerDownScript_3);
-
-		// attackMechanism_3
-		const attackMechanism_3 = new AttackMechanism(player2_slot4);
-
-		// glowFx_3
-		player2_slot4.preFX.addGlow(16777215, 4, 0, false);
-
-		// player2_slot5
-		const player2_slot5 = this.add.image(1048, 601, "base", 0);
-		player2_slot5.name = "player2_slot5";
-		player2_slot5.scaleX = 0.4;
-		player2_slot5.scaleY = 0.4;
-		player2_slot5.setOrigin(0.5, 0);
-		player2_slot5.visible = false;
-		characterSlotsPlayer2.add(player2_slot5);
-
-		// onPointerDownScript_4
-		const onPointerDownScript_4 = new OnPointerDownScript(player2_slot5);
-
-		// pushActionScript_4
-		new PushActionScript(onPointerDownScript_4);
-
-		// attackMechanism_4
-		const attackMechanism_4 = new AttackMechanism(player2_slot5);
-
-		// glowFx_4
-		player2_slot5.preFX.addGlow(16777215, 4, 0, false);
-
-		// player2_deck1
-		const player2_deck1 = this.add.image(1206, 582, "cartas4_Imprimir", 3);
-		player2_deck1.name = "player2_deck1";
-		player2_deck1.scaleX = 0.28;
-		player2_deck1.scaleY = 0.28;
-		player2_deck1.angle = 90;
-		characterSlotsPlayer2.add(player2_deck1);
-
-		// onPointerDownScript_5
-		const onPointerDownScript_5 = new OnPointerDownScript(player2_deck1);
-
-		// pushActionScript_5
-		new PushActionScript(onPointerDownScript_5);
-
-		// cardsMechanism
-		const cardsMechanism = new CardsMechanism(player2_deck1);
 
 		// HealthBarsPlayer1
 		const healthBarsPlayer1 = this.add.container(0, 0);
@@ -932,24 +922,57 @@ class Match extends Phaser.Scene {
 		// cardsMechanism_2
 		const cardsMechanism_2 = new CardsMechanism(goBackButton);
 
+		// attackMechanism (prefab fields)
+		attackMechanism.type = "Opponent";
+		attackMechanism.slotID = 1;
+
+		// attackMechanism_1 (prefab fields)
+		attackMechanism_1.type = "Opponent";
+		attackMechanism_1.slotID = 2;
+
+		// attackMechanism_2 (prefab fields)
+		attackMechanism_2.type = "Opponent";
+		attackMechanism_2.slotID = 3;
+
+		// attackMechanism_3 (prefab fields)
+		attackMechanism_3.type = "Opponent";
+		attackMechanism_3.slotID = 4;
+
+		// attackMechanism_4 (prefab fields)
+		attackMechanism_4.type = "Opponent";
+		attackMechanism_4.slotID = 5;
+
 		// attackMechanism_5 (prefab fields)
-		attackMechanism_5.type = "Opponent";
+		attackMechanism_5.type = "Player";
 		attackMechanism_5.slotID = 1;
+		attackMechanism_5.damageText = damageAnimationMechanism;
+
+		// throwables (prefab fields)
+		throwables.type = "Throwables";
+
+		// matchMechanism (prefab fields)
+		matchMechanism.turnText = turn;
+		matchMechanism.winnerText = winnerText;
+		matchMechanism.health = healthBarMechanism;
+
+		// nameAndLevelMechanism (prefab fields)
+		nameAndLevelMechanism.nameText = namePlayer1Text;
+		nameAndLevelMechanism.levelText = levelPlayer1Text;
 
 		// attackMechanism_6 (prefab fields)
-		attackMechanism_6.type = "Opponent";
+		attackMechanism_6.type = "Player";
 		attackMechanism_6.slotID = 2;
 
 		// attackMechanism_7 (prefab fields)
-		attackMechanism_7.type = "Opponent";
+		attackMechanism_7.type = "Player";
 		attackMechanism_7.slotID = 3;
 
 		// attackMechanism_8 (prefab fields)
-		attackMechanism_8.type = "Opponent";
+		attackMechanism_8.type = "Player";
 		attackMechanism_8.slotID = 4;
 
 		// attackMechanism_9 (prefab fields)
-		attackMechanism_9.type = "Opponent";
+		attackMechanism_9.type = "Player";
 		attackMechanism_9.slotID = 5;
 
 		// cardsMechanism_3 (prefab fields)
@@ -957,42 +980,6 @@ class Match extends Phaser.Scene {
 
 		// throwables_1 (prefab fields)
 		throwables_1.type = "CardTook";
-
-		// attackMechanism (prefab fields)
-		attackMechanism.type = "Player";
-		attackMechanism.slotID = 1;
-		attackMechanism.damageText = damageAnimationMechanism;
-
-		// nameAndLevelMechanism (prefab fields)
-		nameAndLevelMechanism.nameText = namePlayer1Text;
-		nameAndLevelMechanism.levelText = levelPlayer1Text;
-
-		// matchMechanism (prefab fields)
-		matchMechanism.turnText = turn;
-		matchMechanism.winnerText = winnerText;
-		matchMechanism.health = healthBarMechanism;
-
-		// throwables (prefab fields)
-		throwables.type = "Throwables";
-
-		// attackMechanism_1 (prefab fields)
-		attackMechanism_1.type = "Player";
-		attackMechanism_1.slotID = 2;
-
-		// attackMechanism_2 (prefab fields)
-		attackMechanism_2.type = "Player";
-		attackMechanism_2.slotID = 3;
-
-		// attackMechanism_3 (prefab fields)
-		attackMechanism_3.type = "Player";
-		attackMechanism_3.slotID = 4;
-
-		// attackMechanism_4 (prefab fields)
-		attackMechanism_4.type = "Player";
-		attackMechanism_4.slotID = 5;
-
-		// cardsMechanism (prefab fields)
-		cardsMechanism.type = "Deck";
 
 		// endTurnMechanism (prefab fields)
 		endTurnMechanism.type = "endTurn";
@@ -1063,6 +1050,15 @@ class Match extends Phaser.Scene {
 		cardsMechanism_2.type = "ShowCards";
 
 		this.result = result;
+		this.attackMechanism = attackMechanism;
+		this.player2_slot1 = player2_slot1;
+		this.player2_slot2 = player2_slot2;
+		this.player2_slot3 = player2_slot3;
+		this.player2_slot4 = player2_slot4;
+		this.player2_slot5 = player2_slot5;
+		this.player2_deck1 = player2_deck1;
+		this.characterSlotsPlayer2 = characterSlotsPlayer2;
+		this.matchMechanism = matchMechanism;
 		this.player1_slot1 = player1_slot1;
 		this.player1_slot2 = player1_slot2;
 		this.player1_slot3 = player1_slot3;
@@ -1072,15 +1068,6 @@ class Match extends Phaser.Scene {
 		this.damageAnimationMechanism = damageAnimationMechanism;
 		this.cardTook = cardTook;
 		this.characterSlotsPlayer1 = characterSlotsPlayer1;
-		this.attackMechanism = attackMechanism;
-		this.matchMechanism = matchMechanism;
-		this.player2_slot1 = player2_slot1;
-		this.player2_slot2 = player2_slot2;
-		this.player2_slot3 = player2_slot3;
-		this.player2_slot4 = player2_slot4;
-		this.player2_slot5 = player2_slot5;
-		this.player2_deck1 = player2_deck1;
-		this.characterSlotsPlayer2 = characterSlotsPlayer2;
 		this.healthBarMechanism = healthBarMechanism;
 		this.healthbar_p1_slot1 = healthbar_p1_slot1;
 		this.healthbar_p1_slot2 = healthbar_p1_slot2;
@@ -1129,6 +1116,24 @@ class Match extends Phaser.Scene {
 
 	/** @type {Phaser.GameObjects.Text} */
 	result;
+	/** @type {AttackMechanism} */
+	attackMechanism;
+	/** @type {Phaser.GameObjects.Image} */
+	player2_slot1;
+	/** @type {Phaser.GameObjects.Image} */
+	player2_slot2;
+	/** @type {Phaser.GameObjects.Image} */
+	player2_slot3;
+	/** @type {Phaser.GameObjects.Image} */
+	player2_slot4;
+	/** @type {Phaser.GameObjects.Image} */
+	player2_slot5;
+	/** @type {Phaser.GameObjects.Image} */
+	player2_deck1;
+	/** @type {Phaser.GameObjects.Container} */
+	characterSlotsPlayer2;
+	/** @type {MatchMechanism} */
+	matchMechanism;
 	/** @type {Phaser.GameObjects.Image} */
 	player1_slot1;
 	/** @type {Phaser.GameObjects.Image} */
@@ -1147,24 +1152,6 @@ class Match extends Phaser.Scene {
 	cardTook;
 	/** @type {Phaser.GameObjects.Container} */
 	characterSlotsPlayer1;
-	/** @type {AttackMechanism} */
-	attackMechanism;
-	/** @type {MatchMechanism} */
-	matchMechanism;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot1;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot2;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot3;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot4;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_slot5;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_deck1;
-	/** @type {Phaser.GameObjects.Container} */
-	characterSlotsPlayer2;
 	/** @type {HealthBarMechanism} */
 	healthBarMechanism;
 	/** @type {Phaser.GameObjects.Image} */
