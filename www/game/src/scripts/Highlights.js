@@ -13,9 +13,34 @@ class Highlights extends ScriptNode {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {string} */
+	type = "";
+
 	/* START-USER-CODE */
 
-	// Write your code here.
+	start(){
+		if(this.type == "DescriptionCards"){
+			console.log(this.parent.parentContainer)
+			this.parent.parentContainer.postFX.list[0].active = false;
+		}else{
+			this.parent.preFX.list[0].active = false;
+		}
+		this.parent.on('pointerover', event => {
+			if(this.type == "DescriptionCards"){
+				this.parent.parentContainer.postFX.list[0].active = true;
+			}else{
+				this.parent.preFX.list[0].active = true;
+			}
+		})
+		this.parent.on('pointerout', event => {
+			if(this.type == "DescriptionCards"){
+				console.log
+				this.parent.parentContainer.postFX.list[0].active = true;
+			}else{
+				this.parent.preFX.list[0].active = false;
+			}
+		})
+	}
 
 	/* END-USER-CODE */
 }

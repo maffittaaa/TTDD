@@ -92,7 +92,7 @@
         {
             "type": "Container",
             "id": "95890bb9-249d-4330-ac74-75c4f444ffa5",
-            "label": "CharacterSlotsPlayer2",
+            "label": "CharacterSlotsPlayer1",
             "useGameObjectName": true,
             "scope": "CLASS",
             "scaleX": 1.5,
@@ -101,7 +101,7 @@
                 {
                     "type": "Image",
                     "id": "2fa4998f-0771-467b-abb9-5e75e8511efe",
-                    "label": "player2_slot1",
+                    "label": "player1_slot1",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -150,7 +150,7 @@
                 {
                     "type": "Image",
                     "id": "873cef2c-5bac-4bdd-bf54-793d36adc909",
-                    "label": "player2_slot2",
+                    "label": "player1_slot2",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -199,7 +199,7 @@
                 {
                     "type": "Image",
                     "id": "afab82c4-88e0-43af-9978-25de1d5f8e3e",
-                    "label": "player2_slot3",
+                    "label": "player1_slot3",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -248,7 +248,7 @@
                 {
                     "type": "Image",
                     "id": "e78c429d-1b1c-4933-bae2-d251554c91ca",
-                    "label": "player2_slot4",
+                    "label": "player1_slot4",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -297,7 +297,7 @@
                 {
                     "type": "Image",
                     "id": "5c853a09-63e4-46bb-9135-c08034673482",
-                    "label": "player2_slot5",
+                    "label": "player1_slot5",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -346,7 +346,7 @@
                 {
                     "type": "Image",
                     "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
-                    "label": "player2_deck",
+                    "label": "player1_deck",
                     "texture": {
                         "key": "cartas4_Imprimir",
                         "frame": 3
@@ -374,7 +374,7 @@
                             "unlock": [
                                 "type"
                             ],
-                            "label": "cardsMechanism",
+                            "label": "cardsMechanism_3",
                             "type": "Deck"
                         },
                         {
@@ -435,7 +435,7 @@
         {
             "type": "Container",
             "id": "6eed717f-2209-430f-95e3-b535301037c6",
-            "label": "CharacterSlotsPlayer1",
+            "label": "CharacterSlotsPlayer2",
             "useGameObjectName": true,
             "scope": "CLASS",
             "scaleX": 1.5,
@@ -444,7 +444,7 @@
                 {
                     "type": "Image",
                     "id": "aac1966c-b7bb-4372-8bf0-e452eb53d39b",
-                    "label": "player1_slot1",
+                    "label": "player2_slot1",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -529,7 +529,7 @@
                 {
                     "type": "Image",
                     "id": "3fc3c8de-bddd-4f52-ac34-74ea3d85fa4e",
-                    "label": "player1_slot2",
+                    "label": "player2_slot2",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -577,7 +577,7 @@
                 {
                     "type": "Image",
                     "id": "5aca7a59-bcbe-4d1f-b369-075312392101",
-                    "label": "player1_slot3",
+                    "label": "player2_slot3",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -625,7 +625,7 @@
                 {
                     "type": "Image",
                     "id": "e71e8385-be8c-4135-81f4-12a20c276e38",
-                    "label": "player1_slot4",
+                    "label": "player2_slot4",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -673,7 +673,7 @@
                 {
                     "type": "Image",
                     "id": "8f970d0f-c21e-44db-871f-a5e06e39323b",
-                    "label": "player1_slot5",
+                    "label": "player2_slot5",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -721,7 +721,7 @@
                 {
                     "type": "Image",
                     "id": "681b45c4-1ff8-4ce3-8e23-3570b25d8324",
-                    "label": "player1_deck1",
+                    "label": "player2_deck1",
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "texture": {
@@ -754,49 +754,6 @@
                             ],
                             "label": "cardsMechanism",
                             "type": "Deck"
-                        }
-                    ]
-                },
-                {
-                    "prefabId": "e364e56a-2464-4cf4-a6ac-adc1aa1fa05b",
-                    "id": "4cc9c9fe-1811-4dc3-9230-57124476a00a",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "damageText"
-                    ],
-                    "label": "damageAnimationMechanism",
-                    "scope": "PUBLIC",
-                    "x": 347,
-                    "y": 415
-                },
-                {
-                    "type": "Image",
-                    "id": "5b8aff88-33f3-47f7-8f93-a91fa9446b82",
-                    "label": "cardTook",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 304,
-                    "hitArea.height": 432,
-                    "texture": {
-                        "key": "cartas4_Imprimir",
-                        "frame": 3
-                    },
-                    "x": 640,
-                    "y": 388,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
-                            "id": "9b82eb0e-4657-439c-a963-26b08a33bc67",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "throwables_1",
-                            "type": "CardTook"
                         }
                     ]
                 }

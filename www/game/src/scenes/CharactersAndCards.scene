@@ -541,6 +541,53 @@
                 },
                 {
                     "type": "Image",
+                    "id": "1854311a-fd82-4c81-bc9d-b5d17be1c68f",
+                    "label": "peawns0",
+                    "texture": {
+                        "key": "peawns",
+                        "frame": 0
+                    },
+                    "x": 246,
+                    "y": 395,
+                    "angle": -42
+                },
+                {
+                    "type": "Image",
+                    "id": "aa8c2325-29cd-4817-9864-5ed852ec428c",
+                    "label": "peawns3",
+                    "texture": {
+                        "key": "peawns",
+                        "frame": 3
+                    },
+                    "x": 394,
+                    "y": 194
+                },
+                {
+                    "type": "Image",
+                    "id": "0db6a384-0327-4aae-b8ce-01bc03afe0a3",
+                    "label": "peawns22",
+                    "texture": {
+                        "key": "peawns2",
+                        "frame": 2
+                    },
+                    "x": 577,
+                    "y": 296,
+                    "angle": 35
+                },
+                {
+                    "type": "Image",
+                    "id": "6da5e2d9-bf17-4ef0-b87b-81bb6d4babbb",
+                    "label": "peawns23",
+                    "texture": {
+                        "key": "peawns2",
+                        "frame": 3
+                    },
+                    "x": 548,
+                    "y": 458,
+                    "angle": 66
+                },
+                {
+                    "type": "Image",
                     "id": "d013e492-d6cd-4e42-9282-17e08e7f33df",
                     "label": "characters_option_button",
                     "useGameObjectName": true,
@@ -550,7 +597,7 @@
                         "frame": 1
                     },
                     "x": 401,
-                    "y": 360,
+                    "y": 375,
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -573,8 +620,22 @@
                             ],
                             "label": "descriptionsMechanism",
                             "option": "Characters"
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "f94d3951-a188-4c17-ba8c-6fccf6d8b2df",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights",
+                            "type": "DescriptionCards"
                         }
                     ]
+                },
+                {
+                    "type": "Glow",
+                    "id": "26e27b00-e5a5-40f2-8017-4081f76b000c",
+                    "label": "glowFx_11"
                 }
             ]
         },
@@ -1109,6 +1170,45 @@
                 },
                 {
                     "type": "Image",
+                    "id": "e0b2e5a2-47e4-4eb5-86a3-45eb4bea9e8f",
+                    "label": "cartas3_Imprimir3",
+                    "texture": {
+                        "key": "cartas3_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 1035,
+                    "y": 271,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "1ad3e3d5-d55e-4b46-9e3e-4fbd72fb1a85",
+                    "label": "cartas3_Imprimir7",
+                    "texture": {
+                        "key": "cartas3_Imprimir",
+                        "frame": 7
+                    },
+                    "x": 1059,
+                    "y": 375,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
+                    "id": "1f3795ca-cc2c-483c-997e-f4148502d74c",
+                    "label": "cartas3_Imprimir6",
+                    "texture": {
+                        "key": "cartas3_Imprimir",
+                        "frame": 6
+                    },
+                    "x": 1080,
+                    "y": 479,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
+                },
+                {
+                    "type": "Image",
                     "id": "ab2f5864-02b1-4ac0-8ace-4d7fa923188c",
                     "label": "cartas4_Imprimir3",
                     "useGameObjectName": true,
@@ -1118,7 +1218,7 @@
                         "frame": 3
                     },
                     "x": 864,
-                    "y": 360,
+                    "y": 375,
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -1141,8 +1241,22 @@
                             ],
                             "label": "descriptionsMechanism_1",
                             "option": "Cards"
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "219d5360-a8d9-4ecc-9880-78d46a220421",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_1",
+                            "type": "DescriptionChar"
                         }
                     ]
+                },
+                {
+                    "type": "Glow",
+                    "id": "0c520c6c-7c79-4486-9171-b7e3a51c9a86",
+                    "label": "glowFx_12"
                 }
             ]
         },
