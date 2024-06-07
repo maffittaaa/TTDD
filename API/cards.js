@@ -32,7 +32,6 @@ router.post('/pickCard', (req, res) => {
                                                 chosenCard = true;
                                             }
                                         }
-
                                         cardID = cardID[chosenID].deck_card_id;
                                         connection.execute("SELECT deck_card_id FROM deck WHERE deck_card_id = ? AND deck_card_state_id = 1 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
                                             function (error, rows, fields) {
@@ -173,7 +172,6 @@ function checkCharacterAttacked(req, res, cardPlayed, cardID) {
     }
 }
 
-//endpoint for when the players play a card
 function playCard(req, res, canPlay, cardID){
     var playerID = req.session.playerID;
     var matchID = req.session.match;

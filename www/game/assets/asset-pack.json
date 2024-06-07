@@ -251,6 +251,11 @@
                 "key": "spritesheet"
             },
             {
+                "url": "assets/street.png",
+                "type": "image",
+                "key": "street"
+            },
+            {
                 "url": "src/scripts/Throwables.js",
                 "type": "script",
                 "key": "Throwables"

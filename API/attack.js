@@ -168,6 +168,7 @@ function addRound(req, res, match_id) {
             if (error) {
                 res.send(error);
             } else {
+
                 checkRound(req, res, match_id);
             }
         }
