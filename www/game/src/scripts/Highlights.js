@@ -19,27 +19,29 @@ class Highlights extends ScriptNode {
 	/* START-USER-CODE */
 
 	start(){
-		if(this.type == "DescriptionCards"){
-			console.log(this.parent.parentContainer)
-			this.parent.parentContainer.postFX.list[0].active = false;
+		if(this.type == "DescriptionCards" ||this.type == "DescriptionChar"){
+			this.parent.parentContainer.postPipelines[0].active = false
+
+			this.parent.on('pointerdown', event => {
+				this.parent.parentContainer.postPipelines[0].active = false
+			})
+
+			this.parent.on('pointerover', event => {
+				this.parent.parentContainer.postPipelines[0].active = true
+			})
+			this.parent.on('pointerout', event => {
+				this.parent.parentContainer.postPipelines[0].active = false
+			})
 		}else{
-			this.parent.preFX.list[0].active = false;
-		}
-		this.parent.on('pointerover', event => {
-			if(this.type == "DescriptionCards"){
-				this.parent.parentContainer.postFX.list[0].active = true;
-			}else{
+			this.parent.on('pointerover', event => {
 				this.parent.preFX.list[0].active = true;
-			}
-		})
-		this.parent.on('pointerout', event => {
-			if(this.type == "DescriptionCards"){
-				console.log
-				this.parent.parentContainer.postFX.list[0].active = true;
-			}else{
-				this.parent.preFX.list[0].active = false;
-			}
-		})
+			})
+			this.parent.on('pointerout', event => {
+				if(charChosen == null){
+					this.parent.preFX.list[0].active = false;
+				}
+			})
+		}
 	}
 
 	/* END-USER-CODE */
