@@ -1272,12 +1272,10 @@ class Match extends Phaser.Scene {
 	// Write your code here
 
 	create() {
-
 		this.editorCreate();
 
 		this.input.keyboard.on('keydown-C', (event) => {
 			this.cheatsContainer.visible = !this.cheatsContainer.visible;
-			console.log(this.cheatsContainer.visible);
 		});
 	}
 
