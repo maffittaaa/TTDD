@@ -53,7 +53,7 @@ class CardsMechanism extends ScriptNode {
 		})
 	};
 
-	showAddedCard(card){
+	showAddedCard(card) {
 		var handCards = this.scene.children.list[7];
 
 		console.log(handCards)

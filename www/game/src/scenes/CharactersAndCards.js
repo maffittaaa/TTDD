@@ -904,14 +904,14 @@ class CharactersAndCards extends Phaser.Scene {
 
 	update(){
 		if(goToProfile){
-			this.scene.start("Profile")
-			goToProfile = false
+			this.scene.start("Profile");
+			goToProfile = false;
 		}else if(goToChooseChar){
-			this.scene.start("ChooseCharactersMenu")
-			goToChooseChar = false
+			this.scene.start("ChooseCharactersMenu");
+			goToChooseChar = false;
 		}else if(goToCharactersAndCards){
-			this.scene.start("CharactersAndCards")
-			goToCharactersAndCards = false
+			this.scene.start("CharactersAndCards");
+			goToCharactersAndCards = false;
 		}
 	}
 

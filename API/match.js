@@ -620,6 +620,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                         {
                                             matchFinished: false,
                                             turn: turn_id,
+                                            tookCard: req.session.tookCard,
                                             player: req.session.playerID,
                                             player1: player1,
                                             player2: player2,

@@ -65,7 +65,7 @@ class MatchMechanism extends ScriptNode {
 				} else if (data.logged == false) {
 					window.location.replace("/login.html");
 				} else {
-					scene.isItMyTurn(data.turn, data.player);
+					scene.isItMyTurn(data.turn, data.player, data.tookCard);
 					scene.setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), true);
 				}
 			},
@@ -75,14 +75,23 @@ class MatchMechanism extends ScriptNode {
 		})
 	};
 
-	isItMyTurn(turn_id, player_id) {
+	isItMyTurn(turn_id, player_id, tookCard) {
 		if (turn_id == player_id) {
 			this.turnText.text = "It's your\n  Turn!";
 			this.turnText.setVisible(true);
+			if (tookCard == false) {
+				this.setGlowOnOffCards(this.scene.children.list[7].list[5], true);
+			} else {
+				this.setGlowOnOffCards(this.scene.children.list[7].list[5], false);
+			}
 		} else {
 			this.turnText.text = " Not your\n turn yet";
 			this.turnText.setVisible(true);
 		}
+	}
+
+	setGlowOnOffCards(object, boolean) {
+		object.preFX.list[0].active = boolean;
 	}
 
 	matchFinished(winnerName, winID, losID) {
@@ -118,6 +127,8 @@ class MatchMechanism extends ScriptNode {
 			}
 		})
 	}
+
+
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 		if (ongoing) {

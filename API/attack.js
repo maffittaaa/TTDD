@@ -129,8 +129,8 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                         addRound(req, res, match_id);
                     }
                 } else {
-                    nextPlayer = playerID
-                    req.session.turnsToSkip = req.session.turnsToSkip - 1
+                    nextPlayer = playerID;
+                    req.session.turnsToSkip = req.session.turnsToSkip - 1;
                 }
                 connection.execute("UPDATE matche SET matche_turn_player_id = " + nextPlayer + " WHERE matche_id = " + match_id,
                     function (error, rows, fields) {

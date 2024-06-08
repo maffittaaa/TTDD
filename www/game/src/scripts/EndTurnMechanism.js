@@ -1,9 +1,5 @@
 
 // You can write more code here
-var rounds;
-var odd;
-var even;
-
 /* START OF COMPILED CODE */
 
 class EndTurnMechanism extends ScriptNode {
@@ -37,26 +33,12 @@ class EndTurnMechanism extends ScriptNode {
 
 			success: function (data) {
 				console.log(data);
-				rounds = data.rounds;
-				if (rounds % 2 == 0) {
-					even = true;
-					odd = false;
-					console.log(scene.scene.children.list);
-				} else {
-					even = false;
-					odd = true;
-				}
 			},
 			error: function (err) {
 				console.log(err);
 			}
 		})
 	};
-
-	setGlowOnOffCards(object, boolean) {
-		console.log("what here??: ", object.preFX.list[0]);
-		object.preFX.list[0].active = boolean;
-	}
 
 	/* END-USER-CODE */
 }
