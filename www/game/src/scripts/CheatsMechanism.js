@@ -18,7 +18,7 @@ class CheatsMechanism extends ScriptNode {
 
 	/* START-USER-CODE */
 
-	start () {
+	start() {
 		this.parent.on('pointerdown', event => {
 			if (this.type == "resetHP") {
 				this.resetHPFromCharacters();

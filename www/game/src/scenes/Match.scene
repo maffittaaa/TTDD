@@ -73,8 +73,8 @@
             "label": "result",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "x": 957,
-            "y": 787,
+            "x": 960,
+            "y": 160,
             "scaleX": 0.4,
             "scaleY": 0.4,
             "originX": 0.5,
@@ -85,7 +85,15 @@
             "fontFamily": "Minecraft",
             "fontSize": "100px",
             "color": "#000000ff",
-            "stroke": "#000000ff"
+            "stroke": "#000000ff",
+            "list": [
+                {
+                    "type": "Glow",
+                    "id": "c867a98e-4c97-4b77-ae9c-3ce9ba014593",
+                    "label": "glowFx_11",
+                    "preFX": true
+                }
+            ]
         },
         {
             "type": "Container",
@@ -1154,173 +1162,14 @@
             ]
         },
         {
-            "type": "Image",
-            "id": "39f7ca88-faad-4457-b637-fbd6b0de288b",
-            "label": "setHPTo1Button",
-            "scope": "CLASS",
-            "texture": {
-                "key": "buttons"
-            },
-            "x": 960,
-            "y": 383,
-            "scaleX": 4.2,
-            "scaleY": 3,
-            "visible": false,
-            "list": [
-                {
-                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "efa1f67c-b369-4646-a2f3-ccd008336d2b",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cheatsMechanism",
-                    "type": "hpTo1"
-                },
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "2f48b4f7-83a6-426b-aff3-447253122bc1",
-                    "label": "onPointerDownScript_15",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "b4868f59-1995-42c5-b0b4-a44b338c17c2",
-                            "label": "pushActionScript_15"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Image",
-            "id": "12f2b395-0f47-46e7-8ac2-46c7e1ea000c",
-            "label": "resetAttackStatusButton",
-            "scope": "CLASS",
-            "texture": {
-                "key": "buttons"
-            },
-            "x": 960,
-            "y": 318,
-            "scaleX": 4.2,
-            "scaleY": 3,
-            "visible": false,
-            "list": [
-                {
-                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "f294dff6-9fb6-4a9a-882f-b5cab01de340",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cheatsMechanism_1",
-                    "type": "resetAttackStatus"
-                },
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "b1a85b0c-13e5-40cf-b03d-cde776f77bac",
-                    "label": "onPointerDownScript_14",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "55366846-b898-46f4-98e0-c4c236912a4a",
-                            "label": "pushActionScript_14"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Image",
-            "id": "8e33ff10-1d6d-420e-bf25-58f25b8307fe",
-            "label": "resetHpButton",
-            "scope": "CLASS",
-            "texture": {
-                "key": "buttons"
-            },
-            "x": 960,
-            "y": 253,
-            "scaleX": 4.2,
-            "scaleY": 3,
-            "visible": false,
-            "list": [
-                {
-                    "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
-                    "id": "34f0b382-f34d-47ed-b92f-f33d8ae89e6e",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cheatsMechanism_2",
-                    "type": "resetHP"
-                },
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "4562d6fe-7e45-4707-93ef-a6c6a8741757",
-                    "label": "onPointerDownScript_13",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "aa6b4352-3632-4dca-8343-5bf051ea85a9",
-                            "label": "pushActionScript_13"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Text",
-            "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
-            "label": "setHPTo1Text",
-            "x": 960,
-            "y": 383,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
-            "originX": 0.5,
-            "originY": 0.5,
-            "visible": false,
-            "text": "Everyone to 1HP",
-            "fontFamily": "Minecraft",
-            "fontSize": "100px",
-            "color": "#ffffffff"
-        },
-        {
-            "type": "Text",
-            "id": "52658ea1-6bbe-414a-893d-fe53e77ad78b",
-            "label": "resetAttackStatusText",
-            "x": 960,
-            "y": 318,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
-            "originX": 0.5,
-            "originY": 0.5,
-            "visible": false,
-            "text": "Reset Attack Status",
-            "fontFamily": "Minecraft",
-            "fontSize": "100px",
-            "color": "#ffffffff"
-        },
-        {
-            "type": "Text",
-            "id": "5c28c047-d023-4065-8663-206c91fda482",
-            "label": "resetHPText",
-            "x": 960,
-            "y": 253,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
-            "originX": 0.5,
-            "originY": 0.5,
-            "visible": false,
-            "text": "Reset HP",
-            "fontFamily": "Minecraft",
-            "fontSize": "100px",
-            "color": "#ffffffff"
-        },
-        {
             "type": "Text",
             "id": "c5248266-f203-4610-bce5-0bd548b873e7",
             "label": "turn",
             "scope": "CLASS",
-            "x": 458,
-            "y": 429,
-            "scaleX": 0.22,
-            "scaleY": 0.22,
+            "x": 960,
+            "y": 548,
+            "scaleX": 0.4,
+            "scaleY": 0.4,
             "originX": 0.5,
             "originY": 0.5,
             "visible": false,
@@ -1328,7 +1177,7 @@
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
-            "color": "#fd6464ff"
+            "color": "#000000ff"
         },
         {
             "type": "Text",
@@ -1527,6 +1376,178 @@
                     ],
                     "label": "cardsMechanism_1",
                     "type": "ShowCards"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "668b6d3a-7311-4864-9e7f-70d8644ca032",
+            "label": "cheatsContainer",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "39f7ca88-faad-4457-b637-fbd6b0de288b",
+                    "label": "setHPTo1Button",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 960,
+                    "y": 383,
+                    "scaleX": 4.2,
+                    "scaleY": 3,
+                    "list": [
+                        {
+                            "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                            "id": "efa1f67c-b369-4646-a2f3-ccd008336d2b",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cheatsMechanism",
+                            "type": "hpTo1"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2f48b4f7-83a6-426b-aff3-447253122bc1",
+                            "label": "onPointerDownScript_15",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "b4868f59-1995-42c5-b0b4-a44b338c17c2",
+                                    "label": "pushActionScript_15"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "12f2b395-0f47-46e7-8ac2-46c7e1ea000c",
+                    "label": "resetAttackStatusButton",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 960,
+                    "y": 318,
+                    "scaleX": 4.2,
+                    "scaleY": 3,
+                    "list": [
+                        {
+                            "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                            "id": "f294dff6-9fb6-4a9a-882f-b5cab01de340",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cheatsMechanism_1",
+                            "type": "resetAttackStatus"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "b1a85b0c-13e5-40cf-b03d-cde776f77bac",
+                            "label": "onPointerDownScript_14",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "55366846-b898-46f4-98e0-c4c236912a4a",
+                                    "label": "pushActionScript_14"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "8e33ff10-1d6d-420e-bf25-58f25b8307fe",
+                    "label": "resetHpButton",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 960,
+                    "y": 253,
+                    "scaleX": 4.2,
+                    "scaleY": 3,
+                    "list": [
+                        {
+                            "prefabId": "4ad179de-c2f5-4a05-b3a9-621feb9e3208",
+                            "id": "34f0b382-f34d-47ed-b92f-f33d8ae89e6e",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "cheatsMechanism_2",
+                            "type": "resetHP"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "4562d6fe-7e45-4707-93ef-a6c6a8741757",
+                            "label": "onPointerDownScript_13",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "aa6b4352-3632-4dca-8343-5bf051ea85a9",
+                                    "label": "pushActionScript_13"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "ca4b5260-f640-4bc1-9a0b-dd4588af1bea",
+                    "label": "setHPTo1Text",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 960,
+                    "y": 383,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Everyone to 1HP",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "color": "#ffffffff"
+                },
+                {
+                    "type": "Text",
+                    "id": "52658ea1-6bbe-414a-893d-fe53e77ad78b",
+                    "label": "resetAttackStatusText",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 960,
+                    "y": 318,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Reset Attack Status",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "color": "#ffffffff"
+                },
+                {
+                    "type": "Text",
+                    "id": "5c28c047-d023-4065-8663-206c91fda482",
+                    "label": "resetHPText",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "x": 960,
+                    "y": 253,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Reset HP",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "color": "#ffffffff"
                 }
             ]
         },
@@ -2050,7 +2071,15 @@
             ]
         }
     ],
-    "plainObjects": [],
+    "plainObjects": [
+        {
+            "id": "f30d6d2b-6827-4480-bbf8-cc698c8e29f0",
+            "type": "Keyboard.Key",
+            "label": "toggleCheats",
+            "scope": "PUBLIC",
+            "keyCode": "C"
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",

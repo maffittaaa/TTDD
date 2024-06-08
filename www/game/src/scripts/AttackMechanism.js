@@ -107,7 +107,6 @@ class AttackMechanism extends ScriptNode {
 	};
 
 	setGlowOnOff(object, boolean) {
-		console.log(object, boolean)
 		object.preFX.list[0].active = boolean;
 	}
 

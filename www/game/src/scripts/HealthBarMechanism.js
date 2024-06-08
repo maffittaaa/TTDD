@@ -15,10 +15,6 @@ class HealthBarMechanism extends ScriptNode {
 
 	/* START-USER-CODE */
 
-	awake() {
-
-	}
-
 	healthBarChanges(currentHP, player, slot_id, character_id) {
 		var maxHP = 100 //all characters have 100hp except for Panda and Big Billy
 

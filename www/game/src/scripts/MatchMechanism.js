@@ -85,7 +85,7 @@ class MatchMechanism extends ScriptNode {
 				this.setGlowOnOffCards(this.scene.children.list[7].list[6], false);
 			}
 		} else {
-			this.turnText.text = " Not your\nturn yet";
+			this.turnText.text = " Not your\nturn yet!\n Please wait...";
 			this.turnText.setVisible(true);
 		}
 	}

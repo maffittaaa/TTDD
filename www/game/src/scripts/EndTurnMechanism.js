@@ -26,7 +26,6 @@ class EndTurnMechanism extends ScriptNode {
 	}
 
 	endOfTurn() {
-		var scene = this;
 		$.ajax({
 			type: 'GET',
 			url: '/attack/endTurn',
