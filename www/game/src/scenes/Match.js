@@ -161,10 +161,10 @@ class Match extends Phaser.Scene {
 		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
 
 		// player2_deck1
-		const player2_deck1 = this.add.image(1206, 582, "cartas4_Imprimir", 3);
+		const player2_deck1 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
 		player2_deck1.name = "player2_deck1";
-		player2_deck1.scaleX = 0.28;
-		player2_deck1.scaleY = 0.28;
+		player2_deck1.scaleX = 0.4;
+		player2_deck1.scaleY = 0.4;
 		characterSlotsPlayer2.add(player2_deck1);
 
 		// CharacterSlotsPlayer1
@@ -287,10 +287,22 @@ class Match extends Phaser.Scene {
 		// glowFx_9
 		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
 
+		// cardTook
+		const cardTook = this.add.image(640, 388, "cartas4_Imprimir", 3);
+		cardTook.name = "cardTook";
+		cardTook.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
+		cardTook.scaleX = 0.4;
+		cardTook.scaleY = 0.4;
+		cardTook.visible = false;
+		characterSlotsPlayer1.add(cardTook);
+
+		// throwables_1
+		const throwables_1 = new Throwables(cardTook);
+
 		// player1_deck
-		const player1_deck = this.add.image(74, 582, "cartas4_Imprimir", 3);
-		player1_deck.scaleX = 0.28;
-		player1_deck.scaleY = 0.28;
+		const player1_deck = this.add.image(98, 582, "cartas4_Imprimir", 3);
+		player1_deck.scaleX = 0.4;
+		player1_deck.scaleY = 0.4;
 		characterSlotsPlayer1.add(player1_deck);
 
 		// onPointerDownScript_11
@@ -308,18 +320,6 @@ class Match extends Phaser.Scene {
 		// damageAnimationMechanism
 		const damageAnimationMechanism = new DamageAnimationMechanism(this, 347, 415);
 		characterSlotsPlayer1.add(damageAnimationMechanism);
-
-		// cardTook
-		const cardTook = this.add.image(640, 388, "cartas4_Imprimir", 3);
-		cardTook.name = "cardTook";
-		cardTook.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
-		cardTook.scaleX = 0.5;
-		cardTook.scaleY = 0.5;
-		cardTook.visible = false;
-		characterSlotsPlayer1.add(cardTook);
-
-		// throwables_1
-		const throwables_1 = new Throwables(cardTook);
 
 		// HealthBarsPlayer1
 		const healthBarsPlayer1 = this.add.container(0, 0);
@@ -973,11 +973,11 @@ class Match extends Phaser.Scene {
 		attackMechanism_9.type = "Player";
 		attackMechanism_9.slotID = 5;
 
-		// cardsMechanism_3 (prefab fields)
-		cardsMechanism_3.type = "Deck";
-
 		// throwables_1 (prefab fields)
 		throwables_1.type = "CardTook";
+
+		// cardsMechanism_3 (prefab fields)
+		cardsMechanism_3.type = "Deck";
 
 		// endTurnMechanism (prefab fields)
 		endTurnMechanism.type = "endTurn";
@@ -1062,9 +1062,9 @@ class Match extends Phaser.Scene {
 		this.player1_slot3 = player1_slot3;
 		this.player1_slot4 = player1_slot4;
 		this.player1_slot5 = player1_slot5;
+		this.cardTook = cardTook;
 		this.glowFx_10 = glowFx_10;
 		this.damageAnimationMechanism = damageAnimationMechanism;
-		this.cardTook = cardTook;
 		this.characterSlotsPlayer1 = characterSlotsPlayer1;
 		this.healthBarMechanism = healthBarMechanism;
 		this.healthbar_p1_slot1 = healthbar_p1_slot1;
@@ -1142,12 +1142,12 @@ class Match extends Phaser.Scene {
 	player1_slot4;
 	/** @type {Phaser.GameObjects.Image} */
 	player1_slot5;
+	/** @type {Phaser.GameObjects.Image} */
+	cardTook;
 	/** @type {Phaser.FX.Glow} */
 	glowFx_10;
 	/** @type {DamageAnimationMechanism} */
 	damageAnimationMechanism;
-	/** @type {Phaser.GameObjects.Image} */
-	cardTook;
 	/** @type {Phaser.GameObjects.Container} */
 	characterSlotsPlayer1;
 	/** @type {HealthBarMechanism} */

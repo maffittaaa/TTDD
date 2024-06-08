@@ -354,10 +354,10 @@
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 1206,
+                    "x": 1185,
                     "y": 582,
-                    "scaleX": 0.28,
-                    "scaleY": 0.28
+                    "scaleX": 0.4,
+                    "scaleY": 0.4
                 }
             ]
         },
@@ -646,16 +646,46 @@
                 },
                 {
                     "type": "Image",
+                    "id": "5b8aff88-33f3-47f7-8f93-a91fa9446b82",
+                    "label": "cardTook",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 304,
+                    "hitArea.height": 432,
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 640,
+                    "y": 388,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
+                            "id": "9b82eb0e-4657-439c-a963-26b08a33bc67",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "throwables_1",
+                            "type": "CardTook"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
                     "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
                     "label": "player1_deck",
                     "texture": {
                         "key": "cartas4_Imprimir",
                         "frame": 3
                     },
-                    "x": 74,
+                    "x": 98,
                     "y": 582,
-                    "scaleX": 0.28,
-                    "scaleY": 0.28,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
@@ -700,36 +730,6 @@
                     "scope": "PUBLIC",
                     "x": 347,
                     "y": 415
-                },
-                {
-                    "type": "Image",
-                    "id": "5b8aff88-33f3-47f7-8f93-a91fa9446b82",
-                    "label": "cardTook",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 304,
-                    "hitArea.height": 432,
-                    "texture": {
-                        "key": "cartas4_Imprimir",
-                        "frame": 3
-                    },
-                    "x": 640,
-                    "y": 388,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
-                            "id": "9b82eb0e-4657-439c-a963-26b08a33bc67",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "throwables_1",
-                            "type": "CardTook"
-                        }
-                    ]
                 }
             ]
         },

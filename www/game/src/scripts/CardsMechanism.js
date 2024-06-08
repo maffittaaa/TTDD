@@ -71,8 +71,8 @@ class CardsMechanism extends ScriptNode {
 					handCards.list[i].visible = true
 				}
 
-				initialX = -(304 / 2) // a width de cada carta
-				initialY = handCards.list[i].y
+				initialX = 98 // position of the deck x
+				initialY = 582 // position of the deck y
 				finalX = handCards.list[i].x
 				finalY = handCards.list[i].y
 				startTime = performance.now();

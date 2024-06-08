@@ -45,7 +45,7 @@ class Throwables extends ScriptNode {
 	update(){
 		if(this.type == "CardTook"){
 			if(this.parent.visible == true){
-				this.parent.angle += angle + 1
+				this.parent.angle += 5
 				this.throwItem(this.parent, initialX, initialY, finalX, finalY, true)
 			}
 		}else if(this.type == "Throwables"){
@@ -73,8 +73,9 @@ class Throwables extends ScriptNode {
 			const y = initialY + (finalY - initialY) * progress - peakHeight * Math.sin(Math.PI * progress);
 			
 			//angle of thrown card
-			if(card == true){
-				item.angle += 1.9
+			if(thrownBack == false && card == true){
+				item.scaleX += 0.005
+				item.scaleY += 0.005
 			}
 
 			// Update item's position
@@ -93,6 +94,8 @@ class Throwables extends ScriptNode {
 					item.visible = false
 					item.x = initialX;
 					item.y = initialY;
+					item.scaleX = 0.4
+					item.scaleY = 0.4
 					thrownBack = false
 				}
 			}else{

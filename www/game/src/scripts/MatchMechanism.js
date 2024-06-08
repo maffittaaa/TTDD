@@ -77,15 +77,15 @@ class MatchMechanism extends ScriptNode {
 
 	isItMyTurn(turn_id, player_id, tookCard) {
 		if (turn_id == player_id) {
-			this.turnText.text = "It's your\n  Turn!";
+			this.turnText.text = "It's your\nTurn!";
 			this.turnText.setVisible(true);
 			if (tookCard == false) {
-				this.setGlowOnOffCards(this.scene.children.list[7].list[5], true);
+				this.setGlowOnOffCards(this.scene.children.list[7].list[6], true);
 			} else {
-				this.setGlowOnOffCards(this.scene.children.list[7].list[5], false);
+				this.setGlowOnOffCards(this.scene.children.list[7].list[6], false);
 			}
 		} else {
-			this.turnText.text = " Not your\n turn yet";
+			this.turnText.text = " Not your\nturn yet";
 			this.turnText.setVisible(true);
 		}
 	}
