@@ -223,6 +223,11 @@
                 "key": "Profile"
             },
             {
+                "url": "assets/profileButton.png",
+                "type": "image",
+                "key": "profileButton"
+            },
+            {
                 "url": "assets/Shadow.png",
                 "type": "image",
                 "key": "Shadow"

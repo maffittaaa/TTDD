@@ -1,6 +1,6 @@
 cardsAnimIn = false
 cardsAnimOut = false
-cardsDist = 143
+cardsDist = 135
 cardsDistInc = cardsDist * 0.07
 cardsInitialX = [892, 916, 937]
 
@@ -28,11 +28,15 @@ class Highlights extends ScriptNode {
 
 	/** @type {string} */
 	type = "";
+	/** @type {boolean} */
+	clicked = false;
+	/** @type {number} */
+	id = 0;
 
 	/* START-USER-CODE */
 
 	start(){
-		if(this.type == "DescriptionCards" ||this.type == "DescriptionChar"){
+		if(this.type == "DescriptionCards" || this.type == "DescriptionChar"){
 			this.parent.parentContainer.postPipelines[0].active = false
 
 			this.parent.on('pointerdown', event => {
@@ -59,16 +63,88 @@ class Highlights extends ScriptNode {
 					charAnimIn = false
 				}
 			})
-		}else{
+		}else if (this.type == "Descriptions"){
+			this.parent.on('pointerdown', event => {
+				this.clicked = true
+			})
 			this.parent.on('pointerover', event => {
-				if(charChosen == null){
+				if(this.clicked == false){
 					this.parent.preFX.list[0].active = true;
 				}
 			})
 			this.parent.on('pointerout', event => {
-				if(charChosen == null){
+				if(this.clicked == false){
 					this.parent.preFX.list[0].active = false;
 				}
+			})
+		}else if (this.type == "LobbyChar"){
+			this.parent.on('pointerdown', event => {
+				var alreadyChosen = false;
+
+				for (let i = 1; i < 6; i++) { //there are 5 slots
+					if (slots["slot_" + i + ""] == this.id) {
+						alreadyChosen = true;
+					}
+				}
+
+				if(alreadyChosen == false){
+					this.clicked = true
+				}
+			})
+			this.parent.on('pointerover', event => {
+				if(this.clicked == false){
+
+					var alreadyChosen = false;
+
+					for (let i = 1; i < 6; i++) { //there are 5 slots
+						if (slots["slot_" + i + ""] == this.id) {
+							alreadyChosen = true;
+						}
+					}
+
+					if(alreadyChosen == false){
+						this.parent.preFX.list[0].active = true;
+					}
+				}
+			})
+			this.parent.on('pointerout', event => {
+				if(this.clicked == false){
+					var alreadyChosen = false;
+
+					for (let i = 1; i < 6; i++) { //there are 5 slots
+						if (slots["slot_" + i + ""] == this.id) {
+							alreadyChosen = true;
+						}
+					}
+
+					if(alreadyChosen == false){
+						this.parent.preFX.list[0].active = false;
+					}
+				}
+			})
+		}else if(this.type == "LobbyLevelXp"){
+			this.parent.on('pointerover', event => {
+				this.parent.text = xpText;
+			})
+			this.parent.on('pointerout', event => {
+				this.parent.text = levelText;
+			})
+		}else if(this.type == "LobbySlots"){
+			this.parent.on('pointerover', event => {
+				if(this.parent.preFX.list[0].active == true){
+					this.parent.preFX.list[0].glcolor[1] = 0
+					this.parent.preFX.list[0].glcolor[2] = 0.498
+				}
+			})
+			this.parent.on('pointerout', event => {
+				if(this.parent.preFX.list[0].active == true){
+					this.parent.preFX.list[0].glcolor[1] = 1
+					this.parent.preFX.list[0].glcolor[2] = 1
+				}
+			})
+			this.parent.on('pointerdown', event => {
+				this.parent.preFX.list[0].glcolor[1] = 1
+				this.parent.preFX.list[0].glcolor[2] = 1
 			})
 		}
 	}
@@ -87,6 +163,16 @@ class Highlights extends ScriptNode {
 			}
 			if(charAnimIn == true){
 				this.moveCharIn(this.parent.parentContainer)
+			}
+		}
+
+		if (this.type == "Descriptions"){
+			if(this.parent.preFX.list[0].active == false){
+				this.clicked = false
+			}
+		}else if (this.type == "LobbyChar"){
+			if(this.parent.preFX.list[0].active == false){
+				this.clicked = false
 			}
 		}
 	}

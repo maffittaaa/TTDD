@@ -25,11 +25,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		match.scaleY = 1.5;
 
 		// highlight_1
-		const highlight_1 = this.add.rectangle(640, 647, 128, 128);
+		const highlight_1 = this.add.rectangle(638, 660, 128, 128);
 		highlight_1.name = "highlight_1";
 		highlight_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
 		highlight_1.scaleX = 0.89;
-		highlight_1.scaleY = 0.21;
+		highlight_1.scaleY = 0.3;
 		highlight_1.isFilled = true;
 		highlight_1.fillColor = 0;
 		highlight_1.strokeColor = 4194559;
@@ -44,7 +44,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		highlight_1.postFX.addGlow(4194559, 3, 3, false);
 
 		// Message
-		const message = this.add.text(640, 647, "", {});
+		const message = this.add.text(640, 660, "", {});
 		message.name = "Message";
 		message.scaleX = 0.15;
 		message.scaleY = 0.15;
@@ -56,11 +56,11 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_15 = new HandleChooseMechanism(message);
 
 		// GoToMatch
-		const goToMatch = this.add.text(640, 647, "", {});
+		const goToMatch = this.add.text(640, 660, "", {});
 		goToMatch.name = "GoToMatch";
-		goToMatch.setInteractive(new Phaser.Geom.Rectangle(-90, -7, 569.8876373010377, 131.42520332043517), Phaser.Geom.Rectangle.Contains);
-		goToMatch.scaleX = 0.2;
-		goToMatch.scaleY = 0.2;
+		goToMatch.setInteractive(new Phaser.Geom.Rectangle(-20, -7, 402.4184635613999, 131.42520332043517), Phaser.Geom.Rectangle.Contains);
+		goToMatch.scaleX = 0.23;
+		goToMatch.scaleY = 0.23;
 		goToMatch.setOrigin(0.5, 0.5);
 		goToMatch.text = "Ready?";
 		goToMatch.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
@@ -85,9 +85,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		slots.scaleY = 1.5;
 
 		// slot_4
-		const slot_4 = this.add.image(967, 280, "base", 0);
+		const slot_4 = this.add.image(967, 297, "base", 0);
 		slot_4.name = "slot_4";
-		slot_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_4.setInteractive(new Phaser.Geom.Rectangle(-10, -11, 173.38076714293672, 172.09921126705498), Phaser.Geom.Rectangle.Contains);
 		slot_4.scaleX = 0.5;
 		slot_4.scaleY = 0.5;
 		slots.add(slot_4);
@@ -108,9 +108,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlights_13 = new Highlights(slot_4);
 
 		// slot_1
-		const slot_1 = this.add.image(1127, 200, "base", 0);
+		const slot_1 = this.add.image(1127, 217, "base", 0);
 		slot_1.name = "slot_1";
-		slot_1.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_1.setInteractive(new Phaser.Geom.Rectangle(-6, -9, 168.3486228584178, 168.19886025995473), Phaser.Geom.Rectangle.Contains);
 		slot_1.scaleX = 0.5;
 		slot_1.scaleY = 0.5;
 		slots.add(slot_1);
@@ -131,9 +131,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlights_14 = new Highlights(slot_1);
 
 		// slot_2
-		const slot_2 = this.add.image(1127, 360, "base", 0);
+		const slot_2 = this.add.image(1127, 377, "base", 0);
 		slot_2.name = "slot_2";
-		slot_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_2.setInteractive(new Phaser.Geom.Rectangle(-13, -11, 176.55683443309778, 175.20777384883507), Phaser.Geom.Rectangle.Contains);
 		slot_2.scaleX = 0.5;
 		slot_2.scaleY = 0.5;
 		slots.add(slot_2);
@@ -154,9 +154,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlights_12 = new Highlights(slot_2);
 
 		// slot_3
-		const slot_3 = this.add.image(1127, 520, "base", 0);
+		const slot_3 = this.add.image(1127, 537, "base", 0);
 		slot_3.name = "slot_3";
-		slot_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_3.setInteractive(new Phaser.Geom.Rectangle(-19, -20, 188.87782037941005, 185.77302709086553), Phaser.Geom.Rectangle.Contains);
 		slot_3.scaleX = 0.5;
 		slot_3.scaleY = 0.5;
 		slots.add(slot_3);
@@ -177,9 +177,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlights_10 = new Highlights(slot_3);
 
 		// slot_5
-		const slot_5 = this.add.image(969, 440, "base", 0);
+		const slot_5 = this.add.image(969, 457, "base", 0);
 		slot_5.name = "slot_5";
-		slot_5.setInteractive(new Phaser.Geom.Rectangle(0, 0, 150, 150), Phaser.Geom.Rectangle.Contains);
+		slot_5.setInteractive(new Phaser.Geom.Rectangle(-9, -10, 174.216231934174, 174.87675448717522), Phaser.Geom.Rectangle.Contains);
 		slot_5.scaleX = 0.5;
 		slot_5.scaleY = 0.5;
 		slots.add(slot_5);
@@ -200,7 +200,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlights_11 = new Highlights(slot_5);
 
 		// MessageServer
-		const messageServer = this.add.text(1050, 129, "", {});
+		const messageServer = this.add.text(1050, 611, "", {});
 		messageServer.name = "MessageServer";
 		messageServer.scaleX = 0.15;
 		messageServer.scaleY = 0.15;
@@ -212,7 +212,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const handleChooseMechanism_16 = new HandleChooseMechanism(messageServer);
 
 		// BackgroundAndText
-		const backgroundAndText = this.add.container(0, 29);
+		const backgroundAndText = this.add.container(0, 67);
 		backgroundAndText.scaleX = 1.5;
 		backgroundAndText.scaleY = 1.5;
 
@@ -247,37 +247,37 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		backgroundAndText.add(cartas2_Imprimir_4);
 
 		// cartas2_Imprimir_5
-		const cartas2_Imprimir_5 = this.add.image(776, 221, "cartas2_Imprimir", 1);
+		const cartas2_Imprimir_5 = this.add.image(776, 203, "cartas2_Imprimir", 1);
 		cartas2_Imprimir_5.scaleX = 0.5;
 		cartas2_Imprimir_5.scaleY = 0.5;
 		backgroundAndText.add(cartas2_Imprimir_5);
 
 		// cartas2_Imprimir_6
-		const cartas2_Imprimir_6 = this.add.image(619, 221, "cartas2_Imprimir", 1);
+		const cartas2_Imprimir_6 = this.add.image(619, 203, "cartas2_Imprimir", 1);
 		cartas2_Imprimir_6.scaleX = 0.5;
 		cartas2_Imprimir_6.scaleY = 0.5;
 		backgroundAndText.add(cartas2_Imprimir_6);
 
 		// cartas2_Imprimir_7
-		const cartas2_Imprimir_7 = this.add.image(459, 221, "cartas2_Imprimir", 1);
+		const cartas2_Imprimir_7 = this.add.image(459, 203, "cartas2_Imprimir", 1);
 		cartas2_Imprimir_7.scaleX = 0.5;
 		cartas2_Imprimir_7.scaleY = 0.5;
 		backgroundAndText.add(cartas2_Imprimir_7);
 
 		// cartas2_Imprimir_8
-		const cartas2_Imprimir_8 = this.add.image(301, 221, "cartas2_Imprimir", 1);
+		const cartas2_Imprimir_8 = this.add.image(301, 203, "cartas2_Imprimir", 1);
 		cartas2_Imprimir_8.scaleX = 0.5;
 		cartas2_Imprimir_8.scaleY = 0.5;
 		backgroundAndText.add(cartas2_Imprimir_8);
 
 		// cartas2_Imprimir1
-		const cartas2_Imprimir1 = this.add.image(142, 221, "cartas2_Imprimir", 1);
+		const cartas2_Imprimir1 = this.add.image(142, 203, "cartas2_Imprimir", 1);
 		cartas2_Imprimir1.scaleX = 0.5;
 		cartas2_Imprimir1.scaleY = 0.5;
 		backgroundAndText.add(cartas2_Imprimir1);
 
 		// ChooseCharacters_1
-		const chooseCharacters_1 = this.add.text(460, 97, "", {});
+		const chooseCharacters_1 = this.add.text(460, 71, "", {});
 		chooseCharacters_1.scaleX = 0.15;
 		chooseCharacters_1.scaleY = 0.15;
 		chooseCharacters_1.setOrigin(0.5, 0.5);
@@ -292,7 +292,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript_18);
 
 		// ChooseCharacters_2
-		const chooseCharacters_2 = this.add.text(460, 351, "", {});
+		const chooseCharacters_2 = this.add.text(460, 337, "", {});
 		chooseCharacters_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 154, 15), Phaser.Geom.Rectangle.Contains);
 		chooseCharacters_2.scaleX = 0.15;
 		chooseCharacters_2.scaleY = 0.15;
@@ -313,18 +313,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		characters.scaleX = 1.5;
 		characters.scaleY = 1.5;
 
-		// Level
-		const level = this.add.text(1244, 618, "", {});
-		level.name = "Level";
-		level.scaleX = 0.2;
-		level.scaleY = 0.2;
-		level.setOrigin(1, 0.5);
-		level.text = "Level: 0";
-		level.setStyle({ "align": "right", "fontFamily": "Minecraft", "fontSize": "180px" });
-		characters.add(level);
-
 		// Username
-		const username = this.add.text(1207, 56, "", {});
+		const username = this.add.text(1192, 58, "", {});
 		username.name = "Username";
 		username.scaleX = 0.2;
 		username.scaleY = 0.2;
@@ -336,31 +326,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_17
 		const handleChooseMechanism_17 = new HandleChooseMechanism(username);
 
-		// character_id_2
-		const character_id_2 = this.add.image(619, 241, "cartas2_Imprimir", 0);
-		character_id_2.name = "character_id_2";
-		character_id_2.scaleX = 0.5;
-		character_id_2.scaleY = 0.5;
-		character_id_2.visible = false;
-		characters.add(character_id_2);
-
-		// glowFx_12
-		character_id_2.preFX.addGlow(16777215, 4, 0, false);
-
-		// handleChooseMechanism_9
-		const handleChooseMechanism_9 = new HandleChooseMechanism(character_id_2);
-
-		// onPointerDownScript_11
-		const onPointerDownScript_11 = new OnPointerDownScript(character_id_2);
-
-		// pushActionScript_11
-		new PushActionScript(onPointerDownScript_11);
-
-		// highlights_9
-		const highlights_9 = new Highlights(character_id_2);
-
 		// character_id_0
-		const character_id_0 = this.add.image(142, 241, "cartas1_Imprimir", 8);
+		const character_id_0 = this.add.image(142, 248, "cartas1_Imprimir", 8);
 		character_id_0.name = "character_id_0";
 		character_id_0.scaleX = 0.5;
 		character_id_0.scaleY = 0.5;
@@ -382,31 +349,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// highlights_8
 		const highlights_8 = new Highlights(character_id_0);
 
-		// character_id_5
-		const character_id_5 = this.add.image(142, 492, "cartas1_Imprimir", 7);
-		character_id_5.name = "character_id_5";
-		character_id_5.scaleX = 0.5;
-		character_id_5.scaleY = 0.5;
-		character_id_5.visible = false;
-		characters.add(character_id_5);
-
-		// glowFx_10
-		character_id_5.preFX.addGlow(16777215, 4, 0, false);
-
-		// handleChooseMechanism_7
-		const handleChooseMechanism_7 = new HandleChooseMechanism(character_id_5);
-
-		// onPointerDownScript_9
-		const onPointerDownScript_9 = new OnPointerDownScript(character_id_5);
-
-		// pushActionScript_9
-		new PushActionScript(onPointerDownScript_9);
-
-		// highlights_7
-		const highlights_7 = new Highlights(character_id_5);
-
 		// character_id_1
-		const character_id_1 = this.add.image(301, 241, "cartas1_Imprimir", 6);
+		const character_id_1 = this.add.image(301, 248, "cartas1_Imprimir", 6);
 		character_id_1.name = "character_id_1";
 		character_id_1.scaleX = 0.5;
 		character_id_1.scaleY = 0.5;
@@ -428,8 +372,54 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// highlights_6
 		const highlights_6 = new Highlights(character_id_1);
 
+		// character_id_2
+		const character_id_2 = this.add.image(619, 248, "cartas2_Imprimir", 0);
+		character_id_2.name = "character_id_2";
+		character_id_2.scaleX = 0.5;
+		character_id_2.scaleY = 0.5;
+		character_id_2.visible = false;
+		characters.add(character_id_2);
+
+		// glowFx_12
+		character_id_2.preFX.addGlow(16777215, 4, 0, false);
+
+		// handleChooseMechanism_9
+		const handleChooseMechanism_9 = new HandleChooseMechanism(character_id_2);
+
+		// onPointerDownScript_11
+		const onPointerDownScript_11 = new OnPointerDownScript(character_id_2);
+
+		// pushActionScript_11
+		new PushActionScript(onPointerDownScript_11);
+
+		// highlights_9
+		const highlights_9 = new Highlights(character_id_2);
+
+		// character_id_3
+		const character_id_3 = this.add.image(776, 248, "cartas1_Imprimir", 0);
+		character_id_3.name = "character_id_3";
+		character_id_3.scaleX = 0.5;
+		character_id_3.scaleY = 0.5;
+		character_id_3.visible = false;
+		characters.add(character_id_3);
+
+		// glowFx_3
+		character_id_3.preFX.addGlow(16777215, 4, 0, false);
+
+		// handleChooseMechanism
+		const handleChooseMechanism = new HandleChooseMechanism(character_id_3);
+
+		// onPointerDownScript_2
+		const onPointerDownScript_2 = new OnPointerDownScript(character_id_3);
+
+		// pushActionScript
+		new PushActionScript(onPointerDownScript_2);
+
+		// highlights
+		const highlights = new Highlights(character_id_3);
+
 		// character_id_4
-		const character_id_4 = this.add.image(459, 241, "cartas1_Imprimir", 5);
+		const character_id_4 = this.add.image(459, 248, "cartas1_Imprimir", 5);
 		character_id_4.name = "character_id_4";
 		character_id_4.scaleX = 0.5;
 		character_id_4.scaleY = 0.5;
@@ -451,31 +441,54 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// highlights_5
 		const highlights_5 = new Highlights(character_id_4);
 
-		// character_id_9
-		const character_id_9 = this.add.image(619, 492, "cartas1_Imprimir", 4);
-		character_id_9.name = "character_id_9";
-		character_id_9.scaleX = 0.5;
-		character_id_9.scaleY = 0.5;
-		character_id_9.visible = false;
-		characters.add(character_id_9);
+		// character_id_5
+		const character_id_5 = this.add.image(142, 517, "cartas1_Imprimir", 7);
+		character_id_5.name = "character_id_5";
+		character_id_5.scaleX = 0.5;
+		character_id_5.scaleY = 0.5;
+		character_id_5.visible = false;
+		characters.add(character_id_5);
 
-		// glowFx_7
-		character_id_9.preFX.addGlow(16777215, 4, 0, false);
+		// glowFx_10
+		character_id_5.preFX.addGlow(16777215, 4, 0, false);
 
-		// handleChooseMechanism_4
-		const handleChooseMechanism_4 = new HandleChooseMechanism(character_id_9);
+		// handleChooseMechanism_7
+		const handleChooseMechanism_7 = new HandleChooseMechanism(character_id_5);
 
-		// onPointerDownScript_6
-		const onPointerDownScript_6 = new OnPointerDownScript(character_id_9);
+		// onPointerDownScript_9
+		const onPointerDownScript_9 = new OnPointerDownScript(character_id_5);
 
-		// pushActionScript_6
-		new PushActionScript(onPointerDownScript_6);
+		// pushActionScript_9
+		new PushActionScript(onPointerDownScript_9);
 
-		// highlights_4
-		const highlights_4 = new Highlights(character_id_9);
+		// highlights_7
+		const highlights_7 = new Highlights(character_id_5);
+
+		// character_id_6
+		const character_id_6 = this.add.image(777, 517, "cartas1_Imprimir", 1);
+		character_id_6.name = "character_id_6";
+		character_id_6.scaleX = 0.5;
+		character_id_6.scaleY = 0.5;
+		character_id_6.visible = false;
+		characters.add(character_id_6);
+
+		// glowFx_4
+		character_id_6.preFX.addGlow(16777215, 4, 0, false);
+
+		// handleChooseMechanism_1
+		const handleChooseMechanism_1 = new HandleChooseMechanism(character_id_6);
+
+		// onPointerDownScript_3
+		const onPointerDownScript_3 = new OnPointerDownScript(character_id_6);
+
+		// pushActionScript_3
+		new PushActionScript(onPointerDownScript_3);
+
+		// highlights_1
+		const highlights_1 = new Highlights(character_id_6);
 
 		// character_id_7
-		const character_id_7 = this.add.image(301, 492, "cartas1_Imprimir", 3);
+		const character_id_7 = this.add.image(301, 517, "cartas1_Imprimir", 3);
 		character_id_7.name = "character_id_7";
 		character_id_7.scaleX = 0.5;
 		character_id_7.scaleY = 0.5;
@@ -498,7 +511,7 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const highlights_3 = new Highlights(character_id_7);
 
 		// character_id_8
-		const character_id_8 = this.add.image(459, 492, "cartas1_Imprimir", 2);
+		const character_id_8 = this.add.image(459, 517, "cartas1_Imprimir", 2);
 		character_id_8.name = "character_id_8";
 		character_id_8.scaleX = 0.5;
 		character_id_8.scaleY = 0.5;
@@ -520,82 +533,64 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// highlights_2
 		const highlights_2 = new Highlights(character_id_8);
 
-		// character_id_6
-		const character_id_6 = this.add.image(777, 492, "cartas1_Imprimir", 1);
-		character_id_6.name = "character_id_6";
-		character_id_6.scaleX = 0.5;
-		character_id_6.scaleY = 0.5;
-		character_id_6.visible = false;
-		characters.add(character_id_6);
+		// character_id_9
+		const character_id_9 = this.add.image(619, 517, "cartas1_Imprimir", 4);
+		character_id_9.name = "character_id_9";
+		character_id_9.scaleX = 0.5;
+		character_id_9.scaleY = 0.5;
+		character_id_9.visible = false;
+		characters.add(character_id_9);
 
-		// glowFx_4
-		character_id_6.preFX.addGlow(16777215, 4, 0, false);
+		// glowFx_7
+		character_id_9.preFX.addGlow(16777215, 4, 0, false);
 
-		// handleChooseMechanism_1
-		const handleChooseMechanism_1 = new HandleChooseMechanism(character_id_6);
+		// handleChooseMechanism_4
+		const handleChooseMechanism_4 = new HandleChooseMechanism(character_id_9);
 
-		// onPointerDownScript_3
-		const onPointerDownScript_3 = new OnPointerDownScript(character_id_6);
+		// onPointerDownScript_6
+		const onPointerDownScript_6 = new OnPointerDownScript(character_id_9);
 
-		// pushActionScript_3
-		new PushActionScript(onPointerDownScript_3);
+		// pushActionScript_6
+		new PushActionScript(onPointerDownScript_6);
 
-		// highlights_1
-		const highlights_1 = new Highlights(character_id_6);
-
-		// character_id_3
-		const character_id_3 = this.add.image(776, 241, "cartas1_Imprimir", 0);
-		character_id_3.name = "character_id_3";
-		character_id_3.scaleX = 0.5;
-		character_id_3.scaleY = 0.5;
-		character_id_3.visible = false;
-		characters.add(character_id_3);
-
-		// glowFx_3
-		character_id_3.preFX.addGlow(16777215, 4, 0, false);
-
-		// handleChooseMechanism
-		const handleChooseMechanism = new HandleChooseMechanism(character_id_3);
-
-		// onPointerDownScript_2
-		const onPointerDownScript_2 = new OnPointerDownScript(character_id_3);
-
-		// pushActionScript
-		new PushActionScript(onPointerDownScript_2);
-
-		// highlights
-		const highlights = new Highlights(character_id_3);
+		// highlights_4
+		const highlights_4 = new Highlights(character_id_9);
 
 		// XpBar
-		const xpBar = this.add.container(0, 12);
+		const xpBar = this.add.container(0, 79);
 		xpBar.name = "XpBar";
 		xpBar.scaleX = 1.5;
 		xpBar.scaleY = 1.5;
 
 		// spritesheet10
-		const spritesheet10 = this.add.image(1120, 649, "spritesheet", 10);
+		const spritesheet10 = this.add.image(1119, 48, "spritesheet", 10);
 		spritesheet10.scaleX = 4.9;
 		spritesheet10.scaleY = 4.9;
 		xpBar.add(spritesheet10);
 
 		// XpTotal
-		const xpTotal = this.add.text(1120, 649, "", {});
-		xpTotal.scaleX = 0.18;
-		xpTotal.scaleY = 0.18;
+		const xpTotal = this.add.text(1119, 50, "", {});
+		xpTotal.setInteractive(new Phaser.Geom.Rectangle(-310, -13, 1196.1106329307904, 167.86389713934952), Phaser.Geom.Rectangle.Contains);
+		xpTotal.scaleX = 0.2;
+		xpTotal.scaleY = 0.2;
 		xpTotal.setOrigin(0.5, 0.5);
 		xpTotal.text = "TotalXP";
-		xpTotal.setStyle({ "backgroundColor": "", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "150px", "stroke": "#000000ff", "strokeThickness":1});
+		xpTotal.setStyle({ "backgroundColor": "", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "150px", "stroke": "#000000ff" });
 		xpBar.add(xpTotal);
 
+		// highlights_15
+		const highlights_15 = new Highlights(xpTotal);
+
 		// Button Play a Match
-		const button_Play_a_Match = this.add.container(-5, 12);
+		const button_Play_a_Match = this.add.container(48, 12);
 		button_Play_a_Match.scaleX = 1.5;
 		button_Play_a_Match.scaleY = 1.5;
 
 		// highlight
 		const highlight = this.add.rectangle(180, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleY = 0.21;
+		highlight.scaleX = 1.35;
+		highlight.scaleY = 0.3;
 		highlight.isFilled = true;
 		highlight.fillColor = 0;
 		highlight.strokeColor = 4194559;
@@ -608,9 +603,9 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 		// PlayAMatch
 		const playAMatch = this.add.text(180, 48, "", {});
-		playAMatch.setInteractive(new Phaser.Geom.Rectangle(-89, 0, 797.2954750839499, 122.13546878499065), Phaser.Geom.Rectangle.Contains);
-		playAMatch.scaleX = 0.18;
-		playAMatch.scaleY = 0.18;
+		playAMatch.setInteractive(new Phaser.Geom.Rectangle(1, 0, 626.943848443308, 122.13546878499065), Phaser.Geom.Rectangle.Contains);
+		playAMatch.scaleX = 0.23;
+		playAMatch.scaleY = 0.23;
 		playAMatch.setOrigin(0.5, 0.5);
 		playAMatch.text = "Play a Match";
 		playAMatch.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
@@ -626,15 +621,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript);
 
 		// Characters and Cards
-		const characters_and_Cards = this.add.container(-84, 12);
+		const characters_and_Cards = this.add.container(65, 12);
 		characters_and_Cards.scaleX = 1.5;
 		characters_and_Cards.scaleY = 1.5;
 
 		// highlight_2
 		const highlight_2 = this.add.rectangle(422, 48, 128, 128);
 		highlight_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_2.scaleX = 1.7;
-		highlight_2.scaleY = 0.21;
+		highlight_2.scaleX = 2.3;
+		highlight_2.scaleY = 0.3;
 		highlight_2.isFilled = true;
 		highlight_2.fillColor = 0;
 		highlight_2.strokeColor = 4194559;
@@ -648,8 +643,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// Characters And Cards
 		const characters_And_Cards = this.add.text(422, 48, "", {});
 		characters_And_Cards.setInteractive(new Phaser.Geom.Rectangle(0, 0, 1101.472090680232, 112.19250373942205), Phaser.Geom.Rectangle.Contains);
-		characters_And_Cards.scaleX = 0.18;
-		characters_And_Cards.scaleY = 0.18;
+		characters_And_Cards.scaleX = 0.23;
+		characters_And_Cards.scaleY = 0.23;
 		characters_And_Cards.setOrigin(0.5, 0.5);
 		characters_And_Cards.text = "Characters and Cards";
 		characters_And_Cards.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
@@ -665,15 +660,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript_20);
 
 		// Button Go Back To Home Page
-		const button_Go_Back_To_Home_Page = this.add.container(-54, 12);
+		const button_Go_Back_To_Home_Page = this.add.container(-47, 12);
 		button_Go_Back_To_Home_Page.scaleX = 1.5;
 		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// highlight_4
 		const highlight_4 = this.add.rectangle(118, 48, 128, 128);
 		highlight_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_4.scaleX = 0.21;
-		highlight_4.scaleY = 0.21;
+		highlight_4.scaleX = 0.3;
+		highlight_4.scaleY = 0.3;
 		highlight_4.isFilled = true;
 		highlight_4.fillColor = 0;
 		highlight_4.strokeColor = 4194559;
@@ -687,8 +682,8 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// ButtonGoToHomePage
 		const buttonGoToHomePage = this.add.text(118, 48, "", {});
 		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(5, 3, 140.06943109917512, 113.226466611809), Phaser.Geom.Rectangle.Contains);
-		buttonGoToHomePage.scaleX = 0.18;
-		buttonGoToHomePage.scaleY = 0.18;
+		buttonGoToHomePage.scaleX = 0.25;
+		buttonGoToHomePage.scaleY = 0.25;
 		buttonGoToHomePage.setOrigin(0.5, 0.5);
 		buttonGoToHomePage.text = "🏠";
 		buttonGoToHomePage.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
@@ -704,15 +699,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		const goToScene_1 = new GoToScene(buttonGoToHomePage);
 
 		// Button Profile
-		const button_Profile = this.add.container(-138, 12);
+		const button_Profile = this.add.container(0, 12);
 		button_Profile.scaleX = 1.5;
 		button_Profile.scaleY = 1.5;
 
 		// highlight_3
-		const highlight_3 = this.add.rectangle(1324, 48, 128, 128);
+		const highlight_3 = this.add.rectangle(1220, 48, 128, 128);
 		highlight_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_3.scaleX = 0.21;
-		highlight_3.scaleY = 0.21;
+		highlight_3.scaleX = 0.3;
+		highlight_3.scaleY = 0.3;
 		highlight_3.isFilled = true;
 		highlight_3.fillColor = 0;
 		highlight_3.strokeColor = 4194559;
@@ -723,24 +718,21 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// glowFx_16
 		highlight_3.postFX.addGlow(4194559, 3, 3, false);
 
-		// Profile
-		const profile = this.add.text(1325, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 351.15663686934727, 134.83406914622725), Phaser.Geom.Rectangle.Contains);
-		profile.scaleX = 0.18;
-		profile.scaleY = 0.18;
-		profile.setOrigin(0.5, 0.5);
-		profile.text = "👤";
-		profile.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		button_Profile.add(profile);
+		// profileButton
+		const profileButton = this.add.image(1220, 48, "profileButton");
+		profileButton.setInteractive(new Phaser.Geom.Rectangle(0, 0, 512, 512), Phaser.Geom.Rectangle.Contains);
+		profileButton.scaleX = 0.05;
+		profileButton.scaleY = 0.05;
+		button_Profile.add(profileButton);
+
+		// goToScene
+		const goToScene = new GoToScene(profileButton);
 
 		// onPointerDownScript_1
-		const onPointerDownScript_1 = new OnPointerDownScript(profile);
+		const onPointerDownScript_1 = new OnPointerDownScript(profileButton);
 
 		// pushActionScript_1
 		new PushActionScript(onPointerDownScript_1);
-
-		// goToScene
-		const goToScene = new GoToScene(profile);
 
 		// LevelUpScreen
 		const levelUpScreen = this.add.container(0, 0);
@@ -846,35 +838,35 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		handleChooseMechanism_13.type = "Slot";
 
 		// highlights_13 (prefab fields)
-		highlights_13.type = "Slot";
+		highlights_13.type = "LobbySlots";
 
 		// handleChooseMechanism_12 (prefab fields)
 		handleChooseMechanism_12.SlotID = 1;
 		handleChooseMechanism_12.type = "Slot";
 
 		// highlights_14 (prefab fields)
-		highlights_14.type = "Slot";
+		highlights_14.type = "LobbySlots";
 
 		// handleChooseMechanism_11 (prefab fields)
 		handleChooseMechanism_11.SlotID = 2;
 		handleChooseMechanism_11.type = "Slot";
 
 		// highlights_12 (prefab fields)
-		highlights_12.type = "Slot";
+		highlights_12.type = "LobbySlots";
 
 		// handleChooseMechanism_10 (prefab fields)
 		handleChooseMechanism_10.SlotID = 3;
 		handleChooseMechanism_10.type = "Slot";
 
 		// highlights_10 (prefab fields)
-		highlights_10.type = "Slot";
+		highlights_10.type = "LobbySlots";
 
 		// handleChooseMechanism_14 (prefab fields)
 		handleChooseMechanism_14.SlotID = 5;
 		handleChooseMechanism_14.type = "Slot";
 
 		// highlights_11 (prefab fields)
-		highlights_11.type = "Slot";
+		highlights_11.type = "LobbySlots";
 
 		// handleChooseMechanism_16 (prefab fields)
 		handleChooseMechanism_16.type = "charSelct";
@@ -882,75 +874,88 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		// handleChooseMechanism_17 (prefab fields)
 		handleChooseMechanism_17.type = "charSelct";
 
-		// handleChooseMechanism_9 (prefab fields)
-		handleChooseMechanism_9.CharacterID = 2;
-		handleChooseMechanism_9.type = "Character";
-
-		// highlights_9 (prefab fields)
-		highlights_9.type = "ChooseChar";
-
 		// handleChooseMechanism_8 (prefab fields)
 		handleChooseMechanism_8.CharacterID = 0;
 		handleChooseMechanism_8.type = "Character";
 
 		// highlights_8 (prefab fields)
-		highlights_8.type = "ChooseChar";
-
-		// handleChooseMechanism_7 (prefab fields)
-		handleChooseMechanism_7.CharacterID = 5;
-		handleChooseMechanism_7.type = "Character";
-
-		// highlights_7 (prefab fields)
-		highlights_7.type = "ChooseChar";
+		highlights_8.type = "LobbyChar";
+		highlights_8.id = 0;
 
 		// handleChooseMechanism_6 (prefab fields)
 		handleChooseMechanism_6.CharacterID = 1;
 		handleChooseMechanism_6.type = "Character";
 
 		// highlights_6 (prefab fields)
-		highlights_6.type = "ChooseChar";
+		highlights_6.type = "LobbyChar";
+		highlights_6.id = 1;
 
-		// handleChooseMechanism_ (prefab fields)
-		handleChooseMechanism_.CharacterID = 4;
-		handleChooseMechanism_.type = "Character";
+		// handleChooseMechanism_9 (prefab fields)
+		handleChooseMechanism_9.CharacterID = 2;
+		handleChooseMechanism_9.type = "Character";
 
-		// highlights_5 (prefab fields)
-		highlights_5.type = "ChooseChar";
-
-		// handleChooseMechanism_4 (prefab fields)
-		handleChooseMechanism_4.CharacterID = 9;
-		handleChooseMechanism_4.type = "Character";
-
-		// highlights_4 (prefab fields)
-		highlights_4.type = "ChooseChar";
-
-		// handleChooseMechanism_3 (prefab fields)
-		handleChooseMechanism_3.CharacterID = 7;
-		handleChooseMechanism_3.type = "Character";
-
-		// highlights_3 (prefab fields)
-		highlights_3.type = "ChooseChar";
-
-		// handleChooseMechanism_2 (prefab fields)
-		handleChooseMechanism_2.CharacterID = 8;
-		handleChooseMechanism_2.type = "Character";
-
-		// highlights_2 (prefab fields)
-		highlights_2.type = "ChooseChar";
-
-		// handleChooseMechanism_1 (prefab fields)
-		handleChooseMechanism_1.CharacterID = 6;
-		handleChooseMechanism_1.type = "Character";
-
-		// highlights_1 (prefab fields)
-		highlights_1.type = "ChooseChar";
+		// highlights_9 (prefab fields)
+		highlights_9.type = "LobbyChar";
+		highlights_9.id = 2;
 
 		// handleChooseMechanism (prefab fields)
 		handleChooseMechanism.CharacterID = 3;
 		handleChooseMechanism.type = "Character";
 
 		// highlights (prefab fields)
-		highlights.type = "ChooseChar";
+		highlights.type = "LobbyChar";
+		highlights.id = 3;
+
+		// handleChooseMechanism_ (prefab fields)
+		handleChooseMechanism_.CharacterID = 4;
+		handleChooseMechanism_.type = "Character";
+
+		// highlights_5 (prefab fields)
+		highlights_5.type = "LobbyChar";
+		highlights_5.id = 4;
+
+		// handleChooseMechanism_7 (prefab fields)
+		handleChooseMechanism_7.CharacterID = 5;
+		handleChooseMechanism_7.type = "Character";
+
+		// highlights_7 (prefab fields)
+		highlights_7.type = "LobbyChar";
+		highlights_7.id = 5;
+
+		// handleChooseMechanism_1 (prefab fields)
+		handleChooseMechanism_1.CharacterID = 6;
+		handleChooseMechanism_1.type = "Character";
+
+		// highlights_1 (prefab fields)
+		highlights_1.type = "LobbyChar";
+		highlights_1.id = 6;
+
+		// handleChooseMechanism_3 (prefab fields)
+		handleChooseMechanism_3.CharacterID = 7;
+		handleChooseMechanism_3.type = "Character";
+
+		// highlights_3 (prefab fields)
+		highlights_3.type = "LobbyChar";
+		highlights_3.id = 7;
+
+		// handleChooseMechanism_2 (prefab fields)
+		handleChooseMechanism_2.CharacterID = 8;
+		handleChooseMechanism_2.type = "Character";
+
+		// highlights_2 (prefab fields)
+		highlights_2.type = "LobbyChar";
+		highlights_2.id = 8;
+
+		// handleChooseMechanism_4 (prefab fields)
+		handleChooseMechanism_4.CharacterID = 9;
+		handleChooseMechanism_4.type = "Character";
+
+		// highlights_4 (prefab fields)
+		highlights_4.type = "LobbyChar";
+		highlights_4.id = 9;
+
+		// highlights_15 (prefab fields)
+		highlights_15.type = "LobbyLevelXp";
 
 		// goToScene_3 (prefab fields)
 		goToScene_3.sceneChosen = "ChooseCharacters";
@@ -993,16 +998,16 @@ class ChooseCharactersMenu extends Phaser.Scene {
 		this.slot_5 = slot_5;
 		this.slots = slots;
 		this.username = username;
-		this.character_id_2 = character_id_2;
 		this.character_id_0 = character_id_0;
-		this.character_id_5 = character_id_5;
 		this.character_id_1 = character_id_1;
+		this.character_id_2 = character_id_2;
+		this.character_id_3 = character_id_3;
 		this.character_id_4 = character_id_4;
-		this.character_id_9 = character_id_9;
+		this.character_id_5 = character_id_5;
+		this.character_id_6 = character_id_6;
 		this.character_id_7 = character_id_7;
 		this.character_id_8 = character_id_8;
-		this.character_id_6 = character_id_6;
-		this.character_id_3 = character_id_3;
+		this.character_id_9 = character_id_9;
 		this.levelUpScreen = levelUpScreen;
 
 		this.events.emit("scene-awake");
@@ -1025,25 +1030,25 @@ class ChooseCharactersMenu extends Phaser.Scene {
 	/** @type {Phaser.GameObjects.Text} */
 	username;
 	/** @type {Phaser.GameObjects.Image} */
-	character_id_2;
-	/** @type {Phaser.GameObjects.Image} */
 	character_id_0;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_5;
 	/** @type {Phaser.GameObjects.Image} */
 	character_id_1;
 	/** @type {Phaser.GameObjects.Image} */
+	character_id_2;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_3;
+	/** @type {Phaser.GameObjects.Image} */
 	character_id_4;
 	/** @type {Phaser.GameObjects.Image} */
-	character_id_9;
+	character_id_5;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_6;
 	/** @type {Phaser.GameObjects.Image} */
 	character_id_7;
 	/** @type {Phaser.GameObjects.Image} */
 	character_id_8;
 	/** @type {Phaser.GameObjects.Image} */
-	character_id_6;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_3;
+	character_id_9;
 	/** @type {Phaser.GameObjects.Container} */
 	levelUpScreen;
 

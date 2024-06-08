@@ -35,10 +35,10 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
-                    "x": 640,
-                    "y": 647,
+                    "x": 638,
+                    "y": 660,
                     "scaleX": 0.89,
-                    "scaleY": 0.21,
+                    "scaleY": 0.3,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -73,7 +73,7 @@
                     "useGameObjectName": true,
                     "scope": "CLASS",
                     "x": 640,
-                    "y": 647,
+                    "y": 660,
                     "scaleX": 0.15,
                     "scaleY": 0.15,
                     "originX": 0.5,
@@ -98,14 +98,14 @@
                     "label": "GoToMatch",
                     "useGameObjectName": true,
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -90,
+                    "hitArea.x": -20,
                     "hitArea.y": -7,
-                    "hitArea.width": 569.8876373010377,
+                    "hitArea.width": 402.4184635613999,
                     "hitArea.height": 131.42520332043517,
                     "x": 640,
-                    "y": 647,
-                    "scaleX": 0.2,
-                    "scaleY": 0.2,
+                    "y": 660,
+                    "scaleX": 0.23,
+                    "scaleY": 0.23,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Ready?",
@@ -165,14 +165,16 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 150,
-                    "hitArea.height": 150,
+                    "hitArea.x": -10,
+                    "hitArea.y": -11,
+                    "hitArea.width": 173.38076714293672,
+                    "hitArea.height": 172.09921126705498,
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
                     "x": 967,
-                    "y": 280,
+                    "y": 297,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -212,7 +214,7 @@
                                 "type"
                             ],
                             "label": "highlights_13",
-                            "type": "Slot"
+                            "type": "LobbySlots"
                         }
                     ]
                 },
@@ -223,14 +225,16 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 150,
-                    "hitArea.height": 150,
+                    "hitArea.x": -6,
+                    "hitArea.y": -9,
+                    "hitArea.width": 168.3486228584178,
+                    "hitArea.height": 168.19886025995473,
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
                     "x": 1127,
-                    "y": 200,
+                    "y": 217,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -270,7 +274,7 @@
                                 "type"
                             ],
                             "label": "highlights_14",
-                            "type": "Slot"
+                            "type": "LobbySlots"
                         }
                     ]
                 },
@@ -281,14 +285,16 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 150,
-                    "hitArea.height": 150,
+                    "hitArea.x": -13,
+                    "hitArea.y": -11,
+                    "hitArea.width": 176.55683443309778,
+                    "hitArea.height": 175.20777384883507,
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
                     "x": 1127,
-                    "y": 360,
+                    "y": 377,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -328,7 +334,7 @@
                                 "type"
                             ],
                             "label": "highlights_12",
-                            "type": "Slot"
+                            "type": "LobbySlots"
                         }
                     ]
                 },
@@ -339,14 +345,16 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 150,
-                    "hitArea.height": 150,
+                    "hitArea.x": -19,
+                    "hitArea.y": -20,
+                    "hitArea.width": 188.87782037941005,
+                    "hitArea.height": 185.77302709086553,
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
                     "x": 1127,
-                    "y": 520,
+                    "y": 537,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -386,7 +394,7 @@
                                 "type"
                             ],
                             "label": "highlights_10",
-                            "type": "Slot"
+                            "type": "LobbySlots"
                         }
                     ]
                 },
@@ -397,14 +405,16 @@
                     "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 150,
-                    "hitArea.height": 150,
+                    "hitArea.x": -9,
+                    "hitArea.y": -10,
+                    "hitArea.width": 174.216231934174,
+                    "hitArea.height": 174.87675448717522,
                     "texture": {
                         "key": "base",
                         "frame": 0
                     },
                     "x": 969,
-                    "y": 440,
+                    "y": 457,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "list": [
@@ -444,7 +454,7 @@
                                 "type"
                             ],
                             "label": "highlights_11",
-                            "type": "Slot"
+                            "type": "LobbySlots"
                         }
                     ]
                 },
@@ -454,7 +464,7 @@
                     "label": "MessageServer",
                     "useGameObjectName": true,
                     "x": 1050,
-                    "y": 129,
+                    "y": 611,
                     "scaleX": 0.15,
                     "scaleY": 0.15,
                     "originX": 0.5,
@@ -480,7 +490,7 @@
             "type": "Container",
             "id": "73601ffe-00b7-4774-8455-e7ec80c8dad8",
             "label": "BackgroundAndText",
-            "y": 29,
+            "y": 67,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -558,7 +568,7 @@
                         "frame": 1
                     },
                     "x": 776,
-                    "y": 221,
+                    "y": 203,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -571,7 +581,7 @@
                         "frame": 1
                     },
                     "x": 619,
-                    "y": 221,
+                    "y": 203,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -584,7 +594,7 @@
                         "frame": 1
                     },
                     "x": 459,
-                    "y": 221,
+                    "y": 203,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -597,7 +607,7 @@
                         "frame": 1
                     },
                     "x": 301,
-                    "y": 221,
+                    "y": 203,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -610,7 +620,7 @@
                         "frame": 1
                     },
                     "x": 142,
-                    "y": 221,
+                    "y": 203,
                     "scaleX": 0.5,
                     "scaleY": 0.5
                 },
@@ -619,7 +629,7 @@
                     "id": "6befe9d2-45a0-4511-9f16-9fb9ac5d023f",
                     "label": "ChooseCharacters_1",
                     "x": 460,
-                    "y": 97,
+                    "y": 71,
                     "scaleX": 0.15,
                     "scaleY": 0.15,
                     "originX": 0.5,
@@ -650,7 +660,7 @@
                     "hitArea.width": 154,
                     "hitArea.height": 15,
                     "x": 460,
-                    "y": 351,
+                    "y": 337,
                     "scaleX": 0.15,
                     "scaleY": 0.15,
                     "originX": 0.5,
@@ -685,28 +695,12 @@
             "list": [
                 {
                     "type": "Text",
-                    "id": "fde5b887-bd23-4359-8046-09a7ec065d9e",
-                    "label": "Level",
-                    "useGameObjectName": true,
-                    "x": 1244,
-                    "y": 618,
-                    "scaleX": 0.2,
-                    "scaleY": 0.2,
-                    "originX": 1,
-                    "originY": 0.5,
-                    "text": "Level: 0",
-                    "align": "right",
-                    "fontFamily": "Minecraft",
-                    "fontSize": "180px"
-                },
-                {
-                    "type": "Text",
                     "id": "1fab1dad-b72d-49c7-bace-0bcfa3915fe1",
                     "label": "Username",
                     "useGameObjectName": true,
                     "scope": "CLASS",
-                    "x": 1207,
-                    "y": 56,
+                    "x": 1192,
+                    "y": 58,
                     "scaleX": 0.2,
                     "scaleY": 0.2,
                     "originX": 1,
@@ -729,62 +723,6 @@
                 },
                 {
                     "type": "Image",
-                    "id": "78a8ecbf-f1e1-4c50-8541-832639241f71",
-                    "label": "character_id_2",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 0
-                    },
-                    "x": 619,
-                    "y": 241,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "3102b741-9591-4708-b4e3-143534d58187",
-                            "label": "glowFx_12",
-                            "preFX": true
-                        },
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "d9ba1064-a566-458a-9b17-f1524161999e",
-                            "unlock": [
-                                "CharacterID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_9",
-                            "CharacterID": 2,
-                            "type": "Character"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "61417b16-5562-441d-8313-0219f89a9030",
-                            "label": "onPointerDownScript_11",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "d338e007-472c-4034-9bf4-50a7fbdf989f",
-                                    "label": "pushActionScript_11"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "c0e62a13-d822-44f4-80e3-c0d11e2763a9",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights_9",
-                            "type": "ChooseChar"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
                     "id": "879e2ce5-6053-40c7-8a4c-bc158408069d",
                     "label": "character_id_0",
                     "useGameObjectName": true,
@@ -794,7 +732,7 @@
                         "frame": 8
                     },
                     "x": 142,
-                    "y": 241,
+                    "y": 248,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "visible": false,
@@ -830,68 +768,13 @@
                         },
                         {
                             "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "9c43a2a9-90be-4fa0-83c0-36a18eb1f3ff",
+                            "id": 0,
                             "unlock": [
-                                "type"
+                                "type",
+                                "id"
                             ],
                             "label": "highlights_8",
-                            "type": "ChooseChar"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "9983436d-dc17-41fd-8db8-add6ea1716f1",
-                    "label": "character_id_5",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas1_Imprimir",
-                        "frame": 7
-                    },
-                    "x": 142,
-                    "y": 492,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "de873ff9-40ec-4024-8d58-eea8b6b88982",
-                            "label": "glowFx_10",
-                            "preFX": true
-                        },
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "fa5d84cb-c824-4d73-83c8-d72963af1662",
-                            "unlock": [
-                                "CharacterID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_7",
-                            "CharacterID": 5,
-                            "type": "Character"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "2a205e7d-aebc-4ef3-9373-5e89645cc8cd",
-                            "label": "onPointerDownScript_9",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "0a7d3f4b-6507-4920-927e-9a2512169c08",
-                                    "label": "pushActionScript_9"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "eb044a5d-e71b-43a0-b9b8-1017c000fa10",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights_7",
-                            "type": "ChooseChar"
+                            "type": "LobbyChar"
                         }
                     ]
                 },
@@ -906,7 +789,7 @@
                         "frame": 6
                     },
                     "x": 301,
-                    "y": 241,
+                    "y": 248,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "visible": false,
@@ -942,292 +825,70 @@
                         },
                         {
                             "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "cc766c46-0349-4bb2-8f2f-afaddaa88f4b",
+                            "id": 1,
                             "unlock": [
-                                "type"
+                                "type",
+                                "id"
                             ],
                             "label": "highlights_6",
-                            "type": "ChooseChar"
+                            "type": "LobbyChar"
                         }
                     ]
                 },
                 {
                     "type": "Image",
-                    "id": "2a3e633f-8451-4f87-a57b-cbe8fa8d37e1",
-                    "label": "character_id_4",
+                    "id": "78a8ecbf-f1e1-4c50-8541-832639241f71",
+                    "label": "character_id_2",
                     "useGameObjectName": true,
                     "scope": "CLASS",
                     "texture": {
-                        "key": "cartas1_Imprimir",
-                        "frame": 5
-                    },
-                    "x": 459,
-                    "y": 241,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "8191e41a-23d7-4e81-bd8d-6b5434340e30",
-                            "label": "glowFx_8",
-                            "preFX": true
-                        },
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "a1d54a6f-a86e-43d8-bffd-f7d46ce81cd8",
-                            "unlock": [
-                                "CharacterID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_",
-                            "CharacterID": 4,
-                            "type": "Character"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "f7ee985c-ad06-41b6-9cca-2fa428f5568a",
-                            "label": "onPointerDownScript_7",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "dd0a271f-0cf0-48a6-be6d-c470558e8286",
-                                    "label": "pushActionScript_7"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "0b56ba4d-90fb-4c42-8d15-70ee8706519f",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights_5",
-                            "type": "ChooseChar"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "592bcf65-bff2-41a5-8b36-dcee1942f5e0",
-                    "label": "character_id_9",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas1_Imprimir",
-                        "frame": 4
+                        "key": "cartas2_Imprimir",
+                        "frame": 0
                     },
                     "x": 619,
-                    "y": 492,
+                    "y": 248,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "visible": false,
                     "list": [
                         {
                             "type": "Glow",
-                            "id": "071eaee1-aca4-4f38-afbe-f0b80d6c1ae4",
-                            "label": "glowFx_7",
+                            "id": "3102b741-9591-4708-b4e3-143534d58187",
+                            "label": "glowFx_12",
                             "preFX": true
                         },
                         {
                             "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "0191ca3e-7f29-4ef9-b1e0-893d1185461b",
+                            "id": "d9ba1064-a566-458a-9b17-f1524161999e",
                             "unlock": [
                                 "CharacterID",
                                 "type"
                             ],
-                            "label": "handleChooseMechanism_4",
-                            "CharacterID": 9,
+                            "label": "handleChooseMechanism_9",
+                            "CharacterID": 2,
                             "type": "Character"
                         },
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "7b2525b3-5d54-4ca4-b120-5ac2ad9f751e",
-                            "label": "onPointerDownScript_6",
+                            "id": "61417b16-5562-441d-8313-0219f89a9030",
+                            "label": "onPointerDownScript_11",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "6f886410-209b-417a-8101-fa57834daa9e",
-                                    "label": "pushActionScript_6"
+                                    "id": "d338e007-472c-4034-9bf4-50a7fbdf989f",
+                                    "label": "pushActionScript_11"
                                 }
                             ]
                         },
                         {
                             "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "fb26279e-6b8d-4965-bb3a-e8d214b23c69",
+                            "id": 2,
                             "unlock": [
-                                "type"
+                                "type",
+                                "id"
                             ],
-                            "label": "highlights_4",
-                            "type": "ChooseChar"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "93246071-fe98-4f05-9b60-f982271fa128",
-                    "label": "character_id_7",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas1_Imprimir",
-                        "frame": 3
-                    },
-                    "x": 301,
-                    "y": 492,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "feab8602-be33-4e22-88bf-5ea477ac4e3f",
-                            "label": "glowFx_6",
-                            "preFX": true
-                        },
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "3da5e18e-e898-4ef7-9343-95702f6ceadf",
-                            "unlock": [
-                                "CharacterID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_3",
-                            "CharacterID": 7,
-                            "type": "Character"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "eba91da3-c0ee-4920-a34d-1c310ac9d52e",
-                            "label": "onPointerDownScript_5",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "ab183517-cac7-43b0-bf97-35740df9fdca",
-                                    "label": "pushActionScript_5"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "9d7dc107-8b76-4a3b-9d61-49f2c8d86655",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights_3",
-                            "type": "ChooseChar"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "9b600955-da86-411c-bb3a-71d8e6711dd6",
-                    "label": "character_id_8",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas1_Imprimir",
-                        "frame": 2
-                    },
-                    "x": 459,
-                    "y": 492,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "5866ec01-3edf-458e-9a77-5a2d082c4b45",
-                            "label": "glowFx_5",
-                            "preFX": true
-                        },
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "701766aa-2fee-4770-9fcb-e49d75bc3838",
-                            "unlock": [
-                                "CharacterID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_2",
-                            "CharacterID": 8,
-                            "type": "Character"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "a73a2abc-731f-47f7-926f-0c1dceb38d4e",
-                            "label": "onPointerDownScript_4",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "eb7e9eb2-9c18-4497-9f8e-94852f5b8cb2",
-                                    "label": "pushActionScript_4"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "ac2482dc-a07a-469a-b059-f76e7d49607e",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights_2",
-                            "type": "ChooseChar"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "348fb04f-3df2-4ba8-8360-d06b74d2ff3d",
-                    "label": "character_id_6",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas1_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 777,
-                    "y": 492,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "00760bcf-f580-404a-8ebd-a8ca73867b05",
-                            "label": "glowFx_4",
-                            "preFX": true
-                        },
-                        {
-                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
-                            "id": "6c33c6ae-eb82-4c35-96a4-4fa769389597",
-                            "unlock": [
-                                "CharacterID",
-                                "type"
-                            ],
-                            "label": "handleChooseMechanism_1",
-                            "CharacterID": 6,
-                            "type": "Character"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "5d2a9dd6-e618-494d-9052-fca4fac1029f",
-                            "label": "onPointerDownScript_3",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "9bf525e9-ed27-4e78-acf2-2487b3499f3c",
-                                    "label": "pushActionScript_3"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "c385a55d-a78a-4c46-8deb-800f9d262bef",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights_1",
-                            "type": "ChooseChar"
+                            "label": "highlights_9",
+                            "type": "LobbyChar"
                         }
                     ]
                 },
@@ -1242,7 +903,7 @@
                         "frame": 0
                     },
                     "x": 776,
-                    "y": 241,
+                    "y": 248,
                     "scaleX": 0.5,
                     "scaleY": 0.5,
                     "visible": false,
@@ -1278,12 +939,355 @@
                         },
                         {
                             "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "ca511477-0aba-4ac2-b468-bfcd9e1846f8",
+                            "id": 3,
                             "unlock": [
-                                "type"
+                                "type",
+                                "id"
                             ],
                             "label": "highlights",
-                            "type": "ChooseChar"
+                            "type": "LobbyChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "2a3e633f-8451-4f87-a57b-cbe8fa8d37e1",
+                    "label": "character_id_4",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas1_Imprimir",
+                        "frame": 5
+                    },
+                    "x": 459,
+                    "y": 248,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "8191e41a-23d7-4e81-bd8d-6b5434340e30",
+                            "label": "glowFx_8",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "a1d54a6f-a86e-43d8-bffd-f7d46ce81cd8",
+                            "unlock": [
+                                "CharacterID",
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_",
+                            "CharacterID": 4,
+                            "type": "Character"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "f7ee985c-ad06-41b6-9cca-2fa428f5568a",
+                            "label": "onPointerDownScript_7",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "dd0a271f-0cf0-48a6-be6d-c470558e8286",
+                                    "label": "pushActionScript_7"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": 4,
+                            "unlock": [
+                                "type",
+                                "id"
+                            ],
+                            "label": "highlights_5",
+                            "type": "LobbyChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "9983436d-dc17-41fd-8db8-add6ea1716f1",
+                    "label": "character_id_5",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas1_Imprimir",
+                        "frame": 7
+                    },
+                    "x": 142,
+                    "y": 517,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "de873ff9-40ec-4024-8d58-eea8b6b88982",
+                            "label": "glowFx_10",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "fa5d84cb-c824-4d73-83c8-d72963af1662",
+                            "unlock": [
+                                "CharacterID",
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_7",
+                            "CharacterID": 5,
+                            "type": "Character"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2a205e7d-aebc-4ef3-9373-5e89645cc8cd",
+                            "label": "onPointerDownScript_9",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "0a7d3f4b-6507-4920-927e-9a2512169c08",
+                                    "label": "pushActionScript_9"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": 5,
+                            "unlock": [
+                                "type",
+                                "id"
+                            ],
+                            "label": "highlights_7",
+                            "type": "LobbyChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "348fb04f-3df2-4ba8-8360-d06b74d2ff3d",
+                    "label": "character_id_6",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas1_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 777,
+                    "y": 517,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "00760bcf-f580-404a-8ebd-a8ca73867b05",
+                            "label": "glowFx_4",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "6c33c6ae-eb82-4c35-96a4-4fa769389597",
+                            "unlock": [
+                                "CharacterID",
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_1",
+                            "CharacterID": 6,
+                            "type": "Character"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "5d2a9dd6-e618-494d-9052-fca4fac1029f",
+                            "label": "onPointerDownScript_3",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "9bf525e9-ed27-4e78-acf2-2487b3499f3c",
+                                    "label": "pushActionScript_3"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": 6,
+                            "unlock": [
+                                "type",
+                                "id"
+                            ],
+                            "label": "highlights_1",
+                            "type": "LobbyChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "93246071-fe98-4f05-9b60-f982271fa128",
+                    "label": "character_id_7",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas1_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 301,
+                    "y": 517,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "feab8602-be33-4e22-88bf-5ea477ac4e3f",
+                            "label": "glowFx_6",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "3da5e18e-e898-4ef7-9343-95702f6ceadf",
+                            "unlock": [
+                                "CharacterID",
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_3",
+                            "CharacterID": 7,
+                            "type": "Character"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "eba91da3-c0ee-4920-a34d-1c310ac9d52e",
+                            "label": "onPointerDownScript_5",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "ab183517-cac7-43b0-bf97-35740df9fdca",
+                                    "label": "pushActionScript_5"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": 7,
+                            "unlock": [
+                                "type",
+                                "id"
+                            ],
+                            "label": "highlights_3",
+                            "type": "LobbyChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "9b600955-da86-411c-bb3a-71d8e6711dd6",
+                    "label": "character_id_8",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas1_Imprimir",
+                        "frame": 2
+                    },
+                    "x": 459,
+                    "y": 517,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "5866ec01-3edf-458e-9a77-5a2d082c4b45",
+                            "label": "glowFx_5",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "701766aa-2fee-4770-9fcb-e49d75bc3838",
+                            "unlock": [
+                                "CharacterID",
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_2",
+                            "CharacterID": 8,
+                            "type": "Character"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "a73a2abc-731f-47f7-926f-0c1dceb38d4e",
+                            "label": "onPointerDownScript_4",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "eb7e9eb2-9c18-4497-9f8e-94852f5b8cb2",
+                                    "label": "pushActionScript_4"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": 8,
+                            "unlock": [
+                                "type",
+                                "id"
+                            ],
+                            "label": "highlights_2",
+                            "type": "LobbyChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "592bcf65-bff2-41a5-8b36-dcee1942f5e0",
+                    "label": "character_id_9",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas1_Imprimir",
+                        "frame": 4
+                    },
+                    "x": 619,
+                    "y": 517,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "071eaee1-aca4-4f38-afbe-f0b80d6c1ae4",
+                            "label": "glowFx_7",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "78f00af4-bed7-4130-8ae9-e617992fefec",
+                            "id": "0191ca3e-7f29-4ef9-b1e0-893d1185461b",
+                            "unlock": [
+                                "CharacterID",
+                                "type"
+                            ],
+                            "label": "handleChooseMechanism_4",
+                            "CharacterID": 9,
+                            "type": "Character"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "7b2525b3-5d54-4ca4-b120-5ac2ad9f751e",
+                            "label": "onPointerDownScript_6",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "6f886410-209b-417a-8101-fa57834daa9e",
+                                    "label": "pushActionScript_6"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": 9,
+                            "unlock": [
+                                "type",
+                                "id"
+                            ],
+                            "label": "highlights_4",
+                            "type": "LobbyChar"
                         }
                     ]
                 }
@@ -1294,7 +1298,7 @@
             "id": "9ccd042e-1f5a-4844-a28c-d67e927bac11",
             "label": "XpBar",
             "useGameObjectName": true,
-            "y": 12,
+            "y": 79,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -1306,8 +1310,8 @@
                         "key": "spritesheet",
                         "frame": 10
                     },
-                    "x": 1120,
-                    "y": 649,
+                    "x": 1119,
+                    "y": 48,
                     "scaleX": 4.9,
                     "scaleY": 4.9
                 },
@@ -1315,10 +1319,15 @@
                     "type": "Text",
                     "id": "d17c82af-5747-4071-9194-f4055532d515",
                     "label": "XpTotal",
-                    "x": 1120,
-                    "y": 649,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": -310,
+                    "hitArea.y": -13,
+                    "hitArea.width": 1196.1106329307904,
+                    "hitArea.height": 167.86389713934952,
+                    "x": 1119,
+                    "y": 50,
+                    "scaleX": 0.2,
+                    "scaleY": 0.2,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "TotalXP",
@@ -1326,8 +1335,18 @@
                     "fontSize": "150px",
                     "color": "#000000ff",
                     "stroke": "#000000ff",
-                    "strokeThickness": 1,
-                    "backgroundColor": ""
+                    "backgroundColor": "",
+                    "list": [
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "a3c87874-0c6b-4253-9f11-93978dba81d9",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_15",
+                            "type": "LobbyLevelXp"
+                        }
+                    ]
                 }
             ]
         },
@@ -1335,7 +1354,7 @@
             "type": "Container",
             "id": "2644fbcf-18ce-42a6-a456-bf3d78f015a5",
             "label": "Button Play a Match",
-            "x": -5,
+            "x": 48,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
@@ -1349,7 +1368,8 @@
                     "hitArea.height": 128,
                     "x": 180,
                     "y": 48,
-                    "scaleY": 0.21,
+                    "scaleX": 1.35,
+                    "scaleY": 0.3,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1373,13 +1393,13 @@
                     "id": "eadfaca4-df51-44a7-9ac1-b0c5067eb56d",
                     "label": "PlayAMatch",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -89,
-                    "hitArea.width": 797.2954750839499,
+                    "hitArea.x": 1,
+                    "hitArea.width": 626.943848443308,
                     "hitArea.height": 122.13546878499065,
                     "x": 180,
                     "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
+                    "scaleX": 0.23,
+                    "scaleY": 0.23,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Play a Match",
@@ -1417,7 +1437,7 @@
             "type": "Container",
             "id": "a8c29fd8-9804-4443-aa0c-2a07a731437d",
             "label": "Characters and Cards",
-            "x": -84,
+            "x": 65,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
@@ -1431,8 +1451,8 @@
                     "hitArea.height": 128,
                     "x": 422,
                     "y": 48,
-                    "scaleX": 1.7,
-                    "scaleY": 0.21,
+                    "scaleX": 2.3,
+                    "scaleY": 0.3,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1460,8 +1480,8 @@
                     "hitArea.height": 112.19250373942205,
                     "x": 422,
                     "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
+                    "scaleX": 0.23,
+                    "scaleY": 0.23,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "Characters and Cards",
@@ -1499,7 +1519,7 @@
             "type": "Container",
             "id": "fd5c7ed8-9d49-4c45-824a-951d715d0943",
             "label": "Button Go Back To Home Page",
-            "x": -54,
+            "x": -47,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
@@ -1513,8 +1533,8 @@
                     "hitArea.height": 128,
                     "x": 118,
                     "y": 48,
-                    "scaleX": 0.21,
-                    "scaleY": 0.21,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1544,8 +1564,8 @@
                     "hitArea.height": 113.226466611809,
                     "x": 118,
                     "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "🏠",
@@ -1583,7 +1603,6 @@
             "type": "Container",
             "id": "42e4812e-afa4-4d11-b813-d45ec66398bd",
             "label": "Button Profile",
-            "x": -138,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
@@ -1595,10 +1614,10 @@
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
-                    "x": 1324,
+                    "x": 1220,
                     "y": 48,
-                    "scaleX": 0.21,
-                    "scaleY": 0.21,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1618,46 +1637,40 @@
                     ]
                 },
                 {
-                    "type": "Text",
-                    "id": "edcbc78c-633f-43a3-a46a-788ec56fce58",
-                    "label": "Profile",
+                    "type": "Image",
+                    "id": "5c10d969-1aa1-4c38-8187-fe9cb0dd2927",
+                    "label": "profileButton",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -15,
-                    "hitArea.y": -17,
-                    "hitArea.width": 351.15663686934727,
-                    "hitArea.height": 134.83406914622725,
-                    "x": 1325,
+                    "hitArea.width": 512,
+                    "hitArea.height": 512,
+                    "texture": {
+                        "key": "profileButton"
+                    },
+                    "x": 1220,
                     "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "👤",
-                    "fontFamily": "Minecraft",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
+                    "scaleX": 0.05,
+                    "scaleY": 0.05,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "dbe895a8-d225-4900-86f2-57e5921cee29",
-                            "label": "onPointerDownScript_1",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "5999bcad-13f9-4982-b8b2-05d78baea9b6",
-                                    "label": "pushActionScript_1"
-                                }
-                            ]
-                        },
-                        {
                             "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "5d5c0f2f-e4e0-4c95-b86d-b755782020e0",
+                            "id": "dfd06434-1e5f-4359-9f37-6412f07c1568",
                             "unlock": [
                                 "sceneChosen"
                             ],
                             "label": "goToScene",
                             "sceneChosen": "Profile"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "8f338463-d7c7-4525-a4c6-80823f21cb10",
+                            "label": "onPointerDownScript_1",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "4f6f89e8-a33c-41d3-8000-568d049a797f",
+                                    "label": "pushActionScript_1"
+                                }
+                            ]
                         }
                     ]
                 }

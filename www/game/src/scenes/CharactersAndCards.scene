@@ -52,16 +52,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "03270df7-eebe-4a68-83e4-418778e39f4b",
-                                    "label": "onPointerDownScript_12",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "11abf776-16b0-4382-808f-aa3437586108",
-                                            "label": "pushActionScript_12"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "d21ba878-aa77-4a70-af8f-3b1375bf3f23",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -77,10 +71,25 @@
                                     "frameId": 4
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "d21ba878-aa77-4a70-af8f-3b1375bf3f23",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "03270df7-eebe-4a68-83e4-418778e39f4b",
+                                    "label": "onPointerDownScript_12",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "11abf776-16b0-4382-808f-aa3437586108",
+                                            "label": "pushActionScript_12"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "7fb1f610-2c13-4ff7-9182-97588f0acd1c",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_21",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -100,16 +109,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "c769d118-0601-4822-853c-3962e8e27467",
-                                    "label": "onPointerDownScript_13",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "cd40358a-89cd-473f-b48f-e6b070d7c1d7",
-                                            "label": "pushActionScript_13"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "d7fcd06c-6d98-442d-aba9-c67993cd935d",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -125,10 +128,25 @@
                                     "frameId": 1
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "d7fcd06c-6d98-442d-aba9-c67993cd935d",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "c769d118-0601-4822-853c-3962e8e27467",
+                                    "label": "onPointerDownScript_13",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "cd40358a-89cd-473f-b48f-e6b070d7c1d7",
+                                            "label": "pushActionScript_13"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "754407d5-ffab-48e4-a948-94b8eeeb4674",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_20",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -148,16 +166,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "15abdd65-5363-486c-b293-55cbfb6397fc",
-                                    "label": "onPointerDownScript_14",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "4697f564-dab3-44ec-b340-36d90c6f2dd8",
-                                            "label": "pushActionScript_14"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "c6922395-1056-4473-b86f-a909677eabf2",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -173,10 +185,25 @@
                                     "frameId": 0
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "c6922395-1056-4473-b86f-a909677eabf2",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "15abdd65-5363-486c-b293-55cbfb6397fc",
+                                    "label": "onPointerDownScript_14",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "4697f564-dab3-44ec-b340-36d90c6f2dd8",
+                                            "label": "pushActionScript_14"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "b4062fd9-feb0-4f3f-8625-1aee4ed80388",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_19",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -196,16 +223,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "3cfe306b-54dc-4463-a72c-2cda36a8758c",
-                                    "label": "onPointerDownScript_15",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "243c6531-748a-43b0-a1f2-88e1ca17b8a1",
-                                            "label": "pushActionScript_15"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "36a24de0-9697-480c-94a6-ce668b1f38f9",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -221,10 +242,25 @@
                                     "frameId": 2
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "36a24de0-9697-480c-94a6-ce668b1f38f9",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "3cfe306b-54dc-4463-a72c-2cda36a8758c",
+                                    "label": "onPointerDownScript_15",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "243c6531-748a-43b0-a1f2-88e1ca17b8a1",
+                                            "label": "pushActionScript_15"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "3341d6ea-eb57-4cda-a3bc-64cb563cc505",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_18",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -244,16 +280,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "60685293-868c-4c33-a528-09a97c0f7909",
-                                    "label": "onPointerDownScript_16",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "e1723a1e-14b2-4d56-a83a-042e79da0da9",
-                                            "label": "pushActionScript_16"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "8effd351-6072-45b1-94a0-6a7ead940929",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -269,10 +299,25 @@
                                     "frameId": 5
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "8effd351-6072-45b1-94a0-6a7ead940929",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "60685293-868c-4c33-a528-09a97c0f7909",
+                                    "label": "onPointerDownScript_16",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "e1723a1e-14b2-4d56-a83a-042e79da0da9",
+                                            "label": "pushActionScript_16"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "7ea18466-7dfd-48b2-9666-13330f688db8",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_17",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -292,16 +337,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "ce5c1ba6-6eb5-4865-ac36-21c75ff16931",
-                                    "label": "onPointerDownScript_17",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "93a18592-7e5d-4bfc-aa8e-b8f862f0067b",
-                                            "label": "pushActionScript_17"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "072d05fc-a481-46df-aee2-bb4588cab778",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -317,10 +356,25 @@
                                     "frameId": 8
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "072d05fc-a481-46df-aee2-bb4588cab778",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "ce5c1ba6-6eb5-4865-ac36-21c75ff16931",
+                                    "label": "onPointerDownScript_17",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "93a18592-7e5d-4bfc-aa8e-b8f862f0067b",
+                                            "label": "pushActionScript_17"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "f4c5605c-67f3-462f-859e-ae97d13a8d79",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_16",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -340,16 +394,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "351b4a75-d907-4905-9d43-11b421035b1e",
-                                    "label": "onPointerDownScript_18",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "d05ce1f3-a42b-4d56-9a52-8d48b32133fa",
-                                            "label": "pushActionScript_18"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "1bca6d85-bd87-4604-a20a-dc701c4f10b2",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -365,10 +413,25 @@
                                     "frameId": 6
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "1bca6d85-bd87-4604-a20a-dc701c4f10b2",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "351b4a75-d907-4905-9d43-11b421035b1e",
+                                    "label": "onPointerDownScript_18",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "d05ce1f3-a42b-4d56-9a52-8d48b32133fa",
+                                            "label": "pushActionScript_18"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "0a579688-8e47-4335-a3c5-f6e049a528c6",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_15",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -388,16 +451,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "eeb830c9-ec4c-4116-8ce9-227c4dccd6c7",
-                                    "label": "onPointerDownScript_19",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "7d184006-76b0-45d1-b23c-18b3482bf9ef",
-                                            "label": "pushActionScript_19"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "eb411ca3-5971-4dd8-8a07-bab7770e290b",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -413,10 +470,25 @@
                                     "frameId": 7
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "eb411ca3-5971-4dd8-8a07-bab7770e290b",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "eeb830c9-ec4c-4116-8ce9-227c4dccd6c7",
+                                    "label": "onPointerDownScript_19",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "7d184006-76b0-45d1-b23c-18b3482bf9ef",
+                                            "label": "pushActionScript_19"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "ea6d1f22-a2d8-49b1-8072-d6c7c62f7461",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_14",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -436,16 +508,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "6c1008be-bf28-459c-b249-e468f469f2dd",
-                                    "label": "onPointerDownScript_21",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "2c7c4690-8c18-42fe-96fd-dbca521a4348",
-                                            "label": "pushActionScript_21"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "c8be91e6-8767-41b3-ae2d-7390267d8604",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -461,10 +527,25 @@
                                     "frameId": 2
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "c8be91e6-8767-41b3-ae2d-7390267d8604",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "6c1008be-bf28-459c-b249-e468f469f2dd",
+                                    "label": "onPointerDownScript_21",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "2c7c4690-8c18-42fe-96fd-dbca521a4348",
+                                            "label": "pushActionScript_21"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "6e071403-9b3c-4ea3-bc92-11b4ae05c847",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_13",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -484,16 +565,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "bfca01aa-3a06-4e32-8a71-818c2d3c5bbf",
-                                    "label": "onPointerDownScript_22",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "651aa5fd-596a-4917-a116-572a44d6bada",
-                                            "label": "pushActionScript_22"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "7e682e80-0595-4714-99de-7bf95747ba05",
+                                    "label": "glowFx",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -509,10 +584,25 @@
                                     "frameId": "3"
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "7e682e80-0595-4714-99de-7bf95747ba05",
-                                    "label": "glowFx",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "bfca01aa-3a06-4e32-8a71-818c2d3c5bbf",
+                                    "label": "onPointerDownScript_22",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "651aa5fd-596a-4917-a116-572a44d6bada",
+                                            "label": "pushActionScript_22"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "02af2c6d-a9f8-4b9d-a8fa-7bad01911daa",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_12",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -541,7 +631,7 @@
                             "scaleY": 0.2,
                             "originX": 0.5,
                             "originY": -0.022889636867095456,
-                            "text": "Card description",
+                            "text": "Select any card \nto see their description",
                             "align": "center",
                             "fontFamily": "Minecraft",
                             "fontSize": "100px"
@@ -673,16 +763,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "f98f5d33-3279-4b5d-a4df-f458418a984b",
-                                    "label": "onPointerDownScript_11",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "199ae49c-d8bd-4daa-9632-fe7b05725cbc",
-                                            "label": "pushActionScript_11"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "c6c79117-1f37-4eb1-95f7-aa56f97e1daf",
+                                    "label": "glowFx_10",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -698,10 +782,25 @@
                                     "frameId": 0
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "c6c79117-1f37-4eb1-95f7-aa56f97e1daf",
-                                    "label": "glowFx_10",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "f98f5d33-3279-4b5d-a4df-f458418a984b",
+                                    "label": "onPointerDownScript_11",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "199ae49c-d8bd-4daa-9632-fe7b05725cbc",
+                                            "label": "pushActionScript_11"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "16547da8-f145-4999-ad16-d4f461339646",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_11",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -721,16 +820,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "2f6a7ad3-b5e3-4363-a085-49d31fb1298c",
-                                    "label": "onPointerDownScript_10",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "83908435-6d42-4d6f-9e57-f835cf743110",
-                                            "label": "pushActionScript_10"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "7f69e490-b401-4bc2-a204-33536d642619",
+                                    "label": "glowFx_9",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -745,10 +838,25 @@
                                     "frameId": 8
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "7f69e490-b401-4bc2-a204-33536d642619",
-                                    "label": "glowFx_9",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "2f6a7ad3-b5e3-4363-a085-49d31fb1298c",
+                                    "label": "onPointerDownScript_10",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "83908435-6d42-4d6f-9e57-f835cf743110",
+                                            "label": "pushActionScript_10"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "8d949ab6-2d62-453d-9674-1bb93158a66f",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_10",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -768,16 +876,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "984f8695-9d01-44e0-86ae-fc89ec2a631a",
-                                    "label": "onPointerDownScript_9",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "2dff24bf-e09a-4b29-b32a-acb40ceb38b5",
-                                            "label": "pushActionScript_9"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "06df2d1f-39a4-4c6f-8f3f-9f2bc1d1181f",
+                                    "label": "glowFx_8",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -792,10 +894,25 @@
                                     "frameId": 7
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "06df2d1f-39a4-4c6f-8f3f-9f2bc1d1181f",
-                                    "label": "glowFx_8",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "984f8695-9d01-44e0-86ae-fc89ec2a631a",
+                                    "label": "onPointerDownScript_9",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "2dff24bf-e09a-4b29-b32a-acb40ceb38b5",
+                                            "label": "pushActionScript_9"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "29d09687-f6b1-4dbc-977d-5e1a0a7e40b6",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_9",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -815,16 +932,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "0352a895-60db-42ea-b854-2714247f0522",
-                                    "label": "onPointerDownScript_8",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "d9ca1143-fe2f-4ea7-97cc-495ae5b16c29",
-                                            "label": "pushActionScript_8"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "c29139c3-d27e-44b5-962b-786f8ef7f2c1",
+                                    "label": "glowFx_7",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -839,10 +950,25 @@
                                     "frameId": 6
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "c29139c3-d27e-44b5-962b-786f8ef7f2c1",
-                                    "label": "glowFx_7",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "0352a895-60db-42ea-b854-2714247f0522",
+                                    "label": "onPointerDownScript_8",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "d9ca1143-fe2f-4ea7-97cc-495ae5b16c29",
+                                            "label": "pushActionScript_8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "fe2a7588-a7a9-4e10-bb20-1fd33051eacf",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_8",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -862,16 +988,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "c0a92fe9-740e-47c7-a14f-4213e71f01bb",
-                                    "label": "onPointerDownScript_7",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "0536c59f-faae-476f-aa4d-a7fa5b208528",
-                                            "label": "pushActionScript_7"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "c8939cce-05ba-4776-a086-1c37f4329a3b",
+                                    "label": "glowFx_6",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -886,10 +1006,25 @@
                                     "frameId": 5
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "c8939cce-05ba-4776-a086-1c37f4329a3b",
-                                    "label": "glowFx_6",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "c0a92fe9-740e-47c7-a14f-4213e71f01bb",
+                                    "label": "onPointerDownScript_7",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "0536c59f-faae-476f-aa4d-a7fa5b208528",
+                                            "label": "pushActionScript_7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "cc0194e4-01c3-4e17-9ec6-9619ec09c9f3",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_7",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -909,16 +1044,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "4930dad1-fc72-4519-8282-cf2686cadc8d",
-                                    "label": "onPointerDownScript_6",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "f87ee592-e386-4123-aafd-571ea5950453",
-                                            "label": "pushActionScript_6"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "a48197df-17c9-4bbf-9047-d53e80c44b69",
+                                    "label": "glowFx_5",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -933,10 +1062,25 @@
                                     "frameId": 4
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "a48197df-17c9-4bbf-9047-d53e80c44b69",
-                                    "label": "glowFx_5",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "4930dad1-fc72-4519-8282-cf2686cadc8d",
+                                    "label": "onPointerDownScript_6",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "f87ee592-e386-4123-aafd-571ea5950453",
+                                            "label": "pushActionScript_6"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "b1367b1f-b7e7-4992-9e8d-34a10efd8e82",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_6",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -956,16 +1100,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "a09b1829-a5ba-4f6e-9239-1772d5011bd5",
-                                    "label": "onPointerDownScript_5",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "64fd6201-f7cf-4812-af84-a58f0b5363fa",
-                                            "label": "pushActionScript_5"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "0f30d843-14d3-4d95-a16d-41ac81f39155",
+                                    "label": "glowFx_4",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -980,10 +1118,25 @@
                                     "frameId": 3
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "0f30d843-14d3-4d95-a16d-41ac81f39155",
-                                    "label": "glowFx_4",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "a09b1829-a5ba-4f6e-9239-1772d5011bd5",
+                                    "label": "onPointerDownScript_5",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "64fd6201-f7cf-4812-af84-a58f0b5363fa",
+                                            "label": "pushActionScript_5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "ac285af4-4f87-4f01-b801-23a2565af1e9",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_5",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -1003,16 +1156,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "0c49beb2-4450-4c57-8c1f-a81a4e55398f",
-                                    "label": "onPointerDownScript_4",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "4982d01e-a6d2-43b4-afad-58fa1ab37081",
-                                            "label": "pushActionScript_4"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "56c1c187-103c-40e8-b731-2058a2e87504",
+                                    "label": "glowFx_3",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -1027,10 +1174,25 @@
                                     "frameId": 2
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "56c1c187-103c-40e8-b731-2058a2e87504",
-                                    "label": "glowFx_3",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "0c49beb2-4450-4c57-8c1f-a81a4e55398f",
+                                    "label": "onPointerDownScript_4",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "4982d01e-a6d2-43b4-afad-58fa1ab37081",
+                                            "label": "pushActionScript_4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "7c3245e4-4305-4fa8-8a8f-c2f2513cd985",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_4",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -1050,16 +1212,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "0578fd80-a1c4-4b33-b30b-02b55c118793",
-                                    "label": "onPointerDownScript_3",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "0987f5dd-b70e-499d-8558-bf98802c0957",
-                                            "label": "pushActionScript_3"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "11eda6d4-41ad-4705-a390-14f6006041a9",
+                                    "label": "glowFx_2",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -1074,10 +1230,25 @@
                                     "frameId": 1
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "11eda6d4-41ad-4705-a390-14f6006041a9",
-                                    "label": "glowFx_2",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "0578fd80-a1c4-4b33-b30b-02b55c118793",
+                                    "label": "onPointerDownScript_3",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "0987f5dd-b70e-499d-8558-bf98802c0957",
+                                            "label": "pushActionScript_3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "c8d43dab-63ee-43aa-9620-9ed1c29d263e",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_3",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -1097,16 +1268,10 @@
                             "scaleY": 0.5,
                             "list": [
                                 {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "4bfe8b83-a5eb-4b68-840f-e15eba5e304d",
-                                    "label": "onPointerDownScript_2",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "c9b82f6c-85a8-4fce-8729-96dbdaf48f3b",
-                                            "label": "pushActionScript"
-                                        }
-                                    ]
+                                    "type": "Glow",
+                                    "id": "ff7fb585-1c65-4b93-b05e-0143f38c1435",
+                                    "label": "glowFx_1",
+                                    "preFX": true
                                 },
                                 {
                                     "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
@@ -1122,10 +1287,25 @@
                                     "frameId": 0
                                 },
                                 {
-                                    "type": "Glow",
-                                    "id": "ff7fb585-1c65-4b93-b05e-0143f38c1435",
-                                    "label": "glowFx_1",
-                                    "preFX": true
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "4bfe8b83-a5eb-4b68-840f-e15eba5e304d",
+                                    "label": "onPointerDownScript_2",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "c9b82f6c-85a8-4fce-8729-96dbdaf48f3b",
+                                            "label": "pushActionScript"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                                    "id": "515cacf4-96e4-4277-9a6d-cb8db0479e0c",
+                                    "unlock": [
+                                        "type"
+                                    ],
+                                    "label": "highlights_2",
+                                    "type": "Descriptions"
                                 }
                             ]
                         },
@@ -1154,7 +1334,8 @@
                             "scaleY": 0.2,
                             "originX": 0.5,
                             "originY": -0.0011025686642976021,
-                            "text": "Character description",
+                            "text": "Select any character \nto see their description",
+                            "align": "center",
                             "fontFamily": "minecraft",
                             "fontSize": "100px"
                         }
@@ -1262,188 +1443,24 @@
         },
         {
             "type": "Container",
-            "id": "53337ed6-cddc-4158-92f9-c4b2996ddc1a",
-            "label": "Button Play a Match",
-            "x": -5,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "ae2b47f3-793e-4bcd-99c5-264907c0a323",
-                    "label": "highlight",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 180,
-                    "y": 48,
-                    "scaleY": 0.21,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "e0877bd5-1530-4ad2-b236-f46e70facb15",
-                            "label": "glowFx_13",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "67b31685-7751-4dd1-a1c5-cf090ccd9761",
-                    "label": "PlayAMatch",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -89,
-                    "hitArea.width": 797.2954750839499,
-                    "hitArea.height": 122.13546878499065,
-                    "x": 180,
-                    "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Play a Match",
-                    "fontFamily": "Minecraft",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "55066834-b518-4861-9301-dc5e406e55d3",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene_3",
-                            "sceneChosen": "ChooseCharacters"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "86fee3f3-ad32-4b85-a709-e65b61cb31aa",
-                            "label": "onPointerDownScript",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "68e8f1fe-298a-46e7-9ff7-43f828be10c2",
-                                    "label": "pushActionScript_2"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "84aad30e-3bc9-4196-a53c-b1191db58f2d",
-            "label": "Characters and Cards",
-            "x": -84,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "cd420069-c8db-4e04-949a-85f6875e37fe",
-                    "label": "highlight_2",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 422,
-                    "y": 48,
-                    "scaleX": 1.7,
-                    "scaleY": 0.21,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "cae744ce-624c-4c72-98b3-adc1c55b51d4",
-                            "label": "glowFx_15",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "48ec9a07-ed7d-4ff3-9b70-fff8cb7add59",
-                    "label": "Characters And Cards",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 1101.472090680232,
-                    "hitArea.height": 112.19250373942205,
-                    "x": 422,
-                    "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Characters and Cards",
-                    "fontFamily": "Minecraft",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "59d11cef-0cb4-4634-bd55-cc4bccde398e",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene_2",
-                            "sceneChosen": "CharactersAndCards"
-                        },
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "15a86b65-53be-464e-a632-3d29bd900d52",
-                            "label": "onPointerDownScript_20",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "716c1120-61da-42d0-b470-0c93529744cc",
-                                    "label": "pushActionScript_20"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "cbc8f094-cd82-4f5f-8e14-4a3153e21b90",
+            "id": "60f83497-50d4-4c22-9b9a-4a33d13040da",
             "label": "Button Go Back To Home Page",
-            "x": -54,
+            "x": -47,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "4187a219-07d4-4b7e-be66-4069be7799a6",
+                    "id": "c61d4d28-2926-4bcd-8638-dea488d98bfb",
                     "label": "highlight_4",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
                     "x": 118,
                     "y": 48,
-                    "scaleX": 0.21,
-                    "scaleY": 0.21,
+                    "scaleX": 0.3,
+                    "scaleY": 0.3,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1454,7 +1471,7 @@
                     "list": [
                         {
                             "type": "Glow",
-                            "id": "469a9cb4-3d24-470c-849d-be481e38e086",
+                            "id": "b5a89dc3-3d85-4d0b-b507-e4e56951df2e",
                             "label": "glowFx_17",
                             "color": "#4000ff",
                             "outerStrength": 3,
@@ -1464,7 +1481,7 @@
                 },
                 {
                     "type": "Text",
-                    "id": "fe0713cb-04e5-43fb-9a1b-746bb19bdfdd",
+                    "id": "a2cdb815-a80b-45c3-b3da-0a6270cb2436",
                     "label": "ButtonGoToHomePage",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.x": 5,
@@ -1473,8 +1490,8 @@
                     "hitArea.height": 113.226466611809,
                     "x": 118,
                     "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
                     "originX": 0.5,
                     "originY": 0.5,
                     "text": "🏠",
@@ -1485,24 +1502,189 @@
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "ae19a4cd-2bfa-4a00-8d88-305b5017ad35",
+                            "id": "5277fd59-2637-47b1-a842-8aa1b7c77118",
                             "label": "onPointerDownScript_25",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "c79ba435-beba-4046-9402-2266cf8bdee8",
+                                    "id": "30a5b02e-ca1c-4186-8b7d-369c378eea6f",
                                     "label": "pushActionScript_25"
                                 }
                             ]
                         },
                         {
                             "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "834d0065-0580-4f02-ab91-924ebd55053b",
+                            "id": "0298e497-ea4d-4745-87c4-77ddf7473971",
                             "unlock": [
                                 "sceneChosen"
                             ],
                             "label": "goToScene_1",
                             "sceneChosen": "HomePage"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "86ead91c-2472-470e-a607-0951580fcdda",
+            "label": "Characters and Cards",
+            "x": 65,
+            "y": 12,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "643e7205-ab16-45fd-ae1d-6224dc57e7a7",
+                    "label": "highlight_2",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 422,
+                    "y": 48,
+                    "scaleX": 2.3,
+                    "scaleY": 0.3,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "width": 128,
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "c6d1b3b1-d63a-4844-993d-0625e7f777c0",
+                            "label": "glowFx_15",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "5ae25a26-80f4-4ec5-a54a-c826f3d09fd4",
+                    "label": "Characters And Cards",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 1101.472090680232,
+                    "hitArea.height": 112.19250373942205,
+                    "x": 422,
+                    "y": 48,
+                    "scaleX": 0.23,
+                    "scaleY": 0.23,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Characters and Cards",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "stroke": "#4000ff",
+                    "strokeThickness": 10,
+                    "list": [
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "9a2cb1a1-b170-4952-ae18-216b5ccc6158",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_2",
+                            "sceneChosen": "CharactersAndCards"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "e819fd23-f609-4fe4-89eb-76d3f6413d90",
+                            "label": "onPointerDownScript_20",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "4fc5fb2b-7a63-43e2-9ded-0893d103e64c",
+                                    "label": "pushActionScript_20"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "d0b10333-6495-41d1-8371-7f8d7a930ea9",
+            "label": "Button Play a Match",
+            "x": 48,
+            "y": 12,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "620eb665-2173-4484-b815-55519a8ca23a",
+                    "label": "highlight",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 128,
+                    "hitArea.height": 128,
+                    "x": 180,
+                    "y": 48,
+                    "scaleX": 1.35,
+                    "scaleY": 0.3,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "strokeColor": "#4000ff",
+                    "strokeAlpha": 4,
+                    "lineWidth": 4,
+                    "width": 128,
+                    "height": 128,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "e84372e2-0cfc-4ff2-9632-59afb5b5ff53",
+                            "label": "glowFx_13",
+                            "color": "#4000ff",
+                            "outerStrength": 3,
+                            "innerStrength": 3
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "8bbaa5cf-75ed-4e65-9954-325283e55792",
+                    "label": "PlayAMatch",
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.x": -89,
+                    "hitArea.width": 797.2954750839499,
+                    "hitArea.height": 122.13546878499065,
+                    "x": 180,
+                    "y": 48,
+                    "scaleX": 0.23,
+                    "scaleY": 0.23,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Play a Match",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "100px",
+                    "stroke": "#4000ff",
+                    "strokeThickness": 10,
+                    "list": [
+                        {
+                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
+                            "id": "a8f3f38c-59c1-43a6-a4a6-1a971f99c5ec",
+                            "unlock": [
+                                "sceneChosen"
+                            ],
+                            "label": "goToScene_3",
+                            "sceneChosen": "ChooseCharacters"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "63a2582f-2c3a-456e-a94c-821bff4e2f59",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "72f9d4db-e15b-48c7-bc05-100111a7bd41",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
                         }
                     ]
                 }

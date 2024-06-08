@@ -14,6 +14,9 @@ var lookingForMatch = false;
 var choosing = false;
 var char;
 
+var xpText
+var levelText
+
 /* START OF COMPILED CODE */
 
 class HandleChooseMechanism extends ScriptNode {
@@ -101,8 +104,6 @@ class HandleChooseMechanism extends ScriptNode {
 			for (let i = 0; i < nameText.length; i++) {
 				if (nameText[i].name == "Username") {
 					nameText[i].text = data.name
-				} else if (nameText[i].name == "Level") {
-					nameText[i].text = "Level: " + data.level
 				}
 			}
 		} else if (scene.type == "LookForMatch") {
@@ -158,24 +159,26 @@ class HandleChooseMechanism extends ScriptNode {
 
 	updateXpBar(level, xp) {
 		var index = 0;
-		var playerXp = xp
+		var playerXp = xp;
 		var finalXp = 50;
-		var initialLevelXp = 0
+		var initialLevelXp = 0;
 
 
 		while (index < level) {
-			index++
+			index++;
 			if (index <= level) {
-				initialLevelXp = finalXp
+				initialLevelXp = finalXp;
 			}
-			finalXp += finalXp / 2
+			finalXp += finalXp / 2;
 		}
 
-		finalXp -= initialLevelXp
-		playerXp -= initialLevelXp
-
-		console.log(initialLevelXp, finalXp, playerXp)
-
+		
+		finalXp -= initialLevelXp;
+		playerXp -= initialLevelXp;
+		
+		levelText = "Level: " + level;
+		xpText = Math.floor(playerXp) + " / " +  Math.floor(finalXp) + " XP";
+		
 		var xpbar = this.scene.children.list
 
 		for (let i = 0; i < xpbar.length; i++) {
@@ -184,7 +187,7 @@ class HandleChooseMechanism extends ScriptNode {
 				for (let j = 0; j < 10; j++) {
 					if (playerXp > finalXp * (j * 0.1)) {
 						xpbar[i].list[0].setTexture("spritesheet", 10 - j);
-						xpbar[i].list[1].text = Math.floor((playerXp * 100) / finalXp) + "%";
+						xpbar[i].list[1].text = levelText;
 					}
 				}
 			}
@@ -297,6 +300,7 @@ class HandleChooseMechanism extends ScriptNode {
 
 									glowChange[i].list[0].preFX.list[0].active = false
 									glowChange[i].list[4].preFX.list[0].active = false
+
 								} else if (charChosen > 4) {
 									glowChange[i].list[j].preFX.list[0].active = glowOnOff
 								}
@@ -307,7 +311,7 @@ class HandleChooseMechanism extends ScriptNode {
 							if (glowChange[i].list[j].name == "sand") {
 								glowChange[i].list[j].preFX.list[0].active = glowOnOff
 								glowChange[i].list[j].name = "character_id_" + charChosen
-							} else if (glowChange[i].list[j].name != "Username" && glowChange[i].list[j].name != "Level") {
+							} else if (glowChange[i].list[j].name != "Username") {
 								glowChange[i].list[j].preFX.list[0].active = false
 							}
 						}
@@ -350,15 +354,19 @@ class HandleChooseMechanism extends ScriptNode {
 						}
 					} else if (glowChange[i].name == "Characters") {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
-							if (glowChange[i].list[j].name != "Username" && glowChange[i].list[j].name != "Level") {
+							if (glowChange[i].list[j].name != "Username") {
 								glowChange[i].list[j].preFX.list[0].active = false;
+
 							}
 						}
 					}
 				}
+
+				this.parent.input.enabled = true
 			} else {
 				if (this.type == "Slot") {
 					this.parent.setTexture("base", 0)
+
 
 					if (slots["slot_" + slot_Id + ""] != null) {
 						slots["slot_" + slot_Id + ""] = null;
@@ -416,6 +424,8 @@ class HandleChooseMechanism extends ScriptNode {
 					console.log(err);
 				}
 			})
+		}else{
+			this.showMessage("Please choose at least one character \n to start the match.")
 		}
 	}
 }

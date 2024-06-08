@@ -32,6 +32,26 @@
             "type": {
                 "id": "string"
             }
+        },
+        {
+            "name": "clicked",
+            "label": "Clicked",
+            "tooltip": "",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "id",
+            "label": "Id",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
         }
     ]
 }
