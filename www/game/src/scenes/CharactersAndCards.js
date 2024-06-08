@@ -19,262 +19,6 @@ class CharactersAndCards extends Phaser.Scene {
 		// specasdossheets
 		this.add.image(960, 540, "Specasdossheets");
 
-		// Characters
-		const characters = this.add.container(0, 0);
-		characters.name = "Characters";
-		characters.scaleX = 1.5;
-		characters.scaleY = 1.5;
-
-		// Characters_1
-		const characters_1 = this.add.container(37, -15);
-		characters_1.visible = false;
-		characters.add(characters_1);
-
-		// character_id_3
-		const character_id_3 = this.add.image(620, 259, "cartas2_Imprimir", 0);
-		character_id_3.name = "character_id_3";
-		character_id_3.scaleX = 0.5;
-		character_id_3.scaleY = 0.5;
-		characters_1.add(character_id_3);
-
-		// onPointerDownScript_11
-		const onPointerDownScript_11 = new OnPointerDownScript(character_id_3);
-
-		// pushActionScript_11
-		new PushActionScript(onPointerDownScript_11);
-
-		// descriptionsMechanism_21
-		const descriptionsMechanism_21 = new DescriptionsMechanism(character_id_3);
-
-		// glowFx_10
-		character_id_3.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_1
-		const character_id_1 = this.add.image(143, 259, "cartas1_Imprimir", 8);
-		character_id_1.name = "character_id_1";
-		character_id_1.scaleX = 0.5;
-		character_id_1.scaleY = 0.5;
-		characters_1.add(character_id_1);
-
-		// onPointerDownScript_10
-		const onPointerDownScript_10 = new OnPointerDownScript(character_id_1);
-
-		// pushActionScript_10
-		new PushActionScript(onPointerDownScript_10);
-
-		// descriptionsMechanism_14
-		const descriptionsMechanism_14 = new DescriptionsMechanism(character_id_1);
-
-		// glowFx_9
-		character_id_1.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_6
-		const character_id_6 = this.add.image(143, 510, "cartas1_Imprimir", 7);
-		character_id_6.name = "character_id_6";
-		character_id_6.scaleX = 0.5;
-		character_id_6.scaleY = 0.5;
-		characters_1.add(character_id_6);
-
-		// onPointerDownScript_9
-		const onPointerDownScript_9 = new OnPointerDownScript(character_id_6);
-
-		// pushActionScript_9
-		new PushActionScript(onPointerDownScript_9);
-
-		// descriptionsMechanism_15
-		const descriptionsMechanism_15 = new DescriptionsMechanism(character_id_6);
-
-		// glowFx_8
-		character_id_6.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_2
-		const character_id_2 = this.add.image(302, 259, "cartas1_Imprimir", 6);
-		character_id_2.name = "character_id_2";
-		character_id_2.scaleX = 0.5;
-		character_id_2.scaleY = 0.5;
-		characters_1.add(character_id_2);
-
-		// onPointerDownScript_8
-		const onPointerDownScript_8 = new OnPointerDownScript(character_id_2);
-
-		// pushActionScript_8
-		new PushActionScript(onPointerDownScript_8);
-
-		// descriptionsMechanism_16
-		const descriptionsMechanism_16 = new DescriptionsMechanism(character_id_2);
-
-		// glowFx_7
-		character_id_2.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_5
-		const character_id_5 = this.add.image(460, 259, "cartas1_Imprimir", 5);
-		character_id_5.name = "character_id_5";
-		character_id_5.scaleX = 0.5;
-		character_id_5.scaleY = 0.5;
-		characters_1.add(character_id_5);
-
-		// onPointerDownScript_7
-		const onPointerDownScript_7 = new OnPointerDownScript(character_id_5);
-
-		// pushActionScript_7
-		new PushActionScript(onPointerDownScript_7);
-
-		// descriptionsMechanism_17
-		const descriptionsMechanism_17 = new DescriptionsMechanism(character_id_5);
-
-		// glowFx_6
-		character_id_5.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_10
-		const character_id_10 = this.add.image(620, 510, "cartas1_Imprimir", 4);
-		character_id_10.name = "character_id_10";
-		character_id_10.scaleX = 0.5;
-		character_id_10.scaleY = 0.5;
-		characters_1.add(character_id_10);
-
-		// onPointerDownScript_6
-		const onPointerDownScript_6 = new OnPointerDownScript(character_id_10);
-
-		// pushActionScript_6
-		new PushActionScript(onPointerDownScript_6);
-
-		// descriptionsMechanism_18
-		const descriptionsMechanism_18 = new DescriptionsMechanism(character_id_10);
-
-		// glowFx_5
-		character_id_10.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_8
-		const character_id_8 = this.add.image(302, 510, "cartas1_Imprimir", 3);
-		character_id_8.name = "character_id_8";
-		character_id_8.scaleX = 0.5;
-		character_id_8.scaleY = 0.5;
-		characters_1.add(character_id_8);
-
-		// onPointerDownScript_5
-		const onPointerDownScript_5 = new OnPointerDownScript(character_id_8);
-
-		// pushActionScript_5
-		new PushActionScript(onPointerDownScript_5);
-
-		// descriptionsMechanism_19
-		const descriptionsMechanism_19 = new DescriptionsMechanism(character_id_8);
-
-		// glowFx_4
-		character_id_8.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_9
-		const character_id_9 = this.add.image(460, 510, "cartas1_Imprimir", 2);
-		character_id_9.name = "character_id_9";
-		character_id_9.scaleX = 0.5;
-		character_id_9.scaleY = 0.5;
-		characters_1.add(character_id_9);
-
-		// onPointerDownScript_4
-		const onPointerDownScript_4 = new OnPointerDownScript(character_id_9);
-
-		// pushActionScript_4
-		new PushActionScript(onPointerDownScript_4);
-
-		// descriptionsMechanism_20
-		const descriptionsMechanism_20 = new DescriptionsMechanism(character_id_9);
-
-		// glowFx_3
-		character_id_9.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_7
-		const character_id_7 = this.add.image(778, 510, "cartas1_Imprimir", 1);
-		character_id_7.name = "character_id_7";
-		character_id_7.scaleX = 0.5;
-		character_id_7.scaleY = 0.5;
-		characters_1.add(character_id_7);
-
-		// onPointerDownScript_3
-		const onPointerDownScript_3 = new OnPointerDownScript(character_id_7);
-
-		// pushActionScript_3
-		new PushActionScript(onPointerDownScript_3);
-
-		// descriptionsMechanism_13
-		const descriptionsMechanism_13 = new DescriptionsMechanism(character_id_7);
-
-		// glowFx_2
-		character_id_7.preFX.addGlow(16777215, 4, 0, false);
-
-		// character_id_4
-		const character_id_4 = this.add.image(777, 259, "cartas1_Imprimir", 0);
-		character_id_4.name = "character_id_4";
-		character_id_4.scaleX = 0.5;
-		character_id_4.scaleY = 0.5;
-		characters_1.add(character_id_4);
-
-		// onPointerDownScript_2
-		const onPointerDownScript_2 = new OnPointerDownScript(character_id_4);
-
-		// pushActionScript
-		new PushActionScript(onPointerDownScript_2);
-
-		// descriptionsMechanism_12
-		const descriptionsMechanism_12 = new DescriptionsMechanism(character_id_4);
-
-		// glowFx_1
-		character_id_4.preFX.addGlow(16777215, 4, 0, false);
-
-		// cartas4_Imprimir_1
-		const cartas4_Imprimir_1 = this.add.image(1038, 343, "cartas2_Imprimir", 1);
-		cartas4_Imprimir_1.scaleX = 0.9;
-		cartas4_Imprimir_1.scaleY = 0.9;
-		characters_1.add(cartas4_Imprimir_1);
-
-		// Card_description_1
-		const card_description_1 = this.add.text(1038, 554, "", {});
-		card_description_1.name = "Card_description_1";
-		card_description_1.scaleX = 0.2;
-		card_description_1.scaleY = 0.2;
-		card_description_1.setOrigin(0.5, -0.0011025686642976021);
-		card_description_1.text = "Character description";
-		card_description_1.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
-		characters_1.add(card_description_1);
-
-		// peawns0
-		const peawns0 = this.add.image(246, 395, "peawns", 0);
-		peawns0.angle = -42;
-		characters.add(peawns0);
-
-		// peawns3
-		const peawns3 = this.add.image(394, 194, "peawns", 3);
-		characters.add(peawns3);
-
-		// peawns22
-		const peawns22 = this.add.image(577, 296, "peawns2", 2);
-		peawns22.angle = 35;
-		characters.add(peawns22);
-
-		// peawns23
-		const peawns23 = this.add.image(548, 458, "peawns2", 3);
-		peawns23.angle = 66;
-		characters.add(peawns23);
-
-		// characters_option_button
-		const characters_option_button = this.add.image(401, 375, "cartas2_Imprimir", 1);
-		characters_option_button.name = "characters_option_button";
-		characters.add(characters_option_button);
-
-		// onPointerDownScript_23
-		const onPointerDownScript_23 = new OnPointerDownScript(characters_option_button);
-
-		// pushActionScript_23
-		new PushActionScript(onPointerDownScript_23);
-
-		// descriptionsMechanism
-		const descriptionsMechanism = new DescriptionsMechanism(characters_option_button);
-
-		// highlights
-		const highlights = new Highlights(characters_option_button);
-
-		// glowFx_11
-		characters.postFX.addGlow(16777215, 4, 0, false);
-
 		// Cards
 		const cards = this.add.container(0, 0);
 		cards.name = "Cards";
@@ -493,19 +237,19 @@ class CharactersAndCards extends Phaser.Scene {
 		cards_1.add(card_description);
 
 		// cartas3_Imprimir3
-		const cartas3_Imprimir3 = this.add.image(1035, 271, "cartas3_Imprimir", 3);
+		const cartas3_Imprimir3 = this.add.image(892, 271, "cartas3_Imprimir", 3);
 		cartas3_Imprimir3.scaleX = 0.5;
 		cartas3_Imprimir3.scaleY = 0.5;
 		cards.add(cartas3_Imprimir3);
 
 		// cartas3_Imprimir7
-		const cartas3_Imprimir7 = this.add.image(1059, 375, "cartas3_Imprimir", 7);
+		const cartas3_Imprimir7 = this.add.image(916, 375, "cartas3_Imprimir", 7);
 		cartas3_Imprimir7.scaleX = 0.5;
 		cartas3_Imprimir7.scaleY = 0.5;
 		cards.add(cartas3_Imprimir7);
 
 		// cartas3_Imprimir6
-		const cartas3_Imprimir6 = this.add.image(1080, 479, "cartas3_Imprimir", 6);
+		const cartas3_Imprimir6 = this.add.image(937, 479, "cartas3_Imprimir", 6);
 		cartas3_Imprimir6.scaleX = 0.5;
 		cartas3_Imprimir6.scaleY = 0.5;
 		cards.add(cartas3_Imprimir6);
@@ -530,55 +274,310 @@ class CharactersAndCards extends Phaser.Scene {
 		// glowFx_12
 		cards.postFX.addGlow(16777215, 4, 0, false);
 
-		// Button Choose Characters
-		const button_Choose_Characters = this.add.container(-51, 12);
-		button_Choose_Characters.scaleX = 1.5;
-		button_Choose_Characters.scaleY = 1.5;
+		// Characters
+		const characters = this.add.container(0, 0);
+		characters.name = "Characters";
+		characters.scaleX = 1.5;
+		characters.scaleY = 1.5;
+
+		// Characters_1
+		const characters_1 = this.add.container(37, -15);
+		characters_1.visible = false;
+		characters.add(characters_1);
+
+		// character_id_3
+		const character_id_3 = this.add.image(620, 259, "cartas2_Imprimir", 0);
+		character_id_3.name = "character_id_3";
+		character_id_3.scaleX = 0.5;
+		character_id_3.scaleY = 0.5;
+		characters_1.add(character_id_3);
+
+		// onPointerDownScript_11
+		const onPointerDownScript_11 = new OnPointerDownScript(character_id_3);
+
+		// pushActionScript_11
+		new PushActionScript(onPointerDownScript_11);
+
+		// descriptionsMechanism_21
+		const descriptionsMechanism_21 = new DescriptionsMechanism(character_id_3);
+
+		// glowFx_10
+		character_id_3.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_1
+		const character_id_1 = this.add.image(143, 259, "cartas1_Imprimir", 8);
+		character_id_1.name = "character_id_1";
+		character_id_1.scaleX = 0.5;
+		character_id_1.scaleY = 0.5;
+		characters_1.add(character_id_1);
+
+		// onPointerDownScript_10
+		const onPointerDownScript_10 = new OnPointerDownScript(character_id_1);
+
+		// pushActionScript_10
+		new PushActionScript(onPointerDownScript_10);
+
+		// descriptionsMechanism_14
+		const descriptionsMechanism_14 = new DescriptionsMechanism(character_id_1);
+
+		// glowFx_9
+		character_id_1.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_6
+		const character_id_6 = this.add.image(143, 510, "cartas1_Imprimir", 7);
+		character_id_6.name = "character_id_6";
+		character_id_6.scaleX = 0.5;
+		character_id_6.scaleY = 0.5;
+		characters_1.add(character_id_6);
+
+		// onPointerDownScript_9
+		const onPointerDownScript_9 = new OnPointerDownScript(character_id_6);
+
+		// pushActionScript_9
+		new PushActionScript(onPointerDownScript_9);
+
+		// descriptionsMechanism_15
+		const descriptionsMechanism_15 = new DescriptionsMechanism(character_id_6);
+
+		// glowFx_8
+		character_id_6.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_2
+		const character_id_2 = this.add.image(302, 259, "cartas1_Imprimir", 6);
+		character_id_2.name = "character_id_2";
+		character_id_2.scaleX = 0.5;
+		character_id_2.scaleY = 0.5;
+		characters_1.add(character_id_2);
+
+		// onPointerDownScript_8
+		const onPointerDownScript_8 = new OnPointerDownScript(character_id_2);
+
+		// pushActionScript_8
+		new PushActionScript(onPointerDownScript_8);
+
+		// descriptionsMechanism_16
+		const descriptionsMechanism_16 = new DescriptionsMechanism(character_id_2);
+
+		// glowFx_7
+		character_id_2.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_5
+		const character_id_5 = this.add.image(460, 259, "cartas1_Imprimir", 5);
+		character_id_5.name = "character_id_5";
+		character_id_5.scaleX = 0.5;
+		character_id_5.scaleY = 0.5;
+		characters_1.add(character_id_5);
+
+		// onPointerDownScript_7
+		const onPointerDownScript_7 = new OnPointerDownScript(character_id_5);
+
+		// pushActionScript_7
+		new PushActionScript(onPointerDownScript_7);
+
+		// descriptionsMechanism_17
+		const descriptionsMechanism_17 = new DescriptionsMechanism(character_id_5);
+
+		// glowFx_6
+		character_id_5.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_10
+		const character_id_10 = this.add.image(620, 510, "cartas1_Imprimir", 4);
+		character_id_10.name = "character_id_10";
+		character_id_10.scaleX = 0.5;
+		character_id_10.scaleY = 0.5;
+		characters_1.add(character_id_10);
+
+		// onPointerDownScript_6
+		const onPointerDownScript_6 = new OnPointerDownScript(character_id_10);
+
+		// pushActionScript_6
+		new PushActionScript(onPointerDownScript_6);
+
+		// descriptionsMechanism_18
+		const descriptionsMechanism_18 = new DescriptionsMechanism(character_id_10);
+
+		// glowFx_5
+		character_id_10.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_8
+		const character_id_8 = this.add.image(302, 510, "cartas1_Imprimir", 3);
+		character_id_8.name = "character_id_8";
+		character_id_8.scaleX = 0.5;
+		character_id_8.scaleY = 0.5;
+		characters_1.add(character_id_8);
+
+		// onPointerDownScript_5
+		const onPointerDownScript_5 = new OnPointerDownScript(character_id_8);
+
+		// pushActionScript_5
+		new PushActionScript(onPointerDownScript_5);
+
+		// descriptionsMechanism_19
+		const descriptionsMechanism_19 = new DescriptionsMechanism(character_id_8);
+
+		// glowFx_4
+		character_id_8.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_9
+		const character_id_9 = this.add.image(460, 510, "cartas1_Imprimir", 2);
+		character_id_9.name = "character_id_9";
+		character_id_9.scaleX = 0.5;
+		character_id_9.scaleY = 0.5;
+		characters_1.add(character_id_9);
+
+		// onPointerDownScript_4
+		const onPointerDownScript_4 = new OnPointerDownScript(character_id_9);
+
+		// pushActionScript_4
+		new PushActionScript(onPointerDownScript_4);
+
+		// descriptionsMechanism_20
+		const descriptionsMechanism_20 = new DescriptionsMechanism(character_id_9);
+
+		// glowFx_3
+		character_id_9.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_7
+		const character_id_7 = this.add.image(778, 510, "cartas1_Imprimir", 1);
+		character_id_7.name = "character_id_7";
+		character_id_7.scaleX = 0.5;
+		character_id_7.scaleY = 0.5;
+		characters_1.add(character_id_7);
+
+		// onPointerDownScript_3
+		const onPointerDownScript_3 = new OnPointerDownScript(character_id_7);
+
+		// pushActionScript_3
+		new PushActionScript(onPointerDownScript_3);
+
+		// descriptionsMechanism_13
+		const descriptionsMechanism_13 = new DescriptionsMechanism(character_id_7);
+
+		// glowFx_2
+		character_id_7.preFX.addGlow(16777215, 4, 0, false);
+
+		// character_id_4
+		const character_id_4 = this.add.image(777, 259, "cartas1_Imprimir", 0);
+		character_id_4.name = "character_id_4";
+		character_id_4.scaleX = 0.5;
+		character_id_4.scaleY = 0.5;
+		characters_1.add(character_id_4);
+
+		// onPointerDownScript_2
+		const onPointerDownScript_2 = new OnPointerDownScript(character_id_4);
+
+		// pushActionScript
+		new PushActionScript(onPointerDownScript_2);
+
+		// descriptionsMechanism_12
+		const descriptionsMechanism_12 = new DescriptionsMechanism(character_id_4);
+
+		// glowFx_1
+		character_id_4.preFX.addGlow(16777215, 4, 0, false);
+
+		// cartas4_Imprimir_1
+		const cartas4_Imprimir_1 = this.add.image(1038, 343, "cartas2_Imprimir", 1);
+		cartas4_Imprimir_1.scaleX = 0.9;
+		cartas4_Imprimir_1.scaleY = 0.9;
+		characters_1.add(cartas4_Imprimir_1);
+
+		// Card_description_1
+		const card_description_1 = this.add.text(1038, 554, "", {});
+		card_description_1.name = "Card_description_1";
+		card_description_1.scaleX = 0.2;
+		card_description_1.scaleY = 0.2;
+		card_description_1.setOrigin(0.5, -0.0011025686642976021);
+		card_description_1.text = "Character description";
+		card_description_1.setStyle({ "fontFamily": "minecraft", "fontSize": "100px" });
+		characters_1.add(card_description_1);
+
+		// peawns3
+		const peawns3 = this.add.image(394, 262, "peawns", 3);
+		characters.add(peawns3);
+
+		// peawns22
+		const peawns22 = this.add.image(405, 305, "peawns2", 2);
+		peawns22.angle = 35;
+		characters.add(peawns22);
+
+		// peawns0
+		const peawns0 = this.add.image(385, 395, "peawns", 0);
+		peawns0.angle = -42;
+		characters.add(peawns0);
+
+		// peawns23
+		const peawns23 = this.add.image(425, 458, "peawns2", 3);
+		peawns23.angle = 66;
+		characters.add(peawns23);
+
+		// characters_option_button
+		const characters_option_button = this.add.image(401, 375, "cartas2_Imprimir", 1);
+		characters_option_button.name = "characters_option_button";
+		characters.add(characters_option_button);
+
+		// onPointerDownScript_23
+		const onPointerDownScript_23 = new OnPointerDownScript(characters_option_button);
+
+		// pushActionScript_23
+		new PushActionScript(onPointerDownScript_23);
+
+		// descriptionsMechanism
+		const descriptionsMechanism = new DescriptionsMechanism(characters_option_button);
+
+		// highlights
+		const highlights = new Highlights(characters_option_button);
+
+		// glowFx_11
+		characters.postFX.addGlow(16777215, 4, 0, false);
+
+		// Button Play a Match
+		const button_Play_a_Match = this.add.container(-5, 12);
+		button_Play_a_Match.scaleX = 1.5;
+		button_Play_a_Match.scaleY = 1.5;
 
 		// highlight
 		const highlight = this.add.rectangle(180, 48, 128, 128);
 		highlight.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight.scaleX = 1.44;
-		highlight.scaleY = 0.21995512106258827;
+		highlight.scaleY = 0.21;
 		highlight.isFilled = true;
 		highlight.fillColor = 0;
 		highlight.strokeColor = 4194559;
 		highlight.strokeAlpha = 4;
 		highlight.lineWidth = 4;
-		button_Choose_Characters.add(highlight);
+		button_Play_a_Match.add(highlight);
 
 		// glowFx_13
 		highlight.postFX.addGlow(4194559, 3, 3, false);
 
-		// ChooseCharacters
-		const chooseCharacters = this.add.text(180, 48, "", {});
-		chooseCharacters.setInteractive(new Phaser.Geom.Rectangle(0, 0, 949.9773032706995, 100.90937292581162), Phaser.Geom.Rectangle.Contains);
-		chooseCharacters.scaleX = 0.18;
-		chooseCharacters.scaleY = 0.18;
-		chooseCharacters.setOrigin(0.5, 0.5);
-		chooseCharacters.text = "Choose Characters";
-		chooseCharacters.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		button_Choose_Characters.add(chooseCharacters);
+		// PlayAMatch
+		const playAMatch = this.add.text(180, 48, "", {});
+		playAMatch.setInteractive(new Phaser.Geom.Rectangle(-89, 0, 797.2954750839499, 122.13546878499065), Phaser.Geom.Rectangle.Contains);
+		playAMatch.scaleX = 0.18;
+		playAMatch.scaleY = 0.18;
+		playAMatch.setOrigin(0.5, 0.5);
+		playAMatch.text = "Play a Match";
+		playAMatch.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
+		button_Play_a_Match.add(playAMatch);
 
-		// goToScene_1
-		const goToScene_1 = new GoToScene(chooseCharacters);
+		// goToScene_3
+		const goToScene_3 = new GoToScene(playAMatch);
 
 		// onPointerDownScript
-		const onPointerDownScript = new OnPointerDownScript(chooseCharacters);
+		const onPointerDownScript = new OnPointerDownScript(playAMatch);
 
 		// pushActionScript_2
 		new PushActionScript(onPointerDownScript);
 
 		// Characters and Cards
-		const characters_and_Cards = this.add.container(-66, 12);
+		const characters_and_Cards = this.add.container(-84, 12);
 		characters_and_Cards.scaleX = 1.5;
 		characters_and_Cards.scaleY = 1.5;
 
 		// highlight_2
 		const highlight_2 = this.add.rectangle(422, 48, 128, 128);
 		highlight_2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_2.scaleX = 1.68;
-		highlight_2.scaleY = 0.21995512106258827;
+		highlight_2.scaleX = 1.7;
+		highlight_2.scaleY = 0.21;
 		highlight_2.isFilled = true;
 		highlight_2.fillColor = 0;
 		highlight_2.strokeColor = 4194559;
@@ -608,55 +607,16 @@ class CharactersAndCards extends Phaser.Scene {
 		// pushActionScript_20
 		new PushActionScript(onPointerDownScript_20);
 
-		// Button Profile
-		const button_Profile = this.add.container(-95, 12);
-		button_Profile.scaleX = 1.5;
-		button_Profile.scaleY = 1.5;
-
-		// highlight_3
-		const highlight_3 = this.add.rectangle(622, 48, 128, 128);
-		highlight_3.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_3.scaleX = 0.63;
-		highlight_3.scaleY = 0.21995512106258827;
-		highlight_3.isFilled = true;
-		highlight_3.fillColor = 0;
-		highlight_3.strokeColor = 4194559;
-		highlight_3.strokeAlpha = 4;
-		highlight_3.lineWidth = 4;
-		button_Profile.add(highlight_3);
-
-		// glowFx_16
-		highlight_3.postFX.addGlow(4194559, 3, 3, false);
-
-		// Profile
-		const profile = this.add.text(622, 48, "", {});
-		profile.setInteractive(new Phaser.Geom.Rectangle(-15, -17, 351.15663686934727, 134.83406914622725), Phaser.Geom.Rectangle.Contains);
-		profile.scaleX = 0.18;
-		profile.scaleY = 0.18;
-		profile.setOrigin(0.5, 0.5);
-		profile.text = "Profile";
-		profile.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
-		button_Profile.add(profile);
-
-		// onPointerDownScript_1
-		const onPointerDownScript_1 = new OnPointerDownScript(profile);
-
-		// pushActionScript_1
-		new PushActionScript(onPointerDownScript_1);
-
-		// goToScene_4
-		const goToScene_4 = new GoToScene(profile);
-
 		// Button Go Back To Home Page
-		const button_Go_Back_To_Home_Page = this.add.container(-121, 12);
+		const button_Go_Back_To_Home_Page = this.add.container(-54, 12);
 		button_Go_Back_To_Home_Page.scaleX = 1.5;
 		button_Go_Back_To_Home_Page.scaleY = 1.5;
 
 		// highlight_4
-		const highlight_4 = this.add.rectangle(808, 48, 128, 128);
+		const highlight_4 = this.add.rectangle(118, 48, 128, 128);
 		highlight_4.setInteractive(new Phaser.Geom.Rectangle(0, 0, 128, 128), Phaser.Geom.Rectangle.Contains);
-		highlight_4.scaleX = 1.53;
-		highlight_4.scaleY = 0.21995512106258827;
+		highlight_4.scaleX = 0.21;
+		highlight_4.scaleY = 0.21;
 		highlight_4.isFilled = true;
 		highlight_4.fillColor = 0;
 		highlight_4.strokeColor = 4194559;
@@ -668,12 +628,12 @@ class CharactersAndCards extends Phaser.Scene {
 		highlight_4.postFX.addGlow(4194559, 3, 3, false);
 
 		// ButtonGoToHomePage
-		const buttonGoToHomePage = this.add.text(808, 48, "", {});
-		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(-3, 3, 990.1760256343523, 103.70293702497405), Phaser.Geom.Rectangle.Contains);
+		const buttonGoToHomePage = this.add.text(118, 48, "", {});
+		buttonGoToHomePage.setInteractive(new Phaser.Geom.Rectangle(5, 3, 140.06943109917512, 113.226466611809), Phaser.Geom.Rectangle.Contains);
 		buttonGoToHomePage.scaleX = 0.18;
 		buttonGoToHomePage.scaleY = 0.18;
 		buttonGoToHomePage.setOrigin(0.5, 0.5);
-		buttonGoToHomePage.text = "Back To Home Page";
+		buttonGoToHomePage.text = "🏠";
 		buttonGoToHomePage.setStyle({ "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#4000ff", "strokeThickness":10});
 		button_Go_Back_To_Home_Page.add(buttonGoToHomePage);
 
@@ -683,64 +643,8 @@ class CharactersAndCards extends Phaser.Scene {
 		// pushActionScript_25
 		new PushActionScript(onPointerDownScript_25);
 
-		// goToScene
-		const goToScene = new GoToScene(buttonGoToHomePage);
-
-		// descriptionsMechanism_21 (prefab fields)
-		descriptionsMechanism_21.option = "Char";
-		descriptionsMechanism_21.id = 3;
-		descriptionsMechanism_21.frameId = 0;
-
-		// descriptionsMechanism_14 (prefab fields)
-		descriptionsMechanism_14.option = "Char";
-		descriptionsMechanism_14.id = 1;
-		descriptionsMechanism_14.frameId = 8;
-
-		// descriptionsMechanism_15 (prefab fields)
-		descriptionsMechanism_15.option = "Char";
-		descriptionsMechanism_15.id = 6;
-		descriptionsMechanism_15.frameId = 7;
-
-		// descriptionsMechanism_16 (prefab fields)
-		descriptionsMechanism_16.option = "Char";
-		descriptionsMechanism_16.id = 2;
-		descriptionsMechanism_16.frameId = 6;
-
-		// descriptionsMechanism_17 (prefab fields)
-		descriptionsMechanism_17.option = "Char";
-		descriptionsMechanism_17.id = 5;
-		descriptionsMechanism_17.frameId = 5;
-
-		// descriptionsMechanism_18 (prefab fields)
-		descriptionsMechanism_18.option = "Char";
-		descriptionsMechanism_18.id = 10;
-		descriptionsMechanism_18.frameId = 4;
-
-		// descriptionsMechanism_19 (prefab fields)
-		descriptionsMechanism_19.option = "Char";
-		descriptionsMechanism_19.id = 8;
-		descriptionsMechanism_19.frameId = 3;
-
-		// descriptionsMechanism_20 (prefab fields)
-		descriptionsMechanism_20.option = "Char";
-		descriptionsMechanism_20.id = 9;
-		descriptionsMechanism_20.frameId = 2;
-
-		// descriptionsMechanism_13 (prefab fields)
-		descriptionsMechanism_13.option = "Char";
-		descriptionsMechanism_13.id = 7;
-		descriptionsMechanism_13.frameId = 1;
-
-		// descriptionsMechanism_12 (prefab fields)
-		descriptionsMechanism_12.option = "Char";
-		descriptionsMechanism_12.id = 4;
-		descriptionsMechanism_12.frameId = 0;
-
-		// descriptionsMechanism (prefab fields)
-		descriptionsMechanism.option = "Characters";
-
-		// highlights (prefab fields)
-		highlights.type = "DescriptionCards";
+		// goToScene_1
+		const goToScene_1 = new GoToScene(buttonGoToHomePage);
 
 		// descriptionsMechanism_11 (prefab fields)
 		descriptionsMechanism_11.option = "Card";
@@ -796,33 +700,73 @@ class CharactersAndCards extends Phaser.Scene {
 		descriptionsMechanism_1.option = "Cards";
 
 		// highlights_1 (prefab fields)
-		highlights_1.type = "DescriptionChar";
+		highlights_1.type = "DescriptionCards";
 
-		// goToScene_1 (prefab fields)
-		goToScene_1.sceneChosen = "ChooseCharacters";
+		// descriptionsMechanism_21 (prefab fields)
+		descriptionsMechanism_21.option = "Char";
+		descriptionsMechanism_21.id = 3;
+		descriptionsMechanism_21.frameId = 0;
+
+		// descriptionsMechanism_14 (prefab fields)
+		descriptionsMechanism_14.option = "Char";
+		descriptionsMechanism_14.id = 1;
+		descriptionsMechanism_14.frameId = 8;
+
+		// descriptionsMechanism_15 (prefab fields)
+		descriptionsMechanism_15.option = "Char";
+		descriptionsMechanism_15.id = 6;
+		descriptionsMechanism_15.frameId = 7;
+
+		// descriptionsMechanism_16 (prefab fields)
+		descriptionsMechanism_16.option = "Char";
+		descriptionsMechanism_16.id = 2;
+		descriptionsMechanism_16.frameId = 6;
+
+		// descriptionsMechanism_17 (prefab fields)
+		descriptionsMechanism_17.option = "Char";
+		descriptionsMechanism_17.id = 5;
+		descriptionsMechanism_17.frameId = 5;
+
+		// descriptionsMechanism_18 (prefab fields)
+		descriptionsMechanism_18.option = "Char";
+		descriptionsMechanism_18.id = 10;
+		descriptionsMechanism_18.frameId = 4;
+
+		// descriptionsMechanism_19 (prefab fields)
+		descriptionsMechanism_19.option = "Char";
+		descriptionsMechanism_19.id = 8;
+		descriptionsMechanism_19.frameId = 3;
+
+		// descriptionsMechanism_20 (prefab fields)
+		descriptionsMechanism_20.option = "Char";
+		descriptionsMechanism_20.id = 9;
+		descriptionsMechanism_20.frameId = 2;
+
+		// descriptionsMechanism_13 (prefab fields)
+		descriptionsMechanism_13.option = "Char";
+		descriptionsMechanism_13.id = 7;
+		descriptionsMechanism_13.frameId = 1;
+
+		// descriptionsMechanism_12 (prefab fields)
+		descriptionsMechanism_12.option = "Char";
+		descriptionsMechanism_12.id = 4;
+		descriptionsMechanism_12.frameId = 0;
+
+		// descriptionsMechanism (prefab fields)
+		descriptionsMechanism.option = "Characters";
+
+		// highlights (prefab fields)
+		highlights.type = "DescriptionChar";
+
+		// goToScene_3 (prefab fields)
+		goToScene_3.sceneChosen = "ChooseCharacters";
 
 		// goToScene_2 (prefab fields)
 		goToScene_2.sceneChosen = "CharactersAndCards";
 
-		// goToScene_4 (prefab fields)
-		goToScene_4.sceneChosen = "Profile";
+		// goToScene_1 (prefab fields)
+		goToScene_1.sceneChosen = "HomePage";
 
-		// goToScene (prefab fields)
-		goToScene.sceneChosen = "HomePage";
-
-		this.character_id_3 = character_id_3;
-		this.character_id_1 = character_id_1;
-		this.character_id_6 = character_id_6;
-		this.character_id_2 = character_id_2;
-		this.character_id_5 = character_id_5;
-		this.character_id_10 = character_id_10;
-		this.character_id_8 = character_id_8;
-		this.character_id_9 = character_id_9;
-		this.character_id_7 = character_id_7;
-		this.character_id_4 = character_id_4;
-		this.card_description_1 = card_description_1;
-		this.characters_option_button = characters_option_button;
-		this.characters = characters;
 		this.card_id_1 = card_id_1;
 		this.card_id_6 = card_id_6;
 		this.card_id_4 = card_id_4;
@@ -836,36 +780,23 @@ class CharactersAndCards extends Phaser.Scene {
 		this.card_description = card_description;
 		this.cartas4_Imprimir3 = cartas4_Imprimir3;
 		this.cards = cards;
+		this.character_id_3 = character_id_3;
+		this.character_id_1 = character_id_1;
+		this.character_id_6 = character_id_6;
+		this.character_id_2 = character_id_2;
+		this.character_id_5 = character_id_5;
+		this.character_id_10 = character_id_10;
+		this.character_id_8 = character_id_8;
+		this.character_id_9 = character_id_9;
+		this.character_id_7 = character_id_7;
+		this.character_id_4 = character_id_4;
+		this.card_description_1 = card_description_1;
+		this.characters_option_button = characters_option_button;
+		this.characters = characters;
 
 		this.events.emit("scene-awake");
 	}
 
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_3;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_1;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_6;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_2;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_5;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_10;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_8;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_9;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_7;
-	/** @type {Phaser.GameObjects.Image} */
-	character_id_4;
-	/** @type {Phaser.GameObjects.Text} */
-	card_description_1;
-	/** @type {Phaser.GameObjects.Image} */
-	characters_option_button;
-	/** @type {Phaser.GameObjects.Container} */
-	characters;
 	/** @type {Phaser.GameObjects.Image} */
 	card_id_1;
 	/** @type {Phaser.GameObjects.Image} */
@@ -892,6 +823,32 @@ class CharactersAndCards extends Phaser.Scene {
 	cartas4_Imprimir3;
 	/** @type {Phaser.GameObjects.Container} */
 	cards;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_3;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_1;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_6;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_2;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_5;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_10;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_8;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_9;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_7;
+	/** @type {Phaser.GameObjects.Image} */
+	character_id_4;
+	/** @type {Phaser.GameObjects.Text} */
+	card_description_1;
+	/** @type {Phaser.GameObjects.Image} */
+	characters_option_button;
+	/** @type {Phaser.GameObjects.Container} */
+	characters;
 
 	/* START-USER-CODE */
 

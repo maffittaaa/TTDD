@@ -21,626 +21,6 @@
         },
         {
             "type": "Container",
-            "id": "744f3b7f-6e43-40b8-9c23-75ac4b1f9bdd",
-            "label": "Characters",
-            "useGameObjectName": true,
-            "scope": "CLASS",
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Container",
-                    "id": "a633278f-d925-4ac1-9156-37cdc94da366",
-                    "label": "Characters_1",
-                    "x": 37,
-                    "y": -15,
-                    "visible": false,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "9515815f-869e-4e5c-b0b3-7ad34e41a11f",
-                            "label": "character_id_3",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas2_Imprimir",
-                                "frame": 0
-                            },
-                            "x": 620,
-                            "y": 259,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "f98f5d33-3279-4b5d-a4df-f458418a984b",
-                                    "label": "onPointerDownScript_11",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "199ae49c-d8bd-4daa-9632-fe7b05725cbc",
-                                            "label": "pushActionScript_11"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 3,
-                                    "unlock": [
-                                        "property",
-                                        "frameId",
-                                        "id",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_21",
-                                    "option": "Char",
-                                    "frameId": 0
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "c6c79117-1f37-4eb1-95f7-aa56f97e1daf",
-                                    "label": "glowFx_10",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "1ab25a97-4ca0-47ba-a01f-402e2a074166",
-                            "label": "character_id_1",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 8
-                            },
-                            "x": 143,
-                            "y": 259,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "2f6a7ad3-b5e3-4363-a085-49d31fb1298c",
-                                    "label": "onPointerDownScript_10",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "83908435-6d42-4d6f-9e57-f835cf743110",
-                                            "label": "pushActionScript_10"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 1,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_14",
-                                    "option": "Char",
-                                    "frameId": 8
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "7f69e490-b401-4bc2-a204-33536d642619",
-                                    "label": "glowFx_9",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "739a9e80-7dd0-4683-98fe-608bced10e92",
-                            "label": "character_id_6",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 7
-                            },
-                            "x": 143,
-                            "y": 510,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "984f8695-9d01-44e0-86ae-fc89ec2a631a",
-                                    "label": "onPointerDownScript_9",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "2dff24bf-e09a-4b29-b32a-acb40ceb38b5",
-                                            "label": "pushActionScript_9"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 6,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_15",
-                                    "option": "Char",
-                                    "frameId": 7
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "06df2d1f-39a4-4c6f-8f3f-9f2bc1d1181f",
-                                    "label": "glowFx_8",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "944a674d-341b-4a73-b56e-a84be028ee42",
-                            "label": "character_id_2",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 6
-                            },
-                            "x": 302,
-                            "y": 259,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "0352a895-60db-42ea-b854-2714247f0522",
-                                    "label": "onPointerDownScript_8",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "d9ca1143-fe2f-4ea7-97cc-495ae5b16c29",
-                                            "label": "pushActionScript_8"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 2,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_16",
-                                    "option": "Char",
-                                    "frameId": 6
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "c29139c3-d27e-44b5-962b-786f8ef7f2c1",
-                                    "label": "glowFx_7",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "efea6639-4833-4499-bf1e-86ae0c9e8290",
-                            "label": "character_id_5",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 5
-                            },
-                            "x": 460,
-                            "y": 259,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "c0a92fe9-740e-47c7-a14f-4213e71f01bb",
-                                    "label": "onPointerDownScript_7",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "0536c59f-faae-476f-aa4d-a7fa5b208528",
-                                            "label": "pushActionScript_7"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 5,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_17",
-                                    "option": "Char",
-                                    "frameId": 5
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "c8939cce-05ba-4776-a086-1c37f4329a3b",
-                                    "label": "glowFx_6",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "dd912c02-b8fa-4342-9dca-cead89d4e3ac",
-                            "label": "character_id_10",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 4
-                            },
-                            "x": 620,
-                            "y": 510,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "4930dad1-fc72-4519-8282-cf2686cadc8d",
-                                    "label": "onPointerDownScript_6",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "f87ee592-e386-4123-aafd-571ea5950453",
-                                            "label": "pushActionScript_6"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 10,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_18",
-                                    "option": "Char",
-                                    "frameId": 4
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "a48197df-17c9-4bbf-9047-d53e80c44b69",
-                                    "label": "glowFx_5",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "6c907fde-1861-4ffe-b06c-600ce327c10f",
-                            "label": "character_id_8",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 3
-                            },
-                            "x": 302,
-                            "y": 510,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "a09b1829-a5ba-4f6e-9239-1772d5011bd5",
-                                    "label": "onPointerDownScript_5",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "64fd6201-f7cf-4812-af84-a58f0b5363fa",
-                                            "label": "pushActionScript_5"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 8,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_19",
-                                    "option": "Char",
-                                    "frameId": 3
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "0f30d843-14d3-4d95-a16d-41ac81f39155",
-                                    "label": "glowFx_4",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "05bda3d4-0279-4ed3-8089-8dfd00def496",
-                            "label": "character_id_9",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 2
-                            },
-                            "x": 460,
-                            "y": 510,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "0c49beb2-4450-4c57-8c1f-a81a4e55398f",
-                                    "label": "onPointerDownScript_4",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "4982d01e-a6d2-43b4-afad-58fa1ab37081",
-                                            "label": "pushActionScript_4"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 9,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_20",
-                                    "option": "Char",
-                                    "frameId": 2
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "56c1c187-103c-40e8-b731-2058a2e87504",
-                                    "label": "glowFx_3",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "c8f3022e-4e20-4e67-afe3-91d15fd2d269",
-                            "label": "character_id_7",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 1
-                            },
-                            "x": 778,
-                            "y": 510,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "0578fd80-a1c4-4b33-b30b-02b55c118793",
-                                    "label": "onPointerDownScript_3",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "0987f5dd-b70e-499d-8558-bf98802c0957",
-                                            "label": "pushActionScript_3"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 7,
-                                    "unlock": [
-                                        "id",
-                                        "frameId",
-                                        "option"
-                                    ],
-                                    "label": "descriptionsMechanism_13",
-                                    "option": "Char",
-                                    "frameId": 1
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "11eda6d4-41ad-4705-a390-14f6006041a9",
-                                    "label": "glowFx_2",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "1344bbcc-8ce4-481e-b4bf-a1e554207fff",
-                            "label": "character_id_4",
-                            "useGameObjectName": true,
-                            "scope": "PUBLIC",
-                            "texture": {
-                                "key": "cartas1_Imprimir",
-                                "frame": 0
-                            },
-                            "x": 777,
-                            "y": 259,
-                            "scaleX": 0.5,
-                            "scaleY": 0.5,
-                            "list": [
-                                {
-                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                                    "id": "4bfe8b83-a5eb-4b68-840f-e15eba5e304d",
-                                    "label": "onPointerDownScript_2",
-                                    "list": [
-                                        {
-                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                            "id": "c9b82f6c-85a8-4fce-8729-96dbdaf48f3b",
-                                            "label": "pushActionScript"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                                    "id": 4,
-                                    "unlock": [
-                                        "option",
-                                        "property",
-                                        "frameId",
-                                        "id"
-                                    ],
-                                    "label": "descriptionsMechanism_12",
-                                    "option": "Char",
-                                    "frameId": 0
-                                },
-                                {
-                                    "type": "Glow",
-                                    "id": "ff7fb585-1c65-4b93-b05e-0143f38c1435",
-                                    "label": "glowFx_1",
-                                    "preFX": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Image",
-                            "id": "f5593bd7-1df6-43d6-9102-c2163ede2a03",
-                            "label": "cartas4_Imprimir_1",
-                            "texture": {
-                                "key": "cartas2_Imprimir",
-                                "frame": 1
-                            },
-                            "x": 1038,
-                            "y": 343,
-                            "scaleX": 0.9,
-                            "scaleY": 0.9
-                        },
-                        {
-                            "type": "Text",
-                            "id": "3aa8edb2-aacc-4369-a531-7a665702f0ad",
-                            "label": "Card_description_1",
-                            "useGameObjectName": true,
-                            "scope": "CLASS",
-                            "x": 1038,
-                            "y": 554,
-                            "scaleX": 0.2,
-                            "scaleY": 0.2,
-                            "originX": 0.5,
-                            "originY": -0.0011025686642976021,
-                            "text": "Character description",
-                            "fontFamily": "minecraft",
-                            "fontSize": "100px"
-                        }
-                    ]
-                },
-                {
-                    "type": "Image",
-                    "id": "1854311a-fd82-4c81-bc9d-b5d17be1c68f",
-                    "label": "peawns0",
-                    "texture": {
-                        "key": "peawns",
-                        "frame": 0
-                    },
-                    "x": 246,
-                    "y": 395,
-                    "angle": -42
-                },
-                {
-                    "type": "Image",
-                    "id": "aa8c2325-29cd-4817-9864-5ed852ec428c",
-                    "label": "peawns3",
-                    "texture": {
-                        "key": "peawns",
-                        "frame": 3
-                    },
-                    "x": 394,
-                    "y": 194
-                },
-                {
-                    "type": "Image",
-                    "id": "0db6a384-0327-4aae-b8ce-01bc03afe0a3",
-                    "label": "peawns22",
-                    "texture": {
-                        "key": "peawns2",
-                        "frame": 2
-                    },
-                    "x": 577,
-                    "y": 296,
-                    "angle": 35
-                },
-                {
-                    "type": "Image",
-                    "id": "6da5e2d9-bf17-4ef0-b87b-81bb6d4babbb",
-                    "label": "peawns23",
-                    "texture": {
-                        "key": "peawns2",
-                        "frame": 3
-                    },
-                    "x": 548,
-                    "y": 458,
-                    "angle": 66
-                },
-                {
-                    "type": "Image",
-                    "id": "d013e492-d6cd-4e42-9282-17e08e7f33df",
-                    "label": "characters_option_button",
-                    "useGameObjectName": true,
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "cartas2_Imprimir",
-                        "frame": 1
-                    },
-                    "x": 401,
-                    "y": 375,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "2f05d429-0e07-4e83-97c8-6fc6cf919cc2",
-                            "label": "onPointerDownScript_23",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "3fe8e132-f6a1-40d1-a6e2-8e7458608a26",
-                                    "label": "pushActionScript_23"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
-                            "id": "e68532f3-e80a-472b-b340-0a0ea75b7395",
-                            "unlock": [
-                                "Option",
-                                "option"
-                            ],
-                            "label": "descriptionsMechanism",
-                            "option": "Characters"
-                        },
-                        {
-                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
-                            "id": "f94d3951-a188-4c17-ba8c-6fccf6d8b2df",
-                            "unlock": [
-                                "type"
-                            ],
-                            "label": "highlights",
-                            "type": "DescriptionCards"
-                        }
-                    ]
-                },
-                {
-                    "type": "Glow",
-                    "id": "26e27b00-e5a5-40f2-8017-4081f76b000c",
-                    "label": "glowFx_11"
-                }
-            ]
-        },
-        {
-            "type": "Container",
             "id": "bdfc7056-7ae3-49a7-b762-b1a79fb3f41c",
             "label": "Cards",
             "useGameObjectName": true,
@@ -1176,7 +556,7 @@
                         "key": "cartas3_Imprimir",
                         "frame": 3
                     },
-                    "x": 1035,
+                    "x": 892,
                     "y": 271,
                     "scaleX": 0.5,
                     "scaleY": 0.5
@@ -1189,7 +569,7 @@
                         "key": "cartas3_Imprimir",
                         "frame": 7
                     },
-                    "x": 1059,
+                    "x": 916,
                     "y": 375,
                     "scaleX": 0.5,
                     "scaleY": 0.5
@@ -1202,7 +582,7 @@
                         "key": "cartas3_Imprimir",
                         "frame": 6
                     },
-                    "x": 1080,
+                    "x": 937,
                     "y": 479,
                     "scaleX": 0.5,
                     "scaleY": 0.5
@@ -1249,37 +629,656 @@
                                 "type"
                             ],
                             "label": "highlights_1",
-                            "type": "DescriptionChar"
+                            "type": "DescriptionCards"
                         }
                     ]
                 },
                 {
                     "type": "Glow",
-                    "id": "0c520c6c-7c79-4486-9171-b7e3a51c9a86",
+                    "id": "a66934a5-3474-46cf-8654-a66f1cce141a",
                     "label": "glowFx_12"
                 }
             ]
         },
         {
             "type": "Container",
-            "id": "91c27757-1496-475f-b5a2-701d5b852787",
-            "label": "Button Choose Characters",
-            "x": -51,
+            "id": "744f3b7f-6e43-40b8-9c23-75ac4b1f9bdd",
+            "label": "Characters",
+            "useGameObjectName": true,
+            "scope": "CLASS",
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "a633278f-d925-4ac1-9156-37cdc94da366",
+                    "label": "Characters_1",
+                    "x": 37,
+                    "y": -15,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "9515815f-869e-4e5c-b0b3-7ad34e41a11f",
+                            "label": "character_id_3",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas2_Imprimir",
+                                "frame": 0
+                            },
+                            "x": 620,
+                            "y": 259,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "f98f5d33-3279-4b5d-a4df-f458418a984b",
+                                    "label": "onPointerDownScript_11",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "199ae49c-d8bd-4daa-9632-fe7b05725cbc",
+                                            "label": "pushActionScript_11"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 3,
+                                    "unlock": [
+                                        "property",
+                                        "frameId",
+                                        "id",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_21",
+                                    "option": "Char",
+                                    "frameId": 0
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c6c79117-1f37-4eb1-95f7-aa56f97e1daf",
+                                    "label": "glowFx_10",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1ab25a97-4ca0-47ba-a01f-402e2a074166",
+                            "label": "character_id_1",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 8
+                            },
+                            "x": 143,
+                            "y": 259,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "2f6a7ad3-b5e3-4363-a085-49d31fb1298c",
+                                    "label": "onPointerDownScript_10",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "83908435-6d42-4d6f-9e57-f835cf743110",
+                                            "label": "pushActionScript_10"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 1,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_14",
+                                    "option": "Char",
+                                    "frameId": 8
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "7f69e490-b401-4bc2-a204-33536d642619",
+                                    "label": "glowFx_9",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "739a9e80-7dd0-4683-98fe-608bced10e92",
+                            "label": "character_id_6",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 7
+                            },
+                            "x": 143,
+                            "y": 510,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "984f8695-9d01-44e0-86ae-fc89ec2a631a",
+                                    "label": "onPointerDownScript_9",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "2dff24bf-e09a-4b29-b32a-acb40ceb38b5",
+                                            "label": "pushActionScript_9"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 6,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_15",
+                                    "option": "Char",
+                                    "frameId": 7
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "06df2d1f-39a4-4c6f-8f3f-9f2bc1d1181f",
+                                    "label": "glowFx_8",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "944a674d-341b-4a73-b56e-a84be028ee42",
+                            "label": "character_id_2",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 6
+                            },
+                            "x": 302,
+                            "y": 259,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "0352a895-60db-42ea-b854-2714247f0522",
+                                    "label": "onPointerDownScript_8",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "d9ca1143-fe2f-4ea7-97cc-495ae5b16c29",
+                                            "label": "pushActionScript_8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 2,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_16",
+                                    "option": "Char",
+                                    "frameId": 6
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c29139c3-d27e-44b5-962b-786f8ef7f2c1",
+                                    "label": "glowFx_7",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "efea6639-4833-4499-bf1e-86ae0c9e8290",
+                            "label": "character_id_5",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 5
+                            },
+                            "x": 460,
+                            "y": 259,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "c0a92fe9-740e-47c7-a14f-4213e71f01bb",
+                                    "label": "onPointerDownScript_7",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "0536c59f-faae-476f-aa4d-a7fa5b208528",
+                                            "label": "pushActionScript_7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 5,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_17",
+                                    "option": "Char",
+                                    "frameId": 5
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "c8939cce-05ba-4776-a086-1c37f4329a3b",
+                                    "label": "glowFx_6",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "dd912c02-b8fa-4342-9dca-cead89d4e3ac",
+                            "label": "character_id_10",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 4
+                            },
+                            "x": 620,
+                            "y": 510,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "4930dad1-fc72-4519-8282-cf2686cadc8d",
+                                    "label": "onPointerDownScript_6",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "f87ee592-e386-4123-aafd-571ea5950453",
+                                            "label": "pushActionScript_6"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 10,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_18",
+                                    "option": "Char",
+                                    "frameId": 4
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "a48197df-17c9-4bbf-9047-d53e80c44b69",
+                                    "label": "glowFx_5",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "6c907fde-1861-4ffe-b06c-600ce327c10f",
+                            "label": "character_id_8",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 3
+                            },
+                            "x": 302,
+                            "y": 510,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "a09b1829-a5ba-4f6e-9239-1772d5011bd5",
+                                    "label": "onPointerDownScript_5",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "64fd6201-f7cf-4812-af84-a58f0b5363fa",
+                                            "label": "pushActionScript_5"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 8,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_19",
+                                    "option": "Char",
+                                    "frameId": 3
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "0f30d843-14d3-4d95-a16d-41ac81f39155",
+                                    "label": "glowFx_4",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "05bda3d4-0279-4ed3-8089-8dfd00def496",
+                            "label": "character_id_9",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 2
+                            },
+                            "x": 460,
+                            "y": 510,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "0c49beb2-4450-4c57-8c1f-a81a4e55398f",
+                                    "label": "onPointerDownScript_4",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "4982d01e-a6d2-43b4-afad-58fa1ab37081",
+                                            "label": "pushActionScript_4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 9,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_20",
+                                    "option": "Char",
+                                    "frameId": 2
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "56c1c187-103c-40e8-b731-2058a2e87504",
+                                    "label": "glowFx_3",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c8f3022e-4e20-4e67-afe3-91d15fd2d269",
+                            "label": "character_id_7",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 1
+                            },
+                            "x": 778,
+                            "y": 510,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "0578fd80-a1c4-4b33-b30b-02b55c118793",
+                                    "label": "onPointerDownScript_3",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "0987f5dd-b70e-499d-8558-bf98802c0957",
+                                            "label": "pushActionScript_3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 7,
+                                    "unlock": [
+                                        "id",
+                                        "frameId",
+                                        "option"
+                                    ],
+                                    "label": "descriptionsMechanism_13",
+                                    "option": "Char",
+                                    "frameId": 1
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "11eda6d4-41ad-4705-a390-14f6006041a9",
+                                    "label": "glowFx_2",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1344bbcc-8ce4-481e-b4bf-a1e554207fff",
+                            "label": "character_id_4",
+                            "useGameObjectName": true,
+                            "scope": "PUBLIC",
+                            "texture": {
+                                "key": "cartas1_Imprimir",
+                                "frame": 0
+                            },
+                            "x": 777,
+                            "y": 259,
+                            "scaleX": 0.5,
+                            "scaleY": 0.5,
+                            "list": [
+                                {
+                                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                                    "id": "4bfe8b83-a5eb-4b68-840f-e15eba5e304d",
+                                    "label": "onPointerDownScript_2",
+                                    "list": [
+                                        {
+                                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                            "id": "c9b82f6c-85a8-4fce-8729-96dbdaf48f3b",
+                                            "label": "pushActionScript"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                                    "id": 4,
+                                    "unlock": [
+                                        "option",
+                                        "property",
+                                        "frameId",
+                                        "id"
+                                    ],
+                                    "label": "descriptionsMechanism_12",
+                                    "option": "Char",
+                                    "frameId": 0
+                                },
+                                {
+                                    "type": "Glow",
+                                    "id": "ff7fb585-1c65-4b93-b05e-0143f38c1435",
+                                    "label": "glowFx_1",
+                                    "preFX": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f5593bd7-1df6-43d6-9102-c2163ede2a03",
+                            "label": "cartas4_Imprimir_1",
+                            "texture": {
+                                "key": "cartas2_Imprimir",
+                                "frame": 1
+                            },
+                            "x": 1038,
+                            "y": 343,
+                            "scaleX": 0.9,
+                            "scaleY": 0.9
+                        },
+                        {
+                            "type": "Text",
+                            "id": "3aa8edb2-aacc-4369-a531-7a665702f0ad",
+                            "label": "Card_description_1",
+                            "useGameObjectName": true,
+                            "scope": "CLASS",
+                            "x": 1038,
+                            "y": 554,
+                            "scaleX": 0.2,
+                            "scaleY": 0.2,
+                            "originX": 0.5,
+                            "originY": -0.0011025686642976021,
+                            "text": "Character description",
+                            "fontFamily": "minecraft",
+                            "fontSize": "100px"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "aa8c2325-29cd-4817-9864-5ed852ec428c",
+                    "label": "peawns3",
+                    "texture": {
+                        "key": "peawns",
+                        "frame": 3
+                    },
+                    "x": 394,
+                    "y": 262
+                },
+                {
+                    "type": "Image",
+                    "id": "0db6a384-0327-4aae-b8ce-01bc03afe0a3",
+                    "label": "peawns22",
+                    "texture": {
+                        "key": "peawns2",
+                        "frame": 2
+                    },
+                    "x": 405,
+                    "y": 305,
+                    "angle": 35
+                },
+                {
+                    "type": "Image",
+                    "id": "1854311a-fd82-4c81-bc9d-b5d17be1c68f",
+                    "label": "peawns0",
+                    "texture": {
+                        "key": "peawns",
+                        "frame": 0
+                    },
+                    "x": 385,
+                    "y": 395,
+                    "angle": -42
+                },
+                {
+                    "type": "Image",
+                    "id": "6da5e2d9-bf17-4ef0-b87b-81bb6d4babbb",
+                    "label": "peawns23",
+                    "texture": {
+                        "key": "peawns2",
+                        "frame": 3
+                    },
+                    "x": 425,
+                    "y": 458,
+                    "angle": 66
+                },
+                {
+                    "type": "Image",
+                    "id": "d013e492-d6cd-4e42-9282-17e08e7f33df",
+                    "label": "characters_option_button",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "cartas2_Imprimir",
+                        "frame": 1
+                    },
+                    "x": 401,
+                    "y": 375,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2f05d429-0e07-4e83-97c8-6fc6cf919cc2",
+                            "label": "onPointerDownScript_23",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "3fe8e132-f6a1-40d1-a6e2-8e7458608a26",
+                                    "label": "pushActionScript_23"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "80472b64-9421-41aa-8c32-3fe74f260d30",
+                            "id": "e68532f3-e80a-472b-b340-0a0ea75b7395",
+                            "unlock": [
+                                "Option",
+                                "option"
+                            ],
+                            "label": "descriptionsMechanism",
+                            "option": "Characters"
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "f94d3951-a188-4c17-ba8c-6fccf6d8b2df",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights",
+                            "type": "DescriptionChar"
+                        }
+                    ]
+                },
+                {
+                    "type": "Glow",
+                    "id": "26e27b00-e5a5-40f2-8017-4081f76b000c",
+                    "label": "glowFx_11"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "53337ed6-cddc-4158-92f9-c4b2996ddc1a",
+            "label": "Button Play a Match",
+            "x": -5,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "0692bc80-cf47-4392-96bd-e5880c7d7234",
+                    "id": "ae2b47f3-793e-4bcd-99c5-264907c0a323",
                     "label": "highlight",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
                     "x": 180,
                     "y": 48,
-                    "scaleX": 1.44,
-                    "scaleY": 0.21995512106258827,
+                    "scaleY": 0.21,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1290,7 +1289,7 @@
                     "list": [
                         {
                             "type": "Glow",
-                            "id": "a0f1e3d0-34f9-46ca-b9a3-0354e95d11dc",
+                            "id": "e0877bd5-1530-4ad2-b236-f46e70facb15",
                             "label": "glowFx_13",
                             "color": "#4000ff",
                             "outerStrength": 3,
@@ -1300,18 +1299,19 @@
                 },
                 {
                     "type": "Text",
-                    "id": "8c664581-b011-4a24-b7eb-f108875d7d93",
-                    "label": "ChooseCharacters",
+                    "id": "67b31685-7751-4dd1-a1c5-cf090ccd9761",
+                    "label": "PlayAMatch",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 949.9773032706995,
-                    "hitArea.height": 100.90937292581162,
+                    "hitArea.x": -89,
+                    "hitArea.width": 797.2954750839499,
+                    "hitArea.height": 122.13546878499065,
                     "x": 180,
                     "y": 48,
                     "scaleX": 0.18,
                     "scaleY": 0.18,
                     "originX": 0.5,
                     "originY": 0.5,
-                    "text": "Choose Characters",
+                    "text": "Play a Match",
                     "fontFamily": "Minecraft",
                     "fontSize": "100px",
                     "stroke": "#4000ff",
@@ -1319,21 +1319,21 @@
                     "list": [
                         {
                             "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "90712bae-9a82-451e-80d6-5aeb199c24ef",
+                            "id": "55066834-b518-4861-9301-dc5e406e55d3",
                             "unlock": [
                                 "sceneChosen"
                             ],
-                            "label": "goToScene_1",
+                            "label": "goToScene_3",
                             "sceneChosen": "ChooseCharacters"
                         },
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "95e8bb9f-f7bc-48ee-b694-a9ccb8ebd8e3",
+                            "id": "86fee3f3-ad32-4b85-a709-e65b61cb31aa",
                             "label": "onPointerDownScript",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "23f05772-ec9f-4f4e-a1c6-4765ecc688c9",
+                                    "id": "68e8f1fe-298a-46e7-9ff7-43f828be10c2",
                                     "label": "pushActionScript_2"
                                 }
                             ]
@@ -1344,24 +1344,24 @@
         },
         {
             "type": "Container",
-            "id": "ab9220a4-3f28-4632-afaf-247479334849",
+            "id": "84aad30e-3bc9-4196-a53c-b1191db58f2d",
             "label": "Characters and Cards",
-            "x": -66,
+            "x": -84,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "54e707c2-2551-4fcc-82e2-3b9b14f0b3a7",
+                    "id": "cd420069-c8db-4e04-949a-85f6875e37fe",
                     "label": "highlight_2",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
                     "x": 422,
                     "y": 48,
-                    "scaleX": 1.68,
-                    "scaleY": 0.21995512106258827,
+                    "scaleX": 1.7,
+                    "scaleY": 0.21,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1372,7 +1372,7 @@
                     "list": [
                         {
                             "type": "Glow",
-                            "id": "fae685ae-aa69-4bd3-b71b-785c01fe1bbd",
+                            "id": "cae744ce-624c-4c72-98b3-adc1c55b51d4",
                             "label": "glowFx_15",
                             "color": "#4000ff",
                             "outerStrength": 3,
@@ -1382,7 +1382,7 @@
                 },
                 {
                     "type": "Text",
-                    "id": "c49a2a56-6b4c-48a7-b032-56478c7c858e",
+                    "id": "48ec9a07-ed7d-4ff3-9b70-fff8cb7add59",
                     "label": "Characters And Cards",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 1101.472090680232,
@@ -1401,7 +1401,7 @@
                     "list": [
                         {
                             "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "efde4324-4795-413a-bab4-ad51bb307411",
+                            "id": "59d11cef-0cb4-4634-bd55-cc4bccde398e",
                             "unlock": [
                                 "sceneChosen"
                             ],
@@ -1410,12 +1410,12 @@
                         },
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "6e12f815-51c5-4cca-9312-8f2ed5821bb9",
+                            "id": "15a86b65-53be-464e-a632-3d29bd900d52",
                             "label": "onPointerDownScript_20",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "8791174f-f063-4110-b1b9-cf8fd0484d78",
+                                    "id": "716c1120-61da-42d0-b470-0c93529744cc",
                                     "label": "pushActionScript_20"
                                 }
                             ]
@@ -1426,108 +1426,24 @@
         },
         {
             "type": "Container",
-            "id": "3325e4fa-10fe-49c3-b4f4-a12cf341238b",
-            "label": "Button Profile",
-            "x": -95,
-            "y": 12,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "16276f25-6bbc-4dea-b540-368f5bd21639",
-                    "label": "highlight_3",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.width": 128,
-                    "hitArea.height": 128,
-                    "x": 622,
-                    "y": 48,
-                    "scaleX": 0.63,
-                    "scaleY": 0.21995512106258827,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "strokeColor": "#4000ff",
-                    "strokeAlpha": 4,
-                    "lineWidth": 4,
-                    "width": 128,
-                    "height": 128,
-                    "list": [
-                        {
-                            "type": "Glow",
-                            "id": "d7be4fb0-9673-4990-944d-fa13c5ccb086",
-                            "label": "glowFx_16",
-                            "color": "#4000ff",
-                            "outerStrength": 3,
-                            "innerStrength": 3
-                        }
-                    ]
-                },
-                {
-                    "type": "Text",
-                    "id": "865b5ddf-ca67-404a-b9e0-6e3d6673785c",
-                    "label": "Profile",
-                    "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -15,
-                    "hitArea.y": -17,
-                    "hitArea.width": 351.15663686934727,
-                    "hitArea.height": 134.83406914622725,
-                    "x": 622,
-                    "y": 48,
-                    "scaleX": 0.18,
-                    "scaleY": 0.18,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Profile",
-                    "fontFamily": "Minecraft",
-                    "fontSize": "100px",
-                    "stroke": "#4000ff",
-                    "strokeThickness": 10,
-                    "list": [
-                        {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "52c09284-4ad9-4986-9356-e65f8be1ba70",
-                            "label": "onPointerDownScript_1",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "46f5f647-e254-4433-92b4-e9223fd885fc",
-                                    "label": "pushActionScript_1"
-                                }
-                            ]
-                        },
-                        {
-                            "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "4d561fea-aaa2-48fe-99c5-04a82d852e0f",
-                            "unlock": [
-                                "sceneChosen"
-                            ],
-                            "label": "goToScene_4",
-                            "sceneChosen": "Profile"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "45d9c446-fb8d-4f56-ad62-0694fd2aa176",
+            "id": "cbc8f094-cd82-4f5f-8e14-4a3153e21b90",
             "label": "Button Go Back To Home Page",
-            "x": -121,
+            "x": -54,
             "y": 12,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "7ad91cbe-8658-428c-8a22-9ee32e7388b9",
+                    "id": "4187a219-07d4-4b7e-be66-4069be7799a6",
                     "label": "highlight_4",
                     "hitArea.shape": "RECTANGLE",
                     "hitArea.width": 128,
                     "hitArea.height": 128,
-                    "x": 808,
+                    "x": 118,
                     "y": 48,
-                    "scaleX": 1.53,
-                    "scaleY": 0.21995512106258827,
+                    "scaleX": 0.21,
+                    "scaleY": 0.21,
                     "isFilled": true,
                     "fillColor": "#000000",
                     "strokeColor": "#4000ff",
@@ -1538,7 +1454,7 @@
                     "list": [
                         {
                             "type": "Glow",
-                            "id": "2fe6ea58-f551-4c35-ba5d-b9500bd25de9",
+                            "id": "469a9cb4-3d24-470c-849d-be481e38e086",
                             "label": "glowFx_17",
                             "color": "#4000ff",
                             "outerStrength": 3,
@@ -1548,20 +1464,20 @@
                 },
                 {
                     "type": "Text",
-                    "id": "be198132-e208-448d-b93e-cb224876867d",
+                    "id": "fe0713cb-04e5-43fb-9a1b-746bb19bdfdd",
                     "label": "ButtonGoToHomePage",
                     "hitArea.shape": "RECTANGLE",
-                    "hitArea.x": -3,
+                    "hitArea.x": 5,
                     "hitArea.y": 3,
-                    "hitArea.width": 990.1760256343523,
-                    "hitArea.height": 103.70293702497405,
-                    "x": 808,
+                    "hitArea.width": 140.06943109917512,
+                    "hitArea.height": 113.226466611809,
+                    "x": 118,
                     "y": 48,
                     "scaleX": 0.18,
                     "scaleY": 0.18,
                     "originX": 0.5,
                     "originY": 0.5,
-                    "text": "Back To Home Page",
+                    "text": "🏠",
                     "fontFamily": "Minecraft",
                     "fontSize": "100px",
                     "stroke": "#4000ff",
@@ -1569,23 +1485,23 @@
                     "list": [
                         {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "3133bbbc-3e65-4682-b2fc-3af3af4f4fcc",
+                            "id": "ae19a4cd-2bfa-4a00-8d88-305b5017ad35",
                             "label": "onPointerDownScript_25",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "aa266161-92d4-467a-b463-e1137814a9b5",
+                                    "id": "c79ba435-beba-4046-9402-2266cf8bdee8",
                                     "label": "pushActionScript_25"
                                 }
                             ]
                         },
                         {
                             "prefabId": "75204fe0-9ada-41df-9d62-ced60a0cbf9a",
-                            "id": "44169921-f4e4-44f0-a9c6-8668196cfe30",
+                            "id": "834d0065-0580-4f02-ab91-924ebd55053b",
                             "unlock": [
                                 "sceneChosen"
                             ],
-                            "label": "goToScene",
+                            "label": "goToScene_1",
                             "sceneChosen": "HomePage"
                         }
                     ]

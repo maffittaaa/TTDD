@@ -35,10 +35,16 @@ class DescriptionsMechanism extends ScriptNode {
 							script.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
 						}
 					}
-	
-					script.parent.visible = false
-					script.scene.children.list[1].visible = false
-					script.parent.parentContainer.list[0].visible = true
+
+					for (let i = 0; i < script.parent.parentContainer.list.length; i++) {
+						if(i == 0){
+							script.parent.parentContainer.list[i].visible = true
+						}else{
+							script.parent.parentContainer.list[i].visible = false
+						}
+					}
+
+					script.scene.children.list[2].visible = false
 				}, 200);
 
 			}else if(this.option == "Characters"){
@@ -49,10 +55,16 @@ class DescriptionsMechanism extends ScriptNode {
 							script.parent.parentContainer.list[0].list[i].preFX.list[0].active = false
 						}
 					}
-	
-					script.parent.visible = false
-					script.scene.children.list[2].visible = false
-					script.parent.parentContainer.list[0].visible = true
+
+					for (let i = 0; i < script.parent.parentContainer.list.length; i++) {
+						if(i == 0){
+							script.parent.parentContainer.list[i].visible = true
+						}else{
+							script.parent.parentContainer.list[i].visible = false
+						}
+					}
+
+					script.scene.children.list[1].visible = false
 				}, 200);
 
 			}else if(this.option == "Char"){
