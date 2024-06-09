@@ -27,7 +27,6 @@ class HealthBarMechanism extends ScriptNode {
 		for (let i = 0; i < healthBar.length; i++) {
 
 			if (healthBar[i].name == "HealthBarsPlayer" + player) {
-
 				for (let j = 0; j < healthBar[i].list.length; j++) {
 					if (healthBar[i].list[j].name == "healthbar_p" + player + "_slot" + slot_id) {
 						for (let k = 0; k < 11; k++) {

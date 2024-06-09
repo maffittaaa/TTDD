@@ -6,7 +6,7 @@ var finalX = null
 var finalY = null
 var peakHeight = null
 var startTime = null
-var angle = 1
+var angle = 4
 var maxAngle = 360
 var duration = 500
 var thrownBack = false
@@ -51,9 +51,10 @@ class Throwables extends ScriptNode {
 		}else if(this.type == "Throwables"){
 			if (throwing == true) {
 				// console.log(throwing, item, initialX, initialY, finalX, finalY, peakHeight, startTime)
-	
 				if(item.x != finalX || item.y != finalY ){
-					item.angle += angle
+					if(item.name.search("throwables") == 0){
+						item.angle += angle
+					}
 					this.throwItem(item, initialX, initialY, finalX, finalY)
 				}else{
 					throwing = false
@@ -86,6 +87,7 @@ class Throwables extends ScriptNode {
 		  // Ensure the item ends at the final position
 			item.x = finalX;
 			item.y = finalY;
+
 			// item.angle = Math.atan2(finalY - initialY, finalX - initialX) * 180 / Math.PI;
 			item.angle = 0
 
@@ -99,11 +101,12 @@ class Throwables extends ScriptNode {
 					thrownBack = false
 				}
 			}else{
+				if(item.name.search("throwables") == 0){
+					item.visible = false
+				}
 				item.x = initialX;
 				item.y = initialY;
 			}
-
-
 
 			item = null
 			initialX = null
@@ -112,7 +115,6 @@ class Throwables extends ScriptNode {
 			finalY = null
 			peakHeight = null
 			startTime = null
-
 			throwing = false
 		}
 	}
