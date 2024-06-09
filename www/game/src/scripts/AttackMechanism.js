@@ -139,7 +139,7 @@ class AttackMechanism extends ScriptNode {
 				"targetSlot": targetSlot
 			},
 			success: function (data) {
-				console.log(data);
+				console.log("hello", data);
 				if (data.notWorking == true) {
 					scene.scene.children.list[5].text = data.message;
 					scene.scene.children.list[5].setVisible(true);
