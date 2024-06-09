@@ -163,12 +163,11 @@ class Match extends Phaser.Scene {
 		// glowFx_4
 		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
 
-		// player2_deck1
-		const player2_deck1 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
-		player2_deck1.name = "player2_deck1";
-		player2_deck1.scaleX = 0.4;
-		player2_deck1.scaleY = 0.4;
-		characterSlotsPlayer2.add(player2_deck1);
+		// cardsUnavailable3
+		const cardsUnavailable3 = this.add.image(1185, 582, "cardsUnavailable", 3);
+		cardsUnavailable3.scaleX = 0.4;
+		cardsUnavailable3.scaleY = 0.4;
+		characterSlotsPlayer2.add(cardsUnavailable3);
 
 		// CharacterSlotsPlayer1
 		const characterSlotsPlayer1 = this.add.container(0, -1);
@@ -1110,7 +1109,6 @@ class Match extends Phaser.Scene {
 		this.player2_slot3 = player2_slot3;
 		this.player2_slot4 = player2_slot4;
 		this.player2_slot5 = player2_slot5;
-		this.player2_deck1 = player2_deck1;
 		this.characterSlotsPlayer2 = characterSlotsPlayer2;
 		this.matchMechanism = matchMechanism;
 		this.player1_slot1 = player1_slot1;
@@ -1188,8 +1186,6 @@ class Match extends Phaser.Scene {
 	player2_slot4;
 	/** @type {Phaser.GameObjects.Image} */
 	player2_slot5;
-	/** @type {Phaser.GameObjects.Image} */
-	player2_deck1;
 	/** @type {Phaser.GameObjects.Container} */
 	characterSlotsPlayer2;
 	/** @type {MatchMechanism} */

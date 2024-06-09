@@ -347,12 +347,10 @@
                 },
                 {
                     "type": "Image",
-                    "id": "681b45c4-1ff8-4ce3-8e23-3570b25d8324",
-                    "label": "player2_deck1",
-                    "useGameObjectName": true,
-                    "scope": "PUBLIC",
+                    "id": "9de13831-ea5b-4cdc-b21d-accc65891e34",
+                    "label": "cardsUnavailable3",
                     "texture": {
-                        "key": "cartas4_Imprimir",
+                        "key": "cardsUnavailable",
                         "frame": 3
                     },
                     "x": 1185,
