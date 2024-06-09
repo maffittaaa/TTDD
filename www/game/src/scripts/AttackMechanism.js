@@ -1,5 +1,6 @@
 var attackerSlot = 0;
 var attacker = null;
+var target = null;
 var targetSlot = 0;
 var stillAttacking = false;
 var cardOnHold;
@@ -46,6 +47,7 @@ class AttackMechanism extends ScriptNode {
 				if (this.type == "Player") {
 					this.setAttackerSlot(this.slotID);
 				} else if (this.type == "Opponent") {
+					target.input.enabled = false;
 					this.setTargetSlot(this.slotID);
 				} else if (this.type == "Cards") {
 					this.playCard(this.cardID);
@@ -89,9 +91,10 @@ class AttackMechanism extends ScriptNode {
 	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
-
 		if (attackerSlot != 0) {
 			targetSlot = slot;
+			console.log(this.parent);
+			target = this.parent;
 			this.setGlowOnOff(this.parent, true);
 			this.doAttack();
 			attackerSlot = 0;
@@ -102,7 +105,7 @@ class AttackMechanism extends ScriptNode {
 			} else {
 				this.playCard(cardOnHold, slot);
 			}
-		};
+		}
 	}
 
 	setGlowOnOff(object, boolean) {
