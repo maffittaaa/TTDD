@@ -332,21 +332,21 @@ class Match extends Phaser.Scene {
 		// throwables_1
 		const throwables_1 = new Throwables(cardTook);
 
-		// player1_deck
-		const player1_deck = this.add.image(98, 582, "cartas4_Imprimir", 3);
-		player1_deck.name = "player1_deck";
-		player1_deck.scaleX = 0.4;
-		player1_deck.scaleY = 0.4;
-		characterSlotsPlayer1.add(player1_deck);
-
-		// glowFx_10
-		const glowFx_10 = player1_deck.preFX.addGlow(16777215, 10, 0, false);
+		// cardsUnavailable
+		const cardsUnavailable = this.add.image(98, 582, "cardsUnavailable", 3);
+		cardsUnavailable.name = "cardsUnavailable";
+		cardsUnavailable.scaleX = 0.4;
+		cardsUnavailable.scaleY = 0.4;
+		characterSlotsPlayer1.add(cardsUnavailable);
 
 		// cardsMechanism_3
-		const cardsMechanism_3 = new CardsMechanism(player1_deck);
+		const cardsMechanism_3 = new CardsMechanism(cardsUnavailable);
+
+		// glowFx_10
+		const glowFx_10 = cardsUnavailable.preFX.addGlow(16777215, 10, 0, false);
 
 		// onPointerDownScript_11
-		const onPointerDownScript_11 = new OnPointerDownScript(player1_deck);
+		const onPointerDownScript_11 = new OnPointerDownScript(cardsUnavailable);
 
 		// pushActionScript_5
 		new PushActionScript(onPointerDownScript_11);
@@ -1186,6 +1186,7 @@ class Match extends Phaser.Scene {
 		this.player1_slot5 = player1_slot5;
 		this.cardTook = cardTook;
 		this.glowFx_10 = glowFx_10;
+		this.cardsUnavailable = cardsUnavailable;
 		this.damageAnimationMechanism = damageAnimationMechanism;
 		this.characterSlotsPlayer1 = characterSlotsPlayer1;
 		this.healthBarMechanism = healthBarMechanism;
@@ -1274,6 +1275,8 @@ class Match extends Phaser.Scene {
 	cardTook;
 	/** @type {Phaser.FX.Glow} */
 	glowFx_10;
+	/** @type {Phaser.GameObjects.Image} */
+	cardsUnavailable;
 	/** @type {DamageAnimationMechanism} */
 	damageAnimationMechanism;
 	/** @type {Phaser.GameObjects.Container} */

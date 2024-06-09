@@ -766,11 +766,12 @@
                 },
                 {
                     "type": "Image",
-                    "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
-                    "label": "player1_deck",
+                    "id": "0ddd1cfd-b34e-476c-9b76-476bd4b3b952",
+                    "label": "cardsUnavailable",
                     "useGameObjectName": true,
+                    "scope": "CLASS",
                     "texture": {
-                        "key": "cartas4_Imprimir",
+                        "key": "cardsUnavailable",
                         "frame": 3
                     },
                     "x": 98,
@@ -779,16 +780,8 @@
                     "scaleY": 0.4,
                     "list": [
                         {
-                            "type": "Glow",
-                            "id": "cbeffbf1-2bae-445c-9935-fe7040e12b3f",
-                            "label": "glowFx_10",
-                            "scope": "PUBLIC",
-                            "outerStrength": 10,
-                            "preFX": true
-                        },
-                        {
                             "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
-                            "id": "3f5d01ca-8a13-4283-9ee7-06cc27e0c1d0",
+                            "id": "0f1d7977-6098-4dcc-8b80-a0cc297e10e5",
                             "unlock": [
                                 "type"
                             ],
@@ -796,13 +789,21 @@
                             "type": "Deck"
                         },
                         {
+                            "type": "Glow",
+                            "id": "1aafd9a1-80c0-4f27-a423-245b3f95b3f9",
+                            "label": "glowFx_10",
+                            "scope": "PUBLIC",
+                            "outerStrength": 10,
+                            "preFX": true
+                        },
+                        {
                             "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "ed52eb00-f1e0-407f-b689-8683bc0e8e94",
+                            "id": "148a3e82-0d82-489f-8126-fb2357021a8a",
                             "label": "onPointerDownScript_11",
                             "list": [
                                 {
                                     "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "41caa89e-65ee-4353-b651-71a8cf9b8431",
+                                    "id": "3b57c2e6-d748-48f6-ba61-1dab873fe854",
                                     "label": "pushActionScript_5"
                                 }
                             ]
