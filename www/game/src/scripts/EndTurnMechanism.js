@@ -26,12 +26,24 @@ class EndTurnMechanism extends ScriptNode {
 	}
 
 	endOfTurn() {
+		var scene = this;
 		$.ajax({
 			type: 'GET',
 			url: '/attack/endTurn',
 
 			success: function (data) {
 				console.log(data);
+				scene.setGlowOnOff(scene.scene.children.list[7].list[0], false);
+				scene.setGlowOnOff(scene.scene.children.list[7].list[1], false);
+				scene.setGlowOnOff(scene.scene.children.list[7].list[2], false);
+				scene.setGlowOnOff(scene.scene.children.list[7].list[3], false);
+				scene.setGlowOnOff(scene.scene.children.list[7].list[4], false);
+				scene.scene.children.list[7].list[0].setTexture("peawns", scene.scene.children.list[7].list[0].frame.name);
+				scene.scene.children.list[7].list[1].setTexture("peawns", scene.scene.children.list[7].list[1].frame.name);
+				scene.scene.children.list[7].list[2].setTexture("peawns", scene.scene.children.list[7].list[2].frame.name);
+				scene.scene.children.list[7].list[3].setTexture("peawns", scene.scene.children.list[7].list[3].frame.name);
+				scene.scene.children.list[7].list[4].setTexture("peawns", scene.scene.children.list[7].list[4].frame.name);
+
 			},
 			error: function (err) {
 				console.log(err);
@@ -39,6 +51,13 @@ class EndTurnMechanism extends ScriptNode {
 		})
 	};
 
+	setGlowOnOff(object, boolean) {
+		object.preFX.list[0].active = boolean;
+		object.input.enabled = true;
+		object.preFX.list[0].glcolor[0] = 1;
+		object.preFX.list[0].glcolor[1] = 1;
+		object.preFX.list[0].glcolor[2] = 1;
+	}
 	/* END-USER-CODE */
 }
 

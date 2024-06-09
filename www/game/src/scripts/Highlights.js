@@ -35,8 +35,8 @@ class Highlights extends ScriptNode {
 
 	/* START-USER-CODE */
 
-	start(){
-		if(this.type == "DescriptionCards" || this.type == "DescriptionChar"){
+	start() {
+		if (this.type == "DescriptionCards" || this.type == "DescriptionChar") {
 			this.parent.parentContainer.postPipelines[0].active = false
 
 			this.parent.on('pointerdown', event => {
@@ -45,39 +45,39 @@ class Highlights extends ScriptNode {
 
 			this.parent.on('pointerover', event => {
 				this.parent.parentContainer.postPipelines[0].active = true
-				if(this.type == "DescriptionCards"){
+				if (this.type == "DescriptionCards") {
 					cardsAnimIn = true
 					cardsAnimOut = false
-				}else if(this.type == "DescriptionChar"){
+				} else if (this.type == "DescriptionChar") {
 					charAnimIn = true
 					charAnimOut = false
 				}
 			})
 			this.parent.on('pointerout', event => {
 				this.parent.parentContainer.postPipelines[0].active = false
-				if(this.type == "DescriptionCards"){
+				if (this.type == "DescriptionCards") {
 					cardsAnimOut = true
 					cardsAnimIn = false
-				}else if(this.type == "DescriptionChar"){
+				} else if (this.type == "DescriptionChar") {
 					charAnimOut = true
 					charAnimIn = false
 				}
 			})
-		}else if (this.type == "Descriptions"){
+		} else if (this.type == "Descriptions") {
 			this.parent.on('pointerdown', event => {
 				this.clicked = true
 			})
 			this.parent.on('pointerover', event => {
-				if(this.clicked == false){
+				if (this.clicked == false) {
 					this.parent.preFX.list[0].active = true;
 				}
 			})
 			this.parent.on('pointerout', event => {
-				if(this.clicked == false){
+				if (this.clicked == false) {
 					this.parent.preFX.list[0].active = false;
 				}
 			})
-		}else if (this.type == "LobbyChar"){
+		} else if (this.type == "LobbyChar") {
 			this.parent.on('pointerdown', event => {
 				var alreadyChosen = false;
 
@@ -87,12 +87,12 @@ class Highlights extends ScriptNode {
 					}
 				}
 
-				if(alreadyChosen == false){
+				if (alreadyChosen == false) {
 					this.clicked = true
 				}
 			})
 			this.parent.on('pointerover', event => {
-				if(this.clicked == false){
+				if (this.clicked == false) {
 
 					var alreadyChosen = false;
 
@@ -102,13 +102,13 @@ class Highlights extends ScriptNode {
 						}
 					}
 
-					if(alreadyChosen == false){
+					if (alreadyChosen == false) {
 						this.parent.preFX.list[0].active = true;
 					}
 				}
 			})
 			this.parent.on('pointerout', event => {
-				if(this.clicked == false){
+				if (this.clicked == false) {
 					var alreadyChosen = false;
 
 					for (let i = 1; i < 6; i++) { //there are 5 slots
@@ -117,121 +117,151 @@ class Highlights extends ScriptNode {
 						}
 					}
 
-					if(alreadyChosen == false){
+					if (alreadyChosen == false) {
 						this.parent.preFX.list[0].active = false;
 					}
 				}
 			})
-		}else if(this.type == "LobbyLevelXp"){
+		} else if (this.type == "LobbyLevelXp") {
 			this.parent.on('pointerover', event => {
 				this.parent.text = xpText;
 			})
 			this.parent.on('pointerout', event => {
 				this.parent.text = levelText;
 			})
-		}else if(this.type == "LobbySlots"){
+		} else if (this.type == "LobbySlots") {
 			this.parent.on('pointerover', event => {
-				if(this.parent.preFX.list[0].active == true){
-					this.parent.preFX.list[0].glcolor[1] = 0
-					this.parent.preFX.list[0].glcolor[2] = 0.498
+				if (this.parent.preFX.list[0].active == true) {
+					this.parent.preFX.list[0].glcolor[1] = 0;
+					this.parent.preFX.list[0].glcolor[2] = 0.498;
 				}
 			})
 			this.parent.on('pointerout', event => {
-				if(this.parent.preFX.list[0].active == true){
-					this.parent.preFX.list[0].glcolor[1] = 1
-					this.parent.preFX.list[0].glcolor[2] = 1
+				if (this.parent.preFX.list[0].active == true) {
+					this.parent.preFX.list[0].glcolor[1] = 1;
+					this.parent.preFX.list[0].glcolor[2] = 1;
 				}
 			})
 			this.parent.on('pointerdown', event => {
-				this.parent.preFX.list[0].glcolor[1] = 1
-				this.parent.preFX.list[0].glcolor[2] = 1
+				this.parent.preFX.list[0].glcolor[1] = 1;
+				this.parent.preFX.list[0].glcolor[2] = 1;
 			})
+		} else if (this.type == "Match") {
+			this.parent.on('pointerover', event => {
+				if (this.clicked == false) {
+					this.parent.preFX.list[0].active = true;
+				}
+			});
+			this.parent.on('pointerout', event => {
+				if (this.clicked == false) {
+					this.parent.preFX.list[0].active = false;
+				}
+			});
+			this.parent.on('pointerdown', event => {
+				if (this.clicked == false) {
+					this.clicked = true;
+				} else {
+					this.clicked = false;
+				}
+			})
+		} else if (this.type == "Buttons") {
+			this.parent.preFX.list[0].active = false;
+			this.parent.on('pointerover', event => {
+				this.parent.preFX.list[0].active = true;
+			});
+			this.parent.on('pointerout', event => {
+				this.parent.preFX.list[0].active = false;
+			});
 		}
 	}
 
-	update(){
-		if(this.type == "DescriptionCards"){
-			if (cardsAnimOut == true){
-				this.moveToLeft(this.parent.parentContainer)
+	update() {
+		if (this.type == "DescriptionCards") {
+			if (cardsAnimOut == true) {
+				this.moveToLeft(this.parent.parentContainer);
 			}
-			if(cardsAnimIn == true){
-				this.moveToRight(this.parent.parentContainer)
+			if (cardsAnimIn == true) {
+				this.moveToRight(this.parent.parentContainer);
 			}
-		}else if(this.type == "DescriptionChar"){
-			if (charAnimOut == true){
-				this.moveCharOut(this.parent.parentContainer)
+		} else if (this.type == "DescriptionChar") {
+			if (charAnimOut == true) {
+				this.moveCharOut(this.parent.parentContainer);
 			}
-			if(charAnimIn == true){
-				this.moveCharIn(this.parent.parentContainer)
+			if (charAnimIn == true) {
+				this.moveCharIn(this.parent.parentContainer);
 			}
 		}
 
-		if (this.type == "Descriptions"){
-			if(this.parent.preFX.list[0].active == false){
-				this.clicked = false
+		if (this.type == "Descriptions") {
+			if (this.parent.preFX.list[0].active == false) {
+				this.clicked = false;
 			}
-		}else if (this.type == "LobbyChar"){
-			if(this.parent.preFX.list[0].active == false){
-				this.clicked = false
+		} else if (this.type == "LobbyChar") {
+			if (this.parent.preFX.list[0].active == false) {
+				this.clicked = false;
+			}
+		} else if (this.type == "Match") {
+			if (this.parent.preFX.list[0].active == false) {
+				this.clicked = false;
 			}
 		}
 	}
 
-	moveToRight(parentContainer){
-		if(parentContainer.list[1].x < cardsInitialX[0] + cardsDist){
+	moveToRight(parentContainer) {
+		if (parentContainer.list[1].x < cardsInitialX[0] + cardsDist) {
 			parentContainer.list[1].x += cardsDistInc
-		}else if (parentContainer.list[2].x < cardsInitialX[1] + cardsDist){
+		} else if (parentContainer.list[2].x < cardsInitialX[1] + cardsDist) {
 			parentContainer.list[2].x += cardsDistInc
-		}else if (parentContainer.list[3].x < cardsInitialX[2] + cardsDist){
-			parentContainer.list[3].x += cardsDistInc	
-		}else{
+		} else if (parentContainer.list[3].x < cardsInitialX[2] + cardsDist) {
+			parentContainer.list[3].x += cardsDistInc
+		} else {
 			cardsAnimIn = false
 		}
 	}
 
-	moveToLeft(parentContainer){
-		if(parentContainer.list[3].x > cardsInitialX[2]){
+	moveToLeft(parentContainer) {
+		if (parentContainer.list[3].x > cardsInitialX[2]) {
 			parentContainer.list[3].x -= cardsDistInc
-		}else if (parentContainer.list[2].x > cardsInitialX[1]){
+		} else if (parentContainer.list[2].x > cardsInitialX[1]) {
 			parentContainer.list[2].x -= cardsDistInc
-		}else if (parentContainer.list[1].x > cardsInitialX[0]){
-			parentContainer.list[1].x -= cardsDistInc	
-		}else{
+		} else if (parentContainer.list[1].x > cardsInitialX[0]) {
+			parentContainer.list[1].x -= cardsDistInc
+		} else {
 			cardsAnimOut = false
 		}
 	}
 
-	moveCharIn(parentContainer){
-		if(parentContainer.list[1].y > pandaInitialY - charDistY){
+	moveCharIn(parentContainer) {
+		if (parentContainer.list[1].y > pandaInitialY - charDistY) {
 			parentContainer.list[1].y -= charDistIncY
 		}
-		if (parentContainer.list[2].x < charInitialX[0] + charDistX){
-			parentContainer.list[2].x += charDistIncX	
+		if (parentContainer.list[2].x < charInitialX[0] + charDistX) {
+			parentContainer.list[2].x += charDistIncX
 		}
-		if (parentContainer.list[3].x > charInitialX[1] - charDistX){
-			parentContainer.list[3].x -= charDistIncX	
+		if (parentContainer.list[3].x > charInitialX[1] - charDistX) {
+			parentContainer.list[3].x -= charDistIncX
 		}
-		if (parentContainer.list[4].x < charInitialX[2] + charDistX){
-			parentContainer.list[4].x += charDistIncX	
-		}else{
+		if (parentContainer.list[4].x < charInitialX[2] + charDistX) {
+			parentContainer.list[4].x += charDistIncX
+		} else {
 			charAnimIn = false
 		}
 	}
 
-	moveCharOut(parentContainer){
+	moveCharOut(parentContainer) {
 
-		if(parentContainer.list[1].y < pandaInitialY){
+		if (parentContainer.list[1].y < pandaInitialY) {
 			parentContainer.list[1].y += charDistIncY
 		}
-		if (parentContainer.list[2].x > charInitialX[0]){
-			parentContainer.list[2].x -= charDistIncX	
+		if (parentContainer.list[2].x > charInitialX[0]) {
+			parentContainer.list[2].x -= charDistIncX
 		}
-		if (parentContainer.list[3].x < charInitialX[1]){
-			parentContainer.list[3].x += charDistIncX	
+		if (parentContainer.list[3].x < charInitialX[1]) {
+			parentContainer.list[3].x += charDistIncX
 		}
-		if (parentContainer.list[4].x > charInitialX[2]){
-			parentContainer.list[4].x -= charDistIncX	
-		}else{
+		if (parentContainer.list[4].x > charInitialX[2]) {
+			parentContainer.list[4].x -= charDistIncX
+		} else {
 			charAnimOut = false
 		}
 	}

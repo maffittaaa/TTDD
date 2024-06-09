@@ -192,6 +192,19 @@
                 "key": "NameAndLevelMechanism"
             },
             {
+                "url": "assets/pawnsAttacked.png",
+                "frameConfig": {
+                    "frameWidth": 215,
+                    "frameHeight": 263,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 4,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "pawnsAttacked"
+            },
+            {
                 "url": "assets/pawnsBlackAndWhiteLeft.png",
                 "frameConfig": {
                     "frameWidth": 215,

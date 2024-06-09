@@ -145,6 +145,15 @@
                             "type": "Opponent",
                             "slotID": 1,
                             "damageText": ""
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "2e0822d7-f0bf-4565-9560-70b734878896",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_4",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -166,16 +175,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "51f8e160-0fdd-4799-b760-ace208e1887e",
-                            "label": "onPointerDownScript_2",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "01a5efb4-722d-403f-8433-339d90fc27ce",
-                                    "label": "pushActionScript_2"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "fdd312a0-17e6-47ab-9013-8da3f2db2c11",
+                            "label": "glowFx_1",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -189,11 +193,25 @@
                             "slotID": 2
                         },
                         {
-                            "type": "Glow",
-                            "id": "fdd312a0-17e6-47ab-9013-8da3f2db2c11",
-                            "label": "glowFx_1",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "51f8e160-0fdd-4799-b760-ace208e1887e",
+                            "label": "onPointerDownScript_2",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "01a5efb4-722d-403f-8433-339d90fc27ce",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "ad1ef0ab-a4e4-46c0-a57f-d34c2dc7f21c",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_6",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -215,16 +233,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "bd60db59-a8cb-487b-a952-a9e9f99f422e",
-                            "label": "onPointerDownScript",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "ea9d7495-2af6-48a1-9e94-7bb142b7c968",
-                                    "label": "pushActionScript"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "0903a005-a263-4fa1-be43-6697b8421c6c",
+                            "label": "glowFx_2",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -238,11 +251,25 @@
                             "slotID": 3
                         },
                         {
-                            "type": "Glow",
-                            "id": "0903a005-a263-4fa1-be43-6697b8421c6c",
-                            "label": "glowFx_2",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "bd60db59-a8cb-487b-a952-a9e9f99f422e",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "ea9d7495-2af6-48a1-9e94-7bb142b7c968",
+                                    "label": "pushActionScript"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "fe4010b0-5344-49ef-9ac9-474d94bf1a0f",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_7",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -264,16 +291,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "29fa70aa-d82e-440e-8b39-9074a2d976fb",
-                            "label": "onPointerDownScript_3",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "0d6089ac-7acf-4387-8a78-3a5df5a86346",
-                                    "label": "pushActionScript_3"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "56dfb38d-8cf5-4bd8-9f33-e1f5f50720d8",
+                            "label": "glowFx_3",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -287,11 +309,25 @@
                             "slotID": 4
                         },
                         {
-                            "type": "Glow",
-                            "id": "56dfb38d-8cf5-4bd8-9f33-e1f5f50720d8",
-                            "label": "glowFx_3",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "29fa70aa-d82e-440e-8b39-9074a2d976fb",
+                            "label": "onPointerDownScript_3",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "0d6089ac-7acf-4387-8a78-3a5df5a86346",
+                                    "label": "pushActionScript_3"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "23cd5ae0-d87c-4cfc-9377-78f8005b4e98",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_8",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -313,16 +349,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "7119ffbd-9351-4c94-ac97-b69a503daa1b",
-                            "label": "onPointerDownScript_4",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "b91e7920-7a81-4d10-8116-a0e55d9a68e8",
-                                    "label": "pushActionScript_4"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "9a5b2a4d-9fc5-4f19-b236-a58a06d171e7",
+                            "label": "glowFx_4",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -336,11 +367,25 @@
                             "slotID": 5
                         },
                         {
-                            "type": "Glow",
-                            "id": "9a5b2a4d-9fc5-4f19-b236-a58a06d171e7",
-                            "label": "glowFx_4",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "7119ffbd-9351-4c94-ac97-b69a503daa1b",
+                            "label": "onPointerDownScript_4",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "b91e7920-7a81-4d10-8116-a0e55d9a68e8",
+                                    "label": "pushActionScript_4"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "d98e8bbc-117f-426f-a224-222374c9e15a",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_9",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -388,16 +433,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
-                            "label": "onPointerDownScript_6",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
-                                    "label": "pushActionScript_6"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
+                            "label": "glowFx_5",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -411,10 +450,16 @@
                             "slotID": 1
                         },
                         {
-                            "type": "Glow",
-                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
-                            "label": "glowFx_5",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
+                            "label": "onPointerDownScript_6",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
+                                    "label": "pushActionScript_6"
+                                }
+                            ]
                         },
                         {
                             "prefabId": "be70220d-7008-4023-a207-9709a032868b",
@@ -449,6 +494,15 @@
                             "label": "nameAndLevelMechanism",
                             "nameText": "namePlayer1Text",
                             "levelText": "levelPlayer1Text"
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "592c20fd-0bcc-4886-86e4-7508cae12fd8",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_5",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -470,16 +524,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
-                            "label": "onPointerDownScript_7",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
-                                    "label": "pushActionScript_7"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
+                            "label": "glowFx_6",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -493,10 +541,25 @@
                             "slotID": 2
                         },
                         {
-                            "type": "Glow",
-                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
-                            "label": "glowFx_6",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
+                            "label": "onPointerDownScript_7",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
+                                    "label": "pushActionScript_7"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "6059591c-1e7d-4da8-a84b-06045aa33356",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -518,16 +581,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
-                            "label": "onPointerDownScript_8",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
-                                    "label": "pushActionScript_8"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
+                            "label": "glowFx_7",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -541,10 +598,25 @@
                             "slotID": 3
                         },
                         {
-                            "type": "Glow",
-                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
-                            "label": "glowFx_7",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
+                            "label": "onPointerDownScript_8",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
+                                    "label": "pushActionScript_8"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "82d237d6-30bb-4582-8487-a35da1911b37",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_1",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -566,16 +638,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
-                            "label": "onPointerDownScript_9",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
-                                    "label": "pushActionScript_9"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
+                            "label": "glowFx_8",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -589,10 +655,25 @@
                             "slotID": 4
                         },
                         {
-                            "type": "Glow",
-                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
-                            "label": "glowFx_8",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
+                            "label": "onPointerDownScript_9",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
+                                    "label": "pushActionScript_9"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "9ffafb4d-da16-4c88-bde7-5007e12a7c4a",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_2",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -614,16 +695,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
-                            "label": "onPointerDownScript_10",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
-                                    "label": "pushActionScript_10"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
+                            "label": "glowFx_9",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -637,10 +712,25 @@
                             "slotID": 5
                         },
                         {
-                            "type": "Glow",
-                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
-                            "label": "glowFx_9",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
+                            "label": "onPointerDownScript_10",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
+                                    "label": "pushActionScript_10"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "1b01faf9-da63-47ae-9afa-ecfc892798cc",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_3",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -689,16 +779,12 @@
                     "scaleY": 0.4,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "ed52eb00-f1e0-407f-b689-8683bc0e8e94",
-                            "label": "onPointerDownScript_11",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "41caa89e-65ee-4353-b651-71a8cf9b8431",
-                                    "label": "pushActionScript_5"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "cbeffbf1-2bae-445c-9935-fe7040e12b3f",
+                            "label": "glowFx_10",
+                            "scope": "PUBLIC",
+                            "outerStrength": 10,
+                            "preFX": true
                         },
                         {
                             "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
@@ -710,12 +796,16 @@
                             "type": "Deck"
                         },
                         {
-                            "type": "Glow",
-                            "id": "cbeffbf1-2bae-445c-9935-fe7040e12b3f",
-                            "label": "glowFx_10",
-                            "scope": "PUBLIC",
-                            "outerStrength": 10,
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "ed52eb00-f1e0-407f-b689-8683bc0e8e94",
+                            "label": "onPointerDownScript_11",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "41caa89e-65ee-4353-b651-71a8cf9b8431",
+                                    "label": "pushActionScript_5"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -1116,37 +1206,52 @@
             ]
         },
         {
-            "type": "Text",
-            "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
-            "label": "endTurnText",
+            "type": "Image",
+            "id": "9a48c406-75d2-4cb2-b765-8df5ce1da053",
+            "label": "endTurnButtonLayout",
+            "useGameObjectName": true,
             "scope": "CLASS",
-            "x": 961,
-            "y": 1052.25,
-            "scaleX": 0.25,
-            "scaleY": 0.25,
-            "originX": 0.5,
-            "originY": 0.5,
-            "text": "End turn",
-            "align": "center",
-            "fontFamily": "Minecraft",
-            "fontSize": "200px",
-            "color": "#ffffffff",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.width": 70,
+            "hitArea.height": 21,
+            "texture": {
+                "key": "buttons"
+            },
+            "x": 960,
+            "y": 1043,
+            "scaleX": 3.5,
+            "scaleY": 3,
             "list": [
                 {
                     "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "0b6a0054-b86f-4ea7-a5c3-cff648d87422",
-                    "label": "onPointerDownScript_12",
+                    "id": "2844c6c4-3b5b-4143-8c03-b4dd60f247e9",
+                    "label": "onPointerDownScript_5",
                     "list": [
                         {
                             "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "7a796749-1736-4a5a-8f4a-ed509b792d81",
-                            "label": "pushActionScript_12"
+                            "id": "d1fd00b9-10a0-4878-bea4-16daefec59e1",
+                            "label": "pushActionScript_11"
                         }
                     ]
                 },
                 {
+                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                    "id": "f65f3d8b-d629-4624-868e-4d1b822b459b",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "highlights_11",
+                    "type": "Buttons"
+                },
+                {
+                    "type": "Glow",
+                    "id": "1020fb09-9f38-43bf-92ab-b05acf483bb0",
+                    "label": "glowFx_11",
+                    "preFX": true
+                },
+                {
                     "prefabId": "c1f303fd-0c45-4cc0-be3c-93b6aa87b551",
-                    "id": "ec80397f-90dd-4e6f-b70b-b0ce8e526868",
+                    "id": "0a0c73a8-b4b9-4180-9db8-0b9fedef9d26",
                     "unlock": [
                         "type"
                     ],
@@ -1154,6 +1259,23 @@
                     "type": "endTurn"
                 }
             ]
+        },
+        {
+            "type": "Text",
+            "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
+            "label": "endTurnText",
+            "scope": "CLASS",
+            "x": 960,
+            "y": 1046,
+            "scaleX": 0.25,
+            "scaleY": 0.25,
+            "originX": 0.5,
+            "originY": 0.5,
+            "text": "End turn",
+            "align": "center",
+            "fontFamily": "Minecraft",
+            "fontSize": "150px",
+            "color": "#ffffffff"
         },
         {
             "type": "Text",
@@ -1319,13 +1441,44 @@
             "type": "Image",
             "id": "dfc077ad-75b0-4b6d-8bed-e7572d68e88f",
             "label": "showCardsImage",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.x": -2,
+            "hitArea.y": -22,
+            "hitArea.width": 69.43493849207735,
+            "hitArea.height": 182.400544252365,
             "texture": {
                 "key": "showCardsImage"
             },
             "x": 254,
             "y": 404,
             "scaleX": 2.16,
-            "scaleY": 1.14
+            "scaleY": 1.14,
+            "list": [
+                {
+                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                    "id": "758ce1ae-a69c-4c4d-9623-f68c321f9dcc",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "highlights_10",
+                    "type": "Buttons"
+                },
+                {
+                    "type": "Glow",
+                    "id": "7e865aaf-3b3d-4f7c-bedb-51d53c39c5ea",
+                    "label": "glowFx_12",
+                    "preFX": true
+                },
+                {
+                    "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                    "id": "ce78a8e3-6239-49d4-830f-62bdbf174b66",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cardsMechanism_1",
+                    "type": "ShowCards"
+                }
+            ]
         },
         {
             "type": "Text",
@@ -1333,11 +1486,6 @@
             "label": "showCards",
             "useGameObjectName": true,
             "scope": "PUBLIC",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.x": -38,
-            "hitArea.y": -140,
-            "hitArea.width": 652.3814994495934,
-            "hitArea.height": 910.5149565734912,
             "x": 255,
             "y": 405,
             "scaleX": 0.2,
@@ -1348,30 +1496,7 @@
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
-            "color": "#000000ff",
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "21e827aa-9e2b-4cc4-91e9-558e02f4783a",
-                    "label": "onPointerDownScript_16",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "a5b64087-adf3-46dc-9d9b-3e36d00f41c5",
-                            "label": "pushActionScript_16"
-                        }
-                    ]
-                },
-                {
-                    "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
-                    "id": "4974157c-858b-4e2f-bada-ac847b05aa91",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cardsMechanism_1",
-                    "type": "ShowCards"
-                }
-            ]
+            "color": "#000000ff"
         },
         {
             "type": "Container",
@@ -1415,6 +1540,21 @@
                                     "label": "pushActionScript_15"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "dd2ab458-11ea-42c7-8ca4-13f6afa9ffa9",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_12",
+                            "type": "Buttons"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "3ed791b7-c93b-4f54-af3f-8f59d217b384",
+                            "label": "glowFx_13",
+                            "preFX": true
                         }
                     ]
                 },
@@ -1452,6 +1592,21 @@
                                     "label": "pushActionScript_14"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "ac192bfb-5db5-47d5-ac68-6c025be58108",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_13",
+                            "type": "Buttons"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "5a4d6df4-93a7-49dc-89a8-95ec5d508400",
+                            "label": "glowFx_14",
+                            "preFX": true
                         }
                     ]
                 },
@@ -1489,6 +1644,21 @@
                                     "label": "pushActionScript_13"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "cb2f0e62-96b6-41cc-8e16-5dc838960992",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_14",
+                            "type": "Buttons"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "3252de20-23bb-4a33-be3a-7adf2b0833eb",
+                            "label": "glowFx_15",
+                            "preFX": true
                         }
                     ]
                 },

@@ -38,12 +38,13 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
 
                         var attackStatus = rows[0].player_match_character_character_status_id;
                         var attackDamage = rows[0].caracter_attack;
+                        var attackerID = rows[0].caracter_id;
 
                         if (attackStatus == 2) { // check if attack status is 2, meaning if the character already attacked: if it has it can't attack more
                             res.send({
                                 notWorking: true,
                                 attackStatus: attackStatus,
-                                message: "Already attacked with it",
+                                message: "Already attacked with this character",
                             })
                             return;
                         } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
@@ -55,11 +56,9 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                     } else {
                                         if (rows.length > 0) {
                                             var knockbackDamage = 0;
-
                                             if (rows[0].player_match_character_character_id == 2) {
                                                 knockbackDamage = 1;
                                             }
-
                                             connection.execute("UPDATE playerMatchCharacter INNER JOIN caracter ON player_match_character_character_id = caracter_id SET player_match_character_character_current_HP = player_match_character_character_current_HP - " + attackDamage + " WHERE player_match_character_match_id = " + match_id + " AND player_match_character_player_id <> " + playerID + " AND player_match_character_tile_id = " + targetSlot, //if all goes well, after that we select a character from the opponent to be attacked and give him damage
                                                 function (error, rows, fields) {
                                                     if (error) {
@@ -79,6 +78,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                                                                 res.send({
                                                                                     notWorking: false,
                                                                                     attackDamage: attackDamage,
+                                                                                    attackerID: attackerID,
                                                                                     message: "Here it goooess!!",
                                                                                 })
                                                                             }

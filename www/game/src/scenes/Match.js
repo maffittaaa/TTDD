@@ -79,6 +79,9 @@ class Match extends Phaser.Scene {
 		// attackMechanism
 		const attackMechanism = new AttackMechanism(player2_slot1);
 
+		// highlights_4
+		const highlights_4 = new Highlights(player2_slot1);
+
 		// player2_slot2
 		const player2_slot2 = this.add.image(925, 521, "base", 0);
 		player2_slot2.name = "player2_slot2";
@@ -88,17 +91,20 @@ class Match extends Phaser.Scene {
 		player2_slot2.visible = false;
 		characterSlotsPlayer2.add(player2_slot2);
 
+		// glowFx_1
+		player2_slot2.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_1
+		const attackMechanism_1 = new AttackMechanism(player2_slot2);
+
 		// onPointerDownScript_2
 		const onPointerDownScript_2 = new OnPointerDownScript(player2_slot2);
 
 		// pushActionScript_2
 		new PushActionScript(onPointerDownScript_2);
 
-		// attackMechanism_1
-		const attackMechanism_1 = new AttackMechanism(player2_slot2);
-
-		// glowFx_1
-		player2_slot2.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_6
+		const highlights_6 = new Highlights(player2_slot2);
 
 		// player2_slot3
 		const player2_slot3 = this.add.image(827, 600, "base", 0);
@@ -109,17 +115,20 @@ class Match extends Phaser.Scene {
 		player2_slot3.visible = false;
 		characterSlotsPlayer2.add(player2_slot3);
 
+		// glowFx_2
+		player2_slot3.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_2
+		const attackMechanism_2 = new AttackMechanism(player2_slot3);
+
 		// onPointerDownScript
 		const onPointerDownScript = new OnPointerDownScript(player2_slot3);
 
 		// pushActionScript
 		new PushActionScript(onPointerDownScript);
 
-		// attackMechanism_2
-		const attackMechanism_2 = new AttackMechanism(player2_slot3);
-
-		// glowFx_2
-		player2_slot3.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_7
+		const highlights_7 = new Highlights(player2_slot3);
 
 		// player2_slot4
 		const player2_slot4 = this.add.image(1050, 438, "base", 0);
@@ -130,17 +139,20 @@ class Match extends Phaser.Scene {
 		player2_slot4.visible = false;
 		characterSlotsPlayer2.add(player2_slot4);
 
+		// glowFx_3
+		player2_slot4.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_3
+		const attackMechanism_3 = new AttackMechanism(player2_slot4);
+
 		// onPointerDownScript_3
 		const onPointerDownScript_3 = new OnPointerDownScript(player2_slot4);
 
 		// pushActionScript_3
 		new PushActionScript(onPointerDownScript_3);
 
-		// attackMechanism_3
-		const attackMechanism_3 = new AttackMechanism(player2_slot4);
-
-		// glowFx_3
-		player2_slot4.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_8
+		const highlights_8 = new Highlights(player2_slot4);
 
 		// player2_slot5
 		const player2_slot5 = this.add.image(1048, 601, "base", 0);
@@ -151,17 +163,20 @@ class Match extends Phaser.Scene {
 		player2_slot5.visible = false;
 		characterSlotsPlayer2.add(player2_slot5);
 
+		// glowFx_4
+		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_4
+		const attackMechanism_4 = new AttackMechanism(player2_slot5);
+
 		// onPointerDownScript_4
 		const onPointerDownScript_4 = new OnPointerDownScript(player2_slot5);
 
 		// pushActionScript_4
 		new PushActionScript(onPointerDownScript_4);
 
-		// attackMechanism_4
-		const attackMechanism_4 = new AttackMechanism(player2_slot5);
-
-		// glowFx_4
-		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_9
+		const highlights_9 = new Highlights(player2_slot5);
 
 		// player2_deck1
 		const player2_deck1 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
@@ -185,17 +200,17 @@ class Match extends Phaser.Scene {
 		player1_slot1.visible = false;
 		characterSlotsPlayer1.add(player1_slot1);
 
+		// glowFx_5
+		player1_slot1.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_5
+		const attackMechanism_5 = new AttackMechanism(player1_slot1);
+
 		// onPointerDownScript_6
 		const onPointerDownScript_6 = new OnPointerDownScript(player1_slot1);
 
 		// pushActionScript_6
 		new PushActionScript(onPointerDownScript_6);
-
-		// attackMechanism_5
-		const attackMechanism_5 = new AttackMechanism(player1_slot1);
-
-		// glowFx_5
-		player1_slot1.preFX.addGlow(16777215, 4, 0, false);
 
 		// throwables
 		const throwables = new Throwables(player1_slot1);
@@ -206,6 +221,9 @@ class Match extends Phaser.Scene {
 		// nameAndLevelMechanism
 		const nameAndLevelMechanism = new NameAndLevelMechanism(player1_slot1);
 
+		// highlights_5
+		const highlights_5 = new Highlights(player1_slot1);
+
 		// player1_slot2
 		const player1_slot2 = this.add.image(357, 523, "base", 0);
 		player1_slot2.name = "player1_slot2";
@@ -215,17 +233,20 @@ class Match extends Phaser.Scene {
 		player1_slot2.visible = false;
 		characterSlotsPlayer1.add(player1_slot2);
 
+		// glowFx_6
+		player1_slot2.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_6
+		const attackMechanism_6 = new AttackMechanism(player1_slot2);
+
 		// onPointerDownScript_7
 		const onPointerDownScript_7 = new OnPointerDownScript(player1_slot2);
 
 		// pushActionScript_7
 		new PushActionScript(onPointerDownScript_7);
 
-		// attackMechanism_6
-		const attackMechanism_6 = new AttackMechanism(player1_slot2);
-
-		// glowFx_6
-		player1_slot2.preFX.addGlow(16777215, 4, 0, false);
+		// highlights
+		const highlights = new Highlights(player1_slot2);
 
 		// player1_slot3
 		const player1_slot3 = this.add.image(456, 602, "base", 0);
@@ -236,17 +257,20 @@ class Match extends Phaser.Scene {
 		player1_slot3.visible = false;
 		characterSlotsPlayer1.add(player1_slot3);
 
+		// glowFx_7
+		player1_slot3.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_7
+		const attackMechanism_7 = new AttackMechanism(player1_slot3);
+
 		// onPointerDownScript_8
 		const onPointerDownScript_8 = new OnPointerDownScript(player1_slot3);
 
 		// pushActionScript_8
 		new PushActionScript(onPointerDownScript_8);
 
-		// attackMechanism_7
-		const attackMechanism_7 = new AttackMechanism(player1_slot3);
-
-		// glowFx_7
-		player1_slot3.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_1
+		const highlights_1 = new Highlights(player1_slot3);
 
 		// player1_slot4
 		const player1_slot4 = this.add.image(235, 438, "base", 0);
@@ -257,17 +281,20 @@ class Match extends Phaser.Scene {
 		player1_slot4.visible = false;
 		characterSlotsPlayer1.add(player1_slot4);
 
+		// glowFx_8
+		player1_slot4.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_8
+		const attackMechanism_8 = new AttackMechanism(player1_slot4);
+
 		// onPointerDownScript_9
 		const onPointerDownScript_9 = new OnPointerDownScript(player1_slot4);
 
 		// pushActionScript_9
 		new PushActionScript(onPointerDownScript_9);
 
-		// attackMechanism_8
-		const attackMechanism_8 = new AttackMechanism(player1_slot4);
-
-		// glowFx_8
-		player1_slot4.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_2
+		const highlights_2 = new Highlights(player1_slot4);
 
 		// player1_slot5
 		const player1_slot5 = this.add.image(238, 599, "base", 0);
@@ -278,17 +305,20 @@ class Match extends Phaser.Scene {
 		player1_slot5.visible = false;
 		characterSlotsPlayer1.add(player1_slot5);
 
+		// glowFx_9
+		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_9
+		const attackMechanism_9 = new AttackMechanism(player1_slot5);
+
 		// onPointerDownScript_10
 		const onPointerDownScript_10 = new OnPointerDownScript(player1_slot5);
 
 		// pushActionScript_10
 		new PushActionScript(onPointerDownScript_10);
 
-		// attackMechanism_9
-		const attackMechanism_9 = new AttackMechanism(player1_slot5);
-
-		// glowFx_9
-		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_3
+		const highlights_3 = new Highlights(player1_slot5);
 
 		// cardTook
 		const cardTook = this.add.image(640, 388, "cartas4_Imprimir", 3);
@@ -309,17 +339,17 @@ class Match extends Phaser.Scene {
 		player1_deck.scaleY = 0.4;
 		characterSlotsPlayer1.add(player1_deck);
 
+		// glowFx_10
+		const glowFx_10 = player1_deck.preFX.addGlow(16777215, 10, 0, false);
+
+		// cardsMechanism_3
+		const cardsMechanism_3 = new CardsMechanism(player1_deck);
+
 		// onPointerDownScript_11
 		const onPointerDownScript_11 = new OnPointerDownScript(player1_deck);
 
 		// pushActionScript_5
 		new PushActionScript(onPointerDownScript_11);
-
-		// cardsMechanism_3
-		const cardsMechanism_3 = new CardsMechanism(player1_deck);
-
-		// glowFx_10
-		const glowFx_10 = player1_deck.preFX.addGlow(16777215, 10, 0, false);
 
 		// damageAnimationMechanism
 		const damageAnimationMechanism = new DamageAnimationMechanism(this, 347, 415);
@@ -531,22 +561,35 @@ class Match extends Phaser.Scene {
 		hp_p2_slot4.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#ffffffff" });
 		healthBarsPlayer2.add(hp_p2_slot4);
 
+		// endTurnButtonLayout
+		const endTurnButtonLayout = this.add.image(960, 1043, "buttons");
+		endTurnButtonLayout.name = "endTurnButtonLayout";
+		endTurnButtonLayout.setInteractive(new Phaser.Geom.Rectangle(0, 0, 70, 21), Phaser.Geom.Rectangle.Contains);
+		endTurnButtonLayout.scaleX = 3.5;
+		endTurnButtonLayout.scaleY = 3;
+
+		// onPointerDownScript_5
+		const onPointerDownScript_5 = new OnPointerDownScript(endTurnButtonLayout);
+
+		// pushActionScript_11
+		new PushActionScript(onPointerDownScript_5);
+
+		// highlights_11
+		const highlights_11 = new Highlights(endTurnButtonLayout);
+
+		// glowFx_11
+		endTurnButtonLayout.preFX.addGlow(16777215, 4, 0, false);
+
+		// endTurnMechanism
+		const endTurnMechanism = new EndTurnMechanism(endTurnButtonLayout);
+
 		// endTurnText
-		const endTurnText = this.add.text(961, 1052.25, "", {});
+		const endTurnText = this.add.text(960, 1046, "", {});
 		endTurnText.scaleX = 0.25;
 		endTurnText.scaleY = 0.25;
 		endTurnText.setOrigin(0.5, 0.5);
 		endTurnText.text = "End turn";
-		endTurnText.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "200px" });
-
-		// onPointerDownScript_12
-		const onPointerDownScript_12 = new OnPointerDownScript(endTurnText);
-
-		// pushActionScript_12
-		new PushActionScript(onPointerDownScript_12);
-
-		// endTurnMechanism
-		const endTurnMechanism = new EndTurnMechanism(endTurnText);
+		endTurnText.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "150px" });
 
 		// turn
 		const turn = this.add.text(962, 133, "", {});
@@ -635,27 +678,27 @@ class Match extends Phaser.Scene {
 
 		// showCardsImage
 		const showCardsImage = this.add.image(254, 404, "showCardsImage");
+		showCardsImage.setInteractive(new Phaser.Geom.Rectangle(-2, -22, 69.43493849207735, 182.400544252365), Phaser.Geom.Rectangle.Contains);
 		showCardsImage.scaleX = 2.16;
 		showCardsImage.scaleY = 1.14;
+
+		// highlights_10
+		const highlights_10 = new Highlights(showCardsImage);
+
+		// glowFx_12
+		showCardsImage.preFX.addGlow(16777215, 4, 0, false);
+
+		// cardsMechanism_1
+		const cardsMechanism_1 = new CardsMechanism(showCardsImage);
 
 		// showCards
 		const showCards = this.add.text(255, 405, "", {});
 		showCards.name = "showCards";
-		showCards.setInteractive(new Phaser.Geom.Rectangle(-38, -140, 652.3814994495934, 910.5149565734912), Phaser.Geom.Rectangle.Contains);
 		showCards.scaleX = 0.2;
 		showCards.scaleY = 0.2;
 		showCards.setOrigin(0.5, 0.5);
 		showCards.text = "SHOW CARDS";
 		showCards.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
-
-		// onPointerDownScript_16
-		const onPointerDownScript_16 = new OnPointerDownScript(showCards);
-
-		// pushActionScript_16
-		new PushActionScript(onPointerDownScript_16);
-
-		// cardsMechanism_1
-		const cardsMechanism_1 = new CardsMechanism(showCards);
 
 		// cheatsContainer
 		const cheatsContainer = this.add.container(0, 0);
@@ -678,6 +721,12 @@ class Match extends Phaser.Scene {
 		// pushActionScript_15
 		new PushActionScript(onPointerDownScript_15);
 
+		// highlights_12
+		const highlights_12 = new Highlights(setHPTo1Button);
+
+		// glowFx_13
+		setHPTo1Button.preFX.addGlow(16777215, 4, 0, false);
+
 		// resetAttackStatusButton
 		const resetAttackStatusButton = this.add.image(960, 318, "buttons");
 		resetAttackStatusButton.name = "resetAttackStatusButton";
@@ -694,6 +743,12 @@ class Match extends Phaser.Scene {
 		// pushActionScript_14
 		new PushActionScript(onPointerDownScript_14);
 
+		// highlights_13
+		const highlights_13 = new Highlights(resetAttackStatusButton);
+
+		// glowFx_14
+		resetAttackStatusButton.preFX.addGlow(16777215, 4, 0, false);
+
 		// resetHpButton
 		const resetHpButton = this.add.image(960, 253, "buttons");
 		resetHpButton.name = "resetHpButton";
@@ -709,6 +764,12 @@ class Match extends Phaser.Scene {
 
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
+
+		// highlights_14
+		const highlights_14 = new Highlights(resetHpButton);
+
+		// glowFx_15
+		resetHpButton.preFX.addGlow(16777215, 4, 0, false);
 
 		// setHPTo1Text
 		const setHPTo1Text = this.add.text(960, 383, "", {});
@@ -941,21 +1002,36 @@ class Match extends Phaser.Scene {
 		attackMechanism.slotID = 1;
 		attackMechanism.damageText;
 
+		// highlights_4 (prefab fields)
+		highlights_4.type = "Match";
+
 		// attackMechanism_1 (prefab fields)
 		attackMechanism_1.type = "Opponent";
 		attackMechanism_1.slotID = 2;
+
+		// highlights_6 (prefab fields)
+		highlights_6.type = "Match";
 
 		// attackMechanism_2 (prefab fields)
 		attackMechanism_2.type = "Opponent";
 		attackMechanism_2.slotID = 3;
 
+		// highlights_7 (prefab fields)
+		highlights_7.type = "Match";
+
 		// attackMechanism_3 (prefab fields)
 		attackMechanism_3.type = "Opponent";
 		attackMechanism_3.slotID = 4;
 
+		// highlights_8 (prefab fields)
+		highlights_8.type = "Match";
+
 		// attackMechanism_4 (prefab fields)
 		attackMechanism_4.type = "Opponent";
 		attackMechanism_4.slotID = 5;
+
+		// highlights_9 (prefab fields)
+		highlights_9.type = "Match";
 
 		// attackMechanism_5 (prefab fields)
 		attackMechanism_5.type = "Player";
@@ -973,21 +1049,36 @@ class Match extends Phaser.Scene {
 		nameAndLevelMechanism.nameText = namePlayer1Text;
 		nameAndLevelMechanism.levelText = levelPlayer1Text;
 
+		// highlights_5 (prefab fields)
+		highlights_5.type = "Match";
+
 		// attackMechanism_6 (prefab fields)
 		attackMechanism_6.type = "Player";
 		attackMechanism_6.slotID = 2;
+
+		// highlights (prefab fields)
+		highlights.type = "Match";
 
 		// attackMechanism_7 (prefab fields)
 		attackMechanism_7.type = "Player";
 		attackMechanism_7.slotID = 3;
 
+		// highlights_1 (prefab fields)
+		highlights_1.type = "Match";
+
 		// attackMechanism_8 (prefab fields)
 		attackMechanism_8.type = "Player";
 		attackMechanism_8.slotID = 4;
 
+		// highlights_2 (prefab fields)
+		highlights_2.type = "Match";
+
 		// attackMechanism_9 (prefab fields)
 		attackMechanism_9.type = "Player";
 		attackMechanism_9.slotID = 5;
+
+		// highlights_3 (prefab fields)
+		highlights_3.type = "Match";
 
 		// throwables_1 (prefab fields)
 		throwables_1.type = "CardTook";
@@ -995,8 +1086,14 @@ class Match extends Phaser.Scene {
 		// cardsMechanism_3 (prefab fields)
 		cardsMechanism_3.type = "Deck";
 
+		// highlights_11 (prefab fields)
+		highlights_11.type = "Buttons";
+
 		// endTurnMechanism (prefab fields)
 		endTurnMechanism.type = "endTurn";
+
+		// highlights_10 (prefab fields)
+		highlights_10.type = "Buttons";
 
 		// cardsMechanism_1 (prefab fields)
 		cardsMechanism_1.type = "ShowCards";
@@ -1004,11 +1101,20 @@ class Match extends Phaser.Scene {
 		// cheatsMechanism (prefab fields)
 		cheatsMechanism.type = "hpTo1";
 
+		// highlights_12 (prefab fields)
+		highlights_12.type = "Buttons";
+
 		// cheatsMechanism_1 (prefab fields)
 		cheatsMechanism_1.type = "resetAttackStatus";
 
+		// highlights_13 (prefab fields)
+		highlights_13.type = "Buttons";
+
 		// cheatsMechanism_2 (prefab fields)
 		cheatsMechanism_2.type = "resetHP";
+
+		// highlights_14 (prefab fields)
+		highlights_14.type = "Buttons";
 
 		// attackMechanism_10 (prefab fields)
 		attackMechanism_10.type = "Cards";
@@ -1095,6 +1201,7 @@ class Match extends Phaser.Scene {
 		this.healthbar_p2_slot4 = healthbar_p2_slot4;
 		this.healthbar_p2_slot5 = healthbar_p2_slot5;
 		this.healthBarsPlayer2 = healthBarsPlayer2;
+		this.endTurnButtonLayout = endTurnButtonLayout;
 		this.endTurnText = endTurnText;
 		this.turn = turn;
 		this.winnerText = winnerText;
@@ -1197,6 +1304,8 @@ class Match extends Phaser.Scene {
 	healthbar_p2_slot5;
 	/** @type {Phaser.GameObjects.Container} */
 	healthBarsPlayer2;
+	/** @type {Phaser.GameObjects.Image} */
+	endTurnButtonLayout;
 	/** @type {Phaser.GameObjects.Text} */
 	endTurnText;
 	/** @type {Phaser.GameObjects.Text} */

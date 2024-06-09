@@ -131,15 +131,14 @@ class AttackMechanism extends ScriptNode {
 					}
 				} else {
 					attacker.input.enabled = false;
-					attacker.preFX.list[0].glcolor[1] = 0
-					attacker.preFX.list[0].glcolor[2] = 0.2 //tirar glow para normal 
+					attacker.setTexture("pawnsAttacked", data.attackerID - 1);
 					scene.playerThrowAnimation();
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
 					damageAnimation.visible = true;
 					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
 					scene.setGlowOnOff(scene.parent, false);
-
+					scene.setGlowOnOff(attacker, false);
 					attacker = null;
 					attackerSlot = 0;
 					targetSlot = 0;

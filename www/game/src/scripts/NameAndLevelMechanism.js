@@ -34,7 +34,7 @@ class NameAndLevelMechanism extends ScriptNode {
 	}
 
 	placeNameandLevel(data, scene) {
-		var name = scene.scene.children.list[13].list;
+		var name = scene.scene.children.list[14].list;
 		for (let i = 0; i < name.length; i++) {
 			console.log(name[i].name);
 			if (name[i].name == "namePlayer1Text") {

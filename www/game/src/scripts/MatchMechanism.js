@@ -80,22 +80,19 @@ class MatchMechanism extends ScriptNode {
 			this.turnText.text = "It's your turn!";
 			this.turnText.setVisible(true);
 			if (tookCard == false) {
-				this.setGlowOnOffCards(this.scene.children.list[7].list[6], true);
+				this.setGlowOnOff(this.scene.children.list[7].list[6], true);
+				this.scene.children.list[7].list[6].input.enabled = true;
 			} else {
-				this.setGlowOnOffCards(this.scene.children.list[7].list[6], false);
+				this.setGlowOnOff(this.scene.children.list[7].list[6], false);
+				this.scene.children.list[7].list[6].input.enabled = false;
 			}
 		} else {
 			this.turnText.text = "Waiting for opponent...";
 			this.turnText.setVisible(true);
-			this.scene.children.list[7].list[0].input.enabled = true;
-			this.scene.children.list[7].list[1].input.enabled = true;
-			this.scene.children.list[7].list[2].input.enabled = true;
-			this.scene.children.list[7].list[3].input.enabled = true;
-			this.scene.children.list[7].list[4].input.enabled = true;
 		}
 	}
 
-	setGlowOnOffCards(object, boolean) {
+	setGlowOnOff(object, boolean) {
 		object.preFX.list[0].active = boolean;
 	}
 
@@ -132,8 +129,6 @@ class MatchMechanism extends ScriptNode {
 			}
 		})
 	}
-
-
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 		if (ongoing) {
