@@ -318,6 +318,19 @@
                 "key": "street"
             },
             {
+                "url": "assets/throwables.png",
+                "frameConfig": {
+                    "frameWidth": 215,
+                    "frameHeight": 263,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 4,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "throwables"
+            },
+            {
                 "url": "src/scripts/Throwables.js",
                 "type": "script",
                 "key": "Throwables"

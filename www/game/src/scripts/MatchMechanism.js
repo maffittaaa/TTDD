@@ -31,6 +31,7 @@ class MatchMechanism extends ScriptNode {
 					var player1_characters = JSON.parse(data.characters_player1);
 					var player2_characters = JSON.parse(data.characters_player2);
 
+					scene.isItMyTurn(data.turn, data.player, data.tookCard);
 					scene.setCharactersValues(data.match_id, data.player_id, data.player1_id, data.player2_id, data.player1_name, data.player2_name, player1_characters, player2_characters);
 
 				} else {
@@ -111,56 +112,77 @@ class MatchMechanism extends ScriptNode {
 		this.winnerText.text = "Match finished, the winner is: " + winnerName;
 
 		if (winnerName != undefined) {
-			setTimeout(this.updateLevelXp(winID, losID), 8000);
+			setTimeout(function () {
+				$.ajax({
+					type: "POST",
+					url: "/levelUp/upgradeLevel",
+					data: {
+						"winner": winID,
+						"loser": losID
+					},
+					success: function (data) {
+						console.log(data)
+						window.location.replace("/game/");
+					},
+					error: function (err) {
+						console.log(err);
+					}
+				})
+			}, 8000);
 		}
 	};
 
 	updateLevelXp(winID, losID) {
-		$.ajax({
-			type: "POST",
-			url: "/levelUp/upgradeLevel",
-			data: {
-				"winner": winID,
-				"loser": losID
-			},
-			success: function (data) {
-				console.log(data)
-				window.location.replace("/game/");
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
+		
 	}
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 		if (ongoing) {
+
 			if (p1 == player) {
 				//player = ch1
+
 				var character = this.scene.children.list;
 				for (let i = 0; i < ch1.length; i++) {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
+					
+					if (ch1[i].player_match_character_character_current_HP <= 0) {
+						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, true)
+					}else{
+						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, false)
+					}
 				}
 
 				for (let i = 0; i < ch2.length; i++) {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
+					
 					if (ch2[i].player_match_character_character_current_HP <= 0) {
-						console.log(ch2[i])
-						ch2[i].setTexture("pawnsBlackAndWhiteLeft", ch2[i].player_match_character_character_id - 1);
+						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, true)
+					}else{
+						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, false)
 					}
 				}
 
 			} else {
 				// player = ch2
+
 				for (let i = 0; i < ch2.length; i++) {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
+				
+					if (ch2[i].player_match_character_character_current_HP <= 0) {
+						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, true)
+					}else{
+						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, false)
+					}
 				}
 
 				for (let i = 0; i < ch1.length; i++) {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
+					
 					if (ch1[i].player_match_character_character_current_HP <= 0) {
-						console.log(ch1[i])
-						ch1[i].setTexture("pawnsBlackAndWhiteLeft", ch1[i].player_match_character_character_id - 1);
+						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, true)
+					}else{
+						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, false)
 					}
 				}
 			}
@@ -168,11 +190,11 @@ class MatchMechanism extends ScriptNode {
 
 			console.log("Match: ", match, "\ Players: ", p1_name + " " + p2_name)
 
+			var character = this.scene.children.list;
+			var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
+
 			if (p1 == player) {
 				//player = ch1
-				var character = this.scene.children.list;
-				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
-
 
 				for (let i = 0; i < character.length; i++) {
 					if (character[i].name == "CharacterSlotsPlayer1") {
@@ -214,8 +236,6 @@ class MatchMechanism extends ScriptNode {
 
 			} else {
 				//player = ch2
-				var character = this.scene.children.list;
-				var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
 				for (let i = 0; i < character.length; i++) {
 					if (character[i].name == "CharacterSlotsPlayer2") {
@@ -258,8 +278,48 @@ class MatchMechanism extends ScriptNode {
 		}
 	}
 
+	blackAndWhite(player, slot, charID, boolean){
+		var healthSprite = this.scene.children.list;
+		var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
+
+		if (boolean == true) {
+			for (let j = 0; j < healthSprite.length; j++) {
+				if (healthSprite[j].name == "CharacterSlotsPlayer" + player) {
+					for (let k = 0; k < healthSprite[j].list.length; k++) {
+						if (healthSprite[j].list[k].name == "player" + player + "_slot" + slot) {
+							if(player == 1){
+								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteRight", charID - 1)
+							}else{
+								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteLeft", orderCharacterPlayer2Images[charID - 1])
+							}
+
+							healthSprite[j].list[k].input.enabled = false
+						}
+					}
+				}
+			}
+		}else{
+			for (let j = 0; j < healthSprite.length; j++) {
+				if (healthSprite[j].name == "CharacterSlotsPlayer" + player) {
+					for (let k = 0; k < healthSprite[j].list.length; k++) {
+						if (healthSprite[j].list[k].name == "player" + player + "_slot" + slot) {
+							if(player == 1){
+								healthSprite[j].list[k].setTexture("peawns", charID - 1)
+							}else{
+								healthSprite[j].list[k].setTexture("peawns2", orderCharacterPlayer2Images[charID - 1])
+							}
+
+							// healthSprite[j].list[k].input.enabled = true
+						}
+					}
+				}
+			}
+		}
+	}
+
 	/* END-USER-CODE */
 }
+
 
 /* END OF COMPILED CODE */
 

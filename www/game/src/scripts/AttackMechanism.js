@@ -86,8 +86,28 @@ class AttackMechanism extends ScriptNode {
 			initialY = this.parent.y;
 			finalX = null;
 			finalY = null;
-			item = this.parent;
+
+			if(attacker.frame.name > 5){
+				var attackerThrow = this.scene.children.list[7].list
+
+				console.log(slot)
+
+				for (let i = 0; i < attackerThrow.length; i++) {
+					console.log(attackerThrow[i])
+					if(attackerThrow[i].name == "throwables_slot" + slot){
+						item = attackerThrow[i]
+						console.log(attacker)
+						console.log(attackerThrow[i])
+						console.log(slot)
+						console.log(attacker.frame.name)
+						item.setTexture("throwables", attacker.frame.name - 6)
+					}
+				}
+			}else{
+				item = this.parent;
+			}
 		}
+		this.parent.name = "player1_slot" + slot
 	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
@@ -105,7 +125,8 @@ class AttackMechanism extends ScriptNode {
 			} else {
 				this.playCard(cardOnHold, slot);
 			}
-		}
+		};
+		this.parent.name = "player2_slot" + slot
 	}
 
 	setGlowOnOff(object, boolean) {
@@ -135,7 +156,7 @@ class AttackMechanism extends ScriptNode {
 				} else {
 					attacker.input.enabled = false;
 					attacker.setTexture("pawnsAttacked", data.attackerID - 1);
-					scene.playerThrowAnimation();
+					scene.playThrowAnimation();
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
 					damageAnimation.visible = true;
 					damageAnimation.text = "-" + data.attackDamage;
@@ -153,11 +174,18 @@ class AttackMechanism extends ScriptNode {
 		})
 	};
 
-	playerThrowAnimation() {
+	playThrowAnimation() {
 		startTime = performance.now();
 		finalX = this.parent.x
 		finalY = this.parent.y
-		peakHeight = Math.abs(finalY - initialY) + 100
+
+		if(item.visible == false){
+			item.visible = true
+			peakHeight = Math.abs(finalY - initialY) + 100
+		}else{
+			peakHeight = 0
+		}
+
 		throwing = true
 	}
 
