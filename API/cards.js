@@ -90,7 +90,7 @@ router.post('/pickCard', (req, res) => {
         console.log("You can't take a card from the deck this turn");
         res.send({
             notWorking: true,
-            message: "You can't take a card from the deck this turn",
+            message: "Not the turn to take a card.",
         })
     }
 
@@ -98,7 +98,7 @@ router.post('/pickCard', (req, res) => {
 
 router.post('/playCard', (req, res) => {
     var cardID = req.body.cardPicked;
-    
+
     checkPlayerTurn(req, res, cardID);
 })
 
@@ -119,8 +119,8 @@ function checkPlayerTurn(req, res, cardID) { //is it the player's turn?
 function checkCardPlayed(req, res, isPlayerTurn, cardID) {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
-    
-    if(isPlayerTurn){
+
+    if (isPlayerTurn) {
         connection.execute("SELECT deck_card_id, deck_card_played FROM deck WHERE deck_card_played = true AND deck_match_id = ? AND deck_player_id = ?", [matchID, playerID],
             function (error, rows, fields) {
                 if (error) {
@@ -128,15 +128,15 @@ function checkCardPlayed(req, res, isPlayerTurn, cardID) {
                 } else {
                     if (rows.length > 0) {
                         checkCharacterAttacked(req, res, true, cardID);
-                    }else{
+                    } else {
                         checkCharacterAttacked(req, res, false, cardID);
                     }
                 }
             }
         )
-    }else{
+    } else {
         res.send({
-            notWorking: true, 
+            notWorking: true,
             message: "Not your turn yet.",
         })
     }
@@ -146,8 +146,8 @@ function checkCharacterAttacked(req, res, cardPlayed, cardID) {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
 
-    if(!cardPlayed){
-        connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_status_id = 2 AND player_match_character_player_id = ? AND player_match_character_match_id = ?",[playerID, matchID],
+    if (!cardPlayed) {
+        connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_status_id = 2 AND player_match_character_player_id = ? AND player_match_character_match_id = ?", [playerID, matchID],
             function (error, rows, fields) {
                 if (error) {
                     res.send(error);
@@ -155,16 +155,16 @@ function checkCharacterAttacked(req, res, cardPlayed, cardID) {
                     if (rows.length > 0) {
                         if (cardID == 1 || cardID == 5 || cardID == 8) {
                             playCard(req, res, false, cardID);
-                        }else {
+                        } else {
                             playCard(req, res, true, cardID);
                         }
-                    }else{
+                    } else {
                         playCard(req, res, true, cardID);
                     }
                 }
             }
         )
-    }else{
+    } else {
         res.send({
             notWorking: true,
             message: "Already played with a card",
@@ -172,7 +172,7 @@ function checkCharacterAttacked(req, res, cardPlayed, cardID) {
     }
 }
 
-function playCard(req, res, canPlay, cardID){
+function playCard(req, res, canPlay, cardID) {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
 
@@ -187,7 +187,7 @@ function playCard(req, res, canPlay, cardID){
 
             //Glass on the floor, not done yet
         } else if (cardID == 4) {
-            
+
             // Finish him
         } else if (cardID == 5) {
             var charID = req.body.charChosen;
@@ -204,12 +204,12 @@ function playCard(req, res, canPlay, cardID){
 
             //counter card to finish him and sleaping beauty, not done yet
         } else if (cardID == 7) {
-    
+
             //sleeping beauty 
         } else if (cardID == 8) {
             var firstCharacterID = req.body.charChosen;
             var secondCharacterID = req.body.secCharChosen;
-    
+
             if (firstCharacterID && secondCharacterID) {
                 sleepingBeauty(req, res, playerID, matchID, cardID, firstCharacterID, secondCharacterID);
             } else {
@@ -240,7 +240,7 @@ function playCard(req, res, canPlay, cardID){
             // drunken power, one character attacks two at the same time, not done yet
         } else if (cardID == 10) {
         }
-    }else{
+    } else {
         res.send({
             message: "You can't attack with your characters and use a imediate damage card, chose another card or continue attacking with your characters.",
         });
@@ -256,7 +256,7 @@ router.get('/getTheDescriptions', (req, res) => {
     var playerID = req.session.playerID;
     var matchID = req.session.match;
     var cardID = req.query.cardPicked;
-    
+
     connection.execute("SELECT card_id, card_description, card_name FROM deck INNER JOIN card ON deck_card_id = card_id WHERE deck_match_id = ? AND deck_player_id = ? AND deck_card_id = ?", [matchID, playerID, cardID],
         function (error, rows, fields) {
             if (error) {

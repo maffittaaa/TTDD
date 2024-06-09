@@ -33,7 +33,7 @@ class Match extends Phaser.Scene {
 		city.scaleY = 1.5;
 
 		// bar1
-		const bar1 = this.add.image(376, 385, "Bar1");
+		const bar1 = this.add.image(342, 385, "Bar1");
 		bar1.scaleX = 2.754494288270423;
 		bar1.scaleY = 2.754494288270423;
 
@@ -43,17 +43,14 @@ class Match extends Phaser.Scene {
 		bar2.scaleY = 2.3663060242524527;
 
 		// result
-		const result = this.add.text(960, 160, "", {});
+		const result = this.add.text(964, 533, "", {});
 		result.name = "result";
-		result.scaleX = 0.4;
-		result.scaleY = 0.4;
+		result.scaleX = 0.5;
+		result.scaleY = 0.5;
 		result.setOrigin(0.5, 0.5);
 		result.visible = false;
 		result.text = "result";
 		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
-
-		// glowFx_11
-		result.preFX.addGlow(16777215, 4, 0, false);
 
 		// CharacterSlotsPlayer2
 		const characterSlotsPlayer2 = this.add.container(0, 0);
@@ -307,6 +304,7 @@ class Match extends Phaser.Scene {
 
 		// player1_deck
 		const player1_deck = this.add.image(98, 582, "cartas4_Imprimir", 3);
+		player1_deck.name = "player1_deck";
 		player1_deck.scaleX = 0.4;
 		player1_deck.scaleY = 0.4;
 		characterSlotsPlayer1.add(player1_deck);
@@ -325,6 +323,7 @@ class Match extends Phaser.Scene {
 
 		// damageAnimationMechanism
 		const damageAnimationMechanism = new DamageAnimationMechanism(this, 347, 415);
+		damageAnimationMechanism.name = "damageAnimationMechanism";
 		characterSlotsPlayer1.add(damageAnimationMechanism);
 
 		// HealthBarsPlayer1
@@ -533,7 +532,7 @@ class Match extends Phaser.Scene {
 		healthBarsPlayer2.add(hp_p2_slot4);
 
 		// endTurnText
-		const endTurnText = this.add.text(960, 1052.25, "", {});
+		const endTurnText = this.add.text(961, 1052.25, "", {});
 		endTurnText.scaleX = 0.25;
 		endTurnText.scaleY = 0.25;
 		endTurnText.setOrigin(0.5, 0.5);
@@ -550,16 +549,16 @@ class Match extends Phaser.Scene {
 		const endTurnMechanism = new EndTurnMechanism(endTurnText);
 
 		// turn
-		const turn = this.add.text(960, 548, "", {});
-		turn.scaleX = 0.4;
-		turn.scaleY = 0.4;
+		const turn = this.add.text(962, 133, "", {});
+		turn.scaleX = 0.5;
+		turn.scaleY = 0.5;
 		turn.setOrigin(0.5, 0.5);
 		turn.visible = false;
 		turn.text = "something";
-		turn.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
+		turn.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// winnerText
-		const winnerText = this.add.text(369, 373.5, "", {});
+		const winnerText = this.add.text(369, 372.5, "", {});
 		winnerText.scaleX = 1.5;
 		winnerText.scaleY = 1.5;
 		winnerText.visible = false;
@@ -635,12 +634,12 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(levelPlayer2Text);
 
 		// showCardsImage
-		const showCardsImage = this.add.image(287, 404, "showCardsImage");
+		const showCardsImage = this.add.image(254, 404, "showCardsImage");
 		showCardsImage.scaleX = 2.16;
 		showCardsImage.scaleY = 1.14;
 
 		// showCards
-		const showCards = this.add.text(288, 405, "", {});
+		const showCards = this.add.text(255, 405, "", {});
 		showCards.name = "showCards";
 		showCards.setInteractive(new Phaser.Geom.Rectangle(-38, -140, 652.3814994495934, 910.5149565734912), Phaser.Geom.Rectangle.Contains);
 		showCards.scaleX = 0.2;

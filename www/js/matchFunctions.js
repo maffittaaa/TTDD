@@ -122,7 +122,7 @@
 //                     document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = false
                     
 //                     if(ch2[i].player_match_character_character_current_HP <= 0){
-//                         document.getElementById("slot_" + ch2[i].player_match_character_tile_id + "_p2").disabled = true
+
 //                     }
 //                 }
 //             }

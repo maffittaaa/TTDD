@@ -77,7 +77,7 @@ class MatchMechanism extends ScriptNode {
 
 	isItMyTurn(turn_id, player_id, tookCard) {
 		if (turn_id == player_id) {
-			this.turnText.text = "It's your\nTurn!";
+			this.turnText.text = "It's your turn!";
 			this.turnText.setVisible(true);
 			if (tookCard == false) {
 				this.setGlowOnOffCards(this.scene.children.list[7].list[6], true);
@@ -85,8 +85,13 @@ class MatchMechanism extends ScriptNode {
 				this.setGlowOnOffCards(this.scene.children.list[7].list[6], false);
 			}
 		} else {
-			this.turnText.text = " Not your\nturn yet!\n Please wait...";
+			this.turnText.text = "Waiting for opponent...";
 			this.turnText.setVisible(true);
+			this.scene.children.list[7].list[0].input.enabled = true;
+			this.scene.children.list[7].list[1].input.enabled = true;
+			this.scene.children.list[7].list[2].input.enabled = true;
+			this.scene.children.list[7].list[3].input.enabled = true;
+			this.scene.children.list[7].list[4].input.enabled = true;
 		}
 	}
 
@@ -134,12 +139,17 @@ class MatchMechanism extends ScriptNode {
 		if (ongoing) {
 			if (p1 == player) {
 				//player = ch1
+				var character = this.scene.children.list;
 				for (let i = 0; i < ch1.length; i++) {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 				}
 
 				for (let i = 0; i < ch2.length; i++) {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
+					if (ch2[i].player_match_character_character_current_HP <= 0) {
+						console.log(ch2[i])
+						ch2[i].setTexture("pawnsBlackAndWhiteLeft", ch2[i].player_match_character_character_id - 1);
+					}
 				}
 
 			} else {
@@ -150,6 +160,10 @@ class MatchMechanism extends ScriptNode {
 
 				for (let i = 0; i < ch1.length; i++) {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
+					if (ch1[i].player_match_character_character_current_HP <= 0) {
+						console.log(ch1[i])
+						ch1[i].setTexture("pawnsBlackAndWhiteLeft", ch1[i].player_match_character_character_id - 1);
+					}
 				}
 			}
 		} else {

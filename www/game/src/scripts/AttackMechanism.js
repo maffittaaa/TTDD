@@ -77,10 +77,9 @@ class AttackMechanism extends ScriptNode {
 			attackerSlot = 0;
 			attacker = null;
 		} else {
-
 			attackerSlot = slot;
-			attacker = this.parent
-			this.setGlowOnOff(this.parent, true)
+			attacker = this.parent;
+			this.setGlowOnOff(this.parent, true);
 			initialX = this.parent.x;
 			initialY = this.parent.y;
 			finalX = null;
@@ -90,7 +89,7 @@ class AttackMechanism extends ScriptNode {
 	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
-		
+
 		if (attackerSlot != 0) {
 			targetSlot = slot;
 			this.setGlowOnOff(this.parent, true);
@@ -103,8 +102,8 @@ class AttackMechanism extends ScriptNode {
 			} else {
 				this.playCard(cardOnHold, slot);
 			}
-		}
-	};
+		};
+	}
 
 	setGlowOnOff(object, boolean) {
 		object.preFX.list[0].active = boolean;
@@ -125,15 +124,22 @@ class AttackMechanism extends ScriptNode {
 					scene.scene.children.list[5].text = data.message;
 					scene.scene.children.list[5].setVisible(true);
 					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
+					if (data.attackStatus == 2) {
+						if (attacker.preFX.list[0].active == true) {
+							scene.setGlowOnOff(scene.parent, false);
+						}
+					}
 				} else {
+					attacker.input.enabled = false;
+					attacker.preFX.list[0].glcolor[1] = 0
+					attacker.preFX.list[0].glcolor[2] = 0.2 //tirar glow para normal 
 					scene.playerThrowAnimation();
-
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
 					damageAnimation.visible = true;
 					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
 					scene.setGlowOnOff(scene.parent, false);
-					scene.setGlowOnOff(attacker, false);
+
 					attacker = null;
 					attackerSlot = 0;
 					targetSlot = 0;

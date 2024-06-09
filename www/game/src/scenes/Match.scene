@@ -50,7 +50,7 @@
             "texture": {
                 "key": "Bar1"
             },
-            "x": 376,
+            "x": 342,
             "y": 385,
             "scaleX": 2.754494288270423,
             "scaleY": 2.754494288270423
@@ -73,10 +73,10 @@
             "label": "result",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "x": 960,
-            "y": 160,
-            "scaleX": 0.4,
-            "scaleY": 0.4,
+            "x": 964,
+            "y": 533,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
             "originX": 0.5,
             "originY": 0.5,
             "visible": false,
@@ -85,15 +85,7 @@
             "fontFamily": "Minecraft",
             "fontSize": "100px",
             "color": "#000000ff",
-            "stroke": "#000000ff",
-            "list": [
-                {
-                    "type": "Glow",
-                    "id": "c867a98e-4c97-4b77-ae9c-3ce9ba014593",
-                    "label": "glowFx_11",
-                    "preFX": true
-                }
-            ]
+            "stroke": "#000000ff"
         },
         {
             "type": "Container",
@@ -686,6 +678,7 @@
                     "type": "Image",
                     "id": "7ae9e0d3-c051-418c-8d44-a81cf98e4f26",
                     "label": "player1_deck",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "cartas4_Imprimir",
                         "frame": 3
@@ -735,6 +728,7 @@
                         "damageText"
                     ],
                     "label": "damageAnimationMechanism",
+                    "useGameObjectName": true,
                     "scope": "PUBLIC",
                     "x": 347,
                     "y": 415
@@ -1126,7 +1120,7 @@
             "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
             "label": "endTurnText",
             "scope": "CLASS",
-            "x": 960,
+            "x": 961,
             "y": 1052.25,
             "scaleX": 0.25,
             "scaleY": 0.25,
@@ -1166,10 +1160,10 @@
             "id": "c5248266-f203-4610-bce5-0bd548b873e7",
             "label": "turn",
             "scope": "CLASS",
-            "x": 960,
-            "y": 548,
-            "scaleX": 0.4,
-            "scaleY": 0.4,
+            "x": 962,
+            "y": 133,
+            "scaleX": 0.5,
+            "scaleY": 0.5,
             "originX": 0.5,
             "originY": 0.5,
             "visible": false,
@@ -1177,7 +1171,7 @@
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
-            "color": "#000000ff"
+            "color": "#ffffffff"
         },
         {
             "type": "Text",
@@ -1185,7 +1179,7 @@
             "label": "winnerText",
             "scope": "CLASS",
             "x": 369,
-            "y": 373.5,
+            "y": 372.5,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "visible": false,
@@ -1328,7 +1322,7 @@
             "texture": {
                 "key": "showCardsImage"
             },
-            "x": 287,
+            "x": 254,
             "y": 404,
             "scaleX": 2.16,
             "scaleY": 1.14
@@ -1344,7 +1338,7 @@
             "hitArea.y": -140,
             "hitArea.width": 652.3814994495934,
             "hitArea.height": 910.5149565734912,
-            "x": 288,
+            "x": 255,
             "y": 405,
             "scaleX": 0.2,
             "scaleY": 0.2,

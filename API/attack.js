@@ -16,7 +16,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
     if (!canAttack) {
         res.send({
             notWorking: true,
-            message: "You can't attack after using a imediate damage card.",
+            message: "Imediate damage card played. Can't attack anymore!",
         })
         return;
     } else {
@@ -30,7 +30,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                             if (targetSlot == 4 || targetSlot == 5) {
                                 res.send({
                                     notWorking: true,
-                                    message: "Can't attack that target.",
+                                    message: "Can't attack that target",
                                 })
                                 return;
                             }
@@ -42,7 +42,8 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                         if (attackStatus == 2) { // check if attack status is 2, meaning if the character already attacked: if it has it can't attack more
                             res.send({
                                 notWorking: true,
-                                message: "This character can't attack anymore!.",
+                                attackStatus: attackStatus,
+                                message: "Already attacked with it",
                             })
                             return;
                         } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
@@ -69,6 +70,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                                                 if (error) {
                                                                     res.send(error);
                                                                 } else {
+
                                                                     connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = player_match_character_character_current_HP - ? WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [knockbackDamage, match_id, playerID, attackerSlot],
                                                                         function (error, rows, fields) {
                                                                             if (error) {
@@ -97,7 +99,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                         console.log("You can't attack with your characters after using a imediate damage card.")
                         res.send({
                             notWorking: true,
-                            message: "You can't attack with your characters after using a imediate damage card.",
+                            message: "Imediate damage card played. Can't attack anymore!",
                         })
                     }
                 }
