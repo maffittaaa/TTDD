@@ -85,20 +85,14 @@ class AttackMechanism extends ScriptNode {
 			finalX = null;
 			finalY = null;
 
-			if(attacker.frame.name > 5){
+			if(attacker.frame.name > 4){
 				var attackerThrow = this.scene.children.list[7].list
-
-				console.log(slot)
 
 				for (let i = 0; i < attackerThrow.length; i++) {
 					console.log(attackerThrow[i])
 					if(attackerThrow[i].name == "throwables_slot" + slot){
 						item = attackerThrow[i]
-						console.log(attacker)
-						console.log(attackerThrow[i])
-						console.log(slot)
-						console.log(attacker.frame.name)
-						item.setTexture("throwables", attacker.frame.name - 6)
+						item.setTexture("throwables", attacker.frame.name - 4)
 					}
 				}
 			}else{
