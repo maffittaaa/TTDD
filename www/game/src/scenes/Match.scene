@@ -392,19 +392,6 @@
                 },
                 {
                     "type": "Image",
-                    "id": "9de13831-ea5b-4cdc-b21d-accc65891e34",
-                    "label": "deck_player2",
-                    "texture": {
-                        "key": "cartas4_Imprimir",
-                        "frame": 3
-                    },
-                    "x": 1185,
-                    "y": 582,
-                    "scaleX": 0.4,
-                    "scaleY": 0.4
-                },
-                {
-                    "type": "Image",
                     "id": "8002b3df-8ee8-4713-a760-d8e9b1fb43db",
                     "label": "throwables_p2_slot1",
                     "useGameObjectName": true,
@@ -480,6 +467,19 @@
                 },
                 {
                     "type": "Image",
+                    "id": "137f753a-81a9-4919-a310-15e7cea15e5d",
+                    "label": "player2_deck",
+                    "texture": {
+                        "key": "cardsUnavailable",
+                        "frame": 3
+                    },
+                    "x": 1185,
+                    "y": 582,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4
+                },
+                {
+                    "type": "Image",
                     "id": "375a1adc-7cca-47ff-bd7a-739de6a0a735",
                     "label": "cardTookP2",
                     "texture": {
@@ -489,7 +489,8 @@
                     "x": 1185,
                     "y": 582,
                     "scaleX": 0.4,
-                    "scaleY": 0.4
+                    "scaleY": 0.4,
+                    "visible": false
                 },
                 {
                     "type": "Image",
@@ -891,7 +892,7 @@
                 {
                     "type": "Image",
                     "id": "0ddd1cfd-b34e-476c-9b76-476bd4b3b952",
-                    "label": "cardsUnavailable",
+                    "label": "player1_deck",
                     "useGameObjectName": true,
                     "scope": "CLASS",
                     "texture": {
@@ -1420,7 +1421,7 @@
                 "key": "buttons"
             },
             "x": 960,
-            "y": 1009,
+            "y": 1035,
             "scaleX": 4.2,
             "scaleY": 3,
             "list": [
@@ -1468,7 +1469,7 @@
             "label": "endTurnText",
             "scope": "CLASS",
             "x": 960,
-            "y": 1010,
+            "y": 1036,
             "scaleX": 0.25,
             "scaleY": 0.25,
             "originX": 0.5,
@@ -1496,20 +1497,6 @@
             "fontFamily": "Minecraft",
             "fontSize": "100px",
             "color": "#ffffffff"
-        },
-        {
-            "type": "Text",
-            "id": "cf92613e-7b63-4ef8-b58e-2c94aa576a7c",
-            "label": "winnerText",
-            "scope": "CLASS",
-            "x": 369,
-            "y": 369.5,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "visible": false,
-            "text": "WINNER",
-            "fontFamily": "Minecraft",
-            "fontSize": "200px"
         },
         {
             "type": "Container",
@@ -1915,6 +1902,52 @@
                     "fontFamily": "Minecraft",
                     "fontSize": "100px",
                     "color": "#ffffffff"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "3c9f84e2-aee4-4083-ac62-cf91d6ab96e4",
+            "label": "winner",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "x": 1499,
+            "y": -403,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "e5af8986-9fe0-418e-bc87-90bf7713d35e",
+                    "label": "shadow_1",
+                    "texture": {
+                        "key": "Shadow"
+                    },
+                    "x": -539,
+                    "y": 952,
+                    "scaleX": 10.27991336353874,
+                    "scaleY": 6.0759387580083795,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "9fbb8ec9-532b-4dd1-85b5-710234fc9953",
+                            "label": "onPointerDownScript_12"
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "8c5e4b3b-3fd8-41ae-a12c-8c6172fbb4de",
+                    "label": "winnerText",
+                    "scope": "CLASS",
+                    "x": -552,
+                    "y": 963.8000013232231,
+                    "scaleY": 0.8,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "Winner:",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "200px"
                 }
             ]
         },

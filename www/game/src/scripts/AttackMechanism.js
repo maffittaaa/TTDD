@@ -72,33 +72,33 @@ class AttackMechanism extends ScriptNode {
 			this.playCard(cardOnHold, slot);
 		} else if (attackerSlot == slot) {
 			this.setGlowOnOff(this.parent, false);
-			this.setOpponent(false)
+			this.setOpponent(false);
 			attackerSlot = 0;
 			attacker = null;
 		} else {
 			attackerSlot = slot;
 			attacker = this.parent;
 			this.setGlowOnOff(this.parent, true);
-			this.setOpponent(true)
+			this.setOpponent(true);
 			initialX = this.parent.x;
 			initialY = this.parent.y;
 			finalX = null;
 			finalY = null;
 
-			if(attacker.frame.name > 4){
+			if (attacker.frame.name > 4) {
 				var attackerThrow = this.scene.children.list[7].list
 				for (let i = 0; i < attackerThrow.length; i++) {
 					console.log(attackerThrow[i])
-					if(attackerThrow[i].name == "throwables_p1_slot" + slot){
+					if (attackerThrow[i].name == "throwables_p1_slot" + slot) {
 						item = attackerThrow[i]
 						item.setTexture("throwables", attacker.frame.name - 4)
 					}
 				}
-			}else{
+			} else {
 				item = this.parent;
 			}
 		}
-		this.parent.name = "player1_slot" + slot
+		this.parent.name = "player1_slot" + slot;
 	}
 
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
@@ -124,14 +124,14 @@ class AttackMechanism extends ScriptNode {
 		object.preFX.list[0].active = boolean;
 	}
 
-	setOpponent(boolean){
+	setOpponent(boolean) {
 		var opponent = this.scene.children.list[6].list
 
 		for (let i = 0; i < opponent.length; i++) {
-			if(opponent[i].name.search("player2_slot") == 0){
+			if (opponent[i].name.search("player2_slot") == 0) {
 				console.log(opponent[i])
-				opponent[i].input.enabled = boolean
-			}			
+				opponent[i].input.enabled = boolean;
+			}
 		}
 	}
 
@@ -161,7 +161,7 @@ class AttackMechanism extends ScriptNode {
 					scene.setGlowOnOff(attacker, false);
 
 					scene.setGlowOnOff(scene.parent, false);
-					scene.setOpponent(false)
+					scene.setOpponent(false);
 
 					scene.playThrowAnimation();
 
@@ -169,7 +169,7 @@ class AttackMechanism extends ScriptNode {
 					damageAnimation.visible = true;
 					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
-					
+
 					attacker = null;
 					attackerSlot = 0;
 					targetSlot = 0;
@@ -186,10 +186,10 @@ class AttackMechanism extends ScriptNode {
 		finalX = this.parent.x
 		finalY = this.parent.y
 
-		if(item.visible == false){
+		if (item.visible == false) {
 			item.visible = true
 			peakHeight = Math.abs(finalY - initialY) + 100
-		}else{
+		} else {
 			peakHeight = 0
 		}
 
