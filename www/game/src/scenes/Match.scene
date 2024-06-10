@@ -27,7 +27,7 @@
                 "key": "street"
             },
             "x": 960,
-            "y": 853,
+            "y": 849,
             "scaleX": 0.68,
             "scaleY": 0.68
         },
@@ -39,7 +39,7 @@
                 "key": "city"
             },
             "x": 960,
-            "y": 237,
+            "y": 233,
             "scaleX": 1.5,
             "scaleY": 1.5
         },
@@ -51,7 +51,7 @@
                 "key": "Bar1"
             },
             "x": 342,
-            "y": 383,
+            "y": 379,
             "scaleX": 2.754494288270423,
             "scaleY": 2.754494288270423
         },
@@ -63,7 +63,7 @@
                 "key": "Bar2"
             },
             "x": 1587,
-            "y": 383,
+            "y": 379,
             "scaleX": 2.3663060242524527,
             "scaleY": 2.3663060242524527
         },
@@ -74,7 +74,7 @@
             "useGameObjectName": true,
             "scope": "CLASS",
             "x": 964,
-            "y": 531,
+            "y": 527,
             "scaleX": 0.5,
             "scaleY": 0.5,
             "originX": 0.5,
@@ -93,7 +93,7 @@
             "label": "CharacterSlotsPlayer2",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "y": -1,
+            "y": -4,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -146,6 +146,15 @@
                             "type": "Opponent",
                             "slotID": 1,
                             "damageText": ""
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "ff369ce2-72b0-4831-9281-a38f663a12d3",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_5",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -167,16 +176,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "51f8e160-0fdd-4799-b760-ace208e1887e",
-                            "label": "onPointerDownScript_2",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "01a5efb4-722d-403f-8433-339d90fc27ce",
-                                    "label": "pushActionScript_2"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "fdd312a0-17e6-47ab-9013-8da3f2db2c11",
+                            "label": "glowFx_1",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -190,11 +194,25 @@
                             "slotID": 2
                         },
                         {
-                            "type": "Glow",
-                            "id": "fdd312a0-17e6-47ab-9013-8da3f2db2c11",
-                            "label": "glowFx_1",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "51f8e160-0fdd-4799-b760-ace208e1887e",
+                            "label": "onPointerDownScript_2",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "01a5efb4-722d-403f-8433-339d90fc27ce",
+                                    "label": "pushActionScript_2"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "517409a7-f6e7-47d9-8902-49204025b4dc",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_6",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -216,16 +234,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "bd60db59-a8cb-487b-a952-a9e9f99f422e",
-                            "label": "onPointerDownScript",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "ea9d7495-2af6-48a1-9e94-7bb142b7c968",
-                                    "label": "pushActionScript"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "0903a005-a263-4fa1-be43-6697b8421c6c",
+                            "label": "glowFx_2",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -239,11 +252,25 @@
                             "slotID": 3
                         },
                         {
-                            "type": "Glow",
-                            "id": "0903a005-a263-4fa1-be43-6697b8421c6c",
-                            "label": "glowFx_2",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "bd60db59-a8cb-487b-a952-a9e9f99f422e",
+                            "label": "onPointerDownScript",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "ea9d7495-2af6-48a1-9e94-7bb142b7c968",
+                                    "label": "pushActionScript"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "44ba5a0c-4261-4ed5-a5ac-b444293ff5bd",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_7",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -265,16 +292,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "29fa70aa-d82e-440e-8b39-9074a2d976fb",
-                            "label": "onPointerDownScript_3",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "0d6089ac-7acf-4387-8a78-3a5df5a86346",
-                                    "label": "pushActionScript_3"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "56dfb38d-8cf5-4bd8-9f33-e1f5f50720d8",
+                            "label": "glowFx_3",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -288,11 +310,25 @@
                             "slotID": 4
                         },
                         {
-                            "type": "Glow",
-                            "id": "56dfb38d-8cf5-4bd8-9f33-e1f5f50720d8",
-                            "label": "glowFx_3",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "29fa70aa-d82e-440e-8b39-9074a2d976fb",
+                            "label": "onPointerDownScript_3",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "0d6089ac-7acf-4387-8a78-3a5df5a86346",
+                                    "label": "pushActionScript_3"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "7bfe0ac9-442c-45bf-b863-0228b89c850d",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_8",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -314,16 +350,11 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "7119ffbd-9351-4c94-ac97-b69a503daa1b",
-                            "label": "onPointerDownScript_4",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "b91e7920-7a81-4d10-8116-a0e55d9a68e8",
-                                    "label": "pushActionScript_4"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "9a5b2a4d-9fc5-4f19-b236-a58a06d171e7",
+                            "label": "glowFx_4",
+                            "color": "#8d0202",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -337,26 +368,164 @@
                             "slotID": 5
                         },
                         {
-                            "type": "Glow",
-                            "id": "9a5b2a4d-9fc5-4f19-b236-a58a06d171e7",
-                            "label": "glowFx_4",
-                            "color": "#8d0202",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "7119ffbd-9351-4c94-ac97-b69a503daa1b",
+                            "label": "onPointerDownScript_4",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "b91e7920-7a81-4d10-8116-a0e55d9a68e8",
+                                    "label": "pushActionScript_4"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "429d8a2d-2174-45c2-a675-d35c2f7091b3",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_9",
+                            "type": "Match"
                         }
                     ]
                 },
                 {
                     "type": "Image",
                     "id": "9de13831-ea5b-4cdc-b21d-accc65891e34",
-                    "label": "cardsUnavailable3",
+                    "label": "deck_player2",
                     "texture": {
-                        "key": "cardsUnavailable",
+                        "key": "cartas4_Imprimir",
                         "frame": 3
                     },
                     "x": 1185,
                     "y": 582,
                     "scaleX": 0.4,
                     "scaleY": 0.4
+                },
+                {
+                    "type": "Image",
+                    "id": "8002b3df-8ee8-4713-a760-d8e9b1fb43db",
+                    "label": "throwables_p2_slot1",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "throwables",
+                        "frame": 1
+                    },
+                    "x": 828,
+                    "y": 470,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "788dc563-b22f-4c4c-a502-7b1412dc8e1d",
+                    "label": "throwables_p2_slot2",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "throwables",
+                        "frame": 1
+                    },
+                    "x": 925,
+                    "y": 551,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "b127c98c-5ba6-4702-8c88-94a18dfcf05e",
+                    "label": "throwables_p2_slot3",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "throwables",
+                        "frame": 1
+                    },
+                    "x": 828,
+                    "y": 630,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "96e35abf-b074-4e0f-a7c0-b35936723f5d",
+                    "label": "throwables_p2_slot4",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "throwables",
+                        "frame": 1
+                    },
+                    "x": 1051,
+                    "y": 469,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "ac70f6ed-e880-4191-b04b-6a9b7e696015",
+                    "label": "throwables_p2_slot5",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "throwables",
+                        "frame": 1
+                    },
+                    "x": 1047,
+                    "y": 631,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "375a1adc-7cca-47ff-bd7a-739de6a0a735",
+                    "label": "cardTookP2",
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 1185,
+                    "y": 582,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4
+                },
+                {
+                    "type": "Image",
+                    "id": "4de51644-ed53-44b0-af18-2ee4858cd01a",
+                    "label": "cardPlayedP2",
+                    "useGameObjectName": true,
+                    "hitArea.shape": "RECTANGLE",
+                    "hitArea.width": 304,
+                    "hitArea.height": 432,
+                    "texture": {
+                        "key": "cartas4_Imprimir",
+                        "frame": 3
+                    },
+                    "x": 640,
+                    "y": 388,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "be70220d-7008-4023-a207-9709a032868b",
+                            "id": "0be46089-54a0-45f1-9099-b587c0174b20",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "throwables_2",
+                            "type": "CardTook"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "8472d4f0-cc72-4323-98eb-2d1b4c8e75cd",
+                            "label": "glowFx_16",
+                            "color": "#8d0202",
+                            "preFX": true
+                        }
+                    ]
                 }
             ]
         },
@@ -366,7 +535,7 @@
             "label": "CharacterSlotsPlayer1",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "y": -1,
+            "y": -3,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -388,16 +557,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
-                            "label": "onPointerDownScript_6",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
-                                    "label": "pushActionScript_6"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
+                            "label": "glowFx_5",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -411,10 +574,16 @@
                             "slotID": 1
                         },
                         {
-                            "type": "Glow",
-                            "id": "39cedb93-4dce-4e37-b8f6-827dcd952b11",
-                            "label": "glowFx_5",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "8ab25239-f133-4daf-95f1-e00b50431359",
+                            "label": "onPointerDownScript_6",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "abd56629-ffb1-4a6f-a8fe-48ab15440f3e",
+                                    "label": "pushActionScript_6"
+                                }
+                            ]
                         },
                         {
                             "prefabId": "be70220d-7008-4023-a207-9709a032868b",
@@ -449,6 +618,15 @@
                             "label": "nameAndLevelMechanism",
                             "nameText": "namePlayer1Text",
                             "levelText": "levelPlayer1Text"
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "eea14bea-3f2c-4374-8821-a99e2322fda4",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_10",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -470,16 +648,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
-                            "label": "onPointerDownScript_7",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
-                                    "label": "pushActionScript_7"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
+                            "label": "glowFx_6",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -493,10 +665,25 @@
                             "slotID": 2
                         },
                         {
-                            "type": "Glow",
-                            "id": "dced0755-8d25-4be7-9bc9-c8f41b17dc11",
-                            "label": "glowFx_6",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "52d84b2a-3909-4659-a0ab-5e9e0394be7b",
+                            "label": "onPointerDownScript_7",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "c309a80a-e0fc-4cc8-9e1b-a7d6016012ee",
+                                    "label": "pushActionScript_7"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "40781d6d-4da2-4b54-9e31-02c6936a42fc",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_11",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -518,16 +705,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
-                            "label": "onPointerDownScript_8",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
-                                    "label": "pushActionScript_8"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
+                            "label": "glowFx_7",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -541,10 +722,25 @@
                             "slotID": 3
                         },
                         {
-                            "type": "Glow",
-                            "id": "ed33bcbe-7f58-4b43-94ed-fb9b3eefb66f",
-                            "label": "glowFx_7",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "05861854-ff59-4785-9adf-5e83eab06be9",
+                            "label": "onPointerDownScript_8",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "e92ec439-c59b-4742-b902-c0aeb3f3977a",
+                                    "label": "pushActionScript_8"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "d0c8e722-179f-41e6-a8c8-bed578b02897",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_12",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -566,16 +762,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
-                            "label": "onPointerDownScript_9",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
-                                    "label": "pushActionScript_9"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
+                            "label": "glowFx_8",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -589,10 +779,25 @@
                             "slotID": 4
                         },
                         {
-                            "type": "Glow",
-                            "id": "b913fbb9-8ee7-412a-8d6f-2a64d8128e49",
-                            "label": "glowFx_8",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2c0db52f-1f0e-4ffd-ae4d-e7fb683800a7",
+                            "label": "onPointerDownScript_9",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "9bba7c3f-90f0-48c1-ae03-19f8789f09da",
+                                    "label": "pushActionScript_9"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "467e6965-720e-48de-909d-f8cdcfe74cd7",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_13",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -614,16 +819,10 @@
                     "visible": false,
                     "list": [
                         {
-                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
-                            "label": "onPointerDownScript_10",
-                            "list": [
-                                {
-                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
-                                    "label": "pushActionScript_10"
-                                }
-                            ]
+                            "type": "Glow",
+                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
+                            "label": "glowFx_9",
+                            "preFX": true
                         },
                         {
                             "prefabId": "afcac196-3789-4bb1-a1fb-73b1d0166115",
@@ -637,10 +836,25 @@
                             "slotID": 5
                         },
                         {
-                            "type": "Glow",
-                            "id": "195d4d4e-604d-42e6-b2e6-78273bfaaccd",
-                            "label": "glowFx_9",
-                            "preFX": true
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "1a94391d-c695-41b0-85d1-82c0d9961f89",
+                            "label": "onPointerDownScript_10",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "2bd680f0-c1e0-43ff-9797-1899f5af3117",
+                                    "label": "pushActionScript_10"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "92d5bbab-310c-4416-bcca-4b86d97c50e6",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_14",
+                            "type": "Match"
                         }
                     ]
                 },
@@ -737,7 +951,7 @@
                 {
                     "type": "Image",
                     "id": "1a9c2330-3df8-470f-84f4-3a48005cbafa",
-                    "label": "throwables_slot1",
+                    "label": "throwables_p1_slot1",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "throwables",
@@ -752,7 +966,7 @@
                 {
                     "type": "Image",
                     "id": "4b4e6597-0391-4b23-a6ef-5429f4131002",
-                    "label": "throwables_slot2",
+                    "label": "throwables_p1_slot2",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "throwables",
@@ -767,7 +981,7 @@
                 {
                     "type": "Image",
                     "id": "ecb9e57a-6730-4d9c-ba1c-7420e69e5bca",
-                    "label": "throwables_slot3",
+                    "label": "throwables_p1_slot3",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "throwables",
@@ -782,7 +996,7 @@
                 {
                     "type": "Image",
                     "id": "bd885266-3f63-4a40-bcc5-728e3f6e5ec1",
-                    "label": "throwables_slot4",
+                    "label": "throwables_p1_slot4",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "throwables",
@@ -797,7 +1011,7 @@
                 {
                     "type": "Image",
                     "id": "dfe60eb5-f8a4-4d8b-8f7a-17a84f982807",
-                    "label": "throwables_slot5",
+                    "label": "throwables_p1_slot5",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "throwables",
@@ -817,7 +1031,7 @@
             "label": "HealthBarsPlayer1",
             "useGameObjectName": true,
             "scope": "PUBLIC",
-            "y": -1,
+            "y": -2,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -1012,7 +1226,7 @@
             "label": "HealthBarsPlayer2",
             "useGameObjectName": true,
             "scope": "CLASS",
-            "y": -1,
+            "y": -2,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "list": [
@@ -1194,12 +1408,67 @@
             ]
         },
         {
+            "type": "Image",
+            "id": "73db2015-3f99-486a-ab58-67507b255022",
+            "label": "endTurnButtons",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.x": 1,
+            "hitArea.y": 1,
+            "hitArea.width": 68.03979790402462,
+            "hitArea.height": 19.273804418001685,
+            "texture": {
+                "key": "buttons"
+            },
+            "x": 960,
+            "y": 1009,
+            "scaleX": 4.2,
+            "scaleY": 3,
+            "list": [
+                {
+                    "type": "Glow",
+                    "id": "75a98500-3470-4035-afa6-abdad30d1623",
+                    "label": "glowFx_15",
+                    "preFX": true
+                },
+                {
+                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                    "id": "523d784f-515d-44c2-9592-d2a6cbe1bbce",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "highlights",
+                    "type": "Buttons"
+                },
+                {
+                    "prefabId": "c1f303fd-0c45-4cc0-be3c-93b6aa87b551",
+                    "id": "12d8e99b-8ff2-43c8-8a21-767c208abb7f",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "endTurnMechanism",
+                    "type": "endTurn"
+                },
+                {
+                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                    "id": "8b9c3834-09ef-4275-83d4-9c08502a8ebd",
+                    "label": "onPointerDownScript_5",
+                    "list": [
+                        {
+                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                            "id": "099e5899-3321-4e2a-afcd-adb6b1c6f1fc",
+                            "label": "pushActionScript_11"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "type": "Text",
             "id": "5f6ddcd4-d07c-4298-a285-a9cd183b04b4",
             "label": "endTurnText",
             "scope": "CLASS",
-            "x": 961,
-            "y": 1051.25,
+            "x": 960,
+            "y": 1010,
             "scaleX": 0.25,
             "scaleY": 0.25,
             "originX": 0.5,
@@ -1207,31 +1476,8 @@
             "text": "End turn",
             "align": "center",
             "fontFamily": "Minecraft",
-            "fontSize": "200px",
-            "color": "#ffffffff",
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "0b6a0054-b86f-4ea7-a5c3-cff648d87422",
-                    "label": "onPointerDownScript_12",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "7a796749-1736-4a5a-8f4a-ed509b792d81",
-                            "label": "pushActionScript_12"
-                        }
-                    ]
-                },
-                {
-                    "prefabId": "c1f303fd-0c45-4cc0-be3c-93b6aa87b551",
-                    "id": "ec80397f-90dd-4e6f-b70b-b0ce8e526868",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "endTurnMechanism",
-                    "type": "endTurn"
-                }
-            ]
+            "fontSize": "150px",
+            "color": "#ffffffff"
         },
         {
             "type": "Text",
@@ -1239,7 +1485,7 @@
             "label": "turn",
             "scope": "CLASS",
             "x": 962,
-            "y": 132,
+            "y": 130,
             "scaleX": 0.5,
             "scaleY": 0.5,
             "originX": 0.5,
@@ -1257,7 +1503,7 @@
             "label": "winnerText",
             "scope": "CLASS",
             "x": 369,
-            "y": 371.5,
+            "y": 369.5,
             "scaleX": 1.5,
             "scaleY": 1.5,
             "visible": false,
@@ -1271,7 +1517,7 @@
             "label": "namesAndLevelsPlayers",
             "useGameObjectName": true,
             "scope": "PUBLIC",
-            "y": -1,
+            "y": -3,
             "list": [
                 {
                     "type": "Image",
@@ -1398,13 +1644,44 @@
             "type": "Image",
             "id": "dfc077ad-75b0-4b6d-8bed-e7572d68e88f",
             "label": "showCardsImage",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.x": -2,
+            "hitArea.y": -23,
+            "hitArea.width": 67.92614110687856,
+            "hitArea.height": 180.49089758595323,
             "texture": {
                 "key": "showCardsImage"
             },
             "x": 254,
-            "y": 404,
+            "y": 399,
             "scaleX": 2.16,
-            "scaleY": 1.14
+            "scaleY": 1.14,
+            "list": [
+                {
+                    "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                    "id": "58e09d6c-2d55-4200-9f16-4a1e579d7915",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "highlights_4",
+                    "type": "Buttons"
+                },
+                {
+                    "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
+                    "id": "beaf0248-30a4-4b72-a2c6-71d3ab5811cf",
+                    "unlock": [
+                        "type"
+                    ],
+                    "label": "cardsMechanism_1",
+                    "type": "ShowCards"
+                },
+                {
+                    "type": "Glow",
+                    "id": "c7ec939f-9d67-49a1-b2fa-7e579939f304",
+                    "label": "glowFx_14",
+                    "preFX": true
+                }
+            ]
         },
         {
             "type": "Text",
@@ -1412,13 +1689,8 @@
             "label": "showCards",
             "useGameObjectName": true,
             "scope": "PUBLIC",
-            "hitArea.shape": "RECTANGLE",
-            "hitArea.x": -38,
-            "hitArea.y": -140,
-            "hitArea.width": 652.3814994495934,
-            "hitArea.height": 910.5149565734912,
             "x": 255,
-            "y": 405,
+            "y": 399,
             "scaleX": 0.2,
             "scaleY": 0.2,
             "originX": 0.5,
@@ -1427,30 +1699,7 @@
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
-            "color": "#000000ff",
-            "list": [
-                {
-                    "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
-                    "id": "21e827aa-9e2b-4cc4-91e9-558e02f4783a",
-                    "label": "onPointerDownScript_16",
-                    "list": [
-                        {
-                            "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
-                            "id": "a5b64087-adf3-46dc-9d9b-3e36d00f41c5",
-                            "label": "pushActionScript_16"
-                        }
-                    ]
-                },
-                {
-                    "prefabId": "d2bd3bab-7e71-4ce8-adab-367d353214a8",
-                    "id": "4974157c-858b-4e2f-bada-ac847b05aa91",
-                    "unlock": [
-                        "type"
-                    ],
-                    "label": "cardsMechanism_1",
-                    "type": "ShowCards"
-                }
-            ]
+            "color": "#000000ff"
         },
         {
             "type": "Container",
@@ -1494,6 +1743,21 @@
                                     "label": "pushActionScript_15"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "dc543784-532d-4047-b363-74496728b0fb",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_1",
+                            "type": "Buttons"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "ff338801-889a-4346-a593-916474bbcfc5",
+                            "label": "glowFx_11",
+                            "preFX": true
                         }
                     ]
                 },
@@ -1531,6 +1795,21 @@
                                     "label": "pushActionScript_14"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "5fb3b796-6b44-4f4f-bdaf-07c25bb3deec",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_2",
+                            "type": "Buttons"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "8e2ca018-720d-40e3-ab31-b7b9ab435ea2",
+                            "label": "glowFx_12",
+                            "preFX": true
                         }
                     ]
                 },
@@ -1568,6 +1847,21 @@
                                     "label": "pushActionScript_13"
                                 }
                             ]
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "eaadb912-80c8-4ad3-a610-54d2f16e8431",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_3",
+                            "type": "Buttons"
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "297defec-ea83-44ff-a998-ecbc82e7257b",
+                            "label": "glowFx_13",
+                            "preFX": true
                         }
                     ]
                 },

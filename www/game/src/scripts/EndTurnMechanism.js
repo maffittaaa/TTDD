@@ -32,7 +32,8 @@ class EndTurnMechanism extends ScriptNode {
 			url: '/attack/endTurn',
 
 			success: function (data) {
-				console.log(data);
+				showedCard = false
+
 				scene.setGlowOnOff(scene.scene.children.list[7].list[0], false);
 				scene.setGlowOnOff(scene.scene.children.list[7].list[1], false);
 				scene.setGlowOnOff(scene.scene.children.list[7].list[2], false);
@@ -43,7 +44,6 @@ class EndTurnMechanism extends ScriptNode {
 				scene.scene.children.list[7].list[2].setTexture("peawns", scene.scene.children.list[7].list[2].frame.name);
 				scene.scene.children.list[7].list[3].setTexture("peawns", scene.scene.children.list[7].list[3].frame.name);
 				scene.scene.children.list[7].list[4].setTexture("peawns", scene.scene.children.list[7].list[4].frame.name);
-
 			},
 			error: function (err) {
 				console.log(err);

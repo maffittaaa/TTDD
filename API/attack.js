@@ -27,7 +27,7 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                 } else {
                     if (rows.length > 0) {
                         if (attackerSlot == 1 || attackerSlot == 2 || attackerSlot == 3) {
-                            if (targetSlot == 4 || targetSlot == 5) {
+                            if ((targetSlot == 4 || targetSlot == 5) && rows[0].caracter_id < 6) {
                                 res.send({
                                     notWorking: true,
                                     message: "Can't attack that target",
@@ -49,13 +49,15 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                             return;
                         } else { //if attack status = 1, then update the status to 2 and attack, meaning it can attack and then becomes unavailable to attack again
 
-                            connection.execute("SELECT player_match_character_character_id FROM playerMatchCharacter WHERE player_match_character_character_current_HP > 0 AND player_match_character_player_id != " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + targetSlot, //select a character from player to attack
+                            connection.execute("SELECT player_match_character_character_id, player_match_character_tile_id FROM playerMatchCharacter WHERE player_match_character_character_current_HP > 0 AND player_match_character_player_id != " + playerID + " AND player_match_character_match_id = " + match_id + " AND player_match_character_tile_id = " + targetSlot, //select a character from player to attack
                                 function (error, rows, fields) {
                                     if (error) {
                                         res.send(error);
                                     } else {
                                         if (rows.length > 0) {
                                             var knockbackDamage = 0;
+                                            var characterAttackedSlot = rows[0].player_match_character_tile_id
+
                                             if (rows[0].player_match_character_character_id == 2) {
                                                 knockbackDamage = 1;
                                             }
@@ -69,18 +71,25 @@ function doAttack(req, res, canAttack) { //attack after checking if it's the pla
                                                                 if (error) {
                                                                     res.send(error);
                                                                 } else {
-
                                                                     connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = player_match_character_character_current_HP - ? WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [knockbackDamage, match_id, playerID, attackerSlot],
                                                                         function (error, rows, fields) {
                                                                             if (error) {
                                                                                 res.send(error);
                                                                             } else {
-                                                                                res.send({
-                                                                                    notWorking: false,
-                                                                                    attackDamage: attackDamage,
-                                                                                    attackerID: attackerID,
-                                                                                    message: "Here it goooess!!",
-                                                                                })
+                                                                                connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_attacked_id = ? WHERE player_match_character_match_id = ? AND player_match_character_player_id = ? AND player_match_character_tile_id = ? ", [characterAttackedSlot, match_id, playerID, attackerSlot],
+                                                                                    function (error, rows, fields) {
+                                                                                        if (error) {
+                                                                                            res.send(error);
+                                                                                        } else {
+                                                                                            res.send({
+                                                                                                notWorking: false,
+                                                                                                attackDamage: attackDamage,
+                                                                                                attackerID: attackerID,
+                                                                                                message: "Here it goooess!!",
+                                                                                            })
+                                                                                        }
+                                                                                    }
+                                                                                )
                                                                             }
                                                                         }
                                                                     )
@@ -146,15 +155,24 @@ router.get('/endTurn', (req, res) => { //ends the turn and passes to the other p
                                         console.error("Error executing UPDATE query:", error);
                                         res.send(error);
                                     } else {
-                                        connection.execute("UPDATE deck SET deck_card_played = false WHERE deck_match_id = ? AND deck_player_id = ?", [match_id, playerID],
+                                        connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_attacked_id = NULL WHERE player_match_character_match_id = ? AND player_match_character_player_id = ?", [match_id, playerID], // updates the status to all the characters to ready, so they can all attack again
                                             function (error, rows, fields) {
                                                 if (error) {
+                                                    console.error("Error executing UPDATE query:", error);
                                                     res.send(error);
                                                 } else {
-                                                    res.send(rows);
+                                                    connection.execute("UPDATE deck SET deck_card_played = false WHERE deck_match_id = ? AND deck_player_id = ?", [match_id, playerID],
+                                                        function (error, rows, fields) {
+                                                            if (error) {
+                                                                res.send(error);
+                                                            } else {
+                                                                res.send(rows);
+                                                            }
+                                                        }
+                                                    );
                                                 }
                                             }
-                                        );
+                                        )
                                     }
                                 }
                             )

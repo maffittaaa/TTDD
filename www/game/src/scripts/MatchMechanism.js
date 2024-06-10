@@ -1,4 +1,6 @@
 var time;
+var ch2Status = []
+var showedCard = false
 
 /* START OF COMPILED CODE */
 
@@ -33,7 +35,6 @@ class MatchMechanism extends ScriptNode {
 
 					scene.isItMyTurn(data.turn, data.player, data.tookCard);
 					scene.setCharactersValues(data.match_id, data.player_id, data.player1_id, data.player2_id, data.player1_name, data.player2_name, player1_characters, player2_characters);
-
 				} else {
 					window.location.replace("/login.html");
 				}
@@ -61,13 +62,13 @@ class MatchMechanism extends ScriptNode {
 			url: "/match/deltaChanges",
 			success: function (data) {
 				if (data.matchFinished == true) {
-					console.log(data);
 					scene.matchFinished(data.winner, data.winnerID, data.loserID);
 				} else if (data.logged == false) {
 					window.location.replace("/login.html");
 				} else {
 					scene.isItMyTurn(data.turn, data.player, data.tookCard);
 					scene.setCharactersValues(null, data.player, data.player1, data.player2, null, null, JSON.parse(data.ch1), JSON.parse(data.ch2), true);
+					scene.cardPlayed(data.cardPlayed)
 				}
 			},
 			error: function (err) {
@@ -77,7 +78,6 @@ class MatchMechanism extends ScriptNode {
 	};
 
 	isItMyTurn(turn_id, player_id, tookCard) {
-
 		if (turn_id == player_id) {
 			this.turnText.text = "It's your turn!";
 			this.turnText.setVisible(true);
@@ -100,6 +100,38 @@ class MatchMechanism extends ScriptNode {
 		object.preFX.list[0].active = boolean;
 	}
 
+	cardPlayed(id){
+		console.log(id, showedCard)
+		if (id != 0 && showedCard == false){
+			
+			var cardPlayed = this.scene.children.list[6].list
+			var cardsImgs = [4, 6, 5, 0, 3, 1, 8, 7, 2, 2];
+
+			for (let i = 0; i < cardPlayed.length; i++) {
+				console.log(cardPlayed[i])
+				if(cardPlayed[i].name == "cardPlayedP2"){
+
+					if (id == 4 || id == 6 || id == 10) {
+						cardPlayed[i].setTexture("cartas4_Imprimir", cardsImgs[id - 1]);
+						cardPlayed[i].visible = true
+	
+					} else {
+						cardPlayed[i].setTexture("cartas3_Imprimir", cardsImgs[id - 1]);
+						cardPlayed[i].visible = true
+					}
+
+					initialX = 1384
+					initialY = 388
+					finalX = cardPlayed[i].x
+					finalY = cardPlayed[i].y
+					startTime = performance.now();
+					peakHeight = Math.abs(finalY - initialY) + 100
+				}
+			}
+			showedCard = true
+		}
+	}
+
 	matchFinished(winnerName, winID, losID) {
 		var order = [1, 4, 2, 5, 3];
 
@@ -112,28 +144,25 @@ class MatchMechanism extends ScriptNode {
 		this.winnerText.text = "Match finished, the winner is: " + winnerName;
 
 		if (winnerName != undefined) {
-			setTimeout(function () {
-				$.ajax({
-					type: "POST",
-					url: "/levelUp/upgradeLevel",
-					data: {
-						"winner": winID,
-						"loser": losID
-					},
-					success: function (data) {
-						console.log(data)
-						window.location.replace("/game/");
-					},
-					error: function (err) {
-						console.log(err);
-					}
-				})
-			}, 8000);
+			setTimeout(this.updateLevelXp(winID,losID), 8000);
 		}
 	};
 
 	updateLevelXp(winID, losID) {
-		
+		$.ajax({
+			type: "POST",
+			url: "/levelUp/upgradeLevel",
+			data: {
+				"winner": winID,
+				"loser": losID
+			},
+			success: function (data) {
+				window.location.replace("/game/");
+			},
+			error: function (err) {
+				console.log(err);
+			}
+		})
 	}
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
@@ -147,9 +176,9 @@ class MatchMechanism extends ScriptNode {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 					
 					if (ch1[i].player_match_character_character_current_HP <= 0) {
-						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, true)
+						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, true)
 					}else{
-						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, false)
+						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, false);
 					}
 				}
 
@@ -157,9 +186,14 @@ class MatchMechanism extends ScriptNode {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
 					
 					if (ch2[i].player_match_character_character_current_HP <= 0) {
-						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, true)
+						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, true);
 					}else{
-						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, false)
+						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, false);
+					}
+
+					if(ch2[i].player_match_character_character_attacked_id != null && ch2Status[i] != ch2[i].player_match_character_character_status_id){
+						this.opponentAttack(ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_attacked_id, ch2[i].player_match_character_character_id);
+						ch2Status[i] = ch2[i].player_match_character_character_status_id;
 					}
 				}
 
@@ -170,9 +204,9 @@ class MatchMechanism extends ScriptNode {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
 				
 					if (ch2[i].player_match_character_character_current_HP <= 0) {
-						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, true)
+						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, true);
 					}else{
-						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, false)
+						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, false);
 					}
 				}
 
@@ -180,9 +214,14 @@ class MatchMechanism extends ScriptNode {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
 					
 					if (ch1[i].player_match_character_character_current_HP <= 0) {
-						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, true)
+						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, true);
 					}else{
-						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, false)
+						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, false);
+					}
+
+					if(ch1[i].player_match_character_character_attacked_id != null && ch2Status[i] != ch1[i].player_match_character_character_status_id){
+						this.opponentAttack(ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_attacked_id, ch1[i].player_match_character_character_id);
+						ch2Status[i] = ch1[i].player_match_character_character_status_id;
 					}
 				}
 			}
@@ -202,7 +241,7 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player1_slot") == 0) {
 								for (let k = 0; k < ch1.length; k++) {
 									if (ch1[k].player_match_character_tile_id == j + 1) {
-										character[i].list[j].visible = true
+										character[i].list[j].visible = true;
 										character[i].list[j].setTexture("peawns", ch1[k].player_match_character_character_id - 1);
 									}
 								}
@@ -217,8 +256,9 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player2_slot") == 0) {
 								for (let k = 0; k < ch2.length; k++) {
 									if (ch2[k].player_match_character_tile_id == j + 1) {
-										character[i].list[j].visible = true
+										character[i].list[j].visible = true;
 										character[i].list[j].setTexture("peawns2", orderCharacterPlayer2Images[ch2[k].player_match_character_character_id - 1]);
+										ch2Status.push(ch2[k].player_match_character_character_status_id)
 									}
 								}
 							}
@@ -243,8 +283,9 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player2_slot") == 0) {
 								for (let k = 0; k < ch1.length; k++) {
 									if (ch1[k].player_match_character_tile_id == j + 1) {
-										character[i].list[j].visible = true
+										character[i].list[j].visible = true;
 										character[i].list[j].setTexture("peawns2", orderCharacterPlayer2Images[ch1[k].player_match_character_character_id - 1]);
+										ch2Status.push(ch1[k].player_match_character_character_status_id);
 									}
 								}
 							}
@@ -258,7 +299,7 @@ class MatchMechanism extends ScriptNode {
 							if (character[i].list[j].name.search("player1_slot") == 0) {
 								for (let k = 0; k < ch2.length; k++) {
 									if (ch2[k].player_match_character_tile_id == j + 1) {
-										character[i].list[j].visible = true
+										character[i].list[j].visible = true;
 										character[i].list[j].setTexture("peawns", ch2[k].player_match_character_character_id - 1);
 									}
 								}
@@ -278,7 +319,7 @@ class MatchMechanism extends ScriptNode {
 		}
 	}
 
-	blackAndWhite(player, slot, charID, boolean){
+	blackAndWhite(player, slot, charID, status, boolean){
 		var healthSprite = this.scene.children.list;
 		var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
@@ -288,12 +329,11 @@ class MatchMechanism extends ScriptNode {
 					for (let k = 0; k < healthSprite[j].list.length; k++) {
 						if (healthSprite[j].list[k].name == "player" + player + "_slot" + slot) {
 							if(player == 1){
-								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteRight", charID - 1)
+								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteRight", charID - 1);
 							}else{
-								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteLeft", orderCharacterPlayer2Images[charID - 1])
+								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteLeft", orderCharacterPlayer2Images[charID - 1]);
 							}
-
-							healthSprite[j].list[k].input.enabled = false
+							healthSprite[j].list[k].input.enabled = false;
 						}
 					}
 				}
@@ -304,17 +344,66 @@ class MatchMechanism extends ScriptNode {
 					for (let k = 0; k < healthSprite[j].list.length; k++) {
 						if (healthSprite[j].list[k].name == "player" + player + "_slot" + slot) {
 							if(player == 1){
-								healthSprite[j].list[k].setTexture("peawns", charID - 1)
+								if(status == 2){
+									healthSprite[j].list[k].setTexture("pawnsAttacked", charID - 1)
+									healthSprite[j].list[k].input.enabled = false;
+								}else{
+									healthSprite[j].list[k].setTexture("peawns", charID - 1);
+									healthSprite[j].list[k].input.enabled = true;
+								}
 							}else{
 								healthSprite[j].list[k].setTexture("peawns2", orderCharacterPlayer2Images[charID - 1])
 							}
-
-							// healthSprite[j].list[k].input.enabled = true
 						}
 					}
 				}
 			}
 		}
+	}
+
+	opponentAttack(tileOpponent, tilePlayer, attackerID){
+
+		var charP2 = this.scene.children.list[6].list
+		var charP1 = this.scene.children.list[7].list
+
+		for (let i = 0; i < charP2.length; i++) {
+			if(attackerID > 5){
+				if(charP2[i].name == "player2_slot" + tileOpponent){
+					initialX = charP2[i].x
+					initialY = charP2[i].y
+				}
+				
+				if (charP2[i].name == "throwables_p2_slot" + tileOpponent){
+					item = charP2[i]
+					item.setTexture("throwables", attackerID - 5)
+				}
+			}else{
+				if(charP2[i].name == "player2_slot" + tileOpponent){
+					initialX = charP2[i].x
+					initialY = charP2[i].y
+					item = charP2[i]
+				}
+			}
+
+		}
+
+		for (let i = 0; i < charP1.length; i++) {
+			if(charP1[i].name == "player1_slot" + tilePlayer){
+				finalX = charP1[i].x
+				finalY = charP1[i].y
+			}
+		}
+
+		startTime = performance.now();
+
+		if(item.visible == false){
+			item.visible = true
+			peakHeight = Math.abs(finalY - initialY) + 100
+		}else{
+			peakHeight = 0
+		}
+
+		throwing = true
 	}
 
 	/* END-USER-CODE */

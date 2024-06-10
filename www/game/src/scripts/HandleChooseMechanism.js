@@ -82,6 +82,7 @@ class HandleChooseMechanism extends ScriptNode {
 				this.chooseCharacters()
 			}
 		})
+		this.setSlots(false);
 	}
 
 	updateChooseCharMenu(data, scene) {
@@ -198,15 +199,18 @@ class HandleChooseMechanism extends ScriptNode {
 
 	update(dt) {
 		time = time + 0.0166
-		if (charChosen != null && slotChosen != null) {
-			console.log(charChosen, slotChosen)
-
-			if (this.type == "Slot") {
+		if (this.type == "Slot"){
+			if (charChosen != null && slotChosen != null)  {
 				if (this.SlotID == slotChosen) {
 					this.parent.setTexture("peawns", charChosen)
+					this.setSlots(false);
 					slotChosen = null
 					charChosen = null
 				}
+			}
+
+			if (slots["slot_" + this.SlotID] != null) {
+				this.parent.input.enabled = true
 			}
 		}
 
@@ -284,8 +288,10 @@ class HandleChooseMechanism extends ScriptNode {
 				if (charChosen == ch_Id) {
 					glowOnOff = false;
 					charChosen = null;
+					this.setSlots(false);
 				} else {
 					charChosen = ch_Id;
+					this.setSlots(true);
 				}
 
 				var glowChange = this.scene.children.list
@@ -333,6 +339,8 @@ class HandleChooseMechanism extends ScriptNode {
 			}
 		} else {
 			if (charChosen != null) {
+				this.parent.name = "slot_" + slot_Id
+				
 				if (slot_Id > 3 && charChosen > 4) { //slot_id > 3 because there are 2 slots in the back --- ch_id > 5 because there are 5 characters long-range
 					slots["slot_" + slot_Id + ""] = charChosen
 					slotChosen = slot_Id
@@ -356,7 +364,6 @@ class HandleChooseMechanism extends ScriptNode {
 						for (let j = 0; j < glowChange[i].list.length; j++) {
 							if (glowChange[i].list[j].name != "Username") {
 								glowChange[i].list[j].preFX.list[0].active = false;
-
 							}
 						}
 					}
@@ -365,8 +372,9 @@ class HandleChooseMechanism extends ScriptNode {
 				this.parent.input.enabled = true
 			} else {
 				if (this.type == "Slot") {
+					this.parent.name = "slot_" + slot_Id
 					this.parent.setTexture("base", 0)
-
+					this.setSlots(false);
 
 					if (slots["slot_" + slot_Id + ""] != null) {
 						slots["slot_" + slot_Id + ""] = null;
@@ -374,6 +382,16 @@ class HandleChooseMechanism extends ScriptNode {
 					charChosen = null;
 				}
 			}
+		}
+	}
+
+	setSlots(boolean){
+		var slot = this.scene.children.list[2].list
+
+		for (let i = 0; i < slot.length; i++) {
+			if(slot[i].name.search("slot_") == 0){
+				slot[i].input.enabled = boolean
+			}			
 		}
 	}
 

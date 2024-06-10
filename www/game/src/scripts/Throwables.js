@@ -8,7 +8,7 @@ var peakHeight = null
 var startTime = null
 var angle = 1
 var maxAngle = 360
-var duration = 500
+var duration = 700
 var thrownBack = false
 
 /* START OF COMPILED CODE */

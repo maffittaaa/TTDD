@@ -443,15 +443,14 @@ router.get("/checkMatchFound", (req, res) => {
 router.get("/getMatchData", (req, res) => {
     console.log(req.session)
     console.log(req.session.match)
-    connection.execute("SELECT player_username, matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id = player_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
+    connection.execute("SELECT player_username, matche_player2_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP, player_match_character_character_attacked_id, player_match_character_character_status_id FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player2_id and matche_player2_id = player_id and matche_player2_id is not null and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id",
         function (err, rows, fields) {
             if (err) {
                 console.log(err);
                 res.send(err);
             } else {
                 if (rows.length > 0) {
-
-                    connection.execute("SELECT player_username, matche_player1_id, matche_turn_player_id, player_match_character_character_id, caracter_name, player_match_character_tile_id, player_match_character_character_current_HP FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player1_id and matche_player1_id = player_id and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id ",
+                    connection.execute("SELECT player_username, matche_player1_id, matche_turn_player_id, caracter_name, player_match_character_character_id, player_match_character_tile_id, player_match_character_character_current_HP, player_match_character_character_attacked_id, player_match_character_character_status_id FROM player, playerMatchCharacter, matche, caracter WHERE player_match_character_player_id = matche_player1_id and matche_player1_id = player_id and matche_id = " + req.session.match + " and player_match_character_match_id = matche_id and player_match_character_character_id = caracter_id ",
                         function (err1, rows1, fields1) {
                             if (err1) {
                                 console.log(err1);
@@ -549,7 +548,7 @@ router.get("/deltaChanges", (req, res) => {
                         var ch1 = [];
                         var ch2 = [];
 
-                        connection.execute("SELECT player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id, player_match_character_player_id FROM playerMatchCharacter, matche WHERE (player_match_character_player_id = " + rows[0].matche_player1_id + " OR player_match_character_player_id = " + rows[0].matche_player2_id + ") AND matche_id = " + req.session.match + " AND player_match_character_match_id = matche_id ",
+                        connection.execute("SELECT player_match_character_character_id, player_match_character_character_current_HP, player_match_character_tile_id, player_match_character_player_id, player_match_character_character_attacked_id, player_match_character_character_status_id FROM playerMatchCharacter, matche WHERE (player_match_character_player_id = " + rows[0].matche_player1_id + " OR player_match_character_player_id = " + rows[0].matche_player2_id + ") AND matche_id = " + req.session.match + " AND player_match_character_match_id = matche_id ",
                             function (err1, rows1, fields1) {
                                 if (err1) {
                                     console.log(err1);
@@ -602,7 +601,6 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
     var player_id = req.session.playerID;
     var match_id = req.session.match;
 
-
     connection.execute("SELECT player_username, player_match_character_player_id, player_match_character_character_current_HP FROM playerMatchCharacter, player WHERE player_id = player_match_character_player_id AND player_match_character_match_id = ? AND player_match_character_player_id <> ? AND player_match_character_character_current_HP > 0 ", [match_id, player_id],
         function (error, rows, fields) {
             if (error) {
@@ -618,18 +616,45 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                 res.send(error);
                             } else {
                                 if (rows.length > 0) {
-                                    res.send(
-                                        {
-                                            matchFinished: false,
-                                            turn: turn_id,
-                                            tookCard: req.session.tookCard,
-                                            player: req.session.playerID,
-                                            player1: player1,
-                                            player2: player2,
-                                            ch1: ch1,
-                                            ch2: ch2
+
+                                    connection.execute("SELECT deck_card_id FROM deck WHERE deck_match_id = ? AND deck_player_id != ? AND deck_card_played = true ", [match_id, player_id],
+                                        function (error, rows, fields) {
+                                            if (error) {
+                                                res.send(error);
+                                            } else {
+                                                if(rows.length > 0){
+                                                    res.send(
+                                                        {
+                                                            matchFinished: false,
+                                                            turn: turn_id,
+                                                            tookCard: req.session.tookCard,
+                                                            player: req.session.playerID,
+                                                            player1: player1,
+                                                            player2: player2,
+                                                            ch1: ch1,
+                                                            ch2: ch2,
+                                                            cardPlayed: rows[0].deck_card_id,
+                                                        }
+                                                    );
+                                                }else{
+                                                    res.send(
+                                                        {
+                                                            matchFinished: false,
+                                                            turn: turn_id,
+                                                            tookCard: req.session.tookCard,
+                                                            player: req.session.playerID,
+                                                            player1: player1,
+                                                            player2: player2,
+                                                            ch1: ch1,
+                                                            ch2: ch2,
+                                                            cardPlayed: 0,
+                                                        }
+                                                    );
+                                                }
+                                            }
                                         }
-                                    );
+                                    )
+                                    
 
                                 } else {
                                     connection.execute("UPDATE matche SET matche_state_id = 2 WHERE matche_id = ?", [match_id],

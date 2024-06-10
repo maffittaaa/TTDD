@@ -43,27 +43,23 @@ class AttackMechanism extends ScriptNode {
 	start() {
 		this.parent.on('pointerdown', event => {
 			if (throwing == false) {
-				console.log(this.type)
 				if (this.type == "Player") {
 					this.setAttackerSlot(this.slotID);
 				} else if (this.type == "Opponent") {
-					target.input.enabled = false;
 					this.setTargetSlot(this.slotID);
 				} else if (this.type == "Cards") {
 					this.playCard(this.cardID);
 				}
 			}
 		})
+		this.setOpponent(false)
 	}
 
 	update() {
 		if (this.type == "Cards") {
 			if (slotID != 0 && cardID != 0) {
-				console.log(cardID, slotID)
 				if (slotID == this.slotID) {
-
 					this.cardID = cardID
-					console.log(this.cardID, cardID, slotID)
 					slotID = 0
 					cardID = 0
 				}
@@ -76,12 +72,14 @@ class AttackMechanism extends ScriptNode {
 			this.playCard(cardOnHold, slot);
 		} else if (attackerSlot == slot) {
 			this.setGlowOnOff(this.parent, false);
+			this.setOpponent(false)
 			attackerSlot = 0;
 			attacker = null;
 		} else {
 			attackerSlot = slot;
 			attacker = this.parent;
 			this.setGlowOnOff(this.parent, true);
+			this.setOpponent(true)
 			initialX = this.parent.x;
 			initialY = this.parent.y;
 			finalX = null;
@@ -89,10 +87,9 @@ class AttackMechanism extends ScriptNode {
 
 			if(attacker.frame.name > 4){
 				var attackerThrow = this.scene.children.list[7].list
-
 				for (let i = 0; i < attackerThrow.length; i++) {
 					console.log(attackerThrow[i])
-					if(attackerThrow[i].name == "throwables_slot" + slot){
+					if(attackerThrow[i].name == "throwables_p1_slot" + slot){
 						item = attackerThrow[i]
 						item.setTexture("throwables", attacker.frame.name - 4)
 					}
@@ -127,6 +124,17 @@ class AttackMechanism extends ScriptNode {
 		object.preFX.list[0].active = boolean;
 	}
 
+	setOpponent(boolean){
+		var opponent = this.scene.children.list[6].list
+
+		for (let i = 0; i < opponent.length; i++) {
+			if(opponent[i].name.search("player2_slot") == 0){
+				console.log(opponent[i])
+				opponent[i].input.enabled = boolean
+			}			
+		}
+	}
+
 	doAttack() { // passing the attackerSlot and the targetslot to the server
 		var scene = this;
 		$.ajax({
@@ -150,13 +158,18 @@ class AttackMechanism extends ScriptNode {
 				} else {
 					attacker.input.enabled = false;
 					attacker.setTexture("pawnsAttacked", data.attackerID - 1);
+					scene.setGlowOnOff(attacker, false);
+
+					scene.setGlowOnOff(scene.parent, false);
+					scene.setOpponent(false)
+
 					scene.playThrowAnimation();
+
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
 					damageAnimation.visible = true;
 					damageAnimation.text = "-" + data.attackDamage;
 					scene.scene.add.existing(damageAnimation);
-					scene.setGlowOnOff(scene.parent, false);
-					scene.setGlowOnOff(attacker, false);
+					
 					attacker = null;
 					attackerSlot = 0;
 					targetSlot = 0;
@@ -207,6 +220,7 @@ class AttackMechanism extends ScriptNode {
 					reviving = data.reviving;
 					cardOnHold = data.card;
 				} else if (data.stillAttacking) {
+					scene.setOpponent(true)
 					stillAttacking = data.stillAttacking;
 					cardOnHold = data.card;
 					if (data.characterOnHold) {
@@ -220,12 +234,12 @@ class AttackMechanism extends ScriptNode {
 				}
 
 				if (!data.notWorking && scene.type == "Cards") {
+					var usedImg = [4, 6, 5, 0, 3, 1, 8, 7, 9, 2]
 					handCards.visible = !showHandCards
 					showHandCards = !showHandCards
-					scene.parent.visible = false
-					scene.parent.name = "cardUsed" + data.card_id
-					scene.parent.parentContainer.bringToTop(scene.parent)
-					console.log(scene.parent.parentContainer.list)
+					scene.parent.name = "cardSlotUsed" + data.card_id
+					scene.parent.input.enabled = false
+					scene.parent.setTexture("usedCards", usedImg[data.card_id - 1])
 				}
 			},
 			error: function (err) {

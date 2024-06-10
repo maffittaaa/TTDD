@@ -23,27 +23,27 @@ class Match extends Phaser.Scene {
 		this.add.image(960, 547, "sidewalk");
 
 		// street
-		const street = this.add.image(960, 853, "street");
+		const street = this.add.image(960, 849, "street");
 		street.scaleX = 0.68;
 		street.scaleY = 0.68;
 
 		// city
-		const city = this.add.image(960, 237, "city");
+		const city = this.add.image(960, 233, "city");
 		city.scaleX = 1.5;
 		city.scaleY = 1.5;
 
 		// bar1
-		const bar1 = this.add.image(342, 383, "Bar1");
+		const bar1 = this.add.image(342, 379, "Bar1");
 		bar1.scaleX = 2.754494288270423;
 		bar1.scaleY = 2.754494288270423;
 
 		// bar2
-		const bar2 = this.add.image(1587, 383, "Bar2");
+		const bar2 = this.add.image(1587, 379, "Bar2");
 		bar2.scaleX = 2.3663060242524527;
 		bar2.scaleY = 2.3663060242524527;
 
 		// result
-		const result = this.add.text(964, 531, "", {});
+		const result = this.add.text(964, 527, "", {});
 		result.name = "result";
 		result.scaleX = 0.5;
 		result.scaleY = 0.5;
@@ -53,7 +53,7 @@ class Match extends Phaser.Scene {
 		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
 
 		// CharacterSlotsPlayer2
-		const characterSlotsPlayer2 = this.add.container(0, -1);
+		const characterSlotsPlayer2 = this.add.container(0, -4);
 		characterSlotsPlayer2.name = "CharacterSlotsPlayer2";
 		characterSlotsPlayer2.scaleX = 1.5;
 		characterSlotsPlayer2.scaleY = 1.5;
@@ -79,6 +79,9 @@ class Match extends Phaser.Scene {
 		// attackMechanism
 		const attackMechanism = new AttackMechanism(player2_slot1);
 
+		// highlights_5
+		const highlights_5 = new Highlights(player2_slot1);
+
 		// player2_slot2
 		const player2_slot2 = this.add.image(925, 521, "base", 0);
 		player2_slot2.name = "player2_slot2";
@@ -88,17 +91,20 @@ class Match extends Phaser.Scene {
 		player2_slot2.visible = false;
 		characterSlotsPlayer2.add(player2_slot2);
 
+		// glowFx_1
+		player2_slot2.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_1
+		const attackMechanism_1 = new AttackMechanism(player2_slot2);
+
 		// onPointerDownScript_2
 		const onPointerDownScript_2 = new OnPointerDownScript(player2_slot2);
 
 		// pushActionScript_2
 		new PushActionScript(onPointerDownScript_2);
 
-		// attackMechanism_1
-		const attackMechanism_1 = new AttackMechanism(player2_slot2);
-
-		// glowFx_1
-		player2_slot2.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_6
+		const highlights_6 = new Highlights(player2_slot2);
 
 		// player2_slot3
 		const player2_slot3 = this.add.image(827, 600, "base", 0);
@@ -109,17 +115,20 @@ class Match extends Phaser.Scene {
 		player2_slot3.visible = false;
 		characterSlotsPlayer2.add(player2_slot3);
 
+		// glowFx_2
+		player2_slot3.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_2
+		const attackMechanism_2 = new AttackMechanism(player2_slot3);
+
 		// onPointerDownScript
 		const onPointerDownScript = new OnPointerDownScript(player2_slot3);
 
 		// pushActionScript
 		new PushActionScript(onPointerDownScript);
 
-		// attackMechanism_2
-		const attackMechanism_2 = new AttackMechanism(player2_slot3);
-
-		// glowFx_2
-		player2_slot3.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_7
+		const highlights_7 = new Highlights(player2_slot3);
 
 		// player2_slot4
 		const player2_slot4 = this.add.image(1050, 438, "base", 0);
@@ -130,17 +139,20 @@ class Match extends Phaser.Scene {
 		player2_slot4.visible = false;
 		characterSlotsPlayer2.add(player2_slot4);
 
+		// glowFx_3
+		player2_slot4.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_3
+		const attackMechanism_3 = new AttackMechanism(player2_slot4);
+
 		// onPointerDownScript_3
 		const onPointerDownScript_3 = new OnPointerDownScript(player2_slot4);
 
 		// pushActionScript_3
 		new PushActionScript(onPointerDownScript_3);
 
-		// attackMechanism_3
-		const attackMechanism_3 = new AttackMechanism(player2_slot4);
-
-		// glowFx_3
-		player2_slot4.preFX.addGlow(9241090, 4, 0, false);
+		// highlights_8
+		const highlights_8 = new Highlights(player2_slot4);
 
 		// player2_slot5
 		const player2_slot5 = this.add.image(1048, 601, "base", 0);
@@ -151,26 +163,90 @@ class Match extends Phaser.Scene {
 		player2_slot5.visible = false;
 		characterSlotsPlayer2.add(player2_slot5);
 
+		// glowFx_4
+		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
+
+		// attackMechanism_4
+		const attackMechanism_4 = new AttackMechanism(player2_slot5);
+
 		// onPointerDownScript_4
 		const onPointerDownScript_4 = new OnPointerDownScript(player2_slot5);
 
 		// pushActionScript_4
 		new PushActionScript(onPointerDownScript_4);
 
-		// attackMechanism_4
-		const attackMechanism_4 = new AttackMechanism(player2_slot5);
+		// highlights_9
+		const highlights_9 = new Highlights(player2_slot5);
 
-		// glowFx_4
-		player2_slot5.preFX.addGlow(9241090, 4, 0, false);
+		// deck_player2
+		const deck_player2 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
+		deck_player2.scaleX = 0.4;
+		deck_player2.scaleY = 0.4;
+		characterSlotsPlayer2.add(deck_player2);
 
-		// cardsUnavailable3
-		const cardsUnavailable3 = this.add.image(1185, 582, "cardsUnavailable", 3);
-		cardsUnavailable3.scaleX = 0.4;
-		cardsUnavailable3.scaleY = 0.4;
-		characterSlotsPlayer2.add(cardsUnavailable3);
+		// throwables_p2_slot1
+		const throwables_p2_slot1 = this.add.image(828, 470, "throwables", 1);
+		throwables_p2_slot1.name = "throwables_p2_slot1";
+		throwables_p2_slot1.scaleX = 0.4;
+		throwables_p2_slot1.scaleY = 0.4;
+		throwables_p2_slot1.visible = false;
+		characterSlotsPlayer2.add(throwables_p2_slot1);
+
+		// throwables_p2_slot2
+		const throwables_p2_slot2 = this.add.image(925, 551, "throwables", 1);
+		throwables_p2_slot2.name = "throwables_p2_slot2";
+		throwables_p2_slot2.scaleX = 0.4;
+		throwables_p2_slot2.scaleY = 0.4;
+		throwables_p2_slot2.visible = false;
+		characterSlotsPlayer2.add(throwables_p2_slot2);
+
+		// throwables_p2_slot3
+		const throwables_p2_slot3 = this.add.image(828, 630, "throwables", 1);
+		throwables_p2_slot3.name = "throwables_p2_slot3";
+		throwables_p2_slot3.scaleX = 0.4;
+		throwables_p2_slot3.scaleY = 0.4;
+		throwables_p2_slot3.visible = false;
+		characterSlotsPlayer2.add(throwables_p2_slot3);
+
+		// throwables_p2_slot4
+		const throwables_p2_slot4 = this.add.image(1051, 469, "throwables", 1);
+		throwables_p2_slot4.name = "throwables_p2_slot4";
+		throwables_p2_slot4.scaleX = 0.4;
+		throwables_p2_slot4.scaleY = 0.4;
+		throwables_p2_slot4.visible = false;
+		characterSlotsPlayer2.add(throwables_p2_slot4);
+
+		// throwables_p2_slot5
+		const throwables_p2_slot5 = this.add.image(1047, 631, "throwables", 1);
+		throwables_p2_slot5.name = "throwables_p2_slot5";
+		throwables_p2_slot5.scaleX = 0.4;
+		throwables_p2_slot5.scaleY = 0.4;
+		throwables_p2_slot5.visible = false;
+		characterSlotsPlayer2.add(throwables_p2_slot5);
+
+		// cardTookP2
+		const cardTookP2 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
+		cardTookP2.scaleX = 0.4;
+		cardTookP2.scaleY = 0.4;
+		characterSlotsPlayer2.add(cardTookP2);
+
+		// cardPlayedP2
+		const cardPlayedP2 = this.add.image(640, 388, "cartas4_Imprimir", 3);
+		cardPlayedP2.name = "cardPlayedP2";
+		cardPlayedP2.setInteractive(new Phaser.Geom.Rectangle(0, 0, 304, 432), Phaser.Geom.Rectangle.Contains);
+		cardPlayedP2.scaleX = 0.4;
+		cardPlayedP2.scaleY = 0.4;
+		cardPlayedP2.visible = false;
+		characterSlotsPlayer2.add(cardPlayedP2);
+
+		// throwables_2
+		const throwables_2 = new Throwables(cardPlayedP2);
+
+		// glowFx_16
+		cardPlayedP2.preFX.addGlow(9241090, 4, 0, false);
 
 		// CharacterSlotsPlayer1
-		const characterSlotsPlayer1 = this.add.container(0, -1);
+		const characterSlotsPlayer1 = this.add.container(0, -3);
 		characterSlotsPlayer1.name = "CharacterSlotsPlayer1";
 		characterSlotsPlayer1.scaleX = 1.5;
 		characterSlotsPlayer1.scaleY = 1.5;
@@ -184,17 +260,17 @@ class Match extends Phaser.Scene {
 		player1_slot1.visible = false;
 		characterSlotsPlayer1.add(player1_slot1);
 
+		// glowFx_5
+		player1_slot1.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_5
+		const attackMechanism_5 = new AttackMechanism(player1_slot1);
+
 		// onPointerDownScript_6
 		const onPointerDownScript_6 = new OnPointerDownScript(player1_slot1);
 
 		// pushActionScript_6
 		new PushActionScript(onPointerDownScript_6);
-
-		// attackMechanism_5
-		const attackMechanism_5 = new AttackMechanism(player1_slot1);
-
-		// glowFx_5
-		player1_slot1.preFX.addGlow(16777215, 4, 0, false);
 
 		// throwables
 		const throwables = new Throwables(player1_slot1);
@@ -205,6 +281,9 @@ class Match extends Phaser.Scene {
 		// nameAndLevelMechanism
 		const nameAndLevelMechanism = new NameAndLevelMechanism(player1_slot1);
 
+		// highlights_10
+		const highlights_10 = new Highlights(player1_slot1);
+
 		// player1_slot2
 		const player1_slot2 = this.add.image(357, 523, "base", 0);
 		player1_slot2.name = "player1_slot2";
@@ -214,17 +293,20 @@ class Match extends Phaser.Scene {
 		player1_slot2.visible = false;
 		characterSlotsPlayer1.add(player1_slot2);
 
+		// glowFx_6
+		player1_slot2.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_6
+		const attackMechanism_6 = new AttackMechanism(player1_slot2);
+
 		// onPointerDownScript_7
 		const onPointerDownScript_7 = new OnPointerDownScript(player1_slot2);
 
 		// pushActionScript_7
 		new PushActionScript(onPointerDownScript_7);
 
-		// attackMechanism_6
-		const attackMechanism_6 = new AttackMechanism(player1_slot2);
-
-		// glowFx_6
-		player1_slot2.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_11
+		const highlights_11 = new Highlights(player1_slot2);
 
 		// player1_slot3
 		const player1_slot3 = this.add.image(456, 602, "base", 0);
@@ -235,17 +317,20 @@ class Match extends Phaser.Scene {
 		player1_slot3.visible = false;
 		characterSlotsPlayer1.add(player1_slot3);
 
+		// glowFx_7
+		player1_slot3.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_7
+		const attackMechanism_7 = new AttackMechanism(player1_slot3);
+
 		// onPointerDownScript_8
 		const onPointerDownScript_8 = new OnPointerDownScript(player1_slot3);
 
 		// pushActionScript_8
 		new PushActionScript(onPointerDownScript_8);
 
-		// attackMechanism_7
-		const attackMechanism_7 = new AttackMechanism(player1_slot3);
-
-		// glowFx_7
-		player1_slot3.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_12
+		const highlights_12 = new Highlights(player1_slot3);
 
 		// player1_slot4
 		const player1_slot4 = this.add.image(235, 438, "base", 0);
@@ -256,17 +341,20 @@ class Match extends Phaser.Scene {
 		player1_slot4.visible = false;
 		characterSlotsPlayer1.add(player1_slot4);
 
+		// glowFx_8
+		player1_slot4.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_8
+		const attackMechanism_8 = new AttackMechanism(player1_slot4);
+
 		// onPointerDownScript_9
 		const onPointerDownScript_9 = new OnPointerDownScript(player1_slot4);
 
 		// pushActionScript_9
 		new PushActionScript(onPointerDownScript_9);
 
-		// attackMechanism_8
-		const attackMechanism_8 = new AttackMechanism(player1_slot4);
-
-		// glowFx_8
-		player1_slot4.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_13
+		const highlights_13 = new Highlights(player1_slot4);
 
 		// player1_slot5
 		const player1_slot5 = this.add.image(238, 599, "base", 0);
@@ -277,17 +365,20 @@ class Match extends Phaser.Scene {
 		player1_slot5.visible = false;
 		characterSlotsPlayer1.add(player1_slot5);
 
+		// glowFx_9
+		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
+
+		// attackMechanism_9
+		const attackMechanism_9 = new AttackMechanism(player1_slot5);
+
 		// onPointerDownScript_10
 		const onPointerDownScript_10 = new OnPointerDownScript(player1_slot5);
 
 		// pushActionScript_10
 		new PushActionScript(onPointerDownScript_10);
 
-		// attackMechanism_9
-		const attackMechanism_9 = new AttackMechanism(player1_slot5);
-
-		// glowFx_9
-		player1_slot5.preFX.addGlow(16777215, 4, 0, false);
+		// highlights_14
+		const highlights_14 = new Highlights(player1_slot5);
 
 		// cardTook
 		const cardTook = this.add.image(640, 388, "cartas4_Imprimir", 3);
@@ -325,48 +416,48 @@ class Match extends Phaser.Scene {
 		damageAnimationMechanism.name = "damageAnimationMechanism";
 		characterSlotsPlayer1.add(damageAnimationMechanism);
 
-		// throwables_slot1
-		const throwables_slot1 = this.add.image(455, 469, "throwables", 1);
-		throwables_slot1.name = "throwables_slot1";
-		throwables_slot1.scaleX = 0.4;
-		throwables_slot1.scaleY = 0.4;
-		throwables_slot1.visible = false;
-		characterSlotsPlayer1.add(throwables_slot1);
+		// throwables_p1_slot1
+		const throwables_p1_slot1 = this.add.image(455, 469, "throwables", 1);
+		throwables_p1_slot1.name = "throwables_p1_slot1";
+		throwables_p1_slot1.scaleX = 0.4;
+		throwables_p1_slot1.scaleY = 0.4;
+		throwables_p1_slot1.visible = false;
+		characterSlotsPlayer1.add(throwables_p1_slot1);
 
-		// throwables_slot2
-		const throwables_slot2 = this.add.image(355, 552, "throwables", 1);
-		throwables_slot2.name = "throwables_slot2";
-		throwables_slot2.scaleX = 0.4;
-		throwables_slot2.scaleY = 0.4;
-		throwables_slot2.visible = false;
-		characterSlotsPlayer1.add(throwables_slot2);
+		// throwables_p1_slot2
+		const throwables_p1_slot2 = this.add.image(355, 552, "throwables", 1);
+		throwables_p1_slot2.name = "throwables_p1_slot2";
+		throwables_p1_slot2.scaleX = 0.4;
+		throwables_p1_slot2.scaleY = 0.4;
+		throwables_p1_slot2.visible = false;
+		characterSlotsPlayer1.add(throwables_p1_slot2);
 
-		// throwables_slot3
-		const throwables_slot3 = this.add.image(455, 631, "throwables", 1);
-		throwables_slot3.name = "throwables_slot3";
-		throwables_slot3.scaleX = 0.4;
-		throwables_slot3.scaleY = 0.4;
-		throwables_slot3.visible = false;
-		characterSlotsPlayer1.add(throwables_slot3);
+		// throwables_p1_slot3
+		const throwables_p1_slot3 = this.add.image(455, 631, "throwables", 1);
+		throwables_p1_slot3.name = "throwables_p1_slot3";
+		throwables_p1_slot3.scaleX = 0.4;
+		throwables_p1_slot3.scaleY = 0.4;
+		throwables_p1_slot3.visible = false;
+		characterSlotsPlayer1.add(throwables_p1_slot3);
 
-		// throwables_slot4
-		const throwables_slot4 = this.add.image(233, 466, "throwables", 1);
-		throwables_slot4.name = "throwables_slot4";
-		throwables_slot4.scaleX = 0.4;
-		throwables_slot4.scaleY = 0.4;
-		throwables_slot4.visible = false;
-		characterSlotsPlayer1.add(throwables_slot4);
+		// throwables_p1_slot4
+		const throwables_p1_slot4 = this.add.image(233, 466, "throwables", 1);
+		throwables_p1_slot4.name = "throwables_p1_slot4";
+		throwables_p1_slot4.scaleX = 0.4;
+		throwables_p1_slot4.scaleY = 0.4;
+		throwables_p1_slot4.visible = false;
+		characterSlotsPlayer1.add(throwables_p1_slot4);
 
-		// throwables_slot5
-		const throwables_slot5 = this.add.image(238, 626, "throwables", 1);
-		throwables_slot5.name = "throwables_slot5";
-		throwables_slot5.scaleX = 0.4;
-		throwables_slot5.scaleY = 0.4;
-		throwables_slot5.visible = false;
-		characterSlotsPlayer1.add(throwables_slot5);
+		// throwables_p1_slot5
+		const throwables_p1_slot5 = this.add.image(238, 626, "throwables", 1);
+		throwables_p1_slot5.name = "throwables_p1_slot5";
+		throwables_p1_slot5.scaleX = 0.4;
+		throwables_p1_slot5.scaleY = 0.4;
+		throwables_p1_slot5.visible = false;
+		characterSlotsPlayer1.add(throwables_p1_slot5);
 
 		// HealthBarsPlayer1
-		const healthBarsPlayer1 = this.add.container(0, -1);
+		const healthBarsPlayer1 = this.add.container(0, -2);
 		healthBarsPlayer1.name = "HealthBarsPlayer1";
 		healthBarsPlayer1.scaleX = 1.5;
 		healthBarsPlayer1.scaleY = 1.5;
@@ -470,7 +561,7 @@ class Match extends Phaser.Scene {
 		healthBarsPlayer1.add(hp_p1_slot4);
 
 		// HealthBarsPlayer2
-		const healthBarsPlayer2 = this.add.container(0, -1);
+		const healthBarsPlayer2 = this.add.container(0, -2);
 		healthBarsPlayer2.name = "HealthBarsPlayer2";
 		healthBarsPlayer2.scaleX = 1.5;
 		healthBarsPlayer2.scaleY = 1.5;
@@ -570,25 +661,37 @@ class Match extends Phaser.Scene {
 		hp_p2_slot4.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#ffffffff" });
 		healthBarsPlayer2.add(hp_p2_slot4);
 
+		// endTurnButtons
+		const endTurnButtons = this.add.image(960, 1009, "buttons");
+		endTurnButtons.setInteractive(new Phaser.Geom.Rectangle(1, 1, 68.03979790402462, 19.273804418001685), Phaser.Geom.Rectangle.Contains);
+		endTurnButtons.scaleX = 4.2;
+		endTurnButtons.scaleY = 3;
+
+		// glowFx_15
+		endTurnButtons.preFX.addGlow(16777215, 4, 0, false);
+
+		// highlights
+		const highlights = new Highlights(endTurnButtons);
+
+		// endTurnMechanism
+		const endTurnMechanism = new EndTurnMechanism(endTurnButtons);
+
+		// onPointerDownScript_5
+		const onPointerDownScript_5 = new OnPointerDownScript(endTurnButtons);
+
+		// pushActionScript_11
+		new PushActionScript(onPointerDownScript_5);
+
 		// endTurnText
-		const endTurnText = this.add.text(961, 1051.25, "", {});
+		const endTurnText = this.add.text(960, 1010, "", {});
 		endTurnText.scaleX = 0.25;
 		endTurnText.scaleY = 0.25;
 		endTurnText.setOrigin(0.5, 0.5);
 		endTurnText.text = "End turn";
-		endTurnText.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "200px" });
-
-		// onPointerDownScript_12
-		const onPointerDownScript_12 = new OnPointerDownScript(endTurnText);
-
-		// pushActionScript_12
-		new PushActionScript(onPointerDownScript_12);
-
-		// endTurnMechanism
-		const endTurnMechanism = new EndTurnMechanism(endTurnText);
+		endTurnText.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "150px" });
 
 		// turn
-		const turn = this.add.text(962, 132, "", {});
+		const turn = this.add.text(962, 130, "", {});
 		turn.scaleX = 0.5;
 		turn.scaleY = 0.5;
 		turn.setOrigin(0.5, 0.5);
@@ -597,7 +700,7 @@ class Match extends Phaser.Scene {
 		turn.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
 
 		// winnerText
-		const winnerText = this.add.text(369, 371.5, "", {});
+		const winnerText = this.add.text(369, 369.5, "", {});
 		winnerText.scaleX = 1.5;
 		winnerText.scaleY = 1.5;
 		winnerText.visible = false;
@@ -605,7 +708,7 @@ class Match extends Phaser.Scene {
 		winnerText.setStyle({ "fontFamily": "Minecraft", "fontSize": "200px" });
 
 		// namesAndLevelsPlayers
-		const namesAndLevelsPlayers = this.add.container(0, -1);
+		const namesAndLevelsPlayers = this.add.container(0, -3);
 		namesAndLevelsPlayers.name = "namesAndLevelsPlayers";
 
 		// player1NameShape
@@ -673,28 +776,28 @@ class Match extends Phaser.Scene {
 		namesAndLevelsPlayers.add(levelPlayer2Text);
 
 		// showCardsImage
-		const showCardsImage = this.add.image(254, 404, "showCardsImage");
+		const showCardsImage = this.add.image(254, 399, "showCardsImage");
+		showCardsImage.setInteractive(new Phaser.Geom.Rectangle(-2, -23, 67.92614110687856, 180.49089758595323), Phaser.Geom.Rectangle.Contains);
 		showCardsImage.scaleX = 2.16;
 		showCardsImage.scaleY = 1.14;
 
+		// highlights_4
+		const highlights_4 = new Highlights(showCardsImage);
+
+		// cardsMechanism_1
+		const cardsMechanism_1 = new CardsMechanism(showCardsImage);
+
+		// glowFx_14
+		showCardsImage.preFX.addGlow(16777215, 4, 0, false);
+
 		// showCards
-		const showCards = this.add.text(255, 405, "", {});
+		const showCards = this.add.text(255, 399, "", {});
 		showCards.name = "showCards";
-		showCards.setInteractive(new Phaser.Geom.Rectangle(-38, -140, 652.3814994495934, 910.5149565734912), Phaser.Geom.Rectangle.Contains);
 		showCards.scaleX = 0.2;
 		showCards.scaleY = 0.2;
 		showCards.setOrigin(0.5, 0.5);
 		showCards.text = "SHOW CARDS";
 		showCards.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px" });
-
-		// onPointerDownScript_16
-		const onPointerDownScript_16 = new OnPointerDownScript(showCards);
-
-		// pushActionScript_16
-		new PushActionScript(onPointerDownScript_16);
-
-		// cardsMechanism_1
-		const cardsMechanism_1 = new CardsMechanism(showCards);
 
 		// cheatsContainer
 		const cheatsContainer = this.add.container(0, 0);
@@ -717,6 +820,12 @@ class Match extends Phaser.Scene {
 		// pushActionScript_15
 		new PushActionScript(onPointerDownScript_15);
 
+		// highlights_1
+		const highlights_1 = new Highlights(setHPTo1Button);
+
+		// glowFx_11
+		setHPTo1Button.preFX.addGlow(16777215, 4, 0, false);
+
 		// resetAttackStatusButton
 		const resetAttackStatusButton = this.add.image(960, 318, "buttons");
 		resetAttackStatusButton.name = "resetAttackStatusButton";
@@ -733,6 +842,12 @@ class Match extends Phaser.Scene {
 		// pushActionScript_14
 		new PushActionScript(onPointerDownScript_14);
 
+		// highlights_2
+		const highlights_2 = new Highlights(resetAttackStatusButton);
+
+		// glowFx_12
+		resetAttackStatusButton.preFX.addGlow(16777215, 4, 0, false);
+
 		// resetHpButton
 		const resetHpButton = this.add.image(960, 253, "buttons");
 		resetHpButton.name = "resetHpButton";
@@ -748,6 +863,12 @@ class Match extends Phaser.Scene {
 
 		// pushActionScript_13
 		new PushActionScript(onPointerDownScript_13);
+
+		// highlights_3
+		const highlights_3 = new Highlights(resetHpButton);
+
+		// glowFx_13
+		resetHpButton.preFX.addGlow(16777215, 4, 0, false);
 
 		// setHPTo1Text
 		const setHPTo1Text = this.add.text(960, 383, "", {});
@@ -980,21 +1101,39 @@ class Match extends Phaser.Scene {
 		attackMechanism.slotID = 1;
 		attackMechanism.damageText;
 
+		// highlights_5 (prefab fields)
+		highlights_5.type = "Match";
+
 		// attackMechanism_1 (prefab fields)
 		attackMechanism_1.type = "Opponent";
 		attackMechanism_1.slotID = 2;
+
+		// highlights_6 (prefab fields)
+		highlights_6.type = "Match";
 
 		// attackMechanism_2 (prefab fields)
 		attackMechanism_2.type = "Opponent";
 		attackMechanism_2.slotID = 3;
 
+		// highlights_7 (prefab fields)
+		highlights_7.type = "Match";
+
 		// attackMechanism_3 (prefab fields)
 		attackMechanism_3.type = "Opponent";
 		attackMechanism_3.slotID = 4;
 
+		// highlights_8 (prefab fields)
+		highlights_8.type = "Match";
+
 		// attackMechanism_4 (prefab fields)
 		attackMechanism_4.type = "Opponent";
 		attackMechanism_4.slotID = 5;
+
+		// highlights_9 (prefab fields)
+		highlights_9.type = "Match";
+
+		// throwables_2 (prefab fields)
+		throwables_2.type = "CardTook";
 
 		// attackMechanism_5 (prefab fields)
 		attackMechanism_5.type = "Player";
@@ -1012,21 +1151,36 @@ class Match extends Phaser.Scene {
 		nameAndLevelMechanism.nameText = namePlayer1Text;
 		nameAndLevelMechanism.levelText = levelPlayer1Text;
 
+		// highlights_10 (prefab fields)
+		highlights_10.type = "Match";
+
 		// attackMechanism_6 (prefab fields)
 		attackMechanism_6.type = "Player";
 		attackMechanism_6.slotID = 2;
+
+		// highlights_11 (prefab fields)
+		highlights_11.type = "Match";
 
 		// attackMechanism_7 (prefab fields)
 		attackMechanism_7.type = "Player";
 		attackMechanism_7.slotID = 3;
 
+		// highlights_12 (prefab fields)
+		highlights_12.type = "Match";
+
 		// attackMechanism_8 (prefab fields)
 		attackMechanism_8.type = "Player";
 		attackMechanism_8.slotID = 4;
 
+		// highlights_13 (prefab fields)
+		highlights_13.type = "Match";
+
 		// attackMechanism_9 (prefab fields)
 		attackMechanism_9.type = "Player";
 		attackMechanism_9.slotID = 5;
+
+		// highlights_14 (prefab fields)
+		highlights_14.type = "Match";
 
 		// throwables_1 (prefab fields)
 		throwables_1.type = "CardTook";
@@ -1034,8 +1188,14 @@ class Match extends Phaser.Scene {
 		// cardsMechanism_3 (prefab fields)
 		cardsMechanism_3.type = "Deck";
 
+		// highlights (prefab fields)
+		highlights.type = "Buttons";
+
 		// endTurnMechanism (prefab fields)
 		endTurnMechanism.type = "endTurn";
+
+		// highlights_4 (prefab fields)
+		highlights_4.type = "Buttons";
 
 		// cardsMechanism_1 (prefab fields)
 		cardsMechanism_1.type = "ShowCards";
@@ -1043,11 +1203,20 @@ class Match extends Phaser.Scene {
 		// cheatsMechanism (prefab fields)
 		cheatsMechanism.type = "hpTo1";
 
+		// highlights_1 (prefab fields)
+		highlights_1.type = "Buttons";
+
 		// cheatsMechanism_1 (prefab fields)
 		cheatsMechanism_1.type = "resetAttackStatus";
 
+		// highlights_2 (prefab fields)
+		highlights_2.type = "Buttons";
+
 		// cheatsMechanism_2 (prefab fields)
 		cheatsMechanism_2.type = "resetHP";
+
+		// highlights_3 (prefab fields)
+		highlights_3.type = "Buttons";
 
 		// attackMechanism_10 (prefab fields)
 		attackMechanism_10.type = "Cards";

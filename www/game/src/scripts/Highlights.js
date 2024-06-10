@@ -266,8 +266,6 @@ class Highlights extends ScriptNode {
 		}
 	}
 
-
-
 	/* END-USER-CODE */
 }
 
