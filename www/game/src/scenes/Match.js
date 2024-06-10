@@ -178,12 +178,6 @@ class Match extends Phaser.Scene {
 		// highlights_9
 		const highlights_9 = new Highlights(player2_slot5);
 
-		// deck_player2
-		const deck_player2 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
-		deck_player2.scaleX = 0.4;
-		deck_player2.scaleY = 0.4;
-		characterSlotsPlayer2.add(deck_player2);
-
 		// throwables_p2_slot1
 		const throwables_p2_slot1 = this.add.image(828, 470, "throwables", 1);
 		throwables_p2_slot1.name = "throwables_p2_slot1";
@@ -224,10 +218,17 @@ class Match extends Phaser.Scene {
 		throwables_p2_slot5.visible = false;
 		characterSlotsPlayer2.add(throwables_p2_slot5);
 
+		// player2_deck
+		const player2_deck = this.add.image(1185, 582, "cardsUnavailable", 3);
+		player2_deck.scaleX = 0.4;
+		player2_deck.scaleY = 0.4;
+		characterSlotsPlayer2.add(player2_deck);
+
 		// cardTookP2
 		const cardTookP2 = this.add.image(1185, 582, "cartas4_Imprimir", 3);
 		cardTookP2.scaleX = 0.4;
 		cardTookP2.scaleY = 0.4;
+		cardTookP2.visible = false;
 		characterSlotsPlayer2.add(cardTookP2);
 
 		// cardPlayedP2
@@ -392,21 +393,21 @@ class Match extends Phaser.Scene {
 		// throwables_1
 		const throwables_1 = new Throwables(cardTook);
 
-		// cardsUnavailable
-		const cardsUnavailable = this.add.image(98, 582, "cardsUnavailable", 3);
-		cardsUnavailable.name = "cardsUnavailable";
-		cardsUnavailable.scaleX = 0.4;
-		cardsUnavailable.scaleY = 0.4;
-		characterSlotsPlayer1.add(cardsUnavailable);
+		// player1_deck
+		const player1_deck = this.add.image(98, 582, "cardsUnavailable", 3);
+		player1_deck.name = "player1_deck";
+		player1_deck.scaleX = 0.4;
+		player1_deck.scaleY = 0.4;
+		characterSlotsPlayer1.add(player1_deck);
 
 		// cardsMechanism_3
-		const cardsMechanism_3 = new CardsMechanism(cardsUnavailable);
+		const cardsMechanism_3 = new CardsMechanism(player1_deck);
 
 		// glowFx_10
-		const glowFx_10 = cardsUnavailable.preFX.addGlow(16777215, 10, 0, false);
+		const glowFx_10 = player1_deck.preFX.addGlow(16777215, 10, 0, false);
 
 		// onPointerDownScript_11
-		const onPointerDownScript_11 = new OnPointerDownScript(cardsUnavailable);
+		const onPointerDownScript_11 = new OnPointerDownScript(player1_deck);
 
 		// pushActionScript_5
 		new PushActionScript(onPointerDownScript_11);
@@ -662,7 +663,7 @@ class Match extends Phaser.Scene {
 		healthBarsPlayer2.add(hp_p2_slot4);
 
 		// endTurnButtons
-		const endTurnButtons = this.add.image(960, 1009, "buttons");
+		const endTurnButtons = this.add.image(960, 1035, "buttons");
 		endTurnButtons.setInteractive(new Phaser.Geom.Rectangle(1, 1, 68.03979790402462, 19.273804418001685), Phaser.Geom.Rectangle.Contains);
 		endTurnButtons.scaleX = 4.2;
 		endTurnButtons.scaleY = 3;
@@ -683,7 +684,7 @@ class Match extends Phaser.Scene {
 		new PushActionScript(onPointerDownScript_5);
 
 		// endTurnText
-		const endTurnText = this.add.text(960, 1010, "", {});
+		const endTurnText = this.add.text(960, 1036, "", {});
 		endTurnText.scaleX = 0.25;
 		endTurnText.scaleY = 0.25;
 		endTurnText.setOrigin(0.5, 0.5);
@@ -698,14 +699,6 @@ class Match extends Phaser.Scene {
 		turn.visible = false;
 		turn.text = "something";
 		turn.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
-
-		// winnerText
-		const winnerText = this.add.text(369, 369.5, "", {});
-		winnerText.scaleX = 1.5;
-		winnerText.scaleY = 1.5;
-		winnerText.visible = false;
-		winnerText.text = "WINNER";
-		winnerText.setStyle({ "fontFamily": "Minecraft", "fontSize": "200px" });
 
 		// namesAndLevelsPlayers
 		const namesAndLevelsPlayers = this.add.container(0, -3);
@@ -899,6 +892,28 @@ class Match extends Phaser.Scene {
 		resetHPText.text = "Reset HP";
 		resetHPText.setStyle({ "color": "#ffffffff", "fontFamily": "Minecraft", "fontSize": "100px" });
 		cheatsContainer.add(resetHPText);
+
+		// winner
+		const winner = this.add.container(1499, -403);
+		winner.name = "winner";
+		winner.visible = false;
+
+		// shadow_1
+		const shadow_1 = this.add.image(-539, 952, "Shadow");
+		shadow_1.scaleX = 10.27991336353874;
+		shadow_1.scaleY = 6.0759387580083795;
+		winner.add(shadow_1);
+
+		// onPointerDownScript_12
+		new OnPointerDownScript(shadow_1);
+
+		// winnerText
+		const winnerText = this.add.text(-552, 963.8000013232231, "", {});
+		winnerText.scaleY = 0.8;
+		winnerText.setOrigin(0.5, 0.5);
+		winnerText.text = "Winner:";
+		winnerText.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "200px" });
+		winner.add(winnerText);
 
 		// handCards
 		const handCards = this.add.container(0, 0);
@@ -1287,7 +1302,7 @@ class Match extends Phaser.Scene {
 		this.player1_slot5 = player1_slot5;
 		this.cardTook = cardTook;
 		this.glowFx_10 = glowFx_10;
-		this.cardsUnavailable = cardsUnavailable;
+		this.player1_deck = player1_deck;
 		this.damageAnimationMechanism = damageAnimationMechanism;
 		this.characterSlotsPlayer1 = characterSlotsPlayer1;
 		this.healthBarMechanism = healthBarMechanism;
@@ -1305,7 +1320,6 @@ class Match extends Phaser.Scene {
 		this.healthBarsPlayer2 = healthBarsPlayer2;
 		this.endTurnText = endTurnText;
 		this.turn = turn;
-		this.winnerText = winnerText;
 		this.player2NameShape = player2NameShape;
 		this.levelPlayer1Shape = levelPlayer1Shape;
 		this.levelPlayer2Shape = levelPlayer2Shape;
@@ -1322,6 +1336,8 @@ class Match extends Phaser.Scene {
 		this.resetAttackStatusText = resetAttackStatusText;
 		this.resetHPText = resetHPText;
 		this.cheatsContainer = cheatsContainer;
+		this.winnerText = winnerText;
+		this.winner = winner;
 		this.cardSlot1 = cardSlot1;
 		this.cardSlot2 = cardSlot2;
 		this.cardSlot3 = cardSlot3;
@@ -1374,7 +1390,7 @@ class Match extends Phaser.Scene {
 	/** @type {Phaser.FX.Glow} */
 	glowFx_10;
 	/** @type {Phaser.GameObjects.Image} */
-	cardsUnavailable;
+	player1_deck;
 	/** @type {DamageAnimationMechanism} */
 	damageAnimationMechanism;
 	/** @type {Phaser.GameObjects.Container} */
@@ -1409,8 +1425,6 @@ class Match extends Phaser.Scene {
 	endTurnText;
 	/** @type {Phaser.GameObjects.Text} */
 	turn;
-	/** @type {Phaser.GameObjects.Text} */
-	winnerText;
 	/** @type {Phaser.GameObjects.Image} */
 	player2NameShape;
 	/** @type {Phaser.GameObjects.Image} */
@@ -1443,6 +1457,10 @@ class Match extends Phaser.Scene {
 	resetHPText;
 	/** @type {Phaser.GameObjects.Container} */
 	cheatsContainer;
+	/** @type {Phaser.GameObjects.Text} */
+	winnerText;
+	/** @type {Phaser.GameObjects.Container} */
+	winner;
 	/** @type {Phaser.GameObjects.Image} */
 	cardSlot1;
 	/** @type {Phaser.GameObjects.Image} */

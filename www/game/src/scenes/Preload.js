@@ -14,6 +14,8 @@ var pukeSound
 var shhhhSound 
 var shityLicorSound 
 var thunderstormSound 
+var pickCardSound 
+var swooshCardSound 
 
 var mouseClickSound 
 var mouseOverSound 
@@ -109,6 +111,8 @@ class Preload extends Phaser.Scene {
 		this.loadAudio('shhhh','assets/audio/soundEffects/Cards/shhhh.mp3')
 		this.loadAudio('shityLicor','assets/audio/soundEffects/Cards/shityLicor.mp3')
 		this.loadAudio('thunderstorm','assets/audio/soundEffects/Cards/thunderstorm.mp3')
+		this.loadAudio('pickCard','assets/audio/soundEffects/Cards/pickCard.mp3')
+		this.loadAudio('swooshCard','assets/audio/soundEffects/Cards/swooshCard.mp3')
 
 		//load sons mouse
 		this.loadAudio('mouseClick', 'assets/audio/mouse/mouseClick.mp3')
@@ -140,6 +144,8 @@ class Preload extends Phaser.Scene {
 		shhhhSound = this.sound.add("shhhh")
 		shityLicorSound = this.sound.add("shityLicor")
 		thunderstormSound = this.sound.add("thunderstorm")
+		pickCardSound = this.sound.add("pickCard")
+		swooshCardSound = this.sound.add("swooshCard")
 
 		//mouse
 		mouseClickSound = this.sound.add("mouseClick")

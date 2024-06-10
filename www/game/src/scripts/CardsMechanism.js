@@ -45,6 +45,7 @@ class CardsMechanism extends ScriptNode {
 				} else if (data.cards) {
 					scene.addCards(JSON.parse(data.cards));
 					scene.showAddedCard(JSON.parse(data.cards))
+					pickCardSound.play();
 				}
 			},
 			error: function (err) {

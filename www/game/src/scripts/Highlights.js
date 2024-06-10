@@ -186,6 +186,9 @@ class Highlights extends ScriptNode {
 			this.parent.on('pointerout', event => {
 				this.parent.preFX.list[0].active = false;
 			});
+			this.parent.on('pointerdown', event => {
+				mouseClickSound.play()
+			})
 		}
 	}
 

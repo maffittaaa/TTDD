@@ -1,6 +1,7 @@
 var time;
 var ch2Status = []
-var showedCard = false
+var showedCard = false;
+var matchFinished = false;
 
 /* START OF COMPILED CODE */
 
@@ -47,9 +48,9 @@ class MatchMechanism extends ScriptNode {
 	}
 
 	update() {
-		time = time + 0.01666
+		time = time + 0.01666;
 
-		if (time > 5) {
+		if (time > 5 && matchFinished == false) {
 			this.deltaChanges();
 			time = 0;
 		}
@@ -62,6 +63,7 @@ class MatchMechanism extends ScriptNode {
 			url: "/match/deltaChanges",
 			success: function (data) {
 				if (data.matchFinished == true) {
+					matchFinished = true;
 					scene.matchFinished(data.winner, data.winnerID, data.loserID);
 				} else if (data.logged == false) {
 					window.location.replace("/login.html");
@@ -173,37 +175,28 @@ class MatchMechanism extends ScriptNode {
 	}
 
 	matchFinished(winnerName, winID, losID) {
-		var order = [1, 4, 2, 5, 3];
-
-		for (var i = 1; i < 3; i++) { //runs 2 times because there are 2 players
-			for (let j = 0; j < order.length; j++) { // runs 5 times because it's the size of the order and because of the quantity of the slots available
-				// document.getElementById('slot_' + order[j] + '_p' + i + '').disabled = true; // desativar todos quando morrem.
-			}
-		}
-
-		this.winnerText.text = "Match finished, the winner is: " + winnerName;
+		this.scene.children.list[17].visible = true;
+		this.winnerText.text = "The winner is:\n" + winnerName;
 
 		if (winnerName != undefined) {
-			setTimeout(this.updateLevelXp(winID,losID), 8000);
+			setTimeout(function () {
+				$.ajax({
+					type: "POST",
+					url: "/levelUp/upgradeLevel",
+					data: {
+						"winner": winID,
+						"loser": losID
+					},
+					success: function () {
+						window.location.replace("/game/");
+					},
+					error: function (err) {
+						console.log(err);
+					}
+				})
+			}, 5000);
 		}
 	};
-
-	updateLevelXp(winID, losID) {
-		$.ajax({
-			type: "POST",
-			url: "/levelUp/upgradeLevel",
-			data: {
-				"winner": winID,
-				"loser": losID
-			},
-			success: function (data) {
-				window.location.replace("/game/");
-			},
-			error: function (err) {
-				console.log(err);
-			}
-		})
-	}
 
 	setCharactersValues(match, player, p1, p2, p1_name, p2_name, ch1, ch2, ongoing = false) {
 		if (ongoing) {
@@ -214,24 +207,24 @@ class MatchMechanism extends ScriptNode {
 				var character = this.scene.children.list;
 				for (let i = 0; i < ch1.length; i++) {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
-					
+
 					if (ch1[i].player_match_character_character_current_HP <= 0) {
 						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, true)
-					}else{
+					} else {
 						this.blackAndWhite(1, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, false);
 					}
 				}
 
 				for (let i = 0; i < ch2.length; i++) {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
-					
+
 					if (ch2[i].player_match_character_character_current_HP <= 0) {
 						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, true);
-					}else{
+					} else {
 						this.blackAndWhite(2, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, false);
 					}
 
-					if(ch2[i].player_match_character_character_attacked_id != null && ch2Status[i] != ch2[i].player_match_character_character_status_id){
+					if (ch2[i].player_match_character_character_attacked_id != null && ch2Status[i] != ch2[i].player_match_character_character_status_id) {
 						this.opponentAttack(ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_attacked_id, ch2[i].player_match_character_character_id);
 						ch2Status[i] = ch2[i].player_match_character_character_status_id;
 					}
@@ -242,24 +235,24 @@ class MatchMechanism extends ScriptNode {
 
 				for (let i = 0; i < ch2.length; i++) {
 					this.health.healthBarChanges(ch2[i].player_match_character_character_current_HP, 1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id);
-				
+
 					if (ch2[i].player_match_character_character_current_HP <= 0) {
 						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, true);
-					}else{
+					} else {
 						this.blackAndWhite(1, ch2[i].player_match_character_tile_id, ch2[i].player_match_character_character_id, ch2[i].player_match_character_character_status_id, false);
 					}
 				}
 
 				for (let i = 0; i < ch1.length; i++) {
 					this.health.healthBarChanges(ch1[i].player_match_character_character_current_HP, 2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id);
-					
+
 					if (ch1[i].player_match_character_character_current_HP <= 0) {
 						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, true);
-					}else{
+					} else {
 						this.blackAndWhite(2, ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_id, ch1[i].player_match_character_character_status_id, false);
 					}
 
-					if(ch1[i].player_match_character_character_attacked_id != null && ch2Status[i] != ch1[i].player_match_character_character_status_id){
+					if (ch1[i].player_match_character_character_attacked_id != null && ch2Status[i] != ch1[i].player_match_character_character_status_id) {
 						this.opponentAttack(ch1[i].player_match_character_tile_id, ch1[i].player_match_character_character_attacked_id, ch1[i].player_match_character_character_id);
 						ch2Status[i] = ch1[i].player_match_character_character_status_id;
 					}
@@ -359,7 +352,7 @@ class MatchMechanism extends ScriptNode {
 		}
 	}
 
-	blackAndWhite(player, slot, charID, status, boolean){
+	blackAndWhite(player, slot, charID, status, boolean) {
 		var healthSprite = this.scene.children.list;
 		var orderCharacterPlayer2Images = [8, 7, 6, 0, 4, 9, 3, 1, 2, 5];
 
@@ -368,9 +361,9 @@ class MatchMechanism extends ScriptNode {
 				if (healthSprite[j].name == "CharacterSlotsPlayer" + player) {
 					for (let k = 0; k < healthSprite[j].list.length; k++) {
 						if (healthSprite[j].list[k].name == "player" + player + "_slot" + slot) {
-							if(player == 1){
+							if (player == 1) {
 								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteRight", charID - 1);
-							}else{
+							} else {
 								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteLeft", orderCharacterPlayer2Images[charID - 1]);
 								healthSprite[j].list[k].input.enabled = false;
 							}
@@ -378,20 +371,20 @@ class MatchMechanism extends ScriptNode {
 					}
 				}
 			}
-		}else{
+		} else {
 			for (let j = 0; j < healthSprite.length; j++) {
 				if (healthSprite[j].name == "CharacterSlotsPlayer" + player) {
 					for (let k = 0; k < healthSprite[j].list.length; k++) {
 						if (healthSprite[j].list[k].name == "player" + player + "_slot" + slot) {
-							if(player == 1){
-								if(status == 2){
+							if (player == 1) {
+								if (status == 2) {
 									healthSprite[j].list[k].setTexture("pawnsAttacked", charID - 1)
 									healthSprite[j].list[k].input.enabled = false;
-								}else{
+								} else {
 									healthSprite[j].list[k].setTexture("peawns", charID - 1);
 									healthSprite[j].list[k].input.enabled = true;
 								}
-							}else{
+							} else {
 								healthSprite[j].list[k].setTexture("peawns2", orderCharacterPlayer2Images[charID - 1])
 							}
 						}
@@ -401,24 +394,24 @@ class MatchMechanism extends ScriptNode {
 		}
 	}
 
-	opponentAttack(tileOpponent, tilePlayer, attackerID){
+	opponentAttack(tileOpponent, tilePlayer, attackerID) {
 
 		var charP2 = this.scene.children.list[6].list
 		var charP1 = this.scene.children.list[7].list
 
 		for (let i = 0; i < charP2.length; i++) {
-			if(attackerID > 5){
-				if(charP2[i].name == "player2_slot" + tileOpponent){
+			if (attackerID > 5) {
+				if (charP2[i].name == "player2_slot" + tileOpponent) {
 					initialX = charP2[i].x
 					initialY = charP2[i].y
 				}
-				
-				if (charP2[i].name == "throwables_p2_slot" + tileOpponent){
+
+				if (charP2[i].name == "throwables_p2_slot" + tileOpponent) {
 					item = charP2[i]
 					item.setTexture("throwables", attackerID - 5)
 				}
-			}else{
-				if(charP2[i].name == "player2_slot" + tileOpponent){
+			} else {
+				if (charP2[i].name == "player2_slot" + tileOpponent) {
 					initialX = charP2[i].x
 					initialY = charP2[i].y
 					item = charP2[i]
@@ -428,7 +421,7 @@ class MatchMechanism extends ScriptNode {
 		}
 
 		for (let i = 0; i < charP1.length; i++) {
-			if(charP1[i].name == "player1_slot" + tilePlayer){
+			if (charP1[i].name == "player1_slot" + tilePlayer) {
 				finalX = charP1[i].x
 				finalY = charP1[i].y
 			}
@@ -436,10 +429,10 @@ class MatchMechanism extends ScriptNode {
 
 		startTime = performance.now();
 
-		if(item.visible == false){
+		if (item.visible == false) {
 			item.visible = true
 			peakHeight = Math.abs(finalY - initialY) + 100
-		}else{
+		} else {
 			peakHeight = 0
 		}
 		

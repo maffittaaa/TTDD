@@ -38,6 +38,7 @@ class Throwables extends ScriptNode {
 				startTime = performance.now();
 				peakHeight = Math.abs(finalY - initialY) + 0
 				thrownBack = true
+				swooshCardSound.play()
 			}
 		})
 	}
