@@ -185,6 +185,16 @@
                 "key": "Highlights"
             },
             {
+                "url": "assets/leaveButton.png",
+                "type": "image",
+                "key": "leaveButton"
+            },
+            {
+                "url": "src/scripts/LeaveTheGameMechanism.js",
+                "type": "script",
+                "key": "LeaveTheGameMechanism"
+            },
+            {
                 "url": "src/scenes/Match.js",
                 "type": "sceneFile",
                 "key": "Match"

@@ -48,6 +48,8 @@ class Match extends Phaser.Scene {
 		result.scaleX = 0.5;
 		result.scaleY = 0.5;
 		result.setOrigin(0.5, 0.5);
+		result.visible = false;
+		result.text = "result";
 		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
 
 		// CharacterSlotsPlayer2
@@ -913,6 +915,110 @@ class Match extends Phaser.Scene {
 		winnerText.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "200px" });
 		winner.add(winnerText);
 
+		// leaveButton
+		const leaveButton = this.add.container(0, 0);
+		leaveButton.name = "leaveButton";
+
+		// button
+		const button = this.add.image(87, 70, "leaveButton");
+		leaveButton.add(button);
+
+		// glowFx_17
+		button.preFX.addGlow(16777215, 4, 0, false);
+
+		// highlights_15
+		const highlights_15 = new Highlights(button);
+
+		// onPointerDownScript_16
+		const onPointerDownScript_16 = new OnPointerDownScript(button);
+
+		// pushActionScript_12
+		new PushActionScript(onPointerDownScript_16);
+
+		// leaveTheGameMechanism
+		new LeaveTheGameMechanism(button);
+
+		// shadowLeaveButton
+		const shadowLeaveButton = this.add.image(973, 529, "Shadow");
+		shadowLeaveButton.name = "shadowLeaveButton";
+		shadowLeaveButton.scaleX = 10.03127832345736;
+		shadowLeaveButton.scaleY = 5.743648692660658;
+		shadowLeaveButton.visible = false;
+		leaveButton.add(shadowLeaveButton);
+
+		// onPointerDownScript_29
+		new OnPointerDownScript(shadowLeaveButton);
+
+		// confirmText
+		const confirmText = this.add.text(951, 331, "", {});
+		confirmText.scaleX = 0.8;
+		confirmText.scaleY = 0.8;
+		confirmText.setOrigin(0.5, 0.5);
+		confirmText.visible = false;
+		confirmText.text = "Confirm?";
+		confirmText.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "150px" });
+		leaveButton.add(confirmText);
+
+		// yesButton
+		const yesButton = this.add.image(760, 525, "buttons");
+		yesButton.name = "yesButton";
+		yesButton.scaleX = 5;
+		yesButton.scaleY = 5;
+		yesButton.visible = false;
+		leaveButton.add(yesButton);
+
+		// highlights_16
+		const highlights_16 = new Highlights(yesButton);
+
+		// onPointerDownScript_30
+		const onPointerDownScript_30 = new OnPointerDownScript(yesButton);
+
+		// pushActionScript_16
+		new PushActionScript(onPointerDownScript_30);
+
+		// glowFx_18
+		yesButton.preFX.addGlow(16777215, 4, 0, false);
+
+		// noButton
+		const noButton = this.add.image(1149, 525, "buttons");
+		noButton.name = "noButton";
+		noButton.scaleX = 5;
+		noButton.scaleY = 5;
+		noButton.visible = false;
+		leaveButton.add(noButton);
+
+		// highlights_17
+		const highlights_17 = new Highlights(noButton);
+
+		// onPointerDownScript_31
+		const onPointerDownScript_31 = new OnPointerDownScript(noButton);
+
+		// pushActionScript_28
+		new PushActionScript(onPointerDownScript_31);
+
+		// glowFx_19
+		noButton.preFX.addGlow(16777215, 4, 0, false);
+
+		// yesText
+		const yesText = this.add.text(753, 530, "", {});
+		yesText.scaleX = 0.4;
+		yesText.scaleY = 0.4;
+		yesText.setOrigin(0.5, 0.5);
+		yesText.visible = false;
+		yesText.text = "Yes";
+		yesText.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "150px" });
+		leaveButton.add(yesText);
+
+		// noText
+		const noText = this.add.text(1152, 532, "", {});
+		noText.scaleX = 0.4;
+		noText.scaleY = 0.4;
+		noText.setOrigin(0.5, 0.5);
+		noText.visible = false;
+		noText.text = "No";
+		noText.setStyle({ "align": "center", "fontFamily": "Minecraft", "fontSize": "150px" });
+		leaveButton.add(noText);
+
 		// handCards
 		const handCards = this.add.container(0, 0);
 		handCards.name = "handCards";
@@ -1231,6 +1337,15 @@ class Match extends Phaser.Scene {
 		// highlights_3 (prefab fields)
 		highlights_3.type = "Buttons";
 
+		// highlights_15 (prefab fields)
+		highlights_15.type = "Buttons";
+
+		// highlights_16 (prefab fields)
+		highlights_16.type = "Buttons";
+
+		// highlights_17 (prefab fields)
+		highlights_17.type = "Buttons";
+
 		// attackMechanism_10 (prefab fields)
 		attackMechanism_10.type = "Cards";
 		attackMechanism_10.slotID = 1;
@@ -1336,6 +1451,12 @@ class Match extends Phaser.Scene {
 		this.cheatsContainer = cheatsContainer;
 		this.winnerText = winnerText;
 		this.winner = winner;
+		this.button = button;
+		this.shadowLeaveButton = shadowLeaveButton;
+		this.confirmText = confirmText;
+		this.yesButton = yesButton;
+		this.noButton = noButton;
+		this.leaveButton = leaveButton;
 		this.cardSlot1 = cardSlot1;
 		this.cardSlot2 = cardSlot2;
 		this.cardSlot3 = cardSlot3;
@@ -1459,6 +1580,18 @@ class Match extends Phaser.Scene {
 	winnerText;
 	/** @type {Phaser.GameObjects.Container} */
 	winner;
+	/** @type {Phaser.GameObjects.Image} */
+	button;
+	/** @type {Phaser.GameObjects.Image} */
+	shadowLeaveButton;
+	/** @type {Phaser.GameObjects.Text} */
+	confirmText;
+	/** @type {Phaser.GameObjects.Image} */
+	yesButton;
+	/** @type {Phaser.GameObjects.Image} */
+	noButton;
+	/** @type {Phaser.GameObjects.Container} */
+	leaveButton;
 	/** @type {Phaser.GameObjects.Image} */
 	cardSlot1;
 	/** @type {Phaser.GameObjects.Image} */

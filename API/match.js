@@ -622,7 +622,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                             if (error) {
                                                 res.send(error);
                                             } else {
-                                                if(rows.length > 0){
+                                                if (rows.length > 0) {
                                                     res.send(
                                                         {
                                                             matchFinished: false,
@@ -636,7 +636,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                                             cardPlayed: rows[0].deck_card_id,
                                                         }
                                                     );
-                                                }else{
+                                                } else {
                                                     res.send(
                                                         {
                                                             matchFinished: false,
@@ -654,7 +654,7 @@ function didEverybodyDied(req, res, player1, player2, ch1, ch2, turn_id) {
                                             }
                                         }
                                     )
-                                    
+
 
                                 } else {
                                     connection.execute("UPDATE matche SET matche_state_id = 2 WHERE matche_id = ?", [match_id],
@@ -768,5 +768,67 @@ function updatePlayerStats(winner, loser, winner_name, res, req, player1, player
         );
     }
 }
+
+router.post('/leaveMatch', (req, res) => {
+    if (req.session.match == null || req.session.match == undefined) {
+        res.send({
+            message: "Not in a match to quit."
+        });
+        return;
+    }
+
+    connection.execute("SELECT * FROM matche WHERE matche_player1_id = ? OR matche_player2_id = ? AND matche_state_id = 1 or matche_state_id = 3 AND matche_id = ?", [req.session.playerID, req.session.playerID, req.session.match],
+        function (err, rows, fields) {
+            if (err) {
+                res.send(err);
+            } else {
+                var matchWinner = null
+
+                if (rows.length > 0) {
+
+                    if (rows[0].matche_state_id != 1) {
+                        if (req.session.playerID == rows[0].matche_player1_id) {
+                            matchWinner = rows[0].matche_player2_id;
+                        } else {
+                            matchWinner = rows[0].matche_player1_id;
+                        }
+                    }
+                    connection.execute("UPDATE playerMatchCharacter SET player_match_character_character_current_HP = 0 WHERE player_match_character_player_id = ?", [req.session.playerID],
+                        function (err, rows, fields) {
+                            if (err) {
+                                res.send(err);
+                            } else {
+                                connection.execute("UPDATE matche SET matche_state_id = 2 WHERE matche_id = ?", [req.session.match],
+                                    function (err, rows, fields) {
+                                        if (err) {
+                                            res.send(err);
+                                        } else {
+                                            connection.execute("UPDATE matche SET matche_winner_id = ? WHERE matche_id = ?", [matchWinner, req.session.match],
+                                                function (err, rows, fields) {
+                                                    if (err) {
+                                                        res.send(err);
+                                                    } else {
+                                                        res.status(200).send({
+                                                            surrended: true,
+                                                            message: "You left the game! the other player is the winner"
+                                                        })
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    )
+                } else {
+                    res.send({
+                        message: "Sorry"
+                    })
+                }
+            }
+        }
+    )
+});
 
 module.exports = router;

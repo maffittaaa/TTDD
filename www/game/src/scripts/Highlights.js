@@ -175,19 +175,19 @@ class Highlights extends ScriptNode {
 				} else {
 					this.clicked = false;
 				}
-				mouseClickSound.play()
+				mouseClickSound.play();
 			})
 		} else if (this.type == "Buttons") {
 			this.parent.preFX.list[0].active = false;
 			this.parent.on('pointerover', event => {
 				this.parent.preFX.list[0].active = true;
-				mouseOverSound.play()
+				mouseOverSound.play();
 			});
 			this.parent.on('pointerout', event => {
 				this.parent.preFX.list[0].active = false;
 			});
 			this.parent.on('pointerdown', event => {
-				mouseClickSound.play()
+				mouseClickSound.play();
 			})
 		}
 	}

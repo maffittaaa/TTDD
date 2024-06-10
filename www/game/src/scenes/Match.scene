@@ -79,6 +79,8 @@
             "scaleY": 0.5,
             "originX": 0.5,
             "originY": 0.5,
+            "visible": false,
+            "text": "result",
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",
@@ -1946,6 +1948,219 @@
                     "align": "center",
                     "fontFamily": "Minecraft",
                     "fontSize": "200px"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "8596aecf-3f64-4ba1-9b27-ac1007a950ba",
+            "label": "leaveButton",
+            "useGameObjectName": true,
+            "scope": "PUBLIC",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "30660e14-6063-4813-bcc6-f14a6d410f2e",
+                    "label": "button",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "leaveButton"
+                    },
+                    "x": 87,
+                    "y": 70,
+                    "list": [
+                        {
+                            "type": "Glow",
+                            "id": "4293fe38-a8c9-4e59-b07b-60eafe93df28",
+                            "label": "glowFx_17",
+                            "preFX": true
+                        },
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "41a8f6bd-8a03-4d6f-9e08-3c20f9597551",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_15",
+                            "type": "Buttons"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "fcf9b025-230e-42b6-8e8a-074c0698df39",
+                            "label": "onPointerDownScript_16",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "47858427-b25d-472d-90e7-1007257eed09",
+                                    "label": "pushActionScript_12"
+                                }
+                            ]
+                        },
+                        {
+                            "prefabId": "da3ea99b-d7dd-494c-9507-16b007f6a404",
+                            "id": "4b4d377a-eb5f-4a63-8f3a-ec433d52ffb5",
+                            "label": "leaveTheGameMechanism"
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "87ccd631-4c89-4639-8608-4d51413e18d4",
+                    "label": "shadowLeaveButton",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "Shadow"
+                    },
+                    "x": 973,
+                    "y": 529,
+                    "scaleX": 10.03127832345736,
+                    "scaleY": 5.743648692660658,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "2fd5b615-761a-4a54-897b-5effa31325a9",
+                            "label": "onPointerDownScript_29"
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "e7797f1f-ef61-43bf-8b7a-fdaa7a377dd4",
+                    "label": "confirmText",
+                    "scope": "CLASS",
+                    "x": 951,
+                    "y": 331,
+                    "scaleX": 0.8,
+                    "scaleY": 0.8,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "Confirm?",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "150px"
+                },
+                {
+                    "type": "Image",
+                    "id": "6c54a849-1f04-46fc-85cc-0b269549dc00",
+                    "label": "yesButton",
+                    "useGameObjectName": true,
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 760,
+                    "y": 525,
+                    "scaleX": 5,
+                    "scaleY": 5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "cfd12732-aceb-45f3-9056-d461c1dbc903",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_16",
+                            "type": "Buttons"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "649a75aa-9e76-4751-b759-1705082af151",
+                            "label": "onPointerDownScript_30",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "57c1f3c1-4e74-41ba-b319-1c920e2fabb2",
+                                    "label": "pushActionScript_16"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "eb863279-10e3-4ee9-a8e3-8fbc0197954f",
+                            "label": "glowFx_18",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Image",
+                    "id": "4c53967e-5435-48da-93d0-197445ad8395",
+                    "label": "noButton",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "buttons"
+                    },
+                    "x": 1149,
+                    "y": 525,
+                    "scaleX": 5,
+                    "scaleY": 5,
+                    "visible": false,
+                    "list": [
+                        {
+                            "prefabId": "9d0e436f-25ed-40a6-a16f-6105f703f94b",
+                            "id": "1b76bffd-16d8-43c3-b25a-0c5aa2b3b84b",
+                            "unlock": [
+                                "type"
+                            ],
+                            "label": "highlights_17",
+                            "type": "Buttons"
+                        },
+                        {
+                            "prefabId": "a06ed60b-79f1-4444-bf35-89046f71f954",
+                            "id": "d0744358-1a42-4c3b-86b6-c912a92d0d50",
+                            "label": "onPointerDownScript_31",
+                            "list": [
+                                {
+                                    "prefabId": "0e39177a-6e19-4b56-a7c2-2360a2e41505",
+                                    "id": "6e892836-97a5-4731-af5c-cbc9837b3c08",
+                                    "label": "pushActionScript_28"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Glow",
+                            "id": "9903d490-2465-4343-ba42-603101fe1270",
+                            "label": "glowFx_19",
+                            "preFX": true
+                        }
+                    ]
+                },
+                {
+                    "type": "Text",
+                    "id": "f6210b13-6192-4000-b882-ddf92dc55810",
+                    "label": "yesText",
+                    "x": 753,
+                    "y": 530,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "Yes",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "150px"
+                },
+                {
+                    "type": "Text",
+                    "id": "6e770041-1cfa-4653-be3e-7b773a727b6d",
+                    "label": "noText",
+                    "x": 1152,
+                    "y": 532,
+                    "scaleX": 0.4,
+                    "scaleY": 0.4,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "visible": false,
+                    "text": "No",
+                    "align": "center",
+                    "fontFamily": "Minecraft",
+                    "fontSize": "150px"
                 }
             ]
         },
