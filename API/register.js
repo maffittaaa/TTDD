@@ -43,7 +43,14 @@ router.post("/register", (req, res) => {
                             }
                             else {
                                 for (let i = 0; i < 4; i++) {
-                                    connection.execute("INSERT INTO playerCharacter(player_character_player_id, player_character_character_id) VALUES ("+ rows.insertId +", "+ (i + 1) +");",
+
+                                    var selChar = i + 1;
+
+                                    if(i == 3){
+                                        selChar = 5;
+                                    }
+
+                                    connection.execute("INSERT INTO playerCharacter(player_character_player_id, player_character_character_id) VALUES ("+ rows.insertId +", "+ selChar +");",
                                         function (err, rows, fields) {
                                             if (err) {
                                                 res.send({
@@ -51,7 +58,7 @@ router.post("/register", (req, res) => {
                                                     "message": "something went wrong: " + err
                                                 })
                                             } else {
-                                                if(i == 2){
+                                                if(i == 3){
                                                     res.send({
                                                         "registered": true,
                                                         "username": user[0],
