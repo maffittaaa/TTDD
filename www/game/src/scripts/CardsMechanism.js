@@ -1,4 +1,5 @@
 var showHandCards = false;
+var deckOutOfCards = false
 
 /* START OF COMPILED CODE */
 
@@ -46,6 +47,10 @@ class CardsMechanism extends ScriptNode {
 					scene.addCards(JSON.parse(data.cards));
 					scene.showAddedCard(JSON.parse(data.cards))
 					pickCardSound.play();
+
+					if(data.deckLength <= 0){
+						deckOutOfCards = true
+					}
 				}
 			},
 			error: function (err) {

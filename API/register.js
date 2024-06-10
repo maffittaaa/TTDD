@@ -42,7 +42,7 @@ router.post("/register", (req, res) => {
                                 })
                             }
                             else {
-                                for (let i = 0; i < 3; i++) {
+                                for (let i = 0; i < 4; i++) {
                                     connection.execute("INSERT INTO playerCharacter(player_character_player_id, player_character_character_id) VALUES ("+ rows.insertId +", "+ (i + 1) +");",
                                         function (err, rows, fields) {
                                             if (err) {

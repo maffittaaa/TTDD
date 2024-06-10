@@ -25,13 +25,25 @@ router.post('/pickCard', (req, res) => {
                                     if (rows.length > 0) {
                                         //if there is any card available, randomize which one leaves the deck
                                         cardID = rows;
+                                        var deckLength = cardID.length
                                         var chosenCard = false;
-                                        while (chosenCard == false) {
-                                            chosenID = Math.floor(Math.random() * 10);
-                                            if (chosenID <= cardID.length - 1) {
-                                                chosenCard = true;
+
+                                        if(deckLength - 3 > 0){
+                                            while (chosenCard == false) {
+                                                chosenID = Math.floor(Math.random() * 10);
+                                                if (chosenID <= cardID.length - 1 && cardID[chosenID].deck_card_id != 4 && cardID[chosenID].deck_card_id != 7 && cardID[chosenID].deck_card_id != 10) {
+                                                    chosenCard = true;
+                                                }
                                             }
+                                        }else{
+                                            console.log("Deck out of cards")
+                                            res.send({
+                                                notWorking: true,
+                                                message: "Deck out of cards",
+                                            })
+                                            return
                                         }
+
                                         cardID = cardID[chosenID].deck_card_id;
                                         connection.execute("SELECT deck_card_id FROM deck WHERE deck_card_id = ? AND deck_card_state_id = 1 AND deck_match_id = ? AND deck_player_id = ?", [cardID, matchID, playerID],
                                             function (error, rows, fields) {
@@ -51,11 +63,14 @@ router.post('/pickCard', (req, res) => {
                                                                                 res.send(error);
                                                                             } else {
                                                                                 req.session.tookCard = true;
+
                                                                                 res.send({
-                                                                                    cards: JSON.stringify(rows)
+                                                                                    cards: JSON.stringify(rows),
+                                                                                    deckLength: deckLength - 1,
                                                                                 });
                                                                             }
-                                                                        });
+                                                                        }
+                                                                    );
                                                                 }
                                                             });
                                                     } else {
