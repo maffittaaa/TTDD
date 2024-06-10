@@ -101,34 +101,74 @@ class MatchMechanism extends ScriptNode {
 	}
 
 	cardPlayed(id){
-		console.log(id, showedCard)
+		console.log(id, showedCard);
 		if (id != 0 && showedCard == false){
 			
-			var cardPlayed = this.scene.children.list[6].list
+			var cardPlayed = this.scene.children.list[6].list;
 			var cardsImgs = [4, 6, 5, 0, 3, 1, 8, 7, 2, 2];
 
 			for (let i = 0; i < cardPlayed.length; i++) {
-				console.log(cardPlayed[i])
+				console.log(cardPlayed[i]);
 				if(cardPlayed[i].name == "cardPlayedP2"){
-
 					if (id == 4 || id == 6 || id == 10) {
 						cardPlayed[i].setTexture("cartas4_Imprimir", cardsImgs[id - 1]);
-						cardPlayed[i].visible = true
-	
+						cardPlayed[i].visible = true;
 					} else {
 						cardPlayed[i].setTexture("cartas3_Imprimir", cardsImgs[id - 1]);
-						cardPlayed[i].visible = true
+						cardPlayed[i].visible = true;
 					}
 
-					initialX = 1384
-					initialY = 388
-					finalX = cardPlayed[i].x
-					finalY = cardPlayed[i].y
+					initialX = 1384;
+					initialY = 388;
+					finalX = cardPlayed[i].x;
+					finalY = cardPlayed[i].y;
 					startTime = performance.now();
-					peakHeight = Math.abs(finalY - initialY) + 100
+					peakHeight = Math.abs(finalY - initialY) + 100;
 				}
 			}
-			showedCard = true
+			this.playSound(null, id);
+			showedCard = true;
+		}
+	}
+
+	playSound(charID, cardID){
+		console.log(charID)
+		console.log(cardID)
+
+		if(charID != null){
+			if(charID == 7 || charID == 8 || charID == 10){
+				throwSound.play()
+			}else if(charID == 1){
+				stabSound.play()
+			}else if(charID == 2){
+				mafiaZombieSound.play()
+			}else if(charID == 3){
+				baseballBatSound.play()
+			}else if(charID == 4){
+				pandaSound.play()
+			}else if(charID == 5){
+				plasticSwordSound.play()
+			}else if(charID == 6){
+				velhoLoucoSound.play()
+			}else if(charID == 9){
+				txukiSound.play()
+			}
+		}else{
+			if(cardID == 1){
+				thunderstormSound.play()
+			}else if(cardID == 2){
+				pukeSound.play()
+			}else if(cardID == 3){
+				shhhhSound.play()
+			}else if(cardID == 5){
+				finishHimSound.play()
+			}else if(cardID == 6){
+				copsSound.play()
+			}else if(cardID == 8){
+				shityLicorSound.play()
+			}else if(cardID == 9){
+				fountainOfYouthSound.play()
+			}
 		}
 	}
 
@@ -332,8 +372,8 @@ class MatchMechanism extends ScriptNode {
 								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteRight", charID - 1);
 							}else{
 								healthSprite[j].list[k].setTexture("pawnsBlackAndWhiteLeft", orderCharacterPlayer2Images[charID - 1]);
+								healthSprite[j].list[k].input.enabled = false;
 							}
-							healthSprite[j].list[k].input.enabled = false;
 						}
 					}
 				}
@@ -402,6 +442,8 @@ class MatchMechanism extends ScriptNode {
 		}else{
 			peakHeight = 0
 		}
+		
+		this.playSound(attackerID, null)
 
 		throwing = true
 	}

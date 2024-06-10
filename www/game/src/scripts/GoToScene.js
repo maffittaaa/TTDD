@@ -25,22 +25,27 @@ class GoToScene extends ScriptNode {
 		
 		this.parent.on('pointerdown', event => {
 			if(this.sceneChosen == "ChangeProfile"){
+				mouseClickSound.play()
 				setTimeout(function () {
 					window.location.replace("/changeProfile.html")
 				}, 200);
 			}else if(this.sceneChosen == "Profile"){
+				mouseClickSound.play()
 				setTimeout(function () {
 					goToProfile = true
 				}, 200);
 			}else if(this.sceneChosen == "ChooseCharacters"){
+				mouseClickSound.play()
 				setTimeout(function () {
 					goToChooseChar = true
 				}, 200);
 			}else if(this.sceneChosen == "CharactersAndCards"){
+				mouseClickSound.play()
 				setTimeout(function () {
 					goToCharactersAndCards = true
 				}, 200);
 			}else if(this.sceneChosen == "HomePage"){
+				mouseClickSound.play()
 				setTimeout(function () {
 					window.location.replace("/")
 				}, 200);
@@ -48,6 +53,7 @@ class GoToScene extends ScriptNode {
 		})
 		this.parent.on('pointerover', event => {
 			this.parent.parentContainer.list[0].visible = true
+			mouseOverSound.play()
 		})
 		this.parent.on('pointerout', event => {
 			this.parent.parentContainer.list[0].visible = false

@@ -41,6 +41,7 @@ class Highlights extends ScriptNode {
 
 			this.parent.on('pointerdown', event => {
 				this.parent.parentContainer.postPipelines[0].active = false
+				mouseClickSound.play()
 			})
 
 			this.parent.on('pointerover', event => {
@@ -52,6 +53,8 @@ class Highlights extends ScriptNode {
 					charAnimIn = true
 					charAnimOut = false
 				}
+
+				mouseOverSound.play()
 			})
 			this.parent.on('pointerout', event => {
 				this.parent.parentContainer.postPipelines[0].active = false
@@ -66,11 +69,14 @@ class Highlights extends ScriptNode {
 		} else if (this.type == "Descriptions") {
 			this.parent.on('pointerdown', event => {
 				this.clicked = true
+				mouseClickSound.play()
 			})
 			this.parent.on('pointerover', event => {
 				if (this.clicked == false) {
 					this.parent.preFX.list[0].active = true;
+					mouseOverSound.play()
 				}
+				
 			})
 			this.parent.on('pointerout', event => {
 				if (this.clicked == false) {
@@ -89,6 +95,7 @@ class Highlights extends ScriptNode {
 
 				if (alreadyChosen == false) {
 					this.clicked = true
+					mouseClickSound.play()
 				}
 			})
 			this.parent.on('pointerover', event => {
@@ -104,6 +111,7 @@ class Highlights extends ScriptNode {
 
 					if (alreadyChosen == false) {
 						this.parent.preFX.list[0].active = true;
+						mouseOverSound.play()
 					}
 				}
 			})
@@ -125,6 +133,7 @@ class Highlights extends ScriptNode {
 		} else if (this.type == "LobbyLevelXp") {
 			this.parent.on('pointerover', event => {
 				this.parent.text = xpText;
+				mouseOverSound.play()
 			})
 			this.parent.on('pointerout', event => {
 				this.parent.text = levelText;
@@ -134,6 +143,7 @@ class Highlights extends ScriptNode {
 				if (this.parent.preFX.list[0].active == true) {
 					this.parent.preFX.list[0].glcolor[1] = 0;
 					this.parent.preFX.list[0].glcolor[2] = 0.498;
+					mouseOverSound.play()
 				}
 			})
 			this.parent.on('pointerout', event => {
@@ -145,11 +155,13 @@ class Highlights extends ScriptNode {
 			this.parent.on('pointerdown', event => {
 				this.parent.preFX.list[0].glcolor[1] = 1;
 				this.parent.preFX.list[0].glcolor[2] = 1;
+				mouseClickSound.play()
 			})
 		} else if (this.type == "Match") {
 			this.parent.on('pointerover', event => {
 				if (this.clicked == false) {
 					this.parent.preFX.list[0].active = true;
+					mouseOverSound.play()
 				}
 			});
 			this.parent.on('pointerout', event => {
@@ -163,11 +175,13 @@ class Highlights extends ScriptNode {
 				} else {
 					this.clicked = false;
 				}
+				mouseClickSound.play()
 			})
 		} else if (this.type == "Buttons") {
 			this.parent.preFX.list[0].active = false;
 			this.parent.on('pointerover', event => {
 				this.parent.preFX.list[0].active = true;
+				mouseOverSound.play()
 			});
 			this.parent.on('pointerout', event => {
 				this.parent.preFX.list[0].active = false;

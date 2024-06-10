@@ -106,14 +106,14 @@ class CardsMechanism extends ScriptNode {
 					if (handCards.list[i].list[j].name.search("cardSlot") == 0 || handCards.list[i].list[j].name.search("sand") == 0) {
 						if (card[0].card_id == 4 || card[0].card_id == 6 || card[0].card_id == 10) {
 							handCards.list[i].list[j].setTexture("cartas4_Imprimir", cardsImgs[card[0].card_id - 1]);
-							handCards.list[i].list[j].name = "card" + card[0].card_id;
+							handCards.list[i].list[j].name = "cardHand" + card[0].card_id;
 							handCards.list[i].list[j].visible = true
 							slotID = j + 1;
 							cardID = card[0].card_id;
 							slotFound = true;
 						} else {
 							handCards.list[i].list[j].setTexture("cartas3_Imprimir", cardsImgs[card[0].card_id - 1]);
-							handCards.list[i].list[j].name = "card" + card[0].card_id;
+							handCards.list[i].list[j].name = "cardHand" + card[0].card_id;
 							handCards.list[i].list[j].visible = true
 							slotID = j + 1;
 							cardID = card[0].card_id;

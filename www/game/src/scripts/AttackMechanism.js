@@ -9,6 +9,7 @@ var reviving = false;
 var slotID = 0
 var cardID = 0
 
+
 /* START OF COMPILED CODE */
 
 class AttackMechanism extends ScriptNode {
@@ -88,7 +89,6 @@ class AttackMechanism extends ScriptNode {
 			if(attacker.frame.name > 4){
 				var attackerThrow = this.scene.children.list[7].list
 				for (let i = 0; i < attackerThrow.length; i++) {
-					console.log(attackerThrow[i])
 					if(attackerThrow[i].name == "throwables_p1_slot" + slot){
 						item = attackerThrow[i]
 						item.setTexture("throwables", attacker.frame.name - 4)
@@ -104,7 +104,6 @@ class AttackMechanism extends ScriptNode {
 	setTargetSlot(slot) { // if attacker has a slot, target has a slot
 		if (attackerSlot != 0) {
 			targetSlot = slot;
-			console.log(this.parent);
 			target = this.parent;
 			this.setGlowOnOff(this.parent, true);
 			this.doAttack();
@@ -129,7 +128,6 @@ class AttackMechanism extends ScriptNode {
 
 		for (let i = 0; i < opponent.length; i++) {
 			if(opponent[i].name.search("player2_slot") == 0){
-				console.log(opponent[i])
 				opponent[i].input.enabled = boolean
 			}			
 		}
@@ -163,7 +161,8 @@ class AttackMechanism extends ScriptNode {
 					scene.setGlowOnOff(scene.parent, false);
 					scene.setOpponent(false)
 
-					scene.playThrowAnimation();
+					console.log(data.attackerID)
+					scene.playThrowAnimation(data.attackerID);
 
 					var damageAnimation = new DamageAnimationMechanism(scene.scene, scene.parent.x * 1.5 + 50, scene.parent.y * 1.5 - 50);
 					damageAnimation.visible = true;
@@ -181,7 +180,7 @@ class AttackMechanism extends ScriptNode {
 		})
 	};
 
-	playThrowAnimation() {
+	playThrowAnimation(charID) {
 		startTime = performance.now();
 		finalX = this.parent.x
 		finalY = this.parent.y
@@ -193,13 +192,56 @@ class AttackMechanism extends ScriptNode {
 			peakHeight = 0
 		}
 
+		console.log(charID)
+		this.playSound(charID, null)
+		
 		throwing = true
+	}
+
+	playSound(charID, cardID){
+		console.log(charID)
+		console.log(cardID)
+
+		if(charID != null){
+			if(charID == 7 || charID == 8 || charID == 10){
+				throwSound.play()
+			}else if(charID == 1){
+				stabSound.play()
+			}else if(charID == 2){
+				mafiaZombieSound.play()
+			}else if(charID == 3){
+				baseballBatSound.play()
+			}else if(charID == 4){
+				pandaSound.play()
+			}else if(charID == 5){
+				plasticSwordSound.play()
+			}else if(charID == 6){
+				velhoLoucoSound.play()
+			}else if(charID == 9){
+				txukiSound.play()
+			}
+		}else{
+			if(cardID == 1){
+				thunderstormSound.play()
+			}else if(cardID == 2){
+				pukeSound.play()
+			}else if(cardID == 3){
+				shhhhSound.play()
+			}else if(cardID == 5){
+				finishHimSound.play()
+			}else if(cardID == 6){
+				copsSound.play()
+			}else if(cardID == 8){
+				shityLicorSound.play()
+			}else if(cardID == 9){
+				fountainOfYouthSound.play()
+			}
+		}
 	}
 
 	playCard(card_id, charChosen = null, secCharChosen = null) { // player picks a card
 
 		console.log(this.cardID, card_id, this.parent.name)
-		console.log("playing card")
 
 		var scene = this;
 		console.log(scene.type)
@@ -218,11 +260,11 @@ class AttackMechanism extends ScriptNode {
 					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
 				} else if (data.reviving) {
 					reviving = data.reviving;
-					cardOnHold = data.card;
+					cardOnHold = data.card_id;
 				} else if (data.stillAttacking) {
 					scene.setOpponent(true)
 					stillAttacking = data.stillAttacking;
-					cardOnHold = data.card;
+					cardOnHold = data.card_id;
 					if (data.characterOnHold) {
 						characterOnHold = data.characterOnHold;
 					}
@@ -234,12 +276,13 @@ class AttackMechanism extends ScriptNode {
 				}
 
 				if (!data.notWorking && scene.type == "Cards") {
-					var usedImg = [4, 6, 5, 0, 3, 1, 8, 7, 9, 2]
+					// var usedImg = [4, 6, 5, 0, 3, 1, 8, 7, 9, 2]
 					handCards.visible = !showHandCards
 					showHandCards = !showHandCards
-					scene.parent.name = "cardSlotUsed" + data.card_id
+					scene.parent.name = "cardUsed" + data.card_id
 					scene.parent.input.enabled = false
-					scene.parent.setTexture("usedCards", usedImg[data.card_id - 1])
+					scene.parent.setTexture("usedCards", data.card_id - 1)
+					scene.playSound(null, data.card_id)
 				}
 			},
 			error: function (err) {

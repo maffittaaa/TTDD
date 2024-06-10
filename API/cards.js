@@ -196,7 +196,7 @@ function playCard(req, res, canPlay, cardID) {
             } else {
                 res.send({
                     stillAttacking: true,
-                    card: cardID
+                    card_id: cardID
                 });
             }
         } else if (cardID == 6) {
@@ -216,13 +216,13 @@ function playCard(req, res, canPlay, cardID) {
                 if (firstCharacterID) {
                     res.send({
                         stillAttacking: true,
-                        card: cardID,
+                        card_id: cardID,
                         characterOnHold: firstCharacterID
                     });
                 } else {
                     res.send({
                         stillAttacking: true,
-                        card: cardID
+                        card_id: cardID
                     });
                 }
             }
@@ -234,7 +234,7 @@ function playCard(req, res, canPlay, cardID) {
             } else {
                 res.send({
                     reviving: true,
-                    card: cardID
+                    card_id: cardID
                 });
             }
             // drunken power, one character attacks two at the same time, not done yet

@@ -1484,6 +1484,11 @@ class Match extends Phaser.Scene {
 		this.input.keyboard.on('keydown-C', (event) => {
 			this.cheatsContainer.visible = !this.cheatsContainer.visible;
 		});
+
+		if(battleMusic.isPlaying == false){
+			battleMusic.play(musicConfig)
+			menusMusic.pause()
+		}
 	}
 
 	/* END-USER-CODE */

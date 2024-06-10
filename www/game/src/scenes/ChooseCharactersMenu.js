@@ -1,5 +1,4 @@
 
-// You can write more code here
 
 /* START OF COMPILED CODE */
 
@@ -1058,6 +1057,15 @@ class ChooseCharactersMenu extends Phaser.Scene {
 
 	create() {
 		this.editorCreate();
+
+		if(menusMusic.isPlaying == false){
+			menusMusic.play(musicConfig)
+			battleMusic.pause()
+			console.log(menusMusic)
+		}
+	}
+
+	start(){
 	}
 
 	update(){
