@@ -146,7 +146,7 @@ class AttackMechanism extends ScriptNode {
 				console.log("hello", data);
 				if (data.notWorking == true) {
 					scene.scene.children.list[5].text = data.message;
-					scene.scene.children.list[5].setVisible(true);
+					// scene.scene.children.list[5].setVisible(true);
 					setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
 					if (data.attackStatus == 2) {
 						if (attacker.preFX.list[0].active == true) {

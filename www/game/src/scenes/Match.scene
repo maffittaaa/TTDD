@@ -79,8 +79,6 @@
             "scaleY": 0.5,
             "originX": 0.5,
             "originY": 0.5,
-            "visible": false,
-            "text": "result",
             "align": "center",
             "fontFamily": "Minecraft",
             "fontSize": "100px",

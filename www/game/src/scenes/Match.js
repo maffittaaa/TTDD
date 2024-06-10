@@ -48,8 +48,6 @@ class Match extends Phaser.Scene {
 		result.scaleX = 0.5;
 		result.scaleY = 0.5;
 		result.setOrigin(0.5, 0.5);
-		result.visible = false;
-		result.text = "result";
 		result.setStyle({ "align": "center", "color": "#000000ff", "fontFamily": "Minecraft", "fontSize": "100px", "stroke": "#000000ff" });
 
 		// CharacterSlotsPlayer2

@@ -25,10 +25,10 @@ router.post('/pickCard', (req, res) => {
                                     if (rows.length > 0) {
                                         //if there is any card available, randomize which one leaves the deck
                                         cardID = rows;
-                                        var deckLength = cardID.length
+                                        var deckLength = cardID.length - 3
                                         var chosenCard = false;
 
-                                        if(deckLength - 3 > 0){
+                                        if(deckLength > 0){
                                             while (chosenCard == false) {
                                                 chosenID = Math.floor(Math.random() * 10);
                                                 if (chosenID <= cardID.length - 1 && cardID[chosenID].deck_card_id != 4 && cardID[chosenID].deck_card_id != 7 && cardID[chosenID].deck_card_id != 10) {

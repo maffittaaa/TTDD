@@ -49,7 +49,9 @@ class CardsMechanism extends ScriptNode {
 					pickCardSound.play();
 
 					if(data.deckLength <= 0){
+						scene.scene.children.list[5].text = "Deck out of cards.";
 						deckOutOfCards = true
+						setTimeout(function () { scene.scene.children.list[5].text = "" }, 4000);
 					}
 				}
 			},
