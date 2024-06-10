@@ -44,7 +44,7 @@ class LeaveTheGameMechanism extends ScriptNode {
 			success: function (data) {
 				console.log(data);
 				if (data.surrended == true) {
-					window.location.replace("/index.html")
+					window.location.replace("/game");
 				} else {
 					console.log("Something went wrong...");
 				}
