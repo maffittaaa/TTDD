@@ -153,7 +153,7 @@ router.post("/descriptions", (req, res) => {
     var id = req.body.id
 
     if (type == "Char") {
-        connection.execute("SELECT caracter_name FROM caracter WHERE caracter_id = ?", [id],
+        connection.execute("SELECT caracter_description FROM caracter WHERE caracter_id = ?", [id],
             function (err, rows, fields) {
                 if (err) {
                     res.send(err);
@@ -161,7 +161,7 @@ router.post("/descriptions", (req, res) => {
                 else {
                     if (rows.length > 0) {
                         res.send({
-                            "description": rows[0].caracter_name,
+                            "description": rows[0].caracter_description,
                             "succesfull": true,
                         })
                     } else {

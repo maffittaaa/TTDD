@@ -30,8 +30,8 @@ insert into matchState(match_state_name) values ("in queue");
 insert into matchState(match_state_name) values ("on going");
 insert into matchState(match_state_name) values ("finished");
 -- --------------------------------------------------------------
-insert into player(player_username, player_email, player_password) values ("barbali", "barbali_2345@gmail.com", "12345");
-insert into player(player_username, player_email, player_password) values ("culiqui", "culiqui_123@gmail.com", "6789");
+insert into player(player_username, player_email, player_password) values ("barbali", "barbali_2345@gmail.com", "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5");
+insert into player(player_username, player_email, player_password) values ("culiqui", "culiqui_123@gmail.com", "499bc7df9d8873c1c38e6898177c343b2a34d2eb43178a9eb4efcb993366c8cd");
 -- -----------------------------------------------------------------------------------------------------------------------
 insert into characterStatus(character_status_name) values ("ready");
 insert into characterStatus(character_status_name) values ("not ready");

@@ -6,7 +6,7 @@ create table player (
 
 		player_email VARCHAR(30), 						# player email
 
-		player_password VARCHAR(20), 					# player password
+		player_password VARCHAR(100), 					# player password
 
 		player_level int not null default 0, 			# player level
 
