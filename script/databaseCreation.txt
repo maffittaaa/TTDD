@@ -60,6 +60,8 @@ create table playerMatchCharacter (
 
 		player_match_character_character_status_id int not null default 1, 		# status of the characters
 
+		player_match_character_character_attacked_id int null,					# character id of the character that already attacked
+
 		primary key (player_match_character_id)
 
 );
@@ -89,6 +91,8 @@ create table caracter (
 		caracter_attack int not null, 						# character damage on attack
 		
 		caracter_range VARCHAR(30) not null, 				# character range (long or close-range)
+
+		caracter_description VARCHAR(60) not null, 			# character attack description
 
 		primary key (caracter_id)
 
