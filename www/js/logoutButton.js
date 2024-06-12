@@ -1,8 +1,8 @@
 started = onAwake()
 
-function onAwake(){
-    
-    if(document.URL == "http://localhost:3000/login.html"){
+function onAwake() {
+
+    if (document.URL == "https://ttdd.onrender.com/login.html") {
         $.ajax({
             type: "POST",
             url: "/login/Logout",
@@ -13,7 +13,7 @@ function onAwake(){
                 console.log(err);
             }
         })
-    }else{
+    } else {
         $.ajax({
             type: "GET",
             url: "/login/CheckLogin",
